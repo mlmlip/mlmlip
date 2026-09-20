@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, pillars, steps } from '../data/site';
+---
+
+<BaseLayout
+  title="Customization | Packaging, Formulation & Logo for Lip Products — MLM Lip"
+  description="Customize your lip product end to end: packaging, formulation and logo. Private label lip cosmetics from 500 pcs, with sampling before you commit."
+>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Customization</p>
+      <h1>Three layers of customization, one supplier</h1>
+      <p class="lead" style="max-width:660px">
+        Most suppliers hand you a catalogue and ask you to pick. We start from your brand:
+        what the product should look like, feel like and say.
+      </p>
+    </div>
+  </section>
+
+  <section class="tint" style="padding-top:32px">
+    <div class="wrap">
+      <div class="grid three">
+        {pillars.map((p) => (
+          <div class="card">
+            <h3>{p.title}</h3>
+            <p style="margin:0">{p.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What you can specify</h2>
+      <div class="grid two" style="margin-top:24px">
+        <div class="card">
+          <h3>Packaging</h3>
+          <p style="margin:0">
+            Tube and cap form, material and finish (glossy, matte, metallized, frosted),
+            applicator type, decoration (printing, hot stamping, silk screen), carton and outer box.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Formulation</h3>
+          <p style="margin:0">
+            Texture and finish, pigment and shade matching, wear and feel,
+            fragrance, and the ingredient story you want to tell on the label.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Logo &amp; branding</h3>
+          <p style="margin:0">
+            Your logo on primary and secondary packaging, label design,
+            color matching to your brand palette, and printed product information.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Minimums &amp; sampling</h3>
+          <p style="margin:0">
+            From {site.moq} per SKU for lip products. Samples are developed against your brief first,
+            so you approve the result before production starts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <h2>The process</h2>
+      <div class="grid two" style="margin-top:24px">
+        {steps.map((s) => (
+          <div class="card">
+            <p class="eyebrow" style="margin-bottom:6px">Step {s.n}</p>
+            <h3>{s.title}</h3>
+            <p style="margin:0">{s.body}</p>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top:28px"><a class="btn" href="/contact">Book a consultation</a></p>
+    </div>
+  </section>
+</BaseLayout>

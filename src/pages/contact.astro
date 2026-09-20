@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="Contact | Request a Quote for Custom Lip Products — MLM Lip"
+  description="Contact MLM Lip for custom lip cosmetics manufacturing. Send your product brief, target quantity and market to get a quote. WhatsApp and email available."
+>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h1>Tell us what you want to launch</h1>
+      <p class="lead" style="max-width:620px">
+        The more you tell us — product type, quantity, target market, price point — the more specific our reply can be.
+        Most inquiries are answered within one working day.
+      </p>
+    </div>
+  </section>
+
+  <section class="tint" style="padding-top:0; background:transparent">
+    <div class="wrap">
+      <div class="grid two">
+        <div class="card">
+          <h2 style="font-size:24px">Send your brief</h2>
+          <form id="inquiry-form">
+            <div class="form-row">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" required />
+            </div>
+            <div class="form-row">
+              <label for="company">Brand / company</label>
+              <input id="company" name="company" type="text" />
+            </div>
+            <div class="form-row">
+              <label for="product">Product interested in</label>
+              <select id="product" name="product">
+                <option>Lip gloss</option>
+                <option>Lip mud / velvet tint</option>
+                <option>Lip liner</option>
+                <option>Lipstick</option>
+                <option>Lip oil</option>
+                <option>Body oil / other cosmetics</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="quantity">Target quantity</label>
+              <input id="quantity" name="quantity" type="text" placeholder="e.g. 500 pcs" />
+            </div>
+            <div class="form-row">
+              <label for="message">Project details</label>
+              <textarea id="message" name="message" rows="4" placeholder="Market, price point, finish, packaging ideas…"></textarea>
+            </div>
+            <button class="btn" type="submit">Send via WhatsApp</button>
+            <p class="note" style="margin-top:12px">
+              This opens WhatsApp with your brief filled in. Prefer email? Write to
+              <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
+            </p>
+          </form>
+        </div>
+
+        <div>
+          <div class="card" style="margin-bottom:24px">
+            <h3>Direct contact</h3>
+            <p style="margin:0">
+              WhatsApp: <a href={site.contact.whatsappLink} target="_blank" rel="noopener">{site.contact.whatsapp}</a><br />
+              Email: <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a><br />
+              Location: {site.contact.address}
+            </p>
+          </div>
+          <div class="card">
+            <h3>What happens next</h3>
+            <p style="margin:0">
+              We review your brief and reply with the practical options — recommended format, packaging route,
+              sampling plan and pricing for your quantity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline define:vars={{ wa: site.contact.whatsappLink.replace('https://wa.me/', '') }}>
+    const form = document.getElementById('inquiry-form');
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const lines = [
+        'Inquiry from mlmlip.com',
+        'Name: ' + (data.get('name') || ''),
+        'Brand: ' + (data.get('company') || ''),
+        'Product: ' + (data.get('product') || ''),
+        'Quantity: ' + (data.get('quantity') || ''),
+        'Details: ' + (data.get('message') || '')
+      ];
+      const url = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(lines.join('\n'));
+      window.open(url, '_blank', 'noopener');
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="About | Custom Lip Cosmetics Manufacturer — MLM Lip"
+  description="MLM Lip is the custom lip cosmetics line of Beautychain Limited, manufacturing private label lip products for emerging brands with low minimums and in-house customization."
+>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+      <h1>We build lip lines for brands that are starting out</h1>
+      <p class="lead" style="max-width:660px">
+        MLM Lip is the lip cosmetics line of {site.manufacturer}, based in Shenzhen, China.
+        We work with founders, online sellers and small beauty brands who want their own product —
+        not a white-label product with their logo stuck on it.
+      </p>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <div class="grid two">
+        <div class="card">
+          <h3>Low minimums as a principle</h3>
+          <p style="margin:0">
+            A 20,000 pcs minimum is not a business decision a new brand can make.
+            We start at {site.moq} per SKU so your first run can be tested in the real market before you scale.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Customization in-house</h3>
+          <p style="margin:0">
+            Packaging, formulation and branding are handled together, so the sample you approve
+            is the product you receive — no mismatched parts from separate vendors.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Sampling before commitment</h3>
+          <p style="margin:0">
+            We develop samples against your brief and iterate until the texture, shade and packaging are right.
+            You commit only after you are satisfied.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Lip specialists</h3>
+          <p style="margin:0">
+            Lip is our focus, from gloss and mud to liner and lipstick. Body oils and other cosmetics
+            are available as companion lines.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Work with us</h2>
+      <p class="lead" style="max-width:600px">
+        Whether you have a finished concept or just the beginning of an idea, the first step is the same:
+        tell us what you want to launch.
+      </p>
+      <a class="btn" href="/contact">Contact our team</a>
+    </div>
+  </section>
+</BaseLayout>

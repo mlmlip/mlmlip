@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, pillars, products, steps } from '../data/site';
+---
+
+<BaseLayout
+  title="Custom Lip Cosmetics Manufacturer | Private Label from 500 pcs — MLM Lip"
+  description="Custom lip cosmetics OEM/ODM: packaging, formulation and logo customization with a 500 pcs minimum order. Lip gloss, lip mud, lip liner, lipstick and lip oil for your own brand."
+>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Custom lip cosmetics · OEM &amp; ODM</p>
+      <h1>Your own lip brand,<br />starting at {site.moq}.</h1>
+      <p class="lead" style="max-width:620px">
+        We make lip products for brands that are just getting started. Packaging, formulation and logo —
+        all customized under one roof, in small runs that make sense for a new line.
+      </p>
+      <p style="margin-top:28px">
+        <a class="btn" href="/contact">Request a quote</a>
+        <a class="btn ghost" href="/products" style="margin-left:10px">See products</a>
+      </p>
+      <p class="note" style="margin-top:14px">Low minimum · fast sampling · full private label</p>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">Three kinds of customization</p>
+      <h2>Built around your brand, not our catalogue</h2>
+      <div class="grid three" style="margin-top:28px">
+        {pillars.map((p) => (
+          <div class="card">
+            <h3>{p.title}</h3>
+            <p style="margin:0">{p.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">What we produce</p>
+      <h2>Lip first. Everything else second.</h2>
+      <p class="lead" style="max-width:640px">
+        Lip products are what we do best — gloss, mud, liner, lipstick and oil.
+        Body oils and other cosmetics are available as companion lines to round out your range.
+      </p>
+      <div class="grid three" style="margin-top:28px">
+        {products.slice(0, 3).map((p) => (
+          <div class="card">
+            <h3>{p.name}</h3>
+            <p>{p.body}</p>
+            <p class="note" style="margin:0">{p.detail}</p>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top:24px"><a href="/products">View the full product range →</a></p>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2>From brief to your door</h2>
+      <div class="grid two" style="margin-top:28px">
+        {steps.map((s) => (
+          <div class="card">
+            <p class="eyebrow" style="margin-bottom:6px">Step {s.n}</p>
+            <h3>{s.title}</h3>
+            <p style="margin:0">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="card" style="text-align:center; padding:48px 28px">
+        <h2 style="margin-bottom:10px">Tell us what you want to launch</h2>
+        <p class="lead" style="max-width:560px; margin:0 auto 24px">
+          Send your product idea, target quantity and market. We will come back with the most practical way to make it yours.
+        </p>
+        <a class="btn" href="/contact">Start your lip line</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

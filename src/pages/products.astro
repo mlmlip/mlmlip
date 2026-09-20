@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, products } from '../data/site';
+---
+
+<BaseLayout
+  title="Custom Lip Products | Gloss, Mud, Liner, Lipstick, Lip Oil — MLM Lip"
+  description="Private label lip gloss, lip mud, lip liner, lipstick and lip oil manufacturing with customizable packaging, formulation and logo. 500 pcs minimum per SKU."
+>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Products</p>
+      <h1>Custom lip products for your own label</h1>
+      <p class="lead" style="max-width:640px">
+        Every item below can be adapted to your brief — shade, texture, packaging and branding.
+        Minimum order is {site.moq} per SKU, and different items can be combined in one project.
+      </p>
+    </div>
+  </section>
+
+  <section class="tint" style="padding-top:0; background:transparent">
+    <div class="wrap">
+      <div class="grid three">
+        {products.map((p) => (
+          <div class="card">
+            <h3>{p.name}</h3>
+            <p>{p.body}</p>
+            <p class="note">{p.detail}</p>
+            <a href="/contact">Ask about this product →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--blush-soft)">
+    <div class="wrap">
+      <h2>Not sure which format fits your idea?</h2>
+      <p class="lead" style="max-width:600px">
+        Tell us the market, price point and how you want the product to feel. We will recommend the format,
+        packaging and shade direction that gets there fastest.
+      </p>
+      <a class="btn" href="/contact">Get a recommendation</a>
+    </div>
+  </section>
+</BaseLayout>

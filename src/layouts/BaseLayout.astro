@@ -1,0 +1,62 @@
+---
+import { site } from '../data/site';
+import '../styles/global.css';
+
+const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://mlmlip.com');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical.href} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.href} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/">MLM<span>Lip</span></a>
+        <nav class="nav">
+          {site.nav.map((item) => (
+            <a href={item.href} class={Astro.url.pathname === item.href ? 'is-active' : ''}>{item.label}</a>
+          ))}
+          <a class="btn" href="/contact">Get a quote</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="grid two">
+          <div>
+            <p class="brand">MLM<span>Lip</span></p>
+            <p style="color:#e9c9d3">Custom lip cosmetics manufacturing — packaging, formulation and logo, from {site.moq} per SKU.</p>
+          </div>
+          <div>
+            <p style="color:#f3dde3; margin-bottom:8px">Get in touch</p>
+            <p style="color:#e9c9d3; margin:0">
+              WhatsApp: {site.contact.whatsapp}<br />
+              Email: <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a><br />
+              {site.contact.address}
+            </p>
+          </div>
+        </div>
+        <p style="color:#d6b3be; margin-top:32px; font-size:13px">
+          {new Date().getFullYear()} {site.name} · Manufactured by {site.manufacturer}
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
