@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="Build Your Brief | Custom Lip Product Quote Configurator — MLM Lip"
+  description="Build your custom lip product brief online: choose product, finish, quantity, packaging and target market, then send it as a ready-to-send WhatsApp inquiry to MLM Lip."
+>
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%);">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.2em;">Project configurator</p>
+      <h1>Build your lip brand brief in 90 seconds</h1>
+      <p class="lead" style="max-width: 680px;">
+        Tell us what you want to launch. We reply with the practical route — recommended format, packaging options,
+        a 7-day sampling plan and pricing for your quantity.
+      </p>
+    </div>
+  </section>
+
+  <section class="tint" style="padding-top: 0; background: transparent;">
+    <div class="wrap">
+      <div class="card" style="max-width: 760px; margin: -40px auto 0; position: relative; z-index: 2; box-shadow: var(--shadow-md);">
+        <form id="brief-builder">
+          <div class="grid two">
+            <div class="form-row">
+              <label for="f-product">Product</label>
+              <select id="f-product" name="product">
+                <option>Lip Gloss</option>
+                <option>Lip Mud &amp; Velvet Tint</option>
+                <option>Lip Liner</option>
+                <option>Lipstick</option>
+                <option>Lip Oil</option>
+                <option>Lip Mask</option>
+                <option>Body Oil (companion)</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="f-finish">Finish / texture</label>
+              <select id="f-finish" name="finish">
+                <option>Not sure yet</option>
+                <option>High-shine gloss</option>
+                <option>Soft-focus matte / velvet</option>
+                <option>Sheer tint / jelly</option>
+                <option>Shimmer &amp; pearl</option>
+                <option>Plumping / peptide</option>
+                <option>Matte bullet</option>
+                <option>Satin / cream</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="f-quantity">Quantity per SKU</label>
+              <input id="f-quantity" name="quantity" type="text" placeholder="e.g. 500 pcs (our minimum)" />
+            </div>
+            <div class="form-row">
+              <label for="f-shades">Shades at launch</label>
+              <input id="f-shades" name="shades" type="text" placeholder="e.g. 3 shades" />
+            </div>
+            <div class="form-row">
+              <label for="f-packaging">Packaging direction</label>
+              <select id="f-packaging" name="packaging">
+                <option>Not sure yet</option>
+                <option>From in-house packaging library</option>
+                <option>Custom mold / bespoke tooling</option>
+                <option>Heavyweight acrylic tube</option>
+                <option>Slim / travel tube</option>
+                <option>Magnetic zamac case</option>
+                <option>Already have my own packaging</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="f-market">Target market</label>
+              <select id="f-market" name="market">
+                <option>United States</option>
+                <option>Canada</option>
+                <option>United Kingdom</option>
+                <option>France</option>
+                <option>Germany</option>
+                <option>Spain</option>
+                <option>Italy</option>
+                <option>Other / not sure</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="f-brand">Brand / company name</label>
+            <input id="f-brand" name="brand" type="text" placeholder="Your brand" />
+          </div>
+          <div class="form-row">
+            <label for="f-message">Anything else</label>
+            <textarea id="f-message" name="message" rows="3" placeholder="Reference products, price point, target launch date, special claims…"></textarea>
+          </div>
+          <p style="margin: 0;">
+            <button class="btn" type="submit" style="width: 100%;">Send brief via WhatsApp</button>
+          </p>
+          <p class="note" style="margin-top: 14px;">
+            This opens WhatsApp with your brief pre-filled. Prefer email? Write to
+            <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">What happens next</p>
+      <h2>From your brief to a quote</h2>
+      <div class="grid three" style="margin-top: 28px;">
+        <div class="card">
+          <p class="eyebrow" style="margin-bottom: 6px;">Step 1</p>
+          <h3>We review your brief</h3>
+          <p style="margin:0;">Our team checks feasibility against your product, quantity and market, then recommends the most practical route.</p>
+        </div>
+        <div class="card">
+          <p class="eyebrow" style="margin-bottom: 6px;">Step 2</p>
+          <h3>You receive options</h3>
+          <p style="margin:0;">A clear quotation with format, packaging route, sampling plan and pricing for your quantity — usually within one working day.</p>
+        </div>
+        <div class="card">
+          <p class="eyebrow" style="margin-bottom: 6px;">Step 3</p>
+          <h3>Samples in 7 days</h3>
+          <p style="margin:0;">Approve the route, and we develop samples against your brief in 7 days — with the sampling fee credited to your bulk order.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline define:vars={{ waBase: site.contact.whatsappLink }}>
+  const form = document.getElementById('brief-builder');
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const d = new FormData(form);
+    const lines = [
+      'New brief from mlmlip.com',
+      'Product: ' + (d.get('product') || ''),
+      'Finish: ' + (d.get('finish') || ''),
+      'Quantity: ' + (d.get('quantity') || ''),
+      'Shades: ' + (d.get('shades') || ''),
+      'Packaging: ' + (d.get('packaging') || ''),
+      'Market: ' + (d.get('market') || ''),
+      'Brand: ' + (d.get('brand') || ''),
+      'Notes: ' + (d.get('message') || '')
+    ];
+    const url = waBase + '?text=' + encodeURIComponent(lines.join('\n'));
+    window.open(url, '_blank', 'noopener');
+  });
+</script>
