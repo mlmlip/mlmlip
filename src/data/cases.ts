@@ -6,6 +6,7 @@ export interface CaseItem {
   videoUrl?: string;
   links?: { label: string; href: string }[];
   placeholder?: boolean;
+  specs?: { label: string; value: string }[];
 }
 
 // 真实做过的唇部项目素材（来自 NAS 素材文件夹/产品图片/美妆类产品）
@@ -15,6 +16,12 @@ export const cases: CaseItem[] = [
     category: 'Lip Gloss',
     summary: 'Full-range nude-to-berry lip gloss collection in heavyweight rose-gold capped tubes, color-matched across 26 market-ready shades.',
     image: '/products/lipgloss-26-01.jpg',
+    specs: [
+      { label: 'Shades', value: '26' },
+      { label: 'MOQ', value: '500 pcs' },
+      { label: 'Packaging', value: 'Acrylic + zamac cap' },
+      { label: 'Market', value: 'North America' }
+    ],
     links: [
       { label: 'Request shade card', href: '/contact' },
       { label: 'See full range', href: '/products' }
@@ -25,6 +32,12 @@ export const cases: CaseItem[] = [
     category: 'Lip Gloss',
     summary: 'Minimalist slim tubes with silver caps and a matching carton — ideal for DTC and TikTok Shop launches at low MOQ.',
     image: '/products/lipgloss-slim-01.jpg',
+    specs: [
+      { label: 'Shades', value: '6' },
+      { label: 'MOQ', value: '500 pcs' },
+      { label: 'Packaging', value: 'Slim acrylic tube' },
+      { label: 'Market', value: 'DTC / TikTok' }
+    ],
     links: [
       { label: 'Request sample', href: '/contact' }
     ]
@@ -34,6 +47,12 @@ export const cases: CaseItem[] = [
     category: 'Lip Gloss',
     summary: 'Neutral wearable gloss range developed for a private-label US brand, with custom box and Pantone-matched caps.',
     image: '/products/lipgloss-nude-01.jpg',
+    specs: [
+      { label: 'Shades', value: '4' },
+      { label: 'MOQ', value: '500 pcs' },
+      { label: 'Packaging', value: 'Custom carton + cap' },
+      { label: 'Market', value: 'United States' }
+    ],
     links: [
       { label: 'Request sample', href: '/contact' }
     ]
@@ -43,6 +62,12 @@ export const cases: CaseItem[] = [
     category: 'Lip Gloss',
     summary: 'Prismatic diamond-cut tubes filled with shimmer gloss — a packaging-forward SKU built for social-driven beauty brands.',
     videoUrl: '/cases/case-diamond-tube.mp4',
+    specs: [
+      { label: 'Shades', value: '3' },
+      { label: 'MOQ', value: '500 pcs' },
+      { label: 'Packaging', value: 'Custom-molded tube' },
+      { label: 'Market', value: 'Social beauty' }
+    ],
     links: [
       { label: 'Ask about custom tooling', href: '/customization' }
     ]
@@ -52,6 +77,12 @@ export const cases: CaseItem[] = [
     category: 'Custom Project',
     summary: 'End-to-end custom development for a 12-color lip gloss set: shade matching, component selection, labeling and production-ready samples.',
     videoUrl: '/cases/case-lp10-custom.mp4',
+    specs: [
+      { label: 'Shades', value: '12' },
+      { label: 'MOQ', value: '500 pcs' },
+      { label: 'Scope', value: 'Full OEM/ODM' },
+      { label: 'Deliverable', value: 'Set + display' }
+    ],
     links: [
       { label: 'Start your project', href: '/contact' }
     ]
@@ -61,6 +92,12 @@ export const cases: CaseItem[] = [
     category: 'Packaging',
     summary: 'In-stock premium tubes, caps and applicators ready for your logo — or brief us for bespoke custom tooling.',
     image: '/factory/packaging-tubes-01.jpg',
+    specs: [
+      { label: 'Components', value: '200+ in library' },
+      { label: 'MOQ', value: '500 pcs' },
+      { label: 'Tooling', value: 'Library or custom' },
+      { label: 'Lead time', value: 'Library: ready' }
+    ],
     links: [
       { label: 'View customization options', href: '/customization' }
     ]

@@ -73,19 +73,23 @@ const phases = [
 
   <section class="tint" style="padding-top:0; background:transparent">
     <div class="wrap">
-      <div class="grid two">
+      <ol class="timeline" style="list-style:none; padding:0; margin:0; position:relative;">
+        <span aria-hidden="true" style="position:absolute; left:27px; top:20px; bottom:20px; width:2px; background:linear-gradient(180deg, var(--gold), var(--line));"></span>
         {phases.map((p) => (
-          <div class="card">
-            <p class="eyebrow" style="margin-bottom:6px">Step {p.n}</p>
-            <h3>{p.title}</h3>
-            <p>{p.body}</p>
-            <p class="note" style="margin:0">{p.you}</p>
-          </div>
+          <li style="position:relative; padding-left:76px; padding-bottom:36px; min-height:60px;">
+            <span style="position:absolute; left:8px; top:4px; width:40px; height:40px; border-radius:50%; background:var(--cream); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display', Georgia, serif; font-size:15px; font-weight:600; color:var(--burgundy); z-index:1;">{p.n}</span>
+            <div class="card" style="margin:0;">
+              <h3 style="font-size:19px; margin-bottom:8px;">{p.title}</h3>
+              <p style="margin:0 0 10px;">{p.body}</p>
+              <p class="note" style="margin:0; padding-top:10px; border-top:1px dashed var(--line);">{p.you}</p>
+            </div>
+          </li>
         ))}
-      </div>
-      <p style="margin-top:32px">
+      </ol>
+      <p style="margin-top:16px">
         <a class="btn" href="/contact">Start step 01 — send your brief</a>
       </p>
     </div>
   </section>
+
 </BaseLayout>

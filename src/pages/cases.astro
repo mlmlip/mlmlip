@@ -47,6 +47,16 @@ const toEmbed = (url: string) =>
             <p class="eyebrow" style="margin-bottom:6px">{c.category}</p>
             <h3 style="margin-bottom:8px">{c.title}</h3>
             <p>{c.summary}</p>
+            {c.specs && c.specs.length > 0 && (
+              <dl class="case-specs" style="margin:14px 0; padding:12px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); display:grid; grid-template-columns:1fr 1fr; gap:8px 16px;">
+                {c.specs.map((s) => (
+                  <div style="display:flex; flex-direction:column; gap:2px;">
+                    <dt style="font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:#8a6a72; margin:0;">{s.label}</dt>
+                    <dd style="margin:0; font-size:14px; font-weight:600; color:var(--burgundy);">{s.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
             {c.links && c.links.length > 0 && (
               <p style="margin:0">
                 {c.links.map((l) => (

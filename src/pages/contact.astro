@@ -27,16 +27,21 @@ import { site } from '../data/site';
           <h2 style="font-size:24px">Send your brief</h2>
           <form id="inquiry-form">
             <div class="form-row">
-              <label for="name">Your name</label>
+              <label for="name">Your name *</label>
               <input id="name" name="name" type="text" required />
             </div>
             <div class="form-row">
               <label for="company">Brand / company</label>
-              <input id="company" name="company" type="text" />
+              <input id="company" name="company" type="text" placeholder="Your brand name" />
+            </div>
+            <div class="form-row">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" required placeholder="you@yourbrand.com" />
             </div>
             <div class="form-row">
               <label for="product">Product interested in</label>
               <select id="product" name="product">
+                <option value="">Select a category</option>
                 <option>Lip gloss</option>
                 <option>Lip mud / velvet tint</option>
                 <option>Lip liner</option>
@@ -52,14 +57,29 @@ import { site } from '../data/site';
               <input id="quantity" name="quantity" type="text" placeholder="e.g. 500 pcs" />
             </div>
             <div class="form-row">
-              <label for="message">Project details</label>
-              <textarea id="message" name="message" rows="4" placeholder="Market, price point, finish, packaging ideas…"></textarea>
+              <label for="market">Target market</label>
+              <select id="market" name="market">
+                <option value="">Select market</option>
+                <option>United States</option>
+                <option>Canada</option>
+                <option>United Kingdom</option>
+                <option>European Union</option>
+                <option>Other / global</option>
+              </select>
             </div>
-            <button class="btn" type="submit">Send via WhatsApp</button>
+            <div class="form-row">
+              <label for="message">Project details</label>
+              <textarea id="message" name="message" rows="4" placeholder="Price point, finish, packaging ideas, timeline…"></textarea>
+            </div>
+            <button class="btn" type="submit" id="submit-btn">Send my brief →</button>
             <p class="note" style="margin-top:12px">
-              This opens WhatsApp with your brief filled in. Prefer email? Write to
+              Your brief is sent via WhatsApp with all details pre-filled. Prefer email? Write to
               <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
             </p>
+            <div id="form-success" hidden style="margin-top:16px; padding:16px; background:var(--blush); border-radius:10px; border-left:3px solid var(--rose);">
+              <p style="margin:0; color:var(--plum); font-weight:600;">✓ Your brief is ready in WhatsApp.</p>
+              <p class="note" style="margin:6px 0 0;">If WhatsApp didn't open, <a href={site.contact.whatsappLink} target="_blank" rel="noopener">click here to chat with us</a>.</p>
+            </div>
           </form>
         </div>
 
@@ -86,19 +106,23 @@ import { site } from '../data/site';
 
   <script is:inline define:vars={{ wa: site.contact.whatsappLink.replace('https://wa.me/', '') }}>
     const form = document.getElementById('inquiry-form');
+    const success = document.getElementById('form-success');
     form?.addEventListener('submit', (event) => {
       event.preventDefault();
       const data = new FormData(form);
       const lines = [
         'Inquiry from mlmlip.com',
         'Name: ' + (data.get('name') || ''),
+        'Email: ' + (data.get('email') || ''),
         'Brand: ' + (data.get('company') || ''),
         'Product: ' + (data.get('product') || ''),
         'Quantity: ' + (data.get('quantity') || ''),
+        'Market: ' + (data.get('market') || ''),
         'Details: ' + (data.get('message') || '')
       ];
       const url = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(lines.join('\n'));
       window.open(url, '_blank', 'noopener');
+      success?.removeAttribute('hidden');
     });
   </script>
 </BaseLayout>
