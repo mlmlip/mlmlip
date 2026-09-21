@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout
+  title="Blog | Lip Brand Guides & Manufacturing Insights — MLM Lip"
+  description="Guides for private label lip brand founders: choosing formats, planning your first run, working with a custom lip cosmetics manufacturer."
+>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Blog</p>
+      <h1>Build your lip brand smarter</h1>
+      <p class="lead" style="max-width:640px">
+        Practical guides for founders launching a private label lip line —
+        formats, minimums, sampling and everything in between.
+      </p>
+    </div>
+  </section>
+
+  <section class="tint" style="padding-top:0; background:transparent">
+    <div class="wrap">
+      <div class="grid two">
+        {posts.map((post) => (
+          <a class="card" href={`/blog/${post.id}`} style="display:block; color:inherit">
+            <p class="post-meta" style="margin:0 0 6px">{fmt(post.data.pubDate)}</p>
+            <h3 style="margin-bottom:8px">{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <p style="margin:0">
+              {post.data.tags.map((t) => <span class="tag">{t}</span>)}
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

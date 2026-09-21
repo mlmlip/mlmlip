@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const phases = [
+  {
+    n: '01',
+    title: 'Inquiry & brief',
+    body: 'Tell us what you want to launch: product type, target quantity, market and price point. The more specific the brief, the more specific our answer.',
+    you: 'You provide: product idea, quantity, target market, reference photos if you have them.'
+  },
+  {
+    n: '02',
+    title: 'Proposal & quotation',
+    body: 'We come back with the practical route — recommended format, packaging options from our library or a custom mold, formulation direction, and pricing for your quantity.',
+    you: 'You receive: a clear quotation with packaging, formulation and timeline options.'
+  },
+  {
+    n: '03',
+    title: 'Sampling — 7 days',
+    body: 'We develop samples against your brief: texture, shade, packaging and logo placement. Samples are ready in 7 days.',
+    you: 'You confirm: the brief is locked so the sample matches what you actually want.'
+  },
+  {
+    n: '04',
+    title: 'Review & revisions',
+    body: 'You test the samples and tell us what to adjust — shade, feel, finish, packaging details. We revise until it is right.',
+    you: 'You provide: consolidated feedback per round so revisions move fast.'
+  },
+  {
+    n: '05',
+    title: 'Order confirmation',
+    body: 'Once you approve the sample, we confirm the order — from 500 pcs per SKU, the same minimum across every category. The sampling fee is deducted from your order, so sampling effectively costs nothing.',
+    you: 'You confirm: final artwork, quantities per SKU and the production schedule.'
+  },
+  {
+    n: '06',
+    title: 'Mass production',
+    body: 'Formulation, filling, assembly and decoration happen under one roof — the sample you approved is the product you receive, with no mismatched parts from separate vendors.',
+    you: 'You receive: production updates at key milestones.'
+  },
+  {
+    n: '07',
+    title: 'QC & inspection',
+    body: 'Every batch is inspected before packing. GMPC and ISO certified processes, with inspection photos and reports available for your records.',
+    you: 'You receive: QC report and pre-shipment photos.'
+  },
+  {
+    n: '08',
+    title: 'Shipping & market documents',
+    body: 'We arrange shipping to your door or your warehouse, and prepare the documents your market needs — including CPNP notification support for the EU and paperwork for North America.',
+    you: 'You receive: tracking, shipping documents and after-sales support for reorders.'
+  }
+];
+---
+
+<BaseLayout
+  title="Our Process | From Brief to Your Lip Brand in 8 Steps — MLM Lip"
+  description="The complete private label lip cosmetics process: inquiry, quotation, 7-day sampling, revisions, production from 500 pcs, QC, and shipping with North America and EU documentation."
+>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">How we work</p>
+      <h1>From your idea to your lip brand, in 8 clear steps</h1>
+      <p class="lead" style="max-width:660px">
+        No black box. You always know what happens next, what we need from you,
+        and what you get at each step — from the first message to delivery in North America or Europe.
+      </p>
+    </div>
+  </section>
+
+  <section class="tint" style="padding-top:0; background:transparent">
+    <div class="wrap">
+      <div class="grid two">
+        {phases.map((p) => (
+          <div class="card">
+            <p class="eyebrow" style="margin-bottom:6px">Step {p.n}</p>
+            <h3>{p.title}</h3>
+            <p>{p.body}</p>
+            <p class="note" style="margin:0">{p.you}</p>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top:32px">
+        <a class="btn" href="/contact">Start step 01 — send your brief</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

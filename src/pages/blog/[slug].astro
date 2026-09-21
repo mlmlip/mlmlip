@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout title={`${post.data.title} — MLM Lip`} description={post.data.description}>
+  <section>
+    <div class="wrap">
+      <div class="prose">
+        <p class="eyebrow"><a href="/blog" style="color:inherit">← Blog</a></p>
+        <h1 style="font-size:36px">{post.data.title}</h1>
+        <p class="post-meta">
+          {fmt(post.data.pubDate)}
+          {post.data.tags.map((t) => <span class="tag">{t}</span>)}
+        </p>
+        <Content />
+        <div class="card" style="margin-top:48px; text-align:center; padding:36px 24px">
+          <h3 style="margin-bottom:8px">Ready to start your own lip line?</h3>
+          <p style="margin:0 0 20px">From 500 pcs per SKU, samples in 7 days, sampling fee deducted from your order.</p>
+          <a class="btn" href="/contact">Request a quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

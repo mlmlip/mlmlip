@@ -1,25 +1,32 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { site, pillars, products, steps } from '../data/site';
+import { site, pillars, products, steps, certifications } from '../data/site';
+import { cases } from '../data/cases';
+import { getCollection } from 'astro:content';
+
+const latestPosts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 2);
+const featuredCases = cases.slice(0, 3);
 ---
 
 <BaseLayout
   title="Custom Lip Cosmetics Manufacturer | Private Label from 500 pcs — MLM Lip"
-  description="Custom lip cosmetics OEM/ODM: packaging, formulation and logo customization with a 500 pcs minimum order. Lip gloss, lip mud, lip liner, lipstick and lip oil for your own brand."
+  description="Custom lip cosmetics OEM/ODM for private label brands in North America and Europe: packaging, formulation and logo customization from 500 pcs. Lip gloss, lip mud, lip liner, lipstick, lip oil and lip mask."
 >
   <section>
     <div class="wrap">
       <p class="eyebrow">Custom lip cosmetics · OEM &amp; ODM</p>
       <h1>Your own lip brand,<br />starting at {site.moq}.</h1>
       <p class="lead" style="max-width:620px">
-        We make lip products for brands that are just getting started. Packaging, formulation and logo —
-        all customized under one roof, in small runs that make sense for a new line.
+        We manufacture custom lip products for private label brands in North America and Europe.
+        Packaging, formulation and logo — all customized under one roof, in small runs that make sense for your own line.
       </p>
       <p style="margin-top:28px">
         <a class="btn" href="/contact">Request a quote</a>
         <a class="btn ghost" href="/products" style="margin-left:10px">See products</a>
       </p>
-      <p class="note" style="margin-top:14px">Low minimum · fast sampling · full private label</p>
+      <p class="note" style="margin-top:14px">500 pcs MOQ across all categories · samples in 7 days · sampling fee deducted from your order</p>
     </div>
   </section>
 
@@ -43,11 +50,11 @@ import { site, pillars, products, steps } from '../data/site';
       <p class="eyebrow">What we produce</p>
       <h2>Lip first. Everything else second.</h2>
       <p class="lead" style="max-width:640px">
-        Lip products are what we do best — gloss, mud, liner, lipstick and oil.
+        Six lip categories are what we do best — gloss, mud, liner, lipstick, oil and mask.
         Body oils and other cosmetics are available as companion lines to round out your range.
       </p>
       <div class="grid three" style="margin-top:28px">
-        {products.slice(0, 3).map((p) => (
+        {products.map((p) => (
           <div class="card">
             <h3>{p.name}</h3>
             <p>{p.body}</p>
@@ -72,6 +79,59 @@ import { site, pillars, products, steps } from '../data/site';
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Certified production</p>
+      <h2>Documentation your market asks for</h2>
+      <div class="grid three" style="margin-top:28px">
+        {certifications.map((c) => (
+          <div class="card">
+            <h3>{c.name}</h3>
+            <p style="margin:0">{c.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">Real projects</p>
+      <h2>Made for brands like yours</h2>
+      <div class="grid three" style="margin-top:28px">
+        {featuredCases.map((c) => (
+          <div class="card">
+            {c.image ? (
+              <div class="case-media"><img src={c.image} alt={c.title} loading="lazy" /></div>
+            ) : (
+              <div class="media-slot" style="margin-bottom:16px">Case media — assets coming</div>
+            )}
+            <p class="eyebrow" style="margin-bottom:6px">{c.category}</p>
+            <h3 style="margin-bottom:8px">{c.title}</h3>
+            <p style="margin:0">{c.summary}</p>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top:24px"><a href="/cases">See all cases &amp; factory videos →</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">From the blog</p>
+      <h2>Build your lip brand smarter</h2>
+      <div class="grid two" style="margin-top:28px">
+        {latestPosts.map((post) => (
+          <a class="card" href={`/blog/${post.id}`} style="display:block; color:inherit">
+            <h3 style="margin-bottom:8px">{post.data.title}</h3>
+            <p style="margin:0">{post.data.description}</p>
+          </a>
+        ))}
+      </div>
+      <p style="margin-top:24px"><a href="/blog">Read all articles →</a></p>
     </div>
   </section>
 

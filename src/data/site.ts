@@ -1,10 +1,11 @@
+// 业务口径已于 2026-09-21 经老板确认，依据见 ../../PLAN.md
+// 改动业务事实（产品线/MOQ/打样/认证/主体名）前必须先看 PLAN.md，禁止凭推测修改
 export const site = {
   name: 'MLM Lip',
   domain: 'https://mlmlip.com',
-  tagline: 'Your own lip brand, starting at 500 pcs',
+  tagline: 'Your own lip brand, from 500 pcs',
   manufacturer: 'Beautychain Limited',
   moq: '500 pcs',
-  // 待确认：以下联系方式与公司资料需用户核对后定稿
   contact: {
     whatsapp: '+86 136 5238 0291',
     whatsappLink: 'https://wa.me/8613652380291',
@@ -15,6 +16,9 @@ export const site = {
     { label: 'Home', href: '/' },
     { label: 'Products', href: '/products' },
     { label: 'Customization', href: '/customization' },
+    { label: 'Process', href: '/process' },
+    { label: 'Cases', href: '/cases' },
+    { label: 'Blog', href: '/blog' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' }
   ]
@@ -23,15 +27,15 @@ export const site = {
 export const pillars = [
   {
     title: 'Packaging customization',
-    body: 'Choose and customize your packaging — tube, cap, applicator, finish and decorations — so the product looks like your brand from day one.'
+    body: 'Choose from our in-house packaging library — tubes, caps, applicators and finishes — or go further: we can open a custom mold for a pack that belongs to your brand alone.'
   },
   {
     title: 'Formulation customization',
-    body: 'Texture, finish, pigment load, wear and feel are tuned to your brief, from glossy and sheer to matte and full-coverage.'
+    body: 'Texture, finish, pigment load, wear and feel are tuned to your brief — from glossy and sheer to matte and full-coverage.'
   },
   {
     title: 'Logo & brand customization',
-    body: 'Your logo on the bottle, cap, carton and outer packaging. Labels, colors and printed details produced to your artwork.'
+    body: 'Your logo on the tube, cap, carton and outer packaging. Labels, colors and printed details produced to your artwork.'
   }
 ];
 
@@ -62,15 +66,26 @@ export const products = [
     detail: 'Fragrance and ingredient story customizable'
   },
   {
+    name: 'Lip Mask',
+    body: 'Hydrating overnight and daily-care masks that complete a lip range.',
+    detail: 'Jar or tube formats, scent and actives to brief'
+  },
+  {
     name: 'Body Oil (side line)',
     body: 'Shimmering and nourishing body oils that pair with your lip range.',
-    detail: 'Bundled with lip orders on request'
+    detail: 'Same 500 pcs minimum, bundled with lip orders on request'
   }
 ];
 
 export const steps = [
   { n: '01', title: 'Inquiry & brief', body: 'Tell us the product, target price point, finish and quantity. We advise on the most practical route to your own brand.' },
-  { n: '02', title: 'Sample development', body: 'We develop samples against your brief — texture, shade, packaging and logo placement — and revise until it is right.' },
-  { n: '03', title: 'Order & production', body: 'Once approved, production runs from 500 pcs per SKU with your packaging, formulation and branding.' },
-  { n: '04', title: 'QC & delivery', body: 'Inspection before packing, then shipping to your door or your warehouse, with documents prepared for your market.' }
+  { n: '02', title: 'Sample in 7 days', body: 'We develop samples against your brief within 7 days — texture, shade, packaging and logo. Place your order and the sampling fee is deducted from it, so sampling effectively costs nothing.' },
+  { n: '03', title: 'Order & production', body: 'Once approved, production runs from 500 pcs per SKU — the same low minimum across every product category — with your packaging, formulation and branding.' },
+  { n: '04', title: 'QC & delivery', body: 'Inspection before packing, then shipping to your door or your warehouse, with documents prepared for the North American and European markets.' }
+];
+
+export const certifications = [
+  { name: 'GMPC', body: 'Cosmetic good manufacturing practice certified production' },
+  { name: 'ISO', body: 'Quality management system certified' },
+  { name: 'CPNP', body: 'EU cosmetic product notification support for your market entry' }
 ];

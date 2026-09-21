@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { cases, factoryVideos } from '../data/cases';
+
+const isYouTube = (url: string) => /youtube|youtu\.be/.test(url);
+const toEmbed = (url: string) =>
+  url.replace('watch?v=', 'embed/').replace('youtu.be/', 'www.youtube.com/embed/');
+---
+
+<BaseLayout
+  title="Cases & Factory | Real Lip Product Projects — MLM Lip"
+  description="Real private label lip product projects: custom lip gloss, lip mud, lipstick and more — plus factory production videos from the MLM Lip workshop."
+>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Cases</p>
+      <h1>Products we have made for brands like yours</h1>
+      <p class="lead" style="max-width:660px">
+        Real projects, real products. Each case shows what the brand wanted and what we delivered —
+        packaging, formulation and branding included.
+      </p>
+    </div>
+  </section>
+
+  <section class="tint" style="padding-top:0; background:transparent">
+    <div class="wrap">
+      <div class="grid three">
+        {cases.map((c) => (
+          <div class="card">
+            {c.image ? (
+              <div class="case-media"><img src={c.image} alt={c.title} loading="lazy" /></div>
+            ) : c.videoUrl ? (
+              isYouTube(c.videoUrl) ? (
+                <div class="case-media video-embed">
+                  <iframe src={toEmbed(c.videoUrl)} title={c.title} allowfullscreen loading="lazy"></iframe>
+                </div>
+              ) : (
+                <div class="case-media"><video src={c.videoUrl} controls preload="metadata"></video></div>
+              )
+            ) : (
+              <div class="media-slot" style="margin-bottom:16px">
+                {c.placeholder ? 'Case photos & video — assets coming' : 'Media coming'}
+              </div>
+            )}
+            <p class="eyebrow" style="margin-bottom:6px">{c.category}</p>
+            <h3 style="margin-bottom:8px">{c.title}</h3>
+            <p>{c.summary}</p>
+            {c.links && c.links.length > 0 && (
+              <p style="margin:0">
+                {c.links.map((l) => (
+                  <a href={l.href} target="_blank" rel="noopener" style="margin-right:14px">{l.label} →</a>
+                ))}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">Inside the factory</p>
+      <h2>See how your products are made</h2>
+      <p class="lead" style="max-width:640px">
+        Production line, filling and assembly, quality inspection — filmed on our own floor.
+      </p>
+      <div class="grid three" style="margin-top:28px">
+        {factoryVideos.map((v) => (
+          <div>
+            {v.videoUrl ? (
+              isYouTube(v.videoUrl) ? (
+                <div class="video-embed">
+                  <iframe src={toEmbed(v.videoUrl)} title={v.title} allowfullscreen loading="lazy"></iframe>
+                </div>
+              ) : (
+                <div class="video-embed"><video src={v.videoUrl} controls preload="metadata"></video></div>
+              )
+            ) : (
+              <div class="media-slot">{v.note}</div>
+            )}
+            <h3 style="margin-top:14px; font-size:18px">{v.title}</h3>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top:32px"><a class="btn" href="/contact">Ask for more project references</a></p>
+    </div>
+  </section>
+</BaseLayout>
