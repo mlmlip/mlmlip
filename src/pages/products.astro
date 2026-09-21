@@ -43,7 +43,7 @@ const compare = [
             <p>{p.body}</p>
             <p class="note">{p.detail}</p>
             {p.categoryHref && <p style="margin:0 0 8px;"><a href={p.categoryHref}>Explore the {p.name.split(' ')[0]} program →</a></p>}
-            <a href="/contact">Ask about this product →</a>
+            <p style="margin:0;"><a href={`/quote?product=${encodeURIComponent(p.name.split(' ')[0])}`}>Configure this product →</a></p>
           </div>
         ))}
       </div>

@@ -142,6 +142,22 @@ import { site } from '../data/site';
   const form = document.getElementById('brief-builder');
   const summary = document.getElementById('summary-content');
 
+  // 深度链接预填：从产品卡/品类页带 ?product= 参数过来时自动选中
+  const params = new URLSearchParams(window.location.search);
+  ['product','finish','packaging','market'].forEach((key) => {
+    const val = params.get(key);
+    if (val) {
+      const el = form?.querySelector('#f-' + key);
+      if (el && el.tagName === 'SELECT') {
+        for (const opt of el.options) {
+          if (opt.text.toLowerCase().includes(val.toLowerCase()) || opt.value.toLowerCase().includes(val.toLowerCase())) {
+            opt.selected = true; break;
+          }
+        }
+      }
+    }
+  });
+
   function parseQty(v) {
     if (!v) return 0;
     const n = parseInt(v.replace(/[^0-9]/g, ''), 10);

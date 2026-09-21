@@ -56,7 +56,7 @@ const serviceSchema = {
       <h1 style="font-size: clamp(34px, 4.4vw, 54px); max-width: 880px;">{category.h1}</h1>
       <p class="lead" style="max-width: 720px; font-size: 19px;">{category.intro}</p>
       <p style="margin-top: 28px;">
-        <a class="btn" href="/contact">Request a quote</a>
+        <a class="btn" href={`/quote?product=${encodeURIComponent(category.name)}`}>Configure this product</a>
         <a class="btn ghost" href="/samples" style="margin-left: 12px;">Order samples</a>
       </p>
       <p class="note" style="margin-top: 16px;">
