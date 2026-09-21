@@ -13,7 +13,7 @@ export const site = {
     address: 'Shenzhen, China'
   },
   verification: {
-    google: '', // GSC 验证码 (例: <meta name="google-site-verification" content="..." />)
+    google: 'googleca54a26a81fe6c9c', // GSC 验证码
     bing: ''    // Bing Webmaster 验证码
   },
   nav: [
