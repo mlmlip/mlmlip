@@ -12,6 +12,10 @@ export const site = {
     email: 'info@mlmlip.com',
     address: 'Shenzhen, China'
   },
+  verification: {
+    google: '', // GSC 验证码 (例: <meta name="google-site-verification" content="..." />)
+    bing: ''    // Bing Webmaster 验证码
+  },
   nav: [
     { label: 'Products', href: '/products' },
     { label: 'Customization', href: '/customization' },
