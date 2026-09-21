@@ -76,10 +76,13 @@ const toEmbed = (url: string) =>
               ) : (
                 <div class="video-embed"><video src={v.videoUrl} controls preload="metadata"></video></div>
               )
+            ) : v.image ? (
+              <div class="case-media"><img src={v.image} alt={v.title} loading="lazy" /></div>
             ) : (
               <div class="media-slot">{v.note}</div>
             )}
             <h3 style="margin-top:14px; font-size:18px">{v.title}</h3>
+            <p class="note" style="margin:0">{v.note}</p>
           </div>
         ))}
       </div>

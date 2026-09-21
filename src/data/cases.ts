@@ -1,40 +1,61 @@
-// 案例数据 —— 真实素材由老板提供后替换占位条目
-// 图片放 site/public/cases/ 目录，路径写 '/cases/xxx.jpg'
-// 视频支持两种：mp4 直链（放 public 或外链）/ YouTube embed 链接（自动识别渲染 iframe）
 export interface CaseItem {
   title: string;
   category: string;
   summary: string;
-  image?: string;                       // 案例主图，如 '/cases/lipgloss-01.jpg'
-  videoUrl?: string;                    // mp4 直链或 YouTube 链接
-  links?: { label: string; href: string }[];  // 产品链接（独立站/平台链接均可）
-  placeholder?: boolean;                // true = 版式占位，非真实案例
+  image?: string;
+  videoUrl?: string;
+  links?: { label: string; href: string }[];
+  placeholder?: boolean;
 }
 
 export const cases: CaseItem[] = [
   {
-    title: 'Case slot 01 · Lip product project',
+    title: 'Custom 39-Shade Lip Gloss Line',
     category: 'Lip Gloss',
-    summary: 'Product photos, project story and links go here — waiting for real case assets.',
-    placeholder: true
+    summary: 'High-shine, hydrating lip gloss project with 39 customizable shades across nude, pink, berry and shimmer finishes.',
+    image: '/products/lipgloss-39-01.jpg',
+    videoUrl: '/cases/case-lip-detail.mp4',
+    links: [
+      { label: 'View shade range', href: '/products' },
+      { label: 'Request sample', href: '/contact' }
+    ]
   },
   {
-    title: 'Case slot 02 · Lip product project',
+    title: 'Velvet Lip Mud & Tint Series',
     category: 'Lip Mud & Velvet Tint',
-    summary: 'Product photos, project story and links go here — waiting for real case assets.',
-    placeholder: true
+    summary: 'Soft-focus matte finish with buildable coverage, developed with custom square-tube packaging and silk-screen branding.',
+    image: '/products/lipgloss-39-02.jpg',
+    links: [
+      { label: 'View product', href: '/products' },
+      { label: 'Request sample', href: '/contact' }
+    ]
   },
   {
-    title: 'Case slot 03 · Lip product project',
-    category: 'Lipstick',
-    summary: 'Product photos, project story and links go here — waiting for real case assets.',
-    placeholder: true
+    title: 'Shimmer & Care Hybrid Lip Oil',
+    category: 'Lip Oil',
+    summary: 'Nourishing botanical oil base paired with micro-shimmer pearls, matched to custom componentry from our in-house library.',
+    image: '/products/lipgloss-39-03.jpg',
+    links: [
+      { label: 'View product', href: '/products' },
+      { label: 'Request sample', href: '/contact' }
+    ]
   }
 ];
 
-// 工厂生产视频专区 —— videoUrl 到位后自动渲染播放器
-export const factoryVideos: { title: string; note: string; videoUrl?: string }[] = [
-  { title: 'Production line', note: 'Video slot — factory production footage (mp4 or YouTube link)' },
-  { title: 'Filling & assembly', note: 'Video slot — filling and assembly process' },
-  { title: 'Quality inspection', note: 'Video slot — QC and inspection process' }
+export const factoryVideos = [
+  {
+    title: 'Automated Production & Assembly',
+    note: 'Watch our automated assembly line filling and cap-sealing lip components.',
+    videoUrl: '/factory/factory-production.mp4'
+  },
+  {
+    title: 'GMPC Cleanroom Operation',
+    note: 'Standardized sterile cleanroom production meeting international cosmetics standards.',
+    videoUrl: '/factory/factory-cleanroom.mp4'
+  },
+  {
+    title: 'Precision Quality Inspection',
+    note: 'Full pre-shipment QC check on formulation stability, shade consistency and tube airtightness.',
+    image: '/factory/sampling-packaging-01.jpg'
+  }
 ];
