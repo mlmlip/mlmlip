@@ -50,12 +50,10 @@ const schemaData = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.href} />
-    {site.verification?.google && <meta name="google-site-verification" content={site.verification.google} />}
-    {site.verification?.bing && <meta name="msvalidate.01" content={site.verification.bing} />}
-    <link rel="alternate" hreflang="en" href={new URL(currentPath.replace(/^\/(fr|es)/, '') || '/', site.domain).href} />
-    <link rel="alternate" hreflang="fr" href={new URL('/fr' + (currentPath.replace(/^\/(fr|es)/, '') === '/' ? '' : currentPath.replace(/^\/(fr|es)/, '')), site.domain).href} />
-    <link rel="alternate" hreflang="es" href={new URL('/es' + (currentPath.replace(/^\/(fr|es)/, '') === '/' ? '' : currentPath.replace(/^\/(fr|es)/, '')), site.domain).href} />
-    <link rel="alternate" hreflang="x-default" href={new URL(currentPath.replace(/^\/(fr|es)/, '') || '/', site.domain).href} />
+    <link rel="alternate" hreflang="en" href={new URL(currentPath.replace(/^\/(fr|es)(?=\/|$)/, '') || '/', site.domain).href} />
+    <link rel="alternate" hreflang="fr" href={new URL('/fr' + (currentPath.replace(/^\/(fr|es)(?=\/|$)/, '') === '/' ? '' : currentPath.replace(/^\/(fr|es)(?=\/|$)/, '')), site.domain).href} />
+    <link rel="alternate" hreflang="es" href={new URL('/es' + (currentPath.replace(/^\/(fr|es)(?=\/|$)/, '') === '/' ? '' : currentPath.replace(/^\/(fr|es)(?=\/|$)/, '')), site.domain).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(currentPath.replace(/^\/(fr|es)(?=\/|$)/, '') || '/', site.domain).href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -95,7 +93,7 @@ const schemaData = {
           </div>
         </nav>
         <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
         </button>
       </div>
       <div class="nav-drawer" id="nav-drawer" hidden>
@@ -170,8 +168,15 @@ const schemaData = {
       const drawer = document.getElementById('nav-drawer');
       toggle?.addEventListener('click', () => {
         const open = drawer?.hasAttribute('hidden');
-        if (open) { drawer?.removeAttribute('hidden'); toggle.setAttribute('aria-expanded', 'true'); }
-        else { drawer?.setAttribute('hidden', ''); toggle.setAttribute('aria-expanded', 'false'); }
+        if (open) {
+          drawer?.removeAttribute('hidden');
+          toggle.setAttribute('aria-expanded', 'true');
+          toggle.setAttribute('aria-label', 'Close menu');
+        } else {
+          drawer?.setAttribute('hidden', '');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'Open menu');
+        }
       });
     </script>
 

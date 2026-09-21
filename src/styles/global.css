@@ -8,7 +8,7 @@
   --burgundy: #6e1a32;
   --rose: #9c2e4e;
   --rose-dark: #7d203b;
-  --gold: #c5a059;
+  --gold: #b08d4b;
   --gold-light: #f5eedf;
   --blush: #f4e2e7;
   --blush-soft: #faf2f5;
@@ -146,11 +146,10 @@ section.tint { background: var(--blush-soft); }
 
 /* === 无障碍 === */
 .skip-link {
-  position: absolute; left: -999px; top: 0; z-index: 100;
-  padding: 12px 20px; background: var(--burgundy); color: var(--white);
-  border-radius: 0 0 10px 0; font-size: 14px; font-weight: 600;
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
+  background: var(--burgundy); color: var(--white); font-size: 14px; font-weight: 600; z-index: 100;
 }
-.skip-link:focus { left: 0; }
+.skip-link:focus { width: auto; height: auto; margin: 0; padding: 12px 20px; clip: auto; border-radius: 0 0 10px 0; }
 :focus-visible { outline: 2px solid var(--burgundy); outline-offset: 3px; }
 a:focus-visible, button:focus-visible { outline-offset: 2px; border-radius: 4px; }
 
@@ -172,6 +171,7 @@ a:focus-visible, button:focus-visible { outline-offset: 2px; border-radius: 4px;
 .case-media:hover img { transform: scale(1.04); }
 
 /* === 移动端表格响应式 === */
+.table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 @media (max-width: 860px) {
   .grid.four { grid-template-columns: repeat(2, 1fr); }
   table { font-size: 13px; }
