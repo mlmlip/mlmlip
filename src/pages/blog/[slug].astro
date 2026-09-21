@@ -16,6 +16,10 @@ const { Content } = await render(post);
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
+// 估算阅读时间（基于 body 字数，英文约 220 wpm）
+const wordCount = post.body.split(/\s+/).filter(Boolean).length;
+const readingTime = Math.max(1, Math.ceil(wordCount / 220));
+
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -23,7 +27,8 @@ const articleSchema = {
   description: post.data.description,
   datePublished: post.data.pubDate.toISOString(),
   author: { '@type': 'Organization', name: 'MLM Lip' },
-  publisher: { '@type': 'Organization', name: 'MLM Lip' }
+  publisher: { '@type': 'Organization', name: 'MLM Lip' },
+  wordCount: wordCount
 };
 ---
 
@@ -35,9 +40,10 @@ const articleSchema = {
         <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: post.data.title }]} />
         <h1 style="font-size:36px">{post.data.title}</h1>
         <p class="post-meta">
-          {fmt(post.data.pubDate)}
+          {fmt(post.data.pubDate)} · {readingTime} min read
           {post.data.tags.map((t) => <span class="tag">{t}</span>)}
         </p>
+        <nav id="toc" class="toc" style="margin-bottom:32px; padding:16px 20px; background:var(--blush-soft); border-radius:10px; border-left:3px solid var(--gold);" aria-label="Table of contents" hidden></nav>
         <Content />
         <div class="card" style="margin-top:48px; text-align:center; padding:36px 24px">
           <h3 style="margin-bottom:8px">Ready to start your own lip line?</h3>
@@ -48,3 +54,22 @@ const articleSchema = {
     </div>
   </section>
 </BaseLayout>
+
+<script is:inline>
+  (function() {
+    const toc = document.getElementById('toc');
+    const prose = document.querySelector('.prose');
+    if (!toc || !prose) return;
+    const headings = prose.querySelectorAll('h2');
+    if (headings.length < 3) return;
+    let html = '<p style="font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--burgundy); margin:0 0 10px; font-weight:600;">In this article</p><ol style="margin:0; padding-left:18px; line-height:1.7; font-size:14px; color:var(--ink-soft);">';
+    headings.forEach((h, i) => {
+      if (!h.id) h.id = 'sec-' + i;
+      const text = h.textContent.replace(/^[#*\d.\s]+/, '').trim();
+      html += '<li><a href="#' + h.id + '" style="color:var(--rose-dark);">' + text + '</a></li>';
+    });
+    html += '</ol>';
+    toc.innerHTML = html;
+    toc.removeAttribute('hidden');
+  })();
+</script>

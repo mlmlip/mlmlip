@@ -35,6 +35,49 @@ import { site, pillars, steps } from '../data/site';
 
   <section>
     <div class="wrap">
+      <p class="eyebrow">Three routes, pick your level</p>
+      <h2>Library, custom mold, or full bespoke</h2>
+      <p class="lead" style="max-width:640px;">
+        Not every brand needs a custom mold on day one. Pick the route that matches your stage — and upgrade later without changing supplier.
+      </p>
+      <div class="card gold-line" style="margin-top:28px; padding:0; overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:14px; min-width:680px;">
+          <thead>
+            <tr style="background:var(--blush);">
+              <th style="padding:16px 20px; text-align:left; color:var(--plum); font-family:'Playfair Display',serif; font-weight:600;">What you get</th>
+              <th style="padding:16px 20px; text-align:left; color:var(--burgundy); font-family:'Playfair Display',serif; font-weight:600;">Library route</th>
+              <th style="padding:16px 20px; text-align:left; color:var(--burgundy); font-family:'Playfair Display',serif; font-weight:600;">Custom mold route</th>
+              <th style="padding:16px 20px; text-align:left; color:var(--burgundy); font-family:'Playfair Display',serif; font-weight:600;">Full bespoke route</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Packaging', 'In-stock library components', 'Exclusive custom-molded silhouette', 'Custom mold + exclusive finish & decoration'],
+              ['Formulation', 'Tuned from existing formula base', 'Tuned from existing base or new active story', 'Ground-up formulation, patent-ready'],
+              ['Shade card', 'Pantone-matched to your palette', 'Full custom shade development', 'Exclusive shade range, no resale'],
+              ['Branding', 'Logo print on library pack', 'Logo + custom decoration on your mold', 'Full brand system on exclusive components'],
+              ['Tooling cost', 'None', 'One-time mold fee (yours)', 'Mold + finishing tooling (yours)'],
+              ['Lead to sample', '7 days', '4–8 weeks tooling + 7 days', '6–10 weeks + 7 days'],
+              ['Best for', 'First launch, market test', 'Brand has traction, needs signature', 'Mature brand expanding exclusive line']
+            ].map((row) => (
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:14px 20px; color:var(--plum); font-weight:600;">{row[0]}</td>
+                <td style="padding:14px 20px; color:var(--ink-soft);">{row[1]}</td>
+                <td style="padding:14px 20px; color:var(--ink-soft);">{row[2]}</td>
+                <td style="padding:14px 20px; color:var(--ink-soft);">{row[3]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:14px;">
+        All three routes share the same {site.moq} MOQ, 7-day sampling, and GMPC + ISO compliance. The route changes how exclusive your product looks — not whether we can make it.
+      </p>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
       <h2>What you can specify</h2>
       <div class="grid two" style="margin-top:24px">
         <div class="card">
