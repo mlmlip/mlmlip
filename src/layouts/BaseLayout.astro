@@ -39,6 +39,21 @@ const schemaData = {
     ]
   }
 };
+
+const pathSegments = currentPath.split('/').filter((s) => s.length > 0);
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mlmlip.com' },
+    ...pathSegments.map((seg, i) => ({
+      '@type': 'ListItem',
+      position: i + 2,
+      name: seg.replace(/[-_]/g, ' ').replace(/\w/g, (c) => c.toUpperCase()),
+      item: 'https://mlmlip.com/' + pathSegments.slice(0, i + 1).join('/')
+    }))
+  ]
+};
 ---
 
 <!doctype html>
@@ -73,6 +88,7 @@ const schemaData = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>
@@ -83,7 +99,7 @@ const schemaData = {
           {site.nav.map((item) => (
             <a href={item.href} class={Astro.url.pathname === item.href ? 'is-active' : ''}>{item.label}</a>
           ))}
-          <a class="btn" href="/quote">Get a quote</a>
+          <a class="btn" href="/quote">Get a Free Quote</a>
           <div class="lang-switch" style="display:flex; gap:6px; margin-left:8px; font-size:12px; font-weight:600; color:var(--ink-soft);">
             <a href="/" style={`color: ${currentLang === 'en' ? 'var(--burgundy)' : 'var(--ink-soft)'}; ${currentLang === 'en' ? 'border-bottom: 2px solid var(--burgundy);' : ''}`}>EN</a>
             <span>/</span>
