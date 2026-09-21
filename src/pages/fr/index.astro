@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site, certifications } from '../../data/site';
+import { cases } from '../../data/cases';
+
+const frCategories = [
+  { label: 'Brillant à Lèvres (Lip Gloss)', href: '/lip-gloss-manufacturer', blurb: 'Formules brillantes, repulpantes ou nacrées. Flacons et embouts applicateurs sur-mesure.' },
+  { label: 'Encre & Boue à Lèvres (Lip Mud)', href: '/lip-mud-manufacturer', blurb: 'Texture veloutée mate, fini floutant sans transfert, longue tenue.' },
+  { label: 'Crayon à Lèvres (Lip Liner)', href: '/lip-liner-manufacturer', blurb: 'Précision extrême, corps en bois de cèdre ou mécanique rétractable.' },
+  { label: 'Rouge à Lèvres en Raisin', href: '/lipstick-manufacturer', blurb: 'Finis satinés ou mats dans des étuis magnétiques en zamac ou aluminium.' },
+  { label: 'Huile de Soin pour les Lèvres (Lip Oil)', href: '/lip-oil-manufacturer', blurb: 'Soin hybride enrichi en peptides et squalane botanique. Embouts céramique rafraîchissants.' },
+  { label: 'Masque Réparateur Lèvres', href: '/lip-mask-manufacturer', blurb: 'Baumes de nuit régénérants aux céramides et beurres végétaux en pots ou tubes souples.' }
+];
+
+const frFaqs = [
+  { q: 'Quelle est votre quantité minimale de commande (MOQ) ?', a: '500 pièces par référence (SKU) — identique pour les 6 catégories de produits pour les lèvres.' },
+  { q: 'Quel est le délai de prototypage des échantillons ?', a: 'Vos échantillons sur-mesure sont prêts en 7 jours ouvrés. 100% des frais d\'échantillonnage sont déduits de votre commande finale.' },
+  { q: 'Assurez-vous la conformité pour le marché européen ?', a: 'Oui. Fabrication en salles blanches certifiées GMPC et ISO 22716, avec dossiers complets pour la notification CPNP (Règlement CE 1223/2009).' },
+  { q: 'Proposez-vous des moules personnalisés ?', a: 'Absolument. En plus de notre bibliothèque de composants en stock, nous développons des moules exclusifs pour votre marque.' }
+];
+---
+
+<BaseLayout
+  title="Fabricant Cosmétique Lèvres Marque Blanche | MOQ 500 pcs — MLM Lip"
+  description="Fabricant OEM/ODM de produits pour les lèvres haut de gamme pour marques de beauté en France et en Europe. Brillant à lèvres, huile de soin, rouge à lèvres dès 500 pièces. Échantillons sous 7 jours."
+>
+  <section style="position: relative; background: var(--plum-dark); overflow: hidden;">
+    <img src="/factory/production-line-01.jpg" alt="Ligne de production cosmétique MLM Lip" width="1200" height="600" fetchpriority="high" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.32;" />
+    <div style="position: absolute; inset: 0; background: linear-gradient(120deg, rgba(47,12,23,0.92) 0%, rgba(74,21,37,0.78) 60%, rgba(110,26,50,0.55) 100%);"></div>
+    <div class="wrap" style="position: relative; padding-top: 104px; padding-bottom: 104px;">
+      <p class="eyebrow" style="letter-spacing: 0.2em; font-weight: 600; color: var(--gold);">Cosmétiques pour les Lèvres · Spécialiste OEM &amp; ODM</p>
+      <h1 style="font-size: clamp(36px, 4.8vw, 58px); line-height: 1.15; max-width: 920px; margin-bottom: 24px; color: #fff;">
+        Donnez Vie à Votre Prochaine Ligne de Lèvres.<br />
+        <span style="color: var(--gold); font-style: italic;">Dès 500 Pièces, Clé en Main.</span>
+      </h1>
+      <p class="lead" style="max-width: 740px; font-size: 19px; line-height: 1.65; margin-bottom: 36px; color: #f3dde3;">
+        Nous fabriquons des cosmétiques de référence pour les marques de beauté indépendantes et créateurs en France et en Europe. Formulations sur-mesure, bibliothèque d'emballages premium et outillage personnalisé — aux normes d'hygiène GMPC et ISO 22716.
+      </p>
+      <div>
+        <a class="btn" href="/quote" style="padding: 16px 36px; font-size: 16px; font-weight: 600;">Configurer votre projet</a>
+        <a class="btn ghost" href="/cases" style="margin-left: 14px; padding: 16px 32px; font-size: 16px; color: var(--gold-light); border-color: var(--gold);">Voir l'usine &amp; réalisations</a>
+      </div>
+      <p class="note" style="margin-top: 24px; font-size: 14px; color: var(--gold-light);">
+        ✓ MOQ universel de 500 pcs &nbsp;·&nbsp; ✓ Échantillonnage sur-mesure sous 7 jours &nbsp;·&nbsp; ✓ 100% remboursé à la commande
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 0;">
+    <div class="wrap">
+      <div class="card" style="margin-top: -32px; position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 18px 34px; justify-content: center; padding: 20px 28px; box-shadow: var(--shadow-md);">
+        {['Certifié GMPC', 'Norme ISO 22716', 'Support Dossier CPNP UE', 'Documentation FDA', 'MOQ 500 pcs', 'Échantillons 7 jours'].map((t) => (
+          <span style="font-size: 14px; color: var(--plum); font-weight: 600; letter-spacing: 0.02em;">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="grid four" style="margin-top: 28px;">
+        <div style="text-align: center;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 44px; color: var(--burgundy); margin: 0; line-height: 1;">6</p>
+          <p class="note" style="margin: 8px 0 0;">Catégories de lèvres</p>
+        </div>
+        <div style="text-align: center;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 44px; color: var(--burgundy); margin: 0; line-height: 1;">500</p>
+          <p class="note" style="margin: 8px 0 0;">Pièces MOQ universel</p>
+        </div>
+        <div style="text-align: center;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 44px; color: var(--burgundy); margin: 0; line-height: 1;">7</p>
+          <p class="note" style="margin: 8px 0 0;">Jours pour vos échantillons</p>
+        </div>
+        <div style="text-align: center;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 44px; color: var(--burgundy); margin: 0; line-height: 1;">100%</p>
+          <p class="note" style="margin: 8px 0 0;">Frais déduits de la commande</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">Solutions par Catégorie</p>
+      <h2>Fabrication sur-mesure pour tous formats de lèvres</h2>
+      <div class="grid three" style="margin-top: 28px;">
+        {frCategories.map((c) => (
+          <a class="card" href={c.href} style="display: block; color: inherit;">
+            <h3 style="font-size: 19px; margin-bottom: 8px;">{c.label}</h3>
+            <p style="margin: 0; font-size: 15px;">{c.blurb}</p>
+            <p style="margin: 12px 0 0; color: var(--rose-dark); font-size: 14px;">En savoir plus →</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Conformité &amp; Qualité</p>
+      <h2>Dossiers techniques conformes aux exigences européennes</h2>
+      <div class="grid three" style="margin-top:28px">
+        {certifications.map((c) => (
+          <div class="card gold-line" style="display:flex; gap:16px; align-items:flex-start;">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" style="flex-shrink:0; margin-top:4px;" aria-hidden="true">
+              <circle cx="24" cy="24" r="22" stroke="var(--gold)" stroke-width="2" />
+              <path d="M16 24l6 6 12-14" stroke="var(--burgundy)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <h3 style="font-size:18px;">{c.name}</h3>
+              <p style="margin:0; font-size:14px;">{c.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="note" style="margin-top:18px; text-align:center;">
+        Dossiers toxicologiques complets, tests de métaux lourds, FDS et rapports de lots fournis pour chaque expédition.
+      </p>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">Questions Fréquentes</p>
+      <h2>Avant de lancer votre projet</h2>
+      <div class="grid two" style="margin-top: 28px;">
+        {frFaqs.map((f) => (
+          <div class="card">
+            <h3 style="font-size: 18px;">{f.q}</h3>
+            <p style="margin: 0;">{f.a}</p>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top: 24px;"><a href="/faq">Consulter toutes les questions fréquentes →</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="card" style="text-align:center; padding:48px 28px">
+        <h2 style="margin-bottom:10px">Parlez-nous de votre projet de marque</h2>
+        <p class="lead" style="max-width:560px; margin:0 auto 24px">
+          Transmettez-nous vos idées de teintes, quantités et marché cible. Nous vous répondrons sous 24h avec une solution concrète.
+        </p>
+        <a class="btn" href="/quote">Créer votre devis en ligne</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

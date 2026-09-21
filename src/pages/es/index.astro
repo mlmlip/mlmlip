@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site, certifications } from '../../data/site';
+
+const esCategories = [
+  { label: 'Brillo Labial (Lip Gloss)', href: '/lip-gloss-manufacturer', blurb: 'Fórmulas de alto brillo, tintes translúcidos o destellos. Envases y aplicadores a medida.' },
+  { label: 'Tinta & Mousse Aterciopelado (Lip Mud)', href: '/lip-mud-manufacturer', blurb: 'Acabado mate aterciopelado de textura ligera, sin transferencia y de larga duración.' },
+  { label: 'Perfilador de Labios (Lip Liner)', href: '/lip-liner-manufacturer', blurb: 'Trazado ultra suave en lápiz de madera de cedro o formato mecánico retráctil.' },
+  { label: 'Barra de Labios Clásica (Lipstick)', href: '/lipstick-manufacturer', blurb: 'Acabados satinados o mate en elegantes estuches magnéticos de zamak o aluminio.' },
+  { label: 'Aceite de Tratamiento (Lip Oil)', href: '/lip-oil-manufacturer', blurb: 'Cuidado híbrido con péptidos y escualano botánico con aplicadores cerámicos fríos.' },
+  { label: 'Mascarilla Reparadora Labial', href: '/lip-mask-manufacturer', blurb: 'Bálsamos reparadores intensivos nocturnos con ceramidas en tarro o tubo flexible.' }
+];
+
+const esFaqs = [
+  { q: '¿Cuál es la cantidad mínima de pedido (MOQ)?', a: '500 unidades por SKU — la misma cantidad mínima en las seis categorías de productos labiales.' },
+  { q: '¿En cuánto tiempo están listas las muestras?', a: 'Muestras personalizadas listas en 7 días laborables. El 100% del coste de las muestras se descuenta de tu pedido final.' },
+  { q: '¿Cumplen con la normativa para exportar a Europa y EE. UU.?', a: 'Sí. Fabricación en salas limpias certificadas GMPC e ISO 22716, con soporte completo para la notificación europea CPNP y FDA.' },
+  { q: '¿Ofrecen moldes personalizados de envases?', a: 'Sí. Además de nuestro catálogo de componentes en stock, desarrollamos moldes exclusivos para tu marca.' }
+];
+---
+
+<BaseLayout
+  title="Fabricante de Cosméticos Labiales Marca Blanca | MOQ 500 uds — MLM Lip"
+  description="Fabricante OEM/ODM de cosméticos labiales para marcas en España, Europa y América. Brillos, aceites labiales y barras desde solo 500 piezas. Muestras en 7 días."
+>
+  <section style="position: relative; background: var(--plum-dark); overflow: hidden;">
+    <img src="/factory/production-line-01.jpg" alt="Línea de producción de cosméticos MLM Lip" width="1200" height="600" fetchpriority="high" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.32;" />
+    <div style="position: absolute; inset: 0; background: linear-gradient(120deg, rgba(47,12,23,0.92) 0%, rgba(74,21,37,0.78) 60%, rgba(110,26,50,0.55) 100%);"></div>
+    <div class="wrap" style="position: relative; padding-top: 104px; padding-bottom: 104px;">
+      <p class="eyebrow" style="letter-spacing: 0.2em; font-weight: 600; color: var(--gold);">Cosméticos Labiales · Especialistas OEM &amp; ODM</p>
+      <h1 style="font-size: clamp(36px, 4.8vw, 58px); line-height: 1.15; max-width: 920px; margin-bottom: 24px; color: #fff;">
+        Impulsa Tu Próxima Línea de Labios Viral.<br />
+        <span style="color: var(--gold); font-style: italic;">Desde 500 Unidades, Solución Integral.</span>
+      </h1>
+      <p class="lead" style="max-width: 740px; font-size: 19px; line-height: 1.65; margin-bottom: 36px; color: #f3dde3;">
+        Fabricamos cosméticos de alta gama para marcas emergentes y creadores en España, Europa y Norteamérica. Fórmulas a medida, catálogo de packaging premium y moldes exclusivos bajo estándares de sala limpia GMPC e ISO 22716.
+      </p>
+      <div>
+        <a class="btn" href="/quote" style="padding: 16px 36px; font-size: 16px; font-weight: 600;">Diseña tu propuesta online</a>
+        <a class="btn ghost" href="/cases" style="margin-left: 14px; padding: 16px 32px; font-size: 16px; color: var(--gold-light); border-color: var(--gold);">Ver fábrica &amp; proyectos</a>
+      </div>
+      <p class="note" style="margin-top: 24px; font-size: 14px; color: var(--gold-light);">
+        ✓ MOQ universal de 500 uds &nbsp;·&nbsp; ✓ Muestras formuladas en 7 días &nbsp;·&nbsp; ✓ 100% reembolsable en tu pedido
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 0;">
+    <div class="wrap">
+      <div class="card" style="margin-top: -32px; position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 18px 34px; justify-content: center; padding: 20px 28px; box-shadow: var(--shadow-md);">
+        {['Certificado GMPC', 'Norma ISO 22716', 'Soporte Dossier CPNP UE', 'Documentación FDA', 'MOQ 500 uds', 'Muestras en 7 días'].map((t) => (
+          <span style="font-size: 14px; color: var(--plum); font-weight: 600; letter-spacing: 0.02em;">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="grid four" style="margin-top: 28px;">
+        <div style="text-align: center;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 44px; color: var(--burgundy); margin: 0; line-height: 1;">6</p>
+          <p class="note" style="margin: 8px 0 0;">Categorías labiales</p>
+        </div>
+        <div style="text-align: center;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 44px; color: var(--burgundy); margin: 0; line-height: 1;">500</p>
+          <p class="note" style="margin: 8px 0 0;">Uds MOQ universal</p>
+        </div>
+        <div style="text-align: center;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 44px; color: var(--burgundy); margin: 0; line-height: 1;">7</p>
+          <p class="note" style="margin: 8px 0 0;">Días para tus muestras</p>
+        </div>
+        <div style="text-align: center;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 44px; color: var(--burgundy); margin: 0; line-height: 1;">100%</p>
+          <p class="note" style="margin: 8px 0 0;">Abonado a tu pedido final</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">Soluciones por Categoría</p>
+      <h2>Fabricación personalizada para cada formato labial</h2>
+      <div class="grid three" style="margin-top: 28px;">
+        {esCategories.map((c) => (
+          <a class="card" href={c.href} style="display: block; color: inherit;">
+            <h3 style="font-size: 19px; margin-bottom: 8px;">{c.label}</h3>
+            <p style="margin: 0; font-size: 15px;">{c.blurb}</p>
+            <p style="margin: 12px 0 0; color: var(--rose-dark); font-size: 14px;">Explorar →</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Normativa &amp; Garantía</p>
+      <h2>Documentación preparada para el mercado europeo y americano</h2>
+      <div class="grid three" style="margin-top:28px">
+        {certifications.map((c) => (
+          <div class="card gold-line" style="display:flex; gap:16px; align-items:flex-start;">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" style="flex-shrink:0; margin-top:4px;" aria-hidden="true">
+              <circle cx="24" cy="24" r="22" stroke="var(--gold)" stroke-width="2" />
+              <path d="M16 24l6 6 12-14" stroke="var(--burgundy)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <h3 style="font-size:18px;">{c.name}</h3>
+              <p style="margin:0; font-size:14px;">{c.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="note" style="margin-top:18px; text-align:center;">
+        Informes toxicológicos completos, pruebas de metales pesados, Fichas de Seguridad (FDS) y registros de lote para cada envío.
+      </p>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">Preguntas Frecuentes</p>
+      <h2>Antes de comenzar tu proyecto</h2>
+      <div class="grid two" style="margin-top: 28px;">
+        {esFaqs.map((f) => (
+          <div class="card">
+            <h3 style="font-size: 18px;">{f.q}</h3>
+            <p style="margin: 0;">{f.a}</p>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top: 24px;"><a href="/faq">Ver todas las preguntas frecuentes →</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="card" style="text-align:center; padding:48px 28px">
+        <h2 style="margin-bottom:10px">Cuéntanos qué producto deseas lanzar</h2>
+        <p class="lead" style="max-width:560px; margin:0 auto 24px">
+          Envíanos tu idea de producto, tonos, cantidades y mercado objetivo. Te responderemos en 24 horas con las opciones más prácticas.
+        </p>
+        <a class="btn" href="/quote">Configurar presupuesto online</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

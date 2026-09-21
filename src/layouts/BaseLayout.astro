@@ -3,7 +3,9 @@ import { site, footerCategories, footerCompany } from '../data/site';
 import '../styles/global.css';
 
 const { title, description } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://mlmlip.com');
+const currentPath = Astro.url.pathname;
+const currentLang = currentPath.startsWith('/fr') ? 'fr' : currentPath.startsWith('/es') ? 'es' : 'en';
+const canonical = new URL(currentPath, Astro.site ?? 'https://mlmlip.com');
 
 const schemaData = {
   "@context": "https://schema.org",
@@ -40,7 +42,7 @@ const schemaData = {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={currentLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -48,8 +50,10 @@ const schemaData = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.href} />
-    <link rel="alternate" hreflang="en" href={canonical.href} />
-    <link rel="alternate" hreflang="x-default" href={canonical.href} />
+    <link rel="alternate" hreflang="en" href={new URL(currentPath.replace(/^\/(fr|es)/, '') || '/', site.domain).href} />
+    <link rel="alternate" hreflang="fr" href={new URL('/fr' + (currentPath.replace(/^\/(fr|es)/, '') === '/' ? '' : currentPath.replace(/^\/(fr|es)/, '')), site.domain).href} />
+    <link rel="alternate" hreflang="es" href={new URL('/es' + (currentPath.replace(/^\/(fr|es)/, '') === '/' ? '' : currentPath.replace(/^\/(fr|es)/, '')), site.domain).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(currentPath.replace(/^\/(fr|es)/, '') || '/', site.domain).href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -80,6 +84,13 @@ const schemaData = {
             <a href={item.href} class={Astro.url.pathname === item.href ? 'is-active' : ''}>{item.label}</a>
           ))}
           <a class="btn" href="/quote">Get a quote</a>
+          <div class="lang-switch" style="display:flex; gap:6px; margin-left:8px; font-size:12px; font-weight:600; color:var(--ink-soft);">
+            <a href="/" style={`color: ${currentLang === 'en' ? 'var(--burgundy)' : 'var(--ink-soft)'}; ${currentLang === 'en' ? 'border-bottom: 2px solid var(--burgundy);' : ''}`}>EN</a>
+            <span>/</span>
+            <a href="/fr" style={`color: ${currentLang === 'fr' ? 'var(--burgundy)' : 'var(--ink-soft)'}; ${currentLang === 'fr' ? 'border-bottom: 2px solid var(--burgundy);' : ''}`}>FR</a>
+            <span>/</span>
+            <a href="/es" style={`color: ${currentLang === 'es' ? 'var(--burgundy)' : 'var(--ink-soft)'}; ${currentLang === 'es' ? 'border-bottom: 2px solid var(--burgundy);' : ''}`}>ES</a>
+          </div>
         </nav>
         <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -91,6 +102,12 @@ const schemaData = {
             <a href={item.href} class={Astro.url.pathname === item.href ? 'is-active' : ''}>{item.label}</a>
           ))}
           <a class="btn" href="/quote" style="margin-top: 8px; display: inline-block;">Get a quote</a>
+          <div style="display:flex; gap:12px; margin-top:16px; padding-top:12px; border-top:1px solid var(--line); font-size:14px; font-weight:600;">
+            <span>Language:</span>
+            <a href="/" style={`color: ${currentLang === 'en' ? 'var(--burgundy)' : 'var(--ink-soft)'};`}>English</a>
+            <a href="/fr" style={`color: ${currentLang === 'fr' ? 'var(--burgundy)' : 'var(--ink-soft)'};`}>Français</a>
+            <a href="/es" style={`color: ${currentLang === 'es' ? 'var(--burgundy)' : 'var(--ink-soft)'};`}>Español</a>
+          </div>
         </div>
       </div>
     </header>
