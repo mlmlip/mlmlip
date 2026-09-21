@@ -8,44 +8,70 @@ export interface CaseItem {
   placeholder?: boolean;
 }
 
+// 真实做过的唇部项目素材（来自 NAS 素材文件夹/产品图片/美妆类产品）
 export const cases: CaseItem[] = [
   {
-    title: 'Custom 39-Shade Lip Gloss Line',
+    title: '26-Shade Rose-Gold Lip Gloss Line',
     category: 'Lip Gloss',
-    summary: 'High-shine, hydrating lip gloss project with 39 customizable shades across nude, pink, berry and shimmer finishes.',
-    image: '/products/lipgloss-39-01.jpg',
-    videoUrl: '/cases/case-lip-detail.mp4',
+    summary: 'Full-range nude-to-berry lip gloss collection in heavyweight rose-gold capped tubes, color-matched across 26 market-ready shades.',
+    image: '/products/lipgloss-26-01.jpg',
     links: [
-      { label: 'View shade range', href: '/products' },
+      { label: 'Request shade card', href: '/contact' },
+      { label: 'See full range', href: '/products' }
+    ]
+  },
+  {
+    title: 'Slim-Tube Nude Lip Collection',
+    category: 'Lip Gloss',
+    summary: 'Minimalist slim tubes with silver caps and a matching carton — ideal for DTC and TikTok Shop launches at low MOQ.',
+    image: '/products/lipgloss-slim-01.jpg',
+    links: [
       { label: 'Request sample', href: '/contact' }
     ]
   },
   {
-    title: 'Velvet Lip Mud & Tint Series',
-    category: 'Lip Mud & Velvet Tint',
-    summary: 'Soft-focus matte finish with buildable coverage, developed with custom square-tube packaging and silk-screen branding.',
-    image: '/products/lipgloss-39-02.jpg',
+    title: 'Nude & Gloss Lip Gloss Series',
+    category: 'Lip Gloss',
+    summary: 'Neutral wearable gloss range developed for a private-label US brand, with custom box and Pantone-matched caps.',
+    image: '/products/lipgloss-nude-01.jpg',
     links: [
-      { label: 'View product', href: '/products' },
       { label: 'Request sample', href: '/contact' }
     ]
   },
   {
-    title: 'Shimmer & Care Hybrid Lip Oil',
-    category: 'Lip Oil',
-    summary: 'Nourishing botanical oil base paired with micro-shimmer pearls, matched to custom componentry from our in-house library.',
-    image: '/products/lipgloss-39-03.jpg',
+    title: 'Diamond-Cut Tube Lip Gloss',
+    category: 'Lip Gloss',
+    summary: 'Prismatic diamond-cut tubes filled with shimmer gloss — a packaging-forward SKU built for social-driven beauty brands.',
+    videoUrl: '/cases/case-diamond-tube.mp4',
     links: [
-      { label: 'View product', href: '/products' },
-      { label: 'Request sample', href: '/contact' }
+      { label: 'Ask about custom tooling', href: '/customization' }
+    ]
+  },
+  {
+    title: 'LP-10 Custom 12-Color Lip Gloss',
+    category: 'Custom Project',
+    summary: 'End-to-end custom development for a 12-color lip gloss set: shade matching, component selection, labeling and production-ready samples.',
+    videoUrl: '/cases/case-lp10-custom.mp4',
+    links: [
+      { label: 'Start your project', href: '/contact' }
+    ]
+  },
+  {
+    title: 'Private Label Packaging Library',
+    category: 'Packaging',
+    summary: 'In-stock premium tubes, caps and applicators ready for your logo — or brief us for bespoke custom tooling.',
+    image: '/factory/packaging-tubes-01.jpg',
+    links: [
+      { label: 'View customization options', href: '/customization' }
     ]
   }
 ];
 
+// 工厂实力视频
 export const factoryVideos = [
   {
     title: 'Automated Production & Assembly',
-    note: 'Watch our automated assembly line filling and cap-sealing lip components.',
+    note: 'High-speed precision filling and capping line for lip components.',
     videoUrl: '/factory/factory-production.mp4'
   },
   {
