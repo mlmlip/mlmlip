@@ -144,13 +144,13 @@ const featuredCases = cases.slice(0, 3);
   <section>
     <div class="wrap">
       <p class="eyebrow">What we produce</p>
-      <h2>Lip first. Everything else second.</h2>
+      <h2>Lip cosmetics. 100% focused.</h2>
       <p class="lead" style="max-width:640px">
-        Six lip categories are what we do best — gloss, mud, liner, lipstick, oil and mask.
-        Body oils and other cosmetics are available as companion lines to round out your range.
+        Six core lip categories executed with surgical precision — gloss, mud, liner, lipstick, peptide oil and barrier mask.
+        We do not dilute our focus; lip specialization is what sets your line apart.
       </p>
       <div class="grid three" style="margin-top:28px">
-        {products.slice(0, 6).map((p) => (
+        {products.map((p) => (
           <div class="card">
             {p.image ? (
               <div class="case-media" style="margin-bottom:16px"><img src={p.image} alt={p.name} loading="lazy" /></div>

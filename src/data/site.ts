@@ -104,11 +104,6 @@ export const products = [
     body: 'Intensive overnight treatment balms with ceramide complexes and rich plant butters for 24-hour hydration and restorative care.',
     detail: '500 pcs MOQ · Jar or Soft-Touch Squeeze Tubes',
     categoryHref: '/lip-mask-manufacturer'
-  },
-  {
-    name: 'Illuminating Body Oil (Companion Line)',
-    body: 'Luxurious dry body oils suspended with reflective pearls, formulated to pair seamlessly with your core lip collection.',
-    detail: '500 pcs MOQ · Available for Bundled Orders'
   }
 ];
 
