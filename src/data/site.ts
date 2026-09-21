@@ -23,6 +23,43 @@ export const site = {
   ]
 };
 
+// 国际化翻译字典 (i18n)
+export const ui = {
+  en: {
+    nav: {
+      products: 'Products', customization: 'Customization', process: 'Process', cases: 'Cases',
+      samples: 'Samples', blog: 'Blog', about: 'About', quote: 'Get a quote', lang: 'Language:'
+    },
+    footer: {
+      mfg: 'Manufacturing', touch: 'Get in touch',
+      desc: 'Private label lip cosmetics manufacturing — packaging, formulation and logo customization from 500 pcs per SKU.'
+    }
+  },
+  fr: {
+    nav: {
+      products: 'Produits', customization: 'Personnalisation', process: 'Processus', cases: 'Réalisations',
+      samples: 'Échantillons', blog: 'Blog', about: 'À propos', quote: 'Devis', lang: 'Langue :'
+    },
+    footer: {
+      mfg: 'Fabrication', touch: 'Contact',
+      desc: 'Fabrication de cosmétiques pour les lèvres en marque blanche — personnalisation du packaging, de la formule et du logo dès 500 pcs.'
+    }
+  },
+  es: {
+    nav: {
+      products: 'Productos', customization: 'Personalización', process: 'Proceso', cases: 'Proyectos',
+      samples: 'Muestras', blog: 'Blog', about: 'Nosotros', quote: 'Presupuesto', lang: 'Idioma:'
+    },
+    footer: {
+      mfg: 'Fabricación', touch: 'Contacto',
+      desc: 'Fabricación de cosméticos labiales marca blanca — personalización de envases, fórmulas y logotipos desde 500 uds.'
+    }
+  }
+};
+
+export const navKeys = ['products', 'customization', 'process', 'cases', 'samples', 'blog', 'about'] as const;
+export const navLinks = { products: '/products', customization: '/customization', process: '/process', cases: '/cases', samples: '/samples', blog: '/blog', about: '/about' };
+
 // 页脚内链（SEO：品类落地页 + 关键页）
 export const footerCategories = [
   { label: 'Lip Gloss Manufacturer', href: '/lip-gloss-manufacturer' },

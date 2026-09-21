@@ -1,11 +1,22 @@
 ---
-import { site, footerCategories, footerCompany } from '../data/site';
+import { site, footerCategories, footerCompany, ui, navKeys, navLinks } from '../data/site';
 import '../styles/global.css';
 
 const { title, description } = Astro.props;
 const currentPath = Astro.url.pathname;
 const currentLang = currentPath.startsWith('/fr') ? 'fr' : currentPath.startsWith('/es') ? 'es' : 'en';
-const canonical = new URL(currentPath, Astro.site ?? 'https://mlmlip.com');
+const locale = currentLang === 'fr' ? 'fr_FR' : currentLang === 'es' ? 'es_ES' : 'en_US';
+const t = ui[currentLang];
+
+const canonical = new URL(currentPath.replace(/\/$/, ''), Astro.site ?? 'https://mlmlip.com');
+// 修复正则缺陷，精确匹配语言前缀
+const pathNoLang = currentPath.replace(/^\/(fr|es)(?=\/|$)/, '') || '/';
+const pathBase = pathNoLang.replace(/\/$/, '') || '/';
+
+const getLangUrl = (lang: string) => {
+  if (lang === 'en') return new URL(pathBase, site.domain).href;
+  return new URL(`/${lang}${pathBase === '/' ? '' : pathBase}`, site.domain).href;
+};
 
 const schemaData = {
   "@context": "https://schema.org",
@@ -65,10 +76,10 @@ const breadcrumbSchema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.href} />
-    <link rel="alternate" hreflang="en" href={new URL(currentPath.replace(/^\/(fr|es)(?=\/|$)/, '') || '/', site.domain).href} />
-    <link rel="alternate" hreflang="fr" href={new URL('/fr' + (currentPath.replace(/^\/(fr|es)(?=\/|$)/, '') === '/' ? '' : currentPath.replace(/^\/(fr|es)(?=\/|$)/, '')), site.domain).href} />
-    <link rel="alternate" hreflang="es" href={new URL('/es' + (currentPath.replace(/^\/(fr|es)(?=\/|$)/, '') === '/' ? '' : currentPath.replace(/^\/(fr|es)(?=\/|$)/, '')), site.domain).href} />
-    <link rel="alternate" hreflang="x-default" href={new URL(currentPath.replace(/^\/(fr|es)(?=\/|$)/, '') || '/', site.domain).href} />
+    <link rel="alternate" hreflang="en" href={getLangUrl('en')} />
+    <link rel="alternate" hreflang="fr" href={getLangUrl('fr')} />
+    <link rel="alternate" hreflang="es" href={getLangUrl('es')} />
+    <link rel="alternate" hreflang="x-default" href={getLangUrl('en')} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -76,6 +87,7 @@ const breadcrumbSchema = {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" /></noscript>
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content={locale} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical.href} />
@@ -96,16 +108,16 @@ const breadcrumbSchema = {
       <div class="wrap">
         <a class="brand" href="/">MLM<span>Lip</span></a>
         <nav class="nav" id="primary-nav">
-          {site.nav.map((item) => (
-            <a href={item.href} class={Astro.url.pathname === item.href ? 'is-active' : ''}>{item.label}</a>
+          {navKeys.map((key) => (
+            <a href={navLinks[key]} class={Astro.url.pathname === navLinks[key] ? 'is-active' : ''}>{t.nav[key]}</a>
           ))}
-          <a class="btn" href="/quote">Get a Free Quote</a>
+          <a class="btn" href="/quote">{t.nav.quote}</a>
           <div class="lang-switch" style="display:flex; gap:6px; margin-left:8px; font-size:12px; font-weight:600; color:var(--ink-soft);">
-            <a href="/" style={`color: ${currentLang === 'en' ? 'var(--burgundy)' : 'var(--ink-soft)'}; ${currentLang === 'en' ? 'border-bottom: 2px solid var(--burgundy);' : ''}`}>EN</a>
+            <a href={getLangUrl('en')} style={`color: ${currentLang === 'en' ? 'var(--burgundy)' : 'var(--ink-soft)'}; ${currentLang === 'en' ? 'border-bottom: 2px solid var(--burgundy);' : ''}`}>EN</a>
             <span>/</span>
-            <a href="/fr" style={`color: ${currentLang === 'fr' ? 'var(--burgundy)' : 'var(--ink-soft)'}; ${currentLang === 'fr' ? 'border-bottom: 2px solid var(--burgundy);' : ''}`}>FR</a>
+            <a href={getLangUrl('fr')} style={`color: ${currentLang === 'fr' ? 'var(--burgundy)' : 'var(--ink-soft)'}; ${currentLang === 'fr' ? 'border-bottom: 2px solid var(--burgundy);' : ''}`}>FR</a>
             <span>/</span>
-            <a href="/es" style={`color: ${currentLang === 'es' ? 'var(--burgundy)' : 'var(--ink-soft)'}; ${currentLang === 'es' ? 'border-bottom: 2px solid var(--burgundy);' : ''}`}>ES</a>
+            <a href={getLangUrl('es')} style={`color: ${currentLang === 'es' ? 'var(--burgundy)' : 'var(--ink-soft)'}; ${currentLang === 'es' ? 'border-bottom: 2px solid var(--burgundy);' : ''}`}>ES</a>
           </div>
         </nav>
         <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
@@ -114,15 +126,15 @@ const breadcrumbSchema = {
       </div>
       <div class="nav-drawer" id="nav-drawer" hidden>
         <div class="wrap">
-          {site.nav.map((item) => (
-            <a href={item.href} class={Astro.url.pathname === item.href ? 'is-active' : ''}>{item.label}</a>
+          {navKeys.map((key) => (
+            <a href={navLinks[key]} class={Astro.url.pathname === navLinks[key] ? 'is-active' : ''}>{t.nav[key]}</a>
           ))}
-          <a class="btn" href="/quote" style="margin-top: 8px; display: inline-block;">Get a quote</a>
+          <a class="btn" href="/quote" style="margin-top: 8px; display: inline-block;">{t.nav.quote}</a>
           <div style="display:flex; gap:12px; margin-top:16px; padding-top:12px; border-top:1px solid var(--line); font-size:14px; font-weight:600;">
-            <span>Language:</span>
-            <a href="/" style={`color: ${currentLang === 'en' ? 'var(--burgundy)' : 'var(--ink-soft)'};`}>English</a>
-            <a href="/fr" style={`color: ${currentLang === 'fr' ? 'var(--burgundy)' : 'var(--ink-soft)'};`}>Français</a>
-            <a href="/es" style={`color: ${currentLang === 'es' ? 'var(--burgundy)' : 'var(--ink-soft)'};`}>Español</a>
+            <span>{t.nav.lang}</span>
+            <a href={getLangUrl('en')} style={`color: ${currentLang === 'en' ? 'var(--burgundy)' : 'var(--ink-soft)'};`}>English</a>
+            <a href={getLangUrl('fr')} style={`color: ${currentLang === 'fr' ? 'var(--burgundy)' : 'var(--ink-soft)'};`}>Français</a>
+            <a href={getLangUrl('es')} style={`color: ${currentLang === 'es' ? 'var(--burgundy)' : 'var(--ink-soft)'};`}>Español</a>
           </div>
         </div>
       </div>
@@ -138,14 +150,14 @@ const breadcrumbSchema = {
           <div>
             <p class="brand">MLM<span>Lip</span></p>
             <p style="color:#e9c9d3; max-width: 320px;">
-              Private label lip cosmetics manufacturing — packaging, formulation and logo customization from {site.moq} per SKU.
+              {t.footer.desc}
             </p>
             <p style="color:#d6b3be; font-size:13px; margin-top:16px;">
               GMPC · ISO 22716 · EU CPNP support
             </p>
           </div>
           <div>
-            <p style="color:#f3dde3; margin-bottom:10px;">Manufacturing</p>
+            <p style="color:#f3dde3; margin-bottom:10px;">{t.footer.mfg}</p>
             <p style="color:#e9c9d3; margin:0; line-height:1.9;">
               {footerCategories.map((l) => (
                 <><a href={l.href}>{l.label}</a><br /></>
@@ -153,7 +165,7 @@ const breadcrumbSchema = {
             </p>
           </div>
           <div>
-            <p style="color:#f3dde3; margin-bottom:10px;">Get in touch</p>
+            <p style="color:#f3dde3; margin-bottom:10px;">{t.footer.touch}</p>
             <p style="color:#e9c9d3; margin:0 0 14px; line-height:1.9;">
               WhatsApp: <a href={site.contact.whatsappLink} target="_blank" rel="noopener">{site.contact.whatsapp}</a><br />
               Email: <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a><br />
