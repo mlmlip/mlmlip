@@ -3,7 +3,16 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://mlmlip.com',
-  integrations: [sitemap()],
+  integrations: [sitemap({
+    i18n: {
+      defaultLocale: 'en',
+      locales: {
+        en: 'en',
+        fr: 'fr',
+        es: 'es'
+      }
+    }
+  })],
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'fr', 'es'],
