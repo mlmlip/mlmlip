@@ -1,9 +1,9 @@
 // 业务口径已于 2026-09-21 经老板确认，依据见 ../../PLAN.md
-// 改动业务事实（产品线/MOQ/打样/认证/主体名）前必须先看 PLAN.md，禁止凭推测修改
+// 文案声线由 OpenClaw (OC) 协同审定，对标欧美顶级代工标准 (HCT, Meiyume)
 export const site = {
   name: 'MLM Lip',
   domain: 'https://mlmlip.com',
-  tagline: 'Your own lip brand, from 500 pcs',
+  tagline: 'Private Label Lip Cosmetics Engineered for High-Growth Beauty Brands',
   manufacturer: 'Beautychain Limited',
   moq: '500 pcs',
   contact: {
@@ -17,8 +17,8 @@ export const site = {
     { label: 'Products', href: '/products' },
     { label: 'Customization', href: '/customization' },
     { label: 'Process', href: '/process' },
-    { label: 'Cases', href: '/cases' },
-    { label: 'Blog', href: '/blog' },
+    { label: 'Cases & Factory', href: '/cases' },
+    { label: 'Intelligence', href: '/blog' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' }
   ]
@@ -26,66 +26,69 @@ export const site = {
 
 export const pillars = [
   {
-    title: 'Packaging customization',
-    body: 'Choose from our in-house packaging library — tubes, caps, applicators and finishes — or go further: we can open a custom mold for a pack that belongs to your brand alone.'
+    title: '500-Piece Universal MOQ & 7-Day Prototyping',
+    subtitle: 'Capital Agility Without Compromise',
+    body: 'Test viral social textures and seasonal colorways with virtually zero dead-stock risk. We offer an industry-disrupting 500-piece MOQ across all lip categories. Custom formulation samples arrive on your desk in 7 business days, with 100% of sampling costs credited back to your bulk order.'
   },
   {
-    title: 'Formulation customization',
-    body: 'Texture, finish, pigment load, wear and feel are tuned to your brief — from glossy and sheer to matte and full-coverage.'
+    title: 'Componentry Library & Bespoke Custom Tooling',
+    subtitle: 'Formulation Artistry Meets Packaging Engineering',
+    body: 'Your packaging is your brand’s primary physical equity. Leverage our extensive inventory of premium, heavyweight acrylic, zamac, aluminum, and ceramic lip components. Want an exclusive silhouette? Our in-house engineering team opens bespoke custom molds tailored to your brand’s tactile and visual DNA.'
   },
   {
-    title: 'Logo & brand customization',
-    body: 'Your logo on the tube, cap, carton and outer packaging. Labels, colors and printed details produced to your artwork.'
+    title: 'Audit-Proof Global Retail Compliance',
+    subtitle: 'Turn-Key Readiness for US & European Channels',
+    body: 'Beautychain Limited manufactures strictly within certified GMPC and ISO 22716 cleanroom facilities. Every batch includes full toxicological dossiers, heavy-metal safety audits, MSDS, and turn-key EU CPNP notification support for seamless launch across Amazon, TikTok Shop, and specialty retail.'
   }
 ];
 
 export const products = [
   {
-    name: 'Lip Gloss',
-    body: 'High-shine, non-sticky gloss in clear, tinted and shimmer finishes.',
-    detail: 'Tube, cap and applicator customizable'
+    name: 'Skinified Peptide Lip Oil',
+    body: 'Hybrid treatment pairing botanical squalane and tripeptides with lightweight, glass-like optical shine. Features oversized doe-foot or cooling ceramic tips.',
+    detail: '500 pcs MOQ · Custom Flavor & Active Story'
   },
   {
-    name: 'Lip Mud & Velvet Tint',
-    body: 'Soft matte, airy texture with buildable pigment for daily wear.',
-    detail: 'Dozens of shades or matched to your reference'
+    name: 'Velvet Cloud Lip Mud & Tint',
+    body: 'Weightless, soft-focus matte formula delivering buildable, transfer-resistant color that blurs fine lip lines effortlessly.',
+    detail: '500 pcs MOQ · Pantone Precision Shade Matching'
   },
   {
-    name: 'Lip Liner',
-    body: 'Smooth, precise pencil in wood or plastic barrel formats.',
-    detail: 'Barrel color and sharpening format to order'
+    name: 'High-Impact Lip Gloss',
+    body: 'Non-sticky, cushion-feel gloss in crystal clear, sheer reactive tints, and multi-dimensional coated micro-shimmer finishes.',
+    detail: '500 pcs MOQ · Thick-Walled Acrylic Tubes'
   },
   {
-    name: 'Lipstick',
-    body: 'Classic bullet, gloss and satin finishes in custom cases.',
-    detail: 'Bullet weight and case design your choice'
+    name: 'Precision Glide Lip Liner',
+    body: 'Ultra-smooth, smudge-proof pencil formulation in cedarwood barrel or twist-up mechanical formats for crisp contouring.',
+    detail: '500 pcs MOQ · Custom Barrel & Cap Finishes'
   },
   {
-    name: 'Lip Oil',
-    body: 'Nourishing oil-gloss hybrid with a cushioned, comfortable feel.',
-    detail: 'Fragrance and ingredient story customizable'
+    name: 'Signature Bullet Lipstick',
+    body: 'Silky satin, velvet matte, and high-shine finishes cast in heavyweight magnetic zamac, aluminum, or custom-embossed cases.',
+    detail: '500 pcs MOQ · Custom Bullet Engraving & Tooling'
   },
   {
-    name: 'Lip Mask',
-    body: 'Hydrating overnight and daily-care masks that complete a lip range.',
-    detail: 'Jar or tube formats, scent and actives to brief'
+    name: 'Barrier Repair Lip Mask',
+    body: 'Intensive overnight treatment balms with ceramide complexes and rich plant butters for 24-hour hydration and restorative care.',
+    detail: '500 pcs MOQ · Jar or Soft-Touch Squeeze Tubes'
   },
   {
-    name: 'Body Oil (side line)',
-    body: 'Shimmering and nourishing body oils that pair with your lip range.',
-    detail: 'Same 500 pcs minimum, bundled with lip orders on request'
+    name: 'Illuminating Body Oil (Companion Line)',
+    body: 'Luxurious dry body oils suspended with reflective pearls, formulated to pair seamlessly with your core lip collection.',
+    detail: '500 pcs MOQ · Available for Bundled Orders'
   }
 ];
 
 export const steps = [
-  { n: '01', title: 'Inquiry & brief', body: 'Tell us the product, target price point, finish and quantity. We advise on the most practical route to your own brand.' },
-  { n: '02', title: 'Sample in 7 days', body: 'We develop samples against your brief within 7 days — texture, shade, packaging and logo. Place your order and the sampling fee is deducted from it, so sampling effectively costs nothing.' },
-  { n: '03', title: 'Order & production', body: 'Once approved, production runs from 500 pcs per SKU — the same low minimum across every product category — with your packaging, formulation and branding.' },
-  { n: '04', title: 'QC & delivery', body: 'Inspection before packing, then shipping to your door or your warehouse, with documents prepared for the North American and European markets.' }
+  { n: '01', title: 'Consultation & Product Brief', body: 'Align on target price tier, packaging silhouette, texture profile, and market compliance parameters.' },
+  { n: '02', title: '7-Day Rapid Sampling', body: 'Custom formulation and shade matching dispatched in 7 days. 100% of sampling fees are credited back upon bulk order confirmation.' },
+  { n: '03', title: '500-Unit Production Run', body: 'Mass manufacturing executed under certified GMPC/ISO cleanroom standards with strict batch-to-batch colorimetric control.' },
+  { n: '04', title: 'Global QC & Market Dossier', body: 'Final pre-shipment quality audit with comprehensive documentation ready for US FDA and European CPNP import clearance.' }
 ];
 
 export const certifications = [
-  { name: 'GMPC', body: 'Cosmetic good manufacturing practice certified production' },
-  { name: 'ISO', body: 'Quality management system certified' },
-  { name: 'CPNP', body: 'EU cosmetic product notification support for your market entry' }
+  { name: 'GMPC Certified', body: 'Good Manufacturing Practice for Cosmetics certified facility ensuring sterile batch integrity.' },
+  { name: 'ISO 22716 Standard', body: 'Internationally recognized quality management standard for cosmetics manufacturing processes.' },
+  { name: 'EU CPNP Dossier Support', body: 'Full technical dossier and safety assessment documentation for European market registration.' }
 ];

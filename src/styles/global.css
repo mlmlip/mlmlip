@@ -1,15 +1,19 @@
 :root {
-  --ink: #2b1519;
-  --ink-soft: #5c4048;
-  --plum: #6e1f38;
-  --rose: #b03a5b;
-  --rose-dark: #8f2c48;
-  --blush: #f7dce3;
-  --blush-soft: #fdf1f4;
-  --cream: #fff9f7;
-  --line: #ecd8dd;
+  --ink: #141113;
+  --ink-soft: #4a3e42;
+  --plum: #4a1525;
+  --plum-dark: #2f0c17;
+  --burgundy: #6e1a32;
+  --rose: #9c2e4e;
+  --rose-dark: #7d203b;
+  --gold: #c5a059;
+  --gold-light: #f5eedf;
+  --blush: #f4e2e7;
+  --blush-soft: #faf2f5;
+  --cream: #fdfbfb;
+  --line: #e8d7dc;
   --white: #ffffff;
-  --max: 1120px;
+  --max: 1200px;
 }
 
 * { box-sizing: border-box; }

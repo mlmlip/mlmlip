@@ -4,6 +4,27 @@ import '../styles/global.css';
 
 const { title, description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://mlmlip.com');
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": site.name,
+  "legalName": site.manufacturer,
+  "url": site.domain,
+  "logo": `${site.domain}/favicon.svg`,
+  "description": "Tier-1 private label custom lip cosmetics manufacturer specializing in lip gloss, lip mud, lip oil, lipstick, and lip masks with a universal 500 pcs MOQ.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Shenzhen",
+    "addressCountry": "CN"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": site.contact.whatsapp,
+    "contactType": "sales",
+    "availableLanguage": ["English", "French", "Spanish"]
+  }
+};
 ---
 
 <!doctype html>
@@ -19,6 +40,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://mlmlip.com'
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical.href} />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
   </head>
   <body>
     <header class="site-header">

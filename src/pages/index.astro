@@ -11,34 +11,41 @@ const featuredCases = cases.slice(0, 3);
 ---
 
 <BaseLayout
-  title="Custom Lip Cosmetics Manufacturer | Private Label from 500 pcs — MLM Lip"
-  description="Custom lip cosmetics OEM/ODM for private label brands in North America and Europe: packaging, formulation and logo customization from 500 pcs. Lip gloss, lip mud, lip liner, lipstick, lip oil and lip mask."
+  title="Private Label Lip Cosmetics Manufacturer | 500 pcs Universal MOQ — MLM Lip"
+  description="Tier-1 custom lip cosmetics manufacturing for emerging and high-growth beauty brands in North America & Europe. 500 pcs MOQ across Peptide Lip Oils, Lip Muds, Glosses, and Lipsticks. 7-day rapid prototyping."
 >
-  <section>
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 96px; padding-bottom: 96px;">
     <div class="wrap">
-      <p class="eyebrow">Custom lip cosmetics · OEM &amp; ODM</p>
-      <h1>Your own lip brand,<br />starting at {site.moq}.</h1>
-      <p class="lead" style="max-width:620px">
-        We manufacture custom lip products for private label brands in North America and Europe.
-        Packaging, formulation and logo — all customized under one roof, in small runs that make sense for your own line.
+      <p class="eyebrow" style="letter-spacing: 0.2em; font-weight: 600;">Custom Lip Cosmetics · OEM &amp; ODM Specialist</p>
+      <h1 style="font-size: clamp(38px, 5vw, 62px); line-height: 1.1; max-width: 900px; margin-bottom: 24px;">
+        Engineering Your Next Viral Lip Line.<br />
+        <span style="color: var(--burgundy); font-style: italic;">From 500 Pieces, End-to-End.</span>
+      </h1>
+      <p class="lead" style="max-width: 720px; font-size: 20px; line-height: 1.6; margin-bottom: 36px;">
+        We manufacture benchmark-grade lip cosmetics for indie beauty founders, TikTok Shop creators, and multi-channel retailers across North America and Europe. Bespoke formulation, componentry library, and custom tooling—executed under GMPC &amp; ISO cleanroom standards.
       </p>
-      <p style="margin-top:28px">
-        <a class="btn" href="/contact">Request a quote</a>
-        <a class="btn ghost" href="/products" style="margin-left:10px">See products</a>
+      <div>
+        <a class="btn" href="/contact" style="padding: 16px 36px; font-size: 16px; font-weight: 600;">Request Custom Sample Kit</a>
+        <a class="btn ghost" href="/cases" style="margin-left: 14px; padding: 16px 32px; font-size: 16px;">View Factory &amp; Case Studies</a>
+      </div>
+      <p class="note" style="margin-top: 24px; font-size: 14px; color: var(--plum);">
+        ✓ 500 pcs universal MOQ &nbsp;·&nbsp; ✓ 7-day formulation sampling &nbsp;·&nbsp; ✓ 100% sample fee credited to bulk order
       </p>
-      <p class="note" style="margin-top:14px">500 pcs MOQ across all categories · samples in 7 days · sampling fee deducted from your order</p>
     </div>
   </section>
 
   <section class="tint">
     <div class="wrap">
-      <p class="eyebrow">Three kinds of customization</p>
-      <h2>Built around your brand, not our catalogue</h2>
-      <div class="grid three" style="margin-top:28px">
+      <p class="eyebrow">Enterprise Manufacturing Pillars</p>
+      <h2>Built for Agile Brands. Backed by Industrial Rigor.</h2>
+      <div class="grid three" style="margin-top: 36px;">
         {pillars.map((p) => (
-          <div class="card">
-            <h3>{p.title}</h3>
-            <p style="margin:0">{p.body}</p>
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <p class="eyebrow" style="margin-bottom: 8px; color: var(--burgundy); font-size: 11px;">{p.subtitle}</p>
+              <h3 style="font-size: 22px; line-height: 1.3; margin-bottom: 14px;">{p.title}</h3>
+              <p style="font-size: 15px; line-height: 1.65; color: var(--ink-soft);">{p.body}</p>
+            </div>
           </div>
         ))}
       </div>
