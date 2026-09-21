@@ -2,6 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { site, products } from '../data/site';
+
+const compare = [
+  { format: 'Lip Gloss', finish: 'High-shine, sheer, jelly, shimmer', pack: 'Acrylic tube + doe-foot', best: 'DTC, TikTok, viral launches', href: '/lip-gloss-manufacturer' },
+  { format: 'Lip Mud', finish: 'Soft-focus matte, velvet', pack: 'Tube, jar, cushion compact', best: 'K-beauty, matte lovers', href: '/lip-mud-manufacturer' },
+  { format: 'Lip Liner', finish: 'Matte, waterproof, precise', pack: 'Wood barrel, twist-up', best: 'Contour, shade pairing', href: '/lip-liner-manufacturer' },
+  { format: 'Lipstick', finish: 'Matte, satin, cream, shine', pack: 'Zamac, aluminum, custom case', best: 'Prestige, retail counter', href: '/lipstick-manufacturer' },
+  { format: 'Lip Oil', finish: 'Glass-shine, treatment', pack: 'Tube, ceramic-tip, roller', best: 'Skinified, treatment-led', href: '/lip-oil-manufacturer' },
+  { format: 'Lip Mask', finish: 'Balm, overnight repair', pack: 'Jar, squeeze tube', best: 'Night care, barrier repair', href: '/lip-mask-manufacturer' }
+];
 ---
 
 <BaseLayout
@@ -33,10 +42,48 @@ import { site, products } from '../data/site';
             <h3>{p.name}</h3>
             <p>{p.body}</p>
             <p class="note">{p.detail}</p>
+            {p.categoryHref && <p style="margin:0 0 8px;"><a href={p.categoryHref}>Explore the {p.name.split(' ')[0]} program →</a></p>}
             <a href="/contact">Ask about this product →</a>
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Side by side</p>
+      <h2>Compare the six lip formats</h2>
+      <p class="lead" style="max-width:600px;">
+        Same MOQ, same 7-day sampling, same compliance — the difference is texture, packaging and who it wins.
+      </p>
+      <div class="card gold-line" style="margin-top:28px; padding:0; overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:14px; min-width:680px;">
+          <thead>
+            <tr style="background:var(--blush);">
+              <th style="padding:14px 18px; text-align:left; color:var(--plum); font-family:'Playfair Display',serif; font-weight:600;">Format</th>
+              <th style="padding:14px 18px; text-align:left; color:var(--ink-soft);">Finish</th>
+              <th style="padding:14px 18px; text-align:left; color:var(--ink-soft);">Packaging</th>
+              <th style="padding:14px 18px; text-align:left; color:var(--ink-soft);">Best for</th>
+              <th style="padding:14px 18px; text-align:left; color:var(--plum); font-weight:600;">MOQ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {compare.map((c) => (
+              <tr style="border-bottom:1px solid var(--line);">
+                <td style="padding:14px 18px;"><a href={c.href} style="color:var(--burgundy); font-weight:600;">{c.format}</a></td>
+                <td style="padding:14px 18px; color:var(--ink-soft);">{c.finish}</td>
+                <td style="padding:14px 18px; color:var(--ink-soft);">{c.pack}</td>
+                <td style="padding:14px 18px; color:var(--ink-soft);">{c.best}</td>
+                <td style="padding:14px 18px; color:var(--plum); font-weight:600;">500 pcs</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:14px;">
+        All six share the same {site.moq} minimum, 7-day sampling, and GMPC + ISO + CPNP compliance — the format you pick is about your brand story, not a manufacturing constraint.
+      </p>
     </div>
   </section>
 
@@ -47,7 +94,7 @@ import { site, products } from '../data/site';
         Tell us the market, price point and how you want the product to feel. We will recommend the format,
         packaging and shade direction that gets there fastest.
       </p>
-      <a class="btn" href="/contact">Get a recommendation</a>
+      <a class="btn" href="/quote">Build your brief</a>
     </div>
   </section>
 </BaseLayout>

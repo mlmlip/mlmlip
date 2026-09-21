@@ -236,12 +236,21 @@ const featuredCases = cases.slice(0, 3);
       <h2>Documentation your market asks for</h2>
       <div class="grid three" style="margin-top:28px">
         {certifications.map((c) => (
-          <div class="card gold-line">
-            <h3>{c.name}</h3>
-            <p style="margin:0">{c.body}</p>
+          <div class="card gold-line" style="display:flex; gap:16px; align-items:flex-start;">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" style="flex-shrink:0; margin-top:4px;" aria-hidden="true">
+              <circle cx="24" cy="24" r="22" stroke="var(--gold)" stroke-width="2" />
+              <path d="M16 24l6 6 12-14" stroke="var(--burgundy)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <h3 style="font-size:18px;">{c.name}</h3>
+              <p style="margin:0; font-size:14px;">{c.body}</p>
+            </div>
           </div>
         ))}
       </div>
+      <p class="note" style="margin-top:18px; text-align:center;">
+        Full toxicological dossiers, heavy-metal audits, MSDS and batch records available for every shipment.
+      </p>
     </div>
   </section>
 

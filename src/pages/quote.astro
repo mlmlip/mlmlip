@@ -96,6 +96,14 @@ import { site } from '../data/site';
           <p style="margin: 0;">
             <button class="btn" type="submit" style="width: 100%;">Send brief via WhatsApp</button>
           </p>
+
+          <div id="live-summary" style="margin-top:24px; padding:20px; background:var(--blush-soft); border-radius:12px; border-left:3px solid var(--gold);">
+            <p class="eyebrow" style="margin-bottom:10px; color:var(--burgundy);">Your project at a glance</p>
+            <div id="summary-content" style="font-size:14px; color:var(--ink-soft); line-height:1.8;">
+              <p style="margin:0 0 6px;">Fill in the fields above to see a live summary of your brief, estimated timeline and next steps.</p>
+            </div>
+          </div>
+
           <p class="note" style="margin-top: 14px;">
             This opens WhatsApp with your brief pre-filled. Prefer email? Write to
             <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
@@ -132,6 +140,57 @@ import { site } from '../data/site';
 
 <script is:inline define:vars={{ waBase: site.contact.whatsappLink }}>
   const form = document.getElementById('brief-builder');
+  const summary = document.getElementById('summary-content');
+
+  function parseQty(v) {
+    if (!v) return 0;
+    const n = parseInt(v.replace(/[^0-9]/g, ''), 10);
+    return isNaN(n) ? 0 : n;
+  }
+
+  function updateSummary() {
+    const d = new FormData(form);
+    const product = d.get('product') || '—';
+    const finish = d.get('finish') || '—';
+    const qty = parseQty(d.get('quantity'));
+    const shades = d.get('shades') || '—';
+    const packaging = d.get('packaging') || '—';
+    const market = d.get('market') || '—';
+    const brand = d.get('brand') || '—';
+
+    // 预估周期（真实可承诺的）
+    const isCustomMold = packaging.includes('Custom mold') || packaging.includes('bespoke');
+    const samplingLead = '7 days';
+    const toolingLead = isCustomMold ? ' + 4–8 weeks custom mold' : '';
+    const prodLead = qty >= 3000 ? '30–40 days' : qty >= 1000 ? '25–35 days' : '25–30 days';
+
+    let html = '<div style="display:grid; grid-template-columns:1fr 1fr; gap:6px 20px; margin-bottom:12px;">';
+    html += `<span><strong style="color:var(--plum);">Product:</strong> ${product}</span>`;
+    html += `<span><strong style="color:var(--plum);">Finish:</strong> ${finish}</span>`;
+    html += `<span><strong style="color:var(--plum);">Quantity:</strong> ${qty ? qty + ' pcs' : '—'}</span>`;
+    html += `<span><strong style="color:var(--plum);">Shades:</strong> ${shades}</span>`;
+    html += `<span><strong style="color:var(--plum);">Packaging:</strong> ${packaging}</span>`;
+    html += `<span><strong style="color:var(--plum);">Market:</strong> ${market}</span>`;
+    html += `<span style="grid-column:1/-1;"><strong style="color:var(--plum);">Brand:</strong> ${brand}</span>`;
+    html += '</div>';
+
+    html += '<div style="border-top:1px dashed var(--line); padding-top:12px; margin-top:8px;">';
+    html += `<p style="margin:0 0 4px;"><strong style="color:var(--burgundy);">Estimated sampling:</strong> ${samplingLead}${toolingLead}</p>`;
+    html += `<p style="margin:0 0 4px;"><strong style="color:var(--burgundy);">Estimated production:</strong> ${prodLead}</p>`;
+    html += `<p style="margin:0;"><strong style="color:var(--burgundy);">Sampling fee:</strong> 100% credited to your bulk order</p>`;
+    html += '</div>';
+
+    html += '<div style="border-top:1px dashed var(--line); padding-top:12px; margin-top:8px;">';
+    html += '<p style="margin:0; font-size:13px; color:#8a6a72;"><strong>Next step:</strong> Send this brief — we reply within one working day with a route, packaging options and pricing for your quantity.</p>';
+    html += '</div>';
+
+    summary.innerHTML = html;
+  }
+
+  form?.addEventListener('input', updateSummary);
+  form?.addEventListener('change', updateSummary);
+  updateSummary();
+
   form?.addEventListener('submit', (event) => {
     event.preventDefault();
     const d = new FormData(form);
