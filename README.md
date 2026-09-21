@@ -25,7 +25,7 @@ src/
 ├── layouts/BaseLayout.astro
 ├── pages/
 │   ├── index.astro         hero + pillars + products preview + process + CTA
-│   ├── products.astro      full product range (lip first, body oil as side line)
+│   ├── products.astro      full product range (100% focused on 6 core lip categories)
 │   ├── customization.astro packaging / formulation / logo details + process
 │   ├── about.astro         positioning: low minimums, in-house customization
 │   └── contact.astro       inquiry form (opens WhatsApp with the brief pre-filled)
