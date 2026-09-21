@@ -163,10 +163,11 @@ section.tint { background: var(--blush-soft); }
   font-size: 12px;
   padding: 2px 10px;
   border-radius: 999px;
-  background: var(--blush);
+  background: var(--gold-light);
   color: var(--plum);
   margin: 0 6px 6px 0;
 }
+.gold-line { border-top: 3px solid var(--gold); }
 .prose { max-width: 720px; }
 .prose h2 { margin-top: 44px; font-size: 26px; }
 .prose h3 { margin-top: 32px; }

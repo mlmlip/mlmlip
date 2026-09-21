@@ -16,7 +16,7 @@ const featuredCases = cases.slice(0, 3);
 >
   <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 96px; padding-bottom: 96px;">
     <div class="wrap">
-      <p class="eyebrow" style="letter-spacing: 0.2em; font-weight: 600;">Custom Lip Cosmetics · OEM &amp; ODM Specialist</p>
+      <p class="eyebrow" style="letter-spacing: 0.2em; font-weight: 600; color: var(--gold);">Custom Lip Cosmetics · OEM &amp; ODM Specialist</p>
       <h1 style="font-size: clamp(38px, 5vw, 62px); line-height: 1.1; max-width: 900px; margin-bottom: 24px;">
         Engineering Your Next Viral Lip Line.<br />
         <span style="color: var(--burgundy); font-style: italic;">From 500 Pieces, End-to-End.</span>
@@ -61,8 +61,13 @@ const featuredCases = cases.slice(0, 3);
         Body oils and other cosmetics are available as companion lines to round out your range.
       </p>
       <div class="grid three" style="margin-top:28px">
-        {products.map((p) => (
+        {products.slice(0, 6).map((p) => (
           <div class="card">
+            {p.image ? (
+              <div class="case-media" style="margin-bottom:16px"><img src={p.image} alt={p.name} loading="lazy" /></div>
+            ) : (
+              <div class="media-slot" style="margin-bottom:16px">Product photography in preparation</div>
+            )}
             <h3>{p.name}</h3>
             <p>{p.body}</p>
             <p class="note" style="margin:0">{p.detail}</p>
@@ -95,7 +100,7 @@ const featuredCases = cases.slice(0, 3);
       <h2>Documentation your market asks for</h2>
       <div class="grid three" style="margin-top:28px">
         {certifications.map((c) => (
-          <div class="card">
+          <div class="card gold-line">
             <h3>{c.name}</h3>
             <p style="margin:0">{c.body}</p>
           </div>

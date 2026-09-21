@@ -17,8 +17,8 @@ export const site = {
     { label: 'Products', href: '/products' },
     { label: 'Customization', href: '/customization' },
     { label: 'Process', href: '/process' },
-    { label: 'Cases & Factory', href: '/cases' },
-    { label: 'Intelligence', href: '/blog' },
+    { label: 'Cases', href: '/cases' },
+    { label: 'Blog', href: '/blog' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' }
   ]
@@ -44,24 +44,28 @@ export const pillars = [
 
 export const products = [
   {
-    name: 'Skinified Peptide Lip Oil',
-    body: 'Hybrid treatment pairing botanical squalane and tripeptides with lightweight, glass-like optical shine. Features oversized doe-foot or cooling ceramic tips.',
-    detail: '500 pcs MOQ · Custom Flavor & Active Story'
+    name: 'High-Impact Lip Gloss',
+    body: 'Non-sticky, cushion-feel gloss in crystal clear, sheer reactive tints, and multi-dimensional coated micro-shimmer finishes.',
+    detail: '500 pcs MOQ · Thick-Walled Acrylic Tubes',
+    image: '/products/lipgloss-39-01.jpg'
   },
   {
     name: 'Velvet Cloud Lip Mud & Tint',
     body: 'Weightless, soft-focus matte formula delivering buildable, transfer-resistant color that blurs fine lip lines effortlessly.',
-    detail: '500 pcs MOQ · Pantone Precision Shade Matching'
+    detail: '500 pcs MOQ · Pantone Precision Shade Matching',
+    image: '/products/lipgloss-39-02.jpg'
   },
   {
-    name: 'High-Impact Lip Gloss',
-    body: 'Non-sticky, cushion-feel gloss in crystal clear, sheer reactive tints, and multi-dimensional coated micro-shimmer finishes.',
-    detail: '500 pcs MOQ · Thick-Walled Acrylic Tubes'
+    name: 'Skinified Peptide Lip Oil',
+    body: 'Hybrid treatment pairing botanical squalane and tripeptides with lightweight, glass-like optical shine. Features oversized doe-foot or cooling ceramic tips.',
+    detail: '500 pcs MOQ · Custom Flavor & Active Story',
+    image: '/products/lipgloss-39-03.jpg'
   },
   {
     name: 'Precision Glide Lip Liner',
     body: 'Ultra-smooth, smudge-proof pencil formulation in cedarwood barrel or twist-up mechanical formats for crisp contouring.',
-    detail: '500 pcs MOQ · Custom Barrel & Cap Finishes'
+    detail: '500 pcs MOQ · Custom Barrel & Cap Finishes',
+    image: '/products/lipgloss-shades.jpg'
   },
   {
     name: 'Signature Bullet Lipstick',

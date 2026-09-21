@@ -20,23 +20,14 @@ import { site, products } from '../data/site';
 
   <section class="tint" style="padding-top:0; background:transparent">
     <div class="wrap">
-      <div class="grid three">
-        {products.map((p, idx) => (
+      <div class="grid three" style="margin-top:28px">
+        {products.map((p) => (
           <div class="card">
-            <div class="case-media" style="margin-bottom:16px">
-              <img
-                src={
-                  idx === 0 ? '/products/lipgloss-39-01.jpg' :
-                  idx === 1 ? '/products/lipgloss-39-02.jpg' :
-                  idx === 4 ? '/products/lipgloss-39-03.jpg' :
-                  idx === 2 ? '/products/lipgloss-39-02.jpg' :
-                  idx === 3 ? '/products/lipgloss-39-01.jpg' :
-                  '/products/lipgloss-shades.jpg'
-                }
-                alt={p.name}
-                loading="lazy"
-              />
-            </div>
+            {p.image ? (
+              <div class="case-media" style="margin-bottom:16px"><img src={p.image} alt={p.name} loading="lazy" /></div>
+            ) : (
+              <div class="media-slot" style="margin-bottom:16px">Product photography in preparation</div>
+            )}
             <h3>{p.name}</h3>
             <p>{p.body}</p>
             <p class="note">{p.detail}</p>
