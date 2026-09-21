@@ -93,9 +93,14 @@ import { site } from '../data/site';
             <label for="f-message">Anything else</label>
             <textarea id="f-message" name="message" rows="3" placeholder="Reference products, price point, target launch date, special claims…"></textarea>
           </div>
-          <p style="margin: 0;">
-            <button class="btn" type="submit" style="width: 100%;">Send brief via WhatsApp</button>
-          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:8px;">
+            <button class="btn" type="submit" style="flex:1; min-width:240px;">Send brief via WhatsApp →</button>
+            <button class="btn ghost" type="button" id="copy-btn" style="flex:1; min-width:200px;">Copy brief to clipboard</button>
+          </div>
+
+          <div id="copy-toast" hidden style="margin-top:14px; padding:12px 16px; background:#d4edda; color:#155724; border-radius:8px; font-size:14px; font-weight:500;">
+            ✓ Brief copied to clipboard! You can paste it into an email or your preferred messenger.
+          </div>
 
           <div id="live-summary" style="margin-top:24px; padding:20px; background:var(--blush-soft); border-radius:12px; border-left:3px solid var(--gold);">
             <p class="eyebrow" style="margin-bottom:10px; color:var(--burgundy);">Your project at a glance</p>
@@ -105,8 +110,7 @@ import { site } from '../data/site';
           </div>
 
           <p class="note" style="margin-top: 14px;">
-            This opens WhatsApp with your brief pre-filled. Prefer email? Write to
-            <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
+            This opens WhatsApp with your brief pre-filled. Prefer email? <a id="email-link" href={`mailto:${site.contact.email}?subject=Lip%20Project%20Brief`}>Click here to send via email instead</a>.
           </p>
         </form>
       </div>
@@ -201,16 +205,19 @@ import { site } from '../data/site';
     html += '</div>';
 
     summary.innerHTML = html;
+
+    // 同步更新 mailto 链接
+    const emailA = document.getElementById('email-link');
+    if (emailA) {
+      const subject = encodeURIComponent(`Project Brief: ${product} (${qty ? qty + ' pcs' : '500 pcs'})`);
+      const body = encodeURIComponent(getBriefLines().join('\n'));
+      emailA.setAttribute('href', `mailto:info@mlmlip.com?subject=${subject}&body=${body}`);
+    }
   }
 
-  form?.addEventListener('input', updateSummary);
-  form?.addEventListener('change', updateSummary);
-  updateSummary();
-
-  form?.addEventListener('submit', (event) => {
-    event.preventDefault();
+  function getBriefLines() {
     const d = new FormData(form);
-    const lines = [
+    return [
       'New brief from mlmlip.com',
       'Product: ' + (d.get('product') || ''),
       'Finish: ' + (d.get('finish') || ''),
@@ -221,6 +228,28 @@ import { site } from '../data/site';
       'Brand: ' + (d.get('brand') || ''),
       'Notes: ' + (d.get('message') || '')
     ];
+  }
+
+  form?.addEventListener('input', updateSummary);
+  form?.addEventListener('change', updateSummary);
+  updateSummary();
+
+  // 一键复制 Brief
+  const copyBtn = document.getElementById('copy-btn');
+  const copyToast = document.getElementById('copy-toast');
+  copyBtn?.addEventListener('click', () => {
+    const text = getBriefLines().join('\n');
+    navigator.clipboard?.writeText(text).then(() => {
+      if (copyToast) {
+        copyToast.removeAttribute('hidden');
+        setTimeout(() => copyToast.setAttribute('hidden', ''), 4000);
+      }
+    });
+  });
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const lines = getBriefLines();
     const url = waBase + '?text=' + encodeURIComponent(lines.join('\n'));
     window.open(url, '_blank', 'noopener');
   });

@@ -71,10 +71,15 @@ import { site } from '../data/site';
               <label for="message">Project details</label>
               <textarea id="message" name="message" rows="4" placeholder="Price point, finish, packaging ideas, timeline…"></textarea>
             </div>
-            <button class="btn" type="submit" id="submit-btn">Send my brief →</button>
+            <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:8px;">
+              <button class="btn" type="submit" id="submit-btn" style="flex:1; min-width:220px;">Send my brief via WhatsApp →</button>
+              <button class="btn ghost" type="button" id="copy-contact-btn" style="flex:1; min-width:180px;">Copy brief text</button>
+            </div>
+            <div id="contact-copy-toast" hidden style="margin-top:12px; padding:10px 14px; background:#d4edda; color:#155724; border-radius:8px; font-size:13px; font-weight:500;">
+              ✓ Inquiry copied to clipboard! You can paste it into an email to us.
+            </div>
             <p class="note" style="margin-top:12px">
-              Your brief is sent via WhatsApp with all details pre-filled. Prefer email? Write to
-              <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
+              Your brief is sent via WhatsApp with all details pre-filled. Prefer email? <a id="contact-mail-link" href={`mailto:${site.contact.email}?subject=Lip%20Product%20Inquiry`}>Click here to send via email directly</a>.
             </p>
             <div id="form-success" hidden style="margin-top:16px; padding:16px; background:var(--blush); border-radius:10px; border-left:3px solid var(--rose);">
               <p style="margin:0; color:var(--plum); font-weight:600;">✓ Your brief is ready in WhatsApp.</p>
@@ -107,10 +112,13 @@ import { site } from '../data/site';
   <script is:inline define:vars={{ wa: site.contact.whatsappLink.replace('https://wa.me/', '') }}>
     const form = document.getElementById('inquiry-form');
     const success = document.getElementById('form-success');
-    form?.addEventListener('submit', (event) => {
-      event.preventDefault();
+    const copyBtn = document.getElementById('copy-contact-btn');
+    const copyToast = document.getElementById('contact-copy-toast');
+    const mailLink = document.getElementById('contact-mail-link');
+
+    function getContactLines() {
       const data = new FormData(form);
-      const lines = [
+      return [
         'Inquiry from mlmlip.com',
         'Name: ' + (data.get('name') || ''),
         'Email: ' + (data.get('email') || ''),
@@ -120,6 +128,35 @@ import { site } from '../data/site';
         'Market: ' + (data.get('market') || ''),
         'Details: ' + (data.get('message') || '')
       ];
+    }
+
+    function syncMailto() {
+      if (mailLink && form) {
+        const d = new FormData(form);
+        const prod = d.get('product') || 'Lip Cosmetics';
+        const subj = encodeURIComponent(`Inquiry: ${prod} (${d.get('company') || 'New Brand'})`);
+        const body = encodeURIComponent(getContactLines().join('\n'));
+        mailLink.setAttribute('href', `mailto:info@mlmlip.com?subject=${subj}&body=${body}`);
+      }
+    }
+
+    form?.addEventListener('input', syncMailto);
+    form?.addEventListener('change', syncMailto);
+    syncMailto();
+
+    copyBtn?.addEventListener('click', () => {
+      const text = getContactLines().join('\n');
+      navigator.clipboard?.writeText(text).then(() => {
+        if (copyToast) {
+          copyToast.removeAttribute('hidden');
+          setTimeout(() => copyToast.setAttribute('hidden', ''), 4000);
+        }
+      });
+    });
+
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const lines = getContactLines();
       const url = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(lines.join('\n'));
       window.open(url, '_blank', 'noopener');
       success?.removeAttribute('hidden');
