@@ -8,7 +8,7 @@
 | 关键词 / 话题 (Keyword / Topic) | 搜索意图 (Intent) | 目标受众 (Audience) | 必须植入的核心卖点 (Core Pitch) | 状态 (Status) |
 | :--- | :--- | :--- | :--- | :--- |
 | how to start a lip gloss line with low minimums | 商业起步、找代工 | 想要创立品牌的美妆博主/初创者 | **500 pcs MOQ**, 7天免费打样（抵扣） | `[已发布]` |
-| private label lip mask manufacturer for Europe | 找特定市场合规厂家 | 欧洲本地品牌、亚马逊欧洲站卖家 | CPNP/ISO 认证, 包材+配方全链定制 | `[待撰写]` |
+| private label lip mask manufacturer for Europe | 找特定市场合规厂家 | 欧洲本地品牌、亚马逊欧洲站卖家 | CPNP/ISO 认证, 包材+配方全链定制 | `[已发布]` |
 | custom lip liner vendor with private packaging | 定制化需求、找供应商 | 已有一定规模的电商品牌 | 现有包材库丰富, 支持开模定制 | `[待撰写]` |
 | oem lip mud factory vs private label cosmetics | 商业科普、模式对比 | 寻找高性价比供应链的 B2B 买家 | Beautychain Limited 的工厂直供优势 | `[待撰写]` |
 | best lip oil formulation for winter cosmetic lines | 趋势研究、产品研发 | 品牌产品经理、初创老板 | 保湿成分定制, 7天快速打样测试 | `[待撰写]` |
