@@ -63,12 +63,23 @@ const schemaData = {
     <header class="site-header">
       <div class="wrap">
         <a class="brand" href="/">MLM<span>Lip</span></a>
-        <nav class="nav">
+        <nav class="nav" id="primary-nav">
           {site.nav.map((item) => (
             <a href={item.href} class={Astro.url.pathname === item.href ? 'is-active' : ''}>{item.label}</a>
           ))}
           <a class="btn" href="/quote">Get a quote</a>
         </nav>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav-drawer" id="nav-drawer" hidden>
+        <div class="wrap">
+          {site.nav.map((item) => (
+            <a href={item.href} class={Astro.url.pathname === item.href ? 'is-active' : ''}>{item.label}</a>
+          ))}
+          <a class="btn" href="/quote" style="margin-top: 8px; display: inline-block;">Get a quote</a>
+        </div>
       </div>
     </header>
 
@@ -122,5 +133,15 @@ const schemaData = {
       </svg>
       <span>WhatsApp</span>
     </a>
+
+    <script is:inline>
+      const toggle = document.getElementById('nav-toggle');
+      const drawer = document.getElementById('nav-drawer');
+      toggle?.addEventListener('click', () => {
+        const open = drawer?.hasAttribute('hidden');
+        if (open) { drawer?.removeAttribute('hidden'); toggle.setAttribute('aria-expanded', 'true'); }
+        else { drawer?.setAttribute('hidden', ''); toggle.setAttribute('aria-expanded', 'false'); }
+      });
+    </script>
   </body>
 </html>

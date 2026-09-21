@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { site } from '../data/site';
 ---
 
@@ -9,6 +10,7 @@ import { site } from '../data/site';
 >
   <section>
     <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
       <p class="eyebrow">Contact</p>
       <h1>Tell us what you want to launch</h1>
       <p class="lead" style="max-width:620px">

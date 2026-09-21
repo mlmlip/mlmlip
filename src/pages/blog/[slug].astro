@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -14,13 +15,24 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  author: { '@type': 'Organization', name: 'MLM Lip' },
+  publisher: { '@type': 'Organization', name: 'MLM Lip' }
+};
 ---
 
 <BaseLayout title={`${post.data.title} — MLM Lip`} description={post.data.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <section>
     <div class="wrap">
       <div class="prose">
-        <p class="eyebrow"><a href="/blog" style="color:inherit">← Blog</a></p>
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: post.data.title }]} />
         <h1 style="font-size:36px">{post.data.title}</h1>
         <p class="post-meta">
           {fmt(post.data.pubDate)}

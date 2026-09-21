@@ -74,6 +74,7 @@ section.tint { background: var(--blush-soft); }
 .grid { display: grid; gap: 24px; }
 .grid.two { grid-template-columns: repeat(2,1fr); }
 .grid.three { grid-template-columns: repeat(3,1fr); }
+.grid.four { grid-template-columns: repeat(4,1fr); }
 
 .card {
   background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
@@ -128,5 +129,17 @@ section.tint { background: var(--blush-soft); }
 .wa-float span { display: inline; }
 
 @media (max-width: 960px) { .nav { gap: 14px; } .nav a { font-size: 13px; } }
-@media (max-width: 860px) { .grid.two, .grid.three { grid-template-columns: 1fr; } .nav { display: none; } section { padding: 60px 0; } }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: transparent; border: 0; padding: 8px; cursor: pointer; }
+.nav-toggle span { width: 22px; height: 2px; background: var(--plum); border-radius: 2px; }
+.nav-drawer { display: none; flex-direction: column; gap: 4px; padding: 8px 0 16px; background: var(--white); border-bottom: 1px solid var(--line); }
+.nav-drawer a { color: var(--ink-soft); padding: 10px 0; border-bottom: 1px solid var(--blush); font-size: 15px; }
+.nav-drawer a.is-active { color: var(--burgundy); font-weight: 600; }
+@media (max-width: 860px) {
+  .grid.two, .grid.three { grid-template-columns: 1fr; }
+  .nav { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-drawer[hidden] { display: none; }
+  .nav-drawer:not([hidden]) { display: flex; }
+  section { padding: 60px 0; }
+}
 @media (max-width: 640px) { .wa-float { padding: 12px; } .wa-float span { display: none; } }

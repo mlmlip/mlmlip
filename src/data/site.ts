@@ -68,32 +68,38 @@ export const products = [
     name: 'High-Impact Lip Gloss',
     body: 'Non-sticky, cushion-feel gloss in crystal clear, sheer reactive tints, and multi-dimensional coated micro-shimmer finishes.',
     detail: '500 pcs MOQ · Thick-Walled Acrylic Tubes',
-    image: '/products/lipgloss-26-01.jpg'
+    image: '/products/lipgloss-26-01.jpg',
+    categoryHref: '/lip-gloss-manufacturer'
   },
   {
     name: 'Velvet Cloud Lip Mud & Tint',
     body: 'Weightless, soft-focus matte formula delivering buildable, transfer-resistant color that blurs fine lip lines effortlessly.',
-    detail: '500 pcs MOQ · Pantone Precision Shade Matching'
+    detail: '500 pcs MOQ · Pantone Precision Shade Matching',
+    categoryHref: '/lip-mud-manufacturer'
   },
   {
     name: 'Skinified Peptide Lip Oil',
     body: 'Hybrid treatment pairing botanical squalane and tripeptides with lightweight, glass-like optical shine. Features oversized doe-foot or cooling ceramic tips.',
-    detail: '500 pcs MOQ · Custom Flavor & Active Story'
+    detail: '500 pcs MOQ · Custom Flavor & Active Story',
+    categoryHref: '/lip-oil-manufacturer'
   },
   {
     name: 'Precision Glide Lip Liner',
     body: 'Ultra-smooth, smudge-proof pencil formulation in cedarwood barrel or twist-up mechanical formats for crisp contouring.',
-    detail: '500 pcs MOQ · Custom Barrel & Cap Finishes'
+    detail: '500 pcs MOQ · Custom Barrel & Cap Finishes',
+    categoryHref: '/lip-liner-manufacturer'
   },
   {
     name: 'Signature Bullet Lipstick',
     body: 'Silky satin, velvet matte, and high-shine finishes cast in heavyweight magnetic zamac, aluminum, or custom-embossed cases.',
-    detail: '500 pcs MOQ · Custom Bullet Engraving & Tooling'
+    detail: '500 pcs MOQ · Custom Bullet Engraving & Tooling',
+    categoryHref: '/lipstick-manufacturer'
   },
   {
     name: 'Barrier Repair Lip Mask',
     body: 'Intensive overnight treatment balms with ceramide complexes and rich plant butters for 24-hour hydration and restorative care.',
-    detail: '500 pcs MOQ · Jar or Soft-Touch Squeeze Tubes'
+    detail: '500 pcs MOQ · Jar or Soft-Touch Squeeze Tubes',
+    categoryHref: '/lip-mask-manufacturer'
   },
   {
     name: 'Illuminating Body Oil (Companion Line)',

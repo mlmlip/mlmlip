@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { site, products } from '../data/site';
 ---
 
@@ -9,6 +10,7 @@ import { site, products } from '../data/site';
 >
   <section>
     <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Products' }]} />
       <p class="eyebrow">Products</p>
       <h1>Custom lip products for your own label</h1>
       <p class="lead" style="max-width:640px">

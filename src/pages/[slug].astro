@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { categories } from '../data/categories';
 import { site } from '../data/site';
 
@@ -48,8 +49,9 @@ const serviceSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 
-  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 80px; padding-bottom: 80px;">
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 64px; padding-bottom: 80px;">
     <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Categories', href: '/products' }, { label: category.name }]} />
       <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.2em;">{category.name} · Private Label · OEM / ODM</p>
       <h1 style="font-size: clamp(34px, 4.4vw, 54px); max-width: 880px;">{category.h1}</h1>
       <p class="lead" style="max-width: 720px; font-size: 19px;">{category.intro}</p>

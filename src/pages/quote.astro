@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { site } from '../data/site';
 ---
 
@@ -9,6 +10,7 @@ import { site } from '../data/site';
 >
   <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%);">
     <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Build Your Brief' }]} />
       <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.2em;">Project configurator</p>
       <h1>Build your lip brand brief in 90 seconds</h1>
       <p class="lead" style="max-width: 680px;">

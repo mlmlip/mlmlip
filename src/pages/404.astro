@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+<BaseLayout title="Page not found — MLM Lip" description="The page you were looking for doesn't exist. Browse our lip cosmetics manufacturing capabilities or start your brief.">
+  <section style="min-height: 60vh; display:flex; align-items:center; justify-content:center; text-align:center;">
+    <div class="wrap">
+      <p style="font-family:'Playfair Display', serif; font-size:clamp(80px, 16vw, 160px); color:var(--burgundy); margin:0; line-height:1;">404</p>
+      <h1 style="font-size:32px; margin-top:12px;">This shade doesn't exist — yet.</h1>
+      <p class="lead" style="max-width:520px; margin:16px auto 32px;">
+        The page you were looking for may have moved. Here are the places worth your time:
+      </p>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+        <a class="btn" href="/">Back to home</a>
+        <a class="btn ghost" href="/products">Browse products</a>
+        <a class="btn ghost" href="/quote">Build your brief</a>
+        <a class="btn ghost" href="/faq">Help center</a>
+      </div>
+      <div class="grid three" style="margin-top:48px; text-align:left;">
+        <a class="card" href="/lip-gloss-manufacturer" style="color:inherit;">
+          <h3 style="font-size:18px;">Lip Gloss Manufacturing</h3>
+          <p style="margin:0; font-size:14px;">Tubes, applicators, finishes, 26-shade capability.</p>
+        </a>
+        <a class="card" href="/samples" style="color:inherit;">
+          <h3 style="font-size:18px;">Order Samples</h3>
+          <p style="margin:0; font-size:14px;">7-day custom sampling, fee credited to order.</p>
+        </a>
+        <a class="card" href="/cases" style="color:inherit;">
+          <h3 style="font-size:18px;">Factory & Cases</h3>
+          <p style="margin:0; font-size:14px;">Real production runs and capability videos.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

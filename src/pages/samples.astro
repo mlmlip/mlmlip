@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { site } from '../data/site';
 
 const sampleBenefits = [
@@ -31,6 +32,7 @@ const steps = [
 >
   <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%);">
     <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Samples' }]} />
       <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.2em;">Sampling program</p>
       <h1>Order samples before you order stock</h1>
       <p class="lead" style="max-width: 680px;">

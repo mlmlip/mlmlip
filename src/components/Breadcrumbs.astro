@@ -1,0 +1,29 @@
+---
+// SEO 面包屑：Schema.org BreadcrumbList + 视觉导航
+interface Crumb { label: string; href?: string }
+interface Props { items: Crumb[] }
+const { items } = Astro.props;
+const ld = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.label,
+    ...(c.href ? { item: new URL(c.href, 'https://mlmlip.com').href } : {})
+  }))
+};
+---
+<nav class="breadcrumbs" aria-label="Breadcrumb" style="font-size:13px; color:var(--ink-soft); margin-bottom:24px;">
+  <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+  {items.map((c, i) => (
+    <>
+      {i > 0 && <span style="margin:0 8px; color:var(--line);">/</span>}
+      {c.href && i < items.length - 1 ? (
+        <a href={c.href} style="color:var(--rose-dark);">{c.label}</a>
+      ) : (
+        <span style={i === items.length - 1 ? 'color:var(--plum); font-weight:600;' : ''}>{c.label}</span>
+      )}
+    </>
+  ))}
+</nav>

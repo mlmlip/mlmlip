@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { site } from '../data/site';
 
 const faqs = [
@@ -72,6 +73,7 @@ const faqSchema = {
 
   <section>
     <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'FAQ' }]} />
       <p class="eyebrow">Help center</p>
       <h1>Frequently asked questions</h1>
       <p class="lead" style="max-width: 640px;">

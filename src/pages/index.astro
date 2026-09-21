@@ -62,10 +62,71 @@ const featuredCases = cases.slice(0, 3);
     </div>
   </section>
 
+  <section>
+    <div class="wrap">
+      <div class="grid four" style="margin-top: 28px;">
+        <div style="text-align: center;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 44px; color: var(--burgundy); margin: 0; line-height: 1;">6</p>
+          <p class="note" style="margin: 8px 0 0;">lip product categories</p>
+        </div>
+        <div style="text-align: center;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 44px; color: var(--burgundy); margin: 0; line-height: 1;">500</p>
+          <p class="note" style="margin: 8px 0 0;">pcs universal MOQ</p>
+        </div>
+        <div style="text-align: center;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 44px; color: var(--burgundy); margin: 0; line-height: 1;">7</p>
+          <p class="note" style="margin: 8px 0 0;">days to custom samples</p>
+        </div>
+        <div style="text-align: center;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 44px; color: var(--burgundy); margin: 0; line-height: 1;">100%</p>
+          <p class="note" style="margin: 8px 0 0;">sample fee credited to order</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">Why founders choose us</p>
+      <h2>Built for agile brands, not old-model gatekeepers</h2>
+      <p class="lead" style="max-width: 660px;">
+        Tier-1 contract manufacturers demand 10,000-unit commitments and eight-week R&amp;D backlogs. We started from the opposite end.
+      </p>
+      <div class="card gold-line" style="margin-top: 28px; padding: 0; overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+          <thead>
+            <tr style="background: var(--blush);">
+              <th style="padding: 16px 24px; text-align: left; color: var(--plum); font-family: 'Playfair Display', serif; font-weight: 600;">Metric</th>
+              <th style="padding: 16px 24px; text-align: left; color: var(--ink-soft);">Traditional tier-1 OEM</th>
+              <th style="padding: 16px 24px; text-align: left; color: var(--burgundy); font-family: 'Playfair Display', serif; font-weight: 600;">MLM Lip</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['MOQ per SKU', '5,000 – 10,000 pcs', '500 pcs (all categories)'],
+              ['Sampling lead time', '4 – 8 weeks', '7 days'],
+              ['Sampling fee', 'Non-refundable', '100% credited to order'],
+              ['Shades affordable at launch', '1', '3 – 4'],
+              ['Packaging route', 'Off-shelf catalogue', 'Library + custom tooling'],
+              ['Compliance documentation', 'Self-managed', 'GMPC + ISO + CPNP support']
+            ].map((row) => (
+              <tr style="border-bottom: 1px solid var(--line);">
+                <td style="padding: 14px 24px; color: var(--plum); font-weight: 600;">{row[0]}</td>
+                <td style="padding: 14px 24px; color: var(--ink-soft);">{row[1]}</td>
+                <td style="padding: 14px 24px; color: var(--burgundy); font-weight: 600;">{row[2]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top: 28px;"><a class="btn" href="/quote">Start your brief</a></p>
+    </div>
+  </section>
+
   <section class="tint">
     <div class="wrap">
       <p class="eyebrow">Enterprise Manufacturing Pillars</p>
-      <h2>Built for Agile Brands. Backed by Industrial Rigor.</h2>
+      <h2>Backed by industrial rigor</h2>
       <div class="grid three" style="margin-top: 36px;">
         {pillars.map((p) => (
           <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
@@ -98,7 +159,8 @@ const featuredCases = cases.slice(0, 3);
             )}
             <h3>{p.name}</h3>
             <p>{p.body}</p>
-            <p class="note" style="margin:0">{p.detail}</p>
+            <p class="note" style="margin:0 0 12px">{p.detail}</p>
+            {p.categoryHref && <p style="margin:0"><a href={p.categoryHref}>Explore the {p.name.split(' ')[0]} program →</a></p>}
           </div>
         ))}
       </div>

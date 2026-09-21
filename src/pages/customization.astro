@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { site, pillars, steps } from '../data/site';
 ---
 
@@ -9,6 +10,7 @@ import { site, pillars, steps } from '../data/site';
 >
   <section>
     <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Customization' }]} />
       <p class="eyebrow">Customization</p>
       <h1>Three layers of customization, one supplier</h1>
       <p class="lead" style="max-width:660px">

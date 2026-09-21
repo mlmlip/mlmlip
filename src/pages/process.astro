@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { site } from '../data/site';
 
 const phases = [
@@ -60,6 +61,7 @@ const phases = [
 >
   <section>
     <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Process' }]} />
       <p class="eyebrow">How we work</p>
       <h1>From your idea to your lip brand, in 8 clear steps</h1>
       <p class="lead" style="max-width:660px">

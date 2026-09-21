@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog')).sort(
@@ -15,7 +16,8 @@ const fmt = (d: Date) =>
 >
   <section>
     <div class="wrap">
-      <p class="eyebrow">Blog</p>
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog' }]} />
+      <p class="eyebrow">Blog · {posts.length} articles</p>
       <h1>Build your lip brand smarter</h1>
       <p class="lead" style="max-width:640px">
         Practical guides for founders launching a private label lip line —

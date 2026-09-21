@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { cases, factoryVideos } from '../data/cases';
 
 const isYouTube = (url: string) => /youtube|youtu\.be/.test(url);
@@ -13,6 +14,7 @@ const toEmbed = (url: string) =>
 >
   <section>
     <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Cases & Factory' }]} />
       <p class="eyebrow">Cases</p>
       <h1>Products we have made for brands like yours</h1>
       <p class="lead" style="max-width:660px">
