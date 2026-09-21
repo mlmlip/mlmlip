@@ -4,6 +4,22 @@ import { site, pillars, products, steps, certifications } from '../data/site';
 import { cases } from '../data/cases';
 import { getCollection } from 'astro:content';
 
+const categoryLinks = [
+  { label: 'Lip Gloss Manufacturer', href: '/lip-gloss-manufacturer', blurb: 'Clear, tinted, shimmer and plumping gloss with custom tube and applicator.' },
+  { label: 'Lip Mud & Velvet Tint', href: '/lip-mud-manufacturer', blurb: 'Soft-focus matte formulas with transfer-resistant, buildable colour.' },
+  { label: 'Lip Liner Manufacturer', href: '/lip-liner-manufacturer', blurb: 'Cedarwood or twist-up liners shade-matched to your colour range.' },
+  { label: 'Lipstick Manufacturer', href: '/lipstick-manufacturer', blurb: 'Matte, satin and shine bullets with custom case tooling.' },
+  { label: 'Lip Oil Manufacturer', href: '/lip-oil-manufacturer', blurb: 'Peptide and botanical oil treatments with glass-like shine.' },
+  { label: 'Lip Mask Manufacturer', href: '/lip-mask-manufacturer', blurb: 'Overnight repair masks and barrier balms in jars or tubes.' }
+];
+
+const faqPreview = [
+  { q: 'What is your minimum order quantity?', a: '500 pcs per SKU — identical across all six lip categories, and SKUs can be combined in one project.' },
+  { q: 'How fast are samples ready?', a: 'Custom samples in 7 days, and 100% of the sampling fee is credited back to your production order.' },
+  { q: 'Can you open a custom mold?', a: 'Yes. Beyond our in-house packaging library, we tool bespoke molds for an exclusive silhouette.' },
+  { q: 'Which certifications do you provide?', a: 'GMPC and ISO 22716 production, with EU CPNP notification support and FDA-ready documentation.' }
+];
+
 const latestPosts = (await getCollection('blog'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 2);
@@ -31,6 +47,16 @@ const featuredCases = cases.slice(0, 3);
       <p class="note" style="margin-top: 24px; font-size: 14px; color: var(--plum);">
         ✓ 500 pcs universal MOQ &nbsp;·&nbsp; ✓ 7-day formulation sampling &nbsp;·&nbsp; ✓ 100% sample fee credited to bulk order
       </p>
+    </div>
+  </section>
+
+  <section style="padding: 0;">
+    <div class="wrap">
+      <div class="card" style="margin-top: -28px; position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 18px 34px; justify-content: center; padding: 20px 28px;">
+        {['GMPC certified', 'ISO 22716', 'EU CPNP support', 'FDA-ready documentation', '500 pcs MOQ', '7-day sampling'].map((t) => (
+          <span style="font-size: 14px; color: var(--plum); font-weight: 600; letter-spacing: 0.02em;">{t}</span>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -75,6 +101,25 @@ const featuredCases = cases.slice(0, 3);
         ))}
       </div>
       <p style="margin-top:24px"><a href="/products">View the full product range →</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Custom manufacturing by category</p>
+      <h2>Private label solutions for every lip format</h2>
+      <p class="lead" style="max-width: 660px;">
+        Each category has its own manufacturing page — capabilities, specification and answers to the questions brands ask most.
+      </p>
+      <div class="grid three" style="margin-top: 28px;">
+        {categoryLinks.map((c) => (
+          <a class="card" href={c.href} style="display: block; color: inherit;">
+            <h3 style="font-size: 19px; margin-bottom: 8px;">{c.label}</h3>
+            <p style="margin: 0; font-size: 15px;">{c.blurb}</p>
+            <p style="margin: 12px 0 0; color: var(--rose-dark); font-size: 14px;">Explore →</p>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -144,6 +189,37 @@ const featuredCases = cases.slice(0, 3);
         ))}
       </div>
       <p style="margin-top:24px"><a href="/blog">Read all articles →</a></p>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">Sampling program</p>
+      <h2>Test the product before you order stock</h2>
+      <p class="lead" style="max-width: 680px;">
+        Physical samples developed against your brief, ready in 7 days — and the full sampling fee is credited back
+        when you place your 500 pcs production order. Sampling effectively costs nothing.
+      </p>
+      <p style="margin-top: 28px;">
+        <a class="btn" href="/samples">Order samples</a>
+        <a class="btn ghost" href="/process" style="margin-left: 12px;">See how we work</a>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Common questions</p>
+      <h2>Before you send your brief</h2>
+      <div class="grid two" style="margin-top: 28px;">
+        {faqPreview.map((f) => (
+          <div class="card">
+            <h3 style="font-size: 18px;">{f.q}</h3>
+            <p style="margin: 0;">{f.a}</p>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top: 24px;"><a href="/faq">Read all frequently asked questions →</a></p>
     </div>
   </section>
 

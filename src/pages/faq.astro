@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const faqs = [
+  {
+    q: 'What is your minimum order quantity (MOQ)?',
+    a: '500 pcs per SKU — the same minimum across all six lip categories: lip gloss, lip mud and velvet tint, lip liner, lipstick, lip oil and lip mask. Different SKUs can be combined in a single project.'
+  },
+  {
+    q: 'How fast can I get samples?',
+    a: 'Custom samples are developed against your brief and ready in 7 days. When you place the bulk order, 100% of the sampling fee is deducted from your invoice — sampling effectively costs you nothing.'
+  },
+  {
+    q: 'Can I customize the formula, not just the logo?',
+    a: 'Yes. We tune texture, finish, pigment load, wear, fragrance and the ingredient story to your brief. Packaging, formulation and branding are handled in-house, so the sample you approve is the product you receive.'
+  },
+  {
+    q: 'Do you offer custom mold tooling for packaging?',
+    a: 'Yes. Alongside our in-house packaging library of tubes, caps, applicators and cases, we can open bespoke custom molds for an exclusive silhouette. Mold cost and lead time are quoted against your design brief.'
+  },
+  {
+    q: 'Which certifications and documents do you provide?',
+    a: 'Production runs under GMPC and ISO 22716 certified processes. Every batch is prepared with stability data, MSDS, INCI documentation and full batch records, with turn-key EU CPNP notification support and FDA-ready documentation for the US market.'
+  },
+  {
+    q: 'What does production lead time look like?',
+    a: 'Samples: 7 days. Bulk production typically runs 15–25 business days after artwork and sample approval, depending on component availability, plus shipping time to your door or warehouse.'
+  },
+  {
+    q: 'Can you supply the packaging only?',
+    a: 'We focus on finished, branded lip products — formulation and packaging together. If you need components such as empty tubes for your own filling, talk to us and we will advise on what is possible.'
+  },
+  {
+    q: 'Do you sign an NDA and protect my design?',
+    a: 'Yes. We work on private label terms and sign NDAs on request. Your formulas, artwork and molds are not shared, resold or shown to other clients.'
+  },
+  {
+    q: 'Which markets do you ship to?',
+    a: 'We primarily serve North America (US, Canada) and Europe (UK, France, Germany, Spain, Italy), shipping globally by air or sea with the export documentation your destination requires.'
+  },
+  {
+    q: 'What are your payment terms?',
+    a: 'Standard terms are a deposit to start production with the balance before shipment. Exact terms are confirmed in your quotation and proforma invoice.'
+  },
+  {
+    q: 'Can I start with one product and expand later?',
+    a: 'That is the usual route. Most brands launch one hero product at 500 pcs, prove it in market, then expand into more shades or categories — all at the same minimum.'
+  },
+  {
+    q: 'How do I get a quotation?',
+    a: 'Send your product type, target quantity, market and any reference photos or packaging ideas. We reply with the practical options — format, components, sampling plan and pricing for your quantity.'
+  }
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a }
+  }))
+};
+---
+
+<BaseLayout
+  title="FAQ | Private Label Lip Cosmetics Manufacturing — MLM Lip"
+  description="Answers on MOQ, 7-day sampling, custom formulation, mold tooling, certifications (GMPC, ISO 22716, CPNP), lead times and payment terms for private label lip cosmetics manufacturing."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Help center</p>
+      <h1>Frequently asked questions</h1>
+      <p class="lead" style="max-width: 640px;">
+        Everything brands ask us before starting a private label lip line. Still unsure? Send your question with your
+        product brief — we answer within one working day.
+      </p>
+    </div>
+  </section>
+
+  <section class="tint" style="padding-top: 0; background: transparent;">
+    <div class="wrap">
+      <div class="grid two">
+        {faqs.map((f) => (
+          <div class="card">
+            <h3 style="font-size: 18px;">{f.q}</h3>
+            <p style="margin: 0;">{f.a}</p>
+          </div>
+        ))}
+      </div>
+      <div class="card gold-line" style="margin-top: 36px; text-align: center; padding: 40px 24px;">
+        <h2 style="margin-bottom: 10px;">Question not answered here?</h2>
+        <p style="margin: 0 auto 20px; max-width: 520px;">
+          Send it over with your product idea. We will come back with clear options and pricing for {site.moq} per SKU.
+        </p>
+        <a class="btn" href="/contact">Ask our team</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

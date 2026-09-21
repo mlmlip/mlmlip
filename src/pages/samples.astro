@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const sampleBenefits = [
+  {
+    title: 'Test before you commit',
+    body: 'Every sample is developed against your brief — texture, shade, packaging and logo placement. You only move to production once it is right.'
+  },
+  {
+    title: 'Fee credited back',
+    body: 'When you place the bulk order, 100% of the sampling fee is deducted from your invoice. Sampling effectively costs you nothing.'
+  },
+  {
+    title: '7-day turnaround',
+    body: 'Custom samples are typically ready in 7 days, so you can test the market fast and reorder what works.'
+  }
+];
+
+const steps = [
+  { n: '01', title: 'Send your brief', body: 'Product type, shade direction, target market, quantity and any reference photos or packaging ideas.' },
+  { n: '02', title: 'We quote the sample', body: 'You receive a sample plan with cost, timeline and the components we recommend. Physical references speed this up.' },
+  { n: '03', title: 'Samples shipped', body: 'Developed in-house and shipped to your door — typically 7 days from brief confirmation.' },
+  { n: '04', title: 'Order & get credited', body: 'Approve the sample, place your 500 pcs order and the sampling fee comes straight off your invoice.' }
+];
+---
+
+<BaseLayout
+  title="Order Samples | Custom Lip Product Samples in 7 Days — MLM Lip"
+  description="Order private label lip product samples: lip gloss, lip mud, lip liner, lipstick, lip oil and lip mask. Samples in 7 days, with 100% of the sampling fee credited to your bulk order."
+>
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%);">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.2em;">Sampling program</p>
+      <h1>Order samples before you order stock</h1>
+      <p class="lead" style="max-width: 680px;">
+        There is no way to judge a lip product from a specification sheet. We develop physical samples against your brief
+        in 7 days — and credit the full sampling fee back when you place your production order.
+      </p>
+      <p style="margin-top: 28px;">
+        <a class="btn" href="/contact">Request sample kit</a>
+        <a class="btn ghost" href="/process" style="margin-left: 12px;">See the full process</a>
+      </p>
+      <p class="note" style="margin-top: 16px;">✓ {site.moq} MOQ per SKU &nbsp;·&nbsp; ✓ 7-day sampling &nbsp;·&nbsp; ✓ 100% fee credited on order</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Why sample first</p>
+      <h2>Lower risk, faster decisions</h2>
+      <div class="grid three" style="margin-top: 28px;">
+        {sampleBenefits.map((b) => (
+          <div class="card gold-line">
+            <h3>{b.title}</h3>
+            <p style="margin: 0;">{b.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">How sampling works</p>
+      <h2>From brief to sample in four steps</h2>
+      <div class="grid two" style="margin-top: 28px;">
+        {steps.map((s) => (
+          <div class="card">
+            <p class="eyebrow" style="margin-bottom: 6px;">Step {s.n}</p>
+            <h3>{s.title}</h3>
+            <p style="margin: 0;">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Sample kit contents</p>
+      <h2>What we can put in your sample box</h2>
+      <div class="grid three" style="margin-top: 28px;">
+        {['Lip Gloss', 'Lip Mud & Velvet Tint', 'Lip Liner', 'Lipstick', 'Lip Oil', 'Lip Mask'].map((n) => (
+          <div class="card">
+            <h3 style="font-size: 18px;">{n}</h3>
+            <p style="margin: 0;">Custom shade, texture and component developed to your brief.</p>
+          </div>
+        ))}
+      </div>
+      <p class="note" style="margin-top: 20px;">
+        Packaging photos for some categories are still being prepared — ask us for physical samples instead.
+      </p>
+      <p style="margin-top: 28px;">
+        <a class="btn" href="/contact">Request your sample kit</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

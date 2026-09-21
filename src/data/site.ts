@@ -13,16 +13,37 @@ export const site = {
     address: 'Shenzhen, China'
   },
   nav: [
-    { label: 'Home', href: '/' },
     { label: 'Products', href: '/products' },
     { label: 'Customization', href: '/customization' },
     { label: 'Process', href: '/process' },
     { label: 'Cases', href: '/cases' },
+    { label: 'Samples', href: '/samples' },
     { label: 'Blog', href: '/blog' },
-    { label: 'About', href: '/about' },
-    { label: 'Contact', href: '/contact' }
+    { label: 'About', href: '/about' }
   ]
 };
+
+// 页脚内链（SEO：品类落地页 + 关键页）
+export const footerCategories = [
+  { label: 'Lip Gloss Manufacturer', href: '/lip-gloss-manufacturer' },
+  { label: 'Lip Mud & Velvet Tint', href: '/lip-mud-manufacturer' },
+  { label: 'Lip Liner Manufacturer', href: '/lip-liner-manufacturer' },
+  { label: 'Lipstick Manufacturer', href: '/lipstick-manufacturer' },
+  { label: 'Lip Oil Manufacturer', href: '/lip-oil-manufacturer' },
+  { label: 'Lip Mask Manufacturer', href: '/lip-mask-manufacturer' }
+];
+
+export const footerCompany = [
+  { label: 'Products', href: '/products' },
+  { label: 'Customization', href: '/customization' },
+  { label: 'How We Work', href: '/process' },
+  { label: 'Cases & Factory', href: '/cases' },
+  { label: 'Order Samples', href: '/samples' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' }
+];
 
 export const pillars = [
   {

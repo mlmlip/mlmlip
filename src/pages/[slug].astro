@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { categories } from '../data/categories';
+import { site } from '../data/site';
+
+export async function getStaticPaths() {
+  return categories.map((c) => ({
+    params: { slug: c.slug },
+    props: { category: c }
+  }));
+}
+
+const { category } = Astro.props;
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: category.faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a }
+  }))
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: category.h1,
+  serviceType: `Custom ${category.name} Manufacturing (Private Label / OEM / ODM)`,
+  description: category.metaDescription,
+  provider: {
+    '@type': 'Organization',
+    name: site.manufacturer,
+    url: site.domain
+  },
+  areaServed: ['United States', 'Canada', 'United Kingdom', 'France', 'Germany', 'Spain', 'Italy'],
+  offers: {
+    '@type': 'Offer',
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      description: 'Minimum order 500 pcs per SKU'
+    }
+  }
+};
+---
+
+<BaseLayout title={category.metaTitle} description={category.metaDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 80px; padding-bottom: 80px;">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.2em;">{category.name} · Private Label · OEM / ODM</p>
+      <h1 style="font-size: clamp(34px, 4.4vw, 54px); max-width: 880px;">{category.h1}</h1>
+      <p class="lead" style="max-width: 720px; font-size: 19px;">{category.intro}</p>
+      <p style="margin-top: 28px;">
+        <a class="btn" href="/contact">Request a quote</a>
+        <a class="btn ghost" href="/samples" style="margin-left: 12px;">Order samples</a>
+      </p>
+      <p class="note" style="margin-top: 16px;">
+        ✓ {site.moq} MOQ &nbsp;·&nbsp; ✓ 7-day sampling &nbsp;·&nbsp; ✓ Sampling fee credited to your order &nbsp;·&nbsp; ✓ GMPC / ISO / CPNP
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="grid two" style="align-items: start;">
+        <div>
+          {category.image ? (
+            <div class="case-media"><img src={category.image} alt={category.h1} loading="lazy" /></div>
+          ) : (
+            <div class="media-slot" style="aspect-ratio: 4 / 3;">
+              {category.name} production photos — in preparation
+            </div>
+          )}
+        </div>
+        <div>
+          <p class="eyebrow">What you can specify</p>
+          <h2 style="font-size: 28px;">Built to your brief, not to a catalogue</h2>
+          <ul style="padding-left: 20px; color: var(--ink-soft); line-height: 1.8;">
+            {category.highlights.map((h) => <li>{h}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">Specification</p>
+      <h2>{category.name} manufacturing at a glance</h2>
+      <div class="card gold-line" style="margin-top: 28px; padding: 0; overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+          {category.specs.map((s) => (
+            <tr style="border-bottom: 1px solid var(--line);">
+              <td style="padding: 16px 24px; width: 32%; color: var(--plum); font-weight: 600;">{s.label}</td>
+              <td style="padding: 16px 24px; color: var(--ink-soft);">{s.value}</td>
+            </tr>
+          ))}
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Frequently asked</p>
+      <h2>{category.name} — common questions</h2>
+      <div class="grid two" style="margin-top: 28px;">
+        {category.faqs.map((f) => (
+          <div class="card">
+            <h3 style="font-size: 18px;">{f.q}</h3>
+            <p style="margin: 0;">{f.a}</p>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top: 28px;"><a href="/faq">See all frequently asked questions →</a></p>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <div class="card" style="text-align: center; padding: 48px 28px;">
+        <h2 style="margin-bottom: 10px;">Start your {category.name.toLowerCase()} project</h2>
+        <p class="lead" style="max-width: 560px; margin: 0 auto 24px;">
+          Tell us your shade direction, target market and packaging idea. We will come back with the practical route and a quotation.
+        </p>
+        <a class="btn" href="/contact">Get a quote</a>
+        <a class="btn ghost" href="/cases" style="margin-left: 12px;">See projects we made</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

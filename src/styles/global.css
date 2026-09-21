@@ -168,6 +168,31 @@ section.tint { background: var(--blush-soft); }
   margin: 0 6px 6px 0;
 }
 .gold-line { border-top: 3px solid var(--gold); }
+
+/* 浮动 WhatsApp 询盘按钮 */
+.wa-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #0b2d1a;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+.wa-float:hover { text-decoration: none; background: #1ebe5b; }
+.wa-float span { display: inline; }
+
+@media (max-width: 640px) {
+  .wa-float { padding: 12px; }
+  .wa-float span { display: none; }
+}
 .prose { max-width: 720px; }
 .prose h2 { margin-top: 44px; font-size: 26px; }
 .prose h3 { margin-top: 32px; }
