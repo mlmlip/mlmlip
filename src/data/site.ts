@@ -112,30 +112,35 @@ export const products = [
     name: 'Velvet Cloud Lip Mud & Tint',
     body: 'Weightless, soft-focus matte formula delivering buildable, transfer-resistant color that blurs fine lip lines effortlessly.',
     detail: '500 pcs MOQ · Pantone Precision Shade Matching',
+    image: '/products/nas-sync-39-4.jpg',
     categoryHref: '/lip-mud-manufacturer'
   },
   {
     name: 'Skinified Peptide Lip Oil',
     body: 'Hybrid treatment pairing botanical squalane and tripeptides with lightweight, glass-like optical shine. Features oversized doe-foot or cooling ceramic tips.',
     detail: '500 pcs MOQ · Custom Flavor & Active Story',
+    image: '/products/nas-sync-01.jpg',
     categoryHref: '/lip-oil-manufacturer'
   },
   {
     name: 'Precision Glide Lip Liner',
     body: 'Ultra-smooth, smudge-proof pencil formulation in cedarwood barrel or twist-up mechanical formats for crisp contouring.',
     detail: '500 pcs MOQ · Custom Barrel & Cap Finishes',
+    image: '/products/nas-sync-img-0053.jpg',
     categoryHref: '/lip-liner-manufacturer'
   },
   {
     name: 'Signature Bullet Lipstick',
     body: 'Silky satin, velvet matte, and high-shine finishes cast in heavyweight magnetic zamac, aluminum, or custom-embossed cases.',
     detail: '500 pcs MOQ · Custom Bullet Engraving & Tooling',
+    image: '/products/nas-sync-img-0292.jpg',
     categoryHref: '/lipstick-manufacturer'
   },
   {
     name: 'Barrier Repair Lip Mask',
     body: 'Intensive overnight treatment balms with ceramide complexes and rich plant butters for 24-hour hydration and restorative care.',
     detail: '500 pcs MOQ · Jar or Soft-Touch Squeeze Tubes',
+    image: '/products/nas-sync-img-0050.jpg',
     categoryHref: '/lip-mask-manufacturer'
   }
 ];

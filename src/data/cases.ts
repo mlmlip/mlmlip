@@ -15,7 +15,7 @@ export const cases: CaseItem[] = [
     title: '26-Shade Rose-Gold Lip Gloss Line',
     category: 'Lip Gloss',
     summary: 'Full-range nude-to-berry lip gloss collection in heavyweight rose-gold capped tubes, color-matched across 26 market-ready shades.',
-    image: '/products/lipgloss-26-01.jpg',
+    image: '/products/nas-sync-39-3.jpg',
     specs: [
       { label: 'Shades', value: '26' },
       { label: 'MOQ', value: '500 pcs' },
@@ -31,7 +31,7 @@ export const cases: CaseItem[] = [
     title: 'Slim-Tube Nude Lip Collection',
     category: 'Lip Gloss',
     summary: 'Minimalist slim tubes with silver caps and a matching carton — ideal for DTC and TikTok Shop launches at low MOQ.',
-    image: '/products/lipgloss-slim-01.jpg',
+    image: '/products/nas-sync-2.jpg',
     specs: [
       { label: 'Shades', value: '6' },
       { label: 'MOQ', value: '500 pcs' },
@@ -46,7 +46,7 @@ export const cases: CaseItem[] = [
     title: 'Nude & Gloss Lip Gloss Series',
     category: 'Lip Gloss',
     summary: 'Neutral wearable gloss range developed for a private-label US brand, with custom box and Pantone-matched caps.',
-    image: '/products/lipgloss-nude-01.jpg',
+    image: '/products/nas-sync-img-0291.jpg',
     specs: [
       { label: 'Shades', value: '4' },
       { label: 'MOQ', value: '500 pcs' },
