@@ -7,3 +7,6 @@ dist/
 .env.production
 .vercel
 .env*
+
+# API keys
+../.gemini-api-key
