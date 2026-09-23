@@ -17,23 +17,52 @@ const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
 // 估算阅读时间（基于 body 字数，英文约 220 wpm）
-const wordCount = post.body.split(/\s+/).filter(Boolean).length;
+const rawBody = post.body || '';
+const wordCount = rawBody.split(/\s+/).filter(Boolean).length;
 const readingTime = Math.max(1, Math.ceil(wordCount / 220));
 
+// === Article Schema JSON-LD ===
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: post.data.title,
-  description: post.data.description,
-  datePublished: post.data.pubDate.toISOString(),
-  author: { '@type': 'Organization', name: 'MLM Lip' },
-  publisher: { '@type': 'Organization', name: 'MLM Lip' },
+  description: post.data.description || '',
+  datePublished: post.data.pubDate instanceof Date ? post.data.pubDate.toISOString() : new Date(post.data.pubDate).toISOString(),
+  author: { '@type': 'Organization', name: 'Beautychain Limited', url: 'https://mlmlip.com' },
+  publisher: { '@type': 'Organization', name: 'Beautychain Limited', url: 'https://mlmlip.com', logo: { '@type': 'ImageObject', url: 'https://mlmlip.com/logo.svg' } },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `https://mlmlip.com/blog/${post.id}/` },
   wordCount: wordCount
 };
+
+// === FAQPage Schema auto-extraction ===
+const faqItems: { question: string; answer: string }[] = [];
+const faqSectionMatch = rawBody.split(/##\s+Frequently Asked Questions/i)[1];
+if (faqSectionMatch) {
+  const faqContent = faqSectionMatch.split(/\n##\s+/)[0];
+  const qaRegex = /\*\*Q:?\*?\*?\s*(.*?)\*?\*?\r?\n+\s*\*\*A:?\*?\*?\s*([\s\S]*?)(?=(?:\r?\n\s*\*\*Q|\r?\n\s*##|\r?\n\s*<|$))/gi;
+  let m;
+  while ((m = qaRegex.exec(faqContent)) !== null) {
+    const q = m[1].replace(/^\*\*|\*\*$/g, '').replace(/\*$/,'').trim();
+    const a = m[2].replace(/^\*\*|\*\*$/g, '').trim();
+    if (q && a) faqItems.push({ question: q, answer: a });
+  }
+}
+const faqSchema = faqItems.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(item => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer }
+  }))
+} : null;
 ---
 
 <BaseLayout title={`${post.data.title} — MLM Lip`} description={post.data.description}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  {faqSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  )}
   <section>
     <div class="wrap">
       <div class="prose">
