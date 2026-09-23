@@ -18,7 +18,7 @@ Whether you are launching a velvety matte mechanical pencil or a classic sharpen
 * **Regulatory Compliance:** All formulations comply with strict international standards, including EU Regulation EC 1223/2009 and US FDA MoCRA requirements.
 * **Quality Assurance:** Manufactured in ISO 22716 and GMP-certified cleanroom facilities with rigorous microbiological and heavy metal testing.
 * **Formulation Expertise:** Vegan, cruelty-free, and waterproof formulas utilizing clean waxes, plant oils, and high-purity iron oxides.
-* **Direct B2B Communication:** Reach out instantly via WhatsApp at **+86 136 5238 0291** or email **info@mlmlip.com** to initiate your project.
+* **Direct B2B Communication:** Reach out instantly via WhatsApp at **+86 136 5238 0291** or email **nancy@mlmlip.com** to initiate your project.
 
 ---
 
@@ -115,4 +115,4 @@ Ready to elevate your product lineup? Request a tailored [quote](/quote) to get 
 
 Contact our B2B account managers directly today:
 * **WhatsApp:** [+86 136 5238 0291](https://wa.me/8613652380291)
-* **Email:** [info@mlmlip.com](mailto:info@mlmlip.com)
+* **Email:** [nancy@mlmlip.com](mailto:nancy@mlmlip.com)

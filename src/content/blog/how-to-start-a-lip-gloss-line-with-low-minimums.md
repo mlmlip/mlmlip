@@ -66,6 +66,6 @@ Starting a successful lip gloss line doesn't require massive warehouses or milli
 Ready to bring your custom lip gloss line to life? Let's collaborate to create formulas and packaging your customers will obsess over. 
 
 *   **WhatsApp:** +86 136 5238 0291
-*   **Email:** info@mlmlip.com
+*   **Email:** nancy@mlmlip.com
 
 Contact us today and take the first step toward launching your dream lip brand!

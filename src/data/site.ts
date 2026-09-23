@@ -9,7 +9,7 @@ export const site = {
   contact: {
     whatsapp: '+86 136 5238 0291',
     whatsappLink: 'https://wa.me/8613652380291',
-    email: 'info@mlmlip.com',
+    email: 'nancy@mlmlip.com',
     address: 'Shenzhen, China'
   },
   nav: [

@@ -154,5 +154,5 @@ At **Beautychain Limited (mlmlip.com)**, we eliminate the traditional barriers t
 Are you ready to develop your hero lip line with a trusted, certified manufacturing partner? Contact our formulation specialists and production engineers directly for instant project evaluations, shade development briefs, and competitive factory quotations:
 
 * **WhatsApp:** [+86 136 5238 0291](https://wa.me/8613652380291)
-* **Email:** [info@mlmlip.com](mailto:info@mlmlip.com)
+* **Email:** [nancy@mlmlip.com](mailto:nancy@mlmlip.com)
 * **Official Website:** [mlmlip.com](https://mlmlip.com)

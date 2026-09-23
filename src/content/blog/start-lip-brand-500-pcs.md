@@ -140,5 +140,5 @@ Launching an independent lip line does not require corporate venture capital or 
 Take the first step toward launching your custom private label lip cosmetics line. Contact our dedicated project managers today for formulation catalogs, sample orders, and tailored B2B quotations:
 
 * **WhatsApp:** [+86 136 5238 0291](https://wa.me/8613652380291)
-* **Email:** [info@mlmlip.com](mailto:info@mlmlip.com)
+* **Email:** [nancy@mlmlip.com](mailto:nancy@mlmlip.com)
 * **Official Website:** [mlmlip.com](https://mlmlip.com)

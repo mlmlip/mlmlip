@@ -32,7 +32,7 @@ At the end, include:
 - Customization: Formula + packaging + logo + mold tooling
 - Certs: GMPC, ISO 22716, EU CPNP, FDA-ready
 - Markets: North America + Europe
-- Contact: WhatsApp +86 136 5238 0291 | info@mlmlip.com
+- Contact: WhatsApp +86 136 5238 0291 | nancy@mlmlip.com
 
 ## FORBIDDEN WORDS
 Never use: glitter, shimmer, chunky glitter, body oil, body shimmer oil, effect pigments, powder, chameleon makeup.

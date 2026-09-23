@@ -153,5 +153,5 @@ Get in touch with our international formulation specialists today to discuss you
 * **Official Website**: [mlmlip.com](https://mlmlip.com)
 * **Direct Formulation Inquiries**: [Request a Project Quote](/quote)
 * **Sampling Program**: [Order Lab Samples](/samples)
-* **Email**: info@mlmlip.com
+* **Email**: nancy@mlmlip.com
 * **WhatsApp Direct Line**: +86 136 5238 0291

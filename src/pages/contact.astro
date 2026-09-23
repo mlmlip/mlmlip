@@ -136,7 +136,7 @@ import { site } from '../data/site';
         const prod = d.get('product') || 'Lip Cosmetics';
         const subj = encodeURIComponent(`Inquiry: ${prod} (${d.get('company') || 'New Brand'})`);
         const body = encodeURIComponent(getContactLines().join('\n'));
-        mailLink.setAttribute('href', `mailto:info@mlmlip.com?subject=${subj}&body=${body}`);
+        mailLink.setAttribute('href', `mailto:${site.contact.email}?subject=${subj}&body=${body}`);
       }
     }
 
