@@ -153,7 +153,7 @@ const featuredCases = cases.slice(0, 3);
         {products.map((p) => (
           <div class="card">
             {p.image ? (
-              <div class="case-media" style="margin-bottom:16px"><img src={p.image} alt={p.name} loading="lazy" /></div>
+              <div class="case-media" style="margin-bottom:16px"><img height="600" width="800" src={p.image} alt={p.name} loading="lazy" /></div>
             ) : (
               <div class="media-slot" style="margin-bottom:16px">Product photography in preparation</div>
             )}
@@ -304,7 +304,7 @@ const featuredCases = cases.slice(0, 3);
         {featuredCases.map((c) => (
           <div class="card">
             {c.image ? (
-              <div class="case-media"><img src={c.image} alt={c.title} loading="lazy" /></div>
+              <div class="case-media"><img height="600" width="800" src={c.image} alt={c.title} loading="lazy" /></div>
             ) : (
               <div class="media-slot" style="margin-bottom:16px">Case media — assets coming</div>
             )}

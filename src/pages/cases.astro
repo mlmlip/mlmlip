@@ -30,7 +30,7 @@ const toEmbed = (url: string) =>
         {cases.map((c) => (
           <div class="card">
             {c.image ? (
-              <div class="case-media"><img src={c.image} alt={c.title} loading="lazy" /></div>
+              <div class="case-media"><img height="600" width="800" src={c.image} alt={c.title} loading="lazy" /></div>
             ) : c.videoUrl ? (
               isYouTube(c.videoUrl) ? (
                 <div class="case-media video-embed">
@@ -89,7 +89,7 @@ const toEmbed = (url: string) =>
                 <div class="video-embed"><video src={v.videoUrl} controls preload="metadata"></video></div>
               )
             ) : v.image ? (
-              <div class="case-media"><img src={v.image} alt={v.title} loading="lazy" /></div>
+              <div class="case-media"><img height="600" width="800" src={v.image} alt={v.title} loading="lazy" /></div>
             ) : (
               <div class="media-slot">{v.note}</div>
             )}
