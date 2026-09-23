@@ -20,7 +20,7 @@
 2. **基调**：B2B 专业、商业化、具有说服力，强调“低门槛（500pcs）实现你的美妆品牌梦”。
 3. **禁止词汇**：绝对不能出现 glitter, shimmer, chunky glitter 等闪粉相关词汇。
 4. **行动号召 (CTA)**：文章末尾必须引导客户添加 WhatsApp (+86 136 5238 0291) 或通过表单发送 Inquiry。
-| custom lip oil manufacturer with mature formulas | 产品研发、寻源定厂 | 重视品质的品牌方/网红达人 | 我们有独家成熟唇油配方, 质地优越不粘腻, 500 pcs 起订 | `[待撰写]` |
+| custom lip oil manufacturer with mature formulas | 产品研发、寻源定厂 | 重视品质的品牌方/网红达人 | 我们有独家成熟唇油配方, 质地优越不粘腻, 500 pcs 起订 | `[已发布]` |
 | private label lip liner pencil waterproof OEM | 扩充品类、找稳定代工 | 亚马逊卖家、线下美妆集合店 | 防水长效配方, 支持全包材开模定制 | `[待撰写]` |
 | best hydrating lip oil vendor for indie brands | 趋势选品 | 想要抓住唇油红利的初创美妆品牌 | 7天极速免费打样(下单抵扣), 直接测试我们成熟的高级唇油配方 | `[待撰写]` |
 | custom wooden lip liner manufacturer low moq | 细分材质需求 | 走环保或经典路线的美妆品牌 | 现有丰富包材库(含木杆/塑料杆), 极低试错成本(500 pcs) | `[待撰写]` |
