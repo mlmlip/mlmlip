@@ -1,6 +1,6 @@
 ---
 title: "Lip Gloss vs. Lip Mud vs. Lip Oil: Which Format Should Your Brand Launch First?"
-description: "In-depth B2B comparison guide of all 6 private label lip formats: lip gloss, lip mud, lip liner, lipstick, lip oil, and lip mask. Analyze margins, market trends, packaging, and hero SKU strategies."
+description: "Compare 6 private label lip formats (lip gloss, lip mud, lip oil, lipstick, liner, mask): 500 pcs MOQ, 7-day lab samples, margins & ISO 22716 compliance."
 pubDate: 2026-09-21
 tags: ["product strategy", "lip gloss", "lip mud", "lip oil", "private label"]
 ---

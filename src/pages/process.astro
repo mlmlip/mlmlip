@@ -73,38 +73,38 @@ const phases = [
 
 <BaseLayout
   title="Our Process | 8-Step Precision Lip Manufacturing — MLM Lip"
-  description="From initial brief to 7-day lab sampling, ISO 22716 cleanroom mass production, and global retail delivery. Complete private label manufacturing from 500 pcs."
+  description="8-step B2B lip manufacturing process: 7-day lab samples, ISO 22716 cleanroom production, 15-25 day bulk lead times & full FDA/CPNP compliance dossiers."
 >
-  <section style="background:#0f172a; color:#fff; padding:70px 0 50px 0; border-bottom:1px solid #1e293b;">
+  <section style="background:var(--plum-dark); color:#fff; padding:70px 0 50px 0; border-bottom:1px solid rgba(255,255,255,0.12);">
     <div class="wrap">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Process' }]} />
-      <p style="color:#38bdf8; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">TRANSPARENT INDUSTRIAL TIMELINE</p>
+      <p style="color:var(--gold); font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">TRANSPARENT INDUSTRIAL TIMELINE</p>
       <h1 style="color:#fff; font-size:38px; line-height:1.2; font-weight:800; max-width:800px; margin-bottom:18px;">
-        From Creative Brief to Your Door. <br/><span style="color:#94a3b8; font-weight:400;">In 8 Documented Milestones.</span>
+        From Creative Brief to Your Door. <br/><span style="color:#d6b3be; font-weight:400;">In 8 Documented Milestones.</span>
       </h1>
-      <p style="color:#cbd5e1; font-size:16px; line-height:1.6; max-width:720px; margin:0;">
+      <p style="color:#f3dde3; font-size:16px; line-height:1.6; max-width:720px; margin:0;">
         No opaque supply chains. You always know what happens next, what our formulation lab requires from you, and exactly what documentation accompanies your shipment into North America or Europe.
       </p>
     </div>
   </section>
 
-  <section style="padding:60px 0; background:#f8fafc;">
+  <section style="padding:60px 0; background:var(--blush-soft);">
     <div class="wrap">
       <div style="display:flex; flex-direction:column; gap:36px;">
         {phases.map((p) => (
-          <div class="card" style="background:#fff; border-radius:12px; border:1px solid #e2e8f0; overflow:hidden; display:grid; grid-template-columns: 280px 1fr; gap:0; box-shadow:0 4px 6px -1px rgba(0,0,0,0.04);">
-            <div style="height:100%; min-height:220px; position:relative; background:#f1f5f9; overflow:hidden;">
+          <div class="card" style="background:#fff; border-radius:12px; border:1px solid var(--line); overflow:hidden; display:grid; grid-template-columns: 280px 1fr; gap:0; box-shadow:0 4px 6px -1px rgba(0,0,0,0.04);">
+            <div style="height:100%; min-height:220px; position:relative; background:var(--blush); overflow:hidden;">
               <img src={p.image} alt={p.title} style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; top:12px; left:12px; background:rgba(15,23,42,0.85); color:#fff; font-size:11px; font-weight:700; padding:4px 10px; border-radius:4px;">{p.tag}</span>
+              <span style="position:absolute; top:12px; left:12px; background:rgba(47,12,23,0.88); color:#fff; font-size:11px; font-weight:700; padding:4px 10px; border-radius:4px;">{p.tag}</span>
             </div>
             <div style="padding:28px; display:flex; flex-direction:column; justify-content:center;">
               <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
-                <span style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%; background:#2563eb; color:#fff; font-weight:800; font-size:14px;">{p.n}</span>
-                <h3 style="font-size:20px; margin:0; color:#0f172a;">{p.title}</h3>
+                <span style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%; background:var(--burgundy); color:#fff; font-weight:800; font-size:14px;">{p.n}</span>
+                <h3 style="font-size:20px; margin:0; color:var(--plum-dark);">{p.title}</h3>
               </div>
-              <p style="font-size:14px; color:#475569; line-height:1.6; margin:0 0 14px 0;">{p.body}</p>
-              <div style="background:#f8fafc; border-left:3px solid #2563eb; padding:10px 14px; border-radius:0 6px 6px 0;">
-                <p style="font-size:12px; color:#64748b; margin:0; line-height:1.5;"><strong>Client Handoff:</strong> {p.you}</p>
+              <p style="font-size:14px; color:var(--ink-soft); line-height:1.6; margin:0 0 14px 0;">{p.body}</p>
+              <div style="background:var(--cream); border-left:3px solid var(--rose); padding:10px 14px; border-radius:0 6px 6px 0;">
+                <p style="font-size:12px; color:var(--ink-soft); margin:0; line-height:1.5;"><strong>Client Handoff:</strong> {p.you}</p>
               </div>
             </div>
           </div>
@@ -112,7 +112,7 @@ const phases = [
       </div>
 
       <div style="text-align:center; margin-top:50px;">
-        <a class="btn primary" href="/quote" style="background:#2563eb; color:#fff; padding:16px 36px; border-radius:6px; font-weight:700; font-size:15px; text-decoration:none;">Start Step 01 — Build Your Brief &rarr;</a>
+        <a class="btn primary" href="/quote" style="background:var(--burgundy); color:#fff; padding:16px 36px; border-radius:6px; font-weight:700; font-size:15px; text-decoration:none;">Start Step 01 — Build Your Brief &rarr;</a>
       </div>
     </div>
   </section>

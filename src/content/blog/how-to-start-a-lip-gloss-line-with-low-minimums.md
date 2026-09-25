@@ -1,7 +1,7 @@
 ---
-title: "how to start a lip gloss line with low minimums"
+title: "How to Start a Lip Gloss Line with Low Minimums: A Complete Guide"
 pubDate: "2026-09-21"
-description: "Expert guide on how to start a lip gloss line with low minimums for private label lip cosmetics brands."
+description: "How to start a lip gloss line with low minimums: 500 pcs MOQ, 7-day custom lab samples (100% credited), bespoke tubes & FDA / ISO 22716 certification."
 author: "Beautychain Limited"
 tags: ["Lip Cosmetics", "Private Label", "B2B"]
 ---

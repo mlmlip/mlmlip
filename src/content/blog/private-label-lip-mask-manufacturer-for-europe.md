@@ -1,7 +1,7 @@
 ---
 title: "Private Label Lip Mask Manufacturer for Europe"
 pubDate: "2026-09-22"
-description: "Comprehensive B2B guide for launching private label lip masks in Europe — covering EU CPNP compliance, MOQs, formulation, and how to partner with Beautychain Limited."
+description: "Private label lip mask manufacturer for Europe: 500 pcs MOQ, 7-day lab samples, EU CPNP & CPSR safety reports, ISO 22716 cleanroom & ceramide formulas."
 author: "Beautychain Limited"
 tags: ["Lip Cosmetics", "Private Label", "B2B", "Europe", "GEO"]
 ---

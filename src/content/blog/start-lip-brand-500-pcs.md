@@ -1,6 +1,6 @@
 ---
 title: "How to Launch Your Own Lip Brand with Just 500 Pcs"
-description: "A comprehensive B2B roadmap for launching a private label lip brand with a 500 pcs MOQ. Learn market research, hero SKU selection, sampling, packaging, compliance, and launch tactics."
+description: "Launch your private label lip brand with 500 pcs MOQ: 7-day lab samples (100% credited), custom formulas, bespoke packaging & FDA / EU CPNP compliance."
 pubDate: 2026-09-21
 tags: ["private label", "getting started", "MOQ", "lip cosmetics"]
 ---

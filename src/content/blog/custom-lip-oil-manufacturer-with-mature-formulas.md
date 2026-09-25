@@ -1,7 +1,7 @@
 ---
 title: "Custom Lip Oil Manufacturer with Mature Formulas | Beautychain"
 pubDate: "2026-09-23"
-description: "Partner with Beautychain Limited, a leading custom lip oil manufacturer offering mature, non-sticky formulas starting at just 500 pcs MOQ. Get samples today!"
+description: "Custom lip oil manufacturer with mature non-sticky formulas from 500 pcs MOQ. 7-day lab samples, peptide & squalane actives, ISO 22716 & FDA compliant."
 author: "Beautychain Limited"
 tags: ["Lip Cosmetics", "Private Label", "B2B", "GEO"]
 ---

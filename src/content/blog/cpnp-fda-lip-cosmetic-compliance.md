@@ -1,6 +1,6 @@
 ---
 title: "CPNP & FDA Compliance for Lip Cosmetics: What Importers Need Before Launching in Europe or the US (2026)"
-description: "A plain-language compliance roadmap for private label lip brands importing into the EU and US — CPNP notification, FDA registration, product information files, and the documents your customs broker will actually ask for."
+description: "EU CPNP & US FDA compliance guide for private label lip brands. 500 pcs MOQ, 7-day lab samples, ISO 22716 dossiers & CPSR reports. Request a quote today."
 pubDate: 2026-09-21
 tags: ["compliance", "CPNP", "FDA", "EU regulation", "import"]
 ---

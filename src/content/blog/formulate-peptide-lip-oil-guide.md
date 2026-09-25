@@ -1,6 +1,6 @@
 ---
 title: "How Indie Beauty Brands Formulate Custom Peptide Lip Oils in 2026 (MOQ & Cost Breakdown)"
-description: "A comprehensive manufacturing guide for beauty founders: formulation architecture, packaging components, 500 pcs MOQ economics, and EU/US compliance."
+description: "Formulate custom peptide lip oils from 500 pcs MOQ: 7-day lab samples, skinified squalane bases, ceramic tips & full EU CPNP / US FDA compliance dossiers."
 pubDate: 2026-09-21
 tags: ["peptide lip oil", "formulation", "private label", "low MOQ"]
 ---

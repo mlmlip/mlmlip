@@ -1,6 +1,6 @@
 ---
 title: "Custom Lip Gloss Tube Packaging: Acrylic vs. Glass vs. Custom Molded Components (2026 Buyer's Guide)"
-description: "How to choose the right tube, applicator and cap for a private label lip gloss — material trade-offs, weight, MOQ economics and what indie brands actually buy."
+description: "Custom lip gloss tube packaging guide: acrylic vials, glass bottles & custom molds from 500 pcs MOQ. 7-day lab samples & ISO 22716 certified production."
 pubDate: 2026-09-21
 tags: ["packaging", "lip gloss tube", "componentry", "private label"]
 ---
