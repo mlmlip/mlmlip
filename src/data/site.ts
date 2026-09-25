@@ -109,14 +109,14 @@ export const products = [
     name: 'High-Impact Lip Gloss',
     body: 'Non-sticky, cushion-feel gloss in crystal clear, sheer reactive tints, and multi-dimensional coated micro-shimmer finishes.',
     detail: '500 pcs MOQ · Thick-Walled Acrylic Tubes',
-    image: '/products/lipgloss-26-01.jpg',
+    image: '/lip-series/lip-glaze-hero-1.jpg',
     categoryHref: '/lip-gloss-manufacturer'
   },
   {
     name: 'Velvet Cloud Lip Mud & Tint',
     body: 'Weightless, soft-focus matte formula delivering buildable, transfer-resistant color that blurs fine lip lines effortlessly.',
     detail: '500 pcs MOQ · Pantone Precision Shade Matching',
-    image: '/products/nas-sync-39-4.jpg',
+    image: '/lip-series/lip-glaze-hero-2.jpg',
     categoryHref: '/lip-mud-manufacturer'
   },
   {
@@ -137,7 +137,7 @@ export const products = [
     name: 'Signature Bullet Lipstick',
     body: 'Silky satin, velvet matte, and high-shine finishes cast in heavyweight magnetic zamac, aluminum, or custom-embossed cases.',
     detail: '500 pcs MOQ · Custom Bullet Engraving & Tooling',
-    image: '/products/nas-sync-img-0292.jpg',
+    image: '/lip-series/lip-glaze-hero-3.jpg',
     categoryHref: '/lipstick-manufacturer'
   },
   {

@@ -6,90 +6,114 @@ import { site } from '../data/site';
 const phases = [
   {
     n: '01',
-    title: 'Inquiry & brief',
-    body: 'Tell us what you want to launch: product type, target quantity, market and price point. The more specific the brief, the more specific our answer.',
-    you: 'You provide: product idea, quantity, target market, reference photos if you have them.'
+    title: 'Inquiry & Product Brief',
+    body: 'Tell us what you want to launch: product format (Oil, Mud, Gloss, Liner, Lipstick, Mask), target quantity, market regulations (FDA/CPNP), and pricing tier.',
+    you: 'You provide: product mood board, target quantity, benchmark references if available.',
+    image: '/factory/sampling-packaging-01.jpg',
+    tag: 'Lab Intake'
   },
   {
     n: '02',
-    title: 'Proposal & quotation',
-    body: 'We come back with the practical route — recommended format, packaging options from our library or a custom mold, formulation direction, and pricing for your quantity.',
-    you: 'You receive: a clear quotation with packaging, formulation and timeline options.'
+    title: 'Engineering Proposal & Quotation',
+    body: 'We map the practical route — recommended componentry from our packaging library or bespoke tooling, clean formulation direction, and transparent tiered pricing.',
+    you: 'You receive: formal commercial quote with componentry specs and milestone schedule.',
+    image: '/packaging/lip-component-dimensions-spec.jpg',
+    tag: 'Technical Spec'
   },
   {
     n: '03',
-    title: 'Sampling — 7 days',
-    body: 'We develop samples against your brief: texture, shade, packaging and logo placement. Samples are ready in 7 days.',
-    you: 'You confirm: the brief is locked so the sample matches what you actually want.'
+    title: '7-Day Rapid Atelier Sampling',
+    body: 'Our formulation chemists match shade (Delta-E < 0.8), viscosity, and finish against your brief. Custom lab prototypes dispatched to your desk in 7 business days.',
+    you: 'You confirm: testing shade and sensory glide on lips in natural lighting.',
+    image: '/packaging/shade-card-1.jpg',
+    tag: 'Colorimetry'
   },
   {
     n: '04',
-    title: 'Review & revisions',
-    body: 'You test the samples and tell us what to adjust — shade, feel, finish, packaging details. We revise until it is right.',
-    you: 'You provide: consolidated feedback per round so revisions move fast.'
+    title: 'Sensory Revisions & Packaging Alignment',
+    body: 'Consolidated formulation feedback rounds. We refine texture, scent, payoff, and verify wiper-to-stem fitment until the formulation is perfected.',
+    you: 'You provide: consolidated revision feedback to lock final pilot batch.',
+    image: '/packaging/shade-card-4.jpg',
+    tag: 'Sensory Lab'
   },
   {
     n: '05',
-    title: 'Order confirmation',
-    body: 'Once you approve the sample, we confirm the order — from 500 pcs per SKU, the same minimum across every category. The sampling fee is deducted from your order, so sampling effectively costs nothing.',
-    you: 'You confirm: final artwork, quantities per SKU and the production schedule.'
+    title: 'Order Lock & 100% Sample Fee Credit',
+    body: 'Approve the pilot sample to confirm production from 500 pcs per SKU. 100% of initial sampling and prototype costs are directly credited back to your mass production invoice.',
+    you: 'You confirm: final vector artwork, Pantone codes, and purchase order.',
+    image: '/factory/packaging-tubes-01.jpg',
+    tag: 'Production Lock'
   },
   {
     n: '06',
-    title: 'Mass production',
-    body: 'Formulation, filling, assembly and decoration happen under one roof — the sample you approved is the product you receive, with no mismatched parts from separate vendors.',
-    you: 'You receive: production updates at key milestones.'
+    title: 'GMPC Cleanroom Mass Production',
+    body: 'Bulk compounding and high-speed rotary vacuum filling under ISO 22716 cleanroom controls. Zero cross-vendor mismatch because formulation and filling live under one roof.',
+    you: 'You receive: milestone updates and batch compounding traceability logs.',
+    image: '/factory/cleanroom-01.jpg',
+    tag: 'Cleanroom ISO 22716'
   },
   {
     n: '07',
-    title: 'QC & inspection',
-    body: 'Every batch is inspected before packing. GMPC and ISO certified processes, with inspection photos and reports available for your records.',
-    you: 'You receive: QC report and pre-shipment photos.'
+    title: 'Microbial & Quantitative QC Release',
+    body: 'Every batch undergoes USP 51/62 microbial testing, heavy-metal ICP-OES screening, drop tests, and thermal stability audits before release.',
+    you: 'You receive: official Certificate of Analysis (COA) and pre-shipment photos.',
+    image: '/factory/production-line-01.jpg',
+    tag: 'Lab QC Gate'
   },
   {
     n: '08',
-    title: 'Shipping & market documents',
-    body: 'We arrange shipping to your door or your warehouse, and prepare the documents your market needs — including CPNP notification support for the EU and paperwork for North America.',
-    you: 'You receive: tracking, shipping documents and after-sales support for reorders.'
+    title: 'Global Dispatch & CPNP/FDA Dossiers',
+    body: 'Door-to-door sea/air logistics to your US/EU warehouse, accompanied by complete EU CPNP notification files, PIF dossiers, and FDA-compliant paperwork.',
+    you: 'You receive: international tracking, regulatory dossiers, and priority replenishment.',
+    image: '/factory/packaging-tubes-02.jpg',
+    tag: 'Global Delivery'
   }
 ];
 ---
 
 <BaseLayout
-  title="Our Process | From Brief to Your Lip Brand in 8 Steps — MLM Lip"
-  description="The complete private label lip cosmetics process: inquiry, quotation, 7-day sampling, revisions, production from 500 pcs, QC, and shipping with North America and EU documentation."
+  title="Our Process | 8-Step Precision Lip Manufacturing — MLM Lip"
+  description="From initial brief to 7-day lab sampling, ISO 22716 cleanroom mass production, and global retail delivery. Complete private label manufacturing from 500 pcs."
 >
-  <section>
+  <section style="background:#0f172a; color:#fff; padding:70px 0 50px 0; border-bottom:1px solid #1e293b;">
     <div class="wrap">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Process' }]} />
-      <p class="eyebrow">How we work</p>
-      <h1>From your idea to your lip brand, in 8 clear steps</h1>
-      <p class="lead" style="max-width:660px">
-        No black box. You always know what happens next, what we need from you,
-        and what you get at each step — from the first message to delivery in North America or Europe.
+      <p style="color:#38bdf8; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">TRANSPARENT INDUSTRIAL TIMELINE</p>
+      <h1 style="color:#fff; font-size:38px; line-height:1.2; font-weight:800; max-width:800px; margin-bottom:18px;">
+        From Creative Brief to Your Door. <br/><span style="color:#94a3b8; font-weight:400;">In 8 Documented Milestones.</span>
+      </h1>
+      <p style="color:#cbd5e1; font-size:16px; line-height:1.6; max-width:720px; margin:0;">
+        No opaque supply chains. You always know what happens next, what our formulation lab requires from you, and exactly what documentation accompanies your shipment into North America or Europe.
       </p>
     </div>
   </section>
 
-  <section class="tint" style="padding-top:0; background:transparent">
+  <section style="padding:60px 0; background:#f8fafc;">
     <div class="wrap">
-      <ol class="timeline" style="list-style:none; padding:0; margin:0; position:relative;">
-        <span aria-hidden="true" style="position:absolute; left:27px; top:20px; bottom:20px; width:2px; background:linear-gradient(180deg, var(--gold), var(--line));"></span>
+      <div style="display:flex; flex-direction:column; gap:36px;">
         {phases.map((p) => (
-          <li style="position:relative; padding-left:76px; padding-bottom:36px; min-height:60px;">
-            <span style="position:absolute; left:8px; top:4px; width:40px; height:40px; border-radius:50%; background:var(--cream); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display', Georgia, serif; font-size:15px; font-weight:600; color:var(--burgundy); z-index:1;">{p.n}</span>
-            <div class="card" style="margin:0;">
-              <h3 style="font-size:19px; margin-bottom:8px;">{p.title}</h3>
-              <p style="margin:0 0 10px;">{p.body}</p>
-              <p class="note" style="margin:0; padding-top:10px; border-top:1px dashed var(--line);">{p.you}</p>
+          <div class="card" style="background:#fff; border-radius:12px; border:1px solid #e2e8f0; overflow:hidden; display:grid; grid-template-columns: 280px 1fr; gap:0; box-shadow:0 4px 6px -1px rgba(0,0,0,0.04);">
+            <div style="height:100%; min-height:220px; position:relative; background:#f1f5f9; overflow:hidden;">
+              <img src={p.image} alt={p.title} style="width:100%; height:100%; object-fit:cover;" />
+              <span style="position:absolute; top:12px; left:12px; background:rgba(15,23,42,0.85); color:#fff; font-size:11px; font-weight:700; padding:4px 10px; border-radius:4px;">{p.tag}</span>
             </div>
-          </li>
+            <div style="padding:28px; display:flex; flex-direction:column; justify-content:center;">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
+                <span style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%; background:#2563eb; color:#fff; font-weight:800; font-size:14px;">{p.n}</span>
+                <h3 style="font-size:20px; margin:0; color:#0f172a;">{p.title}</h3>
+              </div>
+              <p style="font-size:14px; color:#475569; line-height:1.6; margin:0 0 14px 0;">{p.body}</p>
+              <div style="background:#f8fafc; border-left:3px solid #2563eb; padding:10px 14px; border-radius:0 6px 6px 0;">
+                <p style="font-size:12px; color:#64748b; margin:0; line-height:1.5;"><strong>Client Handoff:</strong> {p.you}</p>
+              </div>
+            </div>
+          </div>
         ))}
-      </ol>
-      <p style="margin-top:16px">
-        <a class="btn" href="/contact">Start step 01 — send your brief</a>
-      </p>
+      </div>
+
+      <div style="text-align:center; margin-top:50px;">
+        <a class="btn primary" href="/quote" style="background:#2563eb; color:#fff; padding:16px 36px; border-radius:6px; font-weight:700; font-size:15px; text-decoration:none;">Start Step 01 — Build Your Brief &rarr;</a>
+      </div>
     </div>
   </section>
-
 </BaseLayout>
