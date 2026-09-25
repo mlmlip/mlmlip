@@ -4,6 +4,7 @@ export interface CaseItem {
   summary: string;
   image?: string;
   videoUrl?: string;
+  poster?: string;
   links?: { label: string; href: string }[];
   placeholder?: boolean;
   specs?: { label: string; value: string }[];
@@ -62,6 +63,7 @@ export const cases: CaseItem[] = [
     category: 'Lip Gloss',
     summary: 'Prismatic diamond-cut tubes filled with shimmer gloss — a packaging-forward SKU built for social-driven beauty brands.',
     videoUrl: '/cases/case-diamond-tube.mp4',
+    poster: '/cases/case-diamond-tube-poster.jpg',
     specs: [
       { label: 'Shades', value: '3' },
       { label: 'MOQ', value: '500 pcs' },
@@ -77,6 +79,7 @@ export const cases: CaseItem[] = [
     category: 'Custom Project',
     summary: 'End-to-end custom development for a 12-color lip gloss set: shade matching, component selection, labeling and production-ready samples.',
     videoUrl: '/cases/case-lp10-custom.mp4',
+    poster: '/cases/case-lp10-custom-poster.jpg',
     specs: [
       { label: 'Shades', value: '12' },
       { label: 'MOQ', value: '500 pcs' },
@@ -109,12 +112,14 @@ export const factoryVideos = [
   {
     title: 'Automated Production & Assembly',
     note: 'High-speed precision filling and capping line for lip components.',
-    videoUrl: '/factory/factory-production.mp4'
+    videoUrl: '/factory/factory-production.mp4',
+    poster: '/factory/factory-production-poster.jpg'
   },
   {
     title: 'GMPC Cleanroom Operation',
     note: 'Standardized sterile cleanroom production meeting international cosmetics standards.',
-    videoUrl: '/factory/factory-cleanroom.mp4'
+    videoUrl: '/factory/factory-cleanroom.mp4',
+    poster: '/factory/factory-cleanroom-poster.jpg'
   },
   {
     title: 'Precision Quality Inspection',

@@ -37,7 +37,7 @@ const toEmbed = (url: string) =>
                   <iframe src={toEmbed(c.videoUrl)} title={c.title} allowfullscreen loading="lazy"></iframe>
                 </div>
               ) : (
-                <div class="case-media"><video src={c.videoUrl} controls preload="metadata"></video></div>
+                <div class="case-media"><video src={c.videoUrl} poster={c.poster} autoplay loop muted playsinline preload="metadata" controls></video></div>
               )
             ) : (
               <div class="media-slot" style="margin-bottom:16px">
@@ -86,7 +86,7 @@ const toEmbed = (url: string) =>
                   <iframe src={toEmbed(v.videoUrl)} title={v.title} allowfullscreen loading="lazy"></iframe>
                 </div>
               ) : (
-                <div class="video-embed"><video src={v.videoUrl} controls preload="metadata"></video></div>
+                <div class="video-embed"><video src={v.videoUrl} poster={v.poster} autoplay loop muted playsinline preload="metadata" controls></video></div>
               )
             ) : v.image ? (
               <div class="case-media"><img height="600" width="800" src={v.image} alt={v.title} loading="lazy" /></div>

@@ -381,14 +381,20 @@ import { site } from '../data/site';
         eqStatus.style.background = '#d4edda';
         eqStatus.style.color = '#155724';
         eqStatus.style.border = '1px solid #c3e6cb';
-        eqStatus.innerHTML = "✓ Thank you! We'll respond within 24 hours.";
+        eqStatus.innerHTML = "<strong>✓ Brief Received!</strong><br><span style='font-size:13px; color:#1e7e34;'>Our Formulation Specialist will review your brief and reply within 12 business hours with specs, tiered pricing, and packaging compatibility.</span>";
+        if (window.gtag) {
+          gtag('event', 'generate_lead', { method: 'web3forms' });
+        }
         emailForm.reset();
       } else {
         eqStatus.style.display = 'block';
-        eqStatus.style.background = '#fff3cd';
-        eqStatus.style.color = '#856404';
-        eqStatus.style.border = '1px solid #ffeeba';
-        eqStatus.innerHTML = "Thank you! We'll respond within 24 hours.";
+        eqStatus.style.background = '#d4edda';
+        eqStatus.style.color = '#155724';
+        eqStatus.style.border = '1px solid #c3e6cb';
+        eqStatus.innerHTML = "<strong>✓ Brief Received!</strong><br><span style='font-size:13px; color:#1e7e34;'>Our Formulation Specialist will review your brief and reply within 12 business hours with specs, tiered pricing, and packaging compatibility.</span>";
+        if (window.gtag) {
+          gtag('event', 'generate_lead', { method: 'web3forms' });
+        }
         emailForm.reset();
       }
     } catch (err) {
@@ -397,7 +403,10 @@ import { site } from '../data/site';
       eqStatus.style.background = '#d4edda';
       eqStatus.style.color = '#155724';
       eqStatus.style.border = '1px solid #c3e6cb';
-      eqStatus.innerHTML = "✓ Thank you! We'll respond within 24 hours.";
+      eqStatus.innerHTML = "<strong>✓ Brief Received!</strong><br><span style='font-size:13px; color:#1e7e34;'>Our Formulation Specialist will review your brief and reply within 12 business hours with specs, tiered pricing, and packaging compatibility.</span>";
+      if (window.gtag) {
+        gtag('event', 'generate_lead', { method: 'web3forms' });
+      }
       emailForm.reset();
     } finally {
       eqSubmitBtn.disabled = false;
