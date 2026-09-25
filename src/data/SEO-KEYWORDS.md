@@ -7,7 +7,7 @@
 
 | 关键词 / 话题 (Keyword / Topic) | 搜索意图 (Intent) | 目标受众 (Audience) | 必须植入的核心卖点 (Core Pitch) | 状态 (Status) |
 | :--- | :--- | :--- | :--- | :--- |
-| how to start a lip gloss line with low minimums | 商业起步、找代工 | 想要创立品牌的美妆博主/初创者 | **500 pcs MOQ**, 7天免费打样（抵扣） | `[已发布]` |
+| how to start a lip gloss line with low minimums | 商业起步、找代工 | 想要创立品牌的美妆博主/初创者 | **500 pcs MOQ**, 7天免费打样（抵扣） | `[已收录]` |
 | private label lip mask manufacturer for Europe | 找特定市场合规厂家 | 欧洲本地品牌、亚马逊欧洲站卖家 | CPNP/ISO 认证, 包材+配方全链定制 | `[已收录]` |
 | custom lip liner vendor with private packaging | 定制化需求、找供应商 | 已有一定规模的电商品牌 | 现有包材库丰富, 支持开模定制 | `[已收录]` |
 | oem lip mud factory vs private label cosmetics `[已发布]` |

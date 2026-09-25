@@ -14,7 +14,9 @@ export const site = {
   },
   nav: [
     { label: 'Products', href: '/products' },
-    { label: 'Customization', href: '/customization' },
+    { label: 'Packaging', href: '/packaging' },
+    { label: 'Packaging Library', href: '/packaging' },
+  { label: 'Customization', href: '/customization' },
     { label: 'Process', href: '/process' },
     { label: 'Cases', href: '/cases' },
     { label: 'Samples', href: '/samples' },
@@ -27,7 +29,7 @@ export const site = {
 export const ui = {
   en: {
     nav: {
-      products: 'Products', customization: 'Customization', process: 'Process', cases: 'Cases',
+      products: 'Products', packaging: 'Packaging', customization: 'Customization', process: 'Process', cases: 'Cases',
       samples: 'Samples', blog: 'Blog', about: 'About', quote: 'Get a quote', lang: 'Language:'
     },
     footer: {
@@ -37,7 +39,7 @@ export const ui = {
   },
   fr: {
     nav: {
-      products: 'Produits', customization: 'Personnalisation', process: 'Processus', cases: 'Réalisations',
+      products: 'Produits', packaging: 'Emballage', customization: 'Personnalisation', process: 'Processus', cases: 'Réalisations',
       samples: 'Échantillons', blog: 'Blog', about: 'À propos', quote: 'Devis', lang: 'Langue :'
     },
     footer: {
@@ -47,7 +49,7 @@ export const ui = {
   },
   es: {
     nav: {
-      products: 'Productos', customization: 'Personalización', process: 'Proceso', cases: 'Proyectos',
+      products: 'Productos', packaging: 'Envases', customization: 'Personalización', process: 'Proceso', cases: 'Proyectos',
       samples: 'Muestras', blog: 'Blog', about: 'Nosotros', quote: 'Presupuesto', lang: 'Idioma:'
     },
     footer: {
@@ -57,8 +59,8 @@ export const ui = {
   }
 };
 
-export const navKeys = ['products', 'customization', 'process', 'cases', 'samples', 'blog', 'about'] as const;
-export const navLinks = { products: '/products', customization: '/customization', process: '/process', cases: '/cases', samples: '/samples', blog: '/blog', about: '/about' };
+export const navKeys = ['products', 'packaging', 'customization', 'process', 'cases', 'samples', 'blog', 'about'] as const;
+export const navLinks = { products: '/products', packaging: '/packaging', customization: '/customization', process: '/process', cases: '/cases', samples: '/samples', blog: '/blog', about: '/about' };
 
 // 页脚内链（SEO：品类落地页 + 关键页）
 export const footerCategories = [
@@ -72,6 +74,8 @@ export const footerCategories = [
 
 export const footerCompany = [
   { label: 'Products', href: '/products' },
+  { label: 'Packaging', href: '/packaging' },
+    { label: 'Packaging Library', href: '/packaging' },
   { label: 'Customization', href: '/customization' },
   { label: 'How We Work', href: '/process' },
   { label: 'Cases & Factory', href: '/cases' },
