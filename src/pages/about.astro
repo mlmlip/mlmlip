@@ -248,10 +248,7 @@ import { site } from '../data/site';
       </form>
 
       <div id="gated-result" hidden style="margin-top: 18px; padding: 16px; background: var(--blush-soft); border: 1px solid var(--gold); border-radius: 8px; text-align: center;">
-        <p style="margin: 0 0 8px; font-size: 13px; color: var(--ink); font-weight: 700;">✓ Dual-Track Access Activated: Summary Ready &amp; Full Package Dispatched</p>
-        <p style="margin: 0 0 12px; font-size: 12px; color: var(--ink-soft); line-height: 1.5;">
-          Download the technical certificate summary below. Simultaneously, the <strong>complete unredacted laboratory test report &amp; tiered bulk pricing matrix (500–50,000 pcs)</strong> have been dispatched to your verified work email.
-        </p>
+        <p style="margin: 0 0 12px; font-size: 13px; color: var(--ink); font-weight: 700; line-height: 1.5;">✓ Download starting. Direct dossier access link and full private label pricing schedule have also been dispatched to your work email.</p>
         <a id="gated-direct-link" href="#" target="_blank" rel="noopener" class="btn" style="display: inline-block; background: var(--gold); color: var(--plum-dark); font-weight: 700; padding: 10px 18px; border-radius: 6px; text-decoration: none;">
           Download PDF Now &darr;
         </a>
@@ -320,7 +317,7 @@ import { site } from '../data/site';
             submitBtn.disabled = false;
             submitBtn.innerHTML = 'Unlock &amp; Show Download Link &rarr;';
           }
-          if (window.gtag) gtag('event', 'generate_lead', { method: 'web3forms' });
+          if (typeof window.gtag === 'function') { window.gtag('event', 'generate_lead', { event_category: 'Lead Magnet', event_label: 'Compliance Dossier' }); }
           form.style.display = 'none';
           resultBox?.removeAttribute('hidden');
         }
