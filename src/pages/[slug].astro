@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { categories } from '../data/categories';
+import { productsCatalog } from '../data/products';
 import { site } from '../data/site';
 
 export async function getStaticPaths() {
@@ -12,6 +13,9 @@ export async function getStaticPaths() {
 }
 
 const { category } = Astro.props;
+
+// Filter 10 dedicated products for this category to form Pillar-Cluster internal link structure
+const categoryProducts = productsCatalog.filter((p) => p.categorySlug === category.slug);
 
 const pageSchema = {
   '@context': 'https://schema.org',
@@ -88,7 +92,61 @@ const serviceSchema = {
     </div>
   </section>
 
-  <section class="tint">
+  <!-- Pillar-Cluster: 10 Product Cluster Grid for this Category -->
+  {categoryProducts.length > 0 && (
+    <section class="tint">
+      <div class="wrap">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 28px; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <p class="eyebrow" style="color: var(--gold);">Formulation Library</p>
+            <h2 style="font-size: 28px; margin: 0; color: var(--plum);">Ready-to-Order {category.name} Formulations</h2>
+          </div>
+          <a href="/products" style="color: var(--burgundy); font-weight: 600; font-size: 14px;">
+            Explore all 60+ lip formulations →
+          </a>
+        </div>
+
+        <div class="grid three" style="gap: 24px;">
+          {categoryProducts.map((p) => (
+            <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 8px; padding: 20px; background: white;">
+              <div>
+                <div class="case-media" style="margin-bottom: 14px; border-radius: 6px; overflow: hidden;">
+                  <img src={p.heroImage} alt={p.name} width="600" height="450" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" loading="lazy" />
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <span style="font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase;">
+                    {p.tag}
+                  </span>
+                  <span style="font-size: 11px; color: var(--ink-soft); font-family: monospace;">
+                    {p.moq} MOQ
+                  </span>
+                </div>
+                <h3 style="font-size: 17px; margin: 0 0 8px; line-height: 1.3;">
+                  <a href={`/products/${p.slug}`} style="color: var(--plum); text-decoration: none;">
+                    {p.name}
+                  </a>
+                </h3>
+                <p style="font-size: 13px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 14px;">
+                  {p.headline}
+                </p>
+              </div>
+
+              <div style="border-top: 1px solid var(--line); padding-top: 12px; margin-top: 8px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 12px; color: var(--ink-soft);">
+                  {p.shadeCount} shades
+                </span>
+                <a href={`/products/${p.slug}`} style="font-size: 13px; font-weight: 600; color: var(--burgundy); text-decoration: none;">
+                  View Spec Sheet →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section>
     <div class="wrap">
       <p class="eyebrow">Specification</p>
       <h2>{category.name} manufacturing at a glance</h2>
@@ -105,7 +163,7 @@ const serviceSchema = {
     </div>
   </section>
 
-  <section>
+  <section class="tint">
     <div class="wrap">
       <p class="eyebrow">Frequently asked</p>
       <h2>{category.name} — common questions</h2>
@@ -121,7 +179,7 @@ const serviceSchema = {
     </div>
   </section>
 
-  <section class="tint">
+  <section>
     <div class="wrap">
       <div class="card" style="text-align: center; padding: 48px 28px;">
         <h2 style="margin-bottom: 10px;">Start your {category.name.toLowerCase()} project</h2>

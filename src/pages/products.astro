@@ -1,55 +1,121 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import { site, products } from '../data/site';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { site } from "../data/site";
+import { productsCatalog } from "../data/products";
+import { categories } from "../data/categories";
 
 const compare = [
-  { format: 'Lip Gloss', finish: 'High-shine, sheer, jelly, shimmer', pack: 'Acrylic tube + doe-foot', best: 'DTC, TikTok, viral launches', href: '/lip-gloss-manufacturer' },
-  { format: 'Lip Mud', finish: 'Soft-focus matte, velvet', pack: 'Tube, jar, cushion compact', best: 'K-beauty, matte lovers', href: '/lip-mud-manufacturer' },
-  { format: 'Lip Liner', finish: 'Matte, waterproof, precise', pack: 'Wood barrel, twist-up', best: 'Contour, shade pairing', href: '/lip-liner-manufacturer' },
-  { format: 'Lipstick', finish: 'Matte, satin, cream, shine', pack: 'Zamac, aluminum, custom case', best: 'Prestige, retail counter', href: '/lipstick-manufacturer' },
-  { format: 'Lip Oil', finish: 'Glass-shine, treatment', pack: 'Tube, ceramic-tip, roller', best: 'Skinified, treatment-led', href: '/lip-oil-manufacturer' },
-  { format: 'Lip Mask', finish: 'Balm, overnight repair', pack: 'Jar, squeeze tube', best: 'Night care, barrier repair', href: '/lip-mask-manufacturer' }
+  { format: "Lip Gloss", finish: "High-shine, sheer, jelly, shimmer", pack: "Acrylic tube + doe-foot", best: "DTC, TikTok, viral launches", href: "/lip-gloss-manufacturer" },
+  { format: "Lip Mud", finish: "Soft-focus matte, velvet", pack: "Tube, jar, cushion compact", best: "K-beauty, matte lovers", href: "/lip-mud-manufacturer" },
+  { format: "Lip Liner", finish: "Matte, waterproof, precise", pack: "Wood barrel, twist-up", best: "Contour, shade pairing", href: "/lip-liner-manufacturer" },
+  { format: "Lipstick", finish: "Matte, satin, cream, shine", pack: "Zamac, aluminum, custom case", best: "Prestige, retail counter", href: "/lipstick-manufacturer" },
+  { format: "Lip Oil", finish: "Glass-shine, treatment", pack: "Tube, ceramic-tip, roller", best: "Skinified, treatment-led", href: "/lip-oil-manufacturer" },
+  { format: "Lip Mask", finish: "Balm, overnight repair", pack: "Jar, squeeze tube", best: "Night care, barrier repair", href: "/lip-mask-manufacturer" }
 ];
 ---
 
 <BaseLayout
-  title="Custom Lip Products | Gloss, Mud, Liner, Lipstick, Lip Oil, Lip Mask — MLM Lip"
-  description="Private label lip cosmetics from 500 pcs MOQ: lip gloss, lip mud, lip oil, lipstick, liner & mask. 7-day samples, FDA & ISO certified. Request a quote."
+  title="OEM Lip Products Catalogue | 60+ Formulations across 6 Categories — MLM Lip"
+  description="Explore 60+ OEM/ODM private label lip cosmetic formulations: Lip Gloss, Lip Mud, Lip Liner, Lipstick, Lip Oil & Lip Mask. 500 pcs MOQ, 7-day lab sampling."
 >
-  <section>
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 48px; padding-bottom: 56px;">
     <div class="wrap">
-      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Products' }]} />
-      <p class="eyebrow">Products</p>
-      <h1>Custom lip products for your own label</h1>
-      <p class="lead" style="max-width:640px">
-        Every item below can be adapted to your brief — shade, texture, packaging and branding.
-        Minimum order is {site.moq} per SKU, the same across all categories, and different items can be combined in one project.
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Products" }]} />
+      <p class="eyebrow" style="color: var(--gold);">Product Catalogue</p>
+      <h1 style="font-size: clamp(32px, 4vw, 50px); max-width: 840px; margin-bottom: 16px;">
+        Custom Lip Formulations & Finished Products
+      </h1>
+      <p class="lead" style="max-width: 680px; font-size: 18px; margin-bottom: 24px;">
+        Browse our ready-to-scale library of 60+ private label formulations across 6 major lip categories.
+        Every SKU supports full shade-matching, custom scent/flavoring, and bespoke component tooling from {site.moq} per SKU.
       </p>
-    </div>
-  </section>
 
-  <section class="tint" style="padding-top:0; background:transparent">
-    <div class="wrap">
-      <div class="grid three" style="margin-top:28px">
-        {products.map((p) => (
-          <div class="card">
-            {p.image ? (
-              <div class="case-media" style="margin-bottom:16px"><img height="600" width="800" src={p.image} alt={p.name} loading="lazy" /></div>
-            ) : (
-              <div class="media-slot" style="margin-bottom:16px">Product photography in preparation</div>
-            )}
-            <h3>{p.name}</h3>
-            <p>{p.body}</p>
-            <p class="note">{p.detail}</p>
-            {p.categoryHref && <p style="margin:0 0 8px;"><a href={p.categoryHref}>Explore the {p.name.split(' ')[0]} program →</a></p>}
-            <p style="margin:0;"><a href={`/quote?product=${encodeURIComponent(p.name.split(' ')[0])}`}>Configure this product →</a></p>
-          </div>
+      <!-- Category Filter Jump Anchors -->
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px;">
+        {categories.map((c) => (
+          <a
+            href={"#" + c.slug}
+            style="display: inline-block; padding: 8px 16px; background: white; border: 1px solid var(--line); border-radius: 20px; font-size: 13px; font-weight: 600; color: var(--plum); text-decoration: none; transition: all 0.2s;"
+          >
+            {c.name}
+          </a>
         ))}
       </div>
     </div>
   </section>
 
+  <!-- 6 Categories Section Loops with 10 Products Each -->
+  {categories.map((cat) => {
+    const catProducts = productsCatalog.filter((p) => p.categorySlug === cat.slug);
+    return (
+      <section id={cat.slug} style="scroll-margin-top: 80px; border-bottom: 1px solid var(--line);">
+        <div class="wrap">
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 32px; flex-wrap: wrap; gap: 16px;">
+            <div>
+              <p class="eyebrow" style="color: var(--gold); margin-bottom: 6px;">Pillar Category</p>
+              <h2 style="font-size: 32px; margin: 0; color: var(--plum);">{cat.name}</h2>
+              <p style="margin: 6px 0 0; color: var(--ink-soft); max-width: 640px; font-size: 15px;">
+                {cat.intro}
+              </p>
+            </div>
+            <div>
+              <a href={"/" + cat.slug} class="btn ghost" style="font-size: 13px; padding: 8px 16px;">
+                Explore {cat.name} OEM Program →
+              </a>
+            </div>
+          </div>
+
+          <!-- Product Grid -->
+          <div class="grid three" style="gap: 24px;">
+            {catProducts.map((p) => (
+              <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 10px; overflow: hidden; padding: 20px; transition: transform 0.2s, box-shadow 0.2s;">
+                <div>
+                  <div class="case-media" style="margin-bottom: 16px; border-radius: 6px; overflow: hidden; background: white;">
+                    <img
+                      src={p.heroImage}
+                      alt={p.name}
+                      width="600"
+                      height="450"
+                      style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase;">
+                      {p.tag}
+                    </span>
+                    <span style="font-size: 11px; color: var(--ink-soft); font-family: monospace;">
+                      {p.moq} MOQ
+                    </span>
+                  </div>
+                  <h3 style="font-size: 18px; margin: 0 0 10px; line-height: 1.3;">
+                    <a href={"/products/" + p.slug} style="color: var(--plum); text-decoration: none;">
+                      {p.name}
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 16px;">
+                    {p.headline}
+                  </p>
+                </div>
+
+                <div style="border-top: 1px solid var(--line); padding-top: 14px; margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 12px; color: var(--ink-soft);">
+                    {p.shadeCount} shades available
+                  </span>
+                  <a href={"/products/" + p.slug} style="font-size: 13px; font-weight: 600; color: var(--burgundy); text-decoration: none;">
+                    Details & Specs →
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <!-- Side by side comparison table -->
   <section>
     <div class="wrap">
       <p class="eyebrow">Side by side</p>
@@ -87,6 +153,7 @@ const compare = [
     </div>
   </section>
 
+  <!-- CTA Box -->
   <section style="background:var(--blush-soft)">
     <div class="wrap">
       <h2>Not sure which format fits your idea?</h2>

@@ -1,0 +1,349 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { productsCatalog, type ProductItem } from "../../data/products";
+import { site } from "../../data/site";
+
+export async function getStaticPaths() {
+  return productsCatalog.map((product) => ({
+    params: { slug: product.slug },
+    props: { product }
+  }));
+}
+
+interface Props {
+  product: ProductItem;
+}
+
+const { product } = Astro.props;
+
+// Related products in the same category (excluding current)
+const relatedProducts = productsCatalog
+  .filter((p) => p.categorySlug === product.categorySlug && p.slug !== product.slug)
+  .slice(0, 4);
+
+// Schema.org Product structured data
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: product.name,
+  image: [site.domain + product.heroImage, ...product.galleryImages.map((img) => site.domain + img)],
+  description: product.description,
+  sku: product.id,
+  mpn: product.id,
+  brand: {
+    "@type": "Brand",
+    name: site.name
+  },
+  manufacturer: {
+    "@type": "Organization",
+    name: site.manufacturer,
+    url: site.domain
+  },
+  category: product.category,
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    lowPrice: "1.20",
+    highPrice: "3.80",
+    offerCount: product.shadeCount,
+    priceValidUntil: "2027-12-31",
+    availability: "https://schema.org/InStock",
+    itemCondition: "https://schema.org/NewCondition",
+    seller: {
+      "@type": "Organization",
+      name: site.manufacturer
+    },
+    description: "Minimum order ${product.moq} per SKU. Bulk OEM/ODM tiered pricing on inquiry."
+  },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "MOQ", value: product.moq },
+    { "@type": "PropertyValue", name: "Lead Time", value: product.leadTime },
+    { "@type": "PropertyValue", name: "Shades Available", value: product.shadeCount.toString() },
+    { "@type": "PropertyValue", name: "Viscosity", value: product.formulaSpecs.viscosity },
+    { "@type": "PropertyValue", name: "Key Actives", value: product.formulaSpecs.actives },
+    { "@type": "PropertyValue", name: "Finish", value: product.formulaSpecs.finish },
+    { "@type": "PropertyValue", name: "Certification", value: product.regulatory }
+  ]
+};
+---
+
+<BaseLayout
+  title={product.seoTitle}
+  description={product.seoDescription}
+  image={product.heroImage}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+
+  <!-- Hero & Breadcrumbs -->
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 48px; padding-bottom: 56px;">
+    <div class="wrap">
+      <Breadcrumbs items={[
+        { label: "Home", href: "/" },
+        { label: "Products", href: "/products" },
+        { label: product.category, href: "/" + product.categorySlug },
+        { label: product.name }
+      ]} />
+
+      <div class="grid two" style="margin-top: 24px; gap: 40px; align-items: start;">
+        <!-- Left: Image Gallery -->
+        <div>
+          <div class="case-media" style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06); background: white;">
+            <img
+              id="main-product-img"
+              src={product.heroImage}
+              alt={product.name}
+              width="800"
+              height="600"
+              style="width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; display: block;"
+            />
+          </div>
+          {product.galleryImages.length > 1 && (
+            <div style="display: flex; gap: 12px; margin-top: 14px;">
+              {product.galleryImages.map((img, idx) => (
+                <button
+                  type="button"
+                  class="gallery-thumb-btn"
+                  data-img={img}
+                  style="border: 2px solid var(--line); border-radius: 6px; overflow: hidden; padding: 0; background: white; cursor: pointer; flex: 1; max-width: 90px; aspect-ratio: 1; transition: border-color 0.2s;"
+                >
+                  <img src={img} alt="" style="width: 100%; height: 100%; object-fit: cover;" />
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <!-- Right: Headline, Specs & Immediate Actions -->
+        <div>
+          <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px;">
+            <span style="display: inline-block; background: var(--plum); color: white; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 4px 10px; border-radius: 4px;">
+              {product.tag}
+            </span>
+            <span style="font-size: 12px; color: var(--ink-soft); font-family: monospace;">
+              ITEM: {product.id}
+            </span>
+          </div>
+
+          <h1 style="font-size: clamp(28px, 3.2vw, 42px); line-height: 1.15; margin-bottom: 12px; color: var(--plum);">
+            {product.name}
+          </h1>
+
+          <p class="lead" style="font-size: 17px; line-height: 1.5; color: var(--ink-soft); margin-bottom: 24px;">
+            {product.headline}
+          </p>
+
+          <!-- Core B2B Parameters Fast Grid -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px;">
+            <div style="background: white; border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; text-align: center;">
+              <span style="display: block; font-size: 11px; color: var(--ink-soft); text-transform: uppercase; font-weight: 600;">Minimum Order</span>
+              <strong style="display: block; font-size: 16px; color: var(--plum); margin-top: 2px;">{product.moq}</strong>
+            </div>
+            <div style="background: white; border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; text-align: center;">
+              <span style="display: block; font-size: 11px; color: var(--ink-soft); text-transform: uppercase; font-weight: 600;">Sampling</span>
+              <strong style="display: block; font-size: 16px; color: var(--plum); margin-top: 2px;">7 Days</strong>
+            </div>
+            <div style="background: white; border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; text-align: center;">
+              <span style="display: block; font-size: 11px; color: var(--ink-soft); text-transform: uppercase; font-weight: 600;">Shade Library</span>
+              <strong style="display: block; font-size: 16px; color: var(--plum); margin-top: 2px;">{product.shadeCount}+ Shades</strong>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+            <a class="btn" href={"/quote?product=" + encodeURIComponent(product.name)} style="flex: 1; text-align: center; min-width: 200px;">
+              Request Custom Quote
+            </a>
+            <a class="btn ghost" href={"/samples?product=" + encodeURIComponent(product.name)} style="flex: 1; text-align: center; min-width: 160px;">
+              Order 7-Day Samples
+            </a>
+          </div>
+
+          <p class="note" style="margin: 0; font-size: 13px; color: var(--ink-soft);">
+            ✓ Sample fee 100% credited to bulk order &nbsp;·&nbsp; ✓ Free shade matching &nbsp;·&nbsp; ✓ ISO 22716 Cleanroom
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Specifications Tabular Breakdown -->
+  <section>
+    <div class="wrap">
+      <div class="grid two" style="gap: 48px; align-items: start;">
+        <!-- Left: Product Overview & Formula Specs -->
+        <div>
+          <p class="eyebrow" style="color: var(--gold);">Formulation & Science</p>
+          <h2 style="font-size: 26px; margin-bottom: 16px;">Formula Performance & Aesthetics</h2>
+          <p style="color: var(--ink-soft); line-height: 1.7; margin-bottom: 24px;">
+            {product.description}
+          </p>
+
+          <div class="card gold-line" style="padding: 0; overflow: hidden; border-radius: 8px;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--line);">
+                  <td style="padding: 12px 18px; width: 35%; color: var(--plum); font-weight: 600; background: var(--blush-soft);">Finish</td>
+                  <td style="padding: 12px 18px; color: var(--ink-soft);">{product.formulaSpecs.finish}</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--line);">
+                  <td style="padding: 12px 18px; color: var(--plum); font-weight: 600; background: var(--blush-soft);">Texture Feel</td>
+                  <td style="padding: 12px 18px; color: var(--ink-soft);">{product.formulaSpecs.texture}</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--line);">
+                  <td style="padding: 12px 18px; color: var(--plum); font-weight: 600; background: var(--blush-soft);">Viscosity</td>
+                  <td style="padding: 12px 18px; color: var(--ink-soft);">{product.formulaSpecs.viscosity}</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--line);">
+                  <td style="padding: 12px 18px; color: var(--plum); font-weight: 600; background: var(--blush-soft);">Key Actives</td>
+                  <td style="padding: 12px 18px; color: var(--ink-soft);">{product.formulaSpecs.actives}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 18px; color: var(--plum); font-weight: 600; background: var(--blush-soft);">Compliance</td>
+                  <td style="padding: 12px 18px; color: var(--ink-soft);">{product.regulatory}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Right: Packaging & Custom Tooling Options -->
+        <div>
+          <p class="eyebrow" style="color: var(--gold);">Packaging & Component Options</p>
+          <h2 style="font-size: 26px; margin-bottom: 16px;">Component & Finish Customization</h2>
+          <p style="color: var(--ink-soft); line-height: 1.7; margin-bottom: 24px;">
+            Choose from standard stock tooling components or engineer fully bespoke custom molded bottles, wands, and closures with our in-house engineering team.
+          </p>
+
+          <div class="card" style="padding: 24px; border-radius: 8px; margin-bottom: 20px;">
+            <h3 style="font-size: 17px; margin-bottom: 10px; color: var(--plum);">Vial / Bullet Structure</h3>
+            <p style="margin: 0; color: var(--ink-soft); font-size: 14px;">{product.packagingOptions.tubeType}</p>
+          </div>
+
+          <div class="card" style="padding: 24px; border-radius: 8px; margin-bottom: 20px;">
+            <h3 style="font-size: 17px; margin-bottom: 10px; color: var(--plum);">Applicator / Dispenser</h3>
+            <p style="margin: 0; color: var(--ink-soft); font-size: 14px;">{product.packagingOptions.wandType}</p>
+          </div>
+
+          <div class="card" style="padding: 24px; border-radius: 8px;">
+            <h3 style="font-size: 17px; margin-bottom: 10px; color: var(--plum);">Cap & Surface Decoration</h3>
+            <p style="margin: 0; color: var(--ink-soft); font-size: 14px;">{product.packagingOptions.capFinish}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- One-Click Sample & Fast Inquiry Form -->
+  <section class="tint">
+    <div class="wrap">
+      <div style="max-width: 760px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid var(--line);">
+        <p class="eyebrow" style="text-align: center; color: var(--gold);">Instant Inquiry</p>
+        <h2 style="text-align: center; font-size: 28px; margin-bottom: 12px; color: var(--plum);">
+          Request Samples or OEM Quote for {product.name}
+        </h2>
+        <p class="lead" style="text-align: center; font-size: 15px; margin-bottom: 28px;">
+          Direct communication with our senior cosmetics formulation engineers. Turnaround time &lt; 12 hours.
+        </p>
+
+        <form action="/api/contact" method="POST" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <input type="hidden" name="product_item" value={product.id + " - " + product.name} />
+          <input type="hidden" name="category" value={product.category} />
+
+          <div style="grid-column: span 1;">
+            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--plum); margin-bottom: 6px;">Your Name *</label>
+            <input type="text" name="name" required placeholder="e.g. Sarah Jenkins" style="width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px;" />
+          </div>
+
+          <div style="grid-column: span 1;">
+            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--plum); margin-bottom: 6px;">Business Email *</label>
+            <input type="email" name="email" required placeholder="sarah@yourbrand.com" style="width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px;" />
+          </div>
+
+          <div style="grid-column: span 1;">
+            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--plum); margin-bottom: 6px;">Estimated Volume</label>
+            <select name="volume" style="width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; background: white;">
+              <option value="500-1000">500 – 1,000 pcs (Pilot Run)</option>
+              <option value="1000-3000">1,000 – 3,000 pcs</option>
+              <option value="3000-10000">3,000 – 10,000 pcs</option>
+              <option value="10000+">10,000+ pcs (Enterprise Scale)</option>
+            </select>
+          </div>
+
+          <div style="grid-column: span 1;">
+            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--plum); margin-bottom: 6px;">Request Type</label>
+            <select name="request_type" style="width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; background: white;">
+              <option value="samples">Order Physical Lab Samples</option>
+              <option value="quote">Bespoke OEM / ODM Pricing</option>
+              <option value="custom_shade">Pantone Shade Counter-Matching</option>
+            </select>
+          </div>
+
+          <div style="grid-column: span 2;">
+            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--plum); margin-bottom: 6px;">Project Notes & Requirements</label>
+            <textarea name="message" rows="3" placeholder={"Tell us your target shade count, packaging direction, or launch timeline for " + product.name + "..."} style="width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; resize: vertical;"></textarea>
+          </div>
+
+          <div style="grid-column: span 2; margin-top: 8px;">
+            <button type="submit" class="btn" style="width: 100%; padding: 14px; font-size: 16px; cursor: pointer; text-align: center;">
+              Submit Inquiry for {product.name} →
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Products in Category (Internal Link Silo) -->
+  {relatedProducts.length > 0 && (
+    <section>
+      <div class="wrap">
+        <p class="eyebrow" style="color: var(--gold);">Category Silo</p>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
+          <h2 style="font-size: 26px; margin: 0; color: var(--plum);">More Formulations in {product.category}</h2>
+          <a href={"/" + product.categorySlug} style="color: var(--burgundy); font-weight: 600; font-size: 14px;">
+            View all {product.category} OEM solutions →
+          </a>
+        </div>
+
+        <div class="grid four" style="gap: 20px;">
+          {relatedProducts.map((rel) => (
+            <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; padding: 18px; border-radius: 8px;">
+              <div>
+                <div class="case-media" style="margin-bottom: 12px; border-radius: 6px; overflow: hidden;">
+                  <img src={rel.heroImage} alt={rel.name} width="400" height="300" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" loading="lazy" />
+                </div>
+                <span style="font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase;">
+                  {rel.tag}
+                </span>
+                <h3 style="font-size: 15px; margin: 6px 0 8px; line-height: 1.3;">
+                  <a href={"/products/" + rel.slug} style="color: var(--plum); text-decoration: none;">
+                    {rel.name}
+                  </a>
+                </h3>
+                <p style="font-size: 13px; color: var(--ink-soft); line-height: 1.4; margin-bottom: 12px;">
+                  {rel.headline}
+                </p>
+              </div>
+              <a href={"/products/" + rel.slug} style="font-size: 13px; font-weight: 600; color: var(--burgundy); margin-top: auto;">
+                View formulation →
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <script>
+    document.querySelectorAll(".gallery-thumb-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetImg = btn.getAttribute("data-img");
+        const mainImg = document.getElementById("main-product-img");
+        if (targetImg && mainImg) {
+          mainImg.setAttribute("src", targetImg);
+        }
+      });
+    });
+  </script>
+</BaseLayout>
