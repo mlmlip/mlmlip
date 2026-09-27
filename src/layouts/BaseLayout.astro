@@ -103,13 +103,12 @@ const breadcrumbSchema = {
     <meta name="twitter:description" content={description} />
     <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    <!-- Google Analytics 4 (TODO: Replace G-XXXXXXXXXX with your actual GA4 Measurement ID) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHEQXE47YG"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'G-CHEQXE47YG');
     </script>
   </head>
   <body>
@@ -235,5 +234,38 @@ const breadcrumbSchema = {
         });
       }
     </script>
-  </body>
+  
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Track WhatsApp clicks
+  document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', {
+          lead_type: 'whatsapp_inquiry',
+          page_path: window.location.pathname
+        });
+      }
+    });
+  });
+  // Track form submissions with email tier detection
+  document.querySelectorAll('form[action*="web3forms"]').forEach(function(form) {
+    form.addEventListener('submit', function() {
+      var emailInput = form.querySelector('input[type="email"]');
+      var email = emailInput ? emailInput.value : '';
+      var freeProviders = ['gmail.com','yahoo.com','hotmail.com','outlook.com','qq.com','163.com','aol.com'];
+      var domain = email.split('@')[1] || '';
+      var emailTier = freeProviders.some(function(p){return domain.toLowerCase()===p;}) ? 'tier_3_free' : 'tier_1_business';
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', {
+          lead_type: 'quote_inquiry',
+          email_tier: emailTier,
+          page_path: window.location.pathname
+        });
+      }
+    });
+  });
+});
+</script>
+</body>
 </html>

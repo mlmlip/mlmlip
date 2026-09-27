@@ -130,9 +130,9 @@ import { site } from '../data/site';
 
       <div class="card" style="max-width: 680px; margin: 0 auto; box-shadow: var(--shadow-md); border: 1px solid var(--line); border-top: 4px solid var(--burgundy); background: #ffffff;">
         <!-- Web3Forms Form Integration (Requires free access key from https://web3forms.com/) -->
-        <!-- Note: Replace YOUR_WEB3FORMS_ACCESS_KEY with the actual key from web3forms.com -->
+        <!-- Note: Replace b0681fa9-0cc8-4fd9-80f7-4d5faa39b2e7 with the actual key from web3forms.com -->
         <form id="email-quote-form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="access_key" value="b0681fa9-0cc8-4fd9-80f7-4d5faa39b2e7" />
           <input type="hidden" name="subject" value="New Lip Quote Inquiry via MLM Lip Form" />
           <input type="hidden" name="from_name" value="MLM Lip Website Inquiry" />
           <input type="checkbox" name="botcheck" class="hidden" style="display:none;" />
@@ -145,6 +145,9 @@ import { site } from '../data/site';
             <div class="form-row">
               <label for="eq-email" style="font-weight: 600; font-size: 13px; color: var(--ink);">Work Email <span style="color: var(--burgundy);">*</span></label>
               <input id="eq-email" name="email" type="email" required placeholder="e.g. jane@brand.com" style="width: 100%;" />
+              <div id="eq-email-notice" style="display: none; margin-top: 6px; font-size: 12px; color: #b76e79; line-height: 1.4;">
+                For faster B2B quotes &amp; NDA processing, a company email is recommended.
+              </div>
             </div>
           </div>
 
@@ -174,7 +177,7 @@ import { site } from '../data/site';
 
           <div style="margin-top: 16px;">
             <button id="eq-submit-btn" class="btn" type="submit" style="width: 100%; font-size: 15px; padding: 14px 20px; background: var(--burgundy); color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">
-              Submit Inquiry via Email &rarr;
+              Get Custom Formula &amp; Sample Box &rarr;
             </button>
           </div>
 
@@ -358,6 +361,19 @@ import { site } from '../data/site';
   const emailForm = document.getElementById('email-quote-form');
   const eqStatus = document.getElementById('eq-status');
   const eqSubmitBtn = document.getElementById('eq-submit-btn');
+  const eqEmailInput = document.getElementById('eq-email');
+  const eqEmailNotice = document.getElementById('eq-email-notice');
+  const consumerDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'qq.com', '163.com'];
+
+  eqEmailInput?.addEventListener('input', () => {
+    const val = (eqEmailInput.value || '').trim().toLowerCase();
+    const parts = val.split('@');
+    if (parts.length === 2 && consumerDomains.includes(parts[1])) {
+      if (eqEmailNotice) eqEmailNotice.style.display = 'block';
+    } else {
+      if (eqEmailNotice) eqEmailNotice.style.display = 'none';
+    }
+  });
 
   emailForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -381,7 +397,7 @@ import { site } from '../data/site';
         eqStatus.style.background = '#d4edda';
         eqStatus.style.color = '#155724';
         eqStatus.style.border = '1px solid #c3e6cb';
-        eqStatus.innerHTML = "✓ Brief Received! Formal quote within 12 business hours. Our Lead Formulation Engineer will review your specs, MOQ tiers, and packaging compatibility.";
+        eqStatus.innerHTML = "✓ Brief Received! We'll respond with a formal quote within 12 business hours. Our Lead Formulation Engineer will review your specs, MOQ tiers, and packaging compatibility.";
         if (typeof window.gtag === 'function') { window.gtag('event', 'generate_lead', { event_category: 'Inquiry', event_label: 'Quote Form' }); }
         emailForm.reset();
       } else {
@@ -389,7 +405,7 @@ import { site } from '../data/site';
         eqStatus.style.background = '#d4edda';
         eqStatus.style.color = '#155724';
         eqStatus.style.border = '1px solid #c3e6cb';
-        eqStatus.innerHTML = "<strong>✓ Brief Received!</strong><br><span style='font-size:13px; color:#1e7e34;'>Our Formulation Specialist will review your brief and reply within 12 business hours with specs, tiered pricing, and packaging compatibility.</span>";
+        eqStatus.innerHTML = "<strong>✓ Brief Received!</strong><br><span style='font-size:13px; color:#1e7e34;'>We'll respond with a formal quote within 12 business hours. Our Formulation Specialist will review your brief, tiered pricing, and packaging compatibility.</span>";
         if (window.gtag) {
           gtag('event', 'generate_lead', { method: 'web3forms' });
         }
@@ -401,7 +417,7 @@ import { site } from '../data/site';
       eqStatus.style.background = '#d4edda';
       eqStatus.style.color = '#155724';
       eqStatus.style.border = '1px solid #c3e6cb';
-      eqStatus.innerHTML = "<strong>✓ Brief Received!</strong><br><span style='font-size:13px; color:#1e7e34;'>Our Formulation Specialist will review your brief and reply within 12 business hours with specs, tiered pricing, and packaging compatibility.</span>";
+      eqStatus.innerHTML = "<strong>✓ Brief Received!</strong><br><span style='font-size:13px; color:#1e7e34;'>We'll respond with a formal quote within 12 business hours. Our Formulation Specialist will review your brief, tiered pricing, and packaging compatibility.</span>";
       if (window.gtag) {
         gtag('event', 'generate_lead', { method: 'web3forms' });
       }

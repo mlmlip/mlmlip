@@ -227,9 +227,9 @@ import { site } from '../data/site';
         Enter your name and verified corporate email to unlock instant PDF access to <strong id="gated-doc-name" style="color: var(--burgundy);">this compliance file</strong>, while our regulatory team dispatches the full unredacted laboratory report &amp; tiered MOQ quotation sheet to your inbox.
       </p>
 
-      <!-- Web3Forms Integration (Replace YOUR_WEB3FORMS_ACCESS_KEY with actual key from https://web3forms.com/) -->
+      <!-- Web3Forms Integration (Replace b0681fa9-0cc8-4fd9-80f7-4d5faa39b2e7 with actual key from https://web3forms.com/) -->
       <form id="gated-download-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+        <input type="hidden" name="access_key" value="b0681fa9-0cc8-4fd9-80f7-4d5faa39b2e7" />
         <input type="hidden" name="subject" value="Compliance Dossier Download Lead — MLM Lip" />
         <input type="hidden" id="gated-requested-doc" name="requested_document" value="" />
 
@@ -240,6 +240,9 @@ import { site } from '../data/site';
         <div class="form-row" style="margin-bottom: 16px;">
           <label for="gd-email" style="font-weight: 600; font-size: 13px; color: var(--ink);">Work Email <span style="color: var(--burgundy);">*</span></label>
           <input id="gd-email" name="email" type="email" required placeholder="you@brand.com" style="width: 100%;" />
+          <div id="gd-email-notice" style="display: none; margin-top: 6px; font-size: 12px; color: #b76e79; line-height: 1.4;">
+            For faster B2B quotes &amp; NDA processing, a company email is recommended.
+          </div>
         </div>
 
         <button id="gd-submit-btn" class="btn" type="submit" style="width: 100%; background: var(--burgundy); color: #fff; border: none; padding: 12px 18px; border-radius: 8px; font-weight: 600; cursor: pointer;">
@@ -274,6 +277,19 @@ import { site } from '../data/site';
       const submitBtn = document.getElementById('gd-submit-btn');
 
       let currentPdfUrl = '';
+      const gdEmailInput = document.getElementById('gd-email');
+      const gdEmailNotice = document.getElementById('gd-email-notice');
+      const consumerDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'qq.com', '163.com'];
+
+      gdEmailInput?.addEventListener('input', () => {
+        const val = (gdEmailInput.value || '').trim().toLowerCase();
+        const parts = val.split('@');
+        if (parts.length === 2 && consumerDomains.includes(parts[1])) {
+          if (gdEmailNotice) gdEmailNotice.style.display = 'block';
+        } else {
+          if (gdEmailNotice) gdEmailNotice.style.display = 'none';
+        }
+      });
 
       document.querySelectorAll('.gated-download-trigger').forEach((link) => {
         link.addEventListener('click', (e) => {
