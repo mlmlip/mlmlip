@@ -1,0 +1,31 @@
+---
+// This is a wrapper layout for blog posts to automatically append the LeadForm
+import BaseLayout from './BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <article class="max-w-4xl mx-auto px-4 py-8 prose lg:prose-xl">
+    <header class="mb-8 border-b pb-4">
+      <h1 class="text-4xl font-bold mb-2">{frontmatter.title}</h1>
+      <div class="text-gray-500 text-sm">
+        Published on {frontmatter.pubDate} | Category: {frontmatter.tags ? frontmatter.tags.join(', ') : 'B2B Guide'}
+      </div>
+    </header>
+    
+    <div class="blog-content">
+      <slot />
+    </div>
+
+    <!-- The aggressive B2B Lead Conversion Bridge -->
+    <hr class="my-12 border-gray-200" />
+    <div class="conversion-section bg-gray-50 p-6 rounded-xl border border-gray-100">
+      <h2 class="text-2xl font-bold mt-0 mb-4">Ready to formulate your own Lip Cosmetics?</h2>
+      <p class="mb-6">Stop dealing with unverified factories. Submit your requirements below, and our technical sales team will provide a rapid assessment, MOQ options (starting from 500 pcs), and a custom quote.</p>
+      
+      <LeadForm context="blog_footer" />
+    </div>
+  </article>
+</BaseLayout>

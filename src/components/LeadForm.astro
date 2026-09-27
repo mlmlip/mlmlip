@@ -1,0 +1,136 @@
+---
+// src/components/LeadForm.astro
+// Aggressive B2B Lead Capture Form connecting directly to N8N B2B Lead Processor
+
+export interface Props {
+  context?: string;      // e.g., "blog_footer", "product_page"
+  productName?: string;  // To auto-fill if on a product page
+}
+
+const { context = "general", productName = "" } = Astro.props;
+
+// Use the active N8N webhook URL here. (Ensure this is the PROD webhook, not test)
+const N8N_WEBHOOK_URL = "https://n8n.glitter.com/webhook/b2b-lead-processor"; // Update with actual URL if different
+---
+
+<div class="lead-capture-form bg-gray-50 border border-gray-200 rounded-lg p-8 my-8 shadow-sm">
+  <div class="text-center mb-6">
+    <h3 class="text-2xl font-bold text-gray-900 mb-2">Request OEM/Private Label Quote</h3>
+    <p class="text-gray-600">Get pricing, MOQ details, and sample availability within 24 hours.</p>
+  </div>
+
+  <form id="b2b-lead-form" class="space-y-4" onsubmit="submitLeadForm(event)">
+    <input type="hidden" name="context" value={context} />
+    <input type="hidden" name="sourceUrl" id="form-source-url" value="" />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-black focus:border-black" />
+      </div>
+      <div>
+        <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company / Brand Name</label>
+        <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-black focus:border-black" />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Business Email *</label>
+        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-black focus:border-black" />
+      </div>
+      <div>
+        <label for="whatsapp" class="block text-sm font-medium text-gray-700 mb-1">WhatsApp / Phone (Optional for faster reply)</label>
+        <input type="tel" id="whatsapp" name="whatsapp" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-black focus:border-black" />
+      </div>
+    </div>
+
+    <div>
+      <label for="productType" class="block text-sm font-medium text-gray-700 mb-1">Interested Product Category</label>
+      <select id="productType" name="productType" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-black focus:border-black">
+        <option value="" disabled selected={!productName}>Select a category...</option>
+        <option value="Lip Gloss" selected={productName.includes('Gloss')}>Lip Gloss</option>
+        <option value="Lip Tint/Stain" selected={productName.includes('Tint') || productName.includes('Stain')}>Lip Tint / Stain</option>
+        <option value="Lip Oil" selected={productName.includes('Oil')}>Lip Oil</option>
+        <option value="Lip Stick" selected={productName.includes('Stick')}>Lip Stick</option>
+        <option value="Lip Liner" selected={productName.includes('Liner')}>Lip Liner</option>
+        <option value="Other">Other Custom Formulation</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="quantity" class="block text-sm font-medium text-gray-700 mb-1">Estimated Order Quantity</label>
+      <select id="quantity" name="quantity" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-black focus:border-black">
+        <option value="500-1000 pcs (Pilot Run)">500 - 1,000 pcs (Pilot Run)</option>
+        <option value="1000-5000 pcs">1,000 - 5,000 pcs</option>
+        <option value="5000-10000 pcs">5,000 - 10,000 pcs</option>
+        <option value="10000+ pcs">10,000+ pcs</option>
+        <option value="Just asking for samples">Just asking for samples</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="details" class="block text-sm font-medium text-gray-700 mb-1">Project Details & Requirements</label>
+      <textarea id="details" name="details" rows="3" placeholder="Tell us about your formula requirements, packaging preferences, target market, etc." class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-black focus:border-black"></textarea>
+    </div>
+
+    <div class="pt-2">
+      <button type="submit" id="submit-btn" class="w-full bg-black hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-md transition duration-200">
+        Send Inquiry
+      </button>
+      <p id="form-status" class="mt-3 text-center text-sm font-medium hidden"></p>
+    </div>
+  </form>
+</div>
+
+<script define:vars={{ N8N_WEBHOOK_URL }}>
+  // Set the current page URL when the component loads
+  document.addEventListener('DOMContentLoaded', () => {
+    const urlInput = document.getElementById('form-source-url');
+    if (urlInput) {
+      urlInput.value = window.location.href;
+    }
+  });
+
+  async function submitLeadForm(event) {
+    event.preventDefault();
+    const form = event.target;
+    const btn = document.getElementById('submit-btn');
+    const statusEl = document.getElementById('form-status');
+    
+    // UI state: loading
+    btn.disabled = true;
+    btn.innerText = "Sending...";
+    statusEl.className = "mt-3 text-center text-sm font-medium hidden";
+
+    // Gather data
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch(N8N_WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        statusEl.innerText = "Thanks! Your inquiry has been received. Our team will contact you shortly.";
+        statusEl.className = "mt-3 text-center text-sm font-medium text-green-600";
+        form.reset();
+      } else {
+        throw new Error('Network response was not ok');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      statusEl.innerText = "Sorry, there was an issue sending your request. Please email us directly.";
+      statusEl.className = "mt-3 text-center text-sm font-medium text-red-600";
+    } finally {
+      btn.disabled = false;
+      btn.innerText = "Send Inquiry";
+    }
+  }
+</script>

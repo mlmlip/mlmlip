@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../layouts/BlogPost.astro';
+import LeadForm from '../../components/LeadForm.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { getCollection, render } from 'astro:content';
 
@@ -58,7 +60,7 @@ const faqSchema = faqItems.length > 0 ? {
 } : null;
 ---
 
-<BaseLayout title={`${post.data.title} — MLM Lip`} description={post.data.description}>
+<BlogPost frontmatter={{ title: post.data.title, description: post.data.description, pubDate: post.data.pubDate, tags: post.data.tags }}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   {faqSchema && (
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
@@ -82,7 +84,7 @@ const faqSchema = faqItems.length > 0 ? {
       </div>
     </div>
   </section>
-</BaseLayout>
+</BlogPost>
 
 <script is:inline>
   (function() {
