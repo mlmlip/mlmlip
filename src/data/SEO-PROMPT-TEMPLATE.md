@@ -40,4 +40,7 @@ Never use: glitter, shimmer, chunky glitter, body oil, body shimmer oil, effect 
 ## OUTPUT FORMAT
 - Markdown, NO H1 in body, minimum 1200 words
 - Internal links to /products, /customization, /samples, /process, /quote
-- End with CTA (WhatsApp + email)
+- End with a dedicated, high-conversion B2B Lead Magnet CTA block (markdown callout/box) featuring either:
+  1) 《500 pcs 极速测款打样申请通道 (Delta E ≤ 0.5 零色差保障)》 (500 pcs Rapid Pilot Sampling Protocol with Delta E ≤ 0.5 Color Precision Guarantee)
+  2) 《2026 EU MoCRA 唇部配方出海避坑白皮书下载》 (2026 EU MoCRA & CPNP Lip Formulation Compliance Whitepaper)
+  Include direct action contact: WhatsApp (+86 136 5238 0291) | Email (nancy@mlmlip.com)

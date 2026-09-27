@@ -130,7 +130,6 @@ import { site } from '../data/site';
 
       <div class="card" style="max-width: 680px; margin: 0 auto; box-shadow: var(--shadow-md); border: 1px solid var(--line); border-top: 4px solid var(--burgundy); background: #ffffff;">
         <!-- Web3Forms Form Integration (Requires free access key from https://web3forms.com/) -->
-        <!-- Note: Replace b0681fa9-0cc8-4fd9-80f7-4d5faa39b2e7 with the actual key from web3forms.com -->
         <form id="email-quote-form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="b0681fa9-0cc8-4fd9-80f7-4d5faa39b2e7" />
           <input type="hidden" name="subject" value="New Lip Quote Inquiry via MLM Lip Form" />
@@ -168,6 +167,19 @@ import { site } from '../data/site';
                 <option value="Other">Other</option>
               </select>
             </div>
+          </div>
+
+          <div class="form-row" style="margin-top: 12px;">
+            <label for="eq-launch-date" style="font-weight: 600; font-size: 13px; color: var(--ink);">Target Launch Date <span style="color: #8a6a72; font-weight: normal;">(optional)</span></label>
+            <select id="eq-launch-date" name="launch_date" style="width: 100%;">
+              <option value="">Select timeline...</option>
+              <option value="Q4 2026">Q4 2026 (Oct–Dec)</option>
+              <option value="Q1 2027">Q1 2027 (Jan–Mar)</option>
+              <option value="Q2 2027">Q2 2027 (Apr–Jun)</option>
+              <option value="H2 2027">H2 2027 (Jul–Dec)</option>
+              <option value="2028+">2028 or later</option>
+              <option value="Flexible">Flexible / Exploring</option>
+            </select>
           </div>
 
           <div class="form-row" style="margin-top: 12px;">
