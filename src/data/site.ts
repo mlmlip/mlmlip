@@ -116,7 +116,7 @@ export const products = [
     name: 'Velvet Cloud Lip Mud & Tint',
     body: 'Weightless, soft-focus matte formula delivering buildable, transfer-resistant color that blurs fine lip lines effortlessly.',
     detail: '500 pcs MOQ · Pantone Precision Shade Matching',
-    image: '/lip-series/lip-glaze-hero-2.jpg',
+    image: '/products/nas-sync-39-1.jpg',
     categoryHref: '/lip-mud-manufacturer'
   },
   {
@@ -137,7 +137,7 @@ export const products = [
     name: 'Signature Bullet Lipstick',
     body: 'Silky satin, velvet matte, and high-shine finishes cast in heavyweight magnetic zamac, aluminum, or custom-embossed cases.',
     detail: '500 pcs MOQ · Custom Bullet Engraving & Tooling',
-    image: '/lip-series/lip-glaze-hero-3.jpg',
+    image: '/products/auto-04-3.jpg',
     categoryHref: '/lipstick-manufacturer'
   },
   {
