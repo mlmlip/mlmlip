@@ -1367,9 +1367,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Pure botanical golden elixir",
     "headline": "Golden cold-pressed lipid blend: jojoba, rosehip, avocado, argan, marula, almond, camellia",
     "description": "Custom B2B manufacturing for 7-Botanical Pure Nourishing Lip Oil. Featuring Rosehip oil, Jojoba oil, Marula oil with mirror-finish nourishing veil. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/lipgloss-collection-01.jpg",
+    "heroImage": "/products/nas-sync-3780.jpg",
     "galleryImages": [
-      "/products/lipgloss-collection-01.jpg",
+      "/products/nas-sync-3780.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1400,9 +1400,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Intuitive personalized tint oil",
     "headline": "Micro-encapsulated red pigments that react to skin warmth for an organic flush",
     "description": "Custom B2B manufacturing for pH-Smart Color-Reviving Glow Lip Oil. Featuring CI 45410, Meadowfoam seed oil, Tocopherol with luminous bespoke pink glow. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/lipgloss-shades.jpg",
+    "heroImage": "/products/nas-sync-3781.jpg",
     "galleryImages": [
-      "/products/lipgloss-shades.jpg",
+      "/products/nas-sync-3781.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1433,9 +1433,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Multi-depth cellular hydration oil",
     "headline": "5 molecular weights of hyaluronic acid delivering multi-depth cellular hydration",
     "description": "Custom B2B manufacturing for 5D Hyaluronic Acid Plumping Lip Nectar. Featuring 5D Hyaluronic complex, Squalane with ultra-plump water shine. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/lipgloss-26-01.jpg",
+    "heroImage": "/products/nas-sync-3782.jpg",
     "galleryImages": [
-      "/products/lipgloss-26-01.jpg",
+      "/products/nas-sync-3782.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1466,9 +1466,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Lipid barrier recovery oil",
     "headline": "Lipid-replenishing formula targeting chronically dry, peeling and chapped lips",
     "description": "Custom B2B manufacturing for Rosehip & Squalane Barrier Repair Lip Oil. Featuring Organic Rosa canina, Olive squalane with soothing restorative cushion. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/lipgloss-26-03.jpg",
+    "heroImage": "/products/nas-sync-3788.jpg",
     "galleryImages": [
-      "/products/lipgloss-26-03.jpg",
+      "/products/nas-sync-3788.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1499,9 +1499,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Medicinal honey treatment oil",
     "headline": "Pharmaceutical grade Manuka honey MGO 400+ paired with biomimetic copper peptides",
     "description": "Custom B2B manufacturing for Manuka Honey & Peptide Lip Serum Oil. Featuring Manuka honey extract, Copper tripeptide-1 with glossy restorative barrier. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/lipgloss-nude-01.jpg",
+    "heroImage": "/products/nas-sync-3789.jpg",
     "galleryImages": [
-      "/products/lipgloss-nude-01.jpg",
+      "/products/nas-sync-3789.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1532,9 +1532,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Zero-stick glass glaze oil",
     "headline": "High molecular weight polymer creating wet-look shine with completely dry, non-tacky touch",
     "description": "Custom B2B manufacturing for Non-Sticky Jelly Glaze Lip Oil. Featuring Polyglyceryl-2 isostearate, Sunflower wax with non-sticky glass finish. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/lipgloss-slim-01.jpg",
+    "heroImage": "/products/nas-sync-img-0045.jpg",
     "galleryImages": [
-      "/products/lipgloss-slim-01.jpg",
+      "/products/nas-sync-img-0045.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1565,9 +1565,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Nocturnal cellular renewal oil",
     "headline": "Rich nighttime lip sleep serum infused with retinol palmitate & squalane",
     "description": "Custom B2B manufacturing for Overnight Intensive Recovery Lip Oil. Featuring Retinyl palmitate, Phytosterols, Bisabolol with rich protective sleep cushion. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/lipgloss-slim-06.jpg",
+    "heroImage": "/products/nas-sync-img-0048.jpg",
     "galleryImages": [
-      "/products/lipgloss-slim-06.jpg",
+      "/products/nas-sync-img-0048.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1598,9 +1598,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "24K luxury gold treatment",
     "headline": "Suspended real 24-karat gold micro-leaf floating in a transparent nourishing squalane base",
     "description": "Custom B2B manufacturing for 24K Golden Flake Infused Lip Oil. Featuring 24K gold flakes, Plant squalane, Jojoba with radiant dewy gold reflection. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/lipgloss-39-01.jpg",
+    "heroImage": "/products/nas-sync-img-0050.jpg",
     "galleryImages": [
-      "/products/lipgloss-39-01.jpg",
+      "/products/nas-sync-img-0050.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1631,9 +1631,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Glacial sensory refresh oil",
     "headline": "Swiss peppermint and spearmint essential oils delivering instant cooling sensations",
     "description": "Custom B2B manufacturing for Glacial Mint Invigorating Lip Oil. Featuring Mentha piperita oil, Eucalyptus extract with crisp fresh water shine. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/lipgloss-39-02.jpg",
+    "heroImage": "/products/nas-sync-img-0053.jpg",
     "galleryImages": [
-      "/products/lipgloss-39-02.jpg",
+      "/products/nas-sync-img-0053.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1664,9 +1664,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "UV defensive sun shield oil",
     "headline": "Clear non-whitening chemical-free mineral sunscreen defense against photo-aging",
     "description": "Custom B2B manufacturing for Broad Spectrum SPF 15 Daily Lip Oil. Featuring Zinc oxide (nano-free dispersion), Vitamin E with non-greasy sun protection sheen. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/lipgloss-39-03.jpg",
+    "heroImage": "/products/nas-sync-img-0055.jpg",
     "galleryImages": [
-      "/products/lipgloss-39-03.jpg",
+      "/products/nas-sync-img-0055.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1697,9 +1697,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Overnight keratin repair mask",
     "headline": "Enriched with wild strawberry, raspberry, and goji berry extracts to dissolve dead lip cells",
     "description": "Custom B2B manufacturing for Berry Complex Overnight Repair Lip Mask. Featuring Berry fruit complex, Ascorbic acid, Shea with velvety protective film. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/nas-sync-39-1.jpg",
+    "heroImage": "/products/nas-sync-01.jpg",
     "galleryImages": [
-      "/products/nas-sync-39-1.jpg",
+      "/products/nas-sync-01.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1730,9 +1730,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "15-minute emergency plump patch",
     "headline": "Transdermal hydrogel patches saturated in marine collagen, niacinamide & rose water",
     "description": "Custom B2B manufacturing for Hydrogel Collagen Plumping Lip Patches. Featuring Hydrolyzed collagen, Niacinamide, Rose water with intense moisture infusion. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/nas-sync-39-2.jpg",
+    "heroImage": "/products/nas-sync-06.jpg",
     "galleryImages": [
-      "/products/nas-sync-39-2.jpg",
+      "/products/nas-sync-06.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1763,9 +1763,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Occlusive nutritive hive balm",
     "headline": "Concentrated hive nutrients creating an occlusive restorative cocoon for dry cracked lips",
     "description": "Custom B2B manufacturing for Royal Jelly & Propolis Barrier Sleeping Pack. Featuring Propolis extract, Royal jelly, Beeswax with nourishing dew wrap. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/nas-sync-39-3.jpg",
+    "heroImage": "/products/nas-sync-08.jpg",
     "galleryImages": [
-      "/products/nas-sync-39-3.jpg",
+      "/products/nas-sync-08.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1796,9 +1796,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Gentle resurfacing polish",
     "headline": "Microfine brown sugar crystals suspended in coconut oil and sweet almond butter",
     "description": "Custom B2B manufacturing for Natural Cane Sugar Gentle Lip Polish Scrub. Featuring Sucrose, Coconut oil, Sweet almond oil with polished velvety soft canvas. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/nas-sync-39-4.jpg",
+    "heroImage": "/products/nas-sync-09.jpg",
     "galleryImages": [
-      "/products/nas-sync-39-4.jpg",
+      "/products/nas-sync-09.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1829,9 +1829,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Dermatological lipid recovery salve",
     "headline": "Physiological lipid ratio: Ceramides EOP, NP, AP + cholesterol for cracked lips",
     "description": "Custom B2B manufacturing for Triple Ceramide SOS Chapped Lip Salve. Featuring Ceramide 1, 3, 6-II, Phytosphingosine with non-sticky occlusive seal. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/nas-sync-39-5.jpg",
+    "heroImage": "/products/nas-sync-11.jpg",
     "galleryImages": [
-      "/products/nas-sync-39-5.jpg",
+      "/products/nas-sync-11.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1862,9 +1862,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Antioxidant calming green balm",
     "headline": "Organic ceremonial-grade Japanese green tea butter to calm inflamed lip borders",
     "description": "Custom B2B manufacturing for Uji Matcha Soothing Antioxidant Lip Balm. Featuring Organic matcha powder, Squalane, Murumuru with soft soothing matte barrier. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/nas-sync-39-7.jpg",
+    "heroImage": "/products/nas-sync-20.jpg",
     "galleryImages": [
-      "/products/nas-sync-39-7.jpg",
+      "/products/nas-sync-20.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1895,9 +1895,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Ultra-rich comforting nourishment",
     "headline": "Unrefined African shea butter blended with real Madagascar vanilla bean oleoresin",
     "description": "Custom B2B manufacturing for Raw Shea & Bourbon Vanilla Conditioning Pot. Featuring Butyrospermum parkii, Vanilla planifolia extract with warm supple protective sheen. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/nas-sync-39.jpg",
+    "heroImage": "/products/nas-sync-24.jpg",
     "galleryImages": [
-      "/products/nas-sync-39.jpg",
+      "/products/nas-sync-24.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1928,9 +1928,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Instant water-burst cream",
     "headline": "Emulsion technology that bursts into refreshing micro-droplets upon lip contact",
     "description": "Custom B2B manufacturing for Melt-In Water Burst Hyaluronic Lip Cream. Featuring Hyaluronic acid, Betaine, Trehalose with weightless dewy moisture veil. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/nas-sync-2.jpg",
+    "heroImage": "/products/nas-sync-25.jpg",
     "galleryImages": [
-      "/products/nas-sync-2.jpg",
+      "/products/nas-sync-25.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1961,9 +1961,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Perioral wrinkle reduction cream",
     "headline": "Targeted formula reducing smoker lines, perioral wrinkles, and loss of vermilion definition",
     "description": "Custom B2B manufacturing for Oligopeptide-1 Intensive Anti-Wrinkle Lip Cream. Featuring Palmitoyl tripeptide-5, Oligopeptide-1, Retinol with silky semi-matte firming film. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/nas-sync-1.jpg",
+    "heroImage": "/products/nas-sync-26.jpg",
     "galleryImages": [
-      "/products/nas-sync-1.jpg",
+      "/products/nas-sync-26.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
@@ -1994,9 +1994,9 @@ export const productsCatalog: ProductItem[] = [
     "tag": "Multi-action tinted daily butter",
     "headline": "Multi-tasking day formula providing deep barrier moisture and fresh wash of color",
     "description": "Custom B2B manufacturing for Dewy Tinted Barrier Day Lip Butter. Featuring Cupuacu butter, Jojoba esters, Mineral tint with fresh dewy petal finish. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
-    "heroImage": "/products/nas-sync-h5957d2fb5d5a4ed4a207672f1f9d904cd.jpg",
+    "heroImage": "/products/nas-sync-39-6.jpg",
     "galleryImages": [
-      "/products/nas-sync-h5957d2fb5d5a4ed4a207672f1f9d904cd.jpg",
+      "/products/nas-sync-39-6.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
