@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import LipConfigurator from '../../components/LipConfigurator.astro';
+import { site } from '../../data/site';
+---
+
+<BaseLayout
+  title="Solicite su Cotización | Fabricante de Cosméticos Labiales OEM — MLM Lip"
+  description="Configure cosméticos labiales personalizados en 90 segundos. Seleccione formulaciones, ingredientes activos, empaques y mercados meta. MOQ de 500 uds, muestras de laboratorio en 7 días, certificados GMPC e ISO 22716."
+>
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-bottom: 40px;">
+    <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Inicio', href: '/es/' }, { label: 'Configurador de Proyecto' }]} />
+      <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.2em;">Mesa de Ingeniería Directa con Laboratorio</p>
+      <h1>Configure su Línea Labial Personalizada en 90 Segundos</h1>
+      <p class="lead" style="max-width: 740px;">
+        Evite solicitudes vagas. Personalice su categoría, reología, principios activos, regulaciones de mercado y empaques de lujo. Obtenga asesoría de formulación directa, estimación de precios y reserve una muestra de laboratorio en 7 días.
+      </p>
+    </div>
+  </section>
+
+  <!-- P0-2: Interactive Multi-Step Dialog Configurator -->
+  <section style="padding-top: 0; padding-bottom: 60px; background: transparent;">
+    <div class="wrap">
+      <LipConfigurator />
+    </div>
+  </section>
+
+  <!-- Secondary Fast Route: Direct Email Inquiry Form -->
+  <section id="email-inquiry" style="background: linear-gradient(180deg, #fff 0%, var(--blush-soft) 100%); padding: 60px 0; border-top: 1px solid var(--line);">
+    <div class="wrap">
+      <div style="text-align: center; max-width: 640px; margin: 0 auto 36px;">
+        <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.15em;">Consulta directa por correo</p>
+        <h2 style="font-size: 28px; margin-bottom: 12px;">¿Prefiere Formulario Tradicional? Envíenos sus Requisitos</h2>
+        <p class="lead" style="font-size: 15px; margin: 0 auto;">
+          Envíe las especificaciones de su proyecto directamente a nuestros ingenieros técnicos. Revisamos formulaciones, viabilidad de MOQ y empaques, respondiendo con cotización formal en menos de 24 horas.
+        </p>
+      </div>
+
+      <div class="card" style="max-width: 680px; margin: 0 auto; box-shadow: var(--shadow-md); border: 1px solid var(--line); border-top: 4px solid var(--burgundy); background: #ffffff;">
+        <form id="email-quote-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="b0681fa9-0cc8-4fd9-80f7-4d5faa39b2e7" />
+          <input type="hidden" name="subject" value="Nueva Consulta de Cotización (ES) - MLM Lip" />
+          <input type="hidden" name="from_name" value="MLM Lip Website Inquiry (ES)" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none;" />
+
+          <div class="grid two" style="gap: 16px;">
+            <div class="form-row">
+              <label for="eq-name" style="font-weight: 600; font-size: 13px; color: var(--ink);">Nombre Completo <span style="color: var(--burgundy);">*</span></label>
+              <input id="eq-name" name="name" type="text" required placeholder="p. ej. María García" style="width: 100%;" />
+            </div>
+            <div class="form-row">
+              <label for="eq-email" style="font-weight: 600; font-size: 13px; color: var(--ink);">Correo Corporativo <span style="color: var(--burgundy);">*</span></label>
+              <input id="eq-email" name="email" type="email" required placeholder="p. ej. maria@marca.com" style="width: 100%;" />
+            </div>
+          </div>
+
+          <div class="grid two" style="gap: 16px; margin-top: 12px;">
+            <div class="form-row">
+              <label for="eq-company" style="font-weight: 600; font-size: 13px; color: var(--ink);">Nombre de la Marca / Empresa <span style="color: #8a6a72; font-weight: normal;">(opcional)</span></label>
+              <input id="eq-company" name="company" type="text" placeholder="p. ej. Velvet Labials" style="width: 100%;" />
+            </div>
+            <div class="form-row">
+              <label for="eq-product" style="font-weight: 600; font-size: 13px; color: var(--ink);">Producto de Interés <span style="color: var(--burgundy);">*</span></label>
+              <select id="eq-product" name="product_interest" required style="width: 100%;">
+                <option value="Lip Gloss">Brillo Labial (Lip Gloss)</option>
+                <option value="Lip Mud">Barro Labial Mate (Lip Mud / Mousse)</option>
+                <option value="Lip Oil">Aceite Labial con Péptidos (Lip Oil)</option>
+                <option value="Lipstick">Lápiz Labial en Barra (Bullet Lipstick)</option>
+                <option value="Lip Liner">Delineador Labial (Lip Liner)</option>
+                <option value="Lip Mask">Mascarilla Labial de Noche (Lip Mask)</option>
+                <option value="Other">Colección Completa / Kit Personalizado</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row" style="margin-top: 12px;">
+            <label for="eq-message" style="font-weight: 600; font-size: 13px; color: var(--ink);">Detalles del Proyecto y Cantidad <span style="color: var(--burgundy);">*</span></label>
+            <textarea id="eq-message" name="message" rows="4" required placeholder="Indique cantidad objetivo (mínimo 500 uds), tonos, tipo de acabado, empaque deseado o fechas objetivo..." style="width: 100%;"></textarea>
+          </div>
+
+          <div style="margin-top: 16px;">
+            <button id="eq-submit-btn" class="btn" type="submit" style="width: 100%; font-size: 15px; padding: 14px 20px; background: var(--burgundy); color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">
+              Solicitar Fórmula y Muestras de Laboratorio &rarr;
+            </button>
+          </div>
+
+          <div id="eq-status" style="display: none; margin-top: 16px; padding: 14px 18px; border-radius: 8px; font-size: 14px; font-weight: 500; text-align: center;"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process SLA Review -->
+  <section style="padding: 70px 0;">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold);">Garantía de Servicio Técnico</p>
+      <h2>De la Configuración a la Producción en Masa</h2>
+      <div class="grid three" style="margin-top: 28px;">
+        <div class="card" style="border: 1px solid var(--line); border-radius: 12px; padding: 24px;">
+          <p class="eyebrow" style="margin-bottom: 6px; color: var(--rose);">Paso 1 · Evaluación en 24 Horas</p>
+          <h3>Análisis Químico y Regulatorio</h3>
+          <p style="margin:0; font-size:14px; color:var(--ink-soft);">Nuestros químicos formadores analizan viscosidad, compatibilidad de empaque y cumplimiento con normativas internacionales.</p>
+        </div>
+        <div class="card" style="border: 1px solid var(--line); border-radius: 12px; padding: 24px;">
+          <p class="eyebrow" style="margin-bottom: 6px; color: var(--rose);">Paso 2 · Prototipo en 7 Días</p>
+          <h3>Muestras Rápidas en Laboratorio</h3>
+          <p style="margin:0; font-size:14px; color:var(--ink-soft);">Muestra formulada a medida, igualación de tono y envasada en componentes reales. El costo de muestra se abona 100% al pedido al por mayor.</p>
+        </div>
+        <div class="card" style="border: 1px solid var(--line); border-radius: 12px; padding: 24px;">
+          <p class="eyebrow" style="margin-bottom: 6px; color: var(--rose);">Paso 3 · Producción Limpia ISO</p>
+          <h3>15 a 25 Días para Envío</h3>
+          <p style="margin:0; font-size:14px; color:var(--ink-soft);">Fabricación en salas limpias ISO 22716 con dossier regulatorio completo (FDA MoCRA y CPNP UE) y pruebas de estanqueidad al vacío.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  const eqForm = document.getElementById('email-quote-form');
+  const eqStatus = document.getElementById('eq-status');
+  const eqBtn = document.getElementById('eq-submit-btn');
+
+  eqForm?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    if (eqBtn) {
+      eqBtn.disabled = true;
+      eqBtn.textContent = 'Enviando al equipo de ingeniería...';
+    }
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(eqForm)
+      });
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        if (eqStatus) {
+          eqStatus.style.display = 'block';
+          eqStatus.style.background = '#d4edda';
+          eqStatus.style.color = '#155724';
+          eqStatus.innerHTML = '✓ <strong>¡Gracias!</strong> Su consulta ha sido recibida con éxito. Nuestro equipo técnico responderá en 24 horas.';
+        }
+        eqForm.reset();
+        if (eqBtn) eqBtn.textContent = '✓ Solicitud Recibida';
+      } else {
+        throw new Error(data.message || 'Error occurred');
+      }
+    } catch (err) {
+      if (eqStatus) {
+        eqStatus.style.display = 'block';
+        eqStatus.style.background = '#f8d7da';
+        eqStatus.style.color = '#721c24';
+        eqStatus.innerHTML = 'Hubo un error al enviar. Por favor contáctenos por WhatsApp o escriba a <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>.';
+      }
+      if (eqBtn) {
+        eqBtn.disabled = false;
+        eqBtn.textContent = 'Reintentar Envío';
+      }
+    }
+  });
+</script>
