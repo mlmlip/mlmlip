@@ -21,7 +21,7 @@ Before comparing materials, you need three answers locked down with your manufac
 
 ### Thick-walled acrylic tubes (the workhorse)
 
-This is what most private label lip gloss projects actually use, and for good reason. Acrylic is clear like glass but weighs half as much, resists shattering in transit (critical for e-commerce), and can be moulded in thick walls that feel substantial in the hand without the cost of real glass.
+This is what most private label lip gloss projects actually use, and for good reason. Acrylic is clear like glass but weighs half as much, resists shattering in transit, and can be moulded in thick walls that feel substantial—the standard pairing for our [Crystal Mirror Plumping Lip Gloss (LG-01)](/products/lg-01-crystal-mirror-plumping-gloss/).
 
 - **Perception:** mid-to-prestige. With a weighted base and a good applicator, acrylic reads as a $30+ product.
 - **MOQ economics:** excellent. Library acrylic shapes are available from 500 pcs — no tooling.
@@ -56,7 +56,13 @@ The wand does the actual work of delivering product to the lip, and it changes h
 - **Cooling ceramic tip:** a 2025 prestige trend. The ceramic stays cool, claims a de-puffing effect, and reads as high-tech skincare. Higher component cost, but strong differentiation.
 - **Brush-tip:** traditional, precise, slightly dated for gloss. More common in lip oils targeting the K-beauty aesthetic.
 
-Match the applicator to the texture, not to a trend. A thin oil in a sponge-tip will flood the lip; a thick mousse in a brush-tip will feel sparse.
+Match the applicator to the texture, not to a trend. A thin oil in a sponge-tip will flood the lip; a thick mousse in a brush-tip will feel sparse. Our [Glass-Shine Non-Sticky Lip Glaze (LG-04)](/products/lg-04-glass-shine-non-sticky-glaze/) uses an engineered doe-foot specifically matched to its viscosity.
+
+For related insights, see [How to Launch Your Own Lip Brand with Just 500 Pcs](/blog/start-lip-brand-500-pcs/).
+
+For related insights, see [Lip Gloss vs. Lip Mud vs. Lip Oil: Which Format Should Your Brand Launch First?](/blog/lip-formats-compared/).
+
+For related insights, see [How Indie Beauty Brands Formulate Custom Peptide Lip Oils in 2026 (MOQ & Cost Breakdown)](/blog/formulate-peptide-lip-oil-guide/).
 
 ## Cap finishes: the click that sells
 
@@ -78,7 +84,7 @@ The final layer is how your brand identity lands on the physical object.
 
 ## How we approach it
 
-Our packaging library holds ready-to-ship components across all three material routes, so a founder can launch at 500 pcs without waiting for tooling. When a brand is ready for a silhouette nobody else owns, our in-house engineering team opens the custom mould — and that tooling record carries the brand's name, not ours.
+Our packaging library holds ready-to-ship components across all three material routes, so a founder can launch at 500 pcs without waiting for tooling—even for reactive concepts like our [pH Color-Changing Glow Lip Gloss (LG-10)](/products/lg-10-ph-color-changing-glow-gloss/). When a brand is ready for a silhouette nobody else owns, our in-house engineering team opens the custom mould — and that tooling record carries the brand's name, not ours.
 
 The honest advice: **start with the applicator, then the cap weight, then the material.** Founders who pick the tube shape first often end up fighting the formula-applicator fit later. Pick how the product should feel on the lip, and the rest of the componentry falls into line.
 
@@ -86,3 +92,18 @@ The honest advice: **start with the applicator, then the cap weight, then the ma
 
 *Ready to specify your components? [Build your brief](/quote) and we will match your price tier, texture and market to the right packaging route — library or custom.*
 
+---
+
+## 🔗 Explore Related Products
+
+<div class="product-recommendations">
+
+### Recommended for your project:
+
+- **[Crystal Mirror Plumping Lip Gloss (LG-01)](/products/lg-01-crystal-mirror-plumping-gloss/)** — Perfect fit for heavy-wall acrylic vials and high-definition crystal finishes. MOQ: 500 pcs.
+- **[Glass-Shine Non-Sticky Lip Glaze (LG-04)](/products/lg-04-glass-shine-non-sticky-glaze/)** — Calibrated rheology suited for precision wiper orifice tubes. MOQ: 500 pcs.
+- **[pH Color-Changing Glow Lip Gloss (LG-10)](/products/lg-10-ph-color-changing-glow-gloss/)** — Formulated for clear packaging presentation with reactive color shift. MOQ: 500 pcs.
+
+</div>
+
+> 💡 **Ready to start your own lip cosmetics line?** [Get a free custom quote →](/quote/)

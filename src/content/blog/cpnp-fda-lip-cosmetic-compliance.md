@@ -23,7 +23,7 @@ The EU and US regulate cosmetics from opposite philosophies, and a brand launchi
 
 ## EU: the CPNP path
 
-CPNP (Cosmetic Products Notification Portal) is the EU's central database. Before a lip product can be placed on the EU market, a Responsible Person established in the EU must submit a notification containing the product category, formulation, and the responsible person's details.
+CPNP (Cosmetic Products Notification Portal) is the EU's central database. For export-certified lines like our [Crystal Mirror Plumping Lip Gloss (LG-01)](/products/lg-01-crystal-mirror-plumping-gloss/), all pre-screened pigments and raw materials are matched directly to EU regulatory inventories. Before a lip product can be placed on the EU market, a Responsible Person established in the EU must submit a notification containing the product category, formulation, and the responsible person's details.
 
 ### What the notification requires
 
@@ -34,13 +34,13 @@ CPNP (Cosmetic Products Notification Portal) is the EU's central database. Befor
 
 ### The Cosmetic Product Safety Report (CPSR)
 
-CPNP notification is not sufficient on its own. Every product must also carry a CPSR — a toxicological safety assessment signed by a qualified safety assessor. The CPSR includes:
+CPNP notification is not sufficient on its own. Every product must also carry a CPSR — a toxicological safety assessment signed by a qualified safety assessor, a standard applied across all batches of our [Airy Velvet Matte Lip Mud (LM-01)](/products/lm-01-airy-velvet-matte-lip-mud/). The CPSR includes:
 
 - The full formulation and exposure assessment (how much product a consumer applies, how often, to which body area).
 - Toxicological profiles of each ingredient.
 - The reasoning that the product is safe under normal and reasonably foreseeable use.
 
-A manufacturer operating under GMPC and ISO 22716 will normally produce the technical inputs (stability data, challenge test results, ingredient specs) that the safety assessor uses to write the CPSR. The safety assessor must be independent — they cannot be the same person who developed the formula.
+A manufacturer operating under GMPC and ISO 22716 will normally produce the technical inputs (stability data, challenge test results, ingredient specs) that the safety assessor uses to write the CPSR—ensuring clean formulations like our [Pure Botanical Nourishing Lip Oil (LO-01)](/products/lo-01-pure-botanical-nourishing-lip-oil/) clear customs smoothly. The safety assessor must be independent — they cannot be the same person who developed the formula.
 
 ### The Product Information File (PIF)
 
@@ -107,3 +107,19 @@ If you are launching a lip product into the EU and US at the same time, build **
 ---
 
 *Need documentation your market will accept? [Start your brief](/quote) and specify EU and/or US destination — we deliver the technical dossier in the format your safety assessor and customs broker expect.*
+
+---
+
+## 🔗 Explore Related Products
+
+<div class="product-recommendations">
+
+### Recommended for your project:
+
+- **[Crystal Mirror Plumping Lip Gloss (LG-01)](/products/lg-01-crystal-mirror-plumping-gloss/)** — Full EU CPNP and US MoCRA regulatory documentation ready, heavy-metal verified crystal finish. MOQ: 500 pcs.
+- **[Airy Velvet Matte Lip Mud (LM-01)](/products/lm-01-airy-velvet-matte-lip-mud/)** — Clean-compliant whipped matte mousse with international safety test reports and SDS dossiers. MOQ: 500 pcs.
+- **[Pure Botanical Nourishing Lip Oil (LO-01)](/products/lo-01-pure-botanical-nourishing-lip-oil/)** — 100% compliant botanical lipid complex ready for European safety assessor review. MOQ: 500 pcs.
+
+</div>
+
+> 💡 **Ready to start your own lip cosmetics line?** [Get a free custom quote →](/quote/)
