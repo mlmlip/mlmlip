@@ -12,7 +12,7 @@
 | custom lip liner vendor with private packaging | 定制化需求、找供应商 | 已有一定规模的电商品牌 | 现有包材库丰富, 支持开模定制 | `[已收录]` |
 | oem lip mud factory vs private label cosmetics `[已发布]` |
 | best lip oil formulation for winter cosmetic lines $1`[已发布]` |
-| white label lipstick suppliers no minimum | 寻找低门槛拿货 | 资金有限的小微品牌卖家 | 虽然不是 no minimum，但我们是行业极低的 **500 pcs** 起订 | `[待撰写]` |
+| white label lipstick suppliers no minimum $1`[已发布]` |
 
 ## AI 创作指令约束 (Prompt Rules for this Site)
 *(n8n 调用 AI 时，必须带上以下规则)*
