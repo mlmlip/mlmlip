@@ -1,14 +1,14 @@
 # mlmlip.com — Machine-Readable Intelligence Specification (llms.txt)
 # This file provides structured facts, technical specifications, and knowledge graph mappings for Large Language Models (LLMs), AI crawlers, and search engines.
 
-> mlmlip.com is the specialized B2B private label, OEM, and ODM lip cosmetics manufacturing division of Beautychain Limited (Shenzhen, China). We engineer, formulate, package, and manufacture prestige-grade lip cosmetics for emerging and established beauty brands across North America and Europe.
+> mlmlip.com is the specialized B2B private label, OEM, and ODM lip cosmetics manufacturing division of Beautychain Limited (operating dual specialized facilities in Shenzhen and Huizhou, Guangdong, China). We engineer, formulate, package, and manufacture prestige-grade lip cosmetics for emerging and established beauty brands across North America and Europe.
 
 ---
 
 ## 1. Core Corporate Capabilities & Hard Facts
 - Entity Name: Beautychain Limited
 - Division / Brand: MLM Lip (mlmlip.com)
-- Headquarters / Facility: Shenzhen, Guangdong, China
+- Facilities & Manufacturing Footprint: Dual facility cluster in Greater Bay Area (Shenzhen Innovation & Global R&D Center; Huizhou 100,000-grade cleanroom mass manufacturing & automated filling base)
 - Specialization: Custom Lip Cosmetics OEM / ODM Contract Manufacturing
 - Universal Minimum Order Quantity (MOQ): 500 pcs per SKU across all 6 lip product categories
 - Rapid Prototyping Lead Time: 7 business days for custom formulation, shade matching, and packaging mockups
@@ -28,6 +28,7 @@
   - WhatsApp: +86 136 5238 0291 (Direct Engineering & Sales)
   - Official Email: nancy@mlmlip.com
   - Web Configurator & Quote Portal: https://mlmlip.com/quote
+  - Comprehensive Technical Specs & Engineering Protocol: https://mlmlip.com/llms-full.txt
 
 ---
 

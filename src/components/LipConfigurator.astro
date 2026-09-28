@@ -1,0 +1,1373 @@
+---
+// site/src/components/LipConfigurator.astro
+// 高转化 90 秒唇妆定制配置器 (B2B Precision Spec Builder)
+import { site } from '../data/site';
+
+interface Props {
+  webhookUrl?: string;
+}
+
+const { webhookUrl = "" } = Astro.props;
+---
+
+<div class="lip-configurator-card" id="lip-configurator">
+  <!-- Header Bar with Progress Indicator -->
+  <div class="config-header">
+    <div class="config-title-group">
+      <span class="config-badge">Interactive Formulation Desk</span>
+      <h2 class="config-title">Design Your Custom Lip Line in 90 Seconds</h2>
+      <p class="config-subtitle">Live formula mapping, packaging selection & instant lab sample briefing (500 pcs MOQ)</p>
+    </div>
+    
+    <div class="step-progress-wrapper" aria-label="Form progress">
+      <div class="step-dots">
+        <div class="step-dot active" data-step-indicator="1"><span>1</span><label>Format</label></div>
+        <div class="step-line" data-line="1"></div>
+        <div class="step-dot" data-step-indicator="2"><span>2</span><label>Texture</label></div>
+        <div class="step-line" data-line="2"></div>
+        <div class="step-dot" data-step-indicator="3"><span>3</span><label>Regulatory</label></div>
+        <div class="step-line" data-line="3"></div>
+        <div class="step-dot" data-step-indicator="4"><span>4</span><label>Scale</label></div>
+        <div class="step-line" data-line="4"></div>
+        <div class="step-dot" data-step-indicator="5"><span>5</span><label>Dispatch</label></div>
+      </div>
+    </div>
+  </div>
+
+  <form id="configurator-form" class="config-form" novalidate data-webhook={webhookUrl}>
+    <!-- STEP 1: Product Format -->
+    <div class="form-step active" data-step="1">
+      <div class="step-lead">
+        <h3>Step 1 · Select Your Product Category</h3>
+        <p>Choose the core lip formulation category you intend to manufacture.</p>
+      </div>
+
+      <div class="category-grid">
+        <label class="choice-tile">
+          <input type="radio" name="category" value="Lip Gloss" checked />
+          <div class="tile-card">
+            <div class="tile-icon">✨</div>
+            <div class="tile-info">
+              <h4>Lip Gloss</h4>
+              <p>High-viscosity cushion gloss, crystal clear or shimmer pearl</p>
+              <span class="tile-tag">18,000–32,000 mPa·s</span>
+            </div>
+          </div>
+        </label>
+
+        <label class="choice-tile">
+          <input type="radio" name="category" value="Velvet Lip Mud" />
+          <div class="tile-card">
+            <div class="tile-icon">☁️</div>
+            <div class="tile-info">
+              <h4>Velvet Lip Mud</h4>
+              <p>Air-whipped mousse texture, blurred matte & non-drying transfer resistance</p>
+              <span class="tile-tag">Thixotropic Paste</span>
+            </div>
+          </div>
+        </label>
+
+        <label class="choice-tile">
+          <input type="radio" name="category" value="Lip Liner" />
+          <div class="tile-card">
+            <div class="tile-icon">✏️</div>
+            <div class="tile-info">
+              <h4>Precision Lip Liner</h4>
+              <p>Cedarwood sharpenable pencil or 1.5mm micro-lead twist-up barrel</p>
+              <span class="tile-tag">8-Hr Waterproof</span>
+            </div>
+          </div>
+        </label>
+
+        <label class="choice-tile">
+          <input type="radio" name="category" value="Peptide Lip Oil" />
+          <div class="tile-card">
+            <div class="tile-icon">💧</div>
+            <div class="tile-info">
+              <h4>Peptide Lip Oil</h4>
+              <p>Botanical squalane, non-sticky cushion glide & plumping actives</p>
+              <span class="tile-tag">Skinified Hybrid</span>
+            </div>
+          </div>
+        </label>
+
+        <label class="choice-tile">
+          <input type="radio" name="category" value="Bullet Lipstick" />
+          <div class="tile-card">
+            <div class="tile-icon">💄</div>
+            <div class="tile-info">
+              <h4>Bullet Lipstick</h4>
+              <p>Matte, satin, or butter bullets with custom embossing & 350g magnetic cases</p>
+              <span class="tile-tag">High-Pigment</span>
+            </div>
+          </div>
+        </label>
+
+        <label class="choice-tile">
+          <input type="radio" name="category" value="Overnight Lip Mask" />
+          <div class="tile-card">
+            <div class="tile-icon">🌙</div>
+            <div class="tile-info">
+              <h4>Overnight Lip Mask</h4>
+              <p>Biomimetic 3:1:1 ceramide barrier salve, deep nourishment & hydration</p>
+              <span class="tile-tag">Barrier Repair</span>
+            </div>
+          </div>
+        </label>
+      </div>
+
+      <div class="step-nav-footer">
+        <div></div>
+        <button type="button" class="btn btn-next" data-next="2">Next: Formulation Texture →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Formulation Texture & Finish -->
+    <div class="form-step" data-step="2">
+      <div class="step-lead">
+        <h3>Step 2 · Formulation Texture & Performance Attributes</h3>
+        <p>Define the physical sensory attributes, optical effects, and claims for your lab benchmark.</p>
+      </div>
+
+      <div class="options-matrix">
+        <div class="options-group">
+          <label class="field-label">Texture & Finish Style (Select Primary)</label>
+          <div class="pill-group">
+            <label class="pill-option">
+              <input type="radio" name="texture_finish" value="High-Gloss Mirror Glaze" checked />
+              <span>Mirror Glass Glaze (Non-Sticky)</span>
+            </label>
+            <label class="pill-option">
+              <input type="radio" name="texture_finish" value="Soft-Focus Velvet Matte" />
+              <span>Soft-Focus Velvet Blur</span>
+            </label>
+            <label class="pill-option">
+              <input type="radio" name="texture_finish" value="Weightless Water Tint" />
+              <span>Weightless Jelly Water Tint</span>
+            </label>
+            <label class="pill-option">
+              <input type="radio" name="texture_finish" value="Nourishing Melting Butter" />
+              <span>Melting Butter / Cushion Salve</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="options-group">
+          <label class="field-label">Active Performance Enhancements (Select all that apply)</label>
+          <div class="checkbox-grid">
+            <label class="check-pill">
+              <input type="checkbox" name="actives" value="Palmitoyl Tripeptide-1 Plumping" checked />
+              <span>Tripeptide Collagen Plumping</span>
+            </label>
+            <label class="check-pill">
+              <input type="checkbox" name="actives" value="Hyaluronic Acid Micro-Spheres" checked />
+              <span>Sodium Hyaluronate Spheres</span>
+            </label>
+            <label class="check-pill">
+              <input type="checkbox" name="actives" value="Multi-Ceramide Barrier Complex" />
+              <span>Ceramide NP/AP Lipid Complex</span>
+            </label>
+            <label class="check-pill">
+              <input type="checkbox" name="actives" value="Pure Botanical Squalane Base" />
+              <span>100% Plant Squalane Base</span>
+            </label>
+            <label class="check-pill">
+              <input type="checkbox" name="actives" value="Vitamin E & Ferulic Antioxidant" />
+              <span>Vitamin E Antioxidant Shield</span>
+            </label>
+            <label class="check-pill">
+              <input type="checkbox" name="actives" value="Multi-Chrome Mica Shimmer" />
+              <span>Multi-Chrome Synthetic Pearl</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="options-group">
+          <label class="field-label">Clean Standard Claims</label>
+          <div class="clean-tags">
+            <span class="spec-chip">✓ 100% Vegan & Cruelty-Free</span>
+            <span class="spec-chip">✓ Paraben & Phthalate Free</span>
+            <span class="spec-chip">✓ D4/D5 Cyclic Silicone Free</span>
+            <span class="spec-chip">✓ Zero Microplastics (EU 2023/2055)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-nav-footer">
+        <button type="button" class="btn ghost btn-prev" data-prev="1">← Back</button>
+        <button type="button" class="btn btn-next" data-next="3">Next: Regulatory & Market →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Regulatory & Target Markets -->
+    <div class="form-step" data-step="3">
+      <div class="step-lead">
+        <h3>Step 3 · Target Markets & Regulatory Compliance Dossiers</h3>
+        <p>We tailor toxicology assessments, ingredient purity screenings, and safety documentation to your destination.</p>
+      </div>
+
+      <div class="market-selection-grid">
+        <label class="market-card">
+          <input type="checkbox" name="target_markets" value="United States (FDA / MoCRA)" checked />
+          <div class="market-box">
+            <div class="flag">🇺🇸</div>
+            <div class="market-details">
+              <strong>United States</strong>
+              <span>FDA MoCRA Facility & Listing, USP 51/61 Antimicrobial, FDA Certified Color Lakes</span>
+            </div>
+          </div>
+        </label>
+
+        <label class="market-card">
+          <input type="checkbox" name="target_markets" value="European Union (CPNP & CPSR)" checked />
+          <div class="market-box">
+            <div class="flag">🇪🇺</div>
+            <div class="market-details">
+              <strong>European Union</strong>
+              <span>EC 1223/2009 CPNP Notification, Eurotox CPSR Part A/B, Annex II/III Screening</span>
+            </div>
+          </div>
+        </label>
+
+        <label class="market-card">
+          <input type="checkbox" name="target_markets" value="United Kingdom (SCPN / UKCA)" />
+          <div class="market-box">
+            <div class="flag">🇬🇧</div>
+            <div class="market-details">
+              <strong>United Kingdom</strong>
+              <span>UK Cosmetics Regulation & Submit Cosmetic Product Notification (SCPN)</span>
+            </div>
+          </div>
+        </label>
+
+        <label class="market-card">
+          <input type="checkbox" name="target_markets" value="Canada / Australia / Global" />
+          <div class="market-box">
+            <div class="flag">🌐</div>
+            <div class="market-details">
+              <strong>Canada / Australia / Rest of World</strong>
+              <span>Health Canada Cosmetic Notification (CNF), AICIS Compliance, Global SDS/MSDS</span>
+            </div>
+          </div>
+        </label>
+      </div>
+
+      <div class="cert-assurance-bar">
+        <span class="cert-badge">ISO 22716:2007 GMP</span>
+        <span class="cert-badge">US FDA cGMP Verified</span>
+        <span class="cert-badge">Class 100,000 Cleanroom</span>
+        <span class="cert-badge">Eurotox CPSR Certified</span>
+      </div>
+
+      <div class="step-nav-footer">
+        <button type="button" class="btn ghost btn-prev" data-prev="2">← Back</button>
+        <button type="button" class="btn btn-next" data-next="4">Next: Quantity & Packaging →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Quantity & Packaging Componentry -->
+    <div class="form-step" data-step="4">
+      <div class="step-lead">
+        <h3>Step 4 · Production Quantity & Packaging Architecture</h3>
+        <p>Take advantage of our 500 pcs universal low MOQ. Select componentry from our prestige inventory or custom tooling.</p>
+      </div>
+
+      <div class="quantity-section">
+        <label class="field-label">Production Quantity Tier (per SKU)</label>
+        <div class="tier-cards">
+          <label class="tier-card">
+            <input type="radio" name="production_volume" value="500 pcs (Agile Launch Pack)" checked />
+            <div class="tier-inner">
+              <span class="tier-badge">Recommended for Launch</span>
+              <span class="tier-qty">500 pcs</span>
+              <span class="tier-desc">Zero dead-stock risk. Test 2–3 hero shades with full custom formula & silkscreening.</span>
+              <span class="tier-leadtime">⚡ 7-Day Sample · 18-Day Bulk</span>
+            </div>
+          </label>
+
+          <label class="tier-card">
+            <input type="radio" name="production_volume" value="1,000 pcs (Growth Scale)" />
+            <div class="tier-inner">
+              <span class="tier-qty">1,000 pcs</span>
+              <span class="tier-desc">Optimal unit margin economics. Custom hot-stamping & metallic collars included.</span>
+              <span class="tier-leadtime">⚡ 7-Day Sample · 20-Day Bulk</span>
+            </div>
+          </label>
+
+          <label class="tier-card">
+            <input type="radio" name="production_volume" value="3,000+ pcs (Enterprise Scale)" />
+            <div class="tier-inner">
+              <span class="tier-qty">3,000+ pcs</span>
+              <span class="tier-desc">Volume factory discounts. Custom mold tooling & exclusive silhouette options.</span>
+              <span class="tier-leadtime">⚡ 7-Day Sample · 22-Day Bulk</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="packaging-section" style="margin-top: 24px;">
+        <label class="field-label">Preferred Packaging Component Style</label>
+        <div class="pkg-grid">
+          <label class="pkg-tile">
+            <input type="radio" name="packaging_style" value="Prestige Heavyweight Acrylic (Square/Round)" checked />
+            <span>💎 Heavyweight Thick-Wall Acrylic (Prestige Glass Feel)</span>
+          </label>
+          <label class="pkg-tile">
+            <input type="radio" name="packaging_style" value="Magnetic Zamac / Aluminum Bullet Tube" />
+            <span>🧲 350g Magnetic Zamac / Anodized Aluminum Bullet</span>
+          </label>
+          <label class="pkg-tile">
+            <input type="radio" name="packaging_style" value="Zinc-Alloy Cryo Cooling Contour Applicator" />
+            <span>❄️ Zinc-Alloy Cryo Sculpting / Ceramic Applicator Tip</span>
+          </label>
+          <label class="pkg-tile">
+            <input type="radio" name="packaging_style" value="Slim Retractable Mechanical Barrel" />
+            <span>🖊️ 1.5mm Micro-Lead Retractable Barrel</span>
+          </label>
+          <label class="pkg-tile">
+            <input type="radio" name="packaging_style" value="Bespoke Private Mold Tooling" />
+            <span>⚙️ Custom Proprietary Mold Opening</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="step-nav-footer">
+        <button type="button" class="btn ghost btn-prev" data-prev="3">← Back</button>
+        <button type="button" class="btn btn-next" data-next="5">Next: Instant Estimate & Dispatch →</button>
+      </div>
+    </div>
+
+    <!-- STEP 5: Buyer Details, Estimate & Instant Dispatch -->
+    <div class="form-step" data-step="5">
+      <div class="step-lead">
+        <h3>Step 5 · Immediate Specification Ticket & Engineering Handoff</h3>
+        <p>Review your customized specifications, view the live timeline & budget estimation, and dispatch your ticket.</p>
+      </div>
+
+      <!-- Real-time Spec Summary Card -->
+      <div class="live-ticket-card" id="spec-ticket-card">
+        <div class="ticket-header">
+          <span class="ticket-status">✓ Production Spec Ready</span>
+          <span class="ticket-code" id="ticket-id">MLM-2026-LIP</span>
+        </div>
+        <div class="ticket-body">
+          <div class="ticket-row"><strong>Category:</strong> <span id="summary-cat">Lip Gloss</span></div>
+          <div class="ticket-row"><strong>Formula Finish:</strong> <span id="summary-finish">Mirror Glass Glaze</span></div>
+          <div class="ticket-row"><strong>Volume Tier:</strong> <span id="summary-volume">500 pcs (Agile Launch Pack)</span></div>
+          <div class="ticket-row"><strong>Packaging:</strong> <span id="summary-pkg">Heavyweight Thick-Wall Acrylic</span></div>
+          <div class="ticket-row"><strong>Compliance:</strong> <span id="summary-reg">FDA / MoCRA, EU CPNP</span></div>
+          <div class="ticket-row"><strong>Sampling Guarantee:</strong> <span>7 Business Days (100% Credited to Bulk Order)</span></div>
+          <div class="ticket-row highlight"><strong>Estimated Unit Price Range:</strong> <span id="summary-price">$1.85 – $2.65 / pc (FOB Shenzhen/Huizhou)</span></div>
+        </div>
+      </div>
+
+      <!-- Contact Inputs -->
+      <div class="buyer-contact-grid" style="margin-top: 24px;">
+        <div class="form-field">
+          <label for="cfg-email">Corporate Work Email <span class="required">*</span></label>
+          <input type="email" id="cfg-email" name="buyer_email" required placeholder="founder@yourbrand.com" />
+          <span class="field-hint" id="cfg-email-hint">Official lab benchmark report & pricing breakdown will be delivered here.</span>
+        </div>
+
+        <div class="form-field">
+          <label for="cfg-brand">Brand / Company Name <span class="required">*</span></label>
+          <input type="text" id="cfg-brand" name="buyer_brand" required placeholder="e.g. Dahlia Cosmetics Paris" />
+        </div>
+
+        <div class="form-field">
+          <label for="cfg-whatsapp">WhatsApp Number (Optional, for instant direct chat)</label>
+          <input type="tel" id="cfg-whatsapp" name="buyer_whatsapp" placeholder="+1 (555) 019-2834" />
+        </div>
+
+        <div class="form-field">
+          <label for="cfg-notes">Specific Shade / Benchmark Notes (Optional)</label>
+          <textarea id="cfg-notes" name="project_notes" rows="2" placeholder="e.g. Reference Fenty Gloss Bomb shade 'Fenty Glow' or Rhode Peptide Lip Tint..."></textarea>
+        </div>
+      </div>
+
+      <div class="submit-actions-panel">
+        <button type="submit" class="btn btn-primary-submit" id="btn-submit-ticket">
+          Submit Brief & Lock In 7-Day Sample Slot →
+        </button>
+        <button type="button" class="btn btn-whatsapp-direct" id="btn-whatsapp-ticket">
+          Dispatch Instantly to Chief Chemist via WhatsApp 💬
+        </button>
+      </div>
+
+      <div id="cfg-submission-status" class="submission-alert" style="display: none;"></div>
+
+      <p class="data-privacy-notice">
+        🔒 Non-Disclosure & Proprietary Protection Guaranteed. We sign mutual NDAs before custom shade lab work. Beautychain Limited does not disclose client formulations to third parties.
+      </p>
+
+      <div class="step-nav-footer">
+        <button type="button" class="btn ghost btn-prev" data-prev="4">← Back to Packaging</button>
+        <div></div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<style>
+  .lip-configurator-card {
+    background: #ffffff;
+    border-radius: var(--radius, 16px);
+    border: 1px solid var(--line, #e8d7dc);
+    box-shadow: 0 10px 30px rgba(74, 21, 37, 0.08);
+    overflow: hidden;
+    margin: 24px auto;
+    max-width: 860px;
+    font-family: inherit;
+  }
+
+  .config-header {
+    background: linear-gradient(135deg, #2f0c17 0%, #4a1525 60%, #6e1a32 100%);
+    color: #ffffff;
+    padding: 32px 36px 28px;
+    border-bottom: 3px solid var(--gold, #b08d4b);
+  }
+
+  .config-badge {
+    display: inline-block;
+    background: rgba(176, 141, 75, 0.25);
+    color: #f7dfa5;
+    border: 1px solid rgba(176, 141, 75, 0.6);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .config-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(24px, 3vw, 32px);
+    color: #ffffff;
+    margin: 0 0 8px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .config-subtitle {
+    color: #f3dde3;
+    font-size: 14px;
+    margin: 0 0 24px;
+    max-width: 620px;
+  }
+
+  /* Step Progress */
+  .step-progress-wrapper {
+    margin-top: 20px;
+  }
+
+  .step-dots {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .step-dot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .step-dot span {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    transition: all 0.3s ease;
+  }
+
+  .step-dot label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+  }
+
+  .step-dot.active span, .step-dot.completed span {
+    background: var(--gold, #b08d4b);
+    border-color: #fcebc2;
+    color: #2f0c17;
+    box-shadow: 0 0 14px rgba(176, 141, 75, 0.6);
+  }
+
+  .step-dot.active label, .step-dot.completed label {
+    color: #ffffff;
+  }
+
+  .step-line {
+    flex: 1;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: -18px 8px 0;
+    transition: background 0.3s ease;
+  }
+
+  .step-line.active {
+    background: var(--gold, #b08d4b);
+  }
+
+  /* Form Container */
+  .config-form {
+    padding: 36px 36px 32px;
+  }
+
+  .form-step {
+    display: none;
+    animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .form-step.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .step-lead {
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--line, #e8d7dc);
+    padding-bottom: 16px;
+  }
+
+  .step-lead h3 {
+    font-size: 20px;
+    color: var(--burgundy, #6e1a32);
+    margin: 0 0 6px;
+  }
+
+  .step-lead p {
+    font-size: 14px;
+    color: var(--ink-soft, #4a3e42);
+    margin: 0;
+  }
+
+  /* Step 1: Tiles */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .choice-tile input[type="radio"],
+  .pill-option input[type="radio"],
+  .tier-card input[type="radio"],
+  .pkg-tile input[type="radio"],
+  .market-card input[type="checkbox"],
+  .check-pill input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .choice-tile {
+    cursor: pointer;
+    position: relative;
+  }
+
+  .tile-card {
+    border: 2px solid var(--line, #e8d7dc);
+    border-radius: 12px;
+    padding: 18px 16px;
+    background: #ffffff;
+    transition: all 0.2s ease;
+    display: flex;
+    gap: 14px;
+    height: 100%;
+  }
+
+  .tile-card:hover {
+    border-color: #caa0af;
+    background: var(--blush-soft, #faf2f5);
+  }
+
+  .choice-tile input:checked + .tile-card {
+    border-color: var(--burgundy, #6e1a32);
+    background: #fdf6f8;
+    box-shadow: 0 4px 12px rgba(110, 26, 50, 0.1);
+  }
+
+  .tile-icon {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .tile-info h4 {
+    font-size: 16px;
+    color: var(--ink, #141013);
+    margin: 0 0 4px;
+  }
+
+  .tile-info p {
+    font-size: 12px;
+    color: var(--ink-soft, #4a3e42);
+    margin: 0 0 8px;
+    line-height: 1.4;
+  }
+
+  .tile-tag {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: var(--blush, #f4e2e7);
+    color: var(--plum, #4a1525);
+    padding: 2px 8px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+
+  /* Step 2: Texture & Finishes */
+  .options-matrix {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .field-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink, #141013);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .pill-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  .pill-option {
+    cursor: pointer;
+  }
+
+  .pill-option span {
+    display: block;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--line, #e8d7dc);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink, #141013);
+    text-align: center;
+    background: #ffffff;
+    transition: all 0.2s;
+  }
+
+  .pill-option input:checked + span {
+    background: var(--burgundy, #6e1a32);
+    color: #ffffff;
+    border-color: var(--burgundy, #6e1a32);
+  }
+
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+  }
+
+  .check-pill {
+    cursor: pointer;
+  }
+
+  .check-pill span {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--line, #e8d7dc);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-soft, #4a3e42);
+    background: #fff;
+    transition: all 0.2s;
+  }
+
+  .check-pill input:checked + span {
+    background: #fdf2f4;
+    border-color: var(--rose, #9c2e4e);
+    color: var(--plum, #4a1525);
+    font-weight: 600;
+  }
+
+  .clean-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .spec-chip {
+    font-size: 11px;
+    font-weight: 600;
+    background: #eef8f2;
+    color: #1e7044;
+    border: 1px solid #c2e8d3;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  /* Step 3: Markets */
+  .market-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+  }
+
+  .market-card {
+    cursor: pointer;
+  }
+
+  .market-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1.5px solid var(--line, #e8d7dc);
+    background: #ffffff;
+    height: 100%;
+    transition: all 0.2s;
+  }
+
+  .market-card input:checked + .market-box {
+    border-color: var(--burgundy, #6e1a32);
+    background: #fdf5f7;
+  }
+
+  .market-box .flag {
+    font-size: 26px;
+    line-height: 1;
+  }
+
+  .market-details strong {
+    display: block;
+    font-size: 14px;
+    color: var(--ink, #141013);
+    margin-bottom: 4px;
+  }
+
+  .market-details span {
+    font-size: 11px;
+    color: var(--ink-soft, #4a3e42);
+    line-height: 1.4;
+    display: block;
+  }
+
+  .cert-assurance-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 14px 18px;
+    background: var(--blush-soft, #faf2f5);
+    border-radius: 10px;
+    border-left: 3px solid var(--gold, #b08d4b);
+  }
+
+  .cert-badge {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--plum, #4a1525);
+  }
+
+  /* Step 4: Quantity & Packaging */
+  .tier-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .tier-card {
+    cursor: pointer;
+  }
+
+  .tier-inner {
+    border: 2px solid var(--line, #e8d7dc);
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .tier-card input:checked + .tier-inner {
+    border-color: var(--burgundy, #6e1a32);
+    background: #fffafb;
+    box-shadow: 0 4px 16px rgba(110, 26, 50, 0.1);
+  }
+
+  .tier-badge {
+    position: absolute;
+    top: -10px;
+    right: 14px;
+    background: var(--gold, #b08d4b);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .tier-qty {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--burgundy, #6e1a32);
+    margin-bottom: 6px;
+  }
+
+  .tier-desc {
+    font-size: 12px;
+    color: var(--ink-soft, #4a3e42);
+    line-height: 1.45;
+    margin-bottom: 12px;
+    flex: 1;
+  }
+
+  .tier-leadtime {
+    font-size: 11px;
+    font-weight: 600;
+    color: #276749;
+    background: #edfdf2;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+
+  .pkg-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pkg-tile {
+    cursor: pointer;
+  }
+
+  .pkg-tile span {
+    display: block;
+    padding: 12px 16px;
+    border: 1px solid var(--line, #e8d7dc);
+    border-radius: 8px;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink, #141013);
+    transition: all 0.2s;
+  }
+
+  .pkg-tile input:checked + span {
+    border-color: var(--burgundy, #6e1a32);
+    background: #fbf1f4;
+    color: var(--burgundy, #6e1a32);
+  }
+
+  /* Step 5: Ticket & Final Form */
+  .live-ticket-card {
+    background: #faf4f6;
+    border: 1.5px dashed #caa0af;
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+
+  .ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(110, 26, 50, 0.15);
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+  }
+
+  .ticket-status {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1e7044;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .ticket-code {
+    font-family: monospace;
+    font-size: 12px;
+    background: #ffffff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--line, #e8d7dc);
+    color: var(--burgundy, #6e1a32);
+    font-weight: 700;
+  }
+
+  .ticket-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px 20px;
+    font-size: 13px;
+  }
+
+  .ticket-row {
+    color: var(--ink-soft, #4a3e42);
+  }
+
+  .ticket-row strong {
+    color: var(--ink, #141013);
+    margin-right: 6px;
+  }
+
+  .ticket-row.highlight {
+    grid-column: 1 / -1;
+    background: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ecd3dc;
+    margin-top: 6px;
+  }
+
+  .ticket-row.highlight span {
+    color: var(--burgundy, #6e1a32);
+    font-weight: 800;
+    font-size: 15px;
+  }
+
+  .buyer-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-field:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+
+  .form-field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink, #141013);
+  }
+
+  .form-field .required {
+    color: var(--burgundy, #6e1a32);
+  }
+
+  .form-field input, .form-field textarea {
+    padding: 12px 14px;
+    border: 1.5px solid var(--line, #e8d7dc);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--ink, #141013);
+    transition: border-color 0.2s;
+  }
+
+  .form-field input:focus, .form-field textarea:focus {
+    outline: none;
+    border-color: var(--burgundy, #6e1a32);
+    box-shadow: 0 0 0 3px rgba(110, 26, 50, 0.1);
+  }
+
+  .field-hint {
+    font-size: 11px;
+    color: #8c727a;
+  }
+
+  .submit-actions-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .btn-primary-submit {
+    background: var(--burgundy, #6e1a32);
+    color: #fff;
+    border: none;
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 4px 14px rgba(110, 26, 50, 0.25);
+  }
+
+  .btn-primary-submit:hover {
+    background: #541325;
+    transform: translateY(-1px);
+  }
+
+  .btn-whatsapp-direct {
+    background: #25d366;
+    color: #fff;
+    border: none;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .btn-whatsapp-direct:hover {
+    background: #1eb956;
+  }
+
+  .data-privacy-notice {
+    font-size: 11px;
+    color: #8c727a;
+    line-height: 1.5;
+    margin-top: 14px;
+    text-align: center;
+  }
+
+  .submission-alert {
+    margin-top: 16px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .submission-alert.success {
+    background: #def7ec;
+    color: #03543f;
+    border: 1px solid #84e1bc;
+  }
+
+  .submission-alert.error {
+    background: #fde8e8;
+    color: #9b1c1c;
+    border: 1px solid #f8b4b4;
+  }
+
+  /* Navigation Footer */
+  .step-nav-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line, #e8d7dc);
+  }
+
+  .btn-next {
+    background: var(--burgundy, #6e1a32);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .btn-next:hover {
+    background: #541325;
+  }
+
+  .btn-prev {
+    font-size: 13px;
+    color: var(--ink-soft, #4a3e42);
+    cursor: pointer;
+  }
+
+  @media (max-width: 640px) {
+    .config-header { padding: 24px 20px; }
+    .config-form { padding: 24px 20px; }
+    .buyer-contact-grid { grid-template-columns: 1fr; }
+    .step-dot label { display: none; }
+  }
+</style>
+
+<script is:inline>
+  (function() {
+    const root = document.getElementById('lip-configurator');
+    if (!root) return;
+
+    let currentStep = 1;
+    const totalSteps = 5;
+
+    // Elements
+    const form = root.querySelector('#configurator-form');
+    const steps = root.querySelectorAll('.form-step');
+    const stepIndicators = root.querySelectorAll('.step-dot');
+    const stepLines = root.querySelectorAll('.step-line');
+
+    // Summary Elements
+    const summaryCat = root.querySelector('#summary-cat');
+    const summaryFinish = root.querySelector('#summary-finish');
+    const summaryVolume = root.querySelector('#summary-volume');
+    const summaryPkg = root.querySelector('#summary-pkg');
+    const summaryReg = root.querySelector('#summary-reg');
+    const summaryPrice = root.querySelector('#summary-price');
+    const ticketId = root.querySelector('#ticket-id');
+
+    // Generate random Ticket ID
+    const randomTicketNum = Math.floor(1000 + Math.random() * 9000);
+    if (ticketId) ticketId.textContent = 'MLM-2026-LIP-' + randomTicketNum;
+
+    // Price Matrix Calculator
+    function updateEstimateSummary() {
+      const category = form.querySelector('input[name="category"]:checked')?.value || 'Lip Gloss';
+      const finish = form.querySelector('input[name="texture_finish"]:checked')?.value || 'Mirror Glass Glaze';
+      const volume = form.querySelector('input[name="production_volume"]:checked')?.value || '500 pcs';
+      const packaging = form.querySelector('input[name="packaging_style"]:checked')?.value || 'Heavyweight Acrylic';
+      
+      const markets = Array.from(form.querySelectorAll('input[name="target_markets"]:checked')).map(el => el.value);
+
+      if (summaryCat) summaryCat.textContent = category;
+      if (summaryFinish) summaryFinish.textContent = finish;
+      if (summaryVolume) summaryVolume.textContent = volume;
+      if (summaryPkg) summaryPkg.textContent = packaging.split('(')[0].replace(/💎|🧲|❄️|🖊️|⚙️/g, '').trim();
+      if (summaryReg) summaryReg.textContent = markets.length > 0 ? markets.map(m => m.split(' ')[0]).join(', ') : 'Global Compliance';
+
+      // Dynamic unit price estimate based on volume & category
+      let minP = 1.85;
+      let maxP = 2.65;
+
+      if (volume.includes('500 pcs')) {
+        minP = 1.95; maxP = 2.95;
+      } else if (volume.includes('1,000 pcs')) {
+        minP = 1.65; maxP = 2.45;
+      } else {
+        minP = 1.35; maxP = 1.98;
+      }
+
+      if (category.includes('Lipstick') || packaging.includes('Zamac')) {
+        minP += 0.40; maxP += 0.65;
+      }
+      if (summaryPrice) {
+        summaryPrice.textContent = `$${minP.toFixed(2)} – $${maxP.toFixed(2)} / pc (FOB Shenzhen/Huizhou)`;
+      }
+    }
+
+    function goToStep(targetStep) {
+      if (targetStep < 1 || targetStep > totalSteps) return;
+
+      steps.forEach(step => {
+        const stepNum = parseInt(step.getAttribute('data-step') || '1');
+        if (stepNum === targetStep) {
+          step.classList.add('active');
+        } else {
+          step.classList.remove('active');
+        }
+      });
+
+      stepIndicators.forEach(ind => {
+        const num = parseInt(ind.getAttribute('data-step-indicator') || '1');
+        ind.classList.remove('active', 'completed');
+        if (num === targetStep) {
+          ind.classList.add('active');
+        } else if (num < targetStep) {
+          ind.classList.add('completed');
+        }
+      });
+
+      stepLines.forEach(line => {
+        const lineNum = parseInt(line.getAttribute('data-line') || '1');
+        if (lineNum < targetStep) {
+          line.classList.add('active');
+        } else {
+          line.classList.remove('active');
+        }
+      });
+
+      currentStep = targetStep;
+      updateEstimateSummary();
+
+      // Scroll smoothly to configurator top if out of view
+      const topOffset = root.getBoundingClientRect().top + window.scrollY - 80;
+      if (window.scrollY > topOffset) {
+        window.scrollTo({ top: topOffset, behavior: 'smooth' });
+      }
+    }
+
+    // Next / Prev Button events
+    root.querySelectorAll('.btn-next').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const next = parseInt(this.getAttribute('data-next') || `${currentStep + 1}`);
+        goToStep(next);
+      });
+    });
+
+    root.querySelectorAll('.btn-prev').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const prev = parseInt(this.getAttribute('data-prev') || `${currentStep - 1}`);
+        goToStep(prev);
+      });
+    });
+
+    // Step dots direct click if already visited
+    stepIndicators.forEach(dot => {
+      dot.addEventListener('click', function() {
+        const target = parseInt(this.getAttribute('data-step-indicator') || '1');
+        goToStep(target);
+      });
+    });
+
+    // Form inputs change listener for live calculations
+    form.addEventListener('change', updateEstimateSummary);
+
+    // Build plain-text brief
+    function buildBriefText() {
+      const category = form.querySelector('input[name="category"]:checked')?.value || 'Lip Gloss';
+      const finish = form.querySelector('input[name="texture_finish"]:checked')?.value || 'Mirror Glaze';
+      const actives = Array.from(form.querySelectorAll('input[name="actives"]:checked')).map(el => el.value).join(', ');
+      const volume = form.querySelector('input[name="production_volume"]:checked')?.value || '500 pcs';
+      const packaging = form.querySelector('input[name="packaging_style"]:checked')?.value || 'Heavyweight Acrylic';
+      const markets = Array.from(form.querySelectorAll('input[name="target_markets"]:checked')).map(el => el.value).join('; ');
+      const email = root.querySelector('#cfg-email')?.value || '';
+      const brand = root.querySelector('#cfg-brand')?.value || '';
+      const whatsapp = root.querySelector('#cfg-whatsapp')?.value || '';
+      const notes = root.querySelector('#cfg-notes')?.value || '';
+
+      return `*Custom Lip Formulation Brief — MLM Lip*\n` +
+        `Ticket: ${ticketId?.textContent || 'MLM-LIP'}\n` +
+        `Brand: ${brand || 'Pending'}\n` +
+        `Contact Email: ${email}\n` +
+        `WhatsApp: ${whatsapp || 'N/A'}\n` +
+        `------------------------\n` +
+        `Category: ${category}\n` +
+        `Texture & Finish: ${finish}\n` +
+        `Actives: ${actives || 'Standard prestige base'}\n` +
+        `Target Markets: ${markets || 'Global'}\n` +
+        `Volume Tier: ${volume}\n` +
+        `Packaging Style: ${packaging}\n` +
+        `Estimated Price Range: ${summaryPrice?.textContent || ''}\n` +
+        `Notes / Benchmark: ${notes || 'Standard 7-day lab prototype requested'}`;
+    }
+
+    // Direct WhatsApp Dispatch Button
+    const btnWhatsApp = root.querySelector('#btn-whatsapp-ticket');
+    if (btnWhatsApp) {
+      btnWhatsApp.addEventListener('click', function() {
+        const emailInput = root.querySelector('#cfg-email');
+        if (emailInput && !emailInput.checkValidity()) {
+          emailInput.reportValidity();
+          return;
+        }
+        const brief = buildBriefText();
+        const url = `https://wa.me/8613652380291?text=${encodeURIComponent(brief)}`;
+        window.open(url, '_blank', 'noopener');
+      });
+    }
+
+    // Submit Handler (Web3Forms / n8n Webhook fallback)
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const statusBox = root.querySelector('#cfg-submission-status');
+      const submitBtn = root.querySelector('#btn-submit-ticket');
+
+      const emailInput = root.querySelector('#cfg-email');
+      const brandInput = root.querySelector('#cfg-brand');
+
+      if (!emailInput.value || !emailInput.checkValidity()) {
+        emailInput.reportValidity();
+        return;
+      }
+      if (!brandInput.value) {
+        brandInput.focus();
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Transmitting Formulation Brief to Lab...';
+      }
+
+      const payload = {
+        access_key: 'b0681fa9-0cc8-4fd9-80f7-4d5faa39b2e7', // Web3Forms key
+        subject: `New Lip Formulation Brief (${ticketId?.textContent || 'MLM-LIP'}) - ${brandInput.value}`,
+        from_name: 'MLM Lip Formulation Configurator',
+        buyer_email: emailInput.value,
+        buyer_brand: brandInput.value,
+        buyer_whatsapp: root.querySelector('#cfg-whatsapp')?.value || '',
+        category: form.querySelector('input[name="category"]:checked')?.value || '',
+        texture_finish: form.querySelector('input[name="texture_finish"]:checked')?.value || '',
+        actives: Array.from(form.querySelectorAll('input[name="actives"]:checked')).map(el => el.value).join(', '),
+        target_markets: Array.from(form.querySelectorAll('input[name="target_markets"]:checked')).map(el => el.value).join(', '),
+        production_volume: form.querySelector('input[name="production_volume"]:checked')?.value || '',
+        packaging_style: form.querySelector('input[name="packaging_style"]:checked')?.value || '',
+        notes: root.querySelector('#cfg-notes')?.value || '',
+        full_brief_summary: buildBriefText()
+      };
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          if (statusBox) {
+            statusBox.className = 'submission-alert success';
+            statusBox.style.display = 'block';
+            statusBox.innerHTML = `✓ <strong>Ticket Logged Successfully (${ticketId?.textContent})!</strong> Our formulation chemists have received your specs. An introductory sample schedule and official NDA will be sent to <em>${emailInput.value}</em> within 24 hours.`;
+          }
+          if (submitBtn) {
+            submitBtn.textContent = '✓ Brief Dispatched to Engineering';
+          }
+          // Fire Analytics Lead Event
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+              lead_type: 'interactive_configurator_ticket',
+              category: payload.category,
+              volume: payload.production_volume
+            });
+          }
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (err) {
+        if (statusBox) {
+          statusBox.className = 'submission-alert error';
+          statusBox.style.display = 'block';
+          statusBox.innerHTML = `Submission delayed. Please click the <strong>Dispatch Instantly via WhatsApp</strong> button above or email us directly at <em>nancy@mlmlip.com</em>.`;
+        }
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Retry Submission →';
+        }
+      }
+    });
+
+    // Initial estimation
+    updateEstimateSummary();
+  })();
+</script>

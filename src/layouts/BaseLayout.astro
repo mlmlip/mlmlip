@@ -1,5 +1,6 @@
 ---
 import { site, footerCategories, footerCompany, ui, navKeys, navLinks } from '../data/site';
+import LiveChat from '../components/LiveChat.astro';
 import '../styles/global.css';
 
 const { title, description } = Astro.props;
@@ -20,35 +21,63 @@ const getLangUrl = (lang: string) => {
 
 const schemaData = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": site.name,
-  "legalName": site.manufacturer,
-  "url": site.domain,
-  "logo": `${site.domain}/favicon.svg`,
-  "description": "Tier-1 private label custom lip cosmetics manufacturer specializing in lip gloss, lip mud, lip oil, lipstick, and lip masks with a universal 500 pcs MOQ.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Shenzhen",
-    "addressCountry": "CN"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": site.contact.whatsapp,
-    "contactType": "sales",
-    "availableLanguage": ["English", "French", "Spanish"]
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Custom Lip Cosmetics OEM/ODM Catalog",
-    "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "High-Impact Lip Gloss Private Label" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Velvet Lip Mud & Tint Manufacturing" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Skinified Peptide Lip Oil OEM/ODM" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Precision Lip Liner Production" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Lipstick & Bullet Case Tooling" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Barrier Repair Lip Mask Production" } }
-    ]
-  }
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://mlmlip.com/#website",
+      "url": site.domain,
+      "name": site.name,
+      "description": site.tagline,
+      "publisher": {
+        "@id": "https://mlmlip.com/#organization"
+      },
+      "inLanguage": ["en", "fr", "es"]
+    },
+    {
+      "@type": ["Organization", "Manufacturer"],
+      "@id": "https://mlmlip.com/#organization",
+      "name": site.name,
+      "legalName": site.manufacturer,
+      "url": site.domain,
+      "logo": `${site.domain}/favicon.svg`,
+      "description": "Prestige private label custom lip cosmetics manufacturer specializing in lip gloss, lip mud, lip oil, lipstick, and lip masks with a universal 500 pcs MOQ.",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Shenzhen",
+          "addressRegion": "Guangdong",
+          "addressCountry": "CN",
+          "description": "Innovation & R&D Center"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Huizhou",
+          "addressRegion": "Guangdong",
+          "addressCountry": "CN",
+          "description": "Cleanroom Manufacturing Hub"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": site.contact.whatsapp,
+        "contactType": "sales",
+        "email": site.contact.email,
+        "availableLanguage": ["English", "French", "Spanish"]
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Custom Lip Cosmetics OEM/ODM Catalog",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "High-Impact Lip Gloss Private Label" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Velvet Lip Mud & Tint Manufacturing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Skinified Peptide Lip Oil OEM/ODM" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Precision Lip Liner Production" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Lipstick & Bullet Case Tooling" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Barrier Repair Lip Mask Production" } }
+        ]
+      }
+    }
+  ]
 };
 
 const pathSegments = currentPath.split('/').filter((s) => s.length > 0);
@@ -80,6 +109,8 @@ const breadcrumbSchema = {
     <link rel="alternate" hreflang="fr" href={getLangUrl('fr')} />
     <link rel="alternate" hreflang="es" href={getLangUrl('es')} />
     <link rel="alternate" hreflang="x-default" href={getLangUrl('en')} />
+    <link rel="alternate" type="text/markdown" href="/llms.txt" title="AI Fact Sheet (llms.txt)" />
+    <link rel="alternate" type="text/markdown" href="/llms-full.txt" title="Full Factory Specification (llms-full.txt)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -199,6 +230,9 @@ const breadcrumbSchema = {
       </svg>
       <span>WhatsApp</span>
     </a>
+
+    <!-- P0-3: 24/7 AI Formulation Specialist Chat Widget -->
+    <LiveChat />
 
     <script is:inline>
       const toggle = document.getElementById('nav-toggle');

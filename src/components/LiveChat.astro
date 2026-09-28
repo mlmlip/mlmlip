@@ -1,0 +1,575 @@
+---
+// site/src/components/LiveChat.astro
+// P0-3: 24小时 AI 配方师全渠道客服挂件 (Chatwoot Ready + Lightweight Embedded AI Desk)
+import { site } from '../data/site';
+
+interface Props {
+  websiteToken?: string;
+  baseUrl?: string;
+}
+
+const {
+  websiteToken = import.meta.env.PUBLIC_CHATWOOT_WEBSITE_TOKEN || "",
+  baseUrl = import.meta.env.PUBLIC_CHATWOOT_BASE_URL || "https://app.chatwoot.com"
+} = Astro.props;
+---
+
+<div class="mlm-livechat-widget" id="mlm-livechat-root" data-chatwoot-token={websiteToken} data-chatwoot-base={baseUrl}>
+  <!-- Chat Launcher Bubble -->
+  <button class="chat-launcher-btn" id="chat-launcher" aria-label="Open 24/7 Lip Formulation Support">
+    <div class="launcher-avatar">
+      <span class="avatar-ring"></span>
+      <span class="avatar-icon">🔬</span>
+    </div>
+    <div class="launcher-text">
+      <span class="status-indicator"></span>
+      <span class="label-primary">AI Formulation Specialist</span>
+      <span class="label-sub">Online · 500 MOQ &amp; 7-Day Samples</span>
+    </div>
+    <span class="launcher-close-icon" aria-hidden="true">&times;</span>
+  </button>
+
+  <!-- Slide-out Drawer Panel -->
+  <aside class="chat-drawer-panel" id="chat-drawer" aria-hidden="true" role="dialog" aria-modal="true">
+    <!-- Header -->
+    <header class="drawer-header">
+      <div class="drawer-specialist-info">
+        <div class="specialist-avatar">
+          <span>👩‍🔬</span>
+          <span class="online-dot"></span>
+        </div>
+        <div>
+          <h4>Dr. Nancy &amp; Technical Formulation Desk</h4>
+          <p>Beautychain Limited (Shenzhen &amp; Huizhou Cleanroom)</p>
+        </div>
+      </div>
+      <button class="drawer-close-btn" id="drawer-close" aria-label="Close chat drawer">&times;</button>
+    </header>
+
+    <!-- Body / Feed -->
+    <div class="drawer-body" id="chat-messages-container">
+      <!-- Welcome Message -->
+      <div class="chat-bubble specialist-bubble">
+        <p>
+          Hello! Welcome to <strong>MLM Lip (Beautychain Limited)</strong>. I am your formulation engineering assistant.
+        </p>
+        <p>
+          Whether you want to formulate custom <strong>Lip Gloss, Peptide Lip Oils, Lip Mud, or Lip Liners</strong> at our universal <strong>500 pcs MOQ</strong>, or require <strong>EU CPNP / FDA MoCRA</strong> regulatory clearance, how can I assist you today?
+        </p>
+      </div>
+
+      <!-- Quick Action Pills -->
+      <div class="quick-questions-panel" id="quick-questions">
+        <p class="quick-title">Frequently Consulted Topics:</p>
+        <button type="button" class="quick-btn" data-faq="moq">📦 What is the MOQ across products?</button>
+        <button type="button" class="quick-btn" data-faq="sampling">⚡ How fast are custom lab samples made?</button>
+        <button type="button" class="quick-btn" data-faq="leaks">🛡️ How do you prevent lip oil packaging leaks?</button>
+        <button type="button" class="quick-btn" data-faq="compliance">📜 What EU CPNP &amp; US FDA documents do you provide?</button>
+        <button type="button" class="quick-btn" data-faq="quote">🎯 How do I get an exact production quote?</button>
+      </div>
+    </div>
+
+    <!-- Quick Buyer Lead Capture Form -->
+    <div class="drawer-lead-dock">
+      <form id="drawer-lead-form" class="drawer-lead-form">
+        <div class="form-title">⚡ Request Lab Sample &amp; Formula Dossier</div>
+        <div class="lead-input-row">
+          <input type="email" id="drawer-email" name="email" required placeholder="Enter your work email..." aria-label="Work Email" />
+          <button type="submit" class="btn-dock-submit">Submit</button>
+        </div>
+        <div id="drawer-form-status" class="dock-status" style="display: none;"></div>
+      </form>
+
+      <!-- Fallback Channels -->
+      <div class="drawer-fallback-channels">
+        <a href="https://wa.me/8613652380291?text=Hi%20MLM%20Lip,%20I'm%20inquiring%20about%20private%20label%20lip%20cosmetics%20formulation." target="_blank" rel="noopener" class="fallback-wa-link">
+          💬 WhatsApp Live Chat
+        </a>
+        <a href="mailto:nancy@mlmlip.com" class="fallback-email-link">
+          ✉️ Email: nancy@mlmlip.com
+        </a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<style>
+  .mlm-livechat-widget {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  /* Floating Launcher */
+  .chat-launcher-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #2f0c17 0%, #4a1525 60%, #6e1a32 100%);
+    color: #ffffff;
+    border: 1px solid rgba(176, 141, 75, 0.4);
+    border-radius: 40px;
+    padding: 8px 18px 8px 10px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(74, 21, 37, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .chat-launcher-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(74, 21, 37, 0.45);
+  }
+
+  .launcher-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #6e1a32;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid var(--gold, #b08d4b);
+  }
+
+  .avatar-icon {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .launcher-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .status-indicator {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #10b981;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 1.5px solid #2f0c17;
+  }
+
+  .label-primary {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+  }
+
+  .label-sub {
+    font-size: 11px;
+    color: #f3dde3;
+    opacity: 0.9;
+  }
+
+  .launcher-close-icon {
+    display: none;
+    font-size: 22px;
+    line-height: 1;
+    color: #ffffff;
+    margin-left: 4px;
+  }
+
+  .chat-launcher-btn.is-open .launcher-text,
+  .chat-launcher-btn.is-open .launcher-avatar {
+    display: none;
+  }
+
+  .chat-launcher-btn.is-open .launcher-close-icon {
+    display: block;
+    padding: 4px 8px;
+  }
+
+  /* Drawer Panel */
+  .chat-drawer-panel {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 24px;
+    width: 380px;
+    max-width: calc(100vw - 32px);
+    height: 560px;
+    max-height: calc(100vh - 120px);
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid var(--line, #e8d7dc);
+    box-shadow: 0 16px 48px rgba(47, 12, 23, 0.25);
+    flex-direction: column;
+    overflow: hidden;
+    animation: drawerUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes drawerUp {
+    from { opacity: 0; transform: translateY(16px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .chat-drawer-panel.is-open {
+    display: flex;
+  }
+
+  .drawer-header {
+    background: linear-gradient(135deg, #2f0c17 0%, #4a1525 100%);
+    color: #ffffff;
+    padding: 16px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--gold, #b08d4b);
+  }
+
+  .drawer-specialist-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .specialist-avatar {
+    position: relative;
+    font-size: 26px;
+    line-height: 1;
+  }
+
+  .online-dot {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 9px;
+    height: 9px;
+    background: #10b981;
+    border-radius: 50%;
+    border: 2px solid #2f0c17;
+  }
+
+  .drawer-specialist-info h4 {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+  }
+
+  .drawer-specialist-info p {
+    font-size: 11px;
+    color: #f3dde3;
+    margin: 2px 0 0;
+  }
+
+  .drawer-close-btn {
+    background: transparent;
+    border: none;
+    color: #f3dde3;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+  }
+
+  .drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    background: #faf4f6;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .chat-bubble {
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .chat-bubble p {
+    margin: 0 0 8px;
+  }
+
+  .chat-bubble p:last-child {
+    margin: 0;
+  }
+
+  .specialist-bubble {
+    background: #ffffff;
+    color: #141013;
+    border: 1px solid #ebd8de;
+    align-self: flex-start;
+    border-top-left-radius: 2px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  }
+
+  .buyer-bubble {
+    background: #6e1a32;
+    color: #ffffff;
+    align-self: flex-end;
+    border-top-right-radius: 2px;
+  }
+
+  .quick-questions-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .quick-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #8c727a;
+    letter-spacing: 0.05em;
+    margin: 0 0 4px;
+  }
+
+  .quick-btn {
+    background: #ffffff;
+    border: 1px solid #ebd8de;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #4a1525;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .quick-btn:hover {
+    background: #fdf5f7;
+    border-color: #9c2e4e;
+    color: #6e1a32;
+  }
+
+  /* Lead Dock */
+  .drawer-lead-dock {
+    padding: 14px 16px;
+    background: #ffffff;
+    border-top: 1px solid #ebd8de;
+  }
+
+  .form-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #4a1525;
+    margin-bottom: 8px;
+  }
+
+  .lead-input-row {
+    display: flex;
+    gap: 6px;
+  }
+
+  .lead-input-row input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ebd8de;
+    border-radius: 6px;
+    font-size: 13px;
+    outline: none;
+  }
+
+  .lead-input-row input:focus {
+    border-color: #6e1a32;
+  }
+
+  .btn-dock-submit {
+    background: #6e1a32;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0 14px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .btn-dock-submit:hover {
+    background: #4a1525;
+  }
+
+  .dock-status {
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .drawer-fallback-channels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed #ebd8de;
+    font-size: 11px;
+  }
+
+  .fallback-wa-link {
+    color: #1e7044;
+    font-weight: 600;
+  }
+
+  .fallback-email-link {
+    color: #6e1a32;
+    font-weight: 600;
+  }
+
+  @media (max-width: 480px) {
+    .mlm-livechat-widget {
+      bottom: 16px;
+      right: 16px;
+    }
+    .chat-drawer-panel {
+      bottom: 80px;
+      right: 16px;
+      width: calc(100vw - 32px);
+      height: 480px;
+    }
+  }
+</style>
+
+<script is:inline>
+  (function() {
+    const root = document.getElementById('mlm-livechat-root');
+    if (!root) return;
+
+    const chatwootToken = root.getAttribute('data-chatwoot-token');
+    const chatwootBase = root.getAttribute('data-chatwoot-base');
+
+    // 1. If Chatwoot Token exists, load official SDK asynchronously
+    if (chatwootToken && chatwootToken.trim().length > 0) {
+      window.chatwootSettings = {
+        hideMessageBubble: false,
+        position: 'right',
+        locale: 'en',
+        type: 'standard'
+      };
+      (function(d, t) {
+        const BASE_URL = chatwootBase || 'https://app.chatwoot.com';
+        const g = d.createElement(t);
+        const s = d.getElementsByTagName(t)[0];
+        g.src = BASE_URL + '/packs/js/sdk.js';
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+        g.onload = function() {
+          window.chatwootSDK?.run({
+            websiteToken: chatwootToken,
+            baseUrl: BASE_URL
+          });
+        };
+      })(document, 'script');
+      return; // Hand over to official Chatwoot widget
+    }
+
+    // 2. Otherwise run High-Conversion Native AI Formulation Specialist Drawer
+    const launcher = root.querySelector('#chat-launcher');
+    const drawer = root.querySelector('#chat-drawer');
+    const closeBtn = root.querySelector('#drawer-close');
+    const messagesContainer = root.querySelector('#chat-messages-container');
+    const leadForm = root.querySelector('#drawer-lead-form');
+    const dockStatus = root.querySelector('#drawer-form-status');
+
+    function toggleChat(open) {
+      const isOpen = typeof open === 'boolean' ? open : !drawer.classList.contains('is-open');
+      if (isOpen) {
+        drawer.classList.add('is-open');
+        drawer.setAttribute('aria-hidden', 'false');
+        launcher.classList.add('is-open');
+      } else {
+        drawer.classList.remove('is-open');
+        drawer.setAttribute('aria-hidden', 'true');
+        launcher.classList.remove('is-open');
+      }
+    }
+
+    launcher?.addEventListener('click', () => toggleChat());
+    closeBtn?.addEventListener('click', () => toggleChat(false));
+
+    // Knowledge Base FAQ Answers
+    const answers = {
+      moq: "Beautychain Limited enforces a universal <strong>500 pcs per SKU MOQ</strong> across all 6 lip product lines (Lip Gloss, Velvet Lip Mud, Lip Liner, Lipstick, Lip Oil, Overnight Lip Mask). SKUs can be bundled together in a single order run.",
+      sampling: "Custom bench samples and shade matching (ΔE < 0.8) are formulated in our lab and dispatched within <strong>7 business days</strong>. Furthermore, <strong>100% of sample development fees are credited back</strong> against your bulk order invoice.",
+      leaks: "We eliminate leakage using an engineered 4-tier system: medical-grade Liquid Silicone Rubber (LSR) double-wiper rings, -0.08 MPa chamber vacuum decay testing, and 0.45-0.55 N·m torque-calibrated servo capping.",
+      compliance: "Every batch includes complete <strong>ISO 22716 & US FDA GMPC</strong> manufacturing documentation, EU CPNP notifications with Article 13 compliance, Eurotox-signed <strong>CPSR Part A & B</strong>, and USP 51/61/62 antimicrobial challenge tests.",
+      quote: "You can configure your custom specifications right away in our <a href='/quote' style='color:#6e1a32;font-weight:700;'>90-Second Interactive Configurator</a>, or leave your email in the box below for an immediate callback."
+    };
+
+    // Quick Question Click Handlers
+    root.querySelectorAll('.quick-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const faqKey = this.getAttribute('data-faq');
+        const questionText = this.textContent;
+
+        // Append user question bubble
+        const buyerEl = document.createElement('div');
+        buyerEl.className = 'chat-bubble buyer-bubble';
+        buyerEl.textContent = questionText;
+        messagesContainer.appendChild(buyerEl);
+
+        // Append specialist answer bubble
+        setTimeout(() => {
+          const specEl = document.createElement('div');
+          specEl.className = 'chat-bubble specialist-bubble';
+          specEl.innerHTML = answers[faqKey] || "Our engineering team will review your specifications.";
+          messagesContainer.appendChild(specEl);
+          messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }, 300);
+
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      });
+    });
+
+    // Drawer Lead Submission
+    leadForm?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const emailInput = root.querySelector('#drawer-email');
+      if (!emailInput || !emailInput.value) return;
+
+      if (dockStatus) {
+        dockStatus.style.display = 'block';
+        dockStatus.style.color = '#6e1a32';
+        dockStatus.textContent = 'Transmitting to lab chemist...';
+      }
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            access_key: 'b0681fa9-0cc8-4fd9-80f7-4d5faa39b2e7',
+            subject: 'New LiveChat Formulation Lead - ' + emailInput.value,
+            from_name: 'MLM Lip LiveChat Desk',
+            email: emailInput.value,
+            message: 'Inquired via 24/7 LiveChat specialist drawer.'
+          })
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          if (dockStatus) {
+            dockStatus.style.color = '#1e7044';
+            dockStatus.textContent = '✓ Received! Lab dossier sent to ' + emailInput.value;
+          }
+          emailInput.value = '';
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', { lead_type: 'livechat_drawer_lead' });
+          }
+        } else {
+          throw new Error('Failed');
+        }
+      } catch (err) {
+        if (dockStatus) {
+          dockStatus.style.color = '#9b1c1c';
+          dockStatus.innerHTML = 'Submission delayed. Email us: <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>';
+        }
+      }
+    });
+  })();
+</script>
