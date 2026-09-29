@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Produits Cosmétiques pour Lèvres | Fabricant OEM/ODM | MLM Lip"
+  description="Fabricant OEM/ODM de cosmétiques pour les lèvres avec plus de 60 formules. Gloss, teinte, baume et plus. MOQ à partir de 500 pièces."
+>
+  <link rel="alternate" hreflang="en" href="https://mlmlip.com/products/" slot="head" />
+  <link rel="alternate" hreflang="es" href="https://mlmlip.com/es/productos/" slot="head" />
+  <link rel="alternate" hreflang="fr" href="https://mlmlip.com/fr/produits/" slot="head" />
+
+  <main class="container mx-auto px-4 py-16 max-w-6xl">
+    <h1 class="text-4xl font-bold text-center mb-4">Produits Cosmétiques pour Lèvres</h1>
+    <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+      Formules OEM/ODM haute performance pour marques de cosmétiques. Fabrication certifiée, développement sur mesure et MOQ accessible.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- 1. Gloss à Lèvres -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+        <div class="text-4xl mb-4">💄</div>
+        <h2 class="text-xl font-bold mb-3">Gloss à Lèvres</h2>
+        <p class="text-gray-600 mb-4">Formules brillantes haute viscosité avec finition miroir longue tenue.</p>
+        <a href="/products/" class="text-rose-600 font-medium hover:underline">Voir les produits →</a>
+      </div>
+
+      <!-- 2. Huile à Lèvres -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+        <div class="text-4xl mb-4">💧</div>
+        <h2 class="text-xl font-bold mb-3">Huile à Lèvres</h2>
+        <p class="text-gray-600 mb-4">Huiles nourrissantes aux peptides et acide hyaluronique.</p>
+        <a href="/products/" class="text-rose-600 font-medium hover:underline">Voir les produits →</a>
+      </div>
+
+      <!-- 3. Rouge à Lèvres Mat -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+        <div class="text-4xl mb-4">💋</div>
+        <h2 class="text-xl font-bold mb-3">Rouge à Lèvres Mat</h2>
+        <p class="text-gray-600 mb-4">Texture mousse ultra-légère avec finition mate veloutée.</p>
+        <a href="/products/" class="text-rose-600 font-medium hover:underline">Voir les produits →</a>
+      </div>
+
+      <!-- 4. Crayon à Lèvres -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+        <div class="text-4xl mb-4">✏️</div>
+        <h2 class="text-xl font-bold mb-3">Crayon à Lèvres</h2>
+        <p class="text-gray-600 mb-4">Formules crémeuses longue tenue avec précision professionnelle.</p>
+        <a href="/products/" class="text-rose-600 font-medium hover:underline">Voir les produits →</a>
+      </div>
+
+      <!-- 5. Baume à Lèvres -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+        <div class="text-4xl mb-4">🌿</div>
+        <h2 class="text-xl font-bold mb-3">Baume à Lèvres</h2>
+        <p class="text-gray-600 mb-4">Baumes protecteurs aux cires naturelles et actifs réparateurs.</p>
+        <a href="/products/" class="text-rose-600 font-medium hover:underline">Voir les produits →</a>
+      </div>
+
+      <!-- 6. Masque à Lèvres -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+        <div class="text-4xl mb-4">🌙</div>
+        <h2 class="text-xl font-bold mb-3">Masque à Lèvres</h2>
+        <p class="text-gray-600 mb-4">Soins nocturnes intensifs au collagène et vitamine E.</p>
+        <a href="/products/" class="text-rose-600 font-medium hover:underline">Voir les produits →</a>
+      </div>
+    </div>
+
+    <!-- 信任信号 -->
+    <div class="flex flex-wrap justify-center gap-8 mt-16 text-gray-500">
+      <span>🏭 ISO 22716</span>
+      <span>🇺🇸 FDA Registered</span>
+      <span>📦 MOQ 500 pcs</span>
+      <span>🌍 Livraison mondiale</span>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12 bg-gradient-to-r from-rose-50 to-pink-50 rounded-2xl p-12">
+      <h2 class="text-2xl font-bold mb-4">Prêt à créer votre propre ligne pour les lèvres ?</h2>
+      <p class="text-gray-600 mb-6">Échantillons sous 7 jours ouvrés et formulation sur mesure adaptée à votre marque.</p>
+      <a href="/fr/quote/" class="inline-block bg-rose-600 text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-rose-700 transition-colors">Demander un Devis Personnalisé</a>
+    </div>
+  </main>
+</BaseLayout>

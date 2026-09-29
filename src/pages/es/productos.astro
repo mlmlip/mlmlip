@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Productos de Cosmética Labial | Fabricante OEM/ODM | MLM Lip"
+  description="Fabricante OEM/ODM de cosméticos labiales con más de 60 fórmulas. Brillo labial, tinte, bálsamo y más. MOQ desde 500 piezas por tono."
+>
+  <link rel="alternate" hreflang="en" href="https://mlmlip.com/products/" slot="head" />
+  <link rel="alternate" hreflang="es" href="https://mlmlip.com/es/productos/" slot="head" />
+  <link rel="alternate" hreflang="fr" href="https://mlmlip.com/fr/produits/" slot="head" />
+
+  <main class="container mx-auto px-4 py-16 max-w-6xl">
+    <h1 class="text-4xl font-bold text-center mb-4">Productos de Cosmética Labial</h1>
+    <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+      Fórmulas OEM/ODM de alto rendimiento para marcas de belleza. Fabricación certificada con desarrollo a medida y MOQ accesible.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- 1. Brillo Labial -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+        <div class="text-4xl mb-4">💄</div>
+        <h2 class="text-xl font-bold mb-3">Brillo Labial (Lip Gloss)</h2>
+        <p class="text-gray-600 mb-4">Fórmulas brillantes de alta viscosidad con acabado espejo y larga duración.</p>
+        <a href="/products/" class="text-rose-600 font-medium hover:underline">Ver productos →</a>
+      </div>
+
+      <!-- 2. Aceite Labial -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+        <div class="text-4xl mb-4">💧</div>
+        <h2 class="text-xl font-bold mb-3">Aceite Labial (Lip Oil)</h2>
+        <p class="text-gray-600 mb-4">Aceites nutritivos con péptidos y ácido hialurónico para labios hidratados.</p>
+        <a href="/products/" class="text-rose-600 font-medium hover:underline">Ver productos →</a>
+      </div>
+
+      <!-- 3. Labial Mate Aterciopelado -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+        <div class="text-4xl mb-4">💋</div>
+        <h2 class="text-xl font-bold mb-3">Labial Mate Aterciopelado (Matte Lip)</h2>
+        <p class="text-gray-600 mb-4">Textura mousse ultraligera con acabado mate difuminado.</p>
+        <a href="/products/" class="text-rose-600 font-medium hover:underline">Ver productos →</a>
+      </div>
+
+      <!-- 4. Delineador de Labios -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+        <div class="text-4xl mb-4">✏️</div>
+        <h2 class="text-xl font-bold mb-3">Delineador de Labios (Lip Liner)</h2>
+        <p class="text-gray-600 mb-4">Fórmulas cremosas de larga duración con precisión profesional.</p>
+        <a href="/products/" class="text-rose-600 font-medium hover:underline">Ver productos →</a>
+      </div>
+
+      <!-- 5. Bálsamo Labial -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+        <div class="text-4xl mb-4">🌿</div>
+        <h2 class="text-xl font-bold mb-3">Bálsamo Labial (Lip Balm)</h2>
+        <p class="text-gray-600 mb-4">Bálsamos protectores con cera natural y activos reparadores.</p>
+        <a href="/products/" class="text-rose-600 font-medium hover:underline">Ver productos →</a>
+      </div>
+
+      <!-- 6. Mascarilla Labial -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+        <div class="text-4xl mb-4">🌙</div>
+        <h2 class="text-xl font-bold mb-3">Mascarilla Labial (Lip Mask)</h2>
+        <p class="text-gray-600 mb-4">Tratamientos nocturnos intensivos con colágeno y vitamina E.</p>
+        <a href="/products/" class="text-rose-600 font-medium hover:underline">Ver productos →</a>
+      </div>
+    </div>
+
+    <!-- 信任信号 -->
+    <div class="flex flex-wrap justify-center gap-8 mt-16 text-gray-500">
+      <span>🏭 ISO 22716</span>
+      <span>🇺🇸 FDA Registered</span>
+      <span>📦 MOQ 500 pcs</span>
+      <span>🌍 Envío mundial</span>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12 bg-gradient-to-r from-rose-50 to-pink-50 rounded-2xl p-12">
+      <h2 class="text-2xl font-bold mb-4">¿Listo para crear su propia línea labial?</h2>
+      <p class="text-gray-600 mb-6">Muestras de laboratorio en 7 días laborables y formulación adaptada a su marca.</p>
+      <a href="/es/quote/" class="inline-block bg-rose-600 text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-rose-700 transition-colors">Solicitar Cotización Personalizada</a>
+    </div>
+  </main>
+</BaseLayout>
