@@ -28,7 +28,7 @@ Lip gloss remains an undisputed commercial staple in commercial makeup, exemplif
 
 ### 2. Lip Mud & Velvet Lip Tint: The Soft-Focus Trendsetter
 
-Originating in Asian beauty innovation and quickly conquering European and American social feeds, lip mud (often categorized as soft-focus velvet mousse, such as our [Airy Velvet Matte Lip Mud (LM-01)](/products/lm-01-airy-velvet-matte-lip-mud/)) has revolutionized the matte category. Unlike traditional liquid lipsticks that dry down into a tight, moisture-depleting film, lip mud features an anhydrous, silicone-elastomer suspension that glides on like whipped cream and blurs fine lip lines into a weightless, powdery-matte finish.
+Originating in Asian beauty innovation and quickly conquering European and American social feeds, lip mud (often categorized as soft-focus velvet mousse, such as our [Airy Velvet Matte Lip Mud (LM-01)](/products/lm-01-airy-velvet-matte-lip-mud/)) has revolutionized the matte category. Unlike traditional liquid lipsticks that dry down into a tight, moisture-depleting film, lip mud features an anhydrous, silicone-elastomer suspension that glides on like whipped cream and blurs fine lip lines into a weightless, velvety-matte finish.
 
 * **Sensory Profile:** Whipped, airy, cloud-like mousse; diffused blurring effect; semi-transfer-proof without cracking or tightness.
 * **Target Demographic:** Trend-forward Gen Z and Millennial consumers, beauty community enthusiasts, and digital-first shoppers who prioritize photogenic wear.
@@ -80,7 +80,7 @@ When planning a commercial inventory purchase, beauty founders must balance unit
 | Lip Format | Primary Texture & Finish | Retail Price Range (USD) | Gross Margin Potential | Manufacturing Complexity | Optimal Entry Channel |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Lip Gloss** | Mirror shine, cushion slip | .00 – .00 | 78% – 85% | Low – Moderate | DTC, TikTok Shop, Amazon |
-| **Lip Mud** | Powder-matte, whipped cloud | .00 – .00 | 80% – 86% | Moderate | Social Video, DTC, K-Beauty/Boutique |
+| **Lip Mud** | Velvet-matte, whipped cloud | .00 – .00 | 80% – 86% | Moderate | Social Video, DTC, K-Beauty/Boutique |
 | **Lip Oil** | Glossy serum, juicy slip | .00 – .00 | 82% – 88% | Moderate | Clean Beauty, Sephora/Ulta Specialty |
 | **Lipstick** | Rich satin, velvet bullet | .00 – .00 | 75% – 82% | High (Molding/Tooling) | Prestige Retail, Boutique, Salon |
 | **Lip Liner** | Creamy matte, precision wax | .00 – .00 | 80% – 87% | Low | Add-on bundle, Retail POS |
@@ -114,7 +114,7 @@ For related insights, see [How Indie Beauty Brands Formulate Custom Peptide Lip 
 As you map your product development calendar for the upcoming commercial cycles, consider these dominant consumer trends shaping the North American and European lip landscape:
 
 1. **The "Skinification" of Lip Color:** Consumers no longer tolerate drying makeup formulas. Formulations that combine makeup color payoff with barrier-supporting ceramides and peptides—exemplified by nourishing lip oils and hydrating gloss serums—are growing at twice the rate of traditional decorative categories.
-2. **Sensory Powder-Matte Velvet:** Heavy liquid matte lipsticks have ceded market share to airy, weightless lip mud textures that offer buildable color with a soft-focus blurred aesthetic.
+2. **Sensory Velvet-Matte Finish:** Heavy liquid matte lipsticks have ceded market share to airy, weightless lip mud textures that offer buildable color with a soft-focus blurred aesthetic.
 3. **Plush Jumbo Applicators:** Consumers strongly favor oversized paddle and cloud-shaped doe-foot applicators. Beyond ergonomic luxury, large applicators deliver an indulgent, tactile swipe experience that drives organic user-generated content (UGC) on social video platforms.
 4. **Clean, Compliant, Sustainable Packaging:** Modern B2B retail buyers prioritize recyclable mono-material PP/PET components, post-consumer resin (PCR) options, and cruelty-free, vegan formulation certifications.
 
