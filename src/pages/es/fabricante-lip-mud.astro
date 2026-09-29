@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { productsCatalog } from '../../data/products';
+
+const catSlug = 'lip-mud-manufacturer';
+const catProducts = productsCatalog.filter((p) => p.categorySlug === catSlug);
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre el lip mud y un labial líquido mate tradicional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El lip mud tiene una textura batida única tipo mousse o terciopelo. A diferencia de los labiales líquidos mates convencionales, no reseca los labios ni se cuartea, difumina las líneas de los labios y permite un acabado difuminado estilo degradado (estilo asiático C-Beauty/K-Beauty)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la cantidad mínima de pedido (MOQ) para lip mud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El MOQ es de 500 unidades por tono. Puede seleccionar diferentes tonos para alcanzar volúmenes de pedido mayores."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cumple la fórmula con las regulaciones de la UE y FDA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Todas nuestras fórmulas de lip mud cumplen estrictamente con las normativas FDA y el Reglamento Cosmético Europeo CE 1223/2009 (notificación CPNP y PIF)."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Fabricante de Lip Mud y Tinte Aterciopelado de Marca Blanca | MOQ 500 pcs — MLM Lip"
+  description="Fabricante especializado en Lip Mud y labiales mousse aterciopelados de marca blanca. Fórmula suave, difuminado perfecto, MOQ 500 piezas, certificados ISO 22716 y FDA."
+>
+  <link rel="alternate" hreflang="en" href="https://mlmlip.com/lip-mud-manufacturer/" slot="head" />
+  <link rel="alternate" hreflang="es" href="https://mlmlip.com/es/fabricante-lip-mud/" slot="head" />
+  <link rel="alternate" hreflang="fr" href="https://mlmlip.com/fr/fabricant-lip-mud/" slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 50px; padding-bottom: 50px;">
+    <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Inicio', href: '/es/' }, { label: 'Productos', href: '/es/productos' }, { label: 'Lip Mud' }]} />
+      <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.15em;">Lip Mud · Especialista Marca Blanca OEM/ODM</p>
+      <h1 style="font-size: clamp(28px, 3.8vw, 44px); max-width: 860px; margin-bottom: 16px;">Fabricante de Lip Mud y Tinte Aterciopelado de Marca Blanca</h1>
+      <p class="lead" style="max-width: 720px; font-size: 17px; line-height: 1.5; margin-bottom: 24px;">Textura batida ultrafina, acabado mate aterciopelado con efecto filtro difuminador y confort absoluto. Desarrollamos la tendencia viral de C-Beauty y K-Beauty con formulaciones premium personalizadas.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a class="btn" href="/es/quote">Solicitar Presupuesto</a>
+        <a class="btn ghost" href="/es/quote#email-inquiry">Pedir Kit de Muestras</a>
+      </div>
+      <p class="note" style="margin-top: 16px; font-size: 13px; color: var(--ink-soft);">
+        ✓ MOQ 500 piezas &nbsp;·&nbsp; ✓ Muestras en 7 días &nbsp;·&nbsp; ✓ Coste reembolsable &nbsp;·&nbsp; ✓ ISO 22716, FDA y CPNP
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 48px 0;">
+    <div class="wrap">
+      <div class="grid two" style="align-items: center; gap: 36px;">
+        <div class="case-media" style="border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-sm);">
+          <img src="/products/lipmud-01.jpg" alt="Fabricante de Lip Mud y Tinte Aterciopelado" width="800" height="600" style="width: 100%; height: auto; display: block;" loading="lazy" />
+        </div>
+        <div>
+          <p class="eyebrow" style="color: var(--burgundy);">Innovación en Texturas</p>
+          <h2 style="font-size: 26px; margin-bottom: 14px;">Sensación sedosa sin resecamiento</h2>
+          <ul style="padding-left: 20px; color: var(--ink-soft); line-height: 1.7; font-size: 14px;">
+            <li>Textura aireada tipo barro/mousse que rellena ópticamente las arrugas labiales</li>
+            <li>Fórmula híbrida multiuso: ideal tanto para labios como para mejillas (colorete en crema)</li>
+            <li>Pigmentación intensa de una pasada con fácil difuminado degradado (soft-focus blur)</li>
+            <li>Envases táctiles con tacto suave (soft-touch), tarros de cristal o tubos con aplicador curvo</li>
+            <li>Libre de sensación pegajosa o tirantez gracias a aceites elastoméricos ligeros</li>
+            <li>Personalización completa de fragancias frutales, vainilla o versiones 100% sin perfume</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {catProducts.length > 0 && (
+    <section class="tint" style="padding: 48px 0;">
+      <div class="wrap">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <p class="eyebrow" style="color: var(--gold);">Formulaciones Disponibles</p>
+            <h2 style="font-size: 24px; margin: 0; color: var(--plum);">Catálogo de Fórmulas: Lip Mud</h2>
+          </div>
+          <a href="/es/productos" style="color: var(--burgundy); font-weight: 600; font-size: 14px;">Ver las 10 formulaciones →</a>
+        </div>
+
+        <div class="grid three" style="gap: 20px;">
+          {catProducts.slice(0, 6).map((p) => (
+            <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 8px; padding: 16px; background: white;">
+              <div>
+                <div class="case-media" style="margin-bottom: 12px; border-radius: 6px; overflow: hidden;">
+                  <img src={p.heroImage} alt={p.name} width="600" height="450" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" loading="lazy" />
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <span style="font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase;">{p.tag}</span>
+                  <span style="font-size: 11px; color: var(--ink-soft); font-family: monospace;">MOQ {p.moq} pcs</span>
+                </div>
+                <h3 style="font-size: 16px; margin: 0 0 6px; line-height: 1.3;">
+                  <a href="/es/quote" style="color: var(--plum); text-decoration: none;">{p.name}</a>
+                </h3>
+                <p style="font-size: 13px; color: var(--ink-soft); line-height: 1.4; margin-bottom: 12px;">{p.headline}</p>
+              </div>
+              <div style="border-top: 1px solid var(--line); padding-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 12px; color: var(--ink-soft);">{p.shadeCount} tonos</span>
+                <a href="/es/quote" style="font-size: 13px; font-weight: 600; color: var(--burgundy); text-decoration: none;">Solicitar Presupuesto →</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section style="padding: 48px 0;">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold);">Ficha Técnica de Fabricación</p>
+      <h2 style="font-size: 26px; margin-bottom: 20px;">Especificaciones de Producción: Lip Mud</h2>
+      <div class="card gold-line" style="padding: 0; overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Cantidad Mínima (MOQ)</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">500 piezas por tono / referencia</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Muestras de Laboratorio</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">7 días laborables, 100% reembolsable con el pedido al por mayor</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Opciones de Personalización</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">Viscosidad tipo nube, tonos terrosos/nude/vibrantes, aromas, envase soft-touch y aplicador</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Certificaciones y Cumplimiento</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">ISO 22716 (GMP), US FDA Cosmetics Facility, expediente PIF y notificación UE CPNP</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint" style="padding: 48px 0;">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold);">Preguntas Frecuentes</p>
+      <h2 style="font-size: 26px; margin-bottom: 24px;">Preguntas Frecuentes sobre Lip Mud</h2>
+      <div class="grid two" style="gap: 16px;">
+        <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+          <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Cuál es la diferencia entre el lip mud y un labial líquido mate tradicional?</h3>
+          <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">El lip mud tiene una textura batida única tipo mousse o terciopelo. A diferencia de los labiales líquidos mates convencionales, no reseca los labios ni se cuartea, difumina las líneas de los labios y permite un acabado difuminado estilo degradado (estilo asiático C-Beauty/K-Beauty).</p>
+        </div>
+        <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+          <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Cuál es la cantidad mínima de pedido (MOQ) para lip mud?</h3>
+          <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">El MOQ es de 500 unidades por tono. Puede seleccionar diferentes tonos para alcanzar volúmenes de pedido mayores.</p>
+        </div>
+        <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+          <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Cumple la fórmula con las regulaciones de la UE y FDA?</h3>
+          <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Sí. Todas nuestras fórmulas de lip mud cumplen estrictamente con las normativas FDA y el Reglamento Cosmético Europeo CE 1223/2009 (notificación CPNP y PIF).</p>
+        </div>
+      </div>
+      <p style="margin-top: 24px; text-align: center;">
+        <a href="/es/faq" style="color: var(--burgundy); font-weight: 600; font-size: 14px;">Consultar todas las preguntas frecuentes técnicas →</a>
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 50px 0;">
+    <div class="wrap">
+      <div class="card" style="text-align: center; padding: 40px 24px; background: linear-gradient(135deg, var(--plum-dark) 0%, var(--plum) 100%); color: white; border-radius: 12px;">
+        <h2 style="margin-bottom: 10px; color: white;">Cree su propia línea de Lip Mud Velvet</h2>
+        <p class="lead" style="max-width: 580px; margin: 0 auto 20px; color: #f3dde3; font-size: 16px;">
+          Aproveche la textura labial más codiciada en redes sociales con un socio industrial experto y ágil.
+        </p>
+        <a class="btn" href="/es/quote" style="background: var(--gold); color: var(--plum); font-weight: 600;">Solicitar Presupuesto</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { productsCatalog } from '../../data/products';
+
+const catSlug = 'lip-gloss-manufacturer';
+const catProducts = productsCatalog.filter((p) => p.categorySlug === catSlug);
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la cantidad mínima de pedido (MOQ)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nuestra cantidad mínima de pedido es de 500 piezas por tono o referencia (SKU). Es posible combinar varios tonos en un mismo proyecto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Pueden igualar o replicar una fórmula existente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Solo envíenos una muestra física de referencia. Nuestro laboratorio de I+D igualará la viscosidad, el brillo, la textura y el aroma deseados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es el plazo de entrega para muestras y producción masiva?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Desarrollamos y enviamos muestras de laboratorio personalizadas en 7 días laborables. La producción en masa tarda entre 15 y 25 días hábiles tras la aprobación del diseño."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Fabricante de Brillo de Labios de Marca Blanca | MOQ 500 pcs — MLM Lip"
+  description="Fabricante líder de brillo de labios (lip gloss) de marca blanca y OEM/ODM. MOQ desde 500 piezas, muestras en 7 días, fórmulas a medida y certificación ISO 22716."
+>
+  <link rel="alternate" hreflang="en" href="https://mlmlip.com/lip-gloss-manufacturer/" slot="head" />
+  <link rel="alternate" hreflang="es" href="https://mlmlip.com/es/fabricante-brillo-labios/" slot="head" />
+  <link rel="alternate" hreflang="fr" href="https://mlmlip.com/fr/fabricant-gloss-levres/" slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 50px; padding-bottom: 50px;">
+    <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Inicio', href: '/es/' }, { label: 'Productos', href: '/es/productos' }, { label: 'Brillo de Labios' }]} />
+      <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.15em;">Brillo de Labios · Especialista Marca Blanca OEM/ODM</p>
+      <h1 style="font-size: clamp(28px, 3.8vw, 44px); max-width: 860px; margin-bottom: 16px;">Fabricante de Brillo de Labios de Marca Blanca</h1>
+      <p class="lead" style="max-width: 720px; font-size: 17px; line-height: 1.5; margin-bottom: 24px;">Brillo espejo de alto impacto, efecto voluminizador y textura ultraligera no pegajosa formulados a medida de su marca. Elija entre envases exclusivos, aplicadores ergonómicos o cree moldes personalizados.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a class="btn" href="/es/quote">Solicitar Presupuesto</a>
+        <a class="btn ghost" href="/es/quote#email-inquiry">Pedir Kit de Muestras</a>
+      </div>
+      <p class="note" style="margin-top: 16px; font-size: 13px; color: var(--ink-soft);">
+        ✓ MOQ 500 piezas &nbsp;·&nbsp; ✓ Muestras en 7 días &nbsp;·&nbsp; ✓ Coste reembolsable &nbsp;·&nbsp; ✓ ISO 22716, FDA y CPNP
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 48px 0;">
+    <div class="wrap">
+      <div class="grid two" style="align-items: center; gap: 36px;">
+        <div class="case-media" style="border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-sm);">
+          <img src="/products/lipgloss-26-01.jpg" alt="Fabricante de Brillo de Labios de Marca Blanca" width="800" height="600" style="width: 100%; height: auto; display: block;" loading="lazy" />
+        </div>
+        <div>
+          <p class="eyebrow" style="color: var(--burgundy);">Especificaciones y Ventajas</p>
+          <h2 style="font-size: 26px; margin-bottom: 14px;">Formulación y diseño de envases a medida</h2>
+          <ul style="padding-left: 20px; color: var(--ink-soft); line-height: 1.7; font-size: 14px;">
+            <li>Fórmulas transparentes ultra-gloss, con perlas multidimensionales, tintadas o voluminizadoras con péptidos</li>
+            <li>Textura sedosa no pegajosa que aporta máxima hidratación y confort duradero</li>
+            <li>Igualación exacta de colores mediante código Pantone o muestra física</li>
+            <li>Aplicadores jumbo acolchados, pinceles de precisión o puntas de silicona y cerámica</li>
+            <li>Frascos acrílicos gruesos tipo cristal, tubos flexibles o acabados metálicos premium</li>
+            <li>Serigrafía de alta resolución, estampado en caliente dorado/plateado e impresión digital UV</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {catProducts.length > 0 && (
+    <section class="tint" style="padding: 48px 0;">
+      <div class="wrap">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <p class="eyebrow" style="color: var(--gold);">Formulaciones Disponibles</p>
+            <h2 style="font-size: 24px; margin: 0; color: var(--plum);">Catálogo de Fórmulas: Brillo de Labios</h2>
+          </div>
+          <a href="/es/productos" style="color: var(--burgundy); font-weight: 600; font-size: 14px;">Ver las 10 formulaciones →</a>
+        </div>
+
+        <div class="grid three" style="gap: 20px;">
+          {catProducts.slice(0, 6).map((p) => (
+            <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 8px; padding: 16px; background: white;">
+              <div>
+                <div class="case-media" style="margin-bottom: 12px; border-radius: 6px; overflow: hidden;">
+                  <img src={p.heroImage} alt={p.name} width="600" height="450" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" loading="lazy" />
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <span style="font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase;">{p.tag}</span>
+                  <span style="font-size: 11px; color: var(--ink-soft); font-family: monospace;">MOQ {p.moq} pcs</span>
+                </div>
+                <h3 style="font-size: 16px; margin: 0 0 6px; line-height: 1.3;">
+                  <a href="/es/quote" style="color: var(--plum); text-decoration: none;">{p.name}</a>
+                </h3>
+                <p style="font-size: 13px; color: var(--ink-soft); line-height: 1.4; margin-bottom: 12px;">{p.headline}</p>
+              </div>
+              <div style="border-top: 1px solid var(--line); padding-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 12px; color: var(--ink-soft);">{p.shadeCount} tonos</span>
+                <a href="/es/quote" style="font-size: 13px; font-weight: 600; color: var(--burgundy); text-decoration: none;">Solicitar Presupuesto →</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section style="padding: 48px 0;">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold);">Ficha Técnica de Fabricación</p>
+      <h2 style="font-size: 26px; margin-bottom: 20px;">Especificaciones de Producción: Brillo de Labios</h2>
+      <div class="card gold-line" style="padding: 0; overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Cantidad Mínima (MOQ)</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">500 piezas por tono / referencia</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Muestras de Laboratorio</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">7 días laborables, 100% reembolsable con el pedido al por mayor</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Opciones de Personalización</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">Fórmula, tonos a medida, aromas, envase primario, aplicadores y packaging secundario</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Certificaciones y Cumplimiento</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">ISO 22716 (GMP cosmético), registro en FDA (EE. UU.) y conformidad CPNP (UE)</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint" style="padding: 48px 0;">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold);">Preguntas Frecuentes</p>
+      <h2 style="font-size: 26px; margin-bottom: 24px;">Preguntas Frecuentes sobre Brillo de Labios</h2>
+      <div class="grid two" style="gap: 16px;">
+        <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+          <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Cuál es la cantidad mínima de pedido (MOQ)?</h3>
+          <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Nuestra cantidad mínima de pedido es de 500 piezas por tono o referencia (SKU). Es posible combinar varios tonos en un mismo proyecto.</p>
+        </div>
+        <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+          <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Pueden igualar o replicar una fórmula existente?</h3>
+          <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Sí. Solo envíenos una muestra física de referencia. Nuestro laboratorio de I+D igualará la viscosidad, el brillo, la textura y el aroma deseados.</p>
+        </div>
+        <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+          <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Cuál es el plazo de entrega para muestras y producción masiva?</h3>
+          <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Desarrollamos y enviamos muestras de laboratorio personalizadas en 7 días laborables. La producción en masa tarda entre 15 y 25 días hábiles tras la aprobación del diseño.</p>
+        </div>
+      </div>
+      <p style="margin-top: 24px; text-align: center;">
+        <a href="/es/faq" style="color: var(--burgundy); font-weight: 600; font-size: 14px;">Consultar todas las preguntas frecuentes técnicas →</a>
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 50px 0;">
+    <div class="wrap">
+      <div class="card" style="text-align: center; padding: 40px 24px; background: linear-gradient(135deg, var(--plum-dark) 0%, var(--plum) 100%); color: white; border-radius: 12px;">
+        <h2 style="margin-bottom: 10px; color: white;">Lance su propia línea de Brillos de Labios</h2>
+        <p class="lead" style="max-width: 580px; margin: 0 auto 20px; color: #f3dde3; font-size: 16px;">
+          Cuéntenos los requerimientos de su marca y las cantidades estimadas. Le facilitaremos presupuesto detallado y asesoría técnica en 24 horas.
+        </p>
+        <a class="btn" href="/es/quote" style="background: var(--gold); color: var(--plum); font-weight: 600;">Solicitar Presupuesto</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

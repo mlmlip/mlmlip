@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { site, certifications } from '../../data/site';
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Sobre Nosotros — Beautychain Limited / MLM Lip Manufacturing",
+  "description": "Fabricante de cosméticos labiales por contrato con certificación ISO 22716:2007, GMPC y registro FDA.",
+  "url": "https://mlmlip.com/es/nosotros",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Beautychain Limited",
+    "alternateName": "MLM Lip",
+    "url": "https://mlmlip.com",
+    "logo": "https://mlmlip.com/logo.png",
+    "foundingDate": "2014",
+    "description": "Fabricante certificado ISO 22716 y registrado en la FDA, dedicado estrictamente a fórmulas labiales a medida, llenado por contrato y soluciones completas de envasado.",
+    "knowsAbout": [
+      "Lip Gloss Formulation",
+      "Lip Mud & Velvet Matte Manufacturing",
+      "Peptide Lip Oil Formulation",
+      "Lip Mask Development",
+      "Lip Liner Manufacturing",
+      "ISO 22716:2007 GMP Compliance",
+      "EU CPNP Regulatory Filings",
+      "FDA Cosmetics Facility Registration"
+    ]
+  }
+};
+---
+
+<BaseLayout
+  title="Sobre Nosotros | Fabricante Experto en Cosmética Labial — MLM Lip"
+  description="Conozca MLM Lip (Beautychain Limited): planta de 2.000 m² con salas blancas Class 100K, capacidad de 500K+ uds/mes, ISO 22716 y registro FDA para marcas de belleza."
+>
+  <link rel="alternate" hreflang="en" href="https://mlmlip.com/about/" slot="head" />
+  <link rel="alternate" hreflang="es" href="https://mlmlip.com/es/nosotros/" slot="head" />
+  <link rel="alternate" hreflang="fr" href="https://mlmlip.com/fr/a-propos/" slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 64px; padding-bottom: 60px;">
+    <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Inicio', href: '/es/' }, { label: 'Sobre Nosotros' }]} />
+      <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.2em;">El Socio Industrial Experto en Belleza Labial</p>
+      <h1 style="font-size: clamp(34px, 4.4vw, 52px); max-width: 880px; margin-bottom: 20px;">Fabricación Cosmética de Alta Gama Dedicada Exclusivamente a los Labios</h1>
+      <p class="lead" style="max-width: 740px; font-size: 18px; line-height: 1.6; margin-bottom: 28px;">
+        MLM Lip es la división de manufactura especializada de <strong>Beautychain Limited</strong>. Desde 2014, acompañamos a marcas de belleza independientes, cadenas minoristas y creadores de todo el mundo en la formulación, diseño y producción a escala de productos labiales de éxito internacional.
+      </p>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <a class="btn" href="/es/quote">Configurar su Proyecto</a>
+        <a class="btn ghost" href="/es/faq">Ver Preguntas Frecuentes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cifras Clave e Infraestructura Industrial -->
+  <section style="padding: 60px 0;">
+    <div class="wrap">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <p class="eyebrow" style="color: var(--burgundy);">Instalaciones y Capacidad Productiva</p>
+        <h2 style="font-size: 30px;">Cifras Clave y Capacidad Industrial</h2>
+      </div>
+
+      <div class="grid four" style="gap: 20px; text-align: center;">
+        <div class="card" style="padding: 24px; background: white; border-top: 4px solid var(--gold); border-radius: 8px;">
+          <div style="font-size: 36px; font-weight: 800; color: var(--plum); margin-bottom: 6px;">2.000 m²</div>
+          <div style="font-weight: 600; color: var(--ink); margin-bottom: 4px;">Instalaciones Modernas</div>
+          <div style="font-size: 13px; color: var(--ink-soft);">Planta de producción integral con laboratorios de I+D y control de calidad.</div>
+        </div>
+        <div class="card" style="padding: 24px; background: white; border-top: 4px solid var(--gold); border-radius: 8px;">
+          <div style="font-size: 36px; font-weight: 800; color: var(--plum); margin-bottom: 6px;">Class 100K</div>
+          <div style="font-weight: 600; color: var(--ink); margin-bottom: 4px;">Salas Blancas Limpias</div>
+          <div style="font-size: 13px; color: var(--ink-soft);">Entornos presurizados y libres de polvo para el llenado y acondicionado aséptico.</div>
+        </div>
+        <div class="card" style="padding: 24px; background: white; border-top: 4px solid var(--gold); border-radius: 8px;">
+          <div style="font-size: 36px; font-weight: 800; color: var(--plum); margin-bottom: 6px;">500K+</div>
+          <div style="font-weight: 600; color: var(--ink); margin-bottom: 4px;">Unidades / Mes</div>
+          <div style="font-size: 13px; color: var(--ink-soft);">Líneas de envasado automatizadas para responder a demandas de gran escala.</div>
+        </div>
+        <div class="card" style="padding: 24px; background: white; border-top: 4px solid var(--gold); border-radius: 8px;">
+          <div style="font-size: 36px; font-weight: 800; color: var(--plum); margin-bottom: 6px;">500 pcs</div>
+          <div style="font-weight: 600; color: var(--ink); margin-bottom: 4px;">MOQ Accesible</div>
+          <div style="font-size: 13px; color: var(--ink-soft);">Arranque flexible para validar fórmulas y tendencias sin riesgo financiero elevado.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificaciones y Estándares -->
+  <section class="tint" style="padding: 60px 0;">
+    <div class="wrap">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <p class="eyebrow" style="color: var(--gold);">Calidad y Seguridad Internacional</p>
+        <h2 style="font-size: 30px;">Certificaciones y Cumplimiento Normativo</h2>
+      </div>
+
+      <div class="grid three" style="gap: 24px;">
+        <div class="card" style="background: white; padding: 28px; border-radius: 8px;">
+          <h3 style="font-size: 20px; color: var(--plum); margin-bottom: 12px;">ISO 22716:2007 (GMP)</h3>
+          <p style="color: var(--ink-soft); font-size: 14px; line-height: 1.6;">
+            Acreditación internacional que certifica el riguroso cumplimiento de las Buenas Prácticas de Fabricación cosméticas en higiene, control microbiológico y trazabilidad de lotes.
+          </p>
+        </div>
+        <div class="card" style="background: white; padding: 28px; border-radius: 8px;">
+          <h3 style="font-size: 20px; color: var(--plum); margin-bottom: 12px;">Registro US FDA (MoCRA)</h3>
+          <p style="color: var(--ink-soft); font-size: 14px; line-height: 1.6;">
+            Instalaciones registradas e inspeccionadas periódicamente conforme a la directiva MoCRA de la FDA de EE. UU. Formulación con ingredientes aprobados y seguridad comprobada.
+          </p>
+        </div>
+        <div class="card" style="background: white; padding: 28px; border-radius: 8px;">
+          <h3 style="font-size: 20px; color: var(--plum); margin-bottom: 12px;">Conformidad CPNP (Unión Europea)</h3>
+          <p style="color: var(--ink-soft); font-size: 14px; line-height: 1.6;">
+            Cumplimiento íntegro del Reglamento (CE) nº 1223/2009. Proveemos fichas de datos de seguridad (MSDS), expedientes técnicos PIF y asesoramiento para el portal europeo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compromiso de Fabricación -->
+  <section style="padding: 70px 0;">
+    <div class="wrap">
+      <div class="card" style="text-align: center; padding: 48px 28px; background: linear-gradient(135deg, var(--plum-dark) 0%, var(--plum) 100%); color: white; border-radius: 12px;">
+        <h2 style="margin-bottom: 12px; color: white;">¿Listo para hacer realidad su propia marca de labios?</h2>
+        <p class="lead" style="max-width: 620px; margin: 0 auto 24px; color: #f3dde3;">
+          Aproveche nuestra capacidad fabril, laboratorios de formulación y tiempos récord de muestreo en solo 7 días.
+        </p>
+        <a class="btn" href="/es/quote" style="background: var(--gold); color: var(--plum); font-weight: 600;">Solicitar Presupuesto Personalizado</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

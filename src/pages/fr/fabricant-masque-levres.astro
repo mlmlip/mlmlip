@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { productsCatalog } from '../../data/products';
+
+const catSlug = 'lip-mask-manufacturer';
+const catProducts = productsCatalog.filter((p) => p.categorySlug === catSlug);
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [{"@type":"Question","name":"Quel est le minimum de commande pour un masque lèvres ?","acceptedAnswer":{"@type":"Answer","text":"Le MOQ est fixé à 500 pièces par référence, identique à nos autres gammes cosmétiques."}},{"@type":"Question","name":"Peut-on formuler un masque de nuit et un baume de jour ?","acceptedAnswer":{"@type":"Answer","text":"Absolument. Nous adaptons la viscosité : texture riche pour la nuit ou émulsion protectrice pour le jour."}},{"@type":"Question","name":"Pouvez-vous justifier des allégations d'hydratation 24h ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous formulons avec des actifs cliniquement éprouvés et fournissons les dossiers techniques correspondants."}}]
+};
+---
+
+<BaseLayout title="Fabricant de Masque à Lèvres en Marque Blanche | MOQ 500 pcs — MLM Lip" description="Fabricant de masques à lèvres régénérants et soins de nuit dès 500 pièces. Formules barrière aux céramides, pots et tubes soft-touch, conformité ISO 22716 & CPNP.">
+  <link rel="alternate" hreflang="en" href="https://mlmlip.com/lip-mask-manufacturer/" slot="head" />
+  <link rel="alternate" hreflang="es" href="https://mlmlip.com/es/fabricante-mascarilla-labios/" slot="head" />
+  <link rel="alternate" hreflang="fr" href="https://mlmlip.com/fr/fabricant-masque-levres/" slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 50px; padding-bottom: 50px;">
+    <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Accueil', href: '/fr/' }, { label: 'Produits', href: '/fr/produits' }, { label: 'Masque à Lèvres' }]} />
+      <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.15em;">Masque à Lèvres · Spécialiste Marque Blanche OEM/ODM</p>
+      <h1 style="font-size: clamp(28px, 3.8vw, 44px); max-width: 860px; margin-bottom: 16px;">Fabricant de Masques & Baumes de Nuit pour Lèvres en Marque Blanche</h1>
+      <p class="lead" style="max-width: 720px; font-size: 17px; line-height: 1.5; margin-bottom: 24px;">Des soins intensifs de nuit et baumes barrières qui ancrent durablement votre marque dans la routine quotidienne de vos clientes. Beurres botaniques riches et actifs réparateurs.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a class="btn" href="/fr/quote">Demander un devis</a>
+        <a class="btn ghost" href="/fr/quote#email-inquiry">Commander un kit d'échantillons</a>
+      </div>
+      <p class="note" style="margin-top: 16px; font-size: 13px; color: var(--ink-soft);">
+        ✓ MOQ 500 pcs &nbsp;·&nbsp; ✓ Échantillons 7 jours &nbsp;·&nbsp; ✓ Frais remboursés &nbsp;·&nbsp; ✓ ISO 22716 & FDA
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 48px 0;">
+    <div class="wrap">
+      <div class="grid two" style="align-items: center; gap: 36px;">
+        <div class="case-media" style="border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-sm);">
+          <img src="/products/lipmask-17-01.jpg" alt="Fabricant de Masques & Baumes de Nuit pour Lèvres en Marque Blanche" width="800" height="600" style="width: 100%; height: auto; display: block;" loading="lazy" />
+        </div>
+        <div>
+          <p class="eyebrow" style="color: var(--burgundy);">Spécifications & Atouts</p>
+          <h2 style="font-size: 26px; margin-bottom: 14px;">Formulation et design sur mesure</h2>
+          <ul style="padding-left: 20px; color: var(--ink-soft); line-height: 1.7; font-size: 14px;">
+            <li>Masques de nuit régénérants et baumes protecteurs quotidiens</li>
+            <li>Bases riches en beurre de karité bio, beurre de mangue et cires végétales</li>
+            <li>Concentrés en céramides NP, squalane pur, vitamine E et acide hyaluronique</li>
+            <li>Conditionnements variés : pots en verre ou acrylique lourd, tubes souples biseautés</li>
+            <li>Textures sensorielles fondantes au contact de la chaleur des lèvres</li>
+            <li>Idéal pour compléter une gamme maquillage et stimuler le réachat</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {catProducts.length > 0 && (
+    <section class="tint" style="padding: 48px 0;">
+      <div class="wrap">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <p class="eyebrow" style="color: var(--gold);">Formulations Disponibles</p>
+            <h2 style="font-size: 24px; margin: 0; color: var(--plum);">Catalogue Formules : Masque à Lèvres</h2>
+          </div>
+          <a href="/fr/produits" style="color: var(--burgundy); font-weight: 600; font-size: 14px;">Toutes les formules →</a>
+        </div>
+
+        <div class="grid three" style="gap: 20px;">
+          {catProducts.map((p) => (
+            <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 8px; padding: 16px; background: white;">
+              <div><div class="case-media" style="margin-bottom: 12px; border-radius: 6px; overflow: hidden;">
+                  <img src={p.heroImage} alt={p.name} width="600" height="450" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" loading="lazy" />
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <span style="font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase;">{p.tag}</span><span style="font-size: 11px; color: var(--ink-soft); font-family: monospace;">MOQ {p.moq} pcs</span>
+                </div>
+                <h3 style="font-size: 16px; margin: 0 0 6px; line-height: 1.3;">
+                  <a href="/fr/quote" style="color: var(--plum); text-decoration: none;">{p.name}</a>
+                </h3>
+                <p style="font-size: 13px; color: var(--ink-soft); line-height: 1.4; margin-bottom: 12px;">{p.headline}</p>
+              </div>
+              <div style="border-top: 1px solid var(--line); padding-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 12px; color: var(--ink-soft);">{p.shadeCount} teintes</span>
+                <a href="/fr/quote" style="font-size: 13px; font-weight: 600; color: var(--burgundy); text-decoration: none;">Demander un devis →</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section style="padding: 48px 0;">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold);">Fiche Technique Usine</p>
+      <h2 style="font-size: 26px; margin-bottom: 20px;">Spécifications de fabrication : Masque à Lèvres</h2>
+      <div class="card gold-line" style="padding: 0; overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Quantité minimale (MOQ)</td><td style="padding: 14px 20px; color: var(--ink-soft);">500 pièces par référence (SKU)</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Échantillonnage laboratoire</td><td style="padding: 14px 20px; color: var(--ink-soft);">7 jours ouvrés pour formules et textures de baumes</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Personnalisation</td><td style="padding: 14px 20px; color: var(--ink-soft);">Arômes gourmands, couleur, viscosité riche, pots avec spatule</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Normes & Conformité</td><td style="padding: 14px 20px; color: var(--ink-soft);">Certification ISO 22716, BPF/GMPC, dossier DIP et CPNP UE</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint" style="padding: 48px 0;">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold);">FAQ</p>
+      <h2 style="font-size: 26px; margin-bottom: 24px;">Questions fréquentes sur Masque à Lèvres</h2>
+      <div class="grid two" style="gap: 16px;">
+        
+          <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+            <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">Quel est le minimum de commande pour un masque lèvres ?</h3>
+            <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Le MOQ est fixé à 500 pièces par référence, identique à nos autres gammes cosmétiques.</p>
+          </div>
+          <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+            <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">Peut-on formuler un masque de nuit et un baume de jour ?</h3>
+            <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Absolument. Nous adaptons la viscosité : texture riche pour la nuit ou émulsion protectrice pour le jour.</p>
+          </div>
+          <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+            <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">Pouvez-vous justifier des allégations d'hydratation 24h ?</h3>
+            <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Oui, nous formulons avec des actifs cliniquement éprouvés et fournissons les dossiers techniques correspondants.</p>
+          </div>
+      </div>
+      <p style="margin-top: 24px; text-align: center;">
+        <a href="/fr/faq" style="color: var(--burgundy); font-weight: 600; font-size: 14px;">Consulter toute la FAQ technique →</a>
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 50px 0;">
+    <div class="wrap">
+      <div class="card" style="text-align: center; padding: 40px 24px; background: linear-gradient(135deg, var(--plum-dark) 0%, var(--plum) 100%); color: white; border-radius: 12px;">
+        <h2 style="margin-bottom: 10px; color: white;">Lancez votre collection de Masque à Lèvres</h2>
+        <p class="lead" style="max-width: 580px; margin: 0 auto 20px; color: #f3dde3; font-size: 16px;">
+          Partagez avec nous votre orientation produit et vos volumes souhaités. Devis et analyse technique sous 24h.
+        </p>
+        <a class="btn" href="/fr/quote" style="background: var(--gold); color: var(--plum); font-weight: 600;">Demander un devis</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

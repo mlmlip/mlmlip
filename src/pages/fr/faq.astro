@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [{"@type":"Question","name":"Quelle est votre quantité minimale de commande (MOQ) ?","acceptedAnswer":{"@type":"Answer","text":"Notre quantité minimale universelle est de 500 pièces par référence (SKU) pour l'ensemble des 6 catégories labiales : gloss, lip mud, huile à lèvres, rouge à lèvres en raisin, crayon à lèvres et masque de nuit. Ce seuil permet aux marques indépendantes de tester le marché sans risque d'invendus."}},{"@type":"Question","name":"Quel est le délai de développement d'un échantillon en laboratoire ?","acceptedAnswer":{"@type":"Answer","text":"Le développement d'un échantillon sur mesure prend 7 jours ouvrés après validation de votre cahier des charges (texture, viscosité, couleur Pantone). Les prototypes physiques sont ensuite expédiés par coursier express aérien sous 3 à 5 jours."}},{"@type":"Question","name":"Quel est le délai de fabrication moyen pour une production en série ?","acceptedAnswer":{"@type":"Answer","text":"Le délai moyen est de 15 à 25 jours ouvrés après approbation finale du BAT emballage et des échantillons. Les séries industrielles sont cadencées sur nos lignes automatisées en salle blanche pour garantir une livraison ponctuelle."}},{"@type":"Question","name":"Les frais d'échantillonnage sont-ils remboursables ?","acceptedAnswer":{"@type":"Answer","text":"Oui, à 100%. L'intégralité des frais de prototypage engagés est déduite sous forme d'avoir sur la facture de votre première commande en série."}},{"@type":"Question","name":"Peut-on panacher plusieurs teintes dans une même commande ?","acceptedAnswer":{"@type":"Answer","text":"Oui, dès lors que chaque référence ou couleur atteint le seuil de 500 unités. Par exemple, une commande de 2 000 pièces peut intégrer 4 teintes de 500 pièces avec un packaging identique."}},{"@type":"Question","name":"Vos produits sont-ils conformes au Règlement Cosmétique Européen (CE 1223/2009) ?","acceptedAnswer":{"@type":"Answer","text":"Absolument. Notre usine opère sous certification ISO 22716:2007 et Bonnes Pratiques de Fabrication (GMPC). Nous vous fournissons la documentation technique complète pour votre notification sur le portail CPNP et la constitution de votre Dossier d'Information sur le Produit (DIP)."}},{"@type":"Question","name":"Êtes-vous enregistrés auprès de la FDA américaine (MoCRA) ?","acceptedAnswer":{"@type":"Answer","text":"Oui, notre site de production est officiellement enregistré auprès de la FDA américaine et conforme aux nouvelles dispositions de la loi MoCRA. Tous les ingrédients et colorants respectent les listes autorisées aux États-Unis et en Europe."}},{"@type":"Question","name":"Pouvez-vous développer des formules Vegan et Clean Beauty ?","acceptedAnswer":{"@type":"Answer","text":"Tout à fait. Nous disposons d'un catalogue étendu de formules vegan sans carmin, sans cire d'abeille, sans parabènes, formulées à base d'huiles végétales certifiées et d'actifs dermatologiques (acide hyaluronique, squalane végétal, peptides)."}},{"@type":"Question","name":"Pouvez-vous reproduire la texture ou la couleur d'un produit concurrent ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Grâce à nos spectrophotomètres et texturomètres de précision, notre laboratoire d'ingénierie inverse est en mesure de reproduire fidèlement l'émulsion, le fini (mat, vinyle, satiné) et la nuance exacte de votre produit de référence."}},{"@type":"Question","name":"Proposez-vous des moules et designs de packaging personnalisés ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Outre notre catalogue de plus de 200 références de composants en stock immédiat (flacons acryliques, étuis en zamac magnétique, tubes soft-touch), notre bureau d'études conçoit des moules d'injection exclusifs réservés à votre marque."}},{"@type":"Question","name":"Quelles techniques d'impression proposez-vous pour notre logo ?","acceptedAnswer":{"@type":"Answer","text":"Nous maîtrisons la sérigraphie haute définition, le marquage à chaud (or, or rose, argent, holographique), l'impression numérique UV multi-couleurs, le dépoli acide, le laquage soft-touch et la galvanoplastie métallique."}}]
+};
+---
+
+<BaseLayout
+  title="FAQ Fabricant Cosmétique pour Lèvres | Questions Fréquentes — MLM Lip"
+  description="Toutes les réponses techniques sur la fabrication de maquillage labial en marque blanche : MOQ 500 pcs, délais d'échantillons en 7 jours, certification ISO 22716 et notification CPNP."
+>
+  <link rel="alternate" hreflang="en" href="https://mlmlip.com/faq/" slot="head" />
+  <link rel="alternate" hreflang="es" href="https://mlmlip.com/es/faq/" slot="head" />
+  <link rel="alternate" hreflang="fr" href="https://mlmlip.com/fr/faq/" slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 64px; padding-bottom: 60px;">
+    <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Accueil', href: '/fr/' }, { label: 'FAQ' }]} />
+      <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.2em;">Assistance Technique & Partenariat</p>
+      <h1 style="font-size: clamp(34px, 4.4vw, 52px); max-width: 860px; margin-bottom: 20px;">Foire Aux Questions : Fabrication Labiale Sur Mesure</h1>
+      <p class="lead" style="max-width: 720px; font-size: 18px; line-height: 1.6;">
+        Retrouvez ici toutes les informations pratiques sur nos conditions de production OEM/ODM, la réglementation cosmétique internationale, nos seuils de commande et nos garanties qualité.
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 60px 0;">
+    <div class="wrap" style="max-width: 900px;">
+      
+      <div style="margin-bottom: 48px;">
+        <h2 style="font-size: 24px; color: var(--plum); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 24px;">
+          Commandes & Délais de Production
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">Quelle est votre quantité minimale de commande (MOQ) ?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Notre quantité minimale universelle est de 500 pièces par référence (SKU) pour l'ensemble des 6 catégories labiales : gloss, lip mud, huile à lèvres, rouge à lèvres en raisin, crayon à lèvres et masque de nuit. Ce seuil permet aux marques indépendantes de tester le marché sans risque d'invendus.</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">Quel est le délai de développement d'un échantillon en laboratoire ?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Le développement d'un échantillon sur mesure prend 7 jours ouvrés après validation de votre cahier des charges (texture, viscosité, couleur Pantone). Les prototypes physiques sont ensuite expédiés par coursier express aérien sous 3 à 5 jours.</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">Quel est le délai de fabrication moyen pour une production en série ?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Le délai moyen est de 15 à 25 jours ouvrés après approbation finale du BAT emballage et des échantillons. Les séries industrielles sont cadencées sur nos lignes automatisées en salle blanche pour garantir une livraison ponctuelle.</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">Les frais d'échantillonnage sont-ils remboursables ?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Oui, à 100%. L'intégralité des frais de prototypage engagés est déduite sous forme d'avoir sur la facture de votre première commande en série.</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">Peut-on panacher plusieurs teintes dans une même commande ?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Oui, dès lors que chaque référence ou couleur atteint le seuil de 500 unités. Par exemple, une commande de 2 000 pièces peut intégrer 4 teintes de 500 pièces avec un packaging identique.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom: 48px;">
+        <h2 style="font-size: 24px; color: var(--plum); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 24px;">
+          Formulation, Qualité & Réglementation
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">Vos produits sont-ils conformes au Règlement Cosmétique Européen (CE 1223/2009) ?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Absolument. Notre usine opère sous certification ISO 22716:2007 et Bonnes Pratiques de Fabrication (GMPC). Nous vous fournissons la documentation technique complète pour votre notification sur le portail CPNP et la constitution de votre Dossier d'Information sur le Produit (DIP).</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">Êtes-vous enregistrés auprès de la FDA américaine (MoCRA) ?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Oui, notre site de production est officiellement enregistré auprès de la FDA américaine et conforme aux nouvelles dispositions de la loi MoCRA. Tous les ingrédients et colorants respectent les listes autorisées aux États-Unis et en Europe.</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">Pouvez-vous développer des formules Vegan et Clean Beauty ?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Tout à fait. Nous disposons d'un catalogue étendu de formules vegan sans carmin, sans cire d'abeille, sans parabènes, formulées à base d'huiles végétales certifiées et d'actifs dermatologiques (acide hyaluronique, squalane végétal, peptides).</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">Pouvez-vous reproduire la texture ou la couleur d'un produit concurrent ?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Oui. Grâce à nos spectrophotomètres et texturomètres de précision, notre laboratoire d'ingénierie inverse est en mesure de reproduire fidèlement l'émulsion, le fini (mat, vinyle, satiné) et la nuance exacte de votre produit de référence.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom: 48px;">
+        <h2 style="font-size: 24px; color: var(--plum); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 24px;">
+          Packaging & Personnalisation
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">Proposez-vous des moules et designs de packaging personnalisés ?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Oui. Outre notre catalogue de plus de 200 références de composants en stock immédiat (flacons acryliques, étuis en zamac magnétique, tubes soft-touch), notre bureau d'études conçoit des moules d'injection exclusifs réservés à votre marque.</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">Quelles techniques d'impression proposez-vous pour notre logo ?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Nous maîtrisons la sérigraphie haute définition, le marquage à chaud (or, or rose, argent, holographique), l'impression numérique UV multi-couleurs, le dépoli acide, le laquage soft-touch et la galvanoplastie métallique.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="text-align: center; padding: 40px 24px; background: var(--blush-soft); border-radius: 12px; margin-top: 40px;">
+        <h3 style="font-size: 22px; color: var(--plum); margin-bottom: 12px;">Une question technique spécifique ?</h3>
+        <p style="margin-bottom: 20px; color: var(--ink-soft); font-size: 15px;">
+          Nos chimistes et directeurs de projet vous répondent en moins de 24 heures pour étudier votre cahier des charges.
+        </p>
+        <a class="btn" href="/fr/quote">Contacter notre équipe technique</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

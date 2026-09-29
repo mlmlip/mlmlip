@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { productsCatalog } from '../../data/products';
+
+const catSlug = 'lip-liner-manufacturer';
+const catProducts = productsCatalog.filter((p) => p.categorySlug === catSlug);
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      "@type": "Question",
+      "name": "¿Qué formatos de lápiz delineador ofrecen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ofrecemos lápices retráctiles automáticos (mecánicos) con afilador incorporado, lápices de madera tradicionales afilables y lápices de gel en cuerpo de plástico extrusionado (molded gel liner)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la cantidad mínima de pedido (MOQ) para delineadores?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El MOQ es de 500 unidades por tono o referencia. Podemos combinar una gama de varios tonos dentro de un pedido global."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Son resistentes al agua y de larga duración?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, formulamos con resinas de silicona volátiles y ceras estructurantes que garantizan resistencia al agua (waterproof), antimanchas (smudge-proof) y una fijación de más de 8 horas sin resecar."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Fabricante de Delineador de Labios de Marca Blanca | MOQ 500 pcs — MLM Lip"
+  description="Fabricante de delineadores y perfiladores de labios de marca blanca. Fórmulas cremosas de larga duración waterproof, lápices mecánicos o afilables, MOQ 500 piezas, ISO 22716."
+>
+  <link rel="alternate" hreflang="en" href="https://mlmlip.com/lip-liner-manufacturer/" slot="head" />
+  <link rel="alternate" hreflang="es" href="https://mlmlip.com/es/fabricante-delineador-labios/" slot="head" />
+  <link rel="alternate" hreflang="fr" href="https://mlmlip.com/fr/fabricant-crayon-levres/" slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 50px; padding-bottom: 50px;">
+    <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Inicio', href: '/es/' }, { label: 'Productos', href: '/es/productos' }, { label: 'Delineador de Labios' }]} />
+      <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.15em;">Delineador de Labios · Especialista Marca Blanca OEM/ODM</p>
+      <h1 style="font-size: clamp(28px, 3.8vw, 44px); max-width: 860px; margin-bottom: 16px;">Fabricante de Delineador de Labios de Marca Blanca</h1>
+      <p class="lead" style="max-width: 720px; font-size: 17px; line-height: 1.5; margin-bottom: 24px;">Trazo ultrasuave, máxima pigmentación y fijación impermeable sin tirones. Fabricamos perfiladores automáticos retráctiles y lápices clásicos diseñados para definir y realzar el contorno labial.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a class="btn" href="/es/quote">Solicitar Presupuesto</a>
+        <a class="btn ghost" href="/es/quote#email-inquiry">Pedir Kit de Muestras</a>
+      </div>
+      <p class="note" style="margin-top: 16px; font-size: 13px; color: var(--ink-soft);">
+        ✓ MOQ 500 piezas &nbsp;·&nbsp; ✓ Muestras en 7 días &nbsp;·&nbsp; ✓ Coste reembolsable &nbsp;·&nbsp; ✓ ISO 22716, FDA y CPNP
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 48px 0;">
+    <div class="wrap">
+      <div class="grid two" style="align-items: center; gap: 36px;">
+        <div class="case-media" style="border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-sm);">
+          <img src="/products/lipliner-01.jpg" alt="Fabricante de Delineador de Labios de Marca Blanca" width="800" height="600" style="width: 100%; height: auto; display: block;" loading="lazy" />
+        </div>
+        <div>
+          <p class="eyebrow" style="color: var(--burgundy);">Precisión y Durabilidad</p>
+          <h2 style="font-size: 26px; margin-bottom: 14px;">Fórmula gel deslizante y fijación total</h2>
+          <ul style="padding-left: 20px; color: var(--ink-soft); line-height: 1.7; font-size: 14px;">
+            <li>Deslizamiento ultrafluido tipo gel sin saltos ni tirones en la piel</li>
+            <li>Fórmula resistente al agua y a la transferencia durante más de 8 horas</li>
+            <li>Desarrollo de tonos coordinados exactamente con sus barras y brillos de labios</li>
+            <li>Mecanismos retráctiles con afilador integrado o envases de madera sostenible</li>
+            <li>Enriquecidos con vitamina E y aceites nutritivos para evitar la sequedad</li>
+            <li>Acabados en cuerpo mate, brillante o con estampado metalizado a juego con el tono</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {catProducts.length > 0 && (
+    <section class="tint" style="padding: 48px 0;">
+      <div class="wrap">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <p class="eyebrow" style="color: var(--gold);">Formulaciones Disponibles</p>
+            <h2 style="font-size: 24px; margin: 0; color: var(--plum);">Catálogo de Fórmulas: Delineador de Labios</h2>
+          </div>
+          <a href="/es/productos" style="color: var(--burgundy); font-weight: 600; font-size: 14px;">Ver las 10 formulaciones →</a>
+        </div>
+
+        <div class="grid three" style="gap: 20px;">
+          {catProducts.slice(0, 6).map((p) => (
+            <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 8px; padding: 16px; background: white;">
+              <div>
+                <div class="case-media" style="margin-bottom: 12px; border-radius: 6px; overflow: hidden;">
+                  <img src={p.heroImage} alt={p.name} width="600" height="450" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" loading="lazy" />
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <span style="font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase;">{p.tag}</span>
+                  <span style="font-size: 11px; color: var(--ink-soft); font-family: monospace;">MOQ {p.moq} pcs</span>
+                </div>
+                <h3 style="font-size: 16px; margin: 0 0 6px; line-height: 1.3;">
+                  <a href="/es/quote" style="color: var(--plum); text-decoration: none;">{p.name}</a>
+                </h3>
+                <p style="font-size: 13px; color: var(--ink-soft); line-height: 1.4; margin-bottom: 12px;">{p.headline}</p>
+              </div>
+              <div style="border-top: 1px solid var(--line); padding-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 12px; color: var(--ink-soft);">{p.shadeCount} tonos</span>
+                <a href="/es/quote" style="font-size: 13px; font-weight: 600; color: var(--burgundy); text-decoration: none;">Solicitar Presupuesto →</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section style="padding: 48px 0;">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold);">Ficha Técnica de Fabricación</p>
+      <h2 style="font-size: 26px; margin-bottom: 20px;">Especificaciones de Producción: Delineador de Labios</h2>
+      <div class="card gold-line" style="padding: 0; overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Cantidad Mínima (MOQ)</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">500 piezas por tono / referencia</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Muestras de Laboratorio</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">7 días laborables, 100% reembolsable con el pedido al por mayor</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Opciones de Personalización</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">Formato de cuerpo (mecánico o madera), dureza de mina, tonos Pantone, acabado y estampación</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Certificaciones y Cumplimiento</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">ISO 22716, registro en FDA de EE. UU., expediente PIF y notificación CPNP en la Unión Europea</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint" style="padding: 48px 0;">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold);">Preguntas Frecuentes</p>
+      <h2 style="font-size: 26px; margin-bottom: 24px;">Preguntas Frecuentes sobre Delineadores de Labios</h2>
+      <div class="grid two" style="gap: 16px;">
+        <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+          <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Qué formatos de lápiz delineador ofrecen?</h3>
+          <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Ofrecemos lápices retráctiles automáticos (mecánicos) con afilador incorporado, lápices de madera tradicionales afilables y lápices de gel en cuerpo de plástico extrusionado (molded gel liner).</p>
+        </div>
+        <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+          <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Cuál es la cantidad mínima de pedido (MOQ) para delineadores?</h3>
+          <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">El MOQ es de 500 unidades por tono o referencia. Podemos combinar una gama de varios tonos dentro de un pedido global.</p>
+        </div>
+        <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+          <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Son resistentes al agua y de larga duración?</h3>
+          <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Sí, formulamos con resinas de silicona volátiles y ceras estructurantes que garantizan resistencia al agua (waterproof), antimanchas (smudge-proof) y una fijación de más de 8 horas sin resecar.</p>
+        </div>
+      </div>
+      <p style="margin-top: 24px; text-align: center;">
+        <a href="/es/faq" style="color: var(--burgundy); font-weight: 600; font-size: 14px;">Consultar todas las preguntas frecuentes técnicas →</a>
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 50px 0;">
+    <div class="wrap">
+      <div class="card" style="text-align: center; padding: 40px 24px; background: linear-gradient(135deg, var(--plum-dark) 0%, var(--plum) 100%); color: white; border-radius: 12px;">
+        <h2 style="margin-bottom: 10px; color: white;">Complete su colección con Delineadores Profesionales</h2>
+        <p class="lead" style="max-width: 580px; margin: 0 auto 20px; color: #f3dde3; font-size: 16px;">
+          Ofrezca a sus clientes el complemento perfecto para sus labiales y glosses con precisión milimétrica.
+        </p>
+        <a class="btn" href="/es/quote" style="background: var(--gold); color: var(--plum); font-weight: 600;">Solicitar Presupuesto</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

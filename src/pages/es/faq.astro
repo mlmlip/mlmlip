@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      "@type": "Question",
+      "name": "¿Cuál es su cantidad mínima de pedido (MOQ)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nuestra cantidad mínima de pedido estándar es de 500 piezas por referencia (SKU) para todas nuestras categorías: brillo de labios, lip mud, barra de labios, delineador, aceite labial y mascarilla. Esto permite a marcas emergentes y creadores lanzar productos premium sin acumular stock excesivo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo toma el desarrollo de muestras de laboratorio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El desarrollo de muestras personalizadas toma 7 días laborables tras definir los requerimientos de fórmula, acabado y código de color Pantone. Las muestras se envían mediante mensajería urgente internacional (3 a 5 días)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El coste del kit de muestras es reembolsable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, reembolsamos el 100% del coste de las muestras descontándolo directamente de la factura de su primer pedido de producción al por mayor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es el tiempo de producción para pedidos en masa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El tiempo estándar de producción es de 15 a 25 días laborables a partir de la aprobación final de las muestras y los artes de impresión del envase."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo pedir varios tonos dentro de un mismo pedido?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, siempre que cada tono o referencia individual cumpla con el mínimo de 500 unidades. Por ejemplo, un lote de 2.000 piezas puede componerse de 4 tonos distintos de 500 piezas con idéntico diseño de packaging."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cumplen sus productos con el Reglamento Cosmético de la Unión Europea (CE 1223/2009)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutamente. Operamos bajo las Buenas Prácticas de Fabricación ISO 22716:2007 (GMP). Proporcionamos expedientes de información de producto (PIF), pruebas de estabilidad acelerada, fichas de datos de seguridad (MSDS) y asistencia completa para el portal CPNP."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Están sus instalaciones registradas ante la FDA de Estados Unidos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, nuestra fábrica cuenta con registro activo ante la FDA de EE. UU. y cumple rigurosamente con los requisitos de la normativa MoCRA. Todos los pigmentos y materias primas están aprobados para uso cosmético labial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Pueden desarrollar fórmulas Veganas, Cruelty-Free y Clean Beauty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Disponemos de fórmulas 100% veganas formuladas sin cera de abejas ni carmín, libres de parabenos, ftalatos y aceites minerales, enriquecidas con mantecas vegetales, ácido hialurónico y escualano."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Pueden igualar o clonar una fórmula de referencia del mercado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Gracias a nuestros equipos de espectrometría y reología en laboratorio, podemos analizar y recrear con exactitud la viscosidad, el brillo, la transferencia y el acabado deseado a partir de una muestra física de referencia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué opciones de personalización e impresión de packaging ofrecen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ofrecemos serigrafía monocroma o multicolor, estampado térmico en caliente (foil dorado, plateado, oro rosa, holográfico), impresión digital UV en alta resolución, acabados esmerilados/mate, revestimiento soft-touch y galvanizado metalizado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Desarrollan moldes de envase exclusivos para nuestra marca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Además de un catálogo de más de 200 componentes listos para producción inmediata, nuestro equipo técnico de ingeniería puede diseñar y fabricar moldes de inyección a medida con derechos exclusivos para su marca."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Preguntas Frecuentes sobre Fabricación de Cosméticos Labiales | FAQ — MLM Lip"
+  description="Respuestas técnicas y comerciales sobre la fabricación de labiales de marca blanca: MOQ de 500 pcs, muestras en 7 días, certificados ISO 22716 y registros FDA / CPNP."
+>
+  <link rel="alternate" hreflang="en" href="https://mlmlip.com/faq/" slot="head" />
+  <link rel="alternate" hreflang="es" href="https://mlmlip.com/es/faq/" slot="head" />
+  <link rel="alternate" hreflang="fr" href="https://mlmlip.com/fr/faq/" slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 64px; padding-bottom: 60px;">
+    <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Inicio', href: '/es/' }, { label: 'Preguntas Frecuentes' }]} />
+      <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.2em;">Asistencia Técnica y Comercial</p>
+      <h1 style="font-size: clamp(34px, 4.4vw, 52px); max-width: 860px; margin-bottom: 20px;">Preguntas Frecuentes: Fabricación Labial a Medida</h1>
+      <p class="lead" style="max-width: 720px; font-size: 18px; line-height: 1.6;">
+        Encuentre aquí toda la información práctica sobre nuestras condiciones de producción OEM/ODM, normativas cosméticas internacionales, plazos de entrega y garantías de calidad.
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 60px 0;">
+    <div class="wrap" style="max-width: 900px;">
+      
+      <div style="margin-bottom: 48px;">
+        <h2 style="font-size: 24px; color: var(--plum); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 24px;">
+          Pedidos y Plazos de Producción
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">¿Cuál es su cantidad mínima de pedido (MOQ)?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Nuestra cantidad mínima de pedido estándar es de 500 piezas por referencia (SKU) para todas nuestras categorías: brillo de labios, lip mud, barra de labios, delineador, aceite labial y mascarilla. Esto permite a marcas emergentes y creadores lanzar productos premium sin acumular stock excesivo.</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">¿Cuánto tiempo toma el desarrollo de muestras de laboratorio?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">El desarrollo de muestras personalizadas toma 7 días laborables tras definir los requerimientos de fórmula, acabado y código de color Pantone. Las muestras se envían mediante mensajería urgente internacional (3 a 5 días).</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">¿El coste del kit de muestras es reembolsable?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Sí, reembolsamos el 100% del coste de las muestras descontándolo directamente de la factura de su primer pedido de producción al por mayor.</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">¿Cuál es el tiempo de producción para pedidos en masa?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">El tiempo estándar de producción es de 15 a 25 días laborables a partir de la aprobación final de las muestras y los artes de impresión del envase.</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">¿Puedo pedir varios tonos dentro de un mismo pedido?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Sí, siempre que cada tono o referencia individual cumpla con el mínimo de 500 unidades. Por ejemplo, un lote de 2.000 piezas puede componerse de 4 tonos distintos de 500 piezas con idéntico diseño de packaging.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 48px;">
+        <h2 style="font-size: 24px; color: var(--plum); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 24px;">
+          Formulación, Calidad y Cumplimiento Normativo
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">¿Cumplen sus productos con el Reglamento Cosmético de la Unión Europea (CE 1223/2009)?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Absolutamente. Operamos bajo las Buenas Prácticas de Fabricación ISO 22716:2007 (GMP). Proporcionamos expedientes de información de producto (PIF), pruebas de estabilidad acelerada, fichas de datos de seguridad (MSDS) y asistencia completa para el portal CPNP.</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">¿Están sus instalaciones registradas ante la FDA de Estados Unidos?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Sí, nuestra fábrica cuenta con registro activo ante la FDA de EE. UU. y cumple rigurosamente con los requisitos de la normativa MoCRA. Todos los pigmentos y materias primas están aprobados para uso cosmético labial.</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">¿Pueden desarrollar fórmulas Veganas, Cruelty-Free y Clean Beauty?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Sí. Disponemos de fórmulas 100% veganas formuladas sin cera de abejas ni carmín, libres de parabenos, ftalatos y aceites minerales, enriquecidas con mantecas vegetales, ácido hialurónico y escualano.</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">¿Pueden igualar o clonar una fórmula de referencia del mercado?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Sí. Gracias a nuestros equipos de espectrometría y reología en laboratorio, podemos analizar y recrear con exactitud la viscosidad, el brillo, la transferencia y el acabado deseado a partir de una muestra física de referencia.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 48px;">
+        <h2 style="font-size: 24px; color: var(--plum); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 24px;">
+          Envases, Moldes y Personalización Gráfica
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">¿Qué opciones de personalización e impresión de packaging ofrecen?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Ofrecemos serigrafía monocroma o multicolor, estampado térmico en caliente (foil dorado, plateado, oro rosa, holográfico), impresión digital UV en alta resolución, acabados esmerilados/mate, revestimiento soft-touch y galvanizado metalizado.</p>
+          </div>
+          <div class="card" style="padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--line);">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">¿Desarrollan moldes de envase exclusivos para nuestra marca?</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: 15px;">Sí. Además de un catálogo de más de 200 componentes listos para producción inmediata, nuestro equipo técnico de ingeniería puede diseñar y fabricar moldes de inyección a medida con derechos exclusivos para su marca.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="text-align: center; padding: 40px 24px; background: var(--blush-soft); border-radius: 12px; margin-top: 40px;">
+        <h3 style="font-size: 22px; color: var(--plum); margin-bottom: 12px;">¿Tiene alguna consulta técnica o comercial específica?</h3>
+        <p style="margin-bottom: 20px; color: var(--ink-soft); font-size: 15px;">
+          Nuestros formuladores químicos y gestores de proyecto resolverán sus dudas en menos de 24 horas.
+        </p>
+        <a class="btn" href="/es/quote">Contactar con nuestro equipo técnico</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

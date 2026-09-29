@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { productsCatalog } from '../../data/products';
+
+const catSlug = 'lip-mask-manufacturer';
+const catProducts = productsCatalog.filter((p) => p.categorySlug === catSlug);
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      "@type": "Question",
+      "name": "¿Qué formatos y texturas de mascarilla labial fabrican?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fabricamos mascarillas de noche reparadoras en tarro con espátula aplicadora, bálsamos labiales nutritivos en tubo, parches de hidrogel y mascarillas con efecto relleno (plumping mask)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la cantidad mínima de pedido (MOQ) para mascarillas de labios?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El MOQ es de 500 unidades por referencia/aroma. Ideal para marcas que desean lanzar un producto de cuidado nocturno premium sin grandes inversiones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Podemos añadir ingredientes activos patentados o específicos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Integramos ingredientes cosmecéuticos como complejos de ceramidas, manteca de karité orgánica, extracto de bayas silvestres, escualano vegetal y ácido hialurónico multimolecular."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Fabricante de Mascarilla de Labios de Marca Blanca | MOQ 500 pcs — MLM Lip"
+  description="Fabricante de mascarillas para labios de noche (lip sleeping mask) y bálsamos reparadores de marca blanca. MOQ 500 piezas, muestras en 7 días, certificación ISO 22716."
+>
+  <link rel="alternate" hreflang="en" href="https://mlmlip.com/lip-mask-manufacturer/" slot="head" />
+  <link rel="alternate" hreflang="es" href="https://mlmlip.com/es/fabricante-mascarilla-labios/" slot="head" />
+  <link rel="alternate" hreflang="fr" href="https://mlmlip.com/fr/fabricant-masque-levres/" slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 50px; padding-bottom: 50px;">
+    <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Inicio', href: '/es/' }, { label: 'Productos', href: '/es/productos' }, { label: 'Mascarilla de Labios' }]} />
+      <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.15em;">Mascarilla de Labios · Especialista Marca Blanca OEM/ODM</p>
+      <h1 style="font-size: clamp(28px, 3.8vw, 44px); max-width: 860px; margin-bottom: 16px;">Fabricante de Mascarilla de Labios de Marca Blanca</h1>
+      <p class="lead" style="max-width: 720px; font-size: 17px; line-height: 1.5; margin-bottom: 24px;">Tratamientos labiales intensivos de noche y de día formulados para regenerar la barrera cutánea, reparar labios agrietados y aportar hidratación profunda de larga duración.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a class="btn" href="/es/quote">Solicitar Presupuesto</a>
+        <a class="btn ghost" href="/es/quote#email-inquiry">Pedir Kit de Muestras</a>
+      </div>
+      <p class="note" style="margin-top: 16px; font-size: 13px; color: var(--ink-soft);">
+        ✓ MOQ 500 piezas &nbsp;·&nbsp; ✓ Muestras en 7 días &nbsp;·&nbsp; ✓ Coste reembolsable &nbsp;·&nbsp; ✓ ISO 22716, FDA y CPNP
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 48px 0;">
+    <div class="wrap">
+      <div class="grid two" style="align-items: center; gap: 36px;">
+        <div class="case-media" style="border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-sm);">
+          <img src="/products/lipmask-01.jpg" alt="Fabricante de Mascarilla de Labios de Marca Blanca" width="800" height="600" style="width: 100%; height: auto; display: block;" loading="lazy" />
+        </div>
+        <div>
+          <p class="eyebrow" style="color: var(--burgundy);">Reparación y Regeneración</p>
+          <h2 style="font-size: 26px; margin-bottom: 14px;">Bálsamos y mascarillas nutritivas profundas</h2>
+          <ul style="padding-left: 20px; color: var(--ink-soft); line-height: 1.7; font-size: 14px;">
+            <li>Mascarillas de noche oclusivas ricas en antioxidantes que eliminan células muertas y retienen la humedad</li>
+            <li>Enriquecidas con ácido hialurónico, manteca de murumuru y ceramidas reparadoras</li>
+            <li>Deliciosos aromas naturales (frutos rojos, vainilla gourmand, coco, miel y menta fresca)</li>
+            <li>Presentación en tarros cosméticos con espátula de silicona incluida o tubos ergonómicos</li>
+            <li>Texturas fundentes ultra-ricas que se transforman al contacto con los labios</li>
+            <li>Fórmulas veganas libres de petrolatos y aceites minerales según los estándares de su marca</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {catProducts.length > 0 && (
+    <section class="tint" style="padding: 48px 0;">
+      <div class="wrap">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <p class="eyebrow" style="color: var(--gold);">Formulaciones Disponibles</p>
+            <h2 style="font-size: 24px; margin: 0; color: var(--plum);">Catálogo de Fórmulas: Mascarilla de Labios</h2>
+          </div>
+          <a href="/es/productos" style="color: var(--burgundy); font-weight: 600; font-size: 14px;">Ver las 10 formulaciones →</a>
+        </div>
+
+        <div class="grid three" style="gap: 20px;">
+          {catProducts.slice(0, 6).map((p) => (
+            <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 8px; padding: 16px; background: white;">
+              <div>
+                <div class="case-media" style="margin-bottom: 12px; border-radius: 6px; overflow: hidden;">
+                  <img src={p.heroImage} alt={p.name} width="600" height="450" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" loading="lazy" />
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <span style="font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase;">{p.tag}</span>
+                  <span style="font-size: 11px; color: var(--ink-soft); font-family: monospace;">MOQ {p.moq} pcs</span>
+                </div>
+                <h3 style="font-size: 16px; margin: 0 0 6px; line-height: 1.3;">
+                  <a href="/es/quote" style="color: var(--plum); text-decoration: none;">{p.name}</a>
+                </h3>
+                <p style="font-size: 13px; color: var(--ink-soft); line-height: 1.4; margin-bottom: 12px;">{p.headline}</p>
+              </div>
+              <div style="border-top: 1px solid var(--line); padding-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 12px; color: var(--ink-soft);">{p.shadeCount} tonos / aromas</span>
+                <a href="/es/quote" style="font-size: 13px; font-weight: 600; color: var(--burgundy); text-decoration: none;">Solicitar Presupuesto →</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section style="padding: 48px 0;">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold);">Ficha Técnica de Fabricación</p>
+      <h2 style="font-size: 26px; margin-bottom: 20px;">Especificaciones de Producción: Mascarilla de Labios</h2>
+      <div class="card gold-line" style="padding: 0; overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Cantidad Mínima (MOQ)</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">500 piezas por referencia / variedad</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Muestras de Laboratorio</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">7 días laborables, 100% reembolsable con el pedido al por mayor</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Opciones de Personalización</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">Complejos botánicos, sabores gourmand, envases en tarro o tubo con espátula ergonómica</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--line);">
+            <td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Certificaciones y Cumplimiento</td>
+            <td style="padding: 14px 20px; color: var(--ink-soft);">ISO 22716 (GMP), registro ante la FDA y notificación CPNP con expediente PIF europeo</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint" style="padding: 48px 0;">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold);">Preguntas Frecuentes</p>
+      <h2 style="font-size: 26px; margin-bottom: 24px;">Preguntas Frecuentes sobre Mascarilla de Labios</h2>
+      <div class="grid two" style="gap: 16px;">
+        <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+          <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Qué formatos y texturas de mascarilla labial fabrican?</h3>
+          <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Fabricamos mascarillas de noche reparadoras en tarro con espátula aplicadora, bálsamos labiales nutritivos en tubo, parches de hidrogel y mascarillas con efecto relleno (plumping mask).</p>
+        </div>
+        <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+          <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Cuál es la cantidad mínima de pedido (MOQ) para mascarillas de labios?</h3>
+          <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">El MOQ es de 500 unidades por referencia/aroma. Ideal para marcas que desean lanzar un producto de cuidado nocturno premium sin grandes inversiones.</p>
+        </div>
+        <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+          <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Podemos añadir ingredientes activos patentados o específicos?</h3>
+          <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Sí. Integramos ingredientes cosmecéuticos como complejos de ceramidas, manteca de karité orgánica, extracto de bayas silvestres, escualano vegetal y ácido hialurónico multimolecular.</p>
+        </div>
+      </div>
+      <p style="margin-top: 24px; text-align: center;">
+        <a href="/es/faq" style="color: var(--burgundy); font-weight: 600; font-size: 14px;">Consultar todas las preguntas frecuentes técnicas →</a>
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 50px 0;">
+    <div class="wrap">
+      <div class="card" style="text-align: center; padding: 40px 24px; background: linear-gradient(135deg, var(--plum-dark) 0%, var(--plum) 100%); color: white; border-radius: 12px;">
+        <h2 style="margin-bottom: 10px; color: white;">Amplíe su Línea con Cuidado Labial Reparador</h2>
+        <p class="lead" style="max-width: 580px; margin: 0 auto 20px; color: #f3dde3; font-size: 16px;">
+          Cree el tratamiento labial nocturno de culto que enamorará a sus clientes desde la primera aplicación.
+        </p>
+        <a class="btn" href="/es/quote" style="background: var(--gold); color: var(--plum); font-weight: 600;">Solicitar Presupuesto</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
