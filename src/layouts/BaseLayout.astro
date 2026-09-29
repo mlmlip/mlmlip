@@ -9,15 +9,104 @@ const currentLang = currentPath.startsWith('/fr') ? 'fr' : currentPath.startsWit
 const locale = currentLang === 'fr' ? 'fr_FR' : currentLang === 'es' ? 'es_ES' : 'en_US';
 const t = ui[currentLang];
 
-const canonical = new URL(currentPath.replace(/\/$/, ''), Astro.site ?? 'https://mlmlip.com');
-// 修复正则缺陷，精确匹配语言前缀
-const pathNoLang = currentPath.replace(/^\/(fr|es)(?=\/|$)/, '') || '/';
-const pathBase = pathNoLang.replace(/\/$/, '') || '/';
+const canonical = new URL(currentPath.replace(/\/$/, '') || '/', Astro.site ?? 'https://mlmlip.com');
 
-const getLangUrl = (lang: string) => {
-  if (lang === 'en') return new URL(pathBase, site.domain).href;
-  return new URL(`/${lang}${pathBase === '/' ? '' : pathBase}`, site.domain).href;
+// 标准化当前路径（去除尾部斜杠，但保留根路径 '/'）
+const cleanPath = (currentPath.replace(/\/$/, '') || '/');
+
+// 判断是否为单品详情页：以 /products/ 开头，且不是 /products 且不是 /products/page/
+const isProductDetail = cleanPath.startsWith('/products/') && !cleanPath.startsWith('/products/page');
+
+// 多语言双向路由映射表（具备三语对应页面的路由集合）
+const multiLangRoutes = [
+  { en: '/', fr: '/fr', es: '/es' },
+  { en: '/products', fr: '/fr/produits', es: '/es/productos' },
+  { en: '/about', fr: '/fr/a-propos', es: '/es/nosotros' },
+  { en: '/quote', fr: '/fr/quote', es: '/es/quote' },
+  { en: '/faq', fr: '/fr/faq', es: '/es/faq' },
+  { en: '/lip-gloss-manufacturer', fr: '/fr/fabricant-gloss-levres', es: '/es/fabricante-brillo-labios' },
+  { en: '/lip-mud-manufacturer', fr: '/fr/fabricant-lip-mud', es: '/es/fabricante-lip-mud' },
+  { en: '/lip-liner-manufacturer', fr: '/fr/fabricant-crayon-levres', es: '/es/fabricante-delineador-labios' },
+  { en: '/lipstick-manufacturer', fr: '/fr/fabricant-rouge-levres', es: '/es/fabricante-lapiz-labial' },
+  { en: '/lip-oil-manufacturer', fr: '/fr/fabricant-huile-levres', es: '/es/fabricante-aceite-labios' },
+  { en: '/lip-mask-manufacturer', fr: '/fr/fabricant-masque-levres', es: '/es/fabricante-mascarilla-labios' }
+];
+
+const matchedRoute = multiLangRoutes.find(
+  (r) => r.en === cleanPath || r.fr === cleanPath || r.es === cleanPath
+);
+
+// 计算 hreflang 列表：
+// 1. 若为单品详情页：站内目前只有英文单品页，绝对不能输出指向 404 的 fr/es，仅输出 en 和 x-default 指向当前自身
+// 2. 若在三语映射表中：输出对应的 en, fr, es, 以及 x-default (指向 en)
+// 3. 其余纯英文页面（如 blog 详情页、packaging 等目前无 fr/es 对应的页面）：只输出 en 和 x-default 指向自身，严防 404
+interface AlternateLink {
+  lang: string;
+  href: string;
+}
+
+let alternateLinks: AlternateLink[] = [];
+let switcherUrls = {
+  en: new URL(cleanPath, site.domain).href,
+  fr: new URL('/fr', site.domain).href,
+  es: new URL('/es', site.domain).href
 };
+
+if (isProductDetail) {
+  alternateLinks = [
+    { lang: 'en', href: canonical.href },
+    { lang: 'x-default', href: canonical.href }
+  ];
+  switcherUrls = {
+    en: canonical.href,
+    fr: new URL('/fr/produits', site.domain).href,
+    es: new URL('/es/productos', site.domain).href
+  };
+} else if (matchedRoute) {
+  const enHref = new URL(matchedRoute.en === '/' ? '' : matchedRoute.en, site.domain).href;
+  const frHref = new URL(matchedRoute.fr, site.domain).href;
+  const esHref = new URL(matchedRoute.es, site.domain).href;
+
+  alternateLinks = [
+    { lang: 'en', href: enHref },
+    { lang: 'fr', href: frHref },
+    { lang: 'es', href: esHref },
+    { lang: 'x-default', href: enHref }
+  ];
+  switcherUrls = {
+    en: enHref,
+    fr: frHref,
+    es: esHref
+  };
+} else {
+  // 纯英文独立页面
+  alternateLinks = [
+    { lang: 'en', href: canonical.href },
+    { lang: 'x-default', href: canonical.href }
+  ];
+  switcherUrls = {
+    en: canonical.href,
+    fr: new URL('/fr', site.domain).href,
+    es: new URL('/es', site.domain).href
+  };
+}
+
+const getLangUrl = (lang: 'en' | 'fr' | 'es') => switcherUrls[lang];
+
+// 动态导航栏链接（根据当前语种切换对应的本地化路径）
+const localizedNavLinks: Record<string, string> = {
+  products: currentLang === 'fr' ? '/fr/produits' : currentLang === 'es' ? '/es/productos' : '/products',
+  packaging: '/packaging',
+  customization: '/customization',
+  process: '/process',
+  cases: '/cases',
+  samples: '/samples',
+  blog: '/blog',
+  about: currentLang === 'fr' ? '/fr/a-propos' : currentLang === 'es' ? '/es/nosotros' : '/about'
+};
+
+const localizedQuoteLink = currentLang === 'fr' ? '/fr/quote' : currentLang === 'es' ? '/es/quote' : '/quote';
+const localizedBrandLink = currentLang === 'fr' ? '/fr' : currentLang === 'es' ? '/es' : '/';
 
 const schemaData = {
   "@context": "https://schema.org",
@@ -115,7 +204,7 @@ const breadcrumbSchema = {
     ...pathSegments.map((seg, i) => ({
       '@type': 'ListItem',
       position: i + 2,
-      name: seg.replace(/[-_]/g, ' ').replace(/\w/g, (c) => c.toUpperCase()),
+      name: seg.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
       item: 'https://mlmlip.com/' + pathSegments.slice(0, i + 1).join('/')
     }))
   ]
@@ -131,10 +220,10 @@ const breadcrumbSchema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.href} />
-    <link rel="alternate" hreflang="en" href={getLangUrl('en')} />
-    <link rel="alternate" hreflang="fr" href={getLangUrl('fr')} />
-    <link rel="alternate" hreflang="es" href={getLangUrl('es')} />
-    <link rel="alternate" hreflang="x-default" href={getLangUrl('en')} />
+    {alternateLinks.map((link) => (
+      <link rel="alternate" hreflang={link.lang} href={link.href} />
+    ))}
+    <slot name="head" />
     <link rel="alternate" type="text/markdown" href="/llms.txt" title="AI Fact Sheet (llms.txt)" />
     <link rel="alternate" type="text/markdown" href="/llms-full.txt" title="Full Factory Specification (llms-full.txt)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -172,18 +261,22 @@ const breadcrumbSchema = {
     <a href="#main" class="skip-link">Skip to content</a>
     <header class="site-header">
       <div class="wrap">
-        <a class="brand" href="/">MLM<span>Lip</span></a>
+        <a class="brand" href={localizedBrandLink}>MLM<span>Lip</span></a>
         <nav class="nav" id="primary-nav">
-          {navKeys.map((key) => (
-            <a href={navLinks[key]} class={Astro.url.pathname === navLinks[key] ? 'is-active' : ''}>{t.nav[key]}</a>
-          ))}
-          <a class="btn" href="/quote">{t.nav.quote}</a>
-          <div class="lang-switch" style="display:flex; gap:6px; margin-left:8px; font-size:12px; font-weight:600; color:var(--ink-soft);">
-            <a href={getLangUrl('en')} style={`color: ${currentLang === 'en' ? 'var(--burgundy)' : 'var(--ink-soft)'}; ${currentLang === 'en' ? 'border-bottom: 2px solid var(--burgundy);' : ''}`}>EN</a>
-            <span>/</span>
-            <a href={getLangUrl('fr')} style={`color: ${currentLang === 'fr' ? 'var(--burgundy)' : 'var(--ink-soft)'}; ${currentLang === 'fr' ? 'border-bottom: 2px solid var(--burgundy);' : ''}`}>FR</a>
-            <span>/</span>
-            <a href={getLangUrl('es')} style={`color: ${currentLang === 'es' ? 'var(--burgundy)' : 'var(--ink-soft)'}; ${currentLang === 'es' ? 'border-bottom: 2px solid var(--burgundy);' : ''}`}>ES</a>
+          {navKeys.map((key) => {
+            const targetLink = localizedNavLinks[key];
+            const isActive = cleanPath === targetLink.replace(/\/$/, '');
+            return (
+              <a href={targetLink} class={isActive ? 'is-active' : ''}>{t.nav[key]}</a>
+            );
+          })}
+          <a class="btn" href={localizedQuoteLink}>{t.nav.quote}</a>
+          <div class="lang-switch" style="display:flex; gap:6px; margin-left:8px; font-size:12px; font-weight:700; color:var(--ink-soft); align-items:center;">
+            <a href={getLangUrl('en')} style={`color: ${currentLang === 'en' ? 'var(--gold)' : 'var(--ink-soft)'}; font-weight: ${currentLang === 'en' ? '700' : '600'}; ${currentLang === 'en' ? 'border-bottom: 2px solid var(--gold);' : ''}`}>EN</a>
+            <span style="opacity: 0.5;">/</span>
+            <a href={getLangUrl('fr')} style={`color: ${currentLang === 'fr' ? 'var(--gold)' : 'var(--ink-soft)'}; font-weight: ${currentLang === 'fr' ? '700' : '600'}; ${currentLang === 'fr' ? 'border-bottom: 2px solid var(--gold);' : ''}`}>FR</a>
+            <span style="opacity: 0.5;">/</span>
+            <a href={getLangUrl('es')} style={`color: ${currentLang === 'es' ? 'var(--gold)' : 'var(--ink-soft)'}; font-weight: ${currentLang === 'es' ? '700' : '600'}; ${currentLang === 'es' ? 'border-bottom: 2px solid var(--gold);' : ''}`}>ES</a>
           </div>
         </nav>
         <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
@@ -192,15 +285,19 @@ const breadcrumbSchema = {
       </div>
       <div class="nav-drawer" id="nav-drawer" hidden>
         <div class="wrap">
-          {navKeys.map((key) => (
-            <a href={navLinks[key]} class={Astro.url.pathname === navLinks[key] ? 'is-active' : ''}>{t.nav[key]}</a>
-          ))}
-          <a class="btn" href="/quote" style="margin-top: 8px; display: inline-block;">{t.nav.quote}</a>
-          <div style="display:flex; gap:12px; margin-top:16px; padding-top:12px; border-top:1px solid var(--line); font-size:14px; font-weight:600;">
+          {navKeys.map((key) => {
+            const targetLink = localizedNavLinks[key];
+            const isActive = cleanPath === targetLink.replace(/\/$/, '');
+            return (
+              <a href={targetLink} class={isActive ? 'is-active' : ''}>{t.nav[key]}</a>
+            );
+          })}
+          <a class="btn" href={localizedQuoteLink} style="margin-top: 8px; display: inline-block;">{t.nav.quote}</a>
+          <div style="display:flex; gap:12px; margin-top:16px; padding-top:12px; border-top:1px solid var(--line); font-size:14px; font-weight:600; align-items:center;">
             <span>{t.nav.lang}</span>
-            <a href={getLangUrl('en')} style={`color: ${currentLang === 'en' ? 'var(--burgundy)' : 'var(--ink-soft)'};`}>English</a>
-            <a href={getLangUrl('fr')} style={`color: ${currentLang === 'fr' ? 'var(--burgundy)' : 'var(--ink-soft)'};`}>Français</a>
-            <a href={getLangUrl('es')} style={`color: ${currentLang === 'es' ? 'var(--burgundy)' : 'var(--ink-soft)'};`}>Español</a>
+            <a href={getLangUrl('en')} style={`color: ${currentLang === 'en' ? 'var(--gold)' : 'var(--ink-soft)'}; font-weight: ${currentLang === 'en' ? '700' : '600'}; ${currentLang === 'en' ? 'text-decoration: underline;' : ''}`}>English</a>
+            <a href={getLangUrl('fr')} style={`color: ${currentLang === 'fr' ? 'var(--gold)' : 'var(--ink-soft)'}; font-weight: ${currentLang === 'fr' ? '700' : '600'}; ${currentLang === 'fr' ? 'text-decoration: underline;' : ''}`}>Français</a>
+            <a href={getLangUrl('es')} style={`color: ${currentLang === 'es' ? 'var(--gold)' : 'var(--ink-soft)'}; font-weight: ${currentLang === 'es' ? '700' : '600'}; ${currentLang === 'es' ? 'text-decoration: underline;' : ''}`}>Español</a>
           </div>
         </div>
       </div>
