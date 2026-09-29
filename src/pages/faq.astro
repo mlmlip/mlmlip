@@ -133,7 +133,6 @@ const faqSchema = {
   title="FAQ | Private Label Lip Cosmetics Manufacturing — MLM Lip"
   description="B2B lip cosmetics FAQ: 500 pcs MOQ per shade, 7-day lab sampling, 3-4 week lead time, ISO 22716 / FDA MoCRA / EU CPNP compliance, and AQL 1.5 QC standard."
 >
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <section>
     <div class="wrap">
@@ -177,4 +176,5 @@ const faqSchema = {
       </div>
     </div>
   </section>
+<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":faqCategories.flatMap(c=>c.items).map(f=>({ "@type":"Question","name":f.q,"acceptedAnswer":{"@type":"Answer","text":f.a}}))})} />
 </BaseLayout>

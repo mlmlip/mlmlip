@@ -50,7 +50,6 @@ const serviceSchema = {
 ---
 
 <BaseLayout title={category.metaTitle} description={category.metaDescription}>
-  <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 
   <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 64px; padding-bottom: 80px;">
@@ -191,4 +190,7 @@ const serviceSchema = {
       </div>
     </div>
   </section>
+{category.faqs && category.faqs.length > 0 && (
+  <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":category.faqs.map(f=>({ "@type":"Question","name":f.q,"acceptedAnswer":{"@type":"Answer","text":f.a}}))})} />
+)}
 </BaseLayout>
