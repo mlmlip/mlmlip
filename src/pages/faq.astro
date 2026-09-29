@@ -3,65 +3,125 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { site } from '../data/site';
 
-const faqs = [
+interface FAQItem {
+  q: string;
+  a: string;
+}
+
+interface FAQCategory {
+  category: string;
+  items: FAQItem[];
+}
+
+const faqCategories: FAQCategory[] = [
   {
-    q: 'What is your minimum order quantity (MOQ)?',
-    a: '500 pcs per SKU — the same minimum across all six lip categories: lip gloss, lip mud and velvet tint, lip liner, lipstick, lip oil and lip mask. Different SKUs can be combined in a single project.'
+    "category": "Orders & Production",
+    "items": [
+      {
+        "q": "What is the minimum order quantity (MOQ) for lip cosmetics?",
+        "a": "Our standard minimum order quantity is exactly 500 pcs per shade across all lip cosmetic categories, including lip gloss, lip mud, lip oil, lipstick, lip liner, and lip mask. This accessible threshold allows emerging beauty brands to test commercial collections without holding heavy capital or facing inventory write-offs."
+      },
+      {
+        "q": "How long does sample development take?",
+        "a": "Custom lab sample development takes 7 business days from target brief sign-off. We ship physical bench samples formulated to your target viscosity, texture feel, and shade specifications via priority express air courier, delivering evaluation units directly to your product development team within 3 to 5 transit days."
+      },
+      {
+        "q": "What is the typical production lead time for bulk orders?",
+        "a": "Typical bulk production lead time runs 3 to 4 weeks (15 to 25 business days) after final shade approval, component proofing, and packaging artwork sign-off. High-volume runs exceeding 50,000 units are scheduled across automated filling lines to maintain predictable dispatch dates without compromising cleanroom quality control."
+      },
+      {
+        "q": "Are sample fees refundable?",
+        "a": "Yes. Lab sampling fees are 100% credited against your initial bulk purchase order invoice. When your brand transitions from prototype evaluation to commercial batch manufacturing, the entire preliminary formulation cost is fully deducted, making custom sample development effectively free of charge for launch partners."
+      },
+      {
+        "q": "Can I order mixed shades in one production run?",
+        "a": "Yes, you can order multiple mixed shades in a single manufacturing run provided each distinct hue meets the baseline 500 pcs per shade threshold. For example, a 2,000-piece total production run can be split across four custom seasonal shades using standardized componentry and secondary carton specifications."
+      }
+    ]
   },
   {
-    q: 'How fast can I get samples?',
-    a: 'Custom samples are developed against your brief and ready in 7 days. When you place the bulk order, 100% of the sampling fee is deducted from your invoice — sampling effectively costs you nothing.'
+    "category": "Formulation & Technology",
+    "items": [
+      {
+        "q": "Can I provide my own formula for contract manufacturing?",
+        "a": "Yes. We offer custom transfer manufacturing where your proprietary formula is adapted to our high-shear vacuum homogenization vessels under strict non-disclosure terms. Alternatively, our in-house cosmetics chemists can reverse-engineer benchmarks or engineer original bespoke recipes utilizing our extensive library of certified cosmetic ingredients."
+      },
+      {
+        "q": "What lip cosmetics formats do you manufacture?",
+        "a": "We engineer six core lip cosmetic formats: high-shine lip gloss, soft-blur velvet lip mud, long-wear lip tint, precision glide lip liner pencils, nourishing botanical lip balm, and intensive overnight lip mask treatments. All formulations are filled across semi-automated or automated lines tailored to specific bulk viscosities."
+      },
+      {
+        "q": "Do you offer vegan and cruelty-free formulations?",
+        "a": "Yes. 100% of our lip formulations can be developed to comply with strict vegan and cruelty-free standards. We omit carmine, beeswax, lanolin, and animal derivatives, replacing them with plant waxes such as candelilla, synthetic wax blends, and vegetable squalane to earn Leaping Bunny and PETA retail certification."
+      },
+      {
+        "q": "What is your color matching precision standard?",
+        "a": "We maintain an industrial color matching precision standard of Delta E \u2264 0.5 measured with dual-beam spectrophotometers under D65 daylight, cool white fluorescent, and incandescent light cabinets. This rigorous optical inspection ensures exact shade fidelity between approved lab batches, target Pantone codes, and full-scale factory production runs."
+      },
+      {
+        "q": "Can you develop custom active ingredients like peptides or hyaluronic acid?",
+        "a": "Yes. We regularly enrich lip formulas with active skincare ingredients, including palmitoyl tripeptides, sodium hyaluronate microspheres, ceramide complexes, botanical squalane, and oil-soluble vitamin C. These active ingredients provide measurable clinical benefits like deep barrier repair, moisture retention, and plumping effects supported by ingredient supplier efficacy data."
+      }
+    ]
   },
   {
-    q: 'Can I customize the formula, not just the logo?',
-    a: 'Yes. We tune texture, finish, pigment load, wear, fragrance and the ingredient story to your brief. Packaging, formulation and branding are handled in-house, so the sample you approve is the product you receive.'
+    "category": "Compliance & Certifications",
+    "items": [
+      {
+        "q": "What certifications does your facility hold?",
+        "a": "Beautychain Limited operates cleanrooms certified under ISO 22716:2007 and GMPC guidelines for cosmetic manufacturing. Our manufacturing facility maintains active US FDA establishment registration, follows strict Good Manufacturing Practice protocols, and passes regular on-site third-party quality assurance audits by multinational consumer goods assessment firms."
+      },
+      {
+        "q": "Do you provide FDA MoCRA compliance documentation?",
+        "a": "Yes. We supply comprehensive documentation packages aligned with US FDA MoCRA regulations. This includes cosmetic product listing sheets, mandatory facility establishment registration records, fragrance allergen breakdowns, batch safety attestations, and raw material ingredient disclosures required for commercial retail and marketplace distribution in the United States."
+      },
+      {
+        "q": "Can you handle EU CPNP notifications?",
+        "a": "Yes. We prepare turn-key regulatory dossiers required for European Cosmetic Product Notification Portal (CPNP) filing. Our team provides complete Product Information Files (PIF), full INCI quantitative declarations, safety data sheets (MSDS), toxicological assessments, and CPSR support to ensure frictionless customs entry throughout the European Union and UK."
+      },
+      {
+        "q": "What heavy metal testing standards do you follow?",
+        "a": "Every production batch undergoes strict ICP-MS testing against international safety thresholds: Lead < 10 ppm, Arsenic < 3 ppm, Mercury < 1 ppm, and Cadmium < 3 ppm. Detailed Certificates of Analysis (COA) verifying these heavy metal parameters and microbial purity (< 100 CFU/g) accompany each outbound shipment."
+      },
+      {
+        "q": "Do you perform stability testing?",
+        "a": "Yes. Our standard laboratory protocol includes 6 freeze-thaw thermal stress cycles over 14 days ranging from -15\u00b0C to +45\u00b0C, coupled with 3-month accelerated stability chambers at 40\u00b0C with 75% relative humidity. This validates emulsion stability, phase separation resistance, component compatibility, and shelf-life integrity before market release."
+      }
+    ]
   },
   {
-    q: 'Do you offer custom mold tooling for packaging?',
-    a: 'Yes. Alongside our in-house packaging library of tubes, caps, applicators and cases, we can open bespoke custom molds for an exclusive silhouette. Mold cost and lead time are quoted against your design brief.'
-  },
-  {
-    q: 'Which certifications and documents do you provide?',
-    a: 'Production runs under GMPC and ISO 22716 certified processes. Every batch is prepared with stability data, MSDS, INCI documentation and full batch records, with turn-key EU CPNP notification support and FDA-ready documentation for the US market.'
-  },
-  {
-    q: 'What does production lead time look like?',
-    a: 'Samples: 7 days. Bulk production typically runs 15–25 business days after artwork and sample approval, depending on component availability, plus shipping time to your door or warehouse.'
-  },
-  {
-    q: 'Can you supply the packaging only?',
-    a: 'We focus on finished, branded lip products — formulation and packaging together. If you need components such as empty tubes for your own filling, talk to us and we will advise on what is possible.'
-  },
-  {
-    q: 'Do you sign an NDA and protect my design?',
-    a: 'Yes. We work on private label terms and sign NDAs on request. Your formulas, artwork and molds are not shared, resold or shown to other clients.'
-  },
-  {
-    q: 'Which markets do you ship to?',
-    a: 'We primarily serve North America (US, Canada) and Europe (UK, France, Germany, Spain, Italy), shipping globally by air or sea with the export documentation your destination requires.'
-  },
-  {
-    q: 'What are your payment terms?',
-    a: 'Standard terms are a deposit to start production with the balance before shipment. Exact terms are confirmed in your quotation and proforma invoice.'
-  },
-  {
-    q: 'Can I start with one product and expand later?',
-    a: 'That is the usual route. Most brands launch one hero product at 500 pcs, prove it in market, then expand into more shades or categories — all at the same minimum.'
-  },
-  {
-    q: 'How do I get a quotation?',
-    a: 'Send your product type, target quantity, market and any reference photos or packaging ideas. We reply with the practical options — format, components, sampling plan and pricing for your quantity.'
-  },
-  {
-    q: 'I can\'t find exactly what I need. Can you still help?',
-    a: 'Yes. Beyond our standard catalog, we handle fully custom projects — bespoke formulations, exclusive packaging tooling, and unique concepts that don\'t fit any existing category. If you have a vision that goes beyond what is listed, that is exactly the kind of project we take on. Use the quote configurator and describe what you are after, or message us directly — we solve challenges, not just fill orders.'
+    "category": "Logistics & Customer Support",
+    "items": [
+      {
+        "q": "What shipping methods do you offer?",
+        "a": "We provide end-to-end global shipping solutions including express air courier (3 to 5 business days), air freight forwarding (5 to 7 business days), and ocean container freight (25 to 35 transit days). We support DDP, DAP, and FOB terms, managing complete customs export declarations for your port of destination."
+      },
+      {
+        "q": "Do you provide private label packaging design services?",
+        "a": "Yes. Our industrial packaging engineers deliver complete structural and graphic design services. We provide precision dieline files, 3D photorealistic renderings, label layout optimization, and hot-stamping, silk-screen, or UV coating specifications, guiding your visual identity from initial creative concept to high-speed commercial printing readiness."
+      },
+      {
+        "q": "What payment terms do you accept?",
+        "a": "Standard payment terms are T/T 30% deposit upon formal proforma invoice confirmation to initiate component sourcing and batch scheduling, with the remaining 70% balance payable after pre-shipment quality inspection approval. For enterprise purchase orders exceeding $50,000 USD, we accept irrevocable documentary letters of credit (L/C)."
+      },
+      {
+        "q": "Can I visit your factory?",
+        "a": "Yes. We warmly welcome clients to visit our certified Shenzhen production facility for technical audits and batch consultations. Alternatively, if travel schedules are constrained, we coordinate live HD video factory walkthroughs, allowing your product team to inspect cleanrooms, automated filling machinery, and QC testing laboratories in real time."
+      },
+      {
+        "q": "What is your defect rate guarantee?",
+        "a": "We maintain an industrial defect rate guarantee below 0.3% backed by an unconditional 100% replacement warranty. Every bulk unit undergoes in-line optical checks and final pre-shipment AQL 1.5 standard audits; any verified functional or cosmetic defect is remanufactured or credited without commercial dispute."
+      }
+    ]
   }
 ];
+
+const allFaqs: FAQItem[] = faqCategories.flatMap((c) => c.items);
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqs.map((f) => ({
+  mainEntity: allFaqs.map((f) => ({
     '@type': 'Question',
     name: f.q,
     acceptedAnswer: { '@type': 'Answer', text: f.a }
@@ -71,38 +131,49 @@ const faqSchema = {
 
 <BaseLayout
   title="FAQ | Private Label Lip Cosmetics Manufacturing — MLM Lip"
-  description="B2B lip cosmetics FAQ: 500 pcs MOQ, 7-day lab samples (100% credited), 15-25 day lead times, ISO 22716 / FDA / CPNP compliance & custom tooling options."
+  description="B2B lip cosmetics FAQ: 500 pcs MOQ per shade, 7-day lab sampling, 3-4 week lead time, ISO 22716 / FDA MoCRA / EU CPNP compliance, and AQL 1.5 QC standard."
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <section>
     <div class="wrap">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'FAQ' }]} />
-      <p class="eyebrow">Help center</p>
-      <h1>Frequently asked questions</h1>
-      <p class="lead" style="max-width: 640px;">
-        Everything brands ask us before starting a private label lip line. Still unsure? Send your question with your
-        product brief — we answer within one working day.
+      <p class="eyebrow">Help Center & Knowledge Base</p>
+      <h1>Frequently Asked Questions</h1>
+      <p class="lead" style="max-width: 680px;">
+        Everything beauty brand founders and sourcing teams ask us before launching private label lip collections.
+        Got a specific formulation or custom packaging brief? Reach out directly for expert support within 12 hours.
       </p>
     </div>
   </section>
 
   <section class="tint" style="padding-top: 0; background: transparent;">
     <div class="wrap">
-      <div class="grid two">
-        {faqs.map((f) => (
-          <div class="card">
-            <h3 style="font-size: 18px;">{f.q}</h3>
-            <p style="margin: 0;">{f.a}</p>
+      {faqCategories.map((cat) => (
+        <div style="margin-bottom: 48px;">
+          <h2 style="font-size: 24px; color: var(--plum); margin-bottom: 20px; border-bottom: 2px solid var(--blush-soft); padding-bottom: 10px;">
+            {cat.category}
+          </h2>
+          <div class="grid two" style="gap: 20px;">
+            {cat.items.map((f) => (
+              <div class="card" style="padding: 24px; border-radius: 8px;">
+                <h3 style="font-size: 17px; line-height: 1.4; margin-bottom: 10px; color: var(--plum);">{f.q}</h3>
+                <p style="margin: 0; line-height: 1.6; font-size: 14px; color: var(--ink-soft);">{f.a}</p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div class="card gold-line" style="margin-top: 36px; text-align: center; padding: 40px 24px;">
-        <h2 style="margin-bottom: 10px;">Question not answered here?</h2>
-        <p style="margin: 0 auto 20px; max-width: 520px;">
-          Send it over with your product idea. We will come back with clear options and pricing for {site.moq} per SKU.
+        </div>
+      ))}
+
+      <div class="card gold-line" style="margin-top: 48px; text-align: center; padding: 48px 24px;">
+        <h2 style="margin-bottom: 12px; color: var(--plum);">Have a Unique Formulation Challenge?</h2>
+        <p style="margin: 0 auto 24px; max-width: 560px; color: var(--ink-soft); font-size: 15px; line-height: 1.6;">
+          Send us your target shade, active ingredients, or packaging benchmark. Our senior cosmetic engineers respond with precise technical feasibility and tiered volume pricing from {site.moq} per shade.
         </p>
-        <a class="btn" href="/contact">Ask our team</a>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a class="btn" href="/contact">Contact Formulation Team</a>
+          <a class="btn ghost" href="/samples">Request Physical Samples</a>
+        </div>
       </div>
     </div>
   </section>

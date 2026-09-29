@@ -1,39 +1,41 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Breadcrumbs from "../components/Breadcrumbs.astro";
-import { site } from "../data/site";
-import { productsCatalog } from "../data/products";
-import { categories } from "../data/categories";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import { site } from "../../../data/site";
+import { productsCatalog } from "../../../data/products";
+import { categories } from "../../../data/categories";
 
 const PAGE_SIZE = 20;
-const allProducts = [...productsCatalog].reverse(); // newest first
+const allProducts = [...productsCatalog].reverse();
 const totalPages = Math.ceil(allProducts.length / PAGE_SIZE);
-const currentPage = 1;
-const pageProducts = allProducts.slice(0, PAGE_SIZE);
 
-const compare = [
-  { format: "Lip Gloss", finish: "High-shine, sheer, jelly, shimmer", pack: "Acrylic tube + doe-foot", best: "DTC, TikTok, viral launches", href: "/lip-gloss-manufacturer" },
-  { format: "Lip Mud", finish: "Soft-focus matte, velvet", pack: "Tube, jar, cushion compact", best: "K-beauty, matte lovers", href: "/lip-mud-manufacturer" },
-  { format: "Lip Liner", finish: "Matte, waterproof, precise", pack: "Wood barrel, twist-up", best: "Contour, shade pairing", href: "/lip-liner-manufacturer" },
-  { format: "Lipstick", finish: "Matte, satin, cream, shine", pack: "Zamac, aluminum, custom case", best: "Prestige, retail counter", href: "/lipstick-manufacturer" },
-  { format: "Lip Oil", finish: "Glass-shine, treatment", pack: "Tube, ceramic-tip, roller", best: "Skinified, treatment-led", href: "/lip-oil-manufacturer" },
-  { format: "Lip Mask", finish: "Balm, overnight repair", pack: "Jar, squeeze tube", best: "Night care, barrier repair", href: "/lip-mask-manufacturer" }
-];
+export function getStaticPaths() {
+  // import at module scope is already done above
+  const total = Math.ceil(productsCatalog.length / 20);
+  return Array.from({ length: total }, (_, i) => ({
+    params: { page: String(i + 1) },
+  }));
+}
+
+const { page } = Astro.params;
+const currentPage = parseInt(page!, 10);
+const start = (currentPage - 1) * PAGE_SIZE;
+const pageProducts = allProducts.slice(start, start + PAGE_SIZE);
 ---
 
 <BaseLayout
-  title="OEM Lip Products Catalogue | 60+ Formulations across 6 Categories \u2014 MLM Lip"
-  description="Explore 60+ OEM/ODM private label lip cosmetic formulations: Lip Gloss, Lip Mud, Lip Liner, Lipstick, Lip Oil & Lip Mask. 500 pcs MOQ, 7-day lab sampling."
+  title={`OEM Lip Products Catalogue \u2014 Page ${currentPage} of ${totalPages} | MLM Lip`}
+  description={`Browse page ${currentPage} of our 60+ private label lip cosmetic formulations. 500 pcs MOQ, 7-day lab sampling, ISO 22716 compliant.`}
 >
   <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 48px; padding-bottom: 56px;">
     <div class="wrap">
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Products" }]} />
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Products", href: "/products" }, { label: `Page ${currentPage}` }]} />
       <p class="eyebrow" style="color: var(--gold);">Product Catalogue</p>
       <h1 style="font-size: clamp(32px, 4vw, 50px); max-width: 840px; margin-bottom: 16px;">
         Custom Lip Formulations & Finished Products
       </h1>
       <p class="lead" style="max-width: 680px; font-size: 18px; margin-bottom: 24px;">
-        Showing the latest {PAGE_SIZE} of {allProducts.length} private label formulations.
+        Showing products {start + 1}\u2013{Math.min(start + PAGE_SIZE, allProducts.length)} of {allProducts.length}.
         Every SKU supports full shade-matching, custom scent/flavoring, and bespoke component tooling from {site.moq} per SKU.
       </p>
 
@@ -41,7 +43,7 @@ const compare = [
         {categories.map((c) => (
           <a
             href={`/${c.slug}`}
-            style="display: inline-block; padding: 8px 16px; background: white; border: 1px solid var(--line); border-radius: 20px; font-size: 13px; font-weight: 600; color: var(--plum); text-decoration: none; transition: all 0.2s;"
+            style="display: inline-block; padding: 8px 16px; background: white; border: 1px solid var(--line); border-radius: 20px; font-size: 13px; font-weight: 600; color: var(--plum); text-decoration: none;"
           >
             {c.name}
           </a>
@@ -50,7 +52,6 @@ const compare = [
     </div>
   </section>
 
-  <!-- Product Grid: Latest 20 -->
   <section style="padding: 48px 0;">
     <div class="wrap">
       <div class="grid three" style="gap: 24px;">
@@ -96,8 +97,15 @@ const compare = [
         ))}
       </div>
 
-      <!-- Pagination -->
       <nav style="display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line);">
+        {currentPage > 1 && (
+          <a
+            href={currentPage === 2 ? "/products" : `/products/page/${currentPage - 1}`}
+            style="padding: 10px 18px; background: var(--blush); border: 1px solid var(--line); border-radius: 6px; font-size: 14px; font-weight: 600; color: var(--plum); text-decoration: none;"
+          >
+            \u2190 Previous
+          </a>
+        )}
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
           <a
             href={n === 1 ? "/products" : `/products/page/${n}`}
@@ -110,53 +118,15 @@ const compare = [
             {n}
           </a>
         ))}
-        {totalPages > 1 && (
+        {currentPage < totalPages && (
           <a
-            href="/products/page/2"
+            href={`/products/page/${currentPage + 1}`}
             style="padding: 10px 18px; background: var(--blush); border: 1px solid var(--line); border-radius: 6px; font-size: 14px; font-weight: 600; color: var(--plum); text-decoration: none;"
           >
             Next \u2192
           </a>
         )}
       </nav>
-    </div>
-  </section>
-
-  <!-- Side by side comparison table -->
-  <section>
-    <div class="wrap">
-      <p class="eyebrow">Side by side</p>
-      <h2>Compare the six lip formats</h2>
-      <p class="lead" style="max-width:600px;">
-        Same MOQ, same 7-day sampling, same compliance \u2014 the difference is texture, packaging and who it wins.
-      </p>
-      <div class="card gold-line table-responsive" style="margin-top:28px; padding:0;">
-        <table style="width:100%; border-collapse:collapse; font-size:14px; min-width:680px;">
-          <thead>
-            <tr style="background:var(--blush);">
-              <th style="padding:14px 18px; text-align:left; color:var(--plum); font-family:'Playfair Display',serif; font-weight:600;">Format</th>
-              <th style="padding:14px 18px; text-align:left; color:var(--ink-soft);">Finish</th>
-              <th style="padding:14px 18px; text-align:left; color:var(--ink-soft);">Packaging</th>
-              <th style="padding:14px 18px; text-align:left; color:var(--ink-soft);">Best for</th>
-              <th style="padding:14px 18px; text-align:left; color:var(--plum); font-weight:600;">MOQ</th>
-            </tr>
-          </thead>
-          <tbody>
-            {compare.map((c) => (
-              <tr style="border-bottom:1px solid var(--line);">
-                <td style="padding:14px 18px;"><a href={c.href} style="color:var(--burgundy); font-weight:600;">{c.format}</a></td>
-                <td style="padding:14px 18px; color:var(--ink-soft);">{c.finish}</td>
-                <td style="padding:14px 18px; color:var(--ink-soft);">{c.pack}</td>
-                <td style="padding:14px 18px; color:var(--ink-soft);">{c.best}</td>
-                <td style="padding:14px 18px; color:var(--plum); font-weight:600;">500 pcs</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p class="note" style="margin-top:14px;">
-        All six share the same {site.moq} minimum, 7-day sampling, and GMPC + ISO + CPNP compliance \u2014 the format you pick is about your brand story, not a manufacturing constraint.
-      </p>
     </div>
   </section>
 

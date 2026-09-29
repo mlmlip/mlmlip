@@ -2,12 +2,58 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { site } from '../data/site';
+
+const aboutJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Beautychain Limited — MLM Lip Manufacturing",
+  "description": "ISO 22716:2007 & GMPC certified contract manufacturer specializing exclusively in high-performance private label lip cosmetics.",
+  "url": "https://mlmlip.com/about",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Beautychain Limited",
+    "alternateName": "MLM Lip",
+    "url": "https://mlmlip.com",
+    "logo": "https://mlmlip.com/logo.png",
+    "foundingDate": "2014",
+    "description": "ISO 22716 and FDA registered manufacturer dedicated strictly to custom lip formulations, contract filling, and packaging solutions.",
+    "knowsAbout": [
+      "Lip Gloss Formulation",
+      "Lip Mud & Lip Matte Manufacturing",
+      "Peptide Lip Oil Formulation",
+      "Barrier Lip Mask Development",
+      "Lip Liner Contract Manufacturing",
+      "ISO 22716:2007 GMP Compliance",
+      "EU CPNP Regulatory Filings",
+      "FDA Cosmetics Facility Registration"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "ISO 22716:2007 Certification",
+        "credentialCategory": "Cosmetics Good Manufacturing Practices (GMP)"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "US FDA Cosmetics Facility Registration",
+        "credentialCategory": "Voluntary / Modernization of Cosmetics Regulation Act (MoCRA)"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Shenzhen",
+      "addressCountry": "CN"
+    }
+  }
+};
 ---
 
 <BaseLayout
   title="About | Custom Lip Cosmetics Manufacturer — MLM Lip"
-  description="Private label lip manufacturer Beautychain Limited: ISO 22716 & GMPC certified, EU CPNP ready. 500 pcs MOQ, 7-day lab sampling, 15-day bulk delivery."
+  description="Private label lip manufacturer Beautychain Limited: ISO 22716 & GMPC certified, FDA registered, EU CPNP ready. 500 pcs MOQ, 10+ years experience, 500+ formulas."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(aboutJsonLd)} />
+
   <section>
     <div class="wrap">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
@@ -18,6 +64,235 @@ import { site } from '../data/site';
         We work with private label brand owners in North America and Europe — online sellers,
         offline retailers and founders alike — who want their own product, made their way.
       </p>
+      <div style="margin-top:20px; display:flex; gap:14px; flex-wrap:wrap;">
+        <a class="btn" href="/quote/">Get a Custom Quote &rarr;</a>
+        <a class="btn btn-secondary" href="/contact/" style="background:transparent; border:1px solid var(--burgundy); color:var(--burgundy);">Contact Laboratory &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Digital Trust Signals & Empirical Milestones -->
+  <section style="padding:48px 0; background:var(--blush-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <p class="eyebrow">Demonstrated Operational Scale</p>
+      <h2>Enterprise Trust Signals & Institutional Milestones</h2>
+      <p class="lead" style="max-width:680px; margin-bottom:32px;">
+        High-growth cosmetic brands rely on verifiable data, audited facilities, and consistent batch engineering. Here is our manufacturing footprint by the numbers:
+      </p>
+      <div class="grid four" style="gap:20px;">
+        <div class="card" style="background:#fff; border-radius:10px; padding:24px 20px; border:1px solid var(--line); text-align:center;">
+          <div style="font-size:32px; font-weight:800; color:var(--burgundy); line-height:1.1; margin-bottom:8px;">10+</div>
+          <p style="margin:0; font-size:14px; font-weight:600; color:var(--ink);">Years Lip Focus</p>
+          <p style="margin:6px 0 0; font-size:12px; color:var(--ink-soft); line-height:1.4;">Exclusively dedicated to lip formulations and sterile filling.</p>
+        </div>
+        <div class="card" style="background:#fff; border-radius:10px; padding:24px 20px; border:1px solid var(--line); text-align:center;">
+          <div style="font-size:32px; font-weight:800; color:var(--burgundy); line-height:1.1; margin-bottom:8px;">500+</div>
+          <p style="margin:0; font-size:14px; font-weight:600; color:var(--ink);">Custom Formulations</p>
+          <p style="margin:6px 0 0; font-size:12px; color:var(--ink-soft); line-height:1.4;">Developed, stability-tested, and commercially launched.</p>
+        </div>
+        <div class="card" style="background:#fff; border-radius:10px; padding:24px 20px; border:1px solid var(--line); text-align:center;">
+          <div style="font-size:32px; font-weight:800; color:var(--burgundy); line-height:1.1; margin-bottom:8px;">60+</div>
+          <p style="margin:0; font-size:14px; font-weight:600; color:var(--ink);">Active Product SKUs</p>
+          <p style="margin:6px 0 0; font-size:12px; color:var(--ink-soft); line-height:1.4;">Continuous production across standard and bespoke formats.</p>
+        </div>
+        <div class="card" style="background:#fff; border-radius:10px; padding:24px 20px; border:1px solid var(--line); text-align:center;">
+          <div style="font-size:32px; font-weight:800; color:var(--burgundy); line-height:1.1; margin-bottom:8px;">15+</div>
+          <p style="margin:0; font-size:14px; font-weight:600; color:var(--ink);">Countries Served</p>
+          <p style="margin:6px 0 0; font-size:12px; color:var(--ink-soft); line-height:1.4;">Direct export to North America, Europe, SEA, and the Middle East.</p>
+        </div>
+      </div>
+      <div class="grid two" style="margin-top:20px; gap:20px;">
+        <div class="card" style="background:#fff; border-radius:10px; padding:20px 24px; border:1px solid var(--line); display:flex; align-items:center; gap:16px;">
+          <div style="font-size:28px;">🏅</div>
+          <div>
+            <h3 style="margin:0 0 4px; font-size:16px; color:var(--plum-dark);">ISO 22716:2007 Certified Facility</h3>
+            <p style="margin:0; font-size:13px; color:var(--ink-soft);">Audited and verified Cosmetics Good Manufacturing Practices (GMP) across all cleanrooms and filling lines.</p>
+          </div>
+        </div>
+        <div class="card" style="background:#fff; border-radius:10px; padding:20px 24px; border:1px solid var(--line); display:flex; align-items:center; gap:16px;">
+          <div style="font-size:28px;">🏛️</div>
+          <div>
+            <h3 style="margin:0 0 4px; font-size:16px; color:var(--plum-dark);">FDA Registered Manufacturer</h3>
+            <p style="margin:0; font-size:13px; color:var(--ink-soft);">Active facility registration and ingredient compliance aligned with U.S. MoCRA regulations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company History Timeline -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Our Journey</p>
+      <h2>Company History & Key Milestones</h2>
+      <p class="lead" style="max-width:680px; margin-bottom:32px;">
+        From a specialized lip formulation lab to an integrated international contract manufacturer, our growth has been driven by technical rigor and client success:
+      </p>
+      <div style="position:relative; border-left:2px solid var(--rose-dark, #b76e79); margin-left:14px; padding-left:28px; display:flex; flex-direction:column; gap:32px;">
+        <div style="position:relative;">
+          <div style="position:absolute; left:-36px; top:4px; width:14px; height:14px; border-radius:50%; background:var(--burgundy); border:3px solid #fff; box-shadow:0 0 0 2px var(--rose-dark, #b76e79);"></div>
+          <span style="font-size:12px; font-weight:700; color:var(--rose-dark, #b76e79); letter-spacing:0.05em; text-transform:uppercase;">2014 — Inception</span>
+          <h3 style="margin:4px 0 8px; font-size:18px; color:var(--plum-dark);">Specialist Lip Chemistry Laboratory Founded</h3>
+          <p style="margin:0; font-size:14px; color:var(--ink-soft); line-height:1.6;">
+            Established in Shenzhen with a single mission: perfecting cosmetic emulsions and high-viscosity delivery systems for lip applications. Initiated R&D into long-wearing liquid lip formulas and barrier balms.
+          </p>
+        </div>
+        <div style="position:relative;">
+          <div style="position:absolute; left:-36px; top:4px; width:14px; height:14px; border-radius:50%; background:var(--burgundy); border:3px solid #fff; box-shadow:0 0 0 2px var(--rose-dark, #b76e79);"></div>
+          <span style="font-size:12px; font-weight:700; color:var(--rose-dark, #b76e79); letter-spacing:0.05em; text-transform:uppercase;">2017 — Certification & Scaling</span>
+          <h3 style="margin:4px 0 8px; font-size:18px; color:var(--plum-dark);">ISO 22716 & GMPC Cleanroom Expansion</h3>
+          <p style="margin:0; font-size:14px; color:var(--ink-soft); line-height:1.6;">
+            Commissioned our Class 100,000 cleanroom manufacturing workshop, achieving official ISO 22716:2007 Cosmetics GMP accreditation and FDA facility registration to support cross-border cosmetic brands.
+          </p>
+        </div>
+        <div style="position:relative;">
+          <div style="position:absolute; left:-36px; top:4px; width:14px; height:14px; border-radius:50%; background:var(--burgundy); border:3px solid #fff; box-shadow:0 0 0 2px var(--rose-dark, #b76e79);"></div>
+          <span style="font-size:12px; font-weight:700; color:var(--rose-dark, #b76e79); letter-spacing:0.05em; text-transform:uppercase;">2020 — Global Regulatory Vault</span>
+          <h3 style="margin:4px 0 8px; font-size:18px; color:var(--plum-dark);">Full EU CPNP & CPSR Compliance Integration</h3>
+          <p style="margin:0; font-size:14px; color:var(--ink-soft); line-height:1.6;">
+            Standardized full toxicological screening, preservative challenge testing (USP 51), and direct European CPNP notification protocols, enabling seamless retail entry into Sephora EU, Douglas, and Boots partner networks.
+          </p>
+        </div>
+        <div style="position:relative;">
+          <div style="position:absolute; left:-36px; top:4px; width:14px; height:14px; border-radius:50%; background:var(--burgundy); border:3px solid #fff; box-shadow:0 0 0 2px var(--rose-dark, #b76e79);"></div>
+          <span style="font-size:12px; font-weight:700; color:var(--rose-dark, #b76e79); letter-spacing:0.05em; text-transform:uppercase;">2023 — Present</span>
+          <h3 style="margin:4px 0 8px; font-size:18px; color:var(--plum-dark);">500+ Formulations & 15+ International Markets</h3>
+          <p style="margin:0; font-size:14px; color:var(--ink-soft); line-height:1.6;">
+            Expanded pilot run line to deliver agile 500-unit production runs for DTC innovators, serving hundreds of successful brand launches across North America, the UK, the European Union, Southeast Asia, and the GCC.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Team & Professional Expertise -->
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">Professional Expertise</p>
+      <h2>Multidisciplinary Formulation & Quality Assurance Team</h2>
+      <p class="lead" style="max-width:680px; margin-bottom:32px;">
+        Manufacturing excellence begins with qualified scientists and meticulous regulatory officers. Every formulation is overseen by seasoned cosmetics professionals:
+      </p>
+      <div class="grid three" style="gap:24px;">
+        <div class="card gold-line" style="background:#fff; padding:26px; border-radius:10px;">
+          <div style="font-size:26px; margin-bottom:12px;">👩‍🔬</div>
+          <h3 style="font-size:18px; margin:0 0 6px; color:var(--plum-dark);">R&D Chemists (10+ Years Experience)</h3>
+          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6; margin:0;">
+            Senior formulation chemists specializing exclusively in polymer suspension, active encapsulation (peptides, hyaluronic acid spheres, ceramides), and non-feathering lipid bases.
+          </p>
+        </div>
+        <div class="card gold-line" style="background:#fff; padding:26px; border-radius:10px;">
+          <div style="font-size:26px; margin-bottom:12px;">🔍</div>
+          <h3 style="font-size:18px; margin:0 0 6px; color:var(--plum-dark);">Quality Control (QC) Engineers</h3>
+          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6; margin:0;">
+            Dedicated inspectors conducting in-process and finished product audits, including spectrophotometric shade matching (&Delta;E &lt; 0.8), vacuum leak testing, and torque checks on packaging closures.
+          </p>
+        </div>
+        <div class="card gold-line" style="background:#fff; padding:26px; border-radius:10px;">
+          <div style="font-size:26px; margin-bottom:12px;">📋</div>
+          <h3 style="font-size:18px; margin:0 0 6px; color:var(--plum-dark);">Regulatory Compliance Specialists</h3>
+          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6; margin:0;">
+            In-house toxicologists and documentation experts authoring complete Cosmetic Product Safety Reports (CPSR), FDA MoCRA registrations, INCI ingredient breakdowns, and certificate archives.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facility & Advanced Laboratory Infrastructure -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Facility & Infrastructure</p>
+      <h2>State-of-the-Art Laboratory & Cleanroom Infrastructure</h2>
+      <p class="lead" style="max-width:680px; margin-bottom:32px;">
+        Our facility is engineered to prevent cross-contamination and guarantee exact batch reproducibility from initial 50g beaker samples to multi-ton bulk production:
+      </p>
+      <div class="grid two" style="gap:24px;">
+        <div class="card" style="padding:24px; border-radius:10px; border:1px solid var(--line);">
+          <h3 style="font-size:18px; margin:0 0 8px; color:var(--burgundy);">GMP-Certified Cleanrooms (Class 100,000)</h3>
+          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6; margin:0;">
+            Positive-pressure air filtration, HEPA filters, ultraviolet sterilization locks, and automated climate control maintaining continuous temperature and humidity benchmarks to guarantee microbiologically pristine bulk.
+          </p>
+        </div>
+        <div class="card" style="padding:24px; border-radius:10px; border:1px solid var(--line);">
+          <h3 style="font-size:18px; margin:0 0 8px; color:var(--burgundy);">Spectrophotometer Colorimetric Lab</h3>
+          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6; margin:0;">
+            Precision benchtop spectrophotometers analyze chromatic values across D65 daylight, store lighting, and incandescent spectrums, locking pantone tolerance (&Delta;E) within retail industry parameters.
+          </p>
+        </div>
+        <div class="card" style="padding:24px; border-radius:10px; border:1px solid var(--line);">
+          <h3 style="font-size:18px; margin:0 0 8px; color:var(--burgundy);">Accelerated Stability & Freeze-Thaw Chambers</h3>
+          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6; margin:0;">
+            Programmable environmental chambers subject each batch to rigorous thermal cycles (-10&deg;C to 45&deg;C), centrifugal separation tests (3000 RPM), and package compatibility assays across 90-day intervals.
+          </p>
+        </div>
+        <div class="card" style="padding:24px; border-radius:10px; border:1px solid var(--line);">
+          <h3 style="font-size:18px; margin:0 0 8px; color:var(--burgundy);">Automated Precision Filling & Ultrasonic Sealing</h3>
+          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6; margin:0;">
+            Computer-controlled pneumatic piston fillers handle thick lip muds, lightweight oils, and viscous glosses without shearing, followed by automated nitrogen flushing and ultrasonic tube sealing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaboration Models: OEM vs ODM vs Private Label -->
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">Flexible Partnerships</p>
+      <h2>Tailored Manufacturing Models: OEM, ODM & Private Label</h2>
+      <p class="lead" style="max-width:680px; margin-bottom:32px;">
+        Whether you arrive with proprietary chemical formulas or require a turn-key brand launch, we provide clear, structured engagement models:
+      </p>
+      <div class="grid three" style="gap:24px;">
+        <div class="card gold-line" style="background:#fff; padding:26px; border-radius:10px; display:flex; flex-direction:column;">
+          <span style="font-size:12px; font-weight:700; color:var(--burgundy); text-transform:uppercase; letter-spacing:0.06em;">Client-Supplied Formula</span>
+          <h3 style="font-size:19px; margin:6px 0 12px; color:var(--plum-dark);">OEM (Original Equipment)</h3>
+          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6; margin-bottom:16px;">
+            You provide the exact chemical recipe, active concentrations, and packaging specifications. We handle industrial scale-up, ingredient sourcing, compounding, and sterile filling under strict NDA.
+          </p>
+          <ul style="margin:0 0 16px; padding-left:18px; font-size:13px; color:var(--ink); line-height:1.6;">
+            <li>Client owns exclusive formula rights</li>
+            <li>Custom raw material sourcing</li>
+            <li>Precision industrial transfer</li>
+          </ul>
+          <div style="margin-top:auto;">
+            <a href="/quote/" style="font-size:13px; font-weight:700; color:var(--rose-dark); text-decoration:none;">Inquire for OEM &rarr;</a>
+          </div>
+        </div>
+
+        <div class="card gold-line" style="background:#fff; padding:26px; border-radius:10px; display:flex; flex-direction:column; border-top:3px solid var(--burgundy);">
+          <span style="font-size:12px; font-weight:700; color:var(--burgundy); text-transform:uppercase; letter-spacing:0.06em;">Custom Formulation by Beautychain</span>
+          <h3 style="font-size:19px; margin:6px 0 12px; color:var(--plum-dark);">ODM (Original Design)</h3>
+          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6; margin-bottom:16px;">
+            Tell us your desired finish, active ingredients, target sensory texture, and benchmark. Our chemists formulate bespoke lip products from scratch tailored specifically to your brand identity.
+          </p>
+          <ul style="margin:0 0 16px; padding-left:18px; font-size:13px; color:var(--ink); line-height:1.6;">
+            <li>Custom shade & viscosity development</li>
+            <li>Full stability & challenge testing included</li>
+            <li>Bespoke custom container tooling</li>
+          </ul>
+          <div style="margin-top:auto;">
+            <a href="/quote/" style="font-size:13px; font-weight:700; color:var(--burgundy); text-decoration:none;">Start Custom ODM &rarr;</a>
+          </div>
+        </div>
+
+        <div class="card gold-line" style="background:#fff; padding:26px; border-radius:10px; display:flex; flex-direction:column;">
+          <span style="font-size:12px; font-weight:700; color:var(--burgundy); text-transform:uppercase; letter-spacing:0.06em;">Turn-Key Proven Library</span>
+          <h3 style="font-size:19px; margin:6px 0 12px; color:var(--plum-dark);">Private Label (Ready Bases)</h3>
+          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6; margin-bottom:16px;">
+            Select from our catalog of pre-tested, market-validated lip bases and stock packaging. Add your logo, brand artwork, and custom shade selection for rapid go-to-market speed with 500 pcs MOQ.
+          </p>
+          <ul style="margin:0 0 16px; padding-left:18px; font-size:13px; color:var(--ink); line-height:1.6;">
+            <li>Fastest turnaround (15-day bulk)</li>
+            <li>Low initial investment capital</li>
+            <li>Pre-cleared FDA/EU dossiers</li>
+          </ul>
+          <div style="margin-top:auto;">
+            <a href="/quote/" style="font-size:13px; font-weight:700; color:var(--rose-dark); text-decoration:none;">Browse Private Label &rarr;</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -91,7 +366,7 @@ import { site } from '../data/site';
       <h2>See the floor where your products are made</h2>
       <div class="grid two" style="margin-top:24px">
         <div>
-          <div class="case-media video-embed">
+          <div class=\"case-media video-embed\">
             <video
               src="/factory/factory-production.mp4"
               poster="/factory/factory-production-poster.jpg"
@@ -107,7 +382,7 @@ import { site } from '../data/site';
           <p class="note" style="margin:0">High-speed precision filling and capping line.</p>
         </div>
         <div>
-          <div class="case-media video-embed">
+          <div class=\"case-media video-embed\">
             <video
               src="/factory/factory-cleanroom.mp4"
               poster="/factory/factory-cleanroom-poster.jpg"
@@ -123,17 +398,6 @@ import { site } from '../data/site';
           <p class="note" style="margin:0">Sterile cosmetic manufacturing environment.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Work with us</h2>
-      <p class="lead" style="max-width:600px">
-        Whether you have a finished concept or just the beginning of an idea, the first step is the same:
-        tell us what you want to launch.
-      </p>
-      <a class="btn" href="/contact">Contact our team</a>
     </div>
   </section>
 
@@ -216,6 +480,20 @@ import { site } from '../data/site';
     </div>
   </section>
 
+  <!-- Clear CTA Block -->
+  <section style="background:var(--burgundy); color:#fff; padding:64px 0;">
+    <div class="wrap" style="text-align:center;">
+      <p class="eyebrow" style="color:var(--gold);">Ready to Formulate?</p>
+      <h2 style="color:#fff; margin-bottom:16px;">Start Your Custom Lip Cosmetics Line Today</h2>
+      <p class="lead" style="max-width:620px; margin:0 auto 28px; color:rgba(255,255,255,0.88);">
+        Whether you require custom peptide formulations, shade matching, or rapid 500-unit pilot runs, our Shenzhen laboratory is ready to engineer your line.
+      </p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a class="btn" href="/quote/" style="background:var(--gold); color:var(--plum-dark); font-weight:700; border:none;">Request a Custom Quote &rarr;</a>
+        <a class="btn" href="/contact/" style="background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.6);">Schedule Chemist Call &rarr;</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Gated Compliance Download Modal -->
   <div id="gated-modal" hidden style="position: fixed; inset: 0; background: rgba(42, 12, 24, 0.72); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px;">

@@ -123,6 +123,14 @@ We provide comprehensive compliance documentation to ensure smooth customs clear
 
 ---
 
+## 📚 Related Articles
+
+- **[How to Start a Lip Gloss Line with Low Minimums](/blog/how-to-start-a-lip-gloss-line-with-low-minimums/)** — The founder roadmap for launching custom vegan lip gloss formulations starting at 500 units.
+- **[Formulate Peptide Lip Oil: Contract Manufacturing Guide](/blog/formulate-peptide-lip-oil-guide/)** — Explore cutting-edge vegan peptide technologies and bioactive barrier lipids for advanced lip treatments.
+- **[Lip Gloss Packaging & Applicator Tube Guide](/blog/lip-gloss-packaging-tube-guide/)** — Pair your clean, vegan gloss formulas with the right wiper calibration and premium tube aesthetics.
+
+---
+
 ## Partner with an ISO 22716 Certified Lip Manufacturer
 
 Whether you are formulating a clean vegan lip line, launching custom tinted glosses, or expanding your SKU portfolio, Beautychain Limited delivers laboratory precision at an accessible 500 pcs MOQ per shade.

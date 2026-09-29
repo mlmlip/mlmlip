@@ -2,34 +2,80 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
 ---
-<BaseLayout title="Page not found — MLM Lip" description="The page you were looking for doesn't exist. Browse our lip cosmetics manufacturing capabilities or start your brief.">
-  <section style="min-height: 60vh; display:flex; align-items:center; justify-content:center; text-align:center;">
-    <div class="wrap">
-      <p style="font-family:'Playfair Display', serif; font-size:clamp(80px, 16vw, 160px); color:var(--burgundy); margin:0; line-height:1;">404</p>
-      <h1 style="font-size:32px; margin-top:12px;">This shade doesn't exist — yet.</h1>
-      <p class="lead" style="max-width:520px; margin:16px auto 32px;">
-        The page you were looking for may have moved. Here are the places worth your time:
+<BaseLayout 
+  title="Page Not Found — But Your Perfect Lip Formula Is Still Here | MLM Lip" 
+  description="The page you were looking for doesn't exist. Explore our lip cosmetics formulations, factory capabilities, custom quote builder, or industry guides."
+>
+  <section style="min-height: 70vh; padding: 60px 0; display:flex; align-items:center; justify-content:center; text-align:center;">
+    <div class="wrap" style="max-width: 960px; margin: 0 auto; padding: 0 20px;">
+      <p style="font-family:'Playfair Display', serif; font-size:clamp(72px, 14vw, 140px); color:var(--burgundy); margin:0; line-height:1; font-weight:700;">404</p>
+      <h1 style="font-size:clamp(24px, 4vw, 36px); margin-top:16px; margin-bottom: 12px; font-weight:600;">
+        Page Not Found — But Your Perfect Lip Formula Is Still Here
+      </h1>
+      <p class="lead" style="max-width:620px; margin:0 auto 24px; font-size:16px; color:#555; line-height:1.6;">
+        The page you requested may have been moved, renamed, or is temporarily unavailable. 
+        Try searching for what you need, or start from our homepage.
       </p>
-      <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
-        <a class="btn" href="/">Back to home</a>
-        <a class="btn ghost" href="/products">Browse products</a>
-        <a class="btn ghost" href="/quote">Build your brief</a>
-        <a class="btn ghost" href="/faq">Help center</a>
+
+      <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-bottom: 48px;">
+        <a class="btn" href="/" style="padding:10px 24px; border-radius:4px;">Back to Homepage</a>
+        <a class="btn ghost" href="/quote/" style="padding:10px 24px; border-radius:4px;">Get a Custom Quote</a>
       </div>
-      <div class="grid three" style="margin-top:48px; text-align:left;">
-        <a class="card" href="/lip-gloss-manufacturer" style="color:inherit;">
-          <h2 style="font-size:18px;">Lip Gloss Manufacturing</h2>
-          <p style="margin:0; font-size:14px;">Tubes, applicators, finishes, 26-shade capability.</p>
-        </a>
-        <a class="card" href="/samples" style="color:inherit;">
-          <h2 style="font-size:18px;">Order Samples</h2>
-          <p style="margin:0; font-size:14px;">7-day custom sampling, fee credited to order.</p>
-        </a>
-        <a class="card" href="/cases" style="color:inherit;">
-          <h2 style="font-size:18px;">Factory & Cases</h2>
-          <p style="margin:0; font-size:14px;">Real production runs and capability videos.</p>
-        </a>
+
+      <!-- Quick Links Section -->
+      <div style="text-align: left; margin-top: 40px;">
+        <h2 style="font-size: 20px; border-bottom: 2px solid #eee; padding-bottom: 8px; margin-bottom: 20px; color: var(--burgundy);">
+          Popular Pages & Quick Links
+        </h2>
+        <div class="grid three" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+          <a class="card" href="/products/" style="color:inherit; text-decoration:none; padding:16px; border:1px solid #e2e8f0; border-radius:8px; display:block; background:#fff;">
+            <h3 style="font-size:16px; margin:0 0 6px 0; color:var(--burgundy);">Browse Our Products</h3>
+            <p style="margin:0; font-size:13px; color:#666;">60+ lip cosmetics formulations including lip gloss, lip oils, balms, and tints.</p>
+          </a>
+          <a class="card" href="/blog/" style="color:inherit; text-decoration:none; padding:16px; border:1px solid #e2e8f0; border-radius:8px; display:block; background:#fff;">
+            <h3 style="font-size:16px; margin:0 0 6px 0; color:var(--burgundy);">Read Our Blog</h3>
+            <p style="margin:0; font-size:13px; color:#666;">Industry guides, regulatory compliance frameworks, and formulation insights.</p>
+          </a>
+          <a class="card" href="/quote/" style="color:inherit; text-decoration:none; padding:16px; border:1px solid #e2e8f0; border-radius:8px; display:block; background:#fff;">
+            <h3 style="font-size:16px; margin:0 0 6px 0; color:var(--burgundy);">Get a Custom Quote</h3>
+            <p style="margin:0; font-size:13px; color:#666;">Start your private label journey with custom batch estimates and timeline planning.</p>
+          </a>
+          <a class="card" href="/certifications/" style="color:inherit; text-decoration:none; padding:16px; border:1px solid #e2e8f0; border-radius:8px; display:block; background:#fff;">
+            <h3 style="font-size:16px; margin:0 0 6px 0; color:var(--burgundy);">Our Certifications</h3>
+            <p style="margin:0; font-size:13px; color:#666;">ISO 22716, FDA registration, EU CPNP dossiers, and clean beauty standards.</p>
+          </a>
+          <a class="card" href="/process/" style="color:inherit; text-decoration:none; padding:16px; border:1px solid #e2e8f0; border-radius:8px; display:block; background:#fff;">
+            <h3 style="font-size:16px; margin:0 0 6px 0; color:var(--burgundy);">Manufacturing Process</h3>
+            <p style="margin:0; font-size:13px; color:#666;">See how we make your products from batch compounding to automated filling.</p>
+          </a>
+          <a class="card" href="/contact/" style="color:inherit; text-decoration:none; padding:16px; border:1px solid #e2e8f0; border-radius:8px; display:block; background:#fff;">
+            <h3 style="font-size:16px; margin:0 0 6px 0; color:var(--burgundy);">Contact Us</h3>
+            <p style="margin:0; font-size:13px; color:#666;">Reach our technical consultation team via WhatsApp or email for rapid support.</p>
+          </a>
+        </div>
       </div>
+
+      <!-- Featured Blog Articles -->
+      <div style="text-align: left; margin-top: 40px;">
+        <h2 style="font-size: 20px; border-bottom: 2px solid #eee; padding-bottom: 8px; margin-bottom: 20px; color: var(--burgundy);">
+          Recommended Industry Guides
+        </h2>
+        <div class="grid three" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+          <a class="card" href="/blog/how-to-start-a-lip-gloss-line-with-low-minimums/" style="color:inherit; text-decoration:none; padding:16px; border:1px solid #e2e8f0; border-radius:8px; display:block; background:#fff;">
+            <h3 style="font-size:15px; margin:0 0 6px 0; color:var(--burgundy);">How to Start a Lip Gloss Line with Low Minimums</h3>
+            <p style="margin:0; font-size:13px; color:#666;">Step-by-step roadmap from 500-unit pilot runs to packaging and costing.</p>
+          </a>
+          <a class="card" href="/blog/lip-formats-compared/" style="color:inherit; text-decoration:none; padding:16px; border:1px solid #e2e8f0; border-radius:8px; display:block; background:#fff;">
+            <h3 style="font-size:15px; margin:0 0 6px 0; color:var(--burgundy);">Lip Gloss vs Lip Mud vs Lip Oil: Which Format First?</h3>
+            <p style="margin:0; font-size:13px; color:#666;">Format-by-format breakdown of production complexity, margin profile, and consumer retention.</p>
+          </a>
+          <a class="card" href="/blog/lip-cosmetics-oem-manufacturer-comparison-guide/" style="color:inherit; text-decoration:none; padding:16px; border:1px solid #e2e8f0; border-radius:8px; display:block; background:#fff;">
+            <h3 style="font-size:15px; margin:0 0 6px 0; color:var(--burgundy);">The Complete OEM Manufacturer Comparison Guide</h3>
+            <p style="margin:0; font-size:13px; color:#666;">Key criteria for vetting contract cosmetic labs, batch consistency, and compliance.</p>
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 </BaseLayout>
