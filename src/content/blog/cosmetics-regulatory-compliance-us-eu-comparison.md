@@ -1,6 +1,6 @@
 ---
 title: "Cosmetics Regulatory Compliance: The Complete US FDA MoCRA vs. EU & UK Comparison for Brand Owners"
-date: "2026-09-29"
+pubDate: "2026-09-29"
 description: "Master global cosmetics regulatory compliance: US FDA MoCRA vs EU EC 1223/2009 & UK SCPN. Expert comparison of CPNP, RP, PIF, safety dossiers, and timelines."
 author: "Beautychain Technical Team"
 tags: ["cosmetics regulatory compliance", "FDA MoCRA vs EU CPNP", "cosmetics import regulations", "cosmetics safety assessment", "contract manufacturing compliance"]

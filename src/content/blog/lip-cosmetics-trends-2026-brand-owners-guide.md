@@ -1,6 +1,6 @@
 ---
 title: "Lip Cosmetics Trends 2026: The Strategic OEM Guide for Brand Owners"
-date: "2026-09-29"
+pubDate: "2026-09-29"
 description: "Discover the top 5 lip cosmetics trends for 2026. Explore data-driven insights on skinification, clean formulations, and sustainable packaging for brands."
 author: "Beautychain Technical Team"
 tags: ["lip cosmetics trends 2026", "beauty industry trends", "lip product innovation", "cosmetics oem", "contract manufacturing"]

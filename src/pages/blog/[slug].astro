@@ -24,15 +24,32 @@ const wordCount = rawBody.split(/\s+/).filter(Boolean).length;
 const readingTime = Math.max(1, Math.ceil(wordCount / 220));
 
 // === Article Schema JSON-LD ===
+const pubDateIso = post.data.pubDate instanceof Date ? post.data.pubDate.toISOString() : new Date(post.data.pubDate).toISOString();
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: post.data.title,
   description: post.data.description || '',
-  datePublished: post.data.pubDate instanceof Date ? post.data.pubDate.toISOString() : new Date(post.data.pubDate).toISOString(),
-  author: { '@type': 'Organization', name: 'Beautychain Limited', url: 'https://mlmlip.com' },
-  publisher: { '@type': 'Organization', name: 'Beautychain Limited', url: 'https://mlmlip.com', logo: { '@type': 'ImageObject', url: 'https://mlmlip.com/logo.svg' } },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': `https://mlmlip.com/blog/${post.id}/` },
+  datePublished: pubDateIso,
+  dateModified: pubDateIso,
+  author: {
+    '@type': 'Organization',
+    name: 'Beautychain Technical Team',
+    url: 'https://mlmlip.com'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Beautychain Limited',
+    url: 'https://mlmlip.com',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://mlmlip.com/logo.svg'
+    }
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': `https://mlmlip.com/blog/${post.id}/`
+  },
   wordCount: wordCount
 };
 

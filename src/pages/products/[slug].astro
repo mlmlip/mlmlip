@@ -37,33 +37,40 @@ const productSchema = {
   },
   manufacturer: {
     "@type": "Organization",
-    name: site.manufacturer,
-    url: site.domain
+    name: "Beautychain Limited",
+    url: site.domain,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Shenzhen",
+      addressCountry: "CN"
+    }
   },
   category: product.category,
   offers: {
-    "@type": "AggregateOffer",
+    "@type": "Offer",
     priceCurrency: "USD",
-    lowPrice: "1.20",
-    highPrice: "3.80",
-    offerCount: product.shadeCount,
+    price: "0",
     priceValidUntil: "2027-12-31",
     availability: "https://schema.org/InStock",
-    itemCondition: "https://schema.org/NewCondition",
+    eligibleQuantity: {
+      "@type": "QuantitativeValue",
+      minValue: 500,
+      unitText: "pieces per shade"
+    },
     seller: {
       "@type": "Organization",
-      name: site.manufacturer
-    },
-    description: "Minimum order ${product.moq} per SKU. Bulk OEM/ODM tiered pricing on inquiry."
+      name: "Beautychain Limited"
+    }
   },
   additionalProperty: [
     { "@type": "PropertyValue", name: "MOQ", value: product.moq },
     { "@type": "PropertyValue", name: "Lead Time", value: product.leadTime },
+    { "@type": "PropertyValue", name: "Shade Count", value: product.shadeCount.toString() },
     { "@type": "PropertyValue", name: "Shades Available", value: product.shadeCount.toString() },
     { "@type": "PropertyValue", name: "Viscosity", value: product.formulaSpecs.viscosity },
     { "@type": "PropertyValue", name: "Key Actives", value: product.formulaSpecs.actives },
     { "@type": "PropertyValue", name: "Finish", value: product.formulaSpecs.finish },
-    { "@type": "PropertyValue", name: "Certification", value: product.regulatory }
+    { "@type": "PropertyValue", name: "Regulatory", value: product.regulatory }
   ]
 };
 ---
