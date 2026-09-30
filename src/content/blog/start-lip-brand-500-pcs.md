@@ -83,7 +83,10 @@ For related insights, see [Lip Gloss vs. Lip Mud vs. Lip Oil: Which Format Shoul
 
 For related insights, see [How Indie Beauty Brands Formulate Custom Peptide Lip Oils in 2026 (MOQ & Cost Breakdown)](/blog/formulate-peptide-lip-oil-guide/).
 
-## Phase 5: Primary Packaging & Secondary Box Design
+##
+
+For related insights, see [Technical Masterclass: Partnering with a Wholesale Lip Balm Manufacturer Private Label](/blog/wholesale-lip-balm-manufacturer-private-label/).
+Phase 5: Primary Packaging & Secondary Box Design
 
 In the beauty market, packaging is the silent salesperson. Customers interact with the tactile weight, visual elegance, and mechanical smooth action of your components before they ever experience the formula on their lips.
 
@@ -98,6 +101,10 @@ In the beauty market, packaging is the silent salesperson. Customers interact wi
 * **Secondary Outer Cartons:** Custom-printed folding cartons protect your product during transit and display mandatory regulatory labeling, batch codes, and barcodes.
 
 ---
+
+For related insights, see [The Ultimate B2B Lip Cosmetics Packaging Design Guide: Engineering Chemistry, Material Compatibility, and Scale](/blog/lip-cosmetics-packaging-design-guide/).
+
+For related insights, see [The Complete Guide to Choosing a Lip Cosmetics OEM Manufacturer in 2026](/blog/lip-cosmetics-oem-manufacturer-comparison-guide/).
 
 ## Phase 6: Regulatory Compliance Basics for US & EU Markets
 
@@ -140,7 +147,7 @@ Launching an independent lip line does not require corporate venture capital or 
 Take the first step toward launching your custom private label lip cosmetics line. Contact our dedicated project managers today for formulation catalogs, sample orders, and tailored B2B quotations:
 
 * **WhatsApp:** [+86 136 5238 0291](https://wa.me/8613652380291)
-* **Email:** [nancy@mlmlip.com](mailto:nancy@mlmlip.com)
+* **Email:** [Submit Custom Formulation Brief](/quote)
 * **Official Website:** [mlmlip.com](https://mlmlip.com)
 
 ---

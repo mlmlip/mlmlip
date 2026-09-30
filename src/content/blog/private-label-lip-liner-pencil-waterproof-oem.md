@@ -105,7 +105,7 @@ All production adheres to ISO 22716 (GMP) standards, with comprehensive document
 > - **Offer 2**: **《2026 EU MoCRA 唇部配方出海避坑白皮书下载》** — 2026 EU MoCRA & CPNP Lip Formulation Cross-Border Compliance Whitepaper.
 > 
 > **Immediate Action Channels**:
-> - **Engineering Desk Email**: [nancy@mlmlip.com](mailto:nancy@mlmlip.com)
+> - **Engineering Desk Email**: [Submit Custom Formulation Brief](/quote)
 > - **Direct WhatsApp Consultation**: [+86 136 5238 0291](https://wa.me/8613652380291)
 > 
 > *Guaranteed technical response within 24 hours. Request an instant estimate via the [request an instant production quote](/quote) portal today.*

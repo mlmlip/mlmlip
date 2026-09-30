@@ -52,7 +52,10 @@ For related insights, see [Private Label Lip Mask Manufacturer for Europe](/blog
 
 For related insights, see [How to Choose a Custom Lip Liner Vendor with Private Packaging Options](/blog/custom-lip-liner-vendor-with-private-packaging/).
 
-## Specification Comparison Table
+##
+
+For related insights, see [Private Label Lip Liner Pencil Waterproof OEM Manufacturing](/blog/private-label-lip-liner-pencil-waterproof-oem/).
+Specification Comparison Table
 
 | Performance Parameter | Standard Market Tier | Beautychain Limited Private Label Tier |
 | :--- | :--- | :--- |
@@ -111,7 +114,7 @@ Brand developers and founders can submit project specifications directly through
 > 
 > **Direct Engineering Desk Contacts:**
 > - **WhatsApp / WeChat**: +86 136 5238 0291
-> - **Direct Email**: nancy@mlmlip.com
+> - **Direct Formulation Desk**: [Submit Custom Lip Brief](/quote)
 > 
 > *Guaranteed response within 24 hours with complete technical dossiers and pilot lab scheduling.*
 

@@ -28,7 +28,7 @@ Exploring the complete product portfolio on the [portfolio overview](/products) 
 - **Quality Management Standards:** Production facilities operate fully under ISO 22716 (cGMP) and GMPC international cosmetic manufacturing certifications.
 - **Global Regulatory Compliance:** All formulations comply with US FDA MoCRA and EU Cosmetic Regulation (EC) No 1223/2009, supported by comprehensive CPSR and toxicological documentation.
 - **Stability Testing Protocol:** Formulas undergo accelerated thermal stability and centrifugation testing at 40°C for 3 months to simulate extreme supply chain environments.
-- **Direct Communication Channels:** Brand developers can engage directly with technical formulation experts via WhatsApp at +86 136 5238 0291 or via email at nancy@mlmlip.com.
+- **Direct Communication Channels:** Brand developers can engage directly with technical formulation experts via WhatsApp at +86 136 5238 0291 or via email at our [engineering desk](/quote).
 
 ## The Operational Reality Behind "No Minimum" Lip Manufacturing
 
@@ -48,6 +48,8 @@ Furthermore, bulk scaling from a 500 pcs pilot run guarantees that the exact raw
 For related insights, see [Custom Lip Oil Manufacturer with Mature Formulas | Beautychain](/blog/custom-lip-oil-manufacturer-with-mature-formulas/).
 
 For related insights, see [Private Label Lip Mask Manufacturer for Europe](/blog/private-label-lip-mask-manufacturer-for-europe/).
+
+For related insights, see [Private Label Lip Liner Pencil Waterproof OEM Manufacturing](/blog/private-label-lip-liner-pencil-waterproof-oem/).
 
 ## Specification Comparison Table
 
@@ -94,7 +96,7 @@ A: Custom formulation matching and physical sample dispatch take precisely 7 bus
 > **Target Audience:** Indie Beauty Founders, Formulation Chemists, Cross-Border E-commerce Brand Owners.  
 > **Direct Engineering Desk Contact:**  
 > - **WhatsApp / Direct Line:** [+86 136 5238 0291](https://wa.me/8613652380291)  
-> - **Email Inquiries:** [nancy@mlmlip.com](mailto:nancy@mlmlip.com)  
+> - **Email Inquiries:** [Submit Custom Formulation Brief](/quote)  
 > 
 > *Guaranteed technical response and consultation scheduling within 24 business hours.*
 

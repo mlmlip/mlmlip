@@ -109,7 +109,10 @@ For related insights, see [Custom Lip Gloss Tube Packaging: Acrylic vs. Glass vs
 
 For related insights, see [How Indie Beauty Brands Formulate Custom Peptide Lip Oils in 2026 (MOQ & Cost Breakdown)](/blog/formulate-peptide-lip-oil-guide/).
 
-## Trending Formats for 2026 and Beyond
+##
+
+For related insights, see [Technical Masterclass: Partnering with a Wholesale Lip Balm Manufacturer Private Label](/blog/wholesale-lip-balm-manufacturer-private-label/).
+Trending Formats for 2026 and Beyond
 
 As you map your product development calendar for the upcoming commercial cycles, consider these dominant consumer trends shaping the North American and European lip landscape:
 
@@ -119,6 +122,8 @@ As you map your product development calendar for the upcoming commercial cycles,
 4. **Clean, Compliant, Sustainable Packaging:** Modern B2B retail buyers prioritize recyclable mono-material PP/PET components, post-consumer resin (PCR) options, and cruelty-free, vegan formulation certifications.
 
 ---
+
+For related insights, see [The Ultimate B2B Lip Cosmetics Packaging Design Guide: Engineering Chemistry, Material Compatibility, and Scale](/blog/lip-cosmetics-packaging-design-guide/).
 
 ## Which Format Should Your Brand Launch First?
 
@@ -154,7 +159,7 @@ At **Beautychain Limited (mlmlip.com)**, we eliminate the traditional barriers t
 Are you ready to develop your hero lip line with a trusted, certified manufacturing partner? Contact our formulation specialists and production engineers directly for instant project evaluations, shade development briefs, and competitive factory quotations:
 
 * **WhatsApp:** [+86 136 5238 0291](https://wa.me/8613652380291)
-* **Email:** [nancy@mlmlip.com](mailto:nancy@mlmlip.com)
+* **Email:** [Submit Custom Formulation Brief](/quote)
 * **Official Website:** [mlmlip.com](https://mlmlip.com)
 
 ---

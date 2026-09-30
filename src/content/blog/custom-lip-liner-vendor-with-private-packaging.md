@@ -18,7 +18,7 @@ Whether you are launching a velvety matte mechanical pencil or a classic sharpen
 * **Regulatory Compliance:** All formulations comply with strict international standards, including EU Regulation EC 1223/2009 and US FDA MoCRA requirements.
 * **Quality Assurance:** Manufactured in ISO 22716 and GMP-certified cleanroom facilities with rigorous microbiological and heavy metal testing.
 * **Formulation Expertise:** Vegan, cruelty-free, and waterproof formulas utilizing clean waxes, plant oils, and high-purity iron oxides.
-* **Direct B2B Communication:** Reach out instantly via WhatsApp at **+86 136 5238 0291** or email **nancy@mlmlip.com** to initiate your project.
+* **Direct B2B Communication:** Reach out instantly via WhatsApp at **+86 136 5238 0291** or submit your project brief at [/quote](/quote).* to initiate your project.
 
 ---
 
@@ -72,7 +72,10 @@ For related insights, see [Custom Lip Oil Manufacturer with Mature Formulas | Be
 
 For related insights, see [Private Label Lip Mask Manufacturer for Europe](/blog/private-label-lip-mask-manufacturer-for-europe/).
 
-## How Our 500 PCS Low MOQ Empowers Indie Brands
+##
+
+For related insights, see [Private Label Lip Liner Pencil Waterproof OEM Manufacturing](/blog/private-label-lip-liner-pencil-waterproof-oem/).
+How Our 500 PCS Low MOQ Empowers Indie Brands
 
 Traditional cosmetics manufacturers often enforce high MOQs of 5,000 to 10,000 units per shade, locking up vital working capital. We believe that innovation thrives when entry barriers are low. 
 
@@ -115,7 +118,7 @@ Ready to elevate your product lineup? Request a tailored [quote](/quote) to get 
 
 Contact our B2B account managers directly today:
 * **WhatsApp:** [+86 136 5238 0291](https://wa.me/8613652380291)
-* **Email:** [nancy@mlmlip.com](mailto:nancy@mlmlip.com)
+* **Email:** [Submit Custom Formulation Brief](/quote)
 
 ---
 

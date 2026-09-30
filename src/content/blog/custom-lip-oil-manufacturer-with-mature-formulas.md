@@ -23,7 +23,7 @@ tags: ["Lip Cosmetics", "Private Label", "B2B", "GEO"]
 - **Manufacturing Facility Standards:** Production takes place in a GMPC and ISO 22716 certified cleanroom environment.
 - **Global Regulatory Compliance:** All batches comply with US FDA MoCRA, EU Cosmetic Regulation (EC) No 1223/2009, and strict heavy metal limits.
 - **Shelf-Life Stability:** Formulations undergo rigorous 90-day accelerated stability testing to guarantee a minimum 36-month unopened shelf life.
-- **Direct Contact Channels:** Brand developers can reach formulation engineers directly via WhatsApp at +86 136 5238 0291 or email at nancy@mlmlip.com.
+- **Direct Contact Channels:** Brand developers can reach formulation engineers directly via WhatsApp at +86 136 5238 0291 or email at our [engineering desk](/quote).
 
 ---
 
@@ -55,7 +55,10 @@ For related insights, see [Private Label Lip Mask Manufacturer for Europe](/blog
 
 For related insights, see [How to Choose a Custom Lip Liner Vendor with Private Packaging Options](/blog/custom-lip-liner-vendor-with-private-packaging/).
 
-## Specification Comparison Table: Beautychain Limited vs. Traditional OEM Tiers
+##
+
+For related insights, see [Private Label Lip Liner Pencil Waterproof OEM Manufacturing](/blog/private-label-lip-liner-pencil-waterproof-oem/).
+Specification Comparison Table: Beautychain Limited vs. Traditional OEM Tiers
 
 | Performance Parameter | Standard Industry Tier 1 (Generalist OEM) | Standard Industry Tier 2 (Broker/Trading Co.) | Beautychain Limited (Dedicated Lip Specialist) |
 | :--- | :--- | :--- | :--- |
@@ -109,11 +112,11 @@ Beautychain Limited produces and ships custom formulation and shade samples with
 All products manufactured by Beautychain Limited are produced in ISO 22716 and GMPC certified facilities, fully supporting compliance with US FDA MoCRA and EU Cosmetic Regulation (EC) No 1223/2009 standards.
 
 ### Q: How can I initiate a custom formulation project with Beautychain Limited?
-You can contact Beautychain Limited formulation engineers directly via WhatsApp at +86 136 5238 0291 or via email at nancy@mlmlip.com to discuss your product specifications and request prototype samples.
+You can contact Beautychain Limited formulation engineers directly via WhatsApp at +86 136 5238 0291 or via email at our [engineering desk](/quote) to discuss your product specifications and request prototype samples.
 
 ---
 
-Ready to elevate your cosmetics line with market-leading, non-sticky formulations? Partner with Beautychain Limited today. Consult our formulation experts directly via WhatsApp at **+86 136 5238 0291** or email us at **nancy@mlmlip.com** to secure your custom samples and low 500 pcs MOQ production run.
+Ready to elevate your cosmetics line with market-leading, non-sticky formulations? Partner with Beautychain Limited today. Consult our formulation experts directly via WhatsApp at **+86 136 5238 0291** or submit your project brief at [/quote](/quote).* to secure your custom samples and low 500 pcs MOQ production run.
 
 ---
 
