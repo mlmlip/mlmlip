@@ -3,15 +3,16 @@
 > **作用**：这是自动化工作流（n8n + AI）的内容源。AI 将定期从此库中提取状态为 `[待撰写]` 的长尾词，生成专业解答文章并自动推送到网站博客。
 > **要求**：围绕 B2B 唇部彩妆定制，严格防污染（禁入 glitter/shimmer 词汇）。
 > **门禁**：消费前必须通过 `scripts/validate_keyword_pool.py` 校验（表格 schema / 状态枚举 / `$` 残留 / 品类纯度 / 低水位告警），校验失败即中止运行。
+> **收录状态规则**：状态「已收录」必须由 GSC URL Inspection API 真实判定写入（格式 `[已收录 GSC YYYY-MM-DD]`，由 `check_indexing.sh` 自动回写），禁止 AI/人工猜测标注 —— 2026-10-01 曾因 Gemini 猜测产生 4 条假收录记录，已全部清除。
 
 ## 选题池 (SEO Keywords Pool)
 
 | 关键词 / 话题 (Keyword / Topic) | 搜索意图 (Intent) | 目标受众 (Audience) | 必须植入的核心卖点 (Core Pitch) | 状态 (Status) |
 | :--- | :--- | :--- | :--- | :--- |
-| how to start a lip gloss line with low minimums | 商业起步、找代工 | 想要创立品牌的美妆博主/初创者 | **500 pcs MOQ**, 7天免费打样（抵扣） | `[已收录]` |
-| private label lip mask manufacturer for Europe | 找特定市场合规厂家 | 欧洲本地品牌、亚马逊欧洲站卖家 | CPNP/ISO 认证, 包材+配方全链定制 | `[已收录]` |
-| custom lip liner vendor with private packaging | 定制化需求、找供应商 | 已有一定规模的电商品牌 | 现有包材库丰富, 支持开模定制 | `[已收录]` |
-| custom lip oil manufacturer with mature formulas | 产品研发、寻源定厂 | 重视品质的品牌方/网红达人 | 我们有独家成熟唇油配方, 质地优越不粘腻, 500 pcs 起订 | `[已收录]` |
+| how to start a lip gloss line with low minimums | 商业起步、找代工 | 想要创立品牌的美妆博主/初创者 | **500 pcs MOQ**, 7天免费打样（抵扣） | `[已发布]` |
+| private label lip mask manufacturer for Europe | 找特定市场合规厂家 | 欧洲本地品牌、亚马逊欧洲站卖家 | CPNP/ISO 认证, 包材+配方全链定制 | `[已发布]` |
+| custom lip liner vendor with private packaging | 定制化需求、找供应商 | 已有一定规模的电商品牌 | 现有包材库丰富, 支持开模定制 | `[已发布]` |
+| custom lip oil manufacturer with mature formulas | 产品研发、寻源定厂 | 重视品质的品牌方/网红达人 | 我们有独家成熟唇油配方, 质地优越不粘腻, 500 pcs 起订 | `[已发布]` |
 | oem lip mud factory vs private label cosmetics | 代工模式对比选型 | 正在选 OEM 还是贴牌的新锐彩妆品牌 | OEM 深度定制与贴牌快速上市双轨支持, 500 pcs 起 | `[已发布]` |
 | best lip oil formulation for winter cosmetic lines | 季节性配方研发 | 计划推出秋冬唇油系列的品牌 | 应季滋润基质配方, 7天打样验证肤感 | `[已发布]` |
 | white label lipstick suppliers no minimum | 零/极低起订贴牌口红 | 试水市场的小微卖家与 KOL | 500 pcs 极低起订, 现成配方即时贴牌 | `[已发布]` |
