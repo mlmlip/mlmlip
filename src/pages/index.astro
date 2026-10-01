@@ -4,6 +4,7 @@ import GeoFAQ from '../components/GeoFAQ.astro';
 import GeoComparisonTable from '../components/GeoComparisonTable.astro';
 import { site, pillars, products, steps, certifications } from '../data/site';
 import { cases } from '../data/cases';
+import TrustBadges from '../components/TrustBadges.astro';
 import { getCollection } from 'astro:content';
 
 const categoryLinks = [
@@ -46,6 +47,7 @@ const featuredCases = cases.slice(0, 3);
       </p>
     </div>
   </section>
+  <TrustBadges />
 
   <section style="padding: 0;">
     <div class="wrap">

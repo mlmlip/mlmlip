@@ -1,6 +1,9 @@
 ---
 import { site, footerCategories, footerCompany, ui, navKeys, navLinks } from '../data/site';
 import LiveChat from '../components/LiveChat.astro';
+import FadeIn from '../components/FadeIn.astro';
+import Analytics from '../components/Analytics.astro';
+
 import '../styles/global.css';
 
 const { title, description } = Astro.props;
@@ -256,6 +259,7 @@ const breadcrumbSchema = {
       gtag('js', new Date());
       gtag('config', 'G-CHEQXE47YG');
     </script>
+    <Analytics />
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>
@@ -424,5 +428,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+    <FadeIn />
 </body>
 </html>
