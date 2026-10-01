@@ -1,0 +1,49 @@
+---
+interface Props {
+  faqs: { question: string; answer: string }[];
+}
+const { faqs } = Astro.props;
+
+const faqSchema = faqs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(item => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer }
+  }))
+} : null;
+---
+
+{faqs.length > 0 && (
+  <div class="geo-faq-container" style="margin-top: 32px;">
+    {faqSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    )}
+    <h3 style="font-size: 24px; color: var(--plum); margin-bottom: 24px;">Frequently Asked Questions</h3>
+    <div class="faq-list" style="display: flex; flex-direction: column; gap: 16px;">
+      {faqs.map((faq, index) => (
+        <details style="background: white; border: 1px solid var(--line); border-radius: 8px; overflow: hidden;" class="geo-faq-item">
+          <summary style="padding: 18px 24px; font-weight: 600; color: var(--burgundy); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            {faq.question}
+            <span class="icon" style="color: var(--gold); font-size: 20px;">+</span>
+          </summary>
+          <div style="padding: 0 24px 24px; color: var(--ink-soft); line-height: 1.6; border-top: 1px solid var(--line); padding-top: 16px;">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+  <style>
+    .geo-faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+    .geo-faq-item[open] summary .icon {
+      transform: rotate(45deg);
+    }
+    .geo-faq-item .icon {
+      transition: transform 0.2s ease-in-out;
+    }
+  </style>
+)}

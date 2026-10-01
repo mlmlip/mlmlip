@@ -1,0 +1,42 @@
+---
+interface Column {
+  key: string;
+  label: string;
+}
+
+interface Props {
+  title?: string;
+  columns: Column[];
+  data: Record<string, any>[];
+}
+const { title, columns, data } = Astro.props;
+---
+
+<div class="geo-comparison-table-container" style="margin: 32px 0;">
+  {title && <h3 style="font-size: 22px; color: var(--plum); margin-bottom: 16px;">{title}</h3>}
+  <div style="overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; border-bottom: none;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; background: white;">
+      <thead>
+        <tr style="background: var(--plum); color: white;">
+          {columns.map(col => (
+            <th style="padding: 14px 20px; font-weight: 600; font-size: 14px; letter-spacing: 0.05em; border-bottom: 1px solid var(--line);">{col.label}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((row, index) => (
+          <tr style={`background: ${index % 2 === 0 ? 'white' : 'var(--blush-soft)'}; border-bottom: 1px solid var(--line);`}>
+            {columns.map(col => (
+              <td style="padding: 14px 20px; font-size: 14px; color: var(--ink); border-right: 1px solid var(--line);">{row[col.key]}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+<style>
+  .geo-comparison-table-container table td:last-child {
+    border-right: none;
+  }
+</style>

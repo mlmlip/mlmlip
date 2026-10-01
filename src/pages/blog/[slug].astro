@@ -27,14 +27,14 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 220));
 const pubDateIso = post.data.pubDate instanceof Date ? post.data.pubDate.toISOString() : new Date(post.data.pubDate).toISOString();
 const articleSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
+  '@type': 'TechArticle',
   headline: post.data.title,
   description: post.data.description || '',
   datePublished: pubDateIso,
   dateModified: pubDateIso,
   author: {
     '@type': 'Organization',
-    name: 'Beautychain Technical Team',
+    name: 'Beautychain Labs',
     url: 'https://mlmlip.com'
   },
   publisher: {

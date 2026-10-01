@@ -22,57 +22,53 @@ const relatedProducts = productsCatalog
   .filter((p) => p.categorySlug === product.categorySlug && p.slug !== product.slug)
   .slice(0, 4);
 
-// Schema.org Product structured data
-const productSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  name: product.name,
-  image: [site.domain + product.heroImage, ...product.galleryImages.map((img) => site.domain + img)],
-  description: product.description,
-  sku: product.id,
-  mpn: product.id,
-  brand: {
-    "@type": "Brand",
-    name: site.name
-  },
-  manufacturer: {
-    "@type": "Organization",
-    name: "Beautychain Limited",
-    url: site.domain,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Shenzhen",
-      addressCountry: "CN"
-    }
-  },
-  category: product.category,
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "USD",
-    price: "0",
-    priceValidUntil: "2027-12-31",
-    availability: "https://schema.org/InStock",
-    eligibleQuantity: {
-      "@type": "QuantitativeValue",
-      minValue: 500,
-      unitText: "pieces per shade"
+  // Schema.org Product structured data
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    image: [site.domain + product.heroImage, ...product.galleryImages.map((img) => site.domain + img)],
+    description: product.description,
+    sku: product.id,
+    mpn: product.id,
+    brand: {
+      "@type": "Brand",
+      name: "Beautychain OEM"
     },
-    seller: {
+    manufacturer: {
       "@type": "Organization",
-      name: "Beautychain Limited"
-    }
-  },
-  additionalProperty: [
-    { "@type": "PropertyValue", name: "MOQ", value: product.moq },
-    { "@type": "PropertyValue", name: "Lead Time", value: product.leadTime },
-    { "@type": "PropertyValue", name: "Shade Count", value: product.shadeCount.toString() },
-    { "@type": "PropertyValue", name: "Shades Available", value: product.shadeCount.toString() },
-    { "@type": "PropertyValue", name: "Viscosity", value: product.formulaSpecs.viscosity },
-    { "@type": "PropertyValue", name: "Key Actives", value: product.formulaSpecs.actives },
-    { "@type": "PropertyValue", name: "Finish", value: product.formulaSpecs.finish },
-    { "@type": "PropertyValue", name: "Regulatory", value: product.regulatory }
-  ]
-};
+      name: "Beautychain Limited",
+      url: site.domain,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Shenzhen",
+        addressCountry: "CN"
+      }
+    },
+    category: product.category,
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "USD",
+      lowPrice: "1.35",
+      highPrice: "2.95",
+      offerCount: "1",
+      availability: "https://schema.org/InStock",
+      seller: {
+        "@type": "Organization",
+        name: "Beautychain Limited"
+      }
+    },
+    additionalProperty: [
+      { "@type": "PropertyValue", name: "MOQ", value: "500 pcs" },
+      { "@type": "PropertyValue", name: "Lead Time", value: "7 days for samples" },
+      { "@type": "PropertyValue", name: "Certifications", value: "GMPC, ISO22716, CPNP, FDA, MoCRA" },
+      { "@type": "PropertyValue", name: "Shade Count", value: product.shadeCount.toString() },
+      { "@type": "PropertyValue", name: "Viscosity", value: product.formulaSpecs.viscosity },
+      { "@type": "PropertyValue", name: "Key Actives", value: product.formulaSpecs.actives },
+      { "@type": "PropertyValue", name: "Finish", value: product.formulaSpecs.finish },
+      { "@type": "PropertyValue", name: "Regulatory", value: product.regulatory }
+    ]
+  };
 ---
 
 <BaseLayout
