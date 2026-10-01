@@ -132,6 +132,20 @@ Because oils dissolve the secondary film and accelerate dye desquamation, test p
 
 ---
 
+<div class="sample-kit-card" style="margin: 44px 0; padding: 34px 26px; background: linear-gradient(135deg, #faf2f5 0%, #f4e2e7 100%); border: 1px solid #e8d7dc; border-left: 5px solid #9c2e4e; border-radius: 14px; box-shadow: 0 4px 18px rgba(74, 21, 37, 0.06); text-align: center;">
+  <span style="display: inline-block; padding: 4px 14px; background: #6e1a32; color: #ffffff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 20px; margin-bottom: 12px;">Sample Kit Offer</span>
+  <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 600; color: #141013; margin: 0 0 10px; line-height: 1.3;">Start Your Lip Line With Just 500 Pieces</h3>
+  <p style="font-size: 15px; color: #4a3e42; max-width: 580px; margin: 0 auto 20px; line-height: 1.6;"><strong> sample kit</strong> — 3 textures, 7-day delivery, fees credited 100% to bulk order.</p>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 24px; margin-bottom: 24px; font-size: 13.5px; font-weight: 600; color: #4a1525;">
+    <span>✓ 500 pcs MOQ</span>
+    <span>✓ 7-Day Samples</span>
+    <span>✓ FDA &amp; ISO Certified</span>
+  </div>
+  <div>
+    <a href="/samples" style="display: inline-block; background: #6e1a32; color: #ffffff !important; font-size: 15px; font-weight: 600; padding: 13px 32px; border-radius: 30px; text-decoration: none !important; box-shadow: 0 4px 14px rgba(110, 26, 50, 0.28);">Claim Your Sample Kit →</a>
+  </div>
+</div>
+
 ## 4. Packaging Morphology: Engineering the Delivery System
 
 The packaging vessel for a lip tint is not merely an aesthetic container; it is an active mechanical delivery system that governs dosage, prevents leakage, and protects formulation rheology.
@@ -238,7 +252,6 @@ Take advantage of our 500 pcs starting MOQ, 7-day lab turnaround, and 100% credi
 
 👉 [Request Your Custom Lip Tint Formulation Quote](/quote/)
 
-
 ---
 
 ## 📚 Related Articles
@@ -246,3 +259,29 @@ Take advantage of our 500 pcs starting MOQ, 7-day lab turnaround, and 100% credi
 - **[OEM Lip Mud Factory vs Private Label Lip Cosmetics](/blog/oem-lip-mud-factory-vs-private-label-cosmetics/)** — Analyze the formula rheology differences between airy cloud lip muds and long-lasting gradient lip stains.
 - **[How to Choose Lip Cosmetics Color Matching & Consistency Standards](/blog/how-to-choose-lip-cosmetics-color-matching/)** — Explore precision color matching techniques and stability testing for water-stain formulations.
 - **[Lip Formats Compared: Lip Gloss vs Lip Mud vs Lip Oil](/blog/lip-formats-compared/)** — Decide which viral lip finish best aligns with your beauty brand commercial roadmap.
+
+<div class="compliance-cta-card" style="margin: 44px 0; padding: 34px 28px; background: #1a1b26; color: #f3f4f6; border-radius: 14px; border: 1px solid #2e3440; border-left: 5px solid #3b82f6; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25); text-align: left;">
+  <div style="text-align: center; margin-bottom: 22px;">
+    <span style="display: inline-block; padding: 4px 14px; background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 20px; margin-bottom: 12px;">Regulatory Dossier</span>
+    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 600; color: #ffffff; margin: 0 0 10px; line-height: 1.3;">Free: 2026 Lip Cosmetics Compliance Checklist</h3>
+    <p style="font-size: 15px; color: #94a3b8; max-width: 560px; margin: 0 auto; line-height: 1.5;">FDA MoCRA + EU CPNP requirements in one actionable PDF</p>
+  </div>
+  <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 16px 20px; margin: 0 auto 22px; max-width: 600px; display: flex; flex-direction: column; gap: 10px;">
+    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: #cbd5e1; line-height: 1.45;">
+      <span style="color: #60a5fa; font-weight: bold;">✓</span>
+      <span><strong style="color: #f1f5f9;">FDA MoCRA:</strong> Facility registration, product listing &amp; safety substantiation</span>
+    </div>
+    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: #cbd5e1; line-height: 1.45;">
+      <span style="color: #60a5fa; font-weight: bold;">✓</span>
+      <span><strong style="color: #f1f5f9;">EU CPNP:</strong> PIF file preparation, Responsible Person (RP) &amp; CPSR audit</span>
+    </div>
+    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: #cbd5e1; line-height: 1.45;">
+      <span style="color: #60a5fa; font-weight: bold;">✓</span>
+      <span><strong style="color: #f1f5f9;">Formulation:</strong> Colorant purity tests, heavy metals &amp; thermal cycling</span>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <a href="/quote" style="display: inline-block; background: #2563eb; color: #ffffff !important; font-size: 15px; font-weight: 600; padding: 13px 32px; border-radius: 30px; text-decoration: none !important; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);">Download Free Checklist →</a>
+    <p style="font-size: 12px; color: #64748b; margin: 10px 0 0;">No sign-up required — instant download</p>
+  </div>
+</div>

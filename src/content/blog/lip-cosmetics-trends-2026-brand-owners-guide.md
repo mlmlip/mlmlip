@@ -78,6 +78,20 @@ Brands should leverage Beautychain's low minimum order volume structure, which a
 
 ---
 
+<div class="sample-kit-card" style="margin: 44px 0; padding: 34px 26px; background: linear-gradient(135deg, #faf2f5 0%, #f4e2e7 100%); border: 1px solid #e8d7dc; border-left: 5px solid #9c2e4e; border-radius: 14px; box-shadow: 0 4px 18px rgba(74, 21, 37, 0.06); text-align: center;">
+  <span style="display: inline-block; padding: 4px 14px; background: #6e1a32; color: #ffffff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 20px; margin-bottom: 12px;">Sample Kit Offer</span>
+  <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 600; color: #141013; margin: 0 0 10px; line-height: 1.3;">Start Your Lip Line With Just 500 Pieces</h3>
+  <p style="font-size: 15px; color: #4a3e42; max-width: 580px; margin: 0 auto 20px; line-height: 1.6;"><strong> sample kit</strong> — 3 textures, 7-day delivery, fees credited 100% to bulk order.</p>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 24px; margin-bottom: 24px; font-size: 13.5px; font-weight: 600; color: #4a1525;">
+    <span>✓ 500 pcs MOQ</span>
+    <span>✓ 7-Day Samples</span>
+    <span>✓ FDA &amp; ISO Certified</span>
+  </div>
+  <div>
+    <a href="/samples" style="display: inline-block; background: #6e1a32; color: #ffffff !important; font-size: 15px; font-weight: 600; padding: 13px 32px; border-radius: 30px; text-decoration: none !important; box-shadow: 0 4px 14px rgba(110, 26, 50, 0.28);">Claim Your Sample Kit →</a>
+  </div>
+</div>
+
 ## 4. Multi-Sensory Finishes: From Cloud Muds to High-Gloss Glass Jelly
 
 Consumer finish preferences have expanded beyond the binary choice of flat matte versus sticky wet shine. The market in 2026 embraces sophisticated textural variations that deliver distinct sensorial experiences upon application.
@@ -164,3 +178,29 @@ The lip cosmetics market of 2026 will reward brands that move decisively, formul
 Ready to start formulating your next hero lip product? Contact our engineering team today to order custom lab samples, discuss shade targets, and receive a transparent manufacturing quote tailored to your business goals.
 
 **[Request Your Custom Formulation Quote Today](/quote/)**
+
+<div class="compliance-cta-card" style="margin: 44px 0; padding: 34px 28px; background: #1a1b26; color: #f3f4f6; border-radius: 14px; border: 1px solid #2e3440; border-left: 5px solid #3b82f6; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25); text-align: left;">
+  <div style="text-align: center; margin-bottom: 22px;">
+    <span style="display: inline-block; padding: 4px 14px; background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 20px; margin-bottom: 12px;">Regulatory Dossier</span>
+    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 600; color: #ffffff; margin: 0 0 10px; line-height: 1.3;">Free: 2026 Lip Cosmetics Compliance Checklist</h3>
+    <p style="font-size: 15px; color: #94a3b8; max-width: 560px; margin: 0 auto; line-height: 1.5;">FDA MoCRA + EU CPNP requirements in one actionable PDF</p>
+  </div>
+  <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 16px 20px; margin: 0 auto 22px; max-width: 600px; display: flex; flex-direction: column; gap: 10px;">
+    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: #cbd5e1; line-height: 1.45;">
+      <span style="color: #60a5fa; font-weight: bold;">✓</span>
+      <span><strong style="color: #f1f5f9;">FDA MoCRA:</strong> Facility registration, product listing &amp; safety substantiation</span>
+    </div>
+    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: #cbd5e1; line-height: 1.45;">
+      <span style="color: #60a5fa; font-weight: bold;">✓</span>
+      <span><strong style="color: #f1f5f9;">EU CPNP:</strong> PIF file preparation, Responsible Person (RP) &amp; CPSR audit</span>
+    </div>
+    <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: #cbd5e1; line-height: 1.45;">
+      <span style="color: #60a5fa; font-weight: bold;">✓</span>
+      <span><strong style="color: #f1f5f9;">Formulation:</strong> Colorant purity tests, heavy metals &amp; thermal cycling</span>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <a href="/quote" style="display: inline-block; background: #2563eb; color: #ffffff !important; font-size: 15px; font-weight: 600; padding: 13px 32px; border-radius: 30px; text-decoration: none !important; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);">Download Free Checklist →</a>
+    <p style="font-size: 12px; color: #64748b; margin: 10px 0 0;">No sign-up required — instant download</p>
+  </div>
+</div>

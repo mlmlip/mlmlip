@@ -1,0 +1,182 @@
+---
+// src/components/blog/ComplianceDownloadCTA.astro
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaLink?: string;
+  note?: string;
+  badge?: string;
+}
+
+const {
+  title = "Free: 2026 Lip Cosmetics Compliance Checklist",
+  subtitle = "FDA MoCRA + EU CPNP requirements in one actionable PDF",
+  ctaText = "Download Free Checklist →",
+  ctaLink = "/compliance-checklist",
+  note = "No sign-up required — instant download",
+  badge = "Regulatory Dossier"
+} = Astro.props;
+---
+
+<div class="compliance-cta-card">
+  <div class="compliance-cta-header">
+    {badge && <span class="compliance-cta-badge">{badge}</span>}
+    <h3 class="compliance-cta-title">{title}</h3>
+    <p class="compliance-cta-subtitle">{subtitle}</p>
+  </div>
+
+  <div class="compliance-checklist-preview">
+    <div class="compliance-item">
+      <span class="compliance-check">✓</span>
+      <span><strong>FDA MoCRA:</strong> Facility registration, product listing & safety substantiation steps</span>
+    </div>
+    <div class="compliance-item">
+      <span class="compliance-check">✓</span>
+      <span><strong>EU CPNP:</strong> PIF file preparation, Responsible Person (RP) & CPSR audit guide</span>
+    </div>
+    <div class="compliance-item">
+      <span class="compliance-check">✓</span>
+      <span><strong>Formulation:</strong> Colorant purity tests, heavy metals & stability cycling protocol</span>
+    </div>
+  </div>
+
+  <div class="compliance-cta-action">
+    <a href={ctaLink} class="compliance-cta-btn">{ctaText}</a>
+    {note && <p class="compliance-cta-note">{note}</p>}
+  </div>
+</div>
+
+<style>
+  .compliance-cta-card {
+    margin: 44px 0;
+    padding: 36px 32px;
+    background: #1a1b26;
+    color: #f3f4f6;
+    border-radius: 14px;
+    border: 1px solid #2e3440;
+    border-left: 5px solid #3b82f6;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .compliance-cta-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .compliance-cta-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+
+  .compliance-cta-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(20px, 3vw, 25px);
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.25;
+    margin: 0 0 10px;
+  }
+
+  .compliance-cta-subtitle {
+    font-size: 15px;
+    color: #94a3b8;
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  .compliance-checklist-preview {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 0 auto 24px;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .compliance-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13.5px;
+    color: #cbd5e1;
+    line-height: 1.45;
+  }
+
+  .compliance-item strong {
+    color: #f1f5f9;
+  }
+
+  .compliance-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+    background: #2563eb;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .compliance-cta-action {
+    text-align: center;
+  }
+
+  .compliance-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #2563eb;
+    color: #ffffff !important;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 13px 32px;
+    border-radius: 30px;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  }
+
+  .compliance-cta-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+  }
+
+  .compliance-cta-note {
+    font-size: 12px;
+    color: #64748b;
+    margin: 10px 0 0;
+  }
+
+  @media (max-width: 640px) {
+    .compliance-cta-card {
+      padding: 26px 18px;
+      margin: 32px 0;
+    }
+    .compliance-cta-btn {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+</style>
