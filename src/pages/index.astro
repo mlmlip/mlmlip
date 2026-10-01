@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import GeoFAQ from '../components/GeoFAQ.astro';
+import GeoComparisonTable from '../components/GeoComparisonTable.astro';
 import { site, pillars, products, steps, certifications } from '../data/site';
 import { cases } from '../data/cases';
 import { getCollection } from 'astro:content';
@@ -11,13 +13,6 @@ const categoryLinks = [
   { label: 'Lipstick Manufacturer', href: '/lipstick-manufacturer', blurb: 'Matte, satin and shine bullets with custom case tooling.' },
   { label: 'Lip Oil Manufacturer', href: '/lip-oil-manufacturer', blurb: 'Peptide and botanical oil treatments with glass-like shine.' },
   { label: 'Lip Mask Manufacturer', href: '/lip-mask-manufacturer', blurb: 'Overnight repair masks and barrier balms in jars or tubes.' }
-];
-
-const faqPreview = [
-  { q: 'What is your minimum order quantity?', a: '500 pcs per SKU — identical across all six lip categories, and SKUs can be combined in one project.' },
-  { q: 'How fast are samples ready?', a: 'Custom samples in 7 days, and 100% of the sampling fee is credited back to your production order.' },
-  { q: 'Can you open a custom mold?', a: 'Yes. Beyond our in-house packaging library, we tool bespoke molds for an exclusive silhouette.' },
-  { q: 'Which certifications do you provide?', a: 'GMPC and ISO 22716 production, with EU CPNP notification support and FDA-ready documentation.' }
 ];
 
 const latestPosts = (await getCollection('blog'))
@@ -276,6 +271,26 @@ const featuredCases = cases.slice(0, 3);
         ))}
       </div>
       <p style="margin-top:24px"><a href="/products">View the full product range →</a></p>
+
+      <div style="margin-top:40px;">
+        <GeoComparisonTable
+          title="Lip Format Technical Benchmarks"
+          columns={[
+            { key: 'category', label: 'Lip Format' },
+            { key: 'viscosity', label: 'Viscosity (mPa·s at 25°C)' },
+            { key: 'finish', label: 'Finish Profile' },
+            { key: 'actives', label: 'Primary Active Ingredients' },
+            { key: 'shelfLife', label: 'Shelf Life (Unopened)' }
+          ]}
+          data={[
+            { category: 'Lip Gloss', viscosity: '15,000 - 25,000', finish: 'High-Shine Mirror', actives: 'Squalane, Jojoba Oil', shelfLife: '36 Months' },
+            { category: 'Lip Mud', viscosity: '60,000 - 85,000', finish: 'Soft-Focus Velvet Matte', actives: 'Dimethicone Crosspolymer', shelfLife: '36 Months' },
+            { category: 'Lip Oil', viscosity: '2,000 - 4,500', finish: 'Translucent Glass', actives: 'Peptide Complex, Ceramides', shelfLife: '36 Months' },
+            { category: 'Lip Mask', viscosity: 'Thixotropic Solid', finish: 'Rich Balm', actives: 'Shea Butter, Berry Waxes', shelfLife: '36 Months' }
+          ]}
+        />
+        <p class="note" style="margin-top:12px;">Data based on our standardized GMPC formulation benchmarks. Viscosity tailored per exact custom brief.</p>
+      </div>
     </div>
   </section>
 
@@ -605,16 +620,14 @@ const featuredCases = cases.slice(0, 3);
 
   <section>
     <div class="wrap">
-      <p class="eyebrow">Common questions</p>
-      <h2>Before you send your brief</h2>
-      <div class="grid two" style="margin-top: 28px;">
-        {faqPreview.map((f) => (
-          <div class="card">
-            <h3 style="font-size: 18px;">{f.q}</h3>
-            <p style="margin: 0;">{f.a}</p>
-          </div>
-        ))}
-      </div>
+      <GeoFAQ
+        faqs={[
+          { question: 'What is your minimum order quantity?', answer: '500 pcs per SKU — identical across all six lip categories, and SKUs can be combined in one project.' },
+          { question: 'How fast are samples ready?', answer: 'Custom samples in 7 days, and 100% of the sampling fee is credited back to your production order.' },
+          { question: 'Can you open a custom mold?', answer: 'Yes. Beyond our in-house packaging library, we tool bespoke molds for an exclusive silhouette. Tooling usually takes 4-8 weeks.' },
+          { question: 'Which certifications do you provide?', answer: 'GMPC and ISO 22716 production, with EU CPNP notification support and FDA-ready documentation. We also offer USP 51/61 microbial limit reports.' }
+        ]}
+      />
       <p style="margin-top: 24px;"><a href="/faq">Read all frequently asked questions →</a></p>
     </div>
   </section>
@@ -630,5 +643,4 @@ const featuredCases = cases.slice(0, 3);
       </div>
     </div>
   </section>
-<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":faqPreview.map(f=>({ "@type":"Question","name":f.q,"acceptedAnswer":{"@type":"Answer","text":f.a}}))})} />
 </BaseLayout>

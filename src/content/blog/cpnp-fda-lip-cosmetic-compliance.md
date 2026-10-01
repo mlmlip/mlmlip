@@ -5,6 +5,8 @@ pubDate: 2026-09-21
 tags: ["compliance", "CPNP", "FDA", "EU regulation", "import"]
 ---
 
+> **Quick Answer:** To legally sell lip cosmetics in Europe and the US, importers need EU CPNP notification with a certified CPSR dossier and US FDA MoCRA facility and product listings. Partnering with an ISO 22716-compliant OEM contract manufacturer ensures compliant ingredient screening, stability testing, and 7-day sample documentation from 500 pcs MOQ.
+
 The cosmetic compliance landscape is the single most underestimated cost and timeline item in a private label lip launch. Founders who budget for formula and packaging but treat compliance as "the factory handles it" lose weeks at customs — or worse, get stock held at the border because a dossier is incomplete.
 
 This article maps the real compliance path for a lip cosmetic imported into the European Union and the United States in 2026. It is written for brand founders, not regulatory lawyers, so we trade precision for clarity where it helps you plan.

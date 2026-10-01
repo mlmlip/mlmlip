@@ -6,6 +6,8 @@ author: "Beautychain Technical Team"
 tags: ["cosmetics regulatory compliance", "FDA MoCRA vs EU CPNP", "cosmetics import regulations", "cosmetics safety assessment", "contract manufacturing compliance"]
 ---
 
+> **Quick Answer:** Cosmetics regulatory compliance differs fundamentally between regions: the US FDA MoCRA mandates post-market facility registration and safety substantiation, while the EU requires pre-market CPNP notification, a designated Responsible Person, and CPSR dossiers. An ISO 22716-certified contract manufacturer provides complete bilingual testing data starting from 500 pcs pilot orders.
+
 Expanding a beauty brand internationally is one of the most lucrative growth levers for modern cosmetic brand owners. However, navigating the divergent legal frameworks governing cosmetic safety across the United States, the European Union, and the United Kingdom presents formidable technical and operational hurdles. A formulation, packaging label, or ingredient deck approved for distribution in New York may face immediate customs seizure in Rotterdam or London if critical compliance mandates are overlooked.
 
 The global regulatory landscape underwent its most significant transformation in decades with the enforcement of the Modernization of Cosmetics Regulation Act (MoCRA) in the United States, narrowing historical gaps between American oversight and Europe's famously stringent rules. Yet fundamental distinctions in safety dossiers, mandatory responsible entity representation, and chemical restriction thresholds remain.

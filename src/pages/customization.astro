@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import GeoFAQ from '../components/GeoFAQ.astro';
+import GeoComparisonTable from '../components/GeoComparisonTable.astro';
 import { site, pillars, steps } from '../data/site';
 ---
 
@@ -40,35 +42,24 @@ import { site, pillars, steps } from '../data/site';
       <p class="lead" style="max-width:640px;">
         Not every brand needs a custom mold on day one. Pick the route that matches your stage — and upgrade later without changing supplier.
       </p>
-      <div class="card gold-line table-responsive" style="margin-top:28px; padding:0;">
-        <table style="width:100%; border-collapse:collapse; font-size:14px; min-width:680px;">
-          <thead>
-            <tr style="background:var(--blush);">
-              <th style="padding:16px 20px; text-align:left; color:var(--plum); font-family:'Playfair Display',serif; font-weight:600;">What you get</th>
-              <th style="padding:16px 20px; text-align:left; color:var(--burgundy); font-family:'Playfair Display',serif; font-weight:600;">Library route</th>
-              <th style="padding:16px 20px; text-align:left; color:var(--burgundy); font-family:'Playfair Display',serif; font-weight:600;">Custom mold route</th>
-              <th style="padding:16px 20px; text-align:left; color:var(--burgundy); font-family:'Playfair Display',serif; font-weight:600;">Full bespoke route</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              ['Packaging', 'In-stock library components', 'Exclusive custom-molded silhouette', 'Custom mold + exclusive finish & decoration'],
-              ['Formulation', 'Tuned from existing formula base', 'Tuned from existing base or new active story', 'Ground-up formulation, patent-ready'],
-              ['Shade card', 'Pantone-matched to your palette', 'Full custom shade development', 'Exclusive shade range, no resale'],
-              ['Branding', 'Logo print on library pack', 'Logo + custom decoration on your mold', 'Full brand system on exclusive components'],
-              ['Tooling cost', 'None', 'One-time mold fee (yours)', 'Mold + finishing tooling (yours)'],
-              ['Lead to sample', '7 days', '4–8 weeks tooling + 7 days', '6–10 weeks + 7 days'],
-              ['Best for', 'First launch, market test', 'Brand has traction, needs signature', 'Mature brand expanding exclusive line']
-            ].map((row) => (
-              <tr style="border-bottom:1px solid var(--line);">
-                <td style="padding:14px 20px; color:var(--plum); font-weight:600;">{row[0]}</td>
-                <td style="padding:14px 20px; color:var(--ink-soft);">{row[1]}</td>
-                <td style="padding:14px 20px; color:var(--ink-soft);">{row[2]}</td>
-                <td style="padding:14px 20px; color:var(--ink-soft);">{row[3]}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div style="margin-top:28px;">
+        <GeoComparisonTable
+          columns={[
+            { key: 'feature', label: 'What you get' },
+            { key: 'library', label: 'Library route' },
+            { key: 'custom', label: 'Custom mold route' },
+            { key: 'bespoke', label: 'Full bespoke route' }
+          ]}
+          data={[
+            { feature: 'Packaging', library: 'In-stock library components', custom: 'Exclusive custom-molded silhouette', bespoke: 'Custom mold + exclusive finish & decoration' },
+            { feature: 'Formulation', library: 'Tuned from existing formula base', custom: 'Tuned from existing base or new active story', bespoke: 'Ground-up formulation, patent-ready' },
+            { feature: 'Shade card', library: 'Pantone-matched to your palette', custom: 'Full custom shade development', bespoke: 'Exclusive shade range, no resale' },
+            { feature: 'Branding', library: 'Logo print on library pack', custom: 'Logo + custom decoration on your mold', bespoke: 'Full brand system on exclusive components' },
+            { feature: 'Tooling cost', library: 'None', custom: 'One-time mold fee (yours)', bespoke: 'Mold + finishing tooling (yours)' },
+            { feature: 'Lead to sample', library: '7 days', custom: '4–8 weeks tooling + 7 days', bespoke: '6–10 weeks + 7 days' },
+            { feature: 'Best for', library: 'First launch, market test', custom: 'Brand has traction, needs signature', bespoke: 'Mature brand expanding exclusive line' }
+          ]}
+        />
       </div>
       <p class="note" style="margin-top:14px;">
         All three routes share the same {site.moq} MOQ, 7-day sampling, and GMPC + ISO compliance. The route changes how exclusive your product looks — not whether we can make it.
@@ -155,6 +146,35 @@ import { site, pillars, steps } from '../data/site';
         ))}
       </div>
       <p style="margin-top:28px"><a class="btn" href="/contact">Book a consultation</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <GeoFAQ
+        faqs={[
+          {
+            question: "What is your MOQ for custom lip products?",
+            answer: `Our standard MOQ is ${site.moq} pieces per SKU for library packaging routes. This low threshold is perfect for indie brands testing new shade ranges or formulations without heavy inventory risks.`
+          },
+          {
+            question: "How long does it take to create a custom formula sample?",
+            answer: "Once we finalize your brief, our lab typically prepares your custom formulation samples within 7 business days. This includes pigment matching and initial stability testing."
+          },
+          {
+            question: "Do you provide CPNP PIF files for the EU market?",
+            answer: "Yes, we provide full Product Information Files (PIF) and can assist with CPNP registration. Our formulas are strictly audited for EU compliance, ensuring no banned substances are used."
+          },
+          {
+            question: "What are the costs for a custom mold (tooling)?",
+            answer: "Custom mold fees for a unique tube silhouette generally range between $1,500 and $3,500 depending on complexity. The mold belongs entirely to you and will never be used for other clients."
+          },
+          {
+            question: "Are your lip cosmetics cruelty-free and vegan?",
+            answer: "Absolutely. We offer an extensive library of vegan bases, and we never test on animals. We can also formulate with clean, organic, and halal-compliant ingredients upon request."
+          }
+        ]}
+      />
     </div>
   </section>
 </BaseLayout>
