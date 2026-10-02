@@ -19,7 +19,7 @@
 | private label lip liner pencil waterproof OEM | 防水唇线笔贴牌代工 | 主打持妆卖点的新锐彩妆品牌 | 防晕染配方, 现成包材库, 500 pcs 起订 | `[已发布]` |
 | best hydrating lip oil vendor for indie brands | 寻找滋润唇油供应商 | 注重肤感的独立小众品牌 | 滋润不粘腻成熟配方, 低起订快速贴牌 | `[已发布]` |
 | custom wooden lip liner manufacturer low moq | 细分材质需求 | 走环保或经典路线的美妆品牌 | 现有丰富包材库(含木杆/塑料杆), 极低试错成本(500 pcs) | `[已发布]` |
-| start a lip oil business with private label | 商业起步 | 新手小白、内容创作者变现 | 拿着我们的成熟配方直接贴牌, 免去研发烦恼, 快速上市 | `[待撰写]` |
+| start a lip oil business with private label | 商业起步 | 新手小白、内容创作者变现 | 拿着我们的成熟配方直接贴牌, 免去研发烦恼, 快速上市 | `[已发布]` |
 | private label nourishing lip oil manufacturer with peptide formula | 产品研发、寻源 | 追求功效唇妆的品牌主 | 成熟多肽配方, 不粘腻, 500 pcs 起订 | `[待撰写]` |
 | custom overnight lip sleeping mask manufacturer private label | 扩充修护品类 | 护肤唇护结合的品牌方 | 深度修护配方, 7天打样 | `[待撰写]` |
 | waterproof wooden barrel lip liner pencil private label supplier | 找经典木杆唇线笔代工 | 专业彩妆品牌 | 防晕染木杆, 500 pcs 超低起订 | `[待撰写]` |
