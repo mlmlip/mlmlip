@@ -22,7 +22,7 @@
 | start a lip oil business with private label | 商业起步 | 新手小白、内容创作者变现 | 拿着我们的成熟配方直接贴牌, 免去研发烦恼, 快速上市 | `[已发布]` |
 | private label nourishing lip oil manufacturer with peptide formula | 产品研发、寻源 | 追求功效唇妆的品牌主 | 成熟多肽配方, 不粘腻, 500 pcs 起订 | `[已发布]` |
 | custom overnight lip sleeping mask manufacturer private label | 扩充修护品类 | 护肤唇护结合的品牌方 | 深度修护配方, 7天打样 | `[已发布]` |
-| waterproof wooden barrel lip liner pencil private label supplier | 找经典木杆唇线笔代工 | 专业彩妆品牌 | 防晕染木杆, 500 pcs 超低起订 | `[待撰写]` |
+| waterproof wooden barrel lip liner pencil private label supplier | 找经典木杆唇线笔代工 | 专业彩妆品牌 | 防晕染木杆, 500 pcs 超低起订 | `[已发布]` |
 | retractable mechanical lip liner private label manufacturer | 采购旋转唇线笔 | 欧美电商品牌 | 精密机械旋出, 防断芯配方 | `[待撰写]` |
 | velvet matte lip mud manufacturer custom soft blur formula | 寻找雾面唇泥工厂 | 紧跟流行的彩妆创客 | 丝绒柔焦不拔干, 打样费可抵扣 | `[待撰写]` |
 | transfer proof liquid lipstick private label factory low moq | 采购不沾杯唇釉 | 亚马逊卖家 | 长效不沾杯, 500 pcs 试单 | `[待撰写]` |
