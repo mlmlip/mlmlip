@@ -27,7 +27,7 @@
 | velvet matte lip mud manufacturer custom soft blur formula | 寻找雾面唇泥工厂 | 紧跟流行的彩妆创客 | 丝绒柔焦不拔干, 打样费可抵扣 | `[已发布]` |
 | transfer proof liquid lipstick private label factory low moq | 采购不沾杯唇釉 | 亚马逊卖家 | 长效不沾杯, 500 pcs 试单 | `[已发布]` |
 | plumping peptide lip oil supplier private label custom packaging | 找丰唇效果唇油工厂 | TikTok美妆红人 | 温和丰唇配方, 特色包材库 | `[已发布]` |
-| hydrating non sticky clear lip gloss wholesale custom logo | 经典透明唇蜜贴牌 | 美妆初创者 | 不粘发配方, 500 pcs 快速印Logo | `[待撰写]` |
+| hydrating non sticky clear lip gloss wholesale custom logo | 经典透明唇蜜贴牌 | 美妆初创者 | 不粘发配方, 500 pcs 快速印Logo | `[已发布]` |
 | custom bullet lipstick manufacturer with private tooling case | 固体口红开模定制 | 中大型独立品牌 | 磁吸浮雕私模, 哑光缎光质地 | `[待撰写]` |
 | collagen lip treatment mask manufacturer for daily lip care | 胶原蛋白日用唇膜代工 | 轻奢美妆品牌 | 活性滋润, GMPC洁净车间 | `[待撰写]` |
 | how to find a reliable private label lip gloss manufacturer | 甄别供应商 | 首次做唇妆的创业者 | GMPC/ISO认证, 500 pcs 降低试错 | `[待撰写]` |
