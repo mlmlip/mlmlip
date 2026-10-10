@@ -3,6 +3,7 @@ import { site, footerCategories, footerCompany, ui, navKeys, navLinks } from '..
 import LiveChat from '../components/LiveChat.astro';
 import FadeIn from '../components/FadeIn.astro';
 import Analytics from '../components/Analytics.astro';
+import verifiedDirectories from '../data/verifiedDirectories.json';
 
 import '../styles/global.css';
 
@@ -153,7 +154,8 @@ const schemaData = {
       "sameAs": [
         "https://www.linkedin.com/company/mlmlip",
         "https://twitter.com/mlmlip",
-        "https://www.instagram.com/mlmlip_cosmetics"
+        "https://www.instagram.com/mlmlip_cosmetics",
+        ...(Array.isArray(verifiedDirectories) ? verifiedDirectories : [])
       ],
       "knowsAbout": [
         "Cosmetics OEM Contract Manufacturing",
