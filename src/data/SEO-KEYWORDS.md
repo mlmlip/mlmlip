@@ -30,7 +30,7 @@
 | hydrating non sticky clear lip gloss wholesale custom logo | 经典透明唇蜜贴牌 | 美妆初创者 | 不粘发配方, 500 pcs 快速印Logo | `[已发布]` |
 | custom bullet lipstick manufacturer with private tooling case | 固体口红开模定制 | 中大型独立品牌 | 磁吸浮雕私模, 哑光缎光质地 | `[已发布]` |
 | collagen lip treatment mask manufacturer for daily lip care | 胶原蛋白日用唇膜代工 | 轻奢美妆品牌 | 活性滋润, GMPC洁净车间 | `[已发布]` |
-| how to find a reliable private label lip gloss manufacturer | 甄别供应商 | 首次做唇妆的创业者 | GMPC/ISO认证, 500 pcs 降低试错 | `[待撰写]` |
+| how to find a reliable private label lip gloss manufacturer | 甄别供应商 | 首次做唇妆的创业者 | GMPC/ISO认证, 500 pcs 降低试错 | `[已发布]` |
 | best private label lip cosmetics manufacturer with low moq | 货比三家 | 资金受限的初创卖家 | 行业罕见500 pcs, 混色试单 | `[待撰写]` |
 | private label vs custom formulation lip cosmetics comparison | 代工模式对比 | 品牌产品开发经理 | 现成配方快速上市+深度定制 | `[待撰写]` |
 | how much does it cost to manufacture private label lipstick | 测算代工成本 | 做商业计划的创业者 | 打样费全额抵扣, 透明阶梯报价 | `[待撰写]` |
