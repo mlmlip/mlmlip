@@ -97,7 +97,7 @@ Brands can utilize existing component libraries or partner with Beautychain Limi
 ---
 
 > ### 🚀 B2B Strategic Growth Lead Magnet
-> **《500 pcs 极速测款打样申请通道 (Delta E ≤ 0.5 零色差保障)》**  
+> **"500 pcs Rapid Pilot Batch & Lab Sampling Application (Delta E ≤ 0.5 Zero Color-Deviation Guarantee)"**  
 > *Target Audience*: Indie Beauty Founders, Formulation Chemists, and Cross-Border E-commerce Brand Owners.  
 > *Deliverable*: Secure a priority 7-day lab sampling batch for your custom plumping peptide lip oil, backed by spectrophotometer color precision and full compliance documentation.  
 > *Direct Action*: Connect instantly with our senior formulation engineering team via [WhatsApp (+86 136 5238 0291)](https://wa.me/8613652380291) or submit your project parameters directly at our online [Brief Desk Quote Portal](/quote).
