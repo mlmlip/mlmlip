@@ -52,7 +52,7 @@ const featuredCases = cases.slice(0, 3);
   <section style="padding: 0;">
     <div class="wrap">
       <div class="card" style="margin-top: -32px; position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 18px 34px; justify-content: center; padding: 20px 28px; box-shadow: var(--shadow-md);">
-        {['GMPC certified', 'ISO 22716', 'EU CPNP support', 'FDA-ready documentation', '500 pcs MOQ', '7-day sampling'].map((t) => (
+        {['FDA MoCRA Registered', 'EU Microplastic-Free Compliant (Reg 2023/2055)', 'GMPC certified', 'ISO 22716', 'EU CPNP support', '500 pcs MOQ', '7-day sampling'].map((t) => (
           <span style="font-size: 14px; color: var(--plum); font-weight: 600; letter-spacing: 0.02em;">{t}</span>
         ))}
       </div>
@@ -645,4 +645,38 @@ const featuredCases = cases.slice(0, 3);
       </div>
     </div>
   </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the minimum order quantity (MOQ) for custom lip cosmetics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MLM Lip offers a universal 500 pcs MOQ per SKU across all 6 lip product categories: lip gloss, lip mud, lip oil, lipstick, lip liner, and lip mask."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast are custom cosmetic formulation samples ready?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Custom shade matching and formulation prototypes are dispatched within 7 business days. 100% of sampling fees are credited back upon bulk order confirmation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your formulations compliant with US FDA MoCRA and EU Microplastics regulations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Facilities are FDA MoCRA registered, ISO 22716/GMPC certified, and all high-shimmer formulations comply strictly with EU Regulation 2023/2055 on microplastic-free biodegradable materials."
+      }
+    }
+  ]
+}
+</script>
+
 </BaseLayout>

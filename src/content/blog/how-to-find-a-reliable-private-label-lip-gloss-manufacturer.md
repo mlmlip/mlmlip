@@ -51,8 +51,11 @@ While low MOQs reduce upfront capital risk, brand developers must ensure that pe
 ### Scaling from Pilot Batches to Mass Production
 A reliable manufacturing partner must offer a seamless transition pathway from initial 500-piece pilot runs to large-scale commercial manufacturing exceeding 50,000 units. Beautychain Limited scales batch sizes dynamically as brand demand accelerates, maintaining identical rheological profiles and shade fidelity across every production run.
 
+<<<<<<< Updated upstream
 For related insights, see [White Label Lipstick California Prop 65 Compliant Supplier](/blog/white-label-lipstick-california-prop-65-heavy-metal-compliant-supplier/).
 
+=======
+>>>>>>> Stashed changes
 For related insights, see [Custom Bullet Lipstick Manufacturer with Private Tooling Case](/blog/custom-bullet-lipstick-manufacturer-with-private-tooling-case/).
 
 For related insights, see [Plumping Peptide Lip Oil Supplier & Custom Packaging OEM](/blog/plumping-peptide-lip-oil-supplier-private-label-custom-packaging/).
