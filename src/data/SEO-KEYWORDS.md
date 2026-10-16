@@ -33,7 +33,7 @@
 | how to find a reliable private label lip gloss manufacturer | 甄别供应商 | 首次做唇妆的创业者 | GMPC/ISO认证, 500 pcs 降低试错 | `[已发布]` |
 | private label lip gloss manufacturer fda mocra 2024 compliant usa | 寻找合规源头代工 | 美国Indie唇妆品牌创始人、产品开发总监 | 支持美国FDA MoCRA 2024设施注册与产品备案, D&C认证色粉, DDP美国门到门 | `[已发布]` |
 | custom lip gloss eu cpnp registration manufacturer b2b | 欧洲市场合规采购 | 欧盟美妆品牌主理人(DE/FR/NL/IT)、欧洲指定责任人(RP) | 提供完整PIF产品信息档案, 支持CPNP通报备案, 符合EU 1223/2009法规 | `[已发布]` |
-| white label lipstick california prop 65 heavy metal compliant supplier | 加州合规口红寻源 | 加州本地品牌、北美Clean Beauty零售大卖 | 严格把控铅镉等有害重金属限量, 提供批次检测报告, 符合加州65号提案 | `[待撰写]` |
+| white label lipstick california prop 65 heavy metal compliant supplier | 加州合规口红寻源 | 加州本地品牌、北美Clean Beauty零售大卖 | 严格把控铅镉等有害重金属限量, 提供批次检测报告, 符合加州65号提案 | `[已发布]` |
 | private label lip oil oem manufacturer uk scpn compliant b2b | 英国市场合规代工 | 英国独立美妆品牌、脱欧后本土进口商 | 支持英国SCPN通报系统, UKCA标签合规, 支持DDP英国专线空运海运 | `[待撰写]` |
 | bulk lip gloss manufacturer fdc dc colorant certified b2b usa | 采购FDA合规色粉唇蜜 | 欧美彩妆配方师、代工寻源经理 | 严选美国FDA认可FD&C/D&C安全色粉清单(21 CFR), 无非法添加染料 | `[待撰写]` |
 | custom lipstick oem 500 pcs moq ddp shipping united states | 小批量定制口红到岸 | 欧美电商卖家、Amazon FBA品牌创始人 | 500 pcs极低开线起订量, 私模定制膏体, DDP美国双清包税送仓 | `[待撰写]` |
