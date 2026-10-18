@@ -55,6 +55,9 @@ For related insights, see [Custom Lip Gloss EU CPNP Registration Manufacturer B2
 
 For related insights, see [How to Find a Reliable Private Label Lip Gloss Manufacturer](/blog/how-to-find-a-reliable-private-label-lip-gloss-manufacturer/).
 
+For related insights, see [Bulk Lip Gloss Manufacturer | FDA FD&C D&C Certified B2B USA](/blog/bulk-lip-gloss-manufacturer-fdc-dc-colorant-certified-b2b-usa/).
+
+For related insights, see [Private Label Lip Plumper OEM Manufacturer & EU PIF Documentation](/blog/private-label-lip-plumper-oem-manufacturer-pif-documentation-eu/).
 
 ## Bespoke Packaging Solutions and Tooling Capabilities
 

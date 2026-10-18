@@ -97,8 +97,8 @@ A: Yes, all custom formulations engineered by Beautychain Limited are dual-compl
 > **Get Your Free 2026 Regulatory & Formulation Resource Package**
 > 
 > * **Deliverable Options**: 
->   1. **《500 pcs 极速测款打样申请通道 (Delta E ≤ 0.5 零色差保障)》** (500-Piece Rapid Pilot Batch Sampling Protocol with Delta E ≤ 0.5 Color Precision Guarantee)
->   2. **《2026 EU MoCRA 唇部配方出海避坑白皮书下载》** (2026 EU MoCRA & CPNP Lip Formulation Cross-Border Compliance Whitepaper)
+>   1. **500-Piece Rapid Pilot Batch Sampling Protocol (Delta E ≤ 0.5 Color Precision Guarantee)**
+>   2. **2026 EU MoCRA & CPNP Lip Formulation Cross-Border Compliance Whitepaper — Free Download**
 > * **Target Recipient Qualification**: B2B Indie Beauty Founders, Cosmetic Product Developers, Procurement Directors, and Cross-Border E-commerce Brand Owners.
 > * **Action Trigger**: Sesmooths your custom laboratory allocation or download the regulatory compliance whitepaper immediately by messaging our engineering desk directly on WhatsApp at [+86 136 5238 0291](https://wa.me/8613652380291) or submitting an inquiry via the [Beautychain Limited Instant Quote Desk](/quote).
 
