@@ -7,6 +7,9 @@ export default defineConfig({
   // Server output is required for the owned inquiry endpoint (src/pages/api/inquiry.ts).
   output: 'server',
   adapter: vercel(),
+  security: {
+    checkOrigin: false
+  },
   integrations: [sitemap({
     i18n: {
       defaultLocale: 'en',
