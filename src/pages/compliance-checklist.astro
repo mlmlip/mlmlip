@@ -1,0 +1,407 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { site } from '../data/site';
+
+const checklistSchema = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "2026 Lip Cosmetics Compliance Checklist: FDA MoCRA & EU CPNP Self-Audit Guide",
+  "description": "Essential regulatory checklist for lip gloss, lipstick, and lip mud manufacturing. Verify FDA MoCRA registration, EU CPNP PIF requirements, CPSR testing, and heavy metals limits for your 500 pcs pilot run.",
+  "author": {
+    "@type": "Organization",
+    "name": "Beautychain Limited",
+    "url": site.domain
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Beautychain Limited",
+    "url": site.domain
+  }
+};
+---
+
+<BaseLayout
+  title="2026 Lip Cosmetics Compliance Checklist: FDA MoCRA & EU CPNP Guide — Beautychain"
+  description="Actionable regulatory self-audit checklist for lip gloss, lip oil & lipstick private label manufacturing. FDA MoCRA registration, EU CPNP PIF dossiers, heavy metal limits, and 500 pcs turnkey compliance."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(checklistSchema)} />
+
+  <!-- Hero Section -->
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 48px; padding-bottom: 56px;">
+    <div class="wrap">
+      <Breadcrumbs items={[
+        { label: "Home", href: "/" },
+        { label: "Certifications", href: "/certifications" },
+        { label: "2026 Compliance Checklist" }
+      ]} />
+
+      <div style="max-width: 820px; margin-top: 24px;">
+        <span style="display: inline-block; background: var(--plum); color: white; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 4px 12px; border-radius: 4px; margin-bottom: 14px;">
+          Regulatory Engineering Whitepaper
+        </span>
+        <h1 style="font-size: clamp(28px, 3.4vw, 44px); line-height: 1.15; margin-bottom: 16px; color: var(--plum);">
+          2026 Lip Cosmetics Compliance Checklist
+        </h1>
+        <p class="lead" style="font-size: 18px; line-height: 1.6; color: var(--ink-soft); margin-bottom: 24px;">
+          The actionable compliance self-audit guide for indie beauty brands and cosmetic founders. Verify US FDA MoCRA facility registration, EU CPNP PIF dossiers, microbiological safety, and heavy metal limits before your 500 pcs production run.
+        </p>
+
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="#download-dossier" class="btn" style="padding: 13px 26px;">
+            Get Free Whitepaper &amp; Quote Sheet ↓
+          </a>
+          <a href="/quote" class="btn ghost" style="padding: 13px 26px;">
+            Request 500 pcs Turnkey Quote →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Checklist Core Sections -->
+  <section>
+    <div class="wrap">
+      <div class="grid two" style="gap: 36px; align-items: start;">
+        <!-- Column 1: FDA MoCRA Checklist -->
+        <div class="card" style="border-top: 4px solid var(--burgundy); box-shadow: var(--shadow-sm); padding: 32px 28px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em;">United States</span>
+            <span style="background: #eef7ee; color: #1e7e34; padding: 3px 10px; border-radius: 99px; font-size: 11px; font-weight: 600;">FDA MoCRA Enforced</span>
+          </div>
+          <h2 style="font-size: 22px; margin-bottom: 12px; color: var(--plum);">Part 1: US FDA MoCRA Checklist</h2>
+          <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 20px;">
+            Under the Modernization of Cosmetics Regulation Act of 2022 (MoCRA), lip cosmetic products marketed in the USA must satisfy strict statutory obligations:
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <span style="background: #2563eb; color: #fff; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px;">✓</span>
+              <div>
+                <strong style="color: var(--plum); font-size: 14px;">Facility Registration (Section 607):</strong>
+                <p style="margin: 2px 0 0; font-size: 13px; color: var(--ink-soft); line-height: 1.5;">Confirm your contract manufacturer holds an active FDA Facility Establishment Identifier (FEI). Beautychain's ISO 22716 cleanroom facilities maintain current FDA FEI records.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <span style="background: #2563eb; color: #fff; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px;">✓</span>
+              <div>
+                <strong style="color: var(--plum); font-size: 14px;">Cosmetic Product Listing (Cosmetics Direct):</strong>
+                <p style="margin: 2px 0 0; font-size: 13px; color: var(--ink-soft); line-height: 1.5;">Each lip SKU, formulation shade variant, and ingredient list must be registered via FDA SPL electronic format. We provide 100% pre-formatted INCI breakdowns for one-click upload.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <span style="background: #2563eb; color: #fff; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px;">✓</span>
+              <div>
+                <strong style="color: var(--plum); font-size: 14px;">Adequate Safety Substantiation (Section 608):</strong>
+                <p style="margin: 2px 0 0; font-size: 13px; color: var(--ink-soft); line-height: 1.5;">Formulations must be supported by verifiable safety data sheets (SDS), toxicological ingredient reviews, and stability records prior to commercial distribution.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <span style="background: #2563eb; color: #fff; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px;">✓</span>
+              <div>
+                <strong style="color: var(--plum); font-size: 14px;">Domestic Contact &amp; Adverse Event Logging:</strong>
+                <p style="margin: 2px 0 0; font-size: 13px; color: var(--ink-soft); line-height: 1.5;">Artwork must include a valid US domestic address, phone number, or electronic contact for adverse event submissions with mandatory 6-year record archiving.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <span style="background: #2563eb; color: #fff; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px;">✓</span>
+              <div>
+                <strong style="color: var(--plum); font-size: 14px;">FDA Certified Color Additives:</strong>
+                <p style="margin: 2px 0 0; font-size: 13px; color: var(--ink-soft); line-height: 1.5;">Colorants used in mucous-membrane lip cosmetics (FD&amp;C / D&amp;C lakes) must comply with 21 CFR Part 73/74 batch certification requirements.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: EU CPNP Checklist -->
+        <div class="card" style="border-top: 4px solid var(--gold); box-shadow: var(--shadow-sm); padding: 32px 28px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em;">European Union &amp; UK</span>
+            <span style="background: #eef7ee; color: #1e7e34; padding: 3px 10px; border-radius: 99px; font-size: 11px; font-weight: 600;">(EC) No 1223/2009</span>
+          </div>
+          <h2 style="font-size: 22px; margin-bottom: 12px; color: var(--plum);">Part 2: EU CPNP &amp; CPSR Checklist</h2>
+          <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 20px;">
+            Placing lip cosmetics on the European Single Market requires strict conformity with European Cosmetics Regulation (EC) No 1223/2009:
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <span style="background: #eab308; color: #fff; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px;">✓</span>
+              <div>
+                <strong style="color: var(--plum); font-size: 14px;">EU Responsible Person (RP) Designation:</strong>
+                <p style="margin: 2px 0 0; font-size: 13px; color: var(--ink-soft); line-height: 1.5;">Every cosmetic product in the EU requires a designated legal entity established within the Community to act as the Responsible Person holding the product file.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <span style="background: #eab308; color: #fff; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px;">✓</span>
+              <div>
+                <strong style="color: var(--plum); font-size: 14px;">Cosmetic Product Safety Report (CPSR Part A &amp; B):</strong>
+                <p style="margin: 2px 0 0; font-size: 13px; color: var(--ink-soft); line-height: 1.5;">Part A (Safety Information: stability, microbiology, packaging interaction) and Part B (Safety Assessment signed by a qualified European safety assessor with diploma in toxicology).</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <span style="background: #eab308; color: #fff; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px;">✓</span>
+              <div>
+                <strong style="color: var(--plum); font-size: 14px;">Product Information File (PIF) 10-Year Archiving:</strong>
+                <p style="margin: 2px 0 0; font-size: 13px; color: var(--ink-soft); line-height: 1.5;">A comprehensive digital dossier containing formula specifications, GMP certificate, proof of claimed effects, and animal testing compliance records.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <span style="background: #eab308; color: #fff; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px;">✓</span>
+              <div>
+                <strong style="color: var(--plum); font-size: 14px;">CPNP Electronic Portal Notification:</strong>
+                <p style="margin: 2px 0 0; font-size: 13px; color: var(--ink-soft); line-height: 1.5;">Electronic notification submitted prior to commercial launch via the European Cosmetic Product Notification Portal (CPNP) and UK SCPN.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <span style="background: #eab308; color: #fff; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px;">✓</span>
+              <div>
+                <strong style="color: var(--plum); font-size: 14px;">100% Animal Testing Prohibition (Chapter V):</strong>
+                <p style="margin: 2px 0 0; font-size: 13px; color: var(--ink-soft); line-height: 1.5;">Zero animal testing on finished product or raw materials. Beautychain certifies cruelty-free compliance with comprehensive non-animal testing dossiers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Laboratory Testing Limits Table -->
+  <section class="tint">
+    <div class="wrap">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 32px;">
+        <p class="eyebrow" style="color: var(--gold);">Analytical Benchmarks</p>
+        <h2 style="font-size: 28px; margin-bottom: 12px; color: var(--plum);">Formulation Testing Tolerances &amp; Safety Limits</h2>
+        <p class="lead" style="font-size: 15px; margin: 0;">
+          All Beautychain 500 pcs lip production batches are released against validated international limits. Every batch receives a certified laboratory Certificate of Analysis (COA).
+        </p>
+      </div>
+
+      <div style="overflow-x: auto; background: white; border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow-sm); max-width: 960px; margin: 0 auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px; text-align: left;">
+          <thead>
+            <tr style="background: var(--cream); border-bottom: 2px solid var(--line);">
+              <th style="padding: 12px 18px; font-weight: 600; color: var(--plum);">Safety Metric</th>
+              <th style="padding: 12px 18px; font-weight: 600; color: var(--plum);">Standard Tolerance Limit</th>
+              <th style="padding: 12px 18px; font-weight: 600; color: var(--plum);">Target Market Directive</th>
+              <th style="padding: 12px 18px; font-weight: 600; color: var(--plum);">Beautychain Release SLA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--line);">
+              <td style="padding: 12px 18px; font-weight: 600;">Lead (Pb)</td>
+              <td style="padding: 12px 18px;">&le; 10 ppm (mg/kg)</td>
+              <td style="padding: 12px 18px; color: var(--ink-soft);">US FDA Guidance / Health Canada</td>
+              <td style="padding: 12px 18px; color: #1e7e34; font-weight: 600;">ICP-MS Batch Tested (&lt; 2 ppm)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--line);">
+              <td style="padding: 12px 18px; font-weight: 600;">Arsenic (As)</td>
+              <td style="padding: 12px 18px;">&le; 2 ppm (mg/kg)</td>
+              <td style="padding: 12px 18px; color: var(--ink-soft);">EU Regulation 1223/2009</td>
+              <td style="padding: 12px 18px; color: #1e7e34; font-weight: 600;">Pass (&lt; 0.5 ppm)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--line);">
+              <td style="padding: 12px 18px; font-weight: 600;">Mercury (Hg)</td>
+              <td style="padding: 12px 18px;">&le; 1 ppm (mg/kg)</td>
+              <td style="padding: 12px 18px; color: var(--ink-soft);">US FDA 21 CFR &sect; 700.13</td>
+              <td style="padding: 12px 18px; color: #1e7e34; font-weight: 600;">Non-detected (&lt; 0.1 ppm)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--line);">
+              <td style="padding: 12px 18px; font-weight: 600;">Cadmium (Cd)</td>
+              <td style="padding: 12px 18px;">&le; 5 ppm (mg/kg)</td>
+              <td style="padding: 12px 18px; color: var(--ink-soft);">EU Annex II Banned Impurity Limit</td>
+              <td style="padding: 12px 18px; color: #1e7e34; font-weight: 600;">Pass (&lt; 0.5 ppm)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--line);">
+              <td style="padding: 12px 18px; font-weight: 600;">Microbiology (TAMC)</td>
+              <td style="padding: 12px 18px;">&lt; 100 CFU / g</td>
+              <td style="padding: 12px 18px; color: var(--ink-soft);">ISO 21149 / USP &lt;61&gt;</td>
+              <td style="padding: 12px 18px; color: #1e7e34; font-weight: 600;">Zero Growth Verified</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 18px; font-weight: 600;">Preservative Efficacy (PET)</td>
+              <td style="padding: 12px 18px;">Log reduction &gt; 3.0 at Day 14</td>
+              <td style="padding: 12px 18px; color: var(--ink-soft);">USP &lt;51&gt; / ISO 11930</td>
+              <td style="padding: 12px 18px; color: #1e7e34; font-weight: 600;">28-Day Challenge Passed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gated Download & Instant Inquiry Form -->
+  <section id="download-dossier" style="padding: 64px 0;">
+    <div class="wrap">
+      <div class="card" style="max-width: 760px; margin: 0 auto; border: 1px solid var(--line); border-top: 4px solid var(--burgundy); box-shadow: var(--shadow-md); padding: 40px 36px; background: white; border-radius: 12px;">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.15em;">Direct B2B Regulatory Access</p>
+          <h2 style="font-size: 26px; margin-bottom: 10px; color: var(--plum);">Download 2026 Lip Compliance Checklist (PDF) &amp; Pricing</h2>
+          <p class="lead" style="font-size: 15px; margin: 0 auto;">
+            Enter your brand details below to receive the complete regulatory whitepaper, formula declaration templates, and our 500 pcs tiered private label price schedule.
+          </p>
+        </div>
+
+        <form id="checklist-inquiry-form" action="/api/inquiry" method="POST" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <input type="hidden" name="source" value="compliance_checklist_page" />
+          <input type="hidden" name="requested_document" value="2026_Lip_Cosmetics_Compliance_Checklist_PDF" />
+          <!-- Honeypot -->
+          <input type="text" name="botcheck" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none;" />
+
+          <div style="grid-column: span 1;">
+            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--plum); margin-bottom: 6px;">Your Name *</label>
+            <input type="text" name="name" required placeholder="e.g. Jane Miller" style="width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px;" />
+          </div>
+
+          <div style="grid-column: span 1;">
+            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--plum); margin-bottom: 6px;">Work Email *</label>
+            <input type="email" name="email" required placeholder="jane@yourbrand.com" style="width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px;" />
+          </div>
+
+          <div style="grid-column: span 1;">
+            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--plum); margin-bottom: 6px;">Brand / Company</label>
+            <input type="text" name="company" placeholder="e.g. Velvet Glow Studio" style="width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px;" />
+          </div>
+
+          <div style="grid-column: span 1;">
+            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--plum); margin-bottom: 6px;">Product Category</label>
+            <select name="productType" style="width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; background: white;">
+              <option value="Lip Gloss">Lip Gloss (High Shine / Plumping)</option>
+              <option value="Lip Mud">Lip Mud &amp; Velvet Tint</option>
+              <option value="Peptide Lip Oil">Peptide Lip Oil</option>
+              <option value="Lipstick">Bullet Lipstick (Matte / Satin)</option>
+              <option value="Lip Mask">Overnight Lip Mask</option>
+              <option value="Custom Lip Collection">Custom Lip Kit (Multi-SKU)</option>
+            </select>
+          </div>
+
+          <div style="grid-column: span 1;">
+            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--plum); margin-bottom: 6px;">Target Volume</label>
+            <select name="quantity" style="width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; background: white;">
+              <option value="500 pcs">500 pcs (Agile Pilot Batch)</option>
+              <option value="1,000 pcs">1,000 pcs</option>
+              <option value="3,000 pcs">3,000 pcs</option>
+              <option value="5,000+ pcs">5,000+ pcs (Scale)</option>
+            </select>
+          </div>
+
+          <div style="grid-column: span 1;">
+            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--plum); margin-bottom: 6px;">Target Market</label>
+            <select name="country" style="width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; background: white;">
+              <option value="United States (FDA MoCRA)">United States (FDA MoCRA)</option>
+              <option value="European Union (EU CPNP)">European Union (EU CPNP)</option>
+              <option value="United Kingdom (UK SCPN)">United Kingdom (UK SCPN)</option>
+              <option value="Canada / Australia">Canada / Australia</option>
+              <option value="Global Distribution">Global Distribution</option>
+            </select>
+          </div>
+
+          <div style="grid-column: span 2;">
+            <label style="display: block; font-size: 13px; font-weight: 600; color: var(--plum); margin-bottom: 6px;">Specific Compliance Questions or Formula Notes</label>
+            <textarea name="details" rows="3" placeholder="Tell us if you require shade matching, custom component tooling, or specific clean beauty claims (Cruelty-Free, Vegan, PFAS-Free)..." style="width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; resize: vertical;"></textarea>
+          </div>
+
+          <div style="grid-column: span 2; margin-top: 8px;">
+            <button id="cl-submit-btn" type="submit" class="btn" style="width: 100%; padding: 14px; font-size: 16px; cursor: pointer; text-align: center; background: var(--burgundy); color: white; border: none; border-radius: 8px; font-weight: 600;">
+              Download Checklist &amp; Request Formulation Dossier →
+            </button>
+          </div>
+
+          <div id="cl-status" style="display: none; grid-column: span 2; padding: 14px 18px; border-radius: 8px; font-size: 14px; font-weight: 500; text-align: center;"></div>
+        </form>
+
+        <!-- Post-submit instant download prompt -->
+        <div id="cl-download-box" hidden style="margin-top: 24px; padding: 20px; background: #eef7ee; border: 1px solid #c3e6cb; border-radius: 8px; text-align: center;">
+          <h3 style="color: #155724; margin: 0 0 8px; font-size: 18px;">✓ Access Granted: Checklist &amp; Dossier Ready</h3>
+          <p style="font-size: 14px; color: #1e7e34; margin: 0 0 16px; line-height: 1.5;">
+            Thank you! Your regulatory inquiry has been transmitted to our senior cosmetics compliance engineers.
+          </p>
+          <a href="/quote" class="btn" style="display: inline-block; background: var(--burgundy); color: white; padding: 10px 20px; font-size: 14px; text-decoration: none;">
+            Explore Custom Formulation Options →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLA & Trust Guarantee -->
+  <section style="background: white; border-top: 1px solid var(--line); padding: 48px 0;">
+    <div class="wrap">
+      <div class="grid three" style="text-align: center; gap: 24px;">
+        <div>
+          <div style="font-size: 28px; margin-bottom: 8px;">🔬</div>
+          <h3 style="font-size: 17px; margin-bottom: 6px; color: var(--plum);">Full Dossier Included</h3>
+          <p style="margin: 0; font-size: 13.5px; color: var(--ink-soft);">Every 500 pcs batch includes complete INCI breakdowns, COA release sheets, and SDS documents ready for regulatory filing.</p>
+        </div>
+        <div>
+          <div style="font-size: 28px; margin-bottom: 8px;">⏱️</div>
+          <h3 style="font-size: 17px; margin-bottom: 6px; color: var(--plum);">24-Hour Review SLA</h3>
+          <p style="margin: 0; font-size: 13.5px; color: var(--ink-soft);">Our dedicated toxicologists and formulation engineers review your concept and provide compliance feasibility within 24 hours.</p>
+        </div>
+        <div>
+          <div style="font-size: 28px; margin-bottom: 8px;">🔒</div>
+          <h3 style="font-size: 17px; margin-bottom: 6px; color: var(--plum);">Mutual NDA Protection</h3>
+          <p style="margin: 0; font-size: 13.5px; color: var(--ink-soft);">100% proprietary formulation confidentiality. Your shade formulas and product concepts remain strictly confidential.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { postInquiry, whatsappLink } from '../lib/inquiryClient';
+
+  const clForm = document.getElementById('checklist-inquiry-form') as HTMLFormElement | null;
+  const clStatus = document.getElementById('cl-status');
+  const clBtn = document.getElementById('cl-submit-btn') as HTMLButtonElement | null;
+  const clDownloadBox = document.getElementById('cl-download-box');
+
+  clForm?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    if (clBtn) {
+      clBtn.disabled = true;
+      clBtn.textContent = 'Transmitting Regulatory Request...';
+    }
+    if (clStatus) clStatus.style.display = 'none';
+
+    const payload = Object.fromEntries(new FormData(clForm).entries());
+    const result = await postInquiry(payload);
+
+    if (result.ok) {
+      if (clStatus) {
+        clStatus.style.display = 'block';
+        clStatus.style.background = '#d4edda';
+        clStatus.style.color = '#155724';
+        clStatus.innerHTML = '✓ <strong>Request Transmitted!</strong> Your compliance dossier access and 500 pcs quotation have been dispatched.';
+      }
+      if (clDownloadBox) {
+        clDownloadBox.hidden = false;
+      }
+      clForm.reset();
+      if (clBtn) {
+        clBtn.disabled = false;
+        clBtn.textContent = '✓ Request Transmitted';
+      }
+    } else {
+      if (clStatus) {
+        clStatus.style.display = 'block';
+        clStatus.style.background = '#f8d7da';
+        clStatus.style.color = '#721c24';
+        clStatus.innerHTML = `Submission error. Please ${whatsappLink('chat directly with our compliance lead on WhatsApp')} or email <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>.`;
+      }
+      if (clBtn) {
+        clBtn.disabled = false;
+        clBtn.textContent = 'Retry Submission';
+      }
+    }
+  });
+</script>

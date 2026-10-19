@@ -2,11 +2,12 @@
 // Owned inquiry endpoint for mlmlip.com.
 // Ported from the mature mlmglitter implementation (Upstash rate limit -> IM fan-out),
 // adapted: Feishu + DingTalk signed webhooks only (no email provider), in-memory
-// rate-limit fallback, honeypot spam gate.
+// rate-limit fallback, honeypot spam gate, origin whitelist + dynamic host validation.
 //
 // Hard rule: no webhook URL, no signing secret is ever hardcoded. Everything comes
 // from environment variables. When they are missing the endpoint degrades to
-// "log a warning + still tell the customer success" so a visitor never sees an error.
+// structured error logging (with persistent fallback) + still tells customer success
+// so a visitor never sees an error.
 
 import type { APIRoute } from 'astro';
 import { createHash, createHmac, randomUUID } from 'node:crypto';
@@ -19,15 +20,15 @@ const MAX_BODY_BYTES = 64 * 1024;
 const MAX_FIELD_CHARS = 4_000;
 
 // Same-origin forms only. Cross-site POSTs are refused.
-const HONEYPOT_FIELDS = ['botcheck', 'website', 'fax', '_honey'];
+export const HONEYPOT_FIELDS = ['botcheck', 'website', 'fax', '_honey'];
 
 const RATE_LIMIT = Number(process.env.INQUIRY_RATE_LIMIT || 5);
 const RATE_WINDOW_SECONDS = Number(process.env.INQUIRY_RATE_WINDOW_SECONDS || 600);
 
-type RateMode = 'upstash' | 'memory';
-type DeliveryState = 'ok' | 'failed' | 'skipped';
+export type RateMode = 'upstash' | 'memory';
+export type DeliveryState = 'ok' | 'failed' | 'skipped';
 
-interface Inquiry {
+export interface Inquiry {
   requestId: string;
   name: string;
   email: string;
@@ -42,7 +43,7 @@ interface Inquiry {
   ip: string;
 }
 
-function json(body: unknown, status: number, extraHeaders: Record<string, string> = {}) {
+export function json(body: unknown, status: number, extraHeaders: Record<string, string> = {}) {
   return new Response(JSON.stringify(body), {
     status,
     headers: {
@@ -55,7 +56,7 @@ function json(body: unknown, status: number, extraHeaders: Record<string, string
 
 // Astro exposes .env via import.meta.env on the server; Vercel injects process.env.
 // Read both so the endpoint works in `astro dev` and in production alike.
-function env(name: string): string {
+export function env(name: string): string {
   const fromProcess = String(process.env[name] ?? '').trim();
   if (fromProcess) return fromProcess;
   return String((import.meta.env as Record<string, unknown> | undefined)?.[name] ?? '').trim();
@@ -68,6 +69,64 @@ function hashKey(value: string): string {
 function clamp(value: unknown): string {
   if (value === null || value === undefined) return '';
   return String(value).replace(/\s+/g, ' ').trim().slice(0, MAX_FIELD_CHARS);
+}
+
+/* ------------------------------------------------------------------ *
+ * Origin & CSRF Validation (Whitelist + Dynamic Host Matching)
+ * ------------------------------------------------------------------ */
+
+function checkHostMatch(url: URL, request: Request): boolean {
+  const host = url.host.toLowerCase();
+  const hostname = url.hostname.toLowerCase();
+
+  // 1. Whitelisted production domains
+  if (host === 'mlmlip.com' || host === 'www.mlmlip.com') return true;
+
+  // 2. Vercel preview environments (*.vercel.app)
+  if (hostname.endsWith('.vercel.app')) return true;
+
+  // 3. Localhost development environments
+  if (hostname === 'localhost' || hostname === '127.0.0.1') return true;
+
+  // 4. Match against incoming Host or X-Forwarded-Host
+  const forwardedHost = request.headers.get('x-forwarded-host')?.split(',')[0]?.trim().toLowerCase();
+  if (forwardedHost && host === forwardedHost) return true;
+
+  const headerHost = request.headers.get('host')?.split(',')[0]?.trim().toLowerCase();
+  if (headerHost && host === headerHost) return true;
+
+  // 5. Match against request.url host if valid
+  try {
+    const reqUrl = new URL(request.url);
+    if (url.host === reqUrl.host) return true;
+  } catch {}
+
+  return false;
+}
+
+export function isAllowedOrigin(request: Request): boolean {
+  const origin = request.headers.get('origin');
+
+  // If no Origin header, fall back to Referer or Sec-Fetch-Site
+  if (!origin) {
+    const referer = request.headers.get('referer');
+    if (!referer) {
+      const fetchSite = request.headers.get('sec-fetch-site');
+      if (fetchSite === 'cross-site') return false;
+      return true;
+    }
+    try {
+      return checkHostMatch(new URL(referer), request);
+    } catch {
+      return false;
+    }
+  }
+
+  try {
+    return checkHostMatch(new URL(origin), request);
+  } catch {
+    return false;
+  }
 }
 
 /* ------------------------------------------------------------------ *
@@ -107,7 +166,7 @@ function memoryLimit(key: string): { allowed: boolean } {
   return { allowed: next.count <= RATE_LIMIT };
 }
 
-async function checkRateLimit(identity: string): Promise<{ allowed: boolean; mode: RateMode }> {
+export async function checkRateLimit(identity: string): Promise<{ allowed: boolean; mode: RateMode }> {
   const key = hashKey(identity);
   try {
     initUpstash();
@@ -125,7 +184,7 @@ async function checkRateLimit(identity: string): Promise<{ allowed: boolean; mod
  * Payload normalisation + validation
  * ------------------------------------------------------------------ */
 
-function pick(raw: Record<string, unknown>, names: string[]): string {
+export function pick(raw: Record<string, unknown>, names: string[]): string {
   for (const name of names) {
     const value = clamp(raw[name]);
     if (value) return value;
@@ -133,7 +192,7 @@ function pick(raw: Record<string, unknown>, names: string[]): string {
   return '';
 }
 
-function isHoneypotTripped(raw: Record<string, unknown>): boolean {
+export function isHoneypotTripped(raw: Record<string, unknown>): boolean {
   return HONEYPOT_FIELDS.some((field) => {
     const value = raw[field];
     if (value === undefined || value === null) return false;
@@ -142,14 +201,17 @@ function isHoneypotTripped(raw: Record<string, unknown>): boolean {
   });
 }
 
-function buildInquiry(raw: Record<string, unknown>, ip: string): Inquiry | { error: string } {
+export function buildInquiry(raw: Record<string, unknown>, ip: string): Inquiry | { error: string } {
   // Field-name aliases: every legacy form on the site posts a different shape.
   const name = pick(raw, ['name', 'full_name', 'buyer_name']);
   const email = pick(raw, ['email', 'buyer_email', 'work_email']);
-  const details = pick(raw, ['details', 'message', 'notes', 'project_notes', 'full_brief_summary']);
-  const productType = pick(raw, ['productType', 'product_interest', 'selected_kit', 'category']);
-  const quantity = pick(raw, ['quantity', 'planned_quantity', 'production_volume']);
-  const country = pick(raw, ['country', 'destination']);
+  const baseDetails = pick(raw, ['details', 'message', 'notes', 'project_notes', 'full_brief_summary']);
+  const requestType = pick(raw, ['request_type', 'requestType']);
+  const details = requestType ? `[Request: ${requestType}] ${baseDetails}`.trim() : baseDetails;
+
+  const productType = pick(raw, ['product_item', 'productType', 'product_interest', 'product', 'selected_kit', 'category']);
+  const quantity = pick(raw, ['quantity', 'planned_quantity', 'production_volume', 'volume']);
+  const country = pick(raw, ['country', 'destination', 'market']);
   const company = pick(raw, ['company', 'buyer_brand', 'brand']);
   const whatsapp = pick(raw, ['whatsapp', 'buyer_whatsapp', 'phone']);
 
@@ -173,7 +235,7 @@ function buildInquiry(raw: Record<string, unknown>, ip: string): Inquiry | { err
   };
 }
 
-function isObviousSpam(lead: Inquiry): boolean {
+export function isObviousSpam(lead: Inquiry): boolean {
   const text = `${lead.name} ${lead.company} ${lead.details} ${lead.email}`.toLowerCase();
   return /\b(seo ranking|seo audit|backlink|guest post|buy website traffic|casino|crypto|viagra|cialis|lottery|hire dedicated developers|offshore developers)\b/i.test(text);
 }
@@ -215,7 +277,7 @@ function messageText(lead: Inquiry): string {
   ].join('\n');
 }
 
-async function notifyFeishu(lead: Inquiry): Promise<DeliveryState> {
+export async function notifyFeishu(lead: Inquiry): Promise<DeliveryState> {
   const webhookUrl = env('FEISHU_WEBHOOK_URL');
   if (!webhookUrl) {
     console.warn('[inquiry] FEISHU_WEBHOOK_URL is not configured — Feishu notification skipped.');
@@ -253,8 +315,9 @@ async function notifyFeishu(lead: Inquiry): Promise<DeliveryState> {
   }
 }
 
-async function notifyDingTalk(lead: Inquiry): Promise<DeliveryState> {
-  const webhookUrl = env('DINGTALK_WEBHOOK_URL');
+export async function notifyDingTalk(lead: Inquiry): Promise<DeliveryState> {
+  // Support DINGTALK_WEBHOOK_URL with fallback to OPS_ALERT_WEBHOOK_URL
+  const webhookUrl = env('DINGTALK_WEBHOOK_URL') || env('OPS_ALERT_WEBHOOK_URL');
   if (!webhookUrl) {
     console.warn('[inquiry] DINGTALK_WEBHOOK_URL is not configured — DingTalk notification skipped.');
     return 'skipped';
@@ -270,9 +333,10 @@ async function notifyDingTalk(lead: Inquiry): Promise<DeliveryState> {
       target.searchParams.set('sign', sign);
     }
 
-    // Optional: DingTalk bots secured by "custom keyword" require the keyword in the text.
-    const keyword = env('DINGTALK_KEYWORD');
-    const content = keyword ? `${keyword}\n${messageText(lead)}` : messageText(lead);
+    // Optional: DingTalk bots secured by "custom keyword" require keyword in text (default '询盘').
+    const keyword = env('DINGTALK_KEYWORD') || '询盘';
+    const rawMsg = messageText(lead);
+    const content = rawMsg.includes(keyword) ? rawMsg : `${keyword}\n${rawMsg}`;
 
     const res = await fetch(target, {
       method: 'POST',
@@ -292,12 +356,115 @@ async function notifyDingTalk(lead: Inquiry): Promise<DeliveryState> {
 }
 
 /* ------------------------------------------------------------------ *
+ * Unified Inquiry Pipeline (Shared between /api/inquiry and /api/contact)
+ * ------------------------------------------------------------------ */
+
+export interface ProcessInquiryResult {
+  status: number;
+  body: Record<string, unknown>;
+  lead?: Inquiry;
+  rateMode?: RateMode;
+  delivery?: { feishu: DeliveryState; dingtalk: DeliveryState };
+}
+
+export async function processInquirySubmission(
+  raw: Record<string, unknown>,
+  ip: string,
+  defaultSource = 'website'
+): Promise<ProcessInquiryResult> {
+  // Spam gate 1: hidden honeypot field filled in => discard, never delivered.
+  if (isHoneypotTripped(raw)) {
+    console.warn(`[inquiry] BLOCKED honeypot fields=${HONEYPOT_FIELDS.filter((f) => raw[f]).join(',') || 'n/a'}`);
+    return { status: 400, body: { ok: false, code: 'rejected', reason: 'spam' } };
+  }
+
+  // Rate limit
+  let rate: { allowed: boolean; mode: RateMode };
+  try {
+    rate = await checkRateLimit(ip);
+  } catch (err) {
+    console.error('[inquiry] rate limiter unavailable:', err);
+    return { status: 503, body: { ok: false, code: 'service_unavailable' } };
+  }
+  if (!rate.allowed) {
+    return {
+      status: 429,
+      body: { ok: false, code: 'rate_limited' },
+      rateMode: rate.mode,
+    };
+  }
+
+  // Apply default source if missing
+  if (!raw.source && defaultSource) {
+    raw.source = defaultSource;
+  }
+
+  const built = buildInquiry(raw, ip);
+  if ('error' in built) {
+    return {
+      status: 400,
+      body: { ok: false, code: 'validation_error', message: built.error },
+      rateMode: rate.mode,
+    };
+  }
+
+  // Spam gate 2: cheap keyword heuristic. Silently accepted so bots do not retry.
+  if (isObviousSpam(built)) {
+    console.warn(`[inquiry] BLOCKED heuristic spam id=${built.requestId} email=${built.email}`);
+    return {
+      status: 200,
+      body: { ok: true, code: 'accepted', requestId: built.requestId, filtered: true },
+      lead: built,
+      rateMode: rate.mode,
+    };
+  }
+
+  const [feishu, dingtalk] = await Promise.all([
+    notifyFeishu(built),
+    notifyDingTalk(built),
+  ]);
+
+  // Robust server-side persistence fallback when webhooks are skipped or failed:
+  // Log full JSON structured event so Vercel runtime logs capture every lead.
+  if (feishu !== 'ok' && dingtalk !== 'ok') {
+    const fallbackPayload = {
+      timestamp: new Date().toISOString(),
+      event: 'INQUIRY_UNFORWARDED_ALERT',
+      alert: 'ACTION REQUIRED: Lead accepted but no webhook delivered! Check FEISHU_WEBHOOK_URL and DINGTALK_WEBHOOK_URL.',
+      delivery: { feishu, dingtalk },
+      lead: built,
+    };
+    console.error(`[INQUIRY_FALLBACK_LEAD_BACKUP] ${JSON.stringify(fallbackPayload)}`);
+
+    try {
+      const fs = await import('node:fs/promises');
+      await fs.appendFile('/tmp/mlmlip_inquiries_backup.jsonl', JSON.stringify(fallbackPayload) + '\n', 'utf-8');
+    } catch {}
+  }
+
+  return {
+    status: 200,
+    body: {
+      ok: true,
+      code: 'accepted',
+      requestId: built.requestId,
+      delivery: { feishu, dingtalk },
+    },
+    lead: built,
+    rateMode: rate.mode,
+    delivery: { feishu, dingtalk },
+  };
+}
+
+/* ------------------------------------------------------------------ *
  * Route
  * ------------------------------------------------------------------ */
 
 export const POST: APIRoute = async ({ request, clientAddress }) => {
-  const origin = request.headers.get('origin');
-  if (origin && origin !== new URL(request.url).origin) {
+  if (!isAllowedOrigin(request)) {
+    const origin = request.headers.get('origin');
+    const referer = request.headers.get('referer');
+    console.warn(`[inquiry] 403 BLOCKED invalid origin=${origin} referer=${referer}`);
     return json({ ok: false, code: 'origin_not_allowed' }, 403);
   }
 
@@ -332,64 +499,18 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
     return json({ ok: false, code: 'invalid_payload' }, 400);
   }
 
-  // Spam gate 1: hidden honeypot field filled in => discard, never delivered.
-  if (isHoneypotTripped(raw)) {
-    console.warn(`[inquiry] BLOCKED honeypot fields=${HONEYPOT_FIELDS.filter((f) => raw[f]).join(',') || 'n/a'}`);
-    return json({ ok: false, code: 'rejected', reason: 'spam' }, 400);
-  }
-
   const forwardedFor = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
   const ip = forwardedFor || clientAddress || 'unknown';
 
-  let rate: { allowed: boolean; mode: RateMode };
-  try {
-    rate = await checkRateLimit(ip);
-  } catch (err) {
-    console.error('[inquiry] rate limiter unavailable:', err);
-    return json({ ok: false, code: 'service_unavailable' }, 503);
+  const result = await processInquirySubmission(raw, ip, 'inquiry_api');
+
+  const headers: Record<string, string> = {};
+  if (result.rateMode) {
+    headers['x-rate-limit-mode'] = result.rateMode;
   }
-  if (!rate.allowed) {
-    return json({ ok: false, code: 'rate_limited' }, 429, {
-      'retry-after': String(RATE_WINDOW_SECONDS),
-      'x-rate-limit-mode': rate.mode,
-    });
+  if (result.status === 429) {
+    headers['retry-after'] = String(RATE_WINDOW_SECONDS);
   }
 
-  const built = buildInquiry(raw, ip);
-  if ('error' in built) {
-    return json({ ok: false, code: 'validation_error', message: built.error }, 400, {
-      'x-rate-limit-mode': rate.mode,
-    });
-  }
-
-  // Spam gate 2: cheap keyword heuristic. Silently accepted so bots do not retry.
-  if (isObviousSpam(built)) {
-    console.warn(`[inquiry] BLOCKED heuristic spam id=${built.requestId} email=${built.email}`);
-    return json({ ok: true, code: 'accepted', requestId: built.requestId, filtered: true }, 200, {
-      'x-rate-limit-mode': rate.mode,
-      'x-spam-filtered': 'true',
-    });
-  }
-
-  const [feishu, dingtalk] = await Promise.all([
-    notifyFeishu(built),
-    notifyDingTalk(built),
-  ]);
-
-  if (feishu === 'skipped' && dingtalk === 'skipped') {
-    console.warn(`[inquiry] NO NOTIFICATION CHANNEL CONFIGURED — lead id=${built.requestId} email=${built.email} was accepted but delivered nowhere. Set FEISHU_WEBHOOK_URL / DINGTALK_WEBHOOK_URL.`);
-  }
-
-  // The customer always gets a success response: internal delivery problems are
-  // logged, never surfaced as an error page.
-  return json(
-    {
-      ok: true,
-      code: 'accepted',
-      requestId: built.requestId,
-      delivery: { feishu, dingtalk },
-    },
-    200,
-    { 'x-rate-limit-mode': rate.mode },
-  );
+  return json(result.body, result.status, headers);
 };

@@ -250,9 +250,12 @@ const relatedProducts = productsCatalog
           Direct communication with our senior cosmetics formulation engineers. Turnaround time &lt; 12 hours.
         </p>
 
-        <form action="/api/contact" method="POST" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <form id="product-inquiry-form" action="/api/contact" method="POST" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <input type="hidden" name="source" value="product_detail_page" />
           <input type="hidden" name="product_item" value={product.id + " - " + product.name} />
           <input type="hidden" name="category" value={product.category} />
+          <!-- Honeypot -->
+          <input type="text" name="botcheck" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none;" />
 
           <div style="grid-column: span 1;">
             <label style="display: block; font-size: 13px; font-weight: 600; color: var(--plum); margin-bottom: 6px;">Your Name *</label>
@@ -289,10 +292,12 @@ const relatedProducts = productsCatalog
           </div>
 
           <div style="grid-column: span 2; margin-top: 8px;">
-            <button type="submit" class="btn" style="width: 100%; padding: 14px; font-size: 16px; cursor: pointer; text-align: center;">
+            <button id="pi-submit-btn" type="submit" class="btn" style="width: 100%; padding: 14px; font-size: 16px; cursor: pointer; text-align: center;">
               Submit Inquiry for {product.name} →
             </button>
           </div>
+
+          <div id="pi-status" style="display: none; grid-column: span 2; padding: 14px 18px; border-radius: 8px; font-size: 14px; font-weight: 500; text-align: center;"></div>
         </form>
       </div>
     </div>
@@ -340,6 +345,8 @@ const relatedProducts = productsCatalog
   )}
 
   <script>
+    import { postInquiry, whatsappLink } from '../../lib/inquiryClient';
+
     document.querySelectorAll(".gallery-thumb-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         const targetImg = btn.getAttribute("data-img");
@@ -348,6 +355,47 @@ const relatedProducts = productsCatalog
           mainImg.setAttribute("src", targetImg);
         }
       });
+    });
+
+    const piForm = document.getElementById('product-inquiry-form') as HTMLFormElement | null;
+    const piStatus = document.getElementById('pi-status');
+    const piBtn = document.getElementById('pi-submit-btn') as HTMLButtonElement | null;
+
+    piForm?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      if (piBtn) {
+        piBtn.disabled = true;
+        piBtn.textContent = 'Transmitting Inquiry...';
+      }
+      if (piStatus) piStatus.style.display = 'none';
+
+      const payload = Object.fromEntries(new FormData(piForm).entries());
+      const result = await postInquiry(payload);
+
+      if (result.ok) {
+        if (piStatus) {
+          piStatus.style.display = 'block';
+          piStatus.style.background = '#d4edda';
+          piStatus.style.color = '#155724';
+          piStatus.innerHTML = '✓ <strong>Thank you!</strong> Your product inquiry has been transmitted. Our cosmetic formulation team will reply within 12 hours.';
+        }
+        piForm.reset();
+        if (piBtn) {
+          piBtn.disabled = false;
+          piBtn.textContent = '✓ Inquiry Received';
+        }
+      } else {
+        if (piStatus) {
+          piStatus.style.display = 'block';
+          piStatus.style.background = '#f8d7da';
+          piStatus.style.color = '#721c24';
+          piStatus.innerHTML = `Submission issue encountered. Please ${whatsappLink('chat directly with our engineers on WhatsApp')} or email <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>.`;
+        }
+        if (piBtn) {
+          piBtn.disabled = false;
+          piBtn.textContent = 'Retry Submission';
+        }
+      }
     });
   </script>
 </BaseLayout>
