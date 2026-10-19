@@ -412,7 +412,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   // Track form submissions with email tier detection
-  document.querySelectorAll('form[action*="web3forms"]').forEach(function(form) {
+  document.querySelectorAll('form[action*="/api/inquiry"]').forEach(function(form) {
     form.addEventListener('submit', function() {
       var emailInput = form.querySelector('input[type="email"]');
       var email = emailInput ? emailInput.value : '';

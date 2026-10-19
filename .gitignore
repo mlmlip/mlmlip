@@ -7,6 +7,11 @@ dist/
 .env.production
 .vercel
 .env*
+# .env* 会连带忽略示例文件，这里显式放行，保证 .env.example 可以入库
+!.env.example
+
+# Backup files
+*.bak*
 
 # API keys
 ../.gemini-api-key

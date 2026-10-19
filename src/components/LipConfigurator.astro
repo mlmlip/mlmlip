@@ -385,7 +385,10 @@ const { webhookUrl = "" } = Astro.props;
         </div>
       </div>
 
-      <div class="submit-actions-panel">
+        <!-- Honeypot: hidden from humans, irresistible to bots. Must stay empty. -->
+        <input type="text" id="cfg-botcheck" name="botcheck" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none;" />
+
+        <div class="submit-actions-panel">
         <button type="submit" class="btn btn-primary-submit" id="btn-submit-ticket">
           Submit Brief & Lock In 7-Day Sample Slot →
         </button>
@@ -1107,7 +1110,9 @@ const { webhookUrl = "" } = Astro.props;
   }
 </style>
 
-<script is:inline>
+<script>
+  import { postInquiry, whatsappLink } from '../lib/inquiryClient';
+
   (function() {
     const root = document.getElementById('lip-configurator');
     if (!root) return;
@@ -1305,36 +1310,27 @@ const { webhookUrl = "" } = Astro.props;
         submitBtn.textContent = 'Transmitting Formulation Brief to Lab...';
       }
 
+      const notes = root.querySelector('#cfg-notes')?.value || '';
       const payload = {
-        access_key: 'b0681fa9-0cc8-4fd9-80f7-4d5faa39b2e7', // Web3Forms key
-        subject: `New Lip Formulation Brief (${ticketId?.textContent || 'MLM-LIP'}) - ${brandInput.value}`,
-        from_name: 'MLM Lip Formulation Configurator',
-        buyer_email: emailInput.value,
-        buyer_brand: brandInput.value,
-        buyer_whatsapp: root.querySelector('#cfg-whatsapp')?.value || '',
-        category: form.querySelector('input[name="category"]:checked')?.value || '',
+        name: brandInput.value,
+        email: emailInput.value,
+        company: brandInput.value,
+        whatsapp: root.querySelector('#cfg-whatsapp')?.value || '',
+        productType: form.querySelector('input[name="category"]:checked')?.value || '',
+        quantity: form.querySelector('input[name="production_volume"]:checked')?.value || '',
+        source: 'lip_configurator',
+        botcheck: root.querySelector('#cfg-botcheck')?.value || '',
         texture_finish: form.querySelector('input[name="texture_finish"]:checked')?.value || '',
         actives: Array.from(form.querySelectorAll('input[name="actives"]:checked')).map(el => el.value).join(', '),
         target_markets: Array.from(form.querySelectorAll('input[name="target_markets"]:checked')).map(el => el.value).join(', '),
         production_volume: form.querySelector('input[name="production_volume"]:checked')?.value || '',
         packaging_style: form.querySelector('input[name="packaging_style"]:checked')?.value || '',
-        notes: root.querySelector('#cfg-notes')?.value || '',
-        full_brief_summary: buildBriefText()
+        details: [notes, buildBriefText()].filter(Boolean).join('\n'),
       };
 
-      try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        });
+      const result = await postInquiry(payload);
 
-        const result = await response.json();
-
-        if (response.ok && result.success) {
+      if (result.ok) {
           if (statusBox) {
             statusBox.className = 'submission-alert success';
             statusBox.style.display = 'block';
@@ -1347,18 +1343,15 @@ const { webhookUrl = "" } = Astro.props;
           if (typeof gtag === 'function') {
             gtag('event', 'generate_lead', {
               lead_type: 'interactive_configurator_ticket',
-              category: payload.category,
+              category: payload.productType,
               volume: payload.production_volume
             });
           }
-        } else {
-          throw new Error(result.message || 'Submission failed');
-        }
-      } catch (err) {
+      } else {
         if (statusBox) {
           statusBox.className = 'submission-alert error';
           statusBox.style.display = 'block';
-          statusBox.innerHTML = `Submission delayed. Please click the <strong>Dispatch Instantly via WhatsApp</strong> button above or contact our lab team directly via our secure form.`;
+          statusBox.innerHTML = `Submission delayed. Please click the <strong>Dispatch Instantly via WhatsApp</strong> button above, or reach us on ${whatsappLink('WhatsApp')} or email <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>.`;
         }
         if (submitBtn) {
           submitBtn.disabled = false;

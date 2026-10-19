@@ -1,6 +1,6 @@
 ---
 // src/components/LeadForm.astro
-// Aggressive B2B Lead Capture Form connecting directly to N8N B2B Lead Processor
+// B2B lead capture form posting to the owned endpoint at /api/inquiry.
 
 export interface Props {
   context?: string;      // e.g., "blog_footer", "product_page"
@@ -8,9 +8,6 @@ export interface Props {
 }
 
 const { context = "general", productName = "" } = Astro.props;
-
-// Use the active N8N webhook URL here. (Ensure this is the PROD webhook, not test)
-const N8N_WEBHOOK_URL = "https://n8n.glitter.com/webhook/b2b-lead-processor"; // Update with actual URL if different
 ---
 
 <div class="lead-capture-form bg-gray-50 border border-gray-200 rounded-lg p-8 my-8 shadow-sm">
@@ -22,6 +19,8 @@ const N8N_WEBHOOK_URL = "https://n8n.glitter.com/webhook/b2b-lead-processor"; //
   <form id="b2b-lead-form" class="space-y-4" onsubmit="submitLeadForm(event)">
     <input type="hidden" name="context" value={context} />
     <input type="hidden" name="sourceUrl" id="form-source-url" value="" />
+    <!-- Honeypot: hidden from humans, irresistible to bots. Must stay empty. -->
+    <input type="text" name="botcheck" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none;" />
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
@@ -83,7 +82,9 @@ const N8N_WEBHOOK_URL = "https://n8n.glitter.com/webhook/b2b-lead-processor"; //
   </form>
 </div>
 
-<script define:vars={{ N8N_WEBHOOK_URL }}>
+<script>
+  import { postInquiry, whatsappLink } from '../lib/inquiryClient';
+
   // Set the current page URL when the component loads
   document.addEventListener('DOMContentLoaded', () => {
     const urlInput = document.getElementById('form-source-url');
@@ -97,40 +98,30 @@ const N8N_WEBHOOK_URL = "https://n8n.glitter.com/webhook/b2b-lead-processor"; //
     const form = event.target;
     const btn = document.getElementById('submit-btn');
     const statusEl = document.getElementById('form-status');
-    
-    // UI state: loading
+
+    // UI state 1: loading + guard against double submission
     btn.disabled = true;
     btn.innerText = "Sending...";
     statusEl.className = "mt-3 text-center text-sm font-medium hidden";
 
-    // Gather data
-    const formData = new FormData(form);
-    const payload = Object.fromEntries(formData.entries());
+    const payload = Object.fromEntries(new FormData(form).entries());
+    const result = await postInquiry({ ...payload, source: payload.context || 'lead_form' });
 
-    try {
-      const response = await fetch(N8N_WEBHOOK_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
-
-      if (response.ok) {
-        statusEl.innerText = "Thanks! Your inquiry has been received. Our team will contact you shortly.";
-        statusEl.className = "mt-3 text-center text-sm font-medium text-green-600";
-        form.reset();
-      } else {
-        throw new Error('Network response was not ok');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      statusEl.innerText = "Sorry, there was an issue sending your request. Please email us directly.";
+    if (result.ok) {
+      // UI state 2: success, with an explicit response-time promise
+      statusEl.innerText = "Thanks! Your inquiry has been received. Our team will contact you within 24 hours.";
+      statusEl.className = "mt-3 text-center text-sm font-medium text-green-600";
+      form.reset();
+      btn.innerText = "✓ Inquiry Received";
+    } else {
+      // UI state 3: failure, with a direct WhatsApp escape hatch
+      statusEl.innerHTML = `Sorry, there was an issue sending your request. Please reach us on ${whatsappLink('WhatsApp')} or email us directly.`;
       statusEl.className = "mt-3 text-center text-sm font-medium text-red-600";
-    } finally {
       btn.disabled = false;
-      btn.innerText = "Send Inquiry";
+      btn.innerText = "Retry Submission";
     }
   }
+
+  // The form uses an inline onsubmit handler, so it must be reachable globally.
+  window.submitLeadForm = submitLeadForm;
 </script>

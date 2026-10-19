@@ -1,4 +1,5 @@
 ---
+export const prerender = true;
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { site } from '../data/site';
@@ -49,8 +50,8 @@ const aboutJsonLd = {
 ---
 
 <BaseLayout
-  title="About | Custom Lip Cosmetics Manufacturer — MLM Lip"
-  description="Private label lip manufacturer Beautychain Limited: ISO 22716 & GMPC certified, FDA registered, EU CPNP ready. 500 pcs MOQ, 10+ years experience, 500+ formulas."
+  title="About Beautychain | ISO 22716 Lip Cosmetics OEM & 500 MOQ"
+  description="Beautychain operates certified ISO 22716 & GMPC cleanrooms for lip makeup OEM/ODM. Universal 500 pcs MOQ, 1200+ formulas, FDA/CPNP compliant. Learn more."
 >
   <script type="application/ld+json" set:html={JSON.stringify(aboutJsonLd)} />
 
@@ -581,9 +582,10 @@ const aboutJsonLd = {
         Enter your name and verified corporate email to unlock instant PDF access to <strong id="gated-doc-name" style="color: var(--burgundy);">this compliance file</strong>, while our regulatory team dispatches the full unredacted laboratory report &amp; tiered MOQ quotation sheet to your inbox.
       </p>
 
-      <form id="gated-download-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="b0681fa9-0cc8-4fd9-80f7-4d5faa39b2e7" />
-        <input type="hidden" name="subject" value="Compliance Dossier Download Lead — MLM Lip" />
+      <form id="gated-download-form" action="/api/inquiry" method="POST">
+        <input type="hidden" name="source" value="about_compliance_dossier" />
+        <!-- Honeypot: hidden from humans, irresistible to bots. Must stay empty. -->
+        <input type="text" name="botcheck" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none;" />
         <input type="hidden" id="gated-requested-doc" name="requested_document" value="" />
 
         <div class="form-row" style="margin-bottom: 12px;">
@@ -601,6 +603,7 @@ const aboutJsonLd = {
         <button id="gd-submit-btn" class="btn" type="submit" style="width: 100%; background: var(--burgundy); color: #fff; border: none; padding: 12px 18px; border-radius: 8px; font-weight: 600; cursor: pointer;">
           Unlock &amp; Show Download Link &rarr;
         </button>
+        <p id="gated-status" style="display: none; margin: 12px 0 0; font-size: 13px; line-height: 1.5;"></p>
       </form>
 
       <div id="gated-result" hidden style="margin-top: 18px; padding: 16px; background: var(--blush-soft); border: 1px solid var(--gold); border-radius: 8px; text-align: center;">
@@ -618,7 +621,9 @@ const aboutJsonLd = {
     }
   </style>
 
-  <script is:inline>
+  <script>
+    import { postInquiry, whatsappLink } from '../lib/inquiryClient';
+
     (function() {
       const modal = document.getElementById('gated-modal');
       const closeBtn = document.getElementById('gated-close');
@@ -628,6 +633,7 @@ const aboutJsonLd = {
       const resultBox = document.getElementById('gated-result');
       const directLink = document.getElementById('gated-direct-link');
       const submitBtn = document.getElementById('gd-submit-btn');
+      const gatedStatus = document.getElementById('gated-status');
 
       let currentPdfUrl = '';
       const gdEmailInput = document.getElementById('gd-email');
@@ -673,12 +679,16 @@ const aboutJsonLd = {
           submitBtn.disabled = true;
           submitBtn.textContent = 'Unlocking...';
         }
+        if (gatedStatus) gatedStatus.style.display = 'none';
+
         try {
-          const formData = new FormData(form);
-          await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formData
-          });
+          const payload = Object.fromEntries(new FormData(form).entries());
+          const result = await postInquiry(payload);
+          if (!result.ok && gatedStatus) {
+            gatedStatus.style.color = '#b00020';
+            gatedStatus.innerHTML = `We could not record your details just now. Please reach us directly on ${whatsappLink('WhatsApp')} or email <a href="mailto:nancy@mlmlip.com" style="color:#b00020;font-weight:700;">nancy@mlmlip.com</a>.`;
+            gatedStatus.style.display = 'block';
+          }
         } catch (err) {
           // Proceed to reveal download link even if offline or placeholder key
         } finally {

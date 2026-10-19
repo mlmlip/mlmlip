@@ -1,4 +1,5 @@
 ---
+export const prerender = true;
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import LipConfigurator from '../../components/LipConfigurator.astro';
@@ -39,11 +40,10 @@ import { site } from '../../data/site';
       </div>
 
       <div class="card" style="max-width: 680px; margin: 0 auto; box-shadow: var(--shadow-md); border: 1px solid var(--line); border-top: 4px solid var(--burgundy); background: #ffffff;">
-        <form id="email-quote-form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="b0681fa9-0cc8-4fd9-80f7-4d5faa39b2e7" />
-          <input type="hidden" name="subject" value="Nouvelle Demande de Devis (FR) - MLM Lip" />
-          <input type="hidden" name="from_name" value="MLM Lip Website Inquiry (FR)" />
-          <input type="checkbox" name="botcheck" class="hidden" style="display:none;" />
+        <form id="email-quote-form" action="/api/inquiry" method="POST">
+          <input type="hidden" name="source" value="fr_quote_email_form" />
+          <!-- Honeypot: hidden from humans, irresistible to bots. Must stay empty. -->
+          <input type="text" name="botcheck" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none;" />
 
           <div class="grid two" style="gap: 16px;">
             <div class="form-row">
@@ -118,7 +118,9 @@ import { site } from '../../data/site';
   </section>
 </BaseLayout>
 
-<script is:inline>
+<script>
+  import { postInquiry, whatsappLink } from '../../lib/inquiryClient';
+
   const eqForm = document.getElementById('email-quote-form');
   const eqStatus = document.getElementById('eq-status');
   const eqBtn = document.getElementById('eq-submit-btn');
@@ -129,15 +131,12 @@ import { site } from '../../data/site';
       eqBtn.disabled = true;
       eqBtn.textContent = 'Transmission au laboratoire...';
     }
+    if (eqStatus) eqStatus.style.display = 'none';
 
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: new FormData(eqForm)
-      });
-      const data = await response.json();
+    const payload = Object.fromEntries(new FormData(eqForm).entries());
+    const result = await postInquiry(payload);
 
-      if (response.ok && data.success) {
+    if (result.ok) {
         if (eqStatus) {
           eqStatus.style.display = 'block';
           eqStatus.style.background = '#d4edda';
@@ -146,15 +145,12 @@ import { site } from '../../data/site';
         }
         eqForm.reset();
         if (eqBtn) eqBtn.textContent = '✓ Demande Reçue';
-      } else {
-        throw new Error(data.message || 'Error occurred');
-      }
-    } catch (err) {
+    } else {
       if (eqStatus) {
         eqStatus.style.display = 'block';
         eqStatus.style.background = '#f8d7da';
         eqStatus.style.color = '#721c24';
-        eqStatus.innerHTML = 'Une erreur est survenue. Veuillez nous joindre via WhatsApp ou écrire à <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>.';
+        eqStatus.innerHTML = `Une erreur est survenue. Veuillez nous joindre via ${whatsappLink('WhatsApp')} ou écrire à <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>.`;
       }
       if (eqBtn) {
         eqBtn.disabled = false;

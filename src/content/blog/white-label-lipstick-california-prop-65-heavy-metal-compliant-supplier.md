@@ -44,7 +44,9 @@ For related insights, see [Custom Lip Gloss EU CPNP Registration Manufacturer B2
 
 For related insights, see [Bulk Lip Gloss Manufacturer | FDA FD&C D&C Certified B2B USA](/blog/bulk-lip-gloss-manufacturer-fdc-dc-colorant-certified-b2b-usa/).
 
-For related insights, see [Private Label Lip Plumper OEM Manufacturer & EU PIF Documentation](/blog/private-label-lip-plumper-oem-manufacturer-pif-documentation-eu/).
+For related insights, see [Transfer Proof Liquid Lipstick Private Label Factory Low MOQ](/blog/transfer-proof-liquid-lipstick-private-label-factory-low-moq/).
+
+For related insights, see [Private Label Lip Liner Pencil Waterproof OEM Manufacturing](/blog/private-label-lip-liner-pencil-waterproof-oem/).
 
 ## Specification Comparison Table
 

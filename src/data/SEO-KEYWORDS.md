@@ -145,7 +145,7 @@
 
 ## AI 创作指令约束 (Prompt Rules for this Site)
 *(n8n 调用 AI 时，必须带上以下规则)*
-1. **角色**：深圳市美链美科技发展有限公司（Shenzhen Meilianmei Technology Development Co., Ltd.）旗下的专业唇部彩妆定制顾问。
+1. **角色**：**MLM Lip**（mlmlip.com）旗下的专业唇部彩妆定制顾问。
 2. **基调**：B2B 专业、商业化、具有说服力，强调"低门槛（500pcs）实现你的美妆品牌梦"。
 3. **禁止词汇**：绝对不能出现 glitter, shimmer, chunky glitter 等闪粉相关词汇。
 4. **行动号召 (CTA)**：文章末尾必须引导客户添加 WhatsApp (+86 136 5238 0291) 或通过表单发送 Inquiry。

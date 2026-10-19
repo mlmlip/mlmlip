@@ -26,9 +26,9 @@ export const categories: Category[] = [
     slug: 'lip-gloss-manufacturer',
     name: 'Lip Gloss',
     h1: 'Private Label Lip Gloss Manufacturer',
-    metaTitle: 'Private Label Lip Gloss Manufacturer | Custom OEM from 500 pcs — MLM Lip',
+    metaTitle: 'Private Label Lip Gloss Manufacturer | 500 MOQ — MLM Lip',
     metaDescription:
-      'Custom lip gloss manufacturer from 500 pcs MOQ. 7-day lab samples, non-sticky formulas, custom doe-foot packaging & ISO 22716 / FDA compliance. Request quote.',
+      'Private label lip gloss manufacturer from 500 pcs MOQ. Non-sticky plumping & tinted formulas, custom tubes, 7-day samples, FDA compliant. Request quote.',
     intro:
       'High-shine, cushion-feel lip gloss built to your shade card — from crystal clear and sheer reactive tints to multi-dimensional shimmer. Tube, cap and applicator chosen from our packaging library, or tooled exclusively for your brand.',
     image: '/products/lipgloss-26-01.jpg',
@@ -60,9 +60,9 @@ export const categories: Category[] = [
     slug: 'lip-mud-manufacturer',
     name: 'Lip Mud & Velvet Tint',
     h1: 'Private Label Lip Mud & Velvet Tint Manufacturer',
-    metaTitle: 'Custom Lip Mud & Velvet Tint Manufacturer | Private Label OEM — MLM Lip',
+    metaTitle: 'Private Label Lip Mud & Velvet Tint Manufacturer | 500 MOQ',
     metaDescription:
-      'Private label lip mud & velvet air tint factory: 500 pcs MOQ, 7-day lab samples, transfer-proof matte formulas and ISO 22716 / CPNP compliance dossiers.',
+      'Wholesale lip mud & airy velvet tint contract manufacturer from 500 pcs MOQ. Transfer-proof matte textures, soft-blur pigments, 7-day samples. Get pricing.',
     intro:
       'Weightless, soft-focus matte colour that blurs the lip line and wears comfortably all day. Lip mud and velvet tints are the format driving social-first beauty brands — we build yours from formula to component.',
     highlights: [
@@ -93,9 +93,9 @@ export const categories: Category[] = [
     slug: 'lip-liner-manufacturer',
     name: 'Lip Liner',
     h1: 'Private Label Lip Liner Manufacturer',
-    metaTitle: 'Private Label Lip Liner Manufacturer | Custom Lip Pencil OEM — MLM Lip',
+    metaTitle: 'OEM Cosmetic Lip Liner Pencil Manufacturer | 500 pcs MOQ',
     metaDescription:
-      'Custom lip liner & lip pencil manufacturing from 500 pcs MOQ. Cedarwood & mechanical formats, 7-day lab sampling, waterproof formulas & FDA compliance.',
+      'Custom waterproof lip liner pencil factory from 500 pcs MOQ. Cedarwood & twist mechanical barrels, smudge-proof formulas, 7-day samples. Inquire today.',
     intro:
       'Precision lip liners that hold the contour and pair with your colour range. Cedarwood or twist-up mechanical barrels, sharpening format to order, shades matched to your lipsticks and tints.',
     highlights: [
@@ -126,9 +126,9 @@ export const categories: Category[] = [
     slug: 'lipstick-manufacturer',
     name: 'Lipstick',
     h1: 'Private Label Lipstick Manufacturer',
-    metaTitle: 'Private Label Lipstick Manufacturer | Custom Bullet & Case OEM — MLM Lip',
+    metaTitle: 'Custom Lipstick Manufacturer | Bullet & Case OEM, 500 MOQ',
     metaDescription:
-      'Private label lipstick manufacturer from 500 pcs MOQ: matte & satin bullets, magnetic zamac cases, 7-day lab samples and ISO 22716 / CPNP compliance.',
+      'Custom bullet lipstick manufacturing with low 500 pcs MOQ. Velvet matte & satin formulas, luxury magnetic zamac cases, 7-day lab samples. Contact factory.',
     intro:
       'A bullet lipstick signals a serious brand. We cast velvet matte, satin and high-shine finishes in heavyweight cases — stock components from our library or bespoke tooling for an unmistakable silhouette.',
     highlights: [
@@ -159,9 +159,9 @@ export const categories: Category[] = [
     slug: 'lip-oil-manufacturer',
     name: 'Lip Oil',
     h1: 'Private Label Lip Oil Manufacturer',
-    metaTitle: 'Private Label Lip Oil Manufacturer | Custom Peptide Lip Oil OEM — MLM Lip',
+    metaTitle: 'Plumping Lip Oil Factory & OEM Manufacturer | 500 pcs MOQ',
     metaDescription:
-      'Custom peptide lip oil manufacturing from 500 pcs MOQ. Skinified squalane formulas, ceramic cooling tips, 7-day lab samples and ISO 22716 / FDA compliance.',
+      'Direct peptide & plumping lip oil manufacturing from 500 pcs MOQ. Botanical squalane formulas, cooling ceramic tips, 7-day samples. Get an instant quote.',
     intro:
       'Lip care and colour in one: botanical squalane bases, peptide and ceramide actives, finished with a cushioned, glass-like shine. The format that turns a makeup brand into a routine brand.',
     highlights: [
@@ -192,9 +192,9 @@ export const categories: Category[] = [
     slug: 'lip-mask-manufacturer',
     name: 'Lip Mask',
     h1: 'Private Label Lip Mask & Treatment Manufacturer',
-    metaTitle: 'Private Label Lip Mask Manufacturer | Custom Overnight Lip Treatment OEM — MLM Lip',
+    metaTitle: 'Lip Mask & Butter ODM Manufacturer | 500 MOQ — Beautychain',
     metaDescription:
-      'Private label lip mask & overnight treatment factory: 500 pcs MOQ, ceramide barrier formulas, 7-day lab sampling, ISO 22716 cleanroom & EU CPNP dossiers.',
+      'Private label lip mask & repair butter ODM from 500 pcs MOQ. Rich ceramide barrier balms, 7-day custom lab sampling, FDA/CPNP compliant. Request a quote.',
     intro:
       'Overnight and daily-care lip treatments that extend your brand into the customer’s routine. Rich butter and ceramide formulas in jars or soft-touch tubes, scented and positioned to your brief.',
     highlights: [

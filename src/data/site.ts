@@ -4,7 +4,7 @@ export const site = {
   name: 'MLM Lip',
   domain: 'https://mlmlip.com',
   tagline: 'Private Label Lip Cosmetics Engineered for High-Growth Beauty Brands',
-  manufacturer: 'Beautychain Limited',
+  manufacturer: 'Shenzhen Meilianmei Technology Development Co., Ltd.',
   moq: '500 pcs',
   contact: {
     whatsapp: '+86 136 5238 0291',

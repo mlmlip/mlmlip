@@ -437,7 +437,9 @@ const {
   }
 </style>
 
-<script is:inline>
+<script>
+  import { postInquiry, whatsappLink } from '../lib/inquiryClient';
+
   (function() {
     const root = document.getElementById('mlm-livechat-root');
     if (!root) return;
@@ -541,35 +543,26 @@ const {
         dockStatus.textContent = 'Transmitting to lab chemist...';
       }
 
-      try {
-        const res = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            access_key: 'b0681fa9-0cc8-4fd9-80f7-4d5faa39b2e7',
-            subject: 'New LiveChat Formulation Lead - ' + emailInput.value,
-            from_name: 'MLM Lip LiveChat Desk',
-            email: emailInput.value,
-            message: 'Inquired via 24/7 LiveChat specialist drawer.'
-          })
-        });
-        const data = await res.json();
-        if (res.ok && data.success) {
-          if (dockStatus) {
-            dockStatus.style.color = '#1e7044';
-            dockStatus.textContent = '✓ Received! Lab dossier sent to ' + emailInput.value;
-          }
-          emailInput.value = '';
-          if (typeof gtag === 'function') {
-            gtag('event', 'generate_lead', { lead_type: 'livechat_drawer_lead' });
-          }
-        } else {
-          throw new Error('Failed');
+      const result = await postInquiry({
+        email: emailInput.value,
+        name: 'LiveChat lead',
+        details: 'Inquired via 24/7 LiveChat specialist drawer.',
+        source: 'livechat_drawer'
+      });
+
+      if (result.ok) {
+        if (dockStatus) {
+          dockStatus.style.color = '#1e7044';
+          dockStatus.textContent = '✓ Received! Lab dossier sent to ' + emailInput.value;
         }
-      } catch (err) {
+        emailInput.value = '';
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { lead_type: 'livechat_drawer_lead' });
+        }
+      } else {
         if (dockStatus) {
           dockStatus.style.color = '#9b1c1c';
-          dockStatus.innerHTML = 'Submission delayed. Email us: <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>';
+          dockStatus.innerHTML = 'Submission delayed. Reach us on ' + whatsappLink('WhatsApp') + ' or email <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>';
         }
       }
     });
