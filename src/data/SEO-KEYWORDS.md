@@ -41,7 +41,7 @@
 | vegan cruelty free lip gloss oem manufacturer usa uk b2b | 纯素零残忍唇彩代工 | 欧美纯素Clean Beauty品牌、Leaping Bunny申请者 | 100%纯植物配方, 零动物源成分, 附带无动物测试声明, 适合欧美主流零售 | `[已发布]` |
 | oem tinted lip balm spf manufacturer fda otc sunscreen compliant | 防晒润唇膏合规代工 | 欧美药房/防晒护理线品牌采购经理 | 严格遵循美国FDA OTC防晒专论(21 CFR 352), 稳定SPF防晒指数测试支持 | `[已发布]` |
 | private label liquid lipstick oem b2b supplier eu regulation 1223 2009 | 哑光液体唇膏欧洲代工 | 欧洲专业彩妆分销商、沙龙品牌 | 严格符合欧盟法规1223/2009, 零违禁物质, 支持全成分INCI标签规范 | `[已发布]` |
-| oem lip scrub manufacturer fda mocra registered facility b2b | 唇部磨砂膏合规代工 | 欧美SPA沙龙、轻奢个护品牌 | 天然植物/糖基磨砂微粒, 拒绝微塑料, MoCRA备案车间, 500件快速上市 | `[待撰写]` |
+| oem lip scrub manufacturer fda mocra registered facility b2b | 唇部磨砂膏合规代工 | 欧美SPA沙龙、轻奢个护品牌 | 天然植物/糖基磨砂微粒, 拒绝微塑料, MoCRA备案车间, 500件快速上市 | `[已发布]` |
 | custom lip gloss manufacturer third party coa heavy metal testing b2b | 出口质检与第三方背书 | 欧美大型零售连锁(Ulta/Target/Boots)供应商 | SGS/Intertek权威批次检测支持, 铅汞砷微生物四项全过, 审计级文件支持 | `[待撰写]` |
 | stability testing requirements for lip oil and lip mask products | 稳定性测试需求 | 品牌质量管理人员 | 12周加速稳定性测试, 全套数据 | `[待撰写]` |
 | cpnp responsible person requirements for lip cosmetics eu import | EU进口RP要求 | 欧洲本地品牌/进口商 | 协助指定RP, 提供PIF全套文件 | `[待撰写]` |
