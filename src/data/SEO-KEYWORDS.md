@@ -43,7 +43,7 @@
 | private label liquid lipstick oem b2b supplier eu regulation 1223 2009 | 哑光液体唇膏欧洲代工 | 欧洲专业彩妆分销商、沙龙品牌 | 严格符合欧盟法规1223/2009, 零违禁物质, 支持全成分INCI标签规范 | `[已发布]` |
 | oem lip scrub manufacturer fda mocra registered facility b2b | 唇部磨砂膏合规代工 | 欧美SPA沙龙、轻奢个护品牌 | 天然植物/糖基磨砂微粒, 拒绝微塑料, MoCRA备案车间, 500件快速上市 | `[已发布]` |
 | custom lip gloss manufacturer third party coa heavy metal testing b2b | 出口质检与第三方背书 | 欧美大型零售连锁(Ulta/Target/Boots)供应商 | SGS/Intertek权威批次检测支持, 铅汞砷微生物四项全过, 审计级文件支持 | `[已发布]` |
-| stability testing requirements for lip oil and lip mask products | 稳定性测试需求 | 品牌质量管理人员 | 12周加速稳定性测试, 全套数据 | `[待撰写]` |
+| stability testing requirements for lip oil and lip mask products | 稳定性测试需求 | 品牌质量管理人员 | 12周加速稳定性测试, 全套数据 | `[已发布]` |
 | cpnp responsible person requirements for lip cosmetics eu import | EU进口RP要求 | 欧洲本地品牌/进口商 | 协助指定RP, 提供PIF全套文件 | `[待撰写]` |
 | tiktok viral lip products 2026 what to manufacture next | TikTok爆款选品 | 追热点的美妆卖家 | 快速打样热门品类, 7天出样 | `[待撰写]` |
 | most profitable lip cosmetics to private label in 2026 | 高利润品类分析 | 做选品决策的创业者 | 唇油利润率最高, 成熟配方直出 | `[待撰写]` |
