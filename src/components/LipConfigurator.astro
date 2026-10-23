@@ -364,6 +364,11 @@ const { webhookUrl = "" } = Astro.props;
       <!-- Contact Inputs -->
       <div class="buyer-contact-grid" style="margin-top: 24px;">
         <div class="form-field">
+          <label for="cfg-name">Your Name <span class="required">*</span></label>
+          <input id="cfg-name" name="name" type="text" required placeholder="e.g. Sarah Jenkins" />
+        </div>
+
+        <div class="form-field">
           <label for="cfg-email">Corporate Work Email <span class="required">*</span></label>
           <input type="email" id="cfg-email" name="buyer_email" required placeholder="founder@yourbrand.com" />
           <span class="field-hint" id="cfg-email-hint">Official lab benchmark report & pricing breakdown will be delivered here.</span>
@@ -379,7 +384,7 @@ const { webhookUrl = "" } = Astro.props;
           <input type="tel" id="cfg-whatsapp" name="buyer_whatsapp" placeholder="+1 (555) 019-2834" />
         </div>
 
-        <div class="form-field">
+        <div class="form-field full-width">
           <label for="cfg-notes">Specific Shade / Benchmark Notes (Optional)</label>
           <textarea id="cfg-notes" name="project_notes" rows="2" placeholder="e.g. Reference Fenty Gloss Bomb shade 'Fenty Glow' or Rhode Peptide Lip Tint..."></textarea>
         </div>
@@ -967,7 +972,8 @@ const { webhookUrl = "" } = Astro.props;
     gap: 6px;
   }
 
-  .form-field:nth-child(4) {
+  .form-field.full-width,
+  .form-field:last-child {
     grid-column: 1 / -1;
   }
 
@@ -1152,7 +1158,7 @@ const { webhookUrl = "" } = Astro.props;
       if (summaryFinish) summaryFinish.textContent = finish;
       if (summaryVolume) summaryVolume.textContent = volume;
       if (summaryPkg) summaryPkg.textContent = packaging.split('(')[0].replace(/💎|🧲|❄️|🖊️|⚙️/g, '').trim();
-      if (summaryReg) summaryReg.textContent = markets.length > 0 ? markets.map(m => m.split(' ')[0]).join(', ') : 'Global Compliance';
+      if (summaryReg) summaryReg.textContent = markets.length > 0 ? markets.join(', ') : 'Global Compliance';
 
       // Dynamic unit price estimate based on volume & category
       let minP = 1.85;
@@ -1251,13 +1257,15 @@ const { webhookUrl = "" } = Astro.props;
       const volume = form.querySelector('input[name="production_volume"]:checked')?.value || '500 pcs';
       const packaging = form.querySelector('input[name="packaging_style"]:checked')?.value || 'Heavyweight Acrylic';
       const markets = Array.from(form.querySelectorAll('input[name="target_markets"]:checked')).map(el => el.value).join('; ');
-      const email = root.querySelector('#cfg-email')?.value || '';
-      const brand = root.querySelector('#cfg-brand')?.value || '';
-      const whatsapp = root.querySelector('#cfg-whatsapp')?.value || '';
-      const notes = root.querySelector('#cfg-notes')?.value || '';
+      const name = root.querySelector('#cfg-name')?.value.trim() || '';
+      const email = root.querySelector('#cfg-email')?.value.trim() || '';
+      const brand = root.querySelector('#cfg-brand')?.value.trim() || '';
+      const whatsapp = root.querySelector('#cfg-whatsapp')?.value.trim() || '';
+      const notes = root.querySelector('#cfg-notes')?.value.trim() || '';
 
       return `*Custom Lip Formulation Brief — MLM Lip*\n` +
         `Ticket: ${ticketId?.textContent || 'MLM-LIP'}\n` +
+        `Contact Name: ${name || 'Pending'}\n` +
         `Brand: ${brand || 'Pending'}\n` +
         `Contact Email: ${email}\n` +
         `WhatsApp: ${whatsapp || 'N/A'}\n` +
@@ -1293,15 +1301,20 @@ const { webhookUrl = "" } = Astro.props;
       const statusBox = root.querySelector('#cfg-submission-status');
       const submitBtn = root.querySelector('#btn-submit-ticket');
 
+      const nameInput = root.querySelector('#cfg-name');
       const emailInput = root.querySelector('#cfg-email');
       const brandInput = root.querySelector('#cfg-brand');
 
-      if (!emailInput.value || !emailInput.checkValidity()) {
-        emailInput.reportValidity();
+      if (!nameInput || !nameInput.value.trim() || !nameInput.checkValidity()) {
+        nameInput?.reportValidity();
         return;
       }
-      if (!brandInput.value) {
-        brandInput.focus();
+      if (!emailInput || !emailInput.value.trim() || !emailInput.checkValidity()) {
+        emailInput?.reportValidity();
+        return;
+      }
+      if (!brandInput || !brandInput.value.trim()) {
+        brandInput?.focus();
         return;
       }
 
@@ -1312,10 +1325,11 @@ const { webhookUrl = "" } = Astro.props;
 
       const notes = root.querySelector('#cfg-notes')?.value || '';
       const payload = {
-        name: brandInput.value,
-        email: emailInput.value,
-        company: brandInput.value,
-        whatsapp: root.querySelector('#cfg-whatsapp')?.value || '',
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        company: brandInput.value.trim(),
+        brand: brandInput.value.trim(),
+        whatsapp: root.querySelector('#cfg-whatsapp')?.value.trim() || '',
         productType: form.querySelector('input[name="category"]:checked')?.value || '',
         quantity: form.querySelector('input[name="production_volume"]:checked')?.value || '',
         source: 'lip_configurator',
@@ -1334,7 +1348,7 @@ const { webhookUrl = "" } = Astro.props;
           if (statusBox) {
             statusBox.className = 'submission-alert success';
             statusBox.style.display = 'block';
-            statusBox.innerHTML = `✓ <strong>Ticket Logged Successfully (${ticketId?.textContent})!</strong> Our formulation chemists have received your specs. An introductory sample schedule and official NDA will be sent to <em>${emailInput.value}</em> within 24 hours.`;
+            statusBox.innerHTML = `✓ <strong>Ticket Logged Successfully (${ticketId?.textContent})!</strong> Our formulation chemists have received your specs. An introductory sample schedule and official NDA will be sent to <em>${emailInput.value.trim()}</em> within 24 hours.`;
           }
           if (submitBtn) {
             submitBtn.textContent = '✓ Brief Dispatched to Engineering';
@@ -1344,7 +1358,8 @@ const { webhookUrl = "" } = Astro.props;
             gtag('event', 'generate_lead', {
               lead_type: 'interactive_configurator_ticket',
               category: payload.productType,
-              volume: payload.production_volume
+              volume: payload.production_volume,
+              source: 'lip_configurator'
             });
           }
       } else {

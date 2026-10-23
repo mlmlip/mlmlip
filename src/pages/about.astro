@@ -684,21 +684,31 @@ const aboutJsonLd = {
         try {
           const payload = Object.fromEntries(new FormData(form).entries());
           const result = await postInquiry(payload);
-          if (!result.ok && gatedStatus) {
+          if (result.ok) {
+            if (typeof window.gtag === 'function') {
+              window.gtag('event', 'generate_lead', {
+                event_category: 'Lead Magnet',
+                event_label: 'Compliance Dossier'
+              });
+            }
+            form.style.display = 'none';
+            resultBox?.removeAttribute('hidden');
+          } else if (gatedStatus) {
             gatedStatus.style.color = '#b00020';
             gatedStatus.innerHTML = `We could not record your details just now. Please reach us directly on ${whatsappLink('WhatsApp')} or email <a href="mailto:nancy@mlmlip.com" style="color:#b00020;font-weight:700;">nancy@mlmlip.com</a>.`;
             gatedStatus.style.display = 'block';
           }
         } catch (err) {
-          // Proceed to reveal download link even if offline or placeholder key
+          if (gatedStatus) {
+            gatedStatus.style.color = '#b00020';
+            gatedStatus.innerHTML = `We could not record your details just now. Please reach us directly on ${whatsappLink('WhatsApp')} or email <a href="mailto:nancy@mlmlip.com" style="color:#b00020;font-weight:700;">nancy@mlmlip.com</a>.`;
+            gatedStatus.style.display = 'block';
+          }
         } finally {
           if (submitBtn) {
             submitBtn.disabled = false;
             submitBtn.innerHTML = 'Unlock &amp; Show Download Link &rarr;';
           }
-          if (typeof window.gtag === 'function') { window.gtag('event', 'generate_lead', { event_category: 'Lead Magnet', event_label: 'Compliance Dossier' }); }
-          form.style.display = 'none';
-          resultBox?.removeAttribute('hidden');
         }
       });
     })();
