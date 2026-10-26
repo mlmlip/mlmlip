@@ -46,7 +46,7 @@
 | stability testing requirements for lip oil and lip mask products | 稳定性测试需求 | 品牌质量管理人员 | 12周加速稳定性测试, 全套数据 | `[已发布]` |
 | cpnp responsible person requirements for lip cosmetics eu import | EU进口RP要求 | 欧洲本地品牌/进口商 | 协助指定RP, 提供PIF全套文件 | `[已发布]` |
 | tiktok viral lip products 2026 what to manufacture next | TikTok爆款选品 | 追热点的美妆卖家 | 快速打样热门品类, 7天出样 | `[已发布]` |
-| most profitable lip cosmetics to private label in 2026 | 高利润品类分析 | 做选品决策的创业者 | 唇油利润率最高, 成熟配方直出 | `[待撰写]` |
+| most profitable lip cosmetics to private label in 2026 | 高利润品类分析 | 做选品决策的创业者 | 唇油利润率最高, 成熟配方直出 | `[已发布]` |
 | clean beauty lip cosmetics manufacturing trends for indie brands | 清洁美妆趋势 | 主打天然成分的品牌 | 提供天然植物基配方, CPNP合规 | `[待撰写]` |
 | korean style gradient lip tint private label manufacturer | 韩式渐变唇妆代工 | 受韩妆影响的欧美品牌 | 水润渐变配方, 亚洲流行趋势 | `[待撰写]` |
 | sustainable lip cosmetics packaging options for eco brands | 环保包材需求 | 走可持续路线的品牌 | PCR回收管/竹质管包材, 开模定制 | `[待撰写]` |
