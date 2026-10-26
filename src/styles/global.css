@@ -141,7 +141,19 @@ section.tint { background: var(--blush-soft); }
   .nav-drawer:not([hidden]) { display: flex; }
   section { padding: 60px 0; }
 }
-@media (max-width: 640px) { .wa-float { padding: 12px; } .wa-float span { display: none; } }
+@media (max-width: 640px) {
+  .wa-float {
+    right: 16px;
+    bottom: 16px;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(0,0,0,.22);
+  }
+  .wa-float span { display: none; }
+}
 
 /* === 无障碍 === */
 .skip-link {

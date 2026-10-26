@@ -209,9 +209,9 @@ export function buildInquiry(raw: Record<string, unknown>, ip: string): Inquiry 
   const requestType = pick(raw, ['request_type', 'requestType']);
   const details = requestType ? `[Request: ${requestType}] ${baseDetails}`.trim() : baseDetails;
 
-  const productType = pick(raw, ['product_item', 'productType', 'product_interest', 'product', 'selected_kit', 'category']);
+  const productType = pick(raw, ['product_item', 'productType', 'product_interest', 'product', 'selected_kit', 'category', 'product_category']);
   const quantity = pick(raw, ['quantity', 'planned_quantity', 'production_volume', 'volume']);
-  const country = pick(raw, ['country', 'destination', 'market']);
+  const country = pick(raw, ['country', 'destination', 'market', 'target_market', 'target_markets']);
   const company = pick(raw, ['company', 'buyer_brand', 'brand']);
   const whatsapp = pick(raw, ['whatsapp', 'buyer_whatsapp', 'phone']);
 
@@ -459,6 +459,23 @@ export async function processInquirySubmission(
 /* ------------------------------------------------------------------ *
  * Route
  * ------------------------------------------------------------------ */
+
+export const OPTIONS: APIRoute = async () => new Response(null, {
+  status: 204,
+  headers: {
+    'Allow': 'POST, OPTIONS',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  },
+});
+
+export const GET: APIRoute = async () => new Response(
+  JSON.stringify({ ok: false, error: 'Method Not Allowed. Please use POST.' }),
+  {
+    status: 405,
+    headers: { 'Content-Type': 'application/json' },
+  }
+);
 
 export const POST: APIRoute = async ({ request, clientAddress }) => {
   if (!isAllowedOrigin(request)) {

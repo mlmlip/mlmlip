@@ -411,7 +411,7 @@ const sampleSchema = {
 
       <div class="card" style="max-width: 720px; margin: 0 auto; box-shadow: var(--shadow-md); border: 1px solid var(--line); border-top: 4px solid var(--burgundy); background: #ffffff; padding: 36px 32px;">
         <form id="sample-request-form" action="/api/inquiry" method="POST">
-          <input type="hidden" name="source" value="samples_kit_request" />
+          <input type="hidden" name="source" value="samples_page" />
           <!-- Honeypot: hidden from humans, irresistible to bots. Must stay empty. -->
           <input type="text" name="botcheck" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none;" />
 
@@ -578,6 +578,9 @@ const sampleSchema = {
             statusMsg.style.color = '#2d6a4f';
             statusMsg.style.display = 'block';
             submitBtn.textContent = 'Request Submitted Successfully';
+            if (typeof (window as any).gtag === 'function') {
+              (window as any).gtag('event', 'generate_lead', { source: 'samples_page', lead_type: 'sample_kit_request' });
+            }
           } else {
             statusMsg.innerHTML = `An error occurred. Please contact us directly via ${whatsappLink('WhatsApp (+86 136 5238 0291)')} or email nancy@mlmlip.com.`;
             statusMsg.style.color = '#b00020';
