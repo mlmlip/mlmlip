@@ -74,24 +74,14 @@ import { site } from '../data/site';
               <label for="message">Project details</label>
               <textarea id="message" name="message" rows="4" placeholder="Price point, finish, packaging ideas, timeline…"></textarea>
             </div>
-            <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:8px;">
-              <button class="btn" type="submit" id="submit-btn" style="flex:1; min-width:220px;">Submit Formulation Brief →</button>
-              <a class="btn ghost" id="wa-aux-btn" href={site.contact.whatsappLink} target="_blank" rel="noopener" style="flex:1; min-width:200px; display:inline-flex; align-items:center; justify-content:center; gap:8px;">
-                Need instant answer? Chat on WhatsApp &rarr;
-              </a>
-            </div>
-            <div style="margin-top:10px;">
-              <button class="btn ghost" type="button" id="copy-contact-btn" style="padding:8px 14px; font-size:13px;">Copy brief text</button>
-            </div>
-            <div id="contact-copy-toast" hidden style="margin-top:12px; padding:10px 14px; background:#d4edda; color:#155724; border-radius:8px; font-size:13px; font-weight:500;">
-              ✓ Inquiry copied to clipboard! You can paste it into an email to us.
+            <div style="margin-top:8px;">
+              <button class="btn" type="submit" id="submit-btn" style="width:100%; min-width:220px;">Send my brief via WhatsApp →</button>
             </div>
             <p class="note" style="margin-top:12px">
               Prefer email? <a id="contact-mail-link" href={`mailto:${site.contact.email}?subject=Lip%20Product%20Inquiry`}>Click here to send via email directly</a>.
             </p>
             <div id="form-success" hidden style="margin-top:16px; padding:18px 20px; background:#f0fdf4; border-radius:10px; border-left:4px solid #16a34a; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-              <p style="margin:0; color:#15803d; font-weight:700; font-size:15px;">✓ Brief received! Our formulation engineering team will review your specs and email you within 24 hours.</p>
-              <p class="note" style="margin:8px 0 0; color:#166534;">Need immediate feedback? <a href={site.contact.whatsappLink} target="_blank" rel="noopener" style="font-weight:600; text-decoration:underline;">Chat on WhatsApp &rarr;</a></p>
+              <p style="margin:0; color:#15803d; font-weight:700; font-size:15px;">✓ Your brief has been sent! We'll also reply via WhatsApp shortly. If WhatsApp didn't open, <a href="https://wa.me/8613652380291" target="_blank" rel="noopener" style="font-weight:600; text-decoration:underline;">click here</a>.</p>
             </div>
             <div id="form-error" hidden style="margin-top:16px; padding:16px 18px; background:#fef2f2; border-radius:10px; border-left:4px solid #dc2626;">
               <p id="form-error-msg" style="margin:0; color:#b91c1c; font-weight:600; font-size:14px;"></p>
@@ -120,16 +110,12 @@ import { site } from '../data/site';
     </div>
   </section>
 
-  <script is:inline define:vars={{ waUrl: site.contact.whatsappLink, contactEmail: site.contact.email }}>
+  <script is:inline define:vars={{ contactEmail: site.contact.email }}>
     const form = document.getElementById('inquiry-form');
     const submitBtn = document.getElementById('submit-btn');
     const successBox = document.getElementById('form-success');
     const errorBox = document.getElementById('form-error');
-    const errorMsg = document.getElementById('form-error-msg');
-    const copyBtn = document.getElementById('copy-contact-btn');
-    const copyToast = document.getElementById('contact-copy-toast');
     const mailLink = document.getElementById('contact-mail-link');
-    const waAuxBtn = document.getElementById('wa-aux-btn');
 
     function getContactLines() {
       if (!form) return [];
@@ -146,73 +132,25 @@ import { site } from '../data/site';
       ];
     }
 
-    function syncAuxLinks() {
-      if (!form) return;
+    function syncMailLink() {
+      if (!form || !mailLink) return;
       const d = new FormData(form);
       const prod = d.get('product') || 'Lip Cosmetics';
       const lines = getContactLines();
-      if (mailLink) {
-        const subj = encodeURIComponent(`Inquiry: ${prod} (${d.get('company') || 'New Brand'})`);
-        const body = encodeURIComponent(lines.join('\n'));
-        mailLink.setAttribute('href', `mailto:${contactEmail}?subject=${subj}&body=${body}`);
-      }
-      if (waAuxBtn) {
-        const waText = encodeURIComponent(lines.join('\n'));
-        waAuxBtn.setAttribute('href', `${waUrl}?text=${waText}`);
-      }
+      const subj = encodeURIComponent('Inquiry: ' + prod + ' (' + (d.get('company') || 'New Brand') + ')');
+      const body = encodeURIComponent(lines.join('\n'));
+      mailLink.setAttribute('href', 'mailto:' + contactEmail + '?subject=' + subj + '&body=' + body);
     }
 
-    form?.addEventListener('input', syncAuxLinks);
-    form?.addEventListener('change', syncAuxLinks);
-    syncAuxLinks();
-
-    copyBtn?.addEventListener('click', () => {
-      const text = getContactLines().join('\n');
-      try {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(showToast).catch(err => {
-            console.warn('Clipboard write failed', err);
-            fallbackCopy(text);
-          });
-        } else {
-          fallbackCopy(text);
-        }
-      } catch (err) {
-        fallbackCopy(text);
-      }
-    });
-
-    function showToast() {
-      if (copyToast) {
-        copyToast.removeAttribute('hidden');
-        setTimeout(() => copyToast.setAttribute('hidden', ''), 4000);
-      }
-    }
-
-    function fallbackCopy(text) {
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.focus();
-      ta.select();
-      try {
-        document.execCommand('copy');
-        showToast();
-      } catch (e) {
-        console.warn('Fallback copy failed', e);
-      }
-      document.body.removeChild(ta);
-    }
+    form?.addEventListener('input', syncMailLink);
+    form?.addEventListener('change', syncMailLink);
+    syncMailLink();
 
     form?.addEventListener('submit', async (event) => {
       event.preventDefault();
-      if (!form) return;
-
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Submitting brief...';
+        submitBtn.textContent = 'Sending brief...';
       }
       if (successBox) successBox.setAttribute('hidden', '');
       if (errorBox) errorBox.setAttribute('hidden', '');
@@ -226,48 +164,43 @@ import { site } from '../data/site';
         quantity: (data.get('quantity') || '').toString().trim(),
         market: (data.get('market') || '').toString().trim(),
         message: (data.get('message') || '').toString().trim(),
-        source: (data.get('source') || 'contact_page').toString().trim(),
-        botcheck: (data.get('botcheck') || '').toString().trim()
+        source: 'contact_page',
+        botcheck: (data.get('botcheck') || '').toString()
       };
 
-      try {
-        const res = await fetch('/api/inquiry', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        });
+      // 通道 1：静默 POST 到后台（落库 + 钉钉推送），不阻塞
+      fetch('/api/inquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function(res) {
+        if (res.ok && typeof window.gtag === 'function') {
+          window.gtag('event', 'generate_lead', { source: 'contact_page', lead_type: 'contact_form' });
+        }
+      }).catch(function() {}); // 静默，不阻塞 WhatsApp 跳转
 
-        const resData = await res.json().catch(() => ({}));
+      // 通道 2：拼接 WhatsApp 消息并跳转（恢复老板原来的收单方式）
+      var lines = [];
+      if (payload.name) lines.push('Contact: ' + payload.name);
+      if (payload.company) lines.push('Brand: ' + payload.company);
+      if (payload.email) lines.push('Email: ' + payload.email);
+      if (payload.product) lines.push('Product: ' + payload.product);
+      if (payload.quantity) lines.push('Quantity: ' + payload.quantity);
+      if (payload.market) lines.push('Market: ' + payload.market);
+      if (payload.message) lines.push('Details: ' + payload.message);
+      lines.push('');
+      lines.push('Sent from mlmlip.com/contact');
 
-        if (res.ok && resData.ok) {
-          form.reset();
-          syncAuxLinks();
-          if (successBox) {
-            successBox.removeAttribute('hidden');
-            successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }
-          if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Submit Formulation Brief →';
-          }
-          if (typeof window.gtag === 'function') {
-            window.gtag('event', 'generate_lead', { source: 'contact_page', lead_type: 'contact_form' });
-          }
-        } else {
-          throw new Error(resData.message || resData.error || 'Submission rejected');
-        }
-      } catch (err) {
-        console.error('Inquiry submission error:', err);
-        if (errorBox && errorMsg) {
-          errorMsg.innerHTML = 'Unable to submit your brief right now. Please retry, chat with us on <a href="' + waUrl + '" target="_blank" rel="noopener" style="text-decoration:underline; font-weight:700; color:#1e7044;">WhatsApp</a>, or email directly to <a href="mailto:' + contactEmail + '" style="text-decoration:underline; font-weight:700; color:#b91c1c;">' + contactEmail + '</a>.';
-          errorBox.removeAttribute('hidden');
-        }
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Retry Sending Brief →';
-        }
+      var waNumber = '8613652380291';
+      var waUrl = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(lines.join('\n'));
+      window.open(waUrl, '_blank', 'noopener');
+
+      // 显示成功提示
+      if (successBox) successBox.removeAttribute('hidden');
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send my brief via WhatsApp \u2192';
       }
     });
   </script>
