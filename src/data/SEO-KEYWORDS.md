@@ -49,7 +49,7 @@
 | most profitable lip cosmetics to private label in 2026 | 高利润品类分析 | 做选品决策的创业者 | 唇油利润率最高, 成熟配方直出 | `[已发布]` |
 | clean beauty lip cosmetics manufacturing trends for indie brands | 清洁美妆趋势 | 主打天然成分的品牌 | 提供天然植物基配方, CPNP合规 | `[已发布]` |
 | korean style gradient lip tint private label manufacturer | 韩式渐变唇妆代工 | 受韩妆影响的欧美品牌 | 水润渐变配方, 亚洲流行趋势 | `[已发布]` |
-| sustainable lip cosmetics packaging options for eco brands | 环保包材需求 | 走可持续路线的品牌 | PCR回收管/竹质管包材, 开模定制 | `[待撰写]` |
+| sustainable lip cosmetics packaging options for eco brands | 环保包材需求 | 走可持续路线的品牌 | PCR回收管/竹质管包材, 开模定制 | `[已发布]` |
 | lip gloss manufacturer with in stock packaging components | 现成包材快速出货 | 追求快速上市的DTC品牌 | 现货包材库免开模, 45天交付 | `[待撰写]` |
 | lip gloss private label supplier with fast lead times | 快速交付 | 有档期压力的电商卖家 | 成熟产线, 7天打样+快速大货 | `[待撰写]` |
 | vegan lip gloss oem supplier with cruelty free certificates | 纯素认证贴牌 | 主打零残忍的品牌 | 纯素配方+零残忍声明文件 | `[待撰写]` |
