@@ -55,16 +55,22 @@ For related insights, see [White Label Lipstick California Prop 65 Compliant Sup
 
 For related insights, see [Custom Bullet Lipstick Manufacturer with Private Tooling Case](/blog/custom-bullet-lipstick-manufacturer-with-private-tooling-case/).
 
-For related insights, see [Plumping Peptide Lip Oil Supplier & Custom Packaging OEM](/blog/plumping-peptide-lip-oil-supplier-private-label-custom-packaging/).
-
-For related insights, see [Transfer Proof Liquid Lipstick Private Label Factory Low MOQ](/blog/transfer-proof-liquid-lipstick-private-label-factory-low-moq/).
-
-For related insights, see [Korean Style Gradient Lip Tint Private Label Manufacturer](/blog/korean-style-gradient-lip-tint-private-label-manufacturer/).
-
-For related insights, see [Sustainable Lip Cosmetics Packaging Options for Eco Brands](/blog/sustainable-lip-cosmetics-packaging-options-for-eco-brands/).
-
 ## Specification Comparison Table
 
+| Specification Parameter | Traditional White-Label Supplier | Beautychain Limited UK SCPN Tier |
+| :--- | :--- | :--- |
+| **Minimum Order Quantity (MOQ)** | 3,000 – 5,000 pcs per formula | **500 pcs per shade (Agile UK & EU pilot batches)** |
+| **UK SCPN Notification Protocol** | Brand must hire external consultant | **Turnkey UK SCPN & EU CPNP regulatory notification assistance** |
+| **Safety Assessment Dossier** | Raw material SDS only | **Complete Cosmetic Product Safety Report (CPSR Part A & B)** |
+| **Formula Rheology (Viscosity)** | High drift, prone to separation | **Calibrated 1,800 – 3,500 mPa·s non-sticky botanical lipid matrix** |
+| **Oxidative Stability Testing** | Basic shelf observation | **Rancimat induction testing + 12-week accelerated thermal aging (45°C)** |
+| **Heavy Metal Safety (ICP-MS)** | Self-certified estimates | **Validated COA: Pb < 10ppm, As < 2ppm, Hg < 1ppm, Cd < 5ppm** |
+| **Microbiological Purity** | < 500 CFU/g | **Strict mucosal standard: Total aerobic plate count < 100 CFU/g** |
+| **Color Deviation Standard** | Visual human eye comparison | **Digital spectrophotometer Delta E ≤ 0.5 tolerance guarantee** |
+| **Sample Prototyping Lead Time** | 20 – 30 days | **7-day expedited pilot sampling with refundable formulation fee** |
+| **UK Import Logistics** | FOB China port | **DDP delivery to UK distribution centers with VAT/customs managed** |
+
+---
 
 ## Streamlined Private Label Manufacturing Process
 
@@ -80,6 +86,17 @@ Managing cross-border freight from manufacturing hubs to British distribution ce
 
 ## Frequently Asked Questions
 
+### Q: How does Beautychain Limited assist brands with UK SCPN cosmetic notification?
+Following Brexit, cosmetic products sold in the UK must be registered on the UK Submit Cosmetic Product Notifications (SCPN) portal. Beautychain Limited generates complete technical dossier packages—including CPSR Part A and B, Certificate of Analysis (COA), and GMP documentation—to enable swift submission by your designated UK Responsible Person.
+
+### Q: What is the MOQ for custom private label lip oil manufacturing for the UK market?
+The MOQ is 500 pieces per shade/formula. This allows UK beauty founders to test seasonal drops, viral tints, or premium active lip serums without committing to standard 5,000-unit minimums.
+
+### Q: How do you formulate lip oils to withstand cold British and European winter climates?
+Beautychain Limited engineers botanical lipid complexes using refined jojoba esters, Meadowfoam seed oil, and plant squalane with engineered cloud points below -5°C. This prevents clouding, crystallization, or wax separation during cold-weather storage and transit.
+
+### Q: How fast can custom lip oil lab samples be formulated and delivered to the UK?
+Custom lab samples are formulated and dispatched within 7 business days via express courier, arriving at your UK office within 3 to 4 transit days with full stability and shade match documentation.
 
 ---
 

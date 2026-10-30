@@ -4,7 +4,74 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { site, certifications } from '../../data/site';
 
-const pageSchema = {"@context":"https://schema.org","@type":"AboutPage","name":"À Propos de Beautychain Limited — MLM Lip Manufacturing","description":"Fabricant contractuel certifié ISO 22716:2007 et GMPC spécialisé exclusivement dans les cosmétiques haut de gamme pour les lèvres.","url":"https://mlmlip.com/fr/a-propos","mainEntity":{"@type":"Organization","name":"Beautychain Limited","alternateName":"MLM Lip","url":"https://mlmlip.com","logo":"https://mlmlip.com/logo.png","foundingDate":"2014","description":"Fabricant certifié ISO 22716 et enregistré auprès de la FDA, dédié strictement aux formules labiales sur mesure, au remplissage contractuel et aux solutions de packaging.","knowsAbout":["Lip Gloss Formulation","Lip Mud & Velvet Matte Manufacturing","Peptide Lip Oil Formulation","Lip Mask Development","Lip Liner Manufacturing","ISO 22716:2007 GMP Compliance","EU CPNP Regulatory Filings","FDA Cosmetics Facility Registration"]}};
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "À Propos de Beautychain Limited — MLM Lip Manufacturing",
+  "description": "Fabricant contractuel certifié ISO 22716:2007 et GMPC spécialisé exclusivement dans les cosmétiques haut de gamme pour les lèvres dès 500 pcs.",
+  "url": "https://mlmlip.com/fr/a-propos",
+  "mainEntity": {
+    "@type": ["Organization", "Manufacturer"],
+    "name": "MLM Lip",
+    "legalName": "Beautychain Limited",
+    "alternateName": ["Beautychain Limited", "MLM Lip OEM/ODM"],
+    "url": "https://mlmlip.com",
+    "logo": "https://mlmlip.com/favicon.svg",
+    "image": "https://mlmlip.com/og-image.png",
+    "foundingDate": "2014",
+    "taxID": "79133614",
+    "areaServed": ["US", "CA", "GB", "EU", "AU"],
+    "description": "Fabricant certifié ISO 22716:2007 (GMPc) et enregistré auprès de la FDA, dédié strictement aux formules labiales sur mesure, au remplissage contractuel et aux solutions de packaging dès 500 pcs.",
+    "sameAs": [
+      "https://www.linkedin.com/company/mlmlip",
+      "https://beautychain.en.alibaba.com/",
+      "https://www.instagram.com/mlmlip/"
+    ],
+    "knowsAbout": [
+      "Lip Gloss Formulation",
+      "Lip Mud & Velvet Matte Manufacturing",
+      "Peptide Lip Oil Formulation",
+      "Lip Mask Development",
+      "Lip Liner Manufacturing",
+      "ISO 22716:2007 GMP Compliance",
+      "EU CPNP Regulatory Filings",
+      "FDA Cosmetics Facility Registration"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "ISO 22716:2007 Certification",
+        "credentialCategory": "Cosmetics Good Manufacturing Practices (GMP)"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "US FDA Cosmetics Facility Registration",
+        "credentialCategory": "Modernization of Cosmetics Regulation Act (MoCRA 2024)"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "EU Regulation (EC) No 1223/2009 & CPNP Notification Support",
+        "credentialCategory": "European Market Regulatory Compliance"
+      }
+    ],
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "Huizhou",
+        "addressRegion": "Guangdong",
+        "postalCode": "516000",
+        "addressCountry": "CN"
+      },
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "Shenzhen",
+        "addressRegion": "Guangdong",
+        "postalCode": "518000",
+        "addressCountry": "CN"
+      }
+    ]
+  }
+};
 ---
 
 <BaseLayout

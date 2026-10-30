@@ -79,8 +79,9 @@ All export batches manufactured by Beautychain Limited adhere to:
     }
   ],
   "sameAs": [
-    "https://github.com/mlmlip",
-    "https://github.com/mlmlip/mlmlip"
+    "https://www.linkedin.com/company/mlmlip",
+    "https://beautychain.en.alibaba.com/",
+    "https://www.instagram.com/mlmlip/"
   ]
 }
 ```

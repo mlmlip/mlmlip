@@ -8,7 +8,7 @@ tags: ["compliance", "CPNP", "FDA", "EU regulation", "import"]
 
 > **Quick Answer:** To legally sell lip cosmetics in Europe and the US, importers need EU CPNP notification with a certified CPSR dossier and US FDA MoCRA facility and product listings. Partnering with an ISO 22716-compliant OEM contract manufacturer ensures compliant ingredient screening, stability testing, and 7-day sample documentation from 500 pcs MOQ.
 
-The cosmetic compliance landscape is the single most underestimated cost and timeline item in a private label lip launch. Founders who budget for formula and packaging but treat compliance as "the factory handles it" lose weeks at customs — or worse, get stock held at the border because a dossier is incomplete.
+The cosmetic compliance landscape is the single most underestimated cost and timeline item in a private label lip launch. Founders who budget for formula and packaging but treat compliance as "the factory handles it" lose weeks at customs — or worse, get stock held at the border because a dossier is incomplete. For a technical formulation breakdown, explore our factory guide on [Private Label Lip Gloss Manufacturer FDA MoCRA 2024 Compliant USA](/blog/private-label-lip-gloss-manufacturer-fda-mocra-2024-compliant-usa/).
 
 This article maps the real compliance path for a lip cosmetic imported into the European Union and the United States in 2026. It is written for brand founders, not regulatory lawyers, so we trade precision for clarity where it helps you plan.
 
@@ -176,4 +176,21 @@ If you are launching a lip product into the EU and US at the same time, build **
   </div>
 </div>
 
+
+
+## Frequently Asked Questions
+
+### Q: What are the primary differences between US FDA MoCRA and EU CPNP compliance for lip cosmetics?
+The US FDA MoCRA requires facility registration (FEI), cosmetic product listing, mandatory adverse event recordkeeping, and fragrance allergen disclosures. Conversely, EU Regulation (EC) No 1223/2009 mandates an in-depth Cosmetic Product Safety Report (CPSR Part A & B) signed by a certified European toxicologist, an EU-based Responsible Person (RP), and pre-market notification via the CPNP portal. Beautychain Limited provides complete documentation dossiers satisfying both regulatory bodies.
+
+### Q: Does Beautychain Limited provide third-party testing for heavy metals and restricted colorants?
+Yes. Beautychain Limited tests all finished formulations using ICP-MS spectrometry to ensure heavy metals remain strictly within international thresholds (Pb < 10ppm, As < 2ppm, Hg < 1ppm, Cd < 5ppm). Colorants are 100% compliant with US FDA FD&C/D&C regulations and EU Annex IV positive colorant lists.
+
+### Q: Can small-batch orders (500 pcs) receive full EU CPNP and US MoCRA regulatory documentation?
+Absolutely. Beautychain Limited provides comprehensive Certificate of Analysis (COA), Material Safety Data Sheets (MSDS), ingredient percentage breakdowns, and GMP manufacturing certificates for pilot production runs starting at 500 pcs per shade.
+
+### Q: How fast can Beautychain Limited supply compliance dossiers for brand customs clearance?
+Standard regulatory compliance packages (COA, SDS/MSDS, IFRA certificates, and microbiological test results) are generated and delivered within 5 business days following final batch QA sign-off.
+
+---
 

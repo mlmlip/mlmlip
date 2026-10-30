@@ -2,15 +2,17 @@
 // 文案声线由 OpenClaw (OC) 协同审定，对标欧美顶级代工标准 (HCT, Meiyume)
 export const site = {
   name: 'MLM Lip',
+  legalName: 'Beautychain Limited',
   domain: 'https://mlmlip.com',
   tagline: 'Private Label Lip Cosmetics Engineered for High-Growth Beauty Brands',
-  manufacturer: 'Shenzhen Meilianmei Technology Development Co., Ltd.',
+  manufacturer: 'Beautychain Limited',
+  operatingCompany: 'Shenzhen Meilianmei Technology Development Co., Ltd.',
   moq: '500 pcs',
   contact: {
     whatsapp: '+86 136 5238 0291',
     whatsappLink: 'https://wa.me/8613652380291',
     email: 'nancy@mlmlip.com',
-    address: 'Shenzhen, China'
+    address: 'Shenzhen & Huizhou Cleanroom Facilities, Guangdong, China'
   },
   nav: [
     { label: 'Products', href: '/products' },

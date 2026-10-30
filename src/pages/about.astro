@@ -11,13 +11,22 @@ const aboutJsonLd = {
   "description": "ISO 22716:2007 & GMPC certified contract manufacturer specializing exclusively in high-performance private label lip cosmetics.",
   "url": "https://mlmlip.com/about",
   "mainEntity": {
-    "@type": "Organization",
-    "name": "Beautychain Limited",
-    "alternateName": "MLM Lip",
+    "@type": ["Organization", "Manufacturer"],
+    "name": "MLM Lip",
+    "legalName": "Beautychain Limited",
+    "alternateName": ["Beautychain Limited", "MLM Lip OEM/ODM"],
     "url": "https://mlmlip.com",
-    "logo": "https://mlmlip.com/logo.png",
+    "logo": "https://mlmlip.com/favicon.svg",
+    "image": "https://mlmlip.com/og-image.png",
     "foundingDate": "2014",
-    "description": "ISO 22716 and FDA registered manufacturer dedicated strictly to custom lip formulations, contract filling, and packaging solutions.",
+    "taxID": "79133614",
+    "areaServed": ["US", "CA", "GB", "EU", "AU"],
+    "description": "ISO 22716:2007 (GMPc) certified private label lip cosmetics contract manufacturer specializing in custom lip gloss, peptide lip oil, velvet lip mud, bullet lipstick, precision lip liner, and barrier lip masks with a universal 500 pcs MOQ. Turn-key regulatory support for US FDA MoCRA 2024 and EU CPNP.",
+    "sameAs": [
+      "https://www.linkedin.com/company/mlmlip",
+      "https://beautychain.en.alibaba.com/",
+      "https://www.instagram.com/mlmlip/"
+    ],
     "knowsAbout": [
       "Lip Gloss Formulation",
       "Lip Mud & Lip Matte Manufacturing",
@@ -37,14 +46,32 @@ const aboutJsonLd = {
       {
         "@type": "EducationalOccupationalCredential",
         "name": "US FDA Cosmetics Facility Registration",
-        "credentialCategory": "Voluntary / Modernization of Cosmetics Regulation Act (MoCRA)"
+        "credentialCategory": "Modernization of Cosmetics Regulation Act (MoCRA 2024)"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "EU Regulation (EC) No 1223/2009 & CPNP Notification Support",
+        "credentialCategory": "European Market Regulatory Compliance"
       }
     ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Shenzhen",
-      "addressCountry": "CN"
-    }
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "Huizhou",
+        "addressRegion": "Guangdong",
+        "postalCode": "516000",
+        "addressCountry": "CN",
+        "description": "Cleanroom Manufacturing Base"
+      },
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "Shenzhen",
+        "addressRegion": "Guangdong",
+        "postalCode": "518000",
+        "addressCountry": "CN",
+        "description": "Innovation & R&D Center"
+      }
+    ]
   }
 };
 ---

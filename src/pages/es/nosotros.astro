@@ -8,16 +8,25 @@ const pageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   "name": "Sobre Nosotros — Beautychain Limited / MLM Lip Manufacturing",
-  "description": "Fabricante de cosméticos labiales por contrato con certificación ISO 22716:2007, GMPC y registro FDA.",
+  "description": "Fabricante de cosméticos labiales por contrato con certificación ISO 22716:2007, GMPC y registro FDA desde 500 uds.",
   "url": "https://mlmlip.com/es/nosotros",
   "mainEntity": {
-    "@type": "Organization",
-    "name": "Beautychain Limited",
-    "alternateName": "MLM Lip",
+    "@type": ["Organization", "Manufacturer"],
+    "name": "MLM Lip",
+    "legalName": "Beautychain Limited",
+    "alternateName": ["Beautychain Limited", "MLM Lip OEM/ODM"],
     "url": "https://mlmlip.com",
-    "logo": "https://mlmlip.com/logo.png",
+    "logo": "https://mlmlip.com/favicon.svg",
+    "image": "https://mlmlip.com/og-image.png",
     "foundingDate": "2014",
-    "description": "Fabricante certificado ISO 22716 y registrado en la FDA, dedicado estrictamente a fórmulas labiales a medida, llenado por contrato y soluciones completas de envasado.",
+    "taxID": "79133614",
+    "areaServed": ["US", "CA", "GB", "EU", "AU"],
+    "description": "Fabricante certificado ISO 22716:2007 (GMPc) y registrado en la FDA, dedicado estrictamente a fórmulas labiales a medida, llenado por contrato y soluciones completas de envasado desde 500 uds.",
+    "sameAs": [
+      "https://www.linkedin.com/company/mlmlip",
+      "https://beautychain.en.alibaba.com/",
+      "https://www.instagram.com/mlmlip/"
+    ],
     "knowsAbout": [
       "Lip Gloss Formulation",
       "Lip Mud & Velvet Matte Manufacturing",
@@ -27,6 +36,39 @@ const pageSchema = {
       "ISO 22716:2007 GMP Compliance",
       "EU CPNP Regulatory Filings",
       "FDA Cosmetics Facility Registration"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Certificación ISO 22716:2007",
+        "credentialCategory": "Buenas Prácticas de Fabricación Cosmética (GMPc)"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Registro de Instalación Cosmética FDA EE. UU.",
+        "credentialCategory": "Modernization of Cosmetics Regulation Act (MoCRA 2024)"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Soporte Regulatorio Reglamento UE (CE) n.º 1223/2009 y CPNP",
+        "credentialCategory": "Cumplimiento Normativo del Mercado Europeo"
+      }
+    ],
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "Huizhou",
+        "addressRegion": "Guangdong",
+        "postalCode": "516000",
+        "addressCountry": "CN"
+      },
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "Shenzhen",
+        "addressRegion": "Guangdong",
+        "postalCode": "518000",
+        "addressCountry": "CN"
+      }
     ]
   }
 };

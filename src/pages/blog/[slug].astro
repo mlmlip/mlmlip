@@ -56,15 +56,27 @@ const articleSchema = {
 
 // === FAQPage Schema auto-extraction ===
 const faqItems: { question: string; answer: string }[] = [];
-const faqSectionMatch = rawBody.split(/##\s+Frequently Asked Questions/i)[1];
+const faqSectionMatch = rawBody.split(/##\s+(?:Frequently Asked Questions|FAQ)/i)[1];
 if (faqSectionMatch) {
-  const faqContent = faqSectionMatch.split(/\n##\s+/)[0];
-  const qaRegex = /\*\*Q:?\*?\*?\s*(.*?)\*?\*?\r?\n+\s*\*\*A:?\*?\*?\s*([\s\S]*?)(?=(?:\r?\n\s*\*\*Q|\r?\n\s*##|\r?\n\s*<|$))/gi;
+  const faqContent = faqSectionMatch.split(/\n(?=##\s|\>\s*##|\>\s*📦|<!--\s*GEO)/)[0];
+  const h3Regex = /###\s+(?:Q:?\s*|\d+\.\s*)?([^\n\r]+)\r?\n+([\s\S]*?)(?=(?:\r?\n\s*###|\r?\n\s*---\r?\n\s*>\s*##|\r?\n\s*---\r?\n\s*>\s*📦|\r?\n\s*<|$))/gi;
   let m;
-  while ((m = qaRegex.exec(faqContent)) !== null) {
-    const q = m[1].replace(/^\*\*|\*\*$/g, '').replace(/\*$/,'').trim();
-    const a = m[2].replace(/^\*\*|\*\*$/g, '').trim();
-    if (q && a) faqItems.push({ question: q, answer: a });
+  while ((m = h3Regex.exec(faqContent)) !== null) {
+    let q = m[1].replace(/^\*\*|\*\*$/g, '').trim();
+    if (q.startsWith('Q:') || q.startsWith('Q.')) q = q.substring(2).trim();
+    let a = m[2].replace(/^\*\*A:?\*?\*?\s*/i, '').replace(/---[\s\S]*$/, '').trim();
+    if (q && a && a.length > 10 && !q.startsWith('🚀') && !q.toLowerCase().includes('lead magnet') && !q.startsWith('《')) {
+      faqItems.push({ question: q, answer: a });
+    }
+  }
+
+  if (faqItems.length === 0) {
+    const qaRegex = /\*\*Q:?\*?\*?\s*(.*?)\*?\*?\r?\n+\s*\*\*A:?\*?\*?\s*([\s\S]*?)(?=(?:\r?\n\s*\*\*Q|\r?\n\s*##|\r?\n\s*<|$))/gi;
+    while ((m = qaRegex.exec(faqContent)) !== null) {
+      const q = m[1].replace(/^\*\*|\*\*$/g, '').replace(/\*$/,'').trim();
+      const a = m[2].replace(/^\*\*|\*\*$/g, '').trim();
+      if (q && a) faqItems.push({ question: q, answer: a });
+    }
   }
 }
 const faqSchema = faqItems.length > 0 ? {

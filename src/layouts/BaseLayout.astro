@@ -129,61 +129,175 @@ const schemaData = {
     {
       "@type": ["Organization", "Manufacturer"],
       "@id": "https://mlmlip.com/#organization",
-      "name": site.name,
-      "legalName": site.manufacturer,
+      "name": "MLM Lip",
+      "legalName": "Beautychain Limited",
       "url": site.domain,
       "logo": `${site.domain}/favicon.svg`,
-      "description": "Prestige private label custom lip cosmetics manufacturer specializing in lip gloss, lip mud, lip oil, lipstick, and lip masks with a universal 500 pcs MOQ.",
+      "image": `${site.domain}/og-image.png`,
+      "description": "ISO 22716:2007 (GMPc) certified private label lip cosmetics contract manufacturer specializing in custom lip gloss, peptide lip oil, velvet lip mud, bullet lipstick, precision lip liner, and barrier lip masks with a universal 500 pcs MOQ. Turn-key regulatory support for US FDA MoCRA 2024 and EU CPNP.",
+      "foundingDate": "2014",
+      "taxID": "79133614",
+      "areaServed": ["US", "CA", "GB", "EU", "AU"],
       "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Floor 3-4, Building B, Industrial Cleanroom Zone",
+          "addressLocality": "Huizhou",
+          "addressRegion": "Guangdong",
+          "postalCode": "516000",
+          "addressCountry": "CN",
+          "description": "Cleanroom Manufacturing Base & Automated Filling Facility"
+        },
         {
           "@type": "PostalAddress",
           "addressLocality": "Shenzhen",
           "addressRegion": "Guangdong",
+          "postalCode": "518000",
           "addressCountry": "CN",
-          "description": "Innovation & R&D Center"
-        },
-        {
-          "@type": "PostalAddress",
-          "addressLocality": "Huizhou",
-          "addressRegion": "Guangdong",
-          "addressCountry": "CN",
-          "description": "Cleanroom Manufacturing Hub"
+          "description": "Formulation R&D Lab & Global Export Hub"
         }
       ],
-      "alternateName": ["Beautychain", "Beautychain Limited", "MLM Lip OEM/ODM"],
-      "sameAs": [
-        "https://www.linkedin.com/company/mlmlip",
-        "https://twitter.com/mlmlip",
-        "https://www.instagram.com/mlmlip_cosmetics",
-        ...(Array.isArray(verifiedDirectories) ? verifiedDirectories : [])
+      "alternateName": [
+        "Beautychain Limited",
+        "Beautychain Lip Cosmetics",
+        "MLM Lip OEM/ODM"
       ],
+      "sameAs": Array.from(new Set([
+        "https://www.linkedin.com/company/mlmlip",
+        "https://beautychain.en.alibaba.com/",
+        "https://www.instagram.com/mlmlip/",
+        ...(Array.isArray(verifiedDirectories) ? verifiedDirectories.filter(u => typeof u === 'string' && !u.includes('github.com')) : [])
+      ])),
       "knowsAbout": [
         "Cosmetics OEM Contract Manufacturing",
         "Private Label Lip Gloss Formulation",
         "Velvet Lip Mud Rheology",
         "Peptide Lip Oil Engineering",
-        "ISO 22716 Cosmetics GMP Cleanroom Operations",
-        "FDA MoCRA Cosmetic Facility Compliance",
+        "ISO 22716:2007 Cosmetics GMP Cleanroom Operations",
+        "FDA MoCRA 2024 Cosmetic Facility Compliance",
         "EU CPNP and CPSR Safety Assessment",
-        "Custom Cosmetic Injection Mold Tooling"
+        "Custom Cosmetic Injection Mold Tooling",
+        "Biodegradable Microplastic-Free Lip Colorants"
       ],
       "hasCredential": [
         {
           "@type": "EducationalOccupationalCredential",
-          "name": "ISO 22716:2007 Cosmetics GMP Certification"
+          "name": "ISO 22716:2007 Cosmetics GMP Certification",
+          "credentialCategory": "Cosmetics Good Manufacturing Practices (GMPc)"
         },
         {
           "@type": "EducationalOccupationalCredential",
-          "name": "US FDA MoCRA Compliant Facility Registration"
+          "name": "US FDA MoCRA 2024 Compliant Facility Registration",
+          "credentialCategory": "Cosmetic Facility Registration"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "EU Regulation (EC) No 1223/2009 & CPNP Notification Support",
+          "credentialCategory": "European Market Regulatory Compliance"
         }
       ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": site.contact.whatsapp,
-        "contactType": "sales",
-        "email": site.contact.email,
-        "availableLanguage": ["English", "French", "Spanish"]
-      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": site.contact.whatsapp,
+          "contactType": "sales",
+          "email": site.contact.email,
+          "availableLanguage": ["English", "French", "Spanish"],
+          "areaServed": ["US", "CA", "GB", "EU", "AU"]
+        }
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "500 pcs MOQ Pilot Batch Lip Gloss Contract Manufacturing",
+          "description": "High-impact non-sticky lip gloss custom formulation, Brookfield 3800-5200 cP viscosity, and thick-walled acrylic componentry from 500 pcs MOQ.",
+          "category": "Lip Gloss OEM/ODM",
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "minValue": 500,
+            "unitCode": "C62"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "name": "High-Impact Lip Gloss Private Label Pilot Batch"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "500 pcs MOQ Skinified Peptide Lip Oil OEM/ODM",
+          "description": "Hybrid lip oil pairing botanical squalane and tripeptides with glass shine, non-sticky cushion finish, and oversized doe-foot packaging from 500 pcs.",
+          "category": "Lip Oil OEM/ODM",
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "minValue": 500,
+            "unitCode": "C62"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Skinified Peptide Lip Oil OEM/ODM"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "500 pcs MOQ Velvet Lip Mud & Cloud Tint OEM",
+          "description": "Weightless blurred-matte aerated silicone elastomer lip mud, 28000-35000 cP rheology, non-drying transfer-resistant finish from 500 pcs per shade.",
+          "category": "Lip Mud OEM/ODM",
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "minValue": 500,
+            "unitCode": "C62"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Velvet Lip Mud & Tint Manufacturing"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "500 pcs MOQ Signature Bullet Lipstick Manufacturing",
+          "description": "Cast satin and velvet matte bullet lipsticks in heavyweight magnetic zamac or aluminum cases with custom bullet logo engraving from 500 pcs.",
+          "category": "Lipstick OEM/ODM",
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "minValue": 500,
+            "unitCode": "C62"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Lipstick & Bullet Case Tooling"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "500 pcs MOQ Precision Glide Lip Liner OEM",
+          "description": "Ultra-smooth smudge-proof contour lip pencils in cedarwood or mechanical twist-up formats with custom barrel finishing from 500 units.",
+          "category": "Lip Liner OEM/ODM",
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "minValue": 500,
+            "unitCode": "C62"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Precision Lip Liner Production"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "500 pcs MOQ Barrier Repair Overnight Lip Mask OEM",
+          "description": "Ceramide-infused restorative overnight lip treatment balms in custom jars or soft-touch squeeze tubes from 500 pcs.",
+          "category": "Lip Mask OEM/ODM",
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "minValue": 500,
+            "unitCode": "C62"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Barrier Repair Lip Mask Production"
+          }
+        }
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Custom Lip Cosmetics OEM/ODM Catalog",

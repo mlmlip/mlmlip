@@ -40,19 +40,13 @@ A compliant PIF for lip cosmetics must contain detailed structural components, i
 - **Physical, Chemical, and Microbiological Specifications:** Comprehensive analytical certificates covering viscosity ranges, pH levels, specific gravity, and strict total viable count limits for micro-organisms.
 - **Cosmetic Product Safety Report (CPSR):** Part A (Safety Information) and Part B (Safety Assessment) conducted and signed by a certified European safety assessor, evaluating the systemic toxicity and local tolerance of lip applications.
 - **Manufacturing Method and GMP Compliance:** Detailed documentation proving that production adheres strictly to ISO 22716 guidelines, minimizing contamination risks during batch compounding and filling.
-- **Proof of Cosmetic Effects:** Substantiation of all marketing claims associated with the lip products, ensuring hydrating, conditioning, or long-wear claims are fully backed by empirical testing data.
+- **Proof of Cosmetic Effects:** Substantiation of all marketing claims associated with the lip products, ensuring hydrating, conditioning, or long-wear claims are fully backed by empirical testing data. For a technical formulation breakdown, explore our factory guide on [Private Label Lip Oil OEM Manufacturer UK SCPN Compliant B2B](/blog/private-label-lip-oil-oem-manufacturer-uk-scpn-compliant-b2b/).
 
 Explore the complete manufacturing portfolio and custom formulation options available by visiting [Beautychain Limited Products Overview](/products).
 
 For related insights, see [White Label Lipstick California Prop 65 Compliant Supplier](/blog/white-label-lipstick-california-prop-65-heavy-metal-compliant-supplier/).
 
 For related insights, see [Transfer-Proof Liquid Lipstick OEM Factory | 500 MOQ — MLM](/blog/transfer-proof-liquid-lipstick-private-label-factory-low-moq/).
-
-For related insights, see [Custom Bullet Lipstick Manufacturer with Private Tooling Case](/blog/custom-bullet-lipstick-manufacturer-with-private-tooling-case/).
-
-For related insights, see [Korean Style Gradient Lip Tint Private Label Manufacturer](/blog/korean-style-gradient-lip-tint-private-label-manufacturer/).
-
-For related insights, see [Sustainable Lip Cosmetics Packaging Options for Eco Brands](/blog/sustainable-lip-cosmetics-packaging-options-for-eco-brands/).
 
 ## Specification Comparison Table
 
@@ -77,7 +71,7 @@ The workflow begins in the R&D laboratory, where base formulas—such as high-gl
 
 One of the most frequent reasons imported lip cosmetics fail CPNP verification or trigger border rejections is non-compliance with the strict positive lists of colorants permitted under Annex IV of EU Regulation (EC) No 1223/2009. Unlike other regional markets, the European Union enforces exceptionally low maximum allowable limits for heavy metals such as lead, arsenic, cadmium, and mercury in cosmetic products applied to the lips.
 
-Beautychain Limited formulates all lip colorants using strictly certified, high-purity pigments that comply with European cosmetic purity grades. Every master batch undergoes Inductively Coupled Plasma Mass Spectrometry (ICP-MS) testing to verify that heavy metal traces remain well beneath statutory thresholds. This rigorous attention to analytical detail ensures that the safety assessment component of the PIF can be signed without hesitation by qualified EU safety assessors.
+Beautychain Limited formulates all lip colorants using strictly certified, high-purity pigments that comply with European cosmetic purity grades. Every master batch undergoes Inductively Coupled Plasma Mass Spectrometry (ICP-MS) testing to verify that heavy metal traces remain well beneath statutory thresholds. This rigorous attention to analytical detail ensures that the safety assessment component of the PIF can be signed without hesitation by qualified EU safety assessors. Production managers evaluating this format can also review our manufacturing specifications in [Private Label Liquid Lipstick OEM B2B Supplier EU Regulation](/blog/private-label-liquid-lipstick-oem-b2b-supplier-eu-regulation-1223-2009/).
 
 Review the complete end-to-end manufacturing and quality control workflow at [Beautychain Limited Process Overview](/process).
 
@@ -100,7 +94,7 @@ Manufacturing operations at Beautychain Limited strictly adhere to ISO 22716 (Go
 
 ---
 
-> ### Sesmooths Your EU Market Entry: Expert Manufacturing & Compliance Support
+> ### Secures Your EU Market Entry: Expert Manufacturing & Compliance Support
 > 
 > Accelerate your brand's global expansion with production-ready formulations, low minimum order quantities, and complete regulatory documentation support. Whether you need a 500-piece rapid pilot batch or comprehensive technical dossiers for CPNP filing, Beautychain Limited delivers.
 > 
