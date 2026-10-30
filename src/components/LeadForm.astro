@@ -83,45 +83,34 @@ const { context = "general", productName = "" } = Astro.props;
 </div>
 
 <script>
-  import { postInquiry, whatsappLink } from '../lib/inquiryClient';
+  import { submitInquiryDualTrack } from '../lib/inquiryClient';
 
   // Set the current page URL when the component loads
   document.addEventListener('DOMContentLoaded', () => {
-    const urlInput = document.getElementById('form-source-url');
+    const urlInput = document.getElementById('form-source-url') as HTMLInputElement | null;
     if (urlInput) {
       urlInput.value = window.location.href;
     }
   });
 
-  async function submitLeadForm(event) {
+  async function submitLeadForm(event: Event) {
     event.preventDefault();
-    const form = event.target;
-    const btn = document.getElementById('submit-btn');
+    const form = event.target as HTMLFormElement;
+    const btn = document.getElementById('submit-btn') as HTMLButtonElement | null;
     const statusEl = document.getElementById('form-status');
 
-    // UI state 1: loading + guard against double submission
-    btn.disabled = true;
-    btn.innerText = "Sending...";
-    statusEl.className = "mt-3 text-center text-sm font-medium hidden";
-
     const payload = Object.fromEntries(new FormData(form).entries());
-    const result = await postInquiry({ ...payload, source: payload.context || 'lead_form' });
 
-    if (result.ok) {
-      // UI state 2: success, with an explicit response-time promise
-      statusEl.innerText = "Thanks! Your inquiry has been received. Our team will contact you within 24 hours.";
-      statusEl.className = "mt-3 text-center text-sm font-medium text-green-600";
-      form.reset();
-      btn.innerText = "✓ Inquiry Received";
-    } else {
-      // UI state 3: failure, with a direct WhatsApp escape hatch
-      statusEl.innerHTML = `Sorry, there was an issue sending your request. Please reach us on ${whatsappLink('WhatsApp')} or email us directly.`;
-      statusEl.className = "mt-3 text-center text-sm font-medium text-red-600";
-      btn.disabled = false;
-      btn.innerText = "Retry Submission";
-    }
+    await submitInquiryDualTrack({
+      payload,
+      formElement: form,
+      submitButton: btn,
+      statusElement: statusEl,
+      source: (payload.context as string) || 'lead_form',
+      redirectingText: '✓ Redirecting to WhatsApp...',
+    });
   }
 
   // The form uses an inline onsubmit handler, so it must be reachable globally.
-  window.submitLeadForm = submitLeadForm;
+  (window as any).submitLeadForm = submitLeadForm;
 </script>

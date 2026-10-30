@@ -358,7 +358,7 @@ const checklistSchema = {
 </BaseLayout>
 
 <script>
-  import { postInquiry, whatsappLink } from '../lib/inquiryClient';
+  import { submitInquiryDualTrack } from '../lib/inquiryClient';
 
   const clForm = document.getElementById('checklist-inquiry-form') as HTMLFormElement | null;
   const clStatus = document.getElementById('cl-status');
@@ -367,41 +367,21 @@ const checklistSchema = {
 
   clForm?.addEventListener('submit', async function(e) {
     e.preventDefault();
-    if (clBtn) {
-      clBtn.disabled = true;
-      clBtn.textContent = 'Transmitting Regulatory Request...';
-    }
-    if (clStatus) clStatus.style.display = 'none';
+    if (!clForm) return;
 
     const payload = Object.fromEntries(new FormData(clForm).entries());
-    const result = await postInquiry(payload);
-
-    if (result.ok) {
-      if (clStatus) {
-        clStatus.style.display = 'block';
-        clStatus.style.background = '#d4edda';
-        clStatus.style.color = '#155724';
-        clStatus.innerHTML = '✓ <strong>Request Transmitted!</strong> Your compliance dossier access and 500 pcs quotation have been dispatched.';
-      }
-      if (clDownloadBox) {
-        clDownloadBox.hidden = false;
-      }
-      clForm.reset();
-      if (clBtn) {
-        clBtn.disabled = false;
-        clBtn.textContent = '✓ Request Transmitted';
-      }
-    } else {
-      if (clStatus) {
-        clStatus.style.display = 'block';
-        clStatus.style.background = '#f8d7da';
-        clStatus.style.color = '#721c24';
-        clStatus.innerHTML = `Submission error. Please ${whatsappLink('chat directly with our compliance lead on WhatsApp')} or email <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>.`;
-      }
-      if (clBtn) {
-        clBtn.disabled = false;
-        clBtn.textContent = 'Retry Submission';
-      }
-    }
+    await submitInquiryDualTrack({
+      payload,
+      formElement: clForm,
+      submitButton: clBtn,
+      statusElement: clStatus,
+      source: 'compliance_checklist_page',
+      redirectingText: '✓ Opening WhatsApp...',
+      onSuccess: () => {
+        if (clDownloadBox) {
+          clDownloadBox.hidden = false;
+        }
+      },
+    });
   });
 </script>

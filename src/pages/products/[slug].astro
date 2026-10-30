@@ -345,7 +345,7 @@ const relatedProducts = productsCatalog
   )}
 
   <script>
-    import { postInquiry, whatsappLink } from '../../lib/inquiryClient';
+    import { submitInquiryDualTrack } from '../../lib/inquiryClient';
 
     document.querySelectorAll(".gallery-thumb-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -363,39 +363,17 @@ const relatedProducts = productsCatalog
 
     piForm?.addEventListener('submit', async function(e) {
       e.preventDefault();
-      if (piBtn) {
-        piBtn.disabled = true;
-        piBtn.textContent = 'Transmitting Inquiry...';
-      }
-      if (piStatus) piStatus.style.display = 'none';
+      if (!piForm) return;
 
       const payload = Object.fromEntries(new FormData(piForm).entries());
-      const result = await postInquiry(payload);
-
-      if (result.ok) {
-        if (piStatus) {
-          piStatus.style.display = 'block';
-          piStatus.style.background = '#d4edda';
-          piStatus.style.color = '#155724';
-          piStatus.innerHTML = '✓ <strong>Thank you!</strong> Your product inquiry has been transmitted. Our cosmetic formulation team will reply within 12 hours.';
-        }
-        piForm.reset();
-        if (piBtn) {
-          piBtn.disabled = false;
-          piBtn.textContent = '✓ Inquiry Received';
-        }
-      } else {
-        if (piStatus) {
-          piStatus.style.display = 'block';
-          piStatus.style.background = '#f8d7da';
-          piStatus.style.color = '#721c24';
-          piStatus.innerHTML = `Submission issue encountered. Please ${whatsappLink('chat directly with our engineers on WhatsApp')} or email <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>.`;
-        }
-        if (piBtn) {
-          piBtn.disabled = false;
-          piBtn.textContent = 'Retry Submission';
-        }
-      }
+      await submitInquiryDualTrack({
+        payload,
+        formElement: piForm,
+        submitButton: piBtn,
+        statusElement: piStatus,
+        source: 'product_detail_page',
+        redirectingText: '✓ Redirecting to WhatsApp...',
+      });
     });
   </script>
 </BaseLayout>

@@ -1,13 +1,7 @@
 // src/pages/api/inquiry.ts
 // Owned inquiry endpoint for mlmlip.com.
-// Ported from the mature mlmglitter implementation (Upstash rate limit -> IM fan-out),
-// adapted: Feishu + DingTalk signed webhooks only (no email provider), in-memory
-// rate-limit fallback, honeypot spam gate, origin whitelist + dynamic host validation.
-//
-// Hard rule: no webhook URL, no signing secret is ever hardcoded. Everything comes
-// from environment variables. When they are missing the endpoint degrades to
-// structured error logging (with persistent fallback) + still tells customer success
-// so a visitor never sees an error.
+// Zero-Drop Lead Pipeline: Feishu + DingTalk fan-out + local persistent backup.
+// Rule: Every lead is captured. No silent drops, no honeypot 400 drops, no rate-limit 429 drops.
 
 import type { APIRoute } from 'astro';
 import { createHash, createHmac, randomUUID } from 'node:crypto';
@@ -19,14 +13,21 @@ export const prerender = false;
 const MAX_BODY_BYTES = 64 * 1024;
 const MAX_FIELD_CHARS = 4_000;
 
-// Same-origin forms only. Cross-site POSTs are refused.
-export const HONEYPOT_FIELDS = ['botcheck', 'website', 'fax', '_honey'];
+// website has been completely removed from honeypot because genuine B2B buyers frequently input their website!
+// Only botcheck is monitored as hidden field.
+export const HONEYPOT_FIELDS = ['botcheck'];
 
 const RATE_LIMIT = Number(process.env.INQUIRY_RATE_LIMIT || 5);
 const RATE_WINDOW_SECONDS = Number(process.env.INQUIRY_RATE_WINDOW_SECONDS || 600);
 
 export type RateMode = 'upstash' | 'memory';
 export type DeliveryState = 'ok' | 'failed' | 'skipped';
+
+export interface InquiryFlags {
+  isSpam?: boolean;
+  isBot?: boolean;
+  isRateLimited?: boolean;
+}
 
 export interface Inquiry {
   requestId: string;
@@ -202,33 +203,45 @@ export function isHoneypotTripped(raw: Record<string, unknown>): boolean {
 }
 
 export function buildInquiry(raw: Record<string, unknown>, ip: string): Inquiry | { error: string } {
-  // Field-name aliases: every legacy form on the site posts a different shape.
+  // Field-name aliases: every form on the site posts a slightly different shape.
   const name = pick(raw, ['name', 'full_name', 'buyer_name']);
   const email = pick(raw, ['email', 'buyer_email', 'work_email']);
   const baseDetails = pick(raw, ['details', 'message', 'notes', 'project_notes', 'full_brief_summary']);
   const requestType = pick(raw, ['request_type', 'requestType']);
-  const details = requestType ? `[Request: ${requestType}] ${baseDetails}`.trim() : baseDetails;
+  let details = requestType ? `[Request: ${requestType}] ${baseDetails}`.trim() : baseDetails;
+
+  // Preserve genuine company website input if provided by client
+  const website = pick(raw, ['website', 'company_url', 'site', 'website_url']);
+  if (website) {
+    details = details ? `${details}\nCompany Website: ${website}` : `Company Website: ${website}`;
+  }
 
   const productType = pick(raw, ['product_item', 'productType', 'product_interest', 'product', 'selected_kit', 'category', 'product_category']);
   const quantity = pick(raw, ['quantity', 'planned_quantity', 'production_volume', 'volume']);
   const country = pick(raw, ['country', 'destination', 'market', 'target_market', 'target_markets']);
   const company = pick(raw, ['company', 'buyer_brand', 'brand']);
-  const whatsapp = pick(raw, ['whatsapp', 'buyer_whatsapp', 'phone']);
+  const whatsapp = pick(raw, ['whatsapp', 'buyer_whatsapp', 'phone', 'tel']);
 
-  if (!name) return { error: 'name is required' };
-  if (!email) return { error: 'email is required' };
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return { error: 'email is invalid' };
+  // Zero-Drop Relaxed Validation:
+  // As long as the visitor provided ANY contact channel (email, phone, whatsapp) or a message, accept it!
+  const hasContactOrDetails = Boolean(email || whatsapp || details);
+  if (!hasContactOrDetails && !name) {
+    return { error: 'Please provide an email, phone/WhatsApp, or project description.' };
+  }
+
+  const finalName = name || (company ? `${company} Team` : (email ? email.split('@')[0] : 'Website Visitor'));
+  const finalEmail = email || '未填写';
 
   return {
     requestId: randomUUID(),
-    name,
-    email,
-    company,
-    whatsapp,
+    name: finalName,
+    email: finalEmail,
+    company: company || '',
+    whatsapp: whatsapp || '',
     productType: productType || '未填写',
     quantity: quantity || '待确认',
     country: country || '未填写',
-    details,
+    details: details || '',
     source: pick(raw, ['source', 'context']) || 'website',
     sourceUrl: pick(raw, ['sourceUrl', 'source_url']) || '',
     ip,
@@ -246,38 +259,46 @@ export function isObviousSpam(lead: Inquiry): boolean {
 
 function feishuSignature(secret: string): { timestamp: string; sign: string } {
   const timestamp = Math.floor(Date.now() / 1000).toString();
-  // Feishu: HMAC key is "<timestamp>\n<secret>", message is empty.
   const sign = createHmac('sha256', `${timestamp}\n${secret}`).update('').digest('base64');
   return { timestamp, sign };
 }
 
 function dingtalkSignature(secret: string): { timestamp: string; sign: string } {
   const timestamp = String(Date.now());
-  // DingTalk: HMAC key is the secret, message is "<timestamp>\n<secret>".
   const sign = createHmac('sha256', secret).update(`${timestamp}\n${secret}`).digest('base64');
   return { timestamp, sign };
 }
 
-function messageText(lead: Inquiry): string {
-  const waLink = lead.whatsapp.replace(/\D/g, '').length >= 7
-    ? ` (https://wa.me/${lead.whatsapp.replace(/\D/g, '')})`
+export function messageText(lead: Inquiry, flags?: InquiryFlags): string {
+  const waDigits = lead.whatsapp.replace(/\D/g, '');
+  const waLink = waDigits.length >= 7
+    ? ` (https://wa.me/${waDigits})`
     : '';
+
+  const tags: string[] = [];
+  if (flags?.isBot) tags.push('⚠️[疑似机器人]');
+  if (flags?.isSpam) tags.push('⚠️[疑似推广/请甄别]');
+  if (flags?.isRateLimited) tags.push('⚠️[高频提交]');
+
+  const tagPrefix = tags.length > 0 ? `${tags.join(' ')} ` : '';
+
   return [
-    `【新询盘】${lead.productType} — ${lead.company || lead.name}`,
+    `${tagPrefix}【新询盘】${lead.productType} — ${lead.company || lead.name}`,
     `请求ID: ${lead.requestId}`,
     `姓名: ${lead.name}`,
     `邮箱: ${lead.email}`,
-    `WhatsApp: ${lead.whatsapp || '未填写'}${waLink}`,
+    `WhatsApp/电话: ${lead.whatsapp || '未填写'}${waLink}`,
     `公司/品牌: ${lead.company || '未填写'}`,
     `国家/地区: ${lead.country}`,
     `产品: ${lead.productType}`,
     `预估数量: ${lead.quantity}`,
     `需求详情: ${lead.details || '无额外留言'}`,
     `来源: ${lead.source}${lead.sourceUrl ? ` (${lead.sourceUrl})` : ''}`,
+    `IP: ${lead.ip}`,
   ].join('\n');
 }
 
-export async function notifyFeishu(lead: Inquiry): Promise<DeliveryState> {
+export async function notifyFeishu(lead: Inquiry, flags?: InquiryFlags): Promise<DeliveryState> {
   const webhookUrl = env('FEISHU_WEBHOOK_URL');
   if (!webhookUrl) {
     console.warn('[inquiry] FEISHU_WEBHOOK_URL is not configured — Feishu notification skipped.');
@@ -290,7 +311,7 @@ export async function notifyFeishu(lead: Inquiry): Promise<DeliveryState> {
     const secret = env('FEISHU_SECRET');
     const body: Record<string, unknown> = {
       msg_type: 'text',
-      content: { text: messageText(lead) },
+      content: { text: messageText(lead, flags) },
     };
     if (secret) {
       const { timestamp, sign } = feishuSignature(secret);
@@ -315,8 +336,7 @@ export async function notifyFeishu(lead: Inquiry): Promise<DeliveryState> {
   }
 }
 
-export async function notifyDingTalk(lead: Inquiry): Promise<DeliveryState> {
-  // Support DINGTALK_WEBHOOK_URL with fallback to OPS_ALERT_WEBHOOK_URL
+export async function notifyDingTalk(lead: Inquiry, flags?: InquiryFlags): Promise<DeliveryState> {
   const webhookUrl = env('DINGTALK_WEBHOOK_URL') || env('OPS_ALERT_WEBHOOK_URL');
   if (!webhookUrl) {
     console.warn('[inquiry] DINGTALK_WEBHOOK_URL is not configured — DingTalk notification skipped.');
@@ -333,9 +353,8 @@ export async function notifyDingTalk(lead: Inquiry): Promise<DeliveryState> {
       target.searchParams.set('sign', sign);
     }
 
-    // Optional: DingTalk bots secured by "custom keyword" require keyword in text (default '询盘').
     const keyword = env('DINGTALK_KEYWORD') || '询盘';
-    const rawMsg = messageText(lead);
+    const rawMsg = messageText(lead, flags);
     const content = rawMsg.includes(keyword) ? rawMsg : `${keyword}\n${rawMsg}`;
 
     const res = await fetch(target, {
@@ -357,6 +376,7 @@ export async function notifyDingTalk(lead: Inquiry): Promise<DeliveryState> {
 
 /* ------------------------------------------------------------------ *
  * Unified Inquiry Pipeline (Shared between /api/inquiry and /api/contact)
+ * ZERO DROP ARCHITECTURE: Never silently drop, never reject with 400/429
  * ------------------------------------------------------------------ */
 
 export interface ProcessInquiryResult {
@@ -365,6 +385,7 @@ export interface ProcessInquiryResult {
   lead?: Inquiry;
   rateMode?: RateMode;
   delivery?: { feishu: DeliveryState; dingtalk: DeliveryState };
+  flags?: InquiryFlags;
 }
 
 export async function processInquirySubmission(
@@ -372,26 +393,27 @@ export async function processInquirySubmission(
   ip: string,
   defaultSource = 'website'
 ): Promise<ProcessInquiryResult> {
-  // Spam gate 1: hidden honeypot field filled in => discard, never delivered.
-  if (isHoneypotTripped(raw)) {
-    console.warn(`[inquiry] BLOCKED honeypot fields=${HONEYPOT_FIELDS.filter((f) => raw[f]).join(',') || 'n/a'}`);
-    return { status: 400, body: { ok: false, code: 'rejected', reason: 'spam' } };
+  // 1. Botcheck Honeypot Inspection:
+  // ZERO DROP: If filled, do NOT drop with 400! Flag as isBot and continue processing.
+  const isBot = isHoneypotTripped(raw);
+  if (isBot) {
+    console.warn(`[inquiry] Tripped botcheck honeypot field. Flagged as isBot=true (Zero-Drop in effect).`);
   }
 
-  // Rate limit
-  let rate: { allowed: boolean; mode: RateMode };
+  // 2. Rate Limit Inspection:
+  // ZERO DROP: If rate limit exceeded, do NOT reject with 429! Flag as isRateLimited=true and continue.
+  let rateAllowed = true;
+  let rateMode: RateMode = 'memory';
   try {
-    rate = await checkRateLimit(ip);
+    const rate = await checkRateLimit(ip);
+    rateAllowed = rate.allowed;
+    rateMode = rate.mode;
   } catch (err) {
-    console.error('[inquiry] rate limiter unavailable:', err);
-    return { status: 503, body: { ok: false, code: 'service_unavailable' } };
+    console.warn('[inquiry] Rate limiter lookup warning, proceeding:', err);
   }
-  if (!rate.allowed) {
-    return {
-      status: 429,
-      body: { ok: false, code: 'rate_limited' },
-      rateMode: rate.mode,
-    };
+  const isRateLimited = !rateAllowed;
+  if (isRateLimited) {
+    console.warn(`[inquiry] Rate limit exceeded for ip=${ip}. Flagged as isRateLimited=true (Zero-Drop in effect).`);
   }
 
   // Apply default source if missing
@@ -399,47 +421,52 @@ export async function processInquirySubmission(
     raw.source = defaultSource;
   }
 
+  // 3. Relaxed Lead Construction:
   const built = buildInquiry(raw, ip);
   if ('error' in built) {
+    console.warn(`[inquiry] Validation warning: ${built.error}`);
     return {
       status: 400,
       body: { ok: false, code: 'validation_error', message: built.error },
-      rateMode: rate.mode,
+      rateMode,
     };
   }
 
-  // Spam gate 2: cheap keyword heuristic. Silently accepted so bots do not retry.
-  if (isObviousSpam(built)) {
-    console.warn(`[inquiry] BLOCKED heuristic spam id=${built.requestId} email=${built.email}`);
-    return {
-      status: 200,
-      body: { ok: true, code: 'accepted', requestId: built.requestId, filtered: true },
-      lead: built,
-      rateMode: rate.mode,
-    };
+  // 4. Spam Keyword Inspection:
+  // ZERO DROP: Even if contains promotion keywords, NEVER DROP! Flag as isSpam=true and push with warning tag.
+  const isSpam = isObviousSpam(built);
+  if (isSpam) {
+    console.warn(`[inquiry] Heuristic spam keywords detected id=${built.requestId} email=${built.email}. Flagged as isSpam=true (Zero-Drop in effect).`);
   }
 
+  const flags: InquiryFlags = {
+    isBot,
+    isRateLimited,
+    isSpam,
+  };
+
+  // 5. Fan-out notification to Feishu and DingTalk with alert tags
   const [feishu, dingtalk] = await Promise.all([
-    notifyFeishu(built),
-    notifyDingTalk(built),
+    notifyFeishu(built, flags),
+    notifyDingTalk(built, flags),
   ]);
 
-  // Robust server-side persistence fallback when webhooks are skipped or failed:
-  // Log full JSON structured event so Vercel runtime logs capture every lead.
-  if (feishu !== 'ok' && dingtalk !== 'ok') {
-    const fallbackPayload = {
-      timestamp: new Date().toISOString(),
-      event: 'INQUIRY_UNFORWARDED_ALERT',
-      alert: 'ACTION REQUIRED: Lead accepted but no webhook delivered! Check FEISHU_WEBHOOK_URL and DINGTALK_WEBHOOK_URL.',
-      delivery: { feishu, dingtalk },
-      lead: built,
-    };
-    console.error(`[INQUIRY_FALLBACK_LEAD_BACKUP] ${JSON.stringify(fallbackPayload)}`);
+  // 6. 100% Persistent Local Backup Guarantee:
+  // Write every lead to /tmp/mlmlip_inquiries_backup.jsonl and console log
+  const backupPayload = {
+    timestamp: new Date().toISOString(),
+    event: 'INQUIRY_RECEIVED',
+    flags,
+    delivery: { feishu, dingtalk },
+    lead: built,
+  };
+  console.log(`[INQUIRY_LEAD_BACKUP] ${JSON.stringify(backupPayload)}`);
 
-    try {
-      const fs = await import('node:fs/promises');
-      await fs.appendFile('/tmp/mlmlip_inquiries_backup.jsonl', JSON.stringify(fallbackPayload) + '\n', 'utf-8');
-    } catch {}
+  try {
+    const fs = await import('node:fs/promises');
+    await fs.appendFile('/tmp/mlmlip_inquiries_backup.jsonl', JSON.stringify(backupPayload) + '\n', 'utf-8');
+  } catch (backupErr) {
+    console.error('[inquiry] Failed appending to local backup file:', backupErr);
   }
 
   return {
@@ -449,10 +476,13 @@ export async function processInquirySubmission(
       code: 'accepted',
       requestId: built.requestId,
       delivery: { feishu, dingtalk },
+      flagged: isSpam || isBot || isRateLimited,
+      flags,
     },
     lead: built,
-    rateMode: rate.mode,
+    rateMode,
     delivery: { feishu, dingtalk },
+    flags,
   };
 }
 
@@ -524,9 +554,6 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   const headers: Record<string, string> = {};
   if (result.rateMode) {
     headers['x-rate-limit-mode'] = result.rateMode;
-  }
-  if (result.status === 429) {
-    headers['retry-after'] = String(RATE_WINDOW_SECONDS);
   }
 
   return json(result.body, result.status, headers);

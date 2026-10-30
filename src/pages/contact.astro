@@ -78,11 +78,9 @@ import { site } from '../data/site';
               <button class="btn" type="submit" id="submit-btn" style="width:100%; min-width:220px;">Send my brief via WhatsApp →</button>
             </div>
             <p class="note" style="margin-top:12px">
-              Prefer email? <a id="contact-mail-link" href={`mailto:${site.contact.email}?subject=Lip%20Product%20Inquiry`}>Click here to send via email directly</a>.
+              Prefer email? <a id="contact-mail-link" data-email={site.contact.email} href={`mailto:${site.contact.email}?subject=Lip%20Product%20Inquiry`}>Click here to send via email directly</a>.
             </p>
-            <div id="form-success" hidden style="margin-top:16px; padding:18px 20px; background:#f0fdf4; border-radius:10px; border-left:4px solid #16a34a; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-              <p style="margin:0; color:#15803d; font-weight:700; font-size:15px;">✓ Your brief has been sent! We'll also reply via WhatsApp shortly. If WhatsApp didn't open, <a href="https://wa.me/8613652380291" target="_blank" rel="noopener" style="font-weight:600; text-decoration:underline;">click here</a>.</p>
-            </div>
+            <div id="form-success" hidden style="margin-top:16px;"></div>
             <div id="form-error" hidden style="margin-top:16px; padding:16px 18px; background:#fef2f2; border-radius:10px; border-left:4px solid #dc2626;">
               <p id="form-error-msg" style="margin:0; color:#b91c1c; font-weight:600; font-size:14px;"></p>
             </div>
@@ -110,12 +108,15 @@ import { site } from '../data/site';
     </div>
   </section>
 
-  <script is:inline define:vars={{ contactEmail: site.contact.email }}>
-    const form = document.getElementById('inquiry-form');
-    const submitBtn = document.getElementById('submit-btn');
+  <script>
+    import { submitInquiryDualTrack } from '../lib/inquiryClient';
+
+    const form = document.getElementById('inquiry-form') as HTMLFormElement | null;
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
     const successBox = document.getElementById('form-success');
     const errorBox = document.getElementById('form-error');
     const mailLink = document.getElementById('contact-mail-link');
+    const contactEmail = mailLink?.getAttribute('data-email') || 'nancy@mlmlip.com';
 
     function getContactLines() {
       if (!form) return [];
@@ -148,60 +149,19 @@ import { site } from '../data/site';
 
     form?.addEventListener('submit', async (event) => {
       event.preventDefault();
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending brief...';
-      }
-      if (successBox) successBox.setAttribute('hidden', '');
+      if (!form) return;
       if (errorBox) errorBox.setAttribute('hidden', '');
 
-      const data = new FormData(form);
-      const payload = {
-        name: (data.get('name') || '').toString().trim(),
-        company: (data.get('company') || '').toString().trim(),
-        email: (data.get('email') || '').toString().trim(),
-        product: (data.get('product') || '').toString().trim(),
-        quantity: (data.get('quantity') || '').toString().trim(),
-        market: (data.get('market') || '').toString().trim(),
-        message: (data.get('message') || '').toString().trim(),
+      const payload = Object.fromEntries(new FormData(form).entries());
+
+      await submitInquiryDualTrack({
+        payload,
+        formElement: form,
+        submitButton: submitBtn,
+        statusElement: successBox,
         source: 'contact_page',
-        botcheck: (data.get('botcheck') || '').toString()
-      };
-
-      // 通道 1：静默 POST 到后台（落库 + 钉钉推送），不阻塞
-      fetch('/api/inquiry', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      }).then(function(res) {
-        if (res.ok && typeof window.gtag === 'function') {
-          window.gtag('event', 'generate_lead', { source: 'contact_page', lead_type: 'contact_form' });
-        }
-      }).catch(function() {}); // 静默，不阻塞 WhatsApp 跳转
-
-      // 通道 2：拼接 WhatsApp 消息并跳转（恢复老板原来的收单方式）
-      var lines = [];
-      if (payload.name) lines.push('Contact: ' + payload.name);
-      if (payload.company) lines.push('Brand: ' + payload.company);
-      if (payload.email) lines.push('Email: ' + payload.email);
-      if (payload.product) lines.push('Product: ' + payload.product);
-      if (payload.quantity) lines.push('Quantity: ' + payload.quantity);
-      if (payload.market) lines.push('Market: ' + payload.market);
-      if (payload.message) lines.push('Details: ' + payload.message);
-      lines.push('');
-      lines.push('Sent from mlmlip.com/contact');
-
-      var waNumber = '8613652380291';
-      var waUrl = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(lines.join('\n'));
-      window.open(waUrl, '_blank', 'noopener');
-
-      // 显示成功提示
-      if (successBox) successBox.removeAttribute('hidden');
-
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send my brief via WhatsApp \u2192';
-      }
+        redirectingText: '✓ Redirecting to WhatsApp...',
+      });
     });
   </script>
 </BaseLayout>

@@ -518,7 +518,7 @@ const sampleSchema = {
   </section>
 
   <script>
-    import { postInquiry, whatsappLink } from '../lib/inquiryClient';
+    import { submitInquiryDualTrack } from '../lib/inquiryClient';
 
     // 监听 URL 参数或卡片点击以自动填充套盒选择
     document.addEventListener('DOMContentLoaded', () => {
@@ -563,31 +563,15 @@ const sampleSchema = {
       if (form) {
         form.addEventListener('submit', async (e) => {
           e.preventDefault();
-          if (!submitBtn || !statusMsg) return;
-
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Submitting Request...';
-          statusMsg.style.display = 'none';
-
           const payload = Object.fromEntries(new FormData(form).entries());
-          const result = await postInquiry(payload);
-
-          if (result.ok) {
-            form.reset();
-            statusMsg.textContent = '✓ Sample kit request received! Our lab engineering coordinator will email you within 24 hours to confirm your shade specifications.';
-            statusMsg.style.color = '#2d6a4f';
-            statusMsg.style.display = 'block';
-            submitBtn.textContent = 'Request Submitted Successfully';
-            if (typeof (window as any).gtag === 'function') {
-              (window as any).gtag('event', 'generate_lead', { source: 'samples_page', lead_type: 'sample_kit_request' });
-            }
-          } else {
-            statusMsg.innerHTML = `An error occurred. Please contact us directly via ${whatsappLink('WhatsApp (+86 136 5238 0291)')} or email nancy@mlmlip.com.`;
-            statusMsg.style.color = '#b00020';
-            statusMsg.style.display = 'block';
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Retry Submission';
-          }
+          await submitInquiryDualTrack({
+            payload,
+            formElement: form,
+            submitButton: submitBtn,
+            statusElement: statusMsg,
+            source: 'samples_page',
+            redirectingText: '✓ Redirecting to WhatsApp...',
+          });
         });
       }
     });

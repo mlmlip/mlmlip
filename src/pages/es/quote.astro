@@ -119,43 +119,25 @@ import { site } from '../../data/site';
 </BaseLayout>
 
 <script>
-  import { postInquiry, whatsappLink } from '../../lib/inquiryClient';
+  import { submitInquiryDualTrack } from '../../lib/inquiryClient';
 
-  const eqForm = document.getElementById('email-quote-form');
+  const eqForm = document.getElementById('email-quote-form') as HTMLFormElement | null;
   const eqStatus = document.getElementById('eq-status');
-  const eqBtn = document.getElementById('eq-submit-btn');
+  const eqBtn = document.getElementById('eq-submit-btn') as HTMLButtonElement | null;
 
   eqForm?.addEventListener('submit', async function(e) {
     e.preventDefault();
-    if (eqBtn) {
-      eqBtn.disabled = true;
-      eqBtn.textContent = 'Enviando al equipo de ingeniería...';
-    }
-    if (eqStatus) eqStatus.style.display = 'none';
+    if (!eqForm) return;
 
     const payload = Object.fromEntries(new FormData(eqForm).entries());
-    const result = await postInquiry(payload);
-
-    if (result.ok) {
-        if (eqStatus) {
-          eqStatus.style.display = 'block';
-          eqStatus.style.background = '#d4edda';
-          eqStatus.style.color = '#155724';
-          eqStatus.innerHTML = '✓ <strong>¡Gracias!</strong> Su consulta ha sido recibida con éxito. Nuestro equipo técnico responderá en 24 horas.';
-        }
-        eqForm.reset();
-        if (eqBtn) eqBtn.textContent = '✓ Solicitud Recibida';
-    } else {
-      if (eqStatus) {
-        eqStatus.style.display = 'block';
-        eqStatus.style.background = '#f8d7da';
-        eqStatus.style.color = '#721c24';
-        eqStatus.innerHTML = `Hubo un error al enviar. Por favor contáctenos por ${whatsappLink('WhatsApp')} o escriba a <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>.`;
-      }
-      if (eqBtn) {
-        eqBtn.disabled = false;
-        eqBtn.textContent = 'Reintentar Envío';
-      }
-    }
+    await submitInquiryDualTrack({
+      payload,
+      formElement: eqForm,
+      submitButton: eqBtn,
+      statusElement: eqStatus,
+      source: 'es_quote_page',
+      redirectingText: '✓ Redirigiendo a WhatsApp...',
+      fallbackText: 'Si WhatsApp no se abre automáticamente,',
+    });
   });
 </script>

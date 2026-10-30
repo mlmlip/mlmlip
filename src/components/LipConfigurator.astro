@@ -1117,7 +1117,7 @@ const { webhookUrl = "" } = Astro.props;
 </style>
 
 <script>
-  import { postInquiry, whatsappLink } from '../lib/inquiryClient';
+  import { submitInquiryDualTrack, whatsappLink } from '../lib/inquiryClient';
 
   (function() {
     const root = document.getElementById('lip-configurator');
@@ -1283,27 +1283,44 @@ const { webhookUrl = "" } = Astro.props;
     // Direct WhatsApp Dispatch Button
     const btnWhatsApp = root.querySelector('#btn-whatsapp-ticket');
     if (btnWhatsApp) {
-      btnWhatsApp.addEventListener('click', function() {
-        const emailInput = root.querySelector('#cfg-email');
+      btnWhatsApp.addEventListener('click', async function() {
+        const emailInput = root.querySelector('#cfg-email') as HTMLInputElement | null;
         if (emailInput && !emailInput.checkValidity()) {
           emailInput.reportValidity();
           return;
         }
         const brief = buildBriefText();
-        const url = `https://wa.me/8613652380291?text=${encodeURIComponent(brief)}`;
-        window.open(url, '_blank', 'noopener');
+        const payload = {
+          name: (root.querySelector('#cfg-name') as HTMLInputElement)?.value.trim() || '',
+          email: emailInput?.value.trim() || '',
+          company: (root.querySelector('#cfg-brand') as HTMLInputElement)?.value.trim() || '',
+          whatsapp: (root.querySelector('#cfg-whatsapp') as HTMLInputElement)?.value.trim() || '',
+          productType: (form.querySelector('input[name="category"]:checked') as HTMLInputElement)?.value || '',
+          quantity: (form.querySelector('input[name="production_volume"]:checked') as HTMLInputElement)?.value || '',
+          source: 'lip_configurator_wa_button',
+          details: brief,
+        };
+        const statusBox = root.querySelector('#cfg-submission-status') as HTMLElement | null;
+        await submitInquiryDualTrack({
+          payload,
+          customWaText: brief,
+          submitButton: btnWhatsApp as HTMLButtonElement,
+          statusElement: statusBox,
+          source: 'lip_configurator_wa_button',
+          redirectingText: '✓ Opening WhatsApp...',
+        });
       });
     }
 
-    // Submit Handler (Web3Forms / n8n Webhook fallback)
+    // Submit Handler (Dual-Track System: Lab Background Dispatch + WhatsApp Direct)
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
-      const statusBox = root.querySelector('#cfg-submission-status');
-      const submitBtn = root.querySelector('#btn-submit-ticket');
+      const statusBox = root.querySelector('#cfg-submission-status') as HTMLElement | null;
+      const submitBtn = root.querySelector('#btn-submit-ticket') as HTMLButtonElement | null;
 
-      const nameInput = root.querySelector('#cfg-name');
-      const emailInput = root.querySelector('#cfg-email');
-      const brandInput = root.querySelector('#cfg-brand');
+      const nameInput = root.querySelector('#cfg-name') as HTMLInputElement | null;
+      const emailInput = root.querySelector('#cfg-email') as HTMLInputElement | null;
+      const brandInput = root.querySelector('#cfg-brand') as HTMLInputElement | null;
 
       if (!nameInput || !nameInput.value.trim() || !nameInput.checkValidity()) {
         nameInput?.reportValidity();
@@ -1318,61 +1335,45 @@ const { webhookUrl = "" } = Astro.props;
         return;
       }
 
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Transmitting Formulation Brief to Lab...';
-      }
-
-      const notes = root.querySelector('#cfg-notes')?.value || '';
+      const notes = (root.querySelector('#cfg-notes') as HTMLTextAreaElement)?.value || '';
+      const briefText = buildBriefText();
       const payload = {
         name: nameInput.value.trim(),
         email: emailInput.value.trim(),
         company: brandInput.value.trim(),
         brand: brandInput.value.trim(),
-        whatsapp: root.querySelector('#cfg-whatsapp')?.value.trim() || '',
-        productType: form.querySelector('input[name="category"]:checked')?.value || '',
-        quantity: form.querySelector('input[name="production_volume"]:checked')?.value || '',
+        whatsapp: (root.querySelector('#cfg-whatsapp') as HTMLInputElement)?.value.trim() || '',
+        productType: (form.querySelector('input[name="category"]:checked') as HTMLInputElement)?.value || '',
+        quantity: (form.querySelector('input[name="production_volume"]:checked') as HTMLInputElement)?.value || '',
         source: 'lip_configurator',
-        botcheck: root.querySelector('#cfg-botcheck')?.value || '',
-        texture_finish: form.querySelector('input[name="texture_finish"]:checked')?.value || '',
-        actives: Array.from(form.querySelectorAll('input[name="actives"]:checked')).map(el => el.value).join(', '),
-        target_markets: Array.from(form.querySelectorAll('input[name="target_markets"]:checked')).map(el => el.value).join(', '),
-        production_volume: form.querySelector('input[name="production_volume"]:checked')?.value || '',
-        packaging_style: form.querySelector('input[name="packaging_style"]:checked')?.value || '',
-        details: [notes, buildBriefText()].filter(Boolean).join('\n'),
+        botcheck: (root.querySelector('#cfg-botcheck') as HTMLInputElement)?.value || '',
+        texture_finish: (form.querySelector('input[name="texture_finish"]:checked') as HTMLInputElement)?.value || '',
+        actives: Array.from(form.querySelectorAll('input[name="actives"]:checked')).map(el => (el as HTMLInputElement).value).join(', '),
+        target_markets: Array.from(form.querySelectorAll('input[name="target_markets"]:checked')).map(el => (el as HTMLInputElement).value).join(', '),
+        production_volume: (form.querySelector('input[name="production_volume"]:checked') as HTMLInputElement)?.value || '',
+        packaging_style: (form.querySelector('input[name="packaging_style"]:checked') as HTMLInputElement)?.value || '',
+        details: [notes, briefText].filter(Boolean).join('\n'),
       };
 
-      const result = await postInquiry(payload);
-
-      if (result.ok) {
-          if (statusBox) {
-            statusBox.className = 'submission-alert success';
-            statusBox.style.display = 'block';
-            statusBox.innerHTML = `✓ <strong>Ticket Logged Successfully (${ticketId?.textContent})!</strong> Our formulation chemists have received your specs. An introductory sample schedule and official NDA will be sent to <em>${emailInput.value.trim()}</em> within 24 hours.`;
-          }
-          if (submitBtn) {
-            submitBtn.textContent = '✓ Brief Dispatched to Engineering';
-          }
-          // Fire Analytics Lead Event
-          if (typeof gtag === 'function') {
-            gtag('event', 'generate_lead', {
+      await submitInquiryDualTrack({
+        payload,
+        customWaText: briefText,
+        formElement: form as HTMLFormElement,
+        submitButton: submitBtn,
+        statusElement: statusBox,
+        source: 'lip_configurator',
+        redirectingText: '✓ Opening WhatsApp & Dispatching to Lab...',
+        onSuccess: () => {
+          if (typeof (window as any).gtag === 'function') {
+            (window as any).gtag('event', 'generate_lead', {
               lead_type: 'interactive_configurator_ticket',
               category: payload.productType,
               volume: payload.production_volume,
               source: 'lip_configurator'
             });
           }
-      } else {
-        if (statusBox) {
-          statusBox.className = 'submission-alert error';
-          statusBox.style.display = 'block';
-          statusBox.innerHTML = `Submission delayed. Please click the <strong>Dispatch Instantly via WhatsApp</strong> button above, or reach us on ${whatsappLink('WhatsApp')} or email <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>.`;
         }
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Retry Submission →';
-        }
-      }
+      });
     });
 
     // Initial estimation

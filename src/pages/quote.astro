@@ -144,44 +144,24 @@ import { site } from '../data/site';
 </BaseLayout>
 
 <script>
-  import { postInquiry, whatsappLink } from '../lib/inquiryClient';
+  import { submitInquiryDualTrack } from '../lib/inquiryClient';
 
-  // Simple Email Form Interceptor for UX feedback
-  const eqForm = document.getElementById('email-quote-form');
+  const eqForm = document.getElementById('email-quote-form') as HTMLFormElement | null;
   const eqStatus = document.getElementById('eq-status');
-  const eqBtn = document.getElementById('eq-submit-btn');
+  const eqBtn = document.getElementById('eq-submit-btn') as HTMLButtonElement | null;
 
   eqForm?.addEventListener('submit', async function(e) {
     e.preventDefault();
-    if (eqBtn) {
-      eqBtn.disabled = true;
-      eqBtn.textContent = 'Transmitting to Sales Team...';
-    }
-    if (eqStatus) eqStatus.style.display = 'none';
+    if (!eqForm) return;
 
     const payload = Object.fromEntries(new FormData(eqForm).entries());
-    const result = await postInquiry(payload);
-
-    if (result.ok) {
-        if (eqStatus) {
-          eqStatus.style.display = 'block';
-          eqStatus.style.background = '#d4edda';
-          eqStatus.style.color = '#155724';
-          eqStatus.innerHTML = '✓ <strong>Thank you!</strong> Your quote request has been transmitted. Our technical sales team will reply within 24 hours.';
-        }
-        eqForm.reset();
-        if (eqBtn) eqBtn.textContent = '✓ Inquiry Received';
-    } else {
-      if (eqStatus) {
-        eqStatus.style.display = 'block';
-        eqStatus.style.background = '#f8d7da';
-        eqStatus.style.color = '#721c24';
-        eqStatus.innerHTML = `Something went wrong. Please ${whatsappLink('chat with us on WhatsApp')} or email <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>.`;
-      }
-      if (eqBtn) {
-        eqBtn.disabled = false;
-        eqBtn.textContent = 'Retry Submission';
-      }
-    }
+    await submitInquiryDualTrack({
+      payload,
+      formElement: eqForm,
+      submitButton: eqBtn,
+      statusElement: eqStatus,
+      source: 'quote_email_form',
+      redirectingText: '✓ Redirecting to WhatsApp...',
+    });
   });
 </script>
