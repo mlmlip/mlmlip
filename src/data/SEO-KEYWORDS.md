@@ -53,7 +53,7 @@
 | lip gloss manufacturer with in stock packaging components | 现成包材快速出货 | 追求快速上市的DTC品牌 | 现货包材库免开模, 45天交付 | `[已发布]` |
 | lip gloss private label supplier with fast lead times | 快速交付 | 有档期压力的电商卖家 | 成熟产线, 7天打样+快速大货 | `[已发布]` |
 | vegan lip gloss oem supplier with cruelty free certificates | 纯素认证贴牌 | 主打零残忍的品牌 | 纯素配方+零残忍声明文件 | `[已发布]` |
-| lip gloss contract manufacturer for indie beauty brands | 独立品牌代工 | 独立美妆创始人 | 500 pcs柔性支持独立品牌成长 | `[待撰写]` |
+| lip gloss contract manufacturer for indie beauty brands | 独立品牌代工 | 独立美妆创始人 | 500 pcs柔性支持独立品牌成长 | `[已发布]` |
 | custom flavored lip gloss manufacturer for boutique brands | 风味定制 | 精品店自有品牌 | 香精库丰富, 定制风味唇釉 | `[待撰写]` |
 | bulk lip gloss manufacturer with private label options | 大货贴牌 | 批发采购商 | 阶梯报价, 500 pcs起 | `[待撰写]` |
 | organic lip gloss manufacturer with eco certificates | 有机认证 | 天然美妆品牌 | 有机原料渠道+认证支持 | `[待撰写]` |
