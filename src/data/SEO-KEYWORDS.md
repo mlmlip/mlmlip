@@ -55,7 +55,7 @@
 | vegan lip gloss oem supplier with cruelty free certificates | 纯素认证贴牌 | 主打零残忍的品牌 | 纯素配方+零残忍声明文件 | `[已发布]` |
 | lip gloss contract manufacturer for indie beauty brands | 独立品牌代工 | 独立美妆创始人 | 500 pcs柔性支持独立品牌成长 | `[已发布]` |
 | custom flavored lip gloss manufacturer for boutique brands | 风味定制 | 精品店自有品牌 | 香精库丰富, 定制风味唇釉 | `[已发布]` |
-| bulk lip gloss manufacturer with private label options | 大货贴牌 | 批发采购商 | 阶梯报价, 500 pcs起 | `[待撰写]` |
+| bulk lip gloss manufacturer with private label options | 大货贴牌 | 批发采购商 | 阶梯报价, 500 pcs起 | `[已发布]` |
 | organic lip gloss manufacturer with eco certificates | 有机认证 | 天然美妆品牌 | 有机原料渠道+认证支持 | `[待撰写]` |
 | lip gloss filling and assembly services for startups | 灌装组装服务 | 无供应链经验的初创 | 灌装到组装一站式, 小批量友好 | `[待撰写]` |
 | high shine lip gloss manufacturer for dewy look brands | 水光唇釉 | 主打韩系水光感的品牌 | 高折光指数配方, 不粘腻 | `[待撰写]` |
