@@ -36,7 +36,26 @@ export const ui = {
     },
     footer: {
       mfg: 'Manufacturing', touch: 'Get in touch',
-      desc: 'Private label lip cosmetics manufacturing — packaging, formulation and logo customization from 500 pcs per SKU.'
+      desc: 'Private label lip cosmetics manufacturing — packaging, formulation and logo customization from 500 pcs per SKU.',
+      categories: [
+        { label: 'Lip Gloss Manufacturer', href: '/lip-gloss-manufacturer' },
+        { label: 'Lip Mud & Velvet Tint', href: '/lip-mud-manufacturer' },
+        { label: 'Lip Liner Manufacturer', href: '/lip-liner-manufacturer' },
+        { label: 'Lipstick Manufacturer', href: '/lipstick-manufacturer' },
+        { label: 'Lip Oil Manufacturer', href: '/lip-oil-manufacturer' },
+        { label: 'Lip Mask Manufacturer', href: '/lip-mask-manufacturer' }
+      ],
+      company: [
+        { label: 'Packaging', href: '/packaging' },
+        { label: 'Customization', href: '/customization' },
+        { label: 'How We Work', href: '/process' },
+        { label: 'Cases & Factory', href: '/cases' },
+        { label: 'Order Samples', href: '/samples' },
+        { label: 'Blog', href: '/blog' },
+        { label: 'FAQ', href: '/faq' },
+        { label: 'About', href: '/about' },
+        { label: 'Contact', href: '/contact' }
+      ]
     }
   },
   fr: {
@@ -46,7 +65,26 @@ export const ui = {
     },
     footer: {
       mfg: 'Fabrication', touch: 'Contact',
-      desc: 'Fabrication de cosmétiques pour les lèvres en marque blanche — personnalisation du packaging, de la formule et du logo dès 500 pcs.'
+      desc: 'Fabrication de cosmétiques pour les lèvres en marque blanche — personnalisation du packaging, de la formule et du logo dès 500 pcs.',
+      categories: [
+        { label: 'Fabricant Gloss Lèvres', href: '/fr/fabricant-gloss-levres' },
+        { label: 'Fabricant Lip Mud', href: '/fr/fabricant-lip-mud' },
+        { label: 'Fabricant Crayon Lèvres', href: '/fr/fabricant-crayon-levres' },
+        { label: 'Fabricant Rouge à Lèvres', href: '/fr/fabricant-rouge-levres' },
+        { label: 'Fabricant Huile Lèvres', href: '/fr/fabricant-huile-levres' },
+        { label: 'Fabricant Masque Lèvres', href: '/fr/fabricant-masque-levres' }
+      ],
+      company: [
+        { label: 'Emballage', href: '/packaging' },
+        { label: 'Personnalisation', href: '/customization' },
+        { label: 'Notre Démarche', href: '/process' },
+        { label: 'Réalisations & Usine', href: '/cases' },
+        { label: 'Commander Échantillons', href: '/samples' },
+        { label: 'Blog', href: '/blog' },
+        { label: 'FAQ', href: '/fr/faq' },
+        { label: 'À propos', href: '/fr/a-propos' },
+        { label: 'Contact', href: '/contact' }
+      ]
     }
   },
   es: {
@@ -56,7 +94,26 @@ export const ui = {
     },
     footer: {
       mfg: 'Fabricación', touch: 'Contacto',
-      desc: 'Fabricación de cosméticos labiales marca blanca — personalización de envases, fórmulas y logotipos desde 500 uds.'
+      desc: 'Fabricación de cosméticos labiales marca blanca — personalización de envases, fórmulas y logotipos desde 500 uds.',
+      categories: [
+        { label: 'Fabricante Brillo Labial', href: '/es/fabricante-brillo-labios' },
+        { label: 'Fabricante Lip Mud', href: '/es/fabricante-lip-mud' },
+        { label: 'Fabricante Delineador Labios', href: '/es/fabricante-delineador-labios' },
+        { label: 'Fabricante Lápiz Labial', href: '/es/fabricante-lapiz-labial' },
+        { label: 'Fabricante Aceite Labios', href: '/es/fabricante-aceite-labios' },
+        { label: 'Fabricante Mascarilla Labios', href: '/es/fabricante-mascarilla-labios' }
+      ],
+      company: [
+        { label: 'Envases', href: '/packaging' },
+        { label: 'Personalización', href: '/customization' },
+        { label: 'Cómo Trabajamos', href: '/process' },
+        { label: 'Proyectos & Fábrica', href: '/cases' },
+        { label: 'Pedir Muestras', href: '/samples' },
+        { label: 'Blog', href: '/blog' },
+        { label: 'Preguntas Frecuentes', href: '/es/faq' },
+        { label: 'Nosotros', href: '/es/nosotros' },
+        { label: 'Contacto', href: '/contact' }
+      ]
     }
   }
 };
