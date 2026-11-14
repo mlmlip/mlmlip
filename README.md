@@ -44,6 +44,15 @@ public/favicon.svg
 5. **Imagery** — no product photos are included yet; add real product/lifestyle images before launch.
 6. **Domain** — point `mlmlip.com` (and `www`) to Vercel once the project is imported.
 
+## Git hooks
+
+`pre-commit` (blocks cross-brand / forbidden keyword references in staged files)
+is version-controlled in `.githooks/`. After a fresh clone, enable it once:
+
+```sh
+git config core.hooksPath .githooks
+```
+
 ## Context
 
 This project is one of several independent sites. Business context lives in the parent folder's
