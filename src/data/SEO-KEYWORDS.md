@@ -61,7 +61,7 @@
 | high shine lip gloss manufacturer for dewy look brands | 水光唇釉 | 主打韩系水光感的品牌 | 高折光指数配方, 不粘腻 | `[已发布]` |
 | lip gloss oem factory with low minimum order quantity | 低起订OEM | 首次下单的创业者 | 500 pcs起, 混色试单 | `[已发布]` |
 | non sticky lip gloss base manufacturer for refillable brands | 不粘基底+可替换装 | 走可持续路线的品牌 | 不粘基底适配替换芯设计 | `[已发布]` |
-| sugar free flavored lip gloss manufacturer for teen brands | 少女线风味唇釉 | 面向Z世代的品牌 | 温和配方符合年轻市场偏好 | `[待撰写]` |
+| sugar free flavored lip gloss manufacturer for teen brands | 少女线风味唇釉 | 面向Z世代的品牌 | 温和配方符合年轻市场偏好 | `[已发布]` |
 | lip mud manufacturer for soft matte finish brands | 雾面唇泥 | 雾面妆效品牌 | 柔焦粉体技术, 不拔干 | `[待撰写]` |
 | private label lip mud with blur effect formula | 柔焦贴牌 | 快时尚美妆品牌 | 即时柔焦效果, 快速贴牌 | `[待撰写]` |
 | lip mud oem supplier for k beauty inspired lines | 韩系灵感线 | K-beauty风格品牌 | 韩系质地配方, 快速上市 | `[待撰写]` |
