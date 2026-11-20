@@ -19,7 +19,6 @@ const waMessage = currentLang === 'fr'
   ? "Hola MLM Lip, me gustaría hablar sobre un proyecto de cosméticos labiales de marca privada."
   : "Hi MLM Lip, I'd like to discuss a private label lip project.";
 
-const mfgText = currentLang === 'fr' ? 'Fabriqué par' : currentLang === 'es' ? 'Fabricado por' : 'Manufactured by';
 const supportText = currentLang === 'fr' ? 'Support CPNP UE' : currentLang === 'es' ? 'Soporte CPNP UE' : 'EU CPNP support';
 
 const canonical = new URL(currentPath.replace(/\/$/, '') || '/', Astro.site ?? 'https://mlmlip.com');
@@ -168,7 +167,6 @@ const schemaData = {
       ],
       "alternateName": [
         "Beautychain Limited",
-        "Beautychain Lip Cosmetics",
         "MLM Lip OEM/ODM"
       ],
       "sameAs": Array.from(new Set([
@@ -464,7 +462,7 @@ const breadcrumbSchema = {
           </div>
         </div>
         <p style="color:#d6b3be; margin-top:32px; font-size:13px">
-          {new Date().getFullYear()} {site.name} · {mfgText} {site.manufacturer}
+          © {new Date().getFullYear()} {site.legalName} — {site.name} is a brand of {site.legalName}.
         </p>
       </div>
     </footer>
