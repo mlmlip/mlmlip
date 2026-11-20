@@ -63,7 +63,10 @@ export const POST: APIRoute = async ({ request, clientAddress, redirect }) => {
   const forwardedFor = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
   const ip = forwardedFor || clientAddress || 'unknown';
 
-  const result = await processInquirySubmission(raw, ip, 'product_contact_form');
+  const result = await processInquirySubmission(raw, ip, 'product_contact_form', {
+    userAgent: request.headers.get('user-agent') || '',
+    acceptLanguage: request.headers.get('accept-language') || '',
+  });
 
   // If the request was a traditional browser HTML form submit (non-AJAX)
   const isHtmlRequest = isForm && !acceptHeader.includes('application/json');

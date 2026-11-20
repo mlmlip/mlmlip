@@ -152,6 +152,48 @@ function initUpstash() {
   });
 }
 
+// Ledger key for the Upstash persistence bypass (additive, never blocks notifications).
+const INQUIRY_LEDGER_KEY = 'inquiries:mlmlip';
+
+export type PersistState = 'ok' | 'failed' | 'skipped';
+
+export interface InquiryMeta {
+  userAgent?: string;
+  acceptLanguage?: string;
+}
+
+/**
+ * P0-1 Persistence bypass: RPUSH the full lead JSON to an Upstash Redis list.
+ * Purely additive side path — NEVER blocks or fails the main notification flow.
+ * Missing credentials => 'skipped'; any error => 'failed' (console.error only).
+ */
+export async function persistInquiryToUpstash(
+  lead: Inquiry,
+  flags: InquiryFlags,
+  meta: InquiryMeta = {}
+): Promise<PersistState> {
+  try {
+    initUpstash();
+    if (!redisClient) {
+      console.warn('[inquiry] UPSTASH_REDIS_REST_URL/TOKEN not configured — persistence skipped.');
+      return 'skipped';
+    }
+    const record = {
+      event: 'INQUIRY_RECEIVED',
+      timestamp: new Date().toISOString(),
+      ...lead,
+      flags,
+      userAgent: meta.userAgent || '',
+      acceptLanguage: meta.acceptLanguage || '',
+    };
+    await redisClient.rpush(INQUIRY_LEDGER_KEY, JSON.stringify(record));
+    return 'ok';
+  } catch (err) {
+    console.error(`[inquiry] Upstash persistence FAILED id=${lead.requestId} (non-blocking bypass):`, err);
+    return 'failed';
+  }
+}
+
 function memoryLimit(key: string): { allowed: boolean } {
   const now = Date.now();
   if (memoryRateLimit.size > 5_000) {
@@ -384,14 +426,15 @@ export interface ProcessInquiryResult {
   body: Record<string, unknown>;
   lead?: Inquiry;
   rateMode?: RateMode;
-  delivery?: { feishu: DeliveryState; dingtalk: DeliveryState };
+  delivery?: { feishu: DeliveryState; dingtalk: DeliveryState; upstash?: PersistState };
   flags?: InquiryFlags;
 }
 
 export async function processInquirySubmission(
   raw: Record<string, unknown>,
   ip: string,
-  defaultSource = 'website'
+  defaultSource = 'website',
+  meta: InquiryMeta = {}
 ): Promise<ProcessInquiryResult> {
   // 1. Botcheck Honeypot Inspection:
   // ZERO DROP: If filled, do NOT drop with 400! Flag as isBot and continue processing.
@@ -445,11 +488,25 @@ export async function processInquirySubmission(
     isSpam,
   };
 
-  // 5. Fan-out notification to Feishu and DingTalk with alert tags
+  // 5. Fan-out notification to Feishu and DingTalk with alert tags.
+  //    Upstash persistence starts in PARALLEL (bypass path, must never delay notifications).
+  const persistPromise = persistInquiryToUpstash(built, flags, meta);
   const [feishu, dingtalk] = await Promise.all([
     notifyFeishu(built, flags),
     notifyDingTalk(built, flags),
   ]);
+
+  // Await the bypass path after notifications complete; hard-cap so a hung
+  // Upstash call can add at most ~4s latency and never throws into the main flow.
+  let upstash: PersistState = 'failed';
+  try {
+    upstash = await Promise.race([
+      persistPromise,
+      new Promise<PersistState>((resolve) => setTimeout(() => resolve('failed'), 4_000)),
+    ]);
+  } catch {
+    upstash = 'failed';
+  }
 
   // 6. 100% Persistent Local Backup Guarantee:
   // Write every lead to /tmp/mlmlip_inquiries_backup.jsonl and console log
@@ -457,7 +514,7 @@ export async function processInquirySubmission(
     timestamp: new Date().toISOString(),
     event: 'INQUIRY_RECEIVED',
     flags,
-    delivery: { feishu, dingtalk },
+    delivery: { feishu, dingtalk, upstash },
     lead: built,
   };
   console.log(`[INQUIRY_LEAD_BACKUP] ${JSON.stringify(backupPayload)}`);
@@ -475,7 +532,7 @@ export async function processInquirySubmission(
       ok: true,
       code: 'accepted',
       requestId: built.requestId,
-      delivery: { feishu, dingtalk },
+      delivery: { feishu, dingtalk, upstash },
       flagged: isSpam || isBot || isRateLimited,
       flags,
     },
@@ -549,7 +606,10 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   const forwardedFor = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
   const ip = forwardedFor || clientAddress || 'unknown';
 
-  const result = await processInquirySubmission(raw, ip, 'inquiry_api');
+  const result = await processInquirySubmission(raw, ip, 'inquiry_api', {
+    userAgent: request.headers.get('user-agent') || '',
+    acceptLanguage: request.headers.get('accept-language') || '',
+  });
 
   const headers: Record<string, string> = {};
   if (result.rateMode) {
