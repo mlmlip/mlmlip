@@ -4,6 +4,10 @@ export const site = {
   name: 'MLM Lip',
   legalName: 'Beautychain Limited',
   domain: 'https://mlmlip.com',
+  // Meta Pixel 预埋：留空 = 空转（不加载任何 fbevents.js 代码）。
+  // 老板提供真实 Pixel ID（15-16 位纯数字）后填入此处即全站激活。
+  // 历史占位符 XXXXXXXXXX 会被自动识别并继续空转，杜绝占位符上线。
+  metaPixelId: '',
   tagline: 'Private Label Lip Cosmetics Engineered for High-Growth Beauty Brands',
   manufacturer: 'Beautychain Limited',
   operatingCompany: 'Shenzhen Meilianmei Technology Development Co., Ltd.',
@@ -166,7 +170,7 @@ export const pillars = [
 export const products = [
   {
     name: 'High-Impact Lip Gloss',
-    body: 'Non-sticky, cushion-feel gloss in crystal clear, sheer reactive tints, and multi-dimensional coated micro-shimmer finishes.',
+    body: 'Non-sticky, cushion-feel gloss in crystal clear, sheer reactive tints, and multi-dimensional coated micro-sparkle finishes.',
     detail: '500 pcs MOQ · Thick-Walled Acrylic Tubes',
     image: '/lip-series/lip-glaze-hero-1.jpg',
     categoryHref: '/lip-gloss-manufacturer'

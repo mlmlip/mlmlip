@@ -718,6 +718,10 @@ const aboutJsonLd = {
                 event_label: 'Compliance Dossier'
               });
             }
+            // Meta Pixel: Lead（空转时 fbq 未定义，不执行）
+            if (typeof (window as any).fbq === 'function') {
+              (window as any).fbq('track', 'Lead');
+            }
             form.style.display = 'none';
             resultBox?.removeAttribute('hidden');
           } else if (gatedStatus) {

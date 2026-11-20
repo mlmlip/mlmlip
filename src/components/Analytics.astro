@@ -1,4 +1,9 @@
 ---
+import { site } from '../data/site';
+// Meta Pixel 空转保护：仅当 metaPixelId 为 15-16 位纯数字时才注入 Pixel 基座。
+// 空字符串 / XXXXXXXXXX 类占位符 → 整段代码（含 noscript）完全不输出到 HTML。
+const pixelId: string = site.metaPixelId;
+const pixelEnabled = /^\d{15,16}$/.test(pixelId);
 ---
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHEQXE47YG"></script>
@@ -9,3 +14,23 @@
 
   gtag('config', 'G-CHEQXE47YG');
 </script>
+
+{pixelEnabled && (
+  <Fragment>
+    <!-- Meta Pixel Code -->
+    <script is:inline define:vars={{ pixelId }}>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', pixelId);
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`} /></noscript>
+    <!-- End Meta Pixel Code -->
+  </Fragment>
+)}

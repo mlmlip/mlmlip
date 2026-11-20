@@ -128,11 +128,17 @@ export async function submitInquiryDualTrack(options: DualTrackOptions): Promise
       body: JSON.stringify(fullPayload),
       keepalive: true,
     }).then((res) => {
-      if (res.ok && typeof (window as any).gtag === 'function') {
-        (window as any).gtag('event', 'generate_lead', {
-          source: fullPayload.source,
-          product: fullPayload.productType || fullPayload.product || fullPayload.product_item,
-        });
+      if (res.ok) {
+        if (typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'generate_lead', {
+            source: fullPayload.source,
+            product: fullPayload.productType || fullPayload.product || fullPayload.product_item,
+          });
+        }
+        // Meta Pixel: Lead 事件与 generate_lead 同位置触发；Pixel 空转时 fbq 未定义，天然不执行
+        if (typeof (window as any).fbq === 'function') {
+          (window as any).fbq('track', 'Lead');
+        }
       }
     }).catch((err) => {
       console.warn('[dual-track] background fetch warning, triggering sendBeacon fallback:', err);

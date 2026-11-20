@@ -598,6 +598,10 @@ const {
         if (typeof (window as any).gtag === 'function') {
           (window as any).gtag('event', 'generate_lead', { source: 'livechat_drawer', lead_type: 'livechat_drawer_lead' });
         }
+        // Meta Pixel: Lead（空转保护同上）
+        if (typeof (window as any).fbq === 'function') {
+          (window as any).fbq('track', 'Lead');
+        }
       } else {
         if (dockStatus) {
           dockStatus.style.color = '#9b1c1c';
