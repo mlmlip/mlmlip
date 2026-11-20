@@ -170,7 +170,7 @@ export const pillars = [
 export const products = [
   {
     name: 'High-Impact Lip Gloss',
-    body: 'Non-sticky, cushion-feel gloss in crystal clear, sheer reactive tints, and multi-dimensional coated micro-sparkle finishes.',
+    body: 'Non-sticky, cushion-feel gloss in crystal clear, sheer reactive tints, and multi-dimensional coated micro-shimmer finishes.',
     detail: '500 pcs MOQ · Thick-Walled Acrylic Tubes',
     image: '/lip-series/lip-glaze-hero-1.jpg',
     categoryHref: '/lip-gloss-manufacturer'

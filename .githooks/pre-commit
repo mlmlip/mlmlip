@@ -1,7 +1,16 @@
 #!/bin/bash
-# Pre-commit hook to enforce strict business isolation from 'mlmglitter'
+# Pre-commit hook to enforce strict business isolation from the sister site
+# 'mlmglitter' (and sibling brand mlmcosmetic / MLM Cosmetical).
+#
+# 2026-11-20: rule narrowed to brand identifiers only. The previous generic
+# words (glitter / shimmer / body oil) false-positived on legitimate product
+# vocabulary: "biodegradable glitters (regenerated cellulose)" is the EU Reg
+# 2023/2055 compliance term, glitter/shimmer appear in SKU names and texture
+# descriptions with zero real cross-brand pollution (full-site audit
+# 2026-11-20), and "body oil" is our own product line. The hook's real intent
+# is to keep mlmglitter's brand name / traffic-leak traces off this site.
 
-FORBIDDEN_WORDS=("glitter" "body oil" "shimmer")
+FORBIDDEN_WORDS=("mlmglitter" "mlm glitter" "glittercosmetics" "mlmcosmetic" "mlm cosmetical")
 STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM)
 
 if [ -z "$STAGED_FILES" ]; then

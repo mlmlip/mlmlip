@@ -30,10 +30,10 @@ export const categories: Category[] = [
     metaDescription:
       'Private label lip gloss manufacturer from 500 pcs MOQ. Non-sticky plumping & tinted formulas, custom tubes, 7-day samples, FDA compliant. Request quote.',
     intro:
-      'High-shine, cushion-feel lip gloss built to your shade card — from crystal clear and sheer reactive tints to multi-dimensional shine. Tube, cap and applicator chosen from our packaging library, or tooled exclusively for your brand.',
+      'High-shine, cushion-feel lip gloss built to your shade card — from crystal clear and sheer reactive tints to multi-dimensional shimmer. Tube, cap and applicator chosen from our packaging library, or tooled exclusively for your brand.',
     image: '/products/lipgloss-26-01.jpg',
     highlights: [
-      'Clear, tinted, jelly, sparkle and plumping gloss concepts',
+      'Clear, tinted, jelly, shimmer and plumping gloss concepts',
       'Non-sticky lightweight bases with comfortable cushion feel',
       'Pantone shade matching or full custom shade card development',
       'Doe-foot, brush, ceramic and cooling-metal applicator options',
