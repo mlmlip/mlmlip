@@ -63,7 +63,7 @@
 | non sticky lip gloss base manufacturer for refillable brands | 不粘基底+可替换装 | 走可持续路线的品牌 | 不粘基底适配替换芯设计 | `[已发布]` |
 | sugar free flavored lip gloss manufacturer for teen brands | 少女线风味唇釉 | 面向Z世代的品牌 | 温和配方符合年轻市场偏好 | `[已发布]` |
 | lip mud manufacturer for soft matte finish brands | 雾面唇泥 | 雾面妆效品牌 | 柔焦粉体技术, 不拔干 | `[已发布]` |
-| private label lip mud with blur effect formula | 柔焦贴牌 | 快时尚美妆品牌 | 即时柔焦效果, 快速贴牌 | `[待撰写]` |
+| private label lip mud with blur effect formula | 柔焦贴牌 | 快时尚美妆品牌 | 即时柔焦效果, 快速贴牌 | `[已发布]` |
 | lip mud oem supplier for k beauty inspired lines | 韩系灵感线 | K-beauty风格品牌 | 韩系质地配方, 快速上市 | `[待撰写]` |
 | low moq lip mud manufacturer for small cosmetics brands | 低起订 | 小体量品牌 | 500 pcs起, 支持混色 | `[待撰写]` |
 | custom lip mud shades manufacturer with rapid sampling | 定制色号 | 多SKU品牌 | 全色系定制, 7天出样 | `[待撰写]` |
