@@ -3,6 +3,14 @@
   "framework": "astro",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://mlmlip.com/:path*",
+      "permanent": true,
+      "has": [{ "type": "host", "value": "www.mlmlip.com" }]
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
