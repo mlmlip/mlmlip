@@ -5,31 +5,139 @@ import { site } from '../data/site';
 
 interface Props {
   webhookUrl?: string;
+  lang?: 'en' | 'fr' | 'es';
 }
 
-const { webhookUrl = "" } = Astro.props;
+const { webhookUrl = "", lang = 'en' } = Astro.props;
+
+// P1-6: FR/ES 表单功能性文案本地化（产品名/成分术语保留英文，与现有 FR/ES 页面风格一致）
+const t = {
+  en: {
+    badge: 'Interactive Formulation Desk',
+    title: 'Design Your Custom Lip Line in 90 Seconds',
+    subtitle: 'Live formula mapping, packaging selection & instant lab sample briefing (500 pcs MOQ)',
+    steps: ['Format', 'Texture', 'Regulatory', 'Scale', 'Dispatch'],
+    step1h: 'Step 1 · Select Your Product Category',
+    step1p: 'Choose the core lip formulation category you intend to manufacture.',
+    next: (n) => ['Next: Formulation Texture →', 'Next: Regulatory & Market →', 'Next: Quantity & Packaging →', 'Next: Instant Estimate & Dispatch →'][n - 1],
+    back: '← Back',
+    backPkg: '← Back to Packaging',
+    step2h: 'Step 2 · Formulation Texture & Performance Attributes',
+    step2p: 'Define the physical sensory attributes, optical effects, and claims for your lab benchmark.',
+    fieldTexture: 'Texture & Finish Style (Select Primary)',
+    fieldActives: 'Active Performance Enhancements (Select all that apply)',
+    fieldClean: 'Clean Standard Claims',
+    step3h: 'Step 3 · Target Markets & Regulatory Compliance Dossiers',
+    step3p: 'We tailor toxicology assessments, ingredient purity screenings, and safety documentation to your destination.',
+    step4h: 'Step 4 · Production Quantity & Packaging Architecture',
+    step4p: 'Take advantage of our 500 pcs universal low MOQ. Select componentry from our prestige inventory or custom tooling.',
+    fieldQty: 'Production Quantity Tier (per SKU)',
+    fieldPkg: 'Preferred Packaging Component Style',
+    step5h: 'Step 5 · Immediate Specification Ticket & Engineering Handoff',
+    step5p: 'Review your customized specifications, view the live timeline & budget estimation, and dispatch your ticket.',
+    ticketStatus: '✓ Production Spec Ready',
+    ticketCat: 'Category:', ticketFinish: 'Formula Finish:', ticketVol: 'Volume Tier:', ticketPkg: 'Packaging:', ticketReg: 'Compliance:', ticketSampling: 'Sampling Guarantee:',
+    ticketSamplingVal: '7 Business Days (100% Credited to Bulk Order)',
+    ticketPrice: 'Estimated Unit Price Range:',
+    fldName: 'Your Name', fldEmail: 'Corporate Work Email', fldBrand: 'Brand / Company Name', fldWa: 'WhatsApp Number (Optional, for instant direct chat)', fldNotes: 'Specific Shade / Benchmark Notes (Optional)',
+    hintEmail: 'Official lab benchmark report & pricing breakdown will be delivered here.',
+    submit: '{L.submit}',
+    waBtn: '{L.waBtn}',
+    privacy: '{L.privacy}',
+    redirecting: '✓ Opening WhatsApp & Dispatching to Lab...'
+  },
+  fr: {
+    badge: 'Bureau de Formulation Interactif',
+    title: 'Concevez Votre Gamme Labiale Sur Mesure en 90 Secondes',
+    subtitle: 'Formulation en direct, sélection du packaging et brief d\'échantillon labo (MOQ 500 pcs)',
+    steps: ['Format', 'Texture', 'Réglementaire', 'Volume', 'Envoi'],
+    step1h: 'Étape 1 · Sélectionnez Votre Catégorie de Produit',
+    step1p: 'Choisissez la catégorie de formulation labiale que vous souhaitez fabriquer.',
+    next: (n) => ['Suivant : Texture de Formulation →', 'Suivant : Réglementation & Marché →', 'Suivant : Quantité & Packaging →', 'Suivant : Estimation & Envoi →'][n - 1],
+    back: '← Retour',
+    backPkg: '← Retour au Packaging',
+    step2h: 'Étape 2 · Texture & Attributs de Performance',
+    step2p: 'Définissez les attributs sensoriels, les effets optiques et les allégations pour votre benchmark labo.',
+    fieldTexture: 'Style de Texture & Finition (Principal)',
+    fieldActives: 'Améliorations de Performance (Sélection multiple)',
+    fieldClean: 'Allégations Clean / Clean Standard Claims',
+    step3h: 'Étape 3 · Marchés Cibles & Dossiers de Conformité',
+    step3p: 'Nous adaptons évaluations toxicologiques, screenings et documentation de sécurité à votre destination.',
+    step4h: 'Étape 4 · Quantité de Production & Architecture Packaging',
+    step4p: 'Profitez de notre MOQ universel de 500 pcs. Composants de prestige ou moules sur mesure.',
+    fieldQty: 'Palier de Quantité (par référence)',
+    fieldPkg: 'Style de Composant d\'Emballage Préféré',
+    step5h: 'Étape 5 · Fiche de Spécification Immédiate & Transfert Ingénierie',
+    step5p: 'Vérifiez vos spécifications, l\'estimation budgétaire en direct, puis envoyez votre dossier.',
+    ticketStatus: '✓ Spécification de Production Prête',
+    ticketCat: 'Catégorie :', ticketFinish: 'Finition :', ticketVol: 'Volume :', ticketPkg: 'Packaging :', ticketReg: 'Conformité :', ticketSampling: 'Garantie d\'échantillonnage :',
+    ticketSamplingVal: '7 Jours Ouvrés (100% Crédités sur la Commande)',
+    ticketPrice: 'Estimation de Prix Unitaire :',
+    fldName: 'Votre Nom', fldEmail: 'E-mail Professionnel', fldBrand: 'Nom de la Marque / Entreprise', fldWa: 'Numéro WhatsApp (Optionnel, pour échange direct)', fldNotes: 'Notes Teintes / Benchmarks (Optionnel)',
+    hintEmail: 'Le rapport de benchmark et la grille tarifaire seront livrés à cette adresse.',
+    submit: 'Envoyer le Brief & Réserver un Échantillon 7 Jours →',
+    waBtn: 'Envoyer Instantanément au Chimiste Principal via WhatsApp 💬',
+    privacy: '🔒 Confidentialité & Protection de la Propriété Garanties. Nous signons des NDA mutuelles avant tout travail de teinte sur mesure. Beautychain Limited ne divulgue jamais les formules clients à des tiers.',
+    redirecting: '✓ Ouverture de WhatsApp & Envoi au Laboratoire...'
+  },
+  es: {
+    badge: 'Mesa de Formulación Interactiva',
+    title: 'Diseñe su Línea Labial Personalizada en 90 Segundos',
+    subtitle: 'Mapeo de fórmula en vivo, selección de empaques y brief de muestra (MOQ 500 uds)',
+    steps: ['Formato', 'Textura', 'Regulatorio', 'Volumen', 'Envío'],
+    step1h: 'Paso 1 · Seleccione su Categoría de Producto',
+    step1p: 'Elija la categoría de formulación labial que desea fabricar.',
+    next: (n) => ['Siguiente: Textura de Formulación →', 'Siguiente: Regulatorio & Mercado →', 'Siguiente: Cantidad & Empaque →', 'Siguiente: Estimación & Envío →'][n - 1],
+    back: '← Atrás',
+    backPkg: '← Volver al Empaque',
+    step2h: 'Paso 2 · Textura & Atributos de Rendimiento',
+    step2p: 'Defina los atributos sensoriales, efectos ópticos y claims para su benchmark de laboratorio.',
+    fieldTexture: 'Estilo de Textura & Acabado (Principal)',
+    fieldActives: 'Mejoras de Rendimiento (Selección múltiple)',
+    fieldClean: 'Claims de Estándar Clean / Clean Standard Claims',
+    step3h: 'Paso 3 · Mercados Objetivo & Expedientes Regulatorios',
+    step3p: 'Adaptamos evaluaciones toxicológicas, análisis de pureza y documentación de seguridad a su destino.',
+    step4h: 'Paso 4 · Cantidad de Producción & Arquitectura de Empaque',
+    step4p: 'Aproveche nuestro MOQ universal de 500 uds. Componentes premium o moldes a medida.',
+    fieldQty: 'Nivel de Cantidad (por referencia)',
+    fieldPkg: 'Estilo de Componente de Empaque Preferido',
+    step5h: 'Paso 5 · Ficha de Especificación Inmediata & Traspaso Técnico',
+    step5p: 'Revise sus especificaciones, la estimación en vivo y envíe su ficha técnica.',
+    ticketStatus: '✓ Especificación de Producción Lista',
+    ticketCat: 'Categoría:', ticketFinish: 'Acabado:', ticketVol: 'Volumen:', ticketPkg: 'Empaque:', ticketReg: 'Conformidad:', ticketSampling: 'Garantía de Muestreo:',
+    ticketSamplingVal: '7 Días Hábiles (100% Acreditado al Pedido)',
+    ticketPrice: 'Rango de Precio Unitario Estimado:',
+    fldName: 'Su Nombre', fldEmail: 'Correo Corporativo', fldBrand: 'Nombre de la Marca / Empresa', fldWa: 'Número de WhatsApp (Opcional, para chat directo)', fldNotes: 'Notas de Tono / Benchmark (Opcional)',
+    hintEmail: 'El informe de benchmark y el desglose de precios se entregarán aquí.',
+    submit: 'Enviar Brief y Reservar Muestra de 7 Días →',
+    waBtn: 'Enviar al Químico Principal vía WhatsApp 💬',
+    privacy: '🔒 Confidencialidad y Protección de Propiedad Garantizadas. Firmamos NDA mutuos antes del trabajo de tonos a medida. Beautychain Limited no divulga fórmulas de clientes a terceros.',
+    redirecting: '✓ Abriendo WhatsApp y Enviando al Laboratorio...'
+  }
+};
+const L = t[lang];
 ---
 
 <div class="lip-configurator-card" id="lip-configurator">
   <!-- Header Bar with Progress Indicator -->
   <div class="config-header">
     <div class="config-title-group">
-      <span class="config-badge">Interactive Formulation Desk</span>
-      <h2 class="config-title">Design Your Custom Lip Line in 90 Seconds</h2>
-      <p class="config-subtitle">Live formula mapping, packaging selection & instant lab sample briefing (500 pcs MOQ)</p>
+      <span class="config-badge">{L.badge}</span>
+      <h2 class="config-title">{L.title}</h2>
+      <p class="config-subtitle">{L.subtitle}</p>
     </div>
     
     <div class="step-progress-wrapper" aria-label="Form progress">
       <div class="step-dots">
-        <div class="step-dot active" data-step-indicator="1"><span>1</span><label>Format</label></div>
+        <div class="step-dot active" data-step-indicator="1"><span>1</span><label>{L.steps[0]}</label></div>
         <div class="step-line" data-line="1"></div>
-        <div class="step-dot" data-step-indicator="2"><span>2</span><label>Texture</label></div>
+        <div class="step-dot" data-step-indicator="2"><span>2</span><label>{L.steps[1]}</label></div>
         <div class="step-line" data-line="2"></div>
-        <div class="step-dot" data-step-indicator="3"><span>3</span><label>Regulatory</label></div>
+        <div class="step-dot" data-step-indicator="3"><span>3</span><label>{L.steps[2]}</label></div>
         <div class="step-line" data-line="3"></div>
-        <div class="step-dot" data-step-indicator="4"><span>4</span><label>Scale</label></div>
+        <div class="step-dot" data-step-indicator="4"><span>4</span><label>{L.steps[3]}</label></div>
         <div class="step-line" data-line="4"></div>
-        <div class="step-dot" data-step-indicator="5"><span>5</span><label>Dispatch</label></div>
+        <div class="step-dot" data-step-indicator="5"><span>5</span><label>{L.steps[4]}</label></div>
       </div>
     </div>
   </div>
@@ -38,8 +146,8 @@ const { webhookUrl = "" } = Astro.props;
     <!-- STEP 1: Product Format -->
     <div class="form-step active" data-step="1">
       <div class="step-lead">
-        <h3>Step 1 · Select Your Product Category</h3>
-        <p>Choose the core lip formulation category you intend to manufacture.</p>
+        <h3>{L.step1h}</h3>
+        <p>{L.step1p}</p>
       </div>
 
       <div class="category-grid">
@@ -118,20 +226,20 @@ const { webhookUrl = "" } = Astro.props;
 
       <div class="step-nav-footer">
         <div></div>
-        <button type="button" class="btn btn-next" data-next="2">Next: Formulation Texture →</button>
+        <button type="button" class="btn btn-next" data-next="2">{L.next(1)}</button>
       </div>
     </div>
 
     <!-- STEP 2: Formulation Texture & Finish -->
     <div class="form-step" data-step="2">
       <div class="step-lead">
-        <h3>Step 2 · Formulation Texture & Performance Attributes</h3>
-        <p>Define the physical sensory attributes, optical effects, and claims for your lab benchmark.</p>
+        <h3>{L.step2h}</h3>
+        <p>{L.step2p}</p>
       </div>
 
       <div class="options-matrix">
         <div class="options-group">
-          <label class="field-label">Texture & Finish Style (Select Primary)</label>
+          <label class="field-label">{L.fieldTexture}</label>
           <div class="pill-group">
             <label class="pill-option">
               <input type="radio" name="texture_finish" value="High-Gloss Mirror Glaze" checked />
@@ -153,7 +261,7 @@ const { webhookUrl = "" } = Astro.props;
         </div>
 
         <div class="options-group">
-          <label class="field-label">Active Performance Enhancements (Select all that apply)</label>
+          <label class="field-label">{L.fieldActives}</label>
           <div class="checkbox-grid">
             <label class="check-pill">
               <input type="checkbox" name="actives" value="Palmitoyl Tripeptide-1 Plumping" checked />
@@ -183,7 +291,7 @@ const { webhookUrl = "" } = Astro.props;
         </div>
 
         <div class="options-group">
-          <label class="field-label">Clean Standard Claims</label>
+          <label class="field-label">{L.fieldClean}</label>
           <div class="clean-tags">
             <span class="spec-chip">✓ 100% Vegan & Cruelty-Free</span>
             <span class="spec-chip">✓ Paraben & Phthalate Free</span>
@@ -194,16 +302,16 @@ const { webhookUrl = "" } = Astro.props;
       </div>
 
       <div class="step-nav-footer">
-        <button type="button" class="btn ghost btn-prev" data-prev="1">← Back</button>
-        <button type="button" class="btn btn-next" data-next="3">Next: Regulatory & Market →</button>
+        <button type="button" class="btn ghost btn-prev" data-prev="1">{L.back}</button>
+        <button type="button" class="btn btn-next" data-next="3">{L.next(2)}</button>
       </div>
     </div>
 
     <!-- STEP 3: Regulatory & Target Markets -->
     <div class="form-step" data-step="3">
       <div class="step-lead">
-        <h3>Step 3 · Target Markets & Regulatory Compliance Dossiers</h3>
-        <p>We tailor toxicology assessments, ingredient purity screenings, and safety documentation to your destination.</p>
+        <h3>{L.step3h}</h3>
+        <p>{L.step3p}</p>
       </div>
 
       <div class="market-selection-grid">
@@ -260,20 +368,20 @@ const { webhookUrl = "" } = Astro.props;
       </div>
 
       <div class="step-nav-footer">
-        <button type="button" class="btn ghost btn-prev" data-prev="2">← Back</button>
-        <button type="button" class="btn btn-next" data-next="4">Next: Quantity & Packaging →</button>
+        <button type="button" class="btn ghost btn-prev" data-prev="2">{L.back}</button>
+        <button type="button" class="btn btn-next" data-next="4">{L.next(3)}</button>
       </div>
     </div>
 
     <!-- STEP 4: Quantity & Packaging Componentry -->
     <div class="form-step" data-step="4">
       <div class="step-lead">
-        <h3>Step 4 · Production Quantity & Packaging Architecture</h3>
-        <p>Take advantage of our 500 pcs universal low MOQ. Select componentry from our prestige inventory or custom tooling.</p>
+        <h3>{L.step4h}</h3>
+        <p>{L.step4p}</p>
       </div>
 
       <div class="quantity-section">
-        <label class="field-label">Production Quantity Tier (per SKU)</label>
+        <label class="field-label">{L.fieldQty}</label>
         <div class="tier-cards">
           <label class="tier-card">
             <input type="radio" name="production_volume" value="500 pcs (Agile Launch Pack)" checked />
@@ -306,7 +414,7 @@ const { webhookUrl = "" } = Astro.props;
       </div>
 
       <div class="packaging-section" style="margin-top: 24px;">
-        <label class="field-label">Preferred Packaging Component Style</label>
+        <label class="field-label">{L.fieldPkg}</label>
         <div class="pkg-grid">
           <label class="pkg-tile">
             <input type="radio" name="packaging_style" value="Prestige Heavyweight Acrylic (Square/Round)" checked />
@@ -332,60 +440,60 @@ const { webhookUrl = "" } = Astro.props;
       </div>
 
       <div class="step-nav-footer">
-        <button type="button" class="btn ghost btn-prev" data-prev="3">← Back</button>
-        <button type="button" class="btn btn-next" data-next="5">Next: Instant Estimate & Dispatch →</button>
+        <button type="button" class="btn ghost btn-prev" data-prev="3">{L.back}</button>
+        <button type="button" class="btn btn-next" data-next="5">{L.next(4)}</button>
       </div>
     </div>
 
     <!-- STEP 5: Buyer Details, Estimate & Instant Dispatch -->
     <div class="form-step" data-step="5">
       <div class="step-lead">
-        <h3>Step 5 · Immediate Specification Ticket & Engineering Handoff</h3>
-        <p>Review your customized specifications, view the live timeline & budget estimation, and dispatch your ticket.</p>
+        <h3>{L.step5h}</h3>
+        <p>{L.step5p}</p>
       </div>
 
       <!-- Real-time Spec Summary Card -->
       <div class="live-ticket-card" id="spec-ticket-card">
         <div class="ticket-header">
-          <span class="ticket-status">✓ Production Spec Ready</span>
+          <span class="ticket-status">{L.ticketStatus}</span>
           <span class="ticket-code" id="ticket-id">MLM-2026-LIP</span>
         </div>
         <div class="ticket-body">
-          <div class="ticket-row"><strong>Category:</strong> <span id="summary-cat">Lip Gloss</span></div>
-          <div class="ticket-row"><strong>Formula Finish:</strong> <span id="summary-finish">Mirror Glass Glaze</span></div>
-          <div class="ticket-row"><strong>Volume Tier:</strong> <span id="summary-volume">500 pcs (Agile Launch Pack)</span></div>
-          <div class="ticket-row"><strong>Packaging:</strong> <span id="summary-pkg">Heavyweight Thick-Wall Acrylic</span></div>
-          <div class="ticket-row"><strong>Compliance:</strong> <span id="summary-reg">FDA / MoCRA, EU CPNP</span></div>
-          <div class="ticket-row"><strong>Sampling Guarantee:</strong> <span>7 Business Days (100% Credited to Bulk Order)</span></div>
-          <div class="ticket-row highlight"><strong>Estimated Unit Price Range:</strong> <span id="summary-price">$1.85 – $2.65 / pc (FOB Shenzhen/Huizhou)</span></div>
+          <div class="ticket-row"><strong>{L.ticketCat}</strong> <span id="summary-cat">Lip Gloss</span></div>
+          <div class="ticket-row"><strong>{L.ticketFinish}</strong> <span id="summary-finish">Mirror Glass Glaze</span></div>
+          <div class="ticket-row"><strong>{L.ticketVol}</strong> <span id="summary-volume">500 pcs (Agile Launch Pack)</span></div>
+          <div class="ticket-row"><strong>{L.ticketPkg}</strong> <span id="summary-pkg">Heavyweight Thick-Wall Acrylic</span></div>
+          <div class="ticket-row"><strong>{L.ticketReg}</strong> <span id="summary-reg">FDA / MoCRA, EU CPNP</span></div>
+          <div class="ticket-row"><strong>{L.ticketSampling}</strong> <span>{L.ticketSamplingVal}</span></div>
+          <div class="ticket-row highlight"><strong>{L.ticketPrice}</strong> <span id="summary-price">$1.85 – $2.65 / pc (FOB Shenzhen/Huizhou)</span></div>
         </div>
       </div>
 
       <!-- Contact Inputs -->
       <div class="buyer-contact-grid" style="margin-top: 24px;">
         <div class="form-field">
-          <label for="cfg-name">Your Name <span class="required">*</span></label>
+          <label for="cfg-name">{L.fldName} <span class="required">*</span></label>
           <input id="cfg-name" name="name" type="text" required placeholder="e.g. Sarah Jenkins" />
         </div>
 
         <div class="form-field">
-          <label for="cfg-email">Corporate Work Email <span class="required">*</span></label>
+          <label for="cfg-email">{L.fldEmail} <span class="required">*</span></label>
           <input type="email" id="cfg-email" name="buyer_email" required placeholder="founder@yourbrand.com" />
-          <span class="field-hint" id="cfg-email-hint">Official lab benchmark report & pricing breakdown will be delivered here.</span>
+          <span class="field-hint" id="cfg-email-hint">{L.hintEmail}</span>
         </div>
 
         <div class="form-field">
-          <label for="cfg-brand">Brand / Company Name <span class="required">*</span></label>
+          <label for="cfg-brand">{L.fldBrand} <span class="required">*</span></label>
           <input type="text" id="cfg-brand" name="buyer_brand" required placeholder="e.g. Dahlia Cosmetics Paris" />
         </div>
 
         <div class="form-field">
-          <label for="cfg-whatsapp">WhatsApp Number (Optional, for instant direct chat)</label>
+          <label for="cfg-whatsapp">{L.fldWa}</label>
           <input type="tel" id="cfg-whatsapp" name="buyer_whatsapp" placeholder="+1 (555) 019-2834" />
         </div>
 
         <div class="form-field full-width">
-          <label for="cfg-notes">Specific Shade / Benchmark Notes (Optional)</label>
+          <label for="cfg-notes">{L.fldNotes}</label>
           <textarea id="cfg-notes" name="project_notes" rows="2" placeholder="e.g. Reference Fenty Gloss Bomb shade 'Fenty Glow' or Rhode Peptide Lip Tint..."></textarea>
         </div>
       </div>
@@ -395,21 +503,21 @@ const { webhookUrl = "" } = Astro.props;
 
         <div class="submit-actions-panel">
         <button type="submit" class="btn btn-primary-submit" id="btn-submit-ticket">
-          Submit Brief & Lock In 7-Day Sample Slot →
+          {L.submit}
         </button>
         <button type="button" class="btn btn-whatsapp-direct" id="btn-whatsapp-ticket">
-          Dispatch Instantly to Chief Chemist via WhatsApp 💬
+          {L.waBtn}
         </button>
       </div>
 
       <div id="cfg-submission-status" class="submission-alert" style="display: none;"></div>
 
       <p class="data-privacy-notice">
-        🔒 Non-Disclosure & Proprietary Protection Guaranteed. We sign mutual NDAs before custom shade lab work. Beautychain Limited does not disclose client formulations to third parties.
+        {L.privacy}
       </p>
 
       <div class="step-nav-footer">
-        <button type="button" class="btn ghost btn-prev" data-prev="4">← Back to Packaging</button>
+        <button type="button" class="btn ghost btn-prev" data-prev="4">{L.backPkg}</button>
         <div></div>
       </div>
     </div>
