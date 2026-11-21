@@ -55,7 +55,7 @@ Oil-based lip tints utilize non-polar liquid matrices—typically composed of li
 ### Hybrid Suspension and Polymeric Emulsions (Velvet & Cloud Formulations)
 The fastest-growing commercial segment is the hybrid emulsion tint. These systems utilize water-in-silicone (W/Si) or oil-in-water (O/W) architectures stabilized by polymeric emulsifiers.
 
-* **Film Formation Chemistry:** Incorporating trimethylsiloxysilicate (TMS), dimethicone crosspolymers, and polyurethane film formers enables a bifurcated wear profile: upon application, the continuous phase creates an immediate blurring cushion, while the internal phase releases dyes to stain the mucosal tissue underneath.
+* **Film Formation Chemistry:** Incorporating trimethylsiloxysilicate (TMS), dimethicone crosspolymers, and polyurethane film formers enables a bifurcated wear profile: upon application, the continuous phase creates an immediate blurring cushion, while the internal phase releases dyes to stain the mucosal tissue underneath. The 500-piece pilot batch, 7-day sampling, and fee-credit terms behind this production route are summarised on [Private Label Lip Mud & Velvet Tint Manufacturer](/lip-mud-manufacturer/).
 
 ---
 

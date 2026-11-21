@@ -35,7 +35,7 @@ Transfer-proof liquid lipsticks require a precise balance of volatile carriers, 
 
 Formulating for long wear without causing dryness demands meticulous viscosity management. Beautychain Limited maintains a controlled viscosity range between 3,000 and 6,000 mPa·s for its liquid lipstick bases, ensuring optimal fluid leveling during wand application while preventing pigment settling during storage. Brands exploring our complete portfolio can review custom options on our [products](/products) page. For a technical formulation breakdown, explore our factory guide on [Private Label Liquid Lipstick OEM B2B Supplier EU Regulation](/blog/private-label-liquid-lipstick-oem-b2b-supplier-eu-regulation-1223-2009/).
 
-Consumer demand for long-lasting, non-sticky cosmetics has surged across global retail channels. By eliminating heavy waxes and incorporating breathable film formers, Beautychain Limited delivers a weightless matte finish that withstands drinking and eating. Indie beauty founders can test these high-performance textures directly by requesting prototype kits through our [samples](/samples) portal.
+Consumer demand for long-lasting, non-sticky cosmetics has surged across global retail channels. By eliminating heavy waxes and incorporating breathable film formers, Beautychain Limited delivers a weightless matte finish that withstands drinking and eating. Indie beauty founders can test these high-performance textures directly by requesting prototype kits through our [samples](/samples) portal. Brands running this format for the first time usually start from the capacity and MOQ benchmarks laid out in [Private Label Lipstick Manufacturer](/lipstick-manufacturer/).
 
 ---
 
