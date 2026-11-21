@@ -9,6 +9,16 @@
 
 | 关键词 / 话题 (Keyword / Topic) | 搜索意图 (Intent) | 目标受众 (Audience) | 必须植入的核心卖点 (Core Pitch) | 状态 (Status) |
 | :--- | :--- | :--- | :--- | :--- |
+| mocra compliant lip gloss manufacturer for us market | 美国合规 | 出口美国品牌 | MoCRA注册文件支持 | `[待撰写]` |
+| cpnp notification support for private label lip products | CPNP申报 | 欧盟市场新品牌 | CPNP全套申报代办 | `[待撰写]` |
+| pif documentation support for lip cosmetics eu market | PIF文件 | 欧盟进口商 | PIF文档编制支持 | `[待撰写]` |
+| lip cosmetics gmp audit checklist for brand owners | GMP审计 | 验厂采购商 | ISO 22716+GMPC双认证可验厂 | `[待撰写]` |
+| lip cosmetics heavy metals testing requirements for exporters | 重金属检测 | 质控经理 | 重金属全套检测报告 | `[待撰写]` |
+| cosmetic product safety report for lip care products | CPSR安全报告 | 合规负责人 | CPSR编制与专家签发 | `[待撰写]` |
+| usp 51 and usp 61 testing for lip cosmetics | 微生物防腐测试 | 质量团队 | 效力测试全套报告 | `[待撰写]` |
+| lip cosmetics shelf life and stability data package | 保质期数据包 | 品牌合规团队 | 加速+实时稳定性数据 | `[待撰写]` |
+| uk scr compliance for lip cosmetics after brexit | 英国SCRA | 英国市场品牌 | UK RP+SCPN文件支持 | `[待撰写]` |
+| refillable lipstick case manufacturer for sustainable brands | 可替换口红管 | 零废弃品牌 | 金属替换芯系统 | `[待撰写]` |
 | how to start a lip gloss line with low minimums | 商业起步、找代工 | 想要创立品牌的美妆博主/初创者 | **500 pcs MOQ**, 7天免费打样（抵扣） | `[已发布]` |
 | private label lip mask manufacturer for Europe | 找特定市场合规厂家 | 欧洲本地品牌、亚马逊欧洲站卖家 | CPNP/ISO 认证, 包材+配方全链定制 | `[已发布]` |
 | custom lip liner vendor with private packaging | 定制化需求、找供应商 | 已有一定规模的电商品牌 | 现有包材库丰富, 支持开模定制 | `[已发布]` |
@@ -81,7 +91,6 @@
 | private label lipstick manufacturer with magnetic closure cases | 磁吸管贴牌 | 中高端定位品牌 | 磁吸管现成包材 | `[待撰写]` |
 | satin finish lipstick oem supplier for daily wear brands | 缎光日常线 | 日常通勤定位品牌 | 缎光滋润基质 | `[待撰写]` |
 | custom lipstick molding services for unique shapes | 异形开模 | 差异化包装品牌 | 异形私模支持 | `[待撰写]` |
-| refillable lipstick case manufacturer for sustainable brands | 可替换口红管 | 零废弃品牌 | 金属替换芯系统 | `[待撰写]` |
 | lipstick private label with creme finish formulas | 奶油质地 | 舒适挂品牌 | 奶油丝滑基质 | `[待撰写]` |
 | engraved lipstick tube supplier for gift sets and corporate branding | 刻字礼盒 | 礼品/企业定制套装 | 管身激光刻字, 小批量 | `[待撰写]` |
 | smudge proof liquid lipstick oem supplier | 防蹭液唇 | 主打持妆的品牌 | 防蹭蹭配方 | `[待撰写]` |
@@ -101,16 +110,7 @@
 | ceramide lip treatment mask private label manufacturer | 神经酰胺修护 | 屏障修护定位品牌 | 神经酰胺修护配方 | `[待撰写]` |
 | lip mask manufacturer with single dose sachet packaging | 一次性小包装 | 旅行装/试用装品牌 | 独立小袋灌装 | `[待撰写]` |
 | peptide lip overnight treatment oem factory | 多肽夜间修护 | 抗老线品牌 | 多肽抗老基质 | `[待撰写]` |
-| mocra compliant lip gloss manufacturer for us market | 美国合规 | 出口美国品牌 | MoCRA注册文件支持 | `[待撰写]` |
-| cpnp notification support for private label lip products | CPNP申报 | 欧盟市场新品牌 | CPNP全套申报代办 | `[待撰写]` |
-| pif documentation support for lip cosmetics eu market | PIF文件 | 欧盟进口商 | PIF文档编制支持 | `[待撰写]` |
-| uk scr compliance for lip cosmetics after brexit | 英国SCRA | 英国市场品牌 | UK RP+SCPN文件支持 | `[待撰写]` |
-| lip cosmetics heavy metals testing requirements for exporters | 重金属检测 | 质控经理 | 重金属全套检测报告 | `[待撰写]` |
-| cosmetic product safety report for lip care products | CPSR安全报告 | 合规负责人 | CPSR编制与专家签发 | `[待撰写]` |
 | halal certified lip cosmetics manufacturer | 清真认证 | 中东/东南亚市场 | Halal产线与认证支持 | `[待撰写]` |
-| lip cosmetics gmp audit checklist for brand owners | GMP审计 | 验厂采购商 | ISO 22716+GMPC双认证可验厂 | `[待撰写]` |
-| usp 51 and usp 61 testing for lip cosmetics | 微生物防腐测试 | 质量团队 | 效力测试全套报告 | `[待撰写]` |
-| lip cosmetics shelf life and stability data package | 保质期数据包 | 品牌合规团队 | 加速+实时稳定性数据 | `[待撰写]` |
 | lip cosmetics manufacturer 500 minimum order | 500起订直搜 | 极小体量创业者 | 500 pcs行业罕见起订 | `[待撰写]` |
 | no minimum order lip gloss private label | 无起订搜索 | 试水期卖家 | 500 pcs近无门槛+样品单 | `[待撰写]` |
 | low moq cosmetics manufacturer for first time founders | 首创者低起订 | 零经验创业者 | 一站式引导+低MOQ | `[待撰写]` |
