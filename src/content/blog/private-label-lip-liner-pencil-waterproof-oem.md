@@ -72,7 +72,9 @@ For related insights, see [Private Label Lip Mask Manufacturer for Europe](/blog
   <div>
     <a href="/samples" style="display: inline-block; background: #6e1a32; color: #ffffff !important; font-size: 15px; font-weight: 600; padding: 13px 32px; border-radius: 30px; text-decoration: none !important; box-shadow: 0 4px 14px rgba(110, 26, 50, 0.28);">Claim Your Sample Kit →</a>
   </div>
-</div> If tooling cost is your main hesitation, note that [Private Label Lip Liner Manufacturer](/lip-liner-manufacturer/) documents the stock-component route that removes most upfront mould fees.
+</div>
+
+If tooling cost is your main hesitation, note that [Private Label Lip Liner Manufacturer](/lip-liner-manufacturer/) documents the stock-component route that removes most upfront mould fees.
 
 For related insights, see [Custom Wooden Lip Liner Manufacturer Low MOQ | Beautychain](/blog/custom-wooden-lip-liner-manufacturer-low-moq/).
 
