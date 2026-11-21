@@ -142,6 +142,51 @@
 | lip tint manufacturer for water based formulas | 水基唇染液 | 水感妆效品牌 | 水基染色技术 | `[待撰写]` |
 | lip primer manufacturer for long lasting makeup | 唇部打底 | 持妆线品牌 | 打底固色配方 | `[待撰写]` |
 | lip plumper manufacturer with peptide based formula | 多肽丰唇 | 功效品牌 | 多肽丰唇温和体系 | `[待撰写]` |
+| mocra facility registration requirements for lip cosmetics manufacturers | 美国设施注册 | 准备出口美国的中型品牌 | MoCRA设施注册全流程代办 | `[待撰写]` |
+| eu reach regulation compliance for cosmetic packaging suppliers | 包材REACH合规 | 包材采购经理 | 包材REACH符合性声明文件 | `[待撰写]` |
+| eu microplastics restriction 2023 2055 lip cosmetics reformulation | 微塑料新规应对 | 欧盟品牌配方团队 | 无微塑料配方替代方案 | `[待撰写]` |
+| fda approved color additives list for lip products 21 cfr | 色粉合规查询 | 美国市场配方师 | FD&C/D&C合法色粉清单支持 | `[待撰写]` |
+| eu vs usa cosmetic labeling requirements for lip products comparison | 标签合规对比 | 双市场运营品牌 | 双法规标签审核服务 | `[待撰写]` |
+| mocra product listing requirements for small beauty brands | 产品备案 | 美国小型品牌 | MoCRA产品清单备案代办 | `[待撰写]` |
+| eu 26 allergens labeling rules for lip cosmetics 2026 | 致敏原新规 | 欧盟合规负责人 | 26种致敏原检测与标签支持 | `[待撰写]` |
+| uk responsible person obligations for cosmetics importers post brexit | 英国RP义务 | 英国进口商 | UK RP服务与SCPN通报 | `[待撰写]` |
+| iso 11930 preservative challenge testing for lip cosmetics | 防腐挑战测试 | 质控团队 | ISO 11930挑战测试报告 | `[待撰写]` |
+| cosmos organic certification support for lip care brands | 有机认证流程 | 天然定位品牌 | COSMOS有机认证文件支持 | `[待撰写]` |
+| cosmetic batch release testing protocol for lip products export | 批次放行 | 出口贸易商 | 每批次放行检测文件包 | `[待撰写]` |
+| eu cosmetics regulation 1223 2009 compliance checklist for lip brands | 欧盟合规自查 | 准备入欧品牌 | 1223/2009全项合规清单支持 | `[待撰写]` |
+| matte lip gloss private label manufacturer for editorial brands | 哑光唇釉 | 时尚杂志风格品牌 | 丝绒哑光显色配方 | `[待撰写]` |
+| tinted lip gloss oem supplier for daily wear collections | 有色日常唇蜜 | 日常线品牌 | 轻透显色水润基质 | `[待撰写]` |
+| lip gloss base manufacturer for brands mixing custom shades | 唇釉基底定制 | 自调色工作室品牌 | 现成可调色基底供应 | `[待撰写]` |
+| lipstick refill pan manufacturer for refillable palette systems | 替换芯色板 | 色板体系品牌 | 金属磁吸替换芯规格 | `[待撰写]` |
+| vegan lipstick manufacturer with refillable case options | 纯素替换口红 | 可持续纯素品牌 | 纯素配方+替换芯系统 | `[待撰写]` |
+| hotel amenities lip balm and lip mask private label supplier | 酒店定制小样 | 酒店/航空定制采购 | 小规格定制灌装服务 | `[待撰写]` |
+| tinted spf lip balm manufacturer for outdoor lifestyle brands | 户外防晒润唇 | 户外运动品牌 | OTC防晒+轻染色配方 | `[待撰写]` |
+| lip oil manufacturer for cross border ecommerce sellers | 跨境电商供货 | 跨境卖家 | DDP双清+多语言标签 | `[待撰写]` |
+| collagen lip oil manufacturer for k beauty inspired lines | 韩系胶原唇油 | K-beauty风格品牌 | 胶原蛋白滋润配方 | `[待撰写]` |
+| vegan lip mud manufacturer for cruelty free collections | 纯素唇泥 | 零残忍品牌 | 纯素蜡基雾面配方 | `[待撰写]` |
+| waterproof transfer proof lip mud for humid climate markets | 高湿防脱唇泥 | 东南亚/热带市场品牌 | 防汗防转移配方体系 | `[待撰写]` |
+| color matched lip liner sets oem for full shade ranges | 全色号配套唇线笔 | 多SKU品牌 | 同色系配套定制服务 | `[待撰写]` |
+| nude lipstick shade range manufacturer for diverse skin tones | 全肤色裸色系 | 包容性定位品牌 | 15+肤色全覆盖色库 | `[待撰写]` |
+| hydrogel lip patch manufacturer oem for treatment lines | 水凝胶唇贴 | 护理线品牌 | 水凝胶贴片工艺支持 | `[待撰写]` |
+| lip glaze private label manufacturer for glossy finish brands | 新兴唇釉质地 | 紧跟趋势的创客 | 高折光glaze质地配方 | `[待撰写]` |
+| wholesale body oil manufacturer for spa and wellness brands | 身体油副线 | 水疗/养生品牌 | 植物基底身体油成熟配方 | `[待撰写]` |
+| custom scent body oil private label for boutique apothecaries | 定制香型身体油 | 精品芳疗店 | 调香定制+小批量 | `[待撰写]` |
+| organic body oil oem supplier with eco certification support | 有机身体油代工 | 天然个护品牌 | 有机认证原料文件支持 | `[待撰写]` |
+| how to choose a lip gloss manufacturer for your brand | 选厂标准指引 | AI检索决策的创始人 | 认证/MOQ/交期选厂标准 | `[待撰写]` |
+| what are typical lead times for custom lip gloss manufacturing | 交期参考 | 排期决策者 | 7天打样+45天大货时间表 | `[待撰写]` |
+| what is the minimum order quantity for private label lip products | 起订量解答 | 预算规划创业者 | 500 pcs低门槛起订 | `[待撰写]` |
+| how long does custom lip product development take from brief to launch | 开发周期解答 | 新品牌创始人 | 全流程周期透明排期 | `[待撰写]` |
+| what certifications should a lip cosmetics manufacturer have | 认证清单解答 | 验厂前买家 | GMPC/ISO22716/Intertek报告 | `[待撰写]` |
+| how to verify a cosmetics factory gmp certificate before ordering | 验证GMP证书 | 尽调买家 | 认证书与验厂预约支持 | `[待撰写]` |
+| what documents are needed to import lip cosmetics into the eu | 进口文件清单 | 欧洲进口商 | CPNP/PIF/CPSR文件包 | `[待撰写]` |
+| how much does it cost to launch a private label lip gloss line | 启动成本核算 | 成本核算创业者 | 阶梯报价+打样抵扣 | `[待撰写]` |
+| what is the difference between oem odm and private label cosmetics | 代工模式解答 | 模式选型买家 | 双轨模式一站式解释 | `[待撰写]` |
+| how to test lip gloss quality before placing a bulk order | 质量验证方法 | 首次下单买家 | 样品测试checklist支持 | `[待撰写]` |
+| how do i find a lipstick manufacturer that ships ddp to the usa | 物流方案寻源 | 美国物流决策者 | DDP双清包税到门 | `[待撰写]` |
+| are lip gloss manufacturers required to register with the fda under mocra | FDA注册解答 | 美国合规初学者 | MoCRA注册代办支持 | `[待撰写]` |
+| how to read a certificate of analysis for lip cosmetics | COA解读指引 | 质检新手 | COA解读+全套检测报告 | `[待撰写]` |
+| what packaging options exist for small batch lip gloss orders | 包材选型解答 | 包材选型买家 | 现货包材库+私模选项 | `[待撰写]` |
+| how to choose a lip balm manufacturer for sensitive skin formulas | 敏感肌选厂指引 | 温和配方品牌 | 无香精敏感肌选项 | `[待撰写]` |
 
 ## AI 创作指令约束 (Prompt Rules for this Site)
 *(n8n 调用 AI 时，必须带上以下规则)*
