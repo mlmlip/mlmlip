@@ -7,6 +7,12 @@ import type { APIRoute } from 'astro';
 import { createHash, createHmac, randomUUID } from 'node:crypto';
 import { Redis } from '@upstash/redis';
 import { Ratelimit } from '@upstash/ratelimit';
+import {
+  INQUIRY_CONFIRM_FROM,
+  INQUIRY_REPLY_TO,
+  inquiryConfirmationSubject,
+  inquiryConfirmationText,
+} from '../../lib/emailTemplates';
 
 export const prerender = false;
 
@@ -417,6 +423,59 @@ export async function notifyDingTalk(lead: Inquiry, flags?: InquiryFlags): Promi
 }
 
 /* ------------------------------------------------------------------ *
+ * P2-5 Buyer confirmation email bypass (Resend REST, zero-dependency)
+ * Purely additive: RESEND_API_KEY missing => 'skipped' (code dormant,
+ * waits for boss to open the Resend account). Any error is swallowed
+ * after console.error — NEVER blocks the main lead pipeline.
+ * ------------------------------------------------------------------ */
+
+function isPlausibleEmail(value: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+}
+
+export async function sendBuyerConfirmationEmail(lead: Inquiry): Promise<PersistState> {
+  try {
+    const apiKey = env('RESEND_API_KEY');
+    if (!apiKey) {
+      console.warn('[inquiry] RESEND_API_KEY not configured — buyer confirmation email skipped (dormant until key provided).');
+      return 'skipped';
+    }
+    if (!isPlausibleEmail(lead.email)) {
+      console.warn(`[inquiry] Buyer email not plausible id=${lead.requestId} — confirmation email skipped.`);
+      return 'skipped';
+    }
+
+    const text = inquiryConfirmationText(lead);
+    const payload: Record<string, unknown> = {
+      from: INQUIRY_CONFIRM_FROM,
+      to: [lead.email],
+      subject: inquiryConfirmationSubject(),
+      text,
+    };
+    if (INQUIRY_REPLY_TO) payload['reply_to'] = INQUIRY_REPLY_TO;
+
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'authorization': `Bearer ${apiKey}`,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(4_000),
+    });
+    if (!res.ok) {
+      const errBody = await res.text().catch(() => '');
+      throw new Error(`Resend returned ${res.status} ${errBody.slice(0, 200)}`);
+    }
+    console.log(`[inquiry] Buyer confirmation email sent id=${lead.requestId} to buyer.`);
+    return 'ok';
+  } catch (err) {
+    console.error(`[inquiry] Buyer confirmation email FAILED id=${lead.requestId} (non-blocking bypass):`, err);
+    return 'failed';
+  }
+}
+
+/* ------------------------------------------------------------------ *
  * Unified Inquiry Pipeline (Shared between /api/inquiry and /api/contact)
  * ZERO DROP ARCHITECTURE: Never silently drop, never reject with 400/429
  * ------------------------------------------------------------------ */
@@ -489,8 +548,10 @@ export async function processInquirySubmission(
   };
 
   // 5. Fan-out notification to Feishu and DingTalk with alert tags.
-  //    Upstash persistence starts in PARALLEL (bypass path, must never delay notifications).
+  //    Upstash persistence + buyer confirmation email start in PARALLEL
+  //    (bypass paths, must never delay notifications).
   const persistPromise = persistInquiryToUpstash(built, flags, meta);
+  const confirmEmailPromise = sendBuyerConfirmationEmail(built);
   const [feishu, dingtalk] = await Promise.all([
     notifyFeishu(built, flags),
     notifyDingTalk(built, flags),
@@ -508,13 +569,24 @@ export async function processInquirySubmission(
     upstash = 'failed';
   }
 
+  // Buyer confirmation email bypass: same hard-cap pattern, never blocks.
+  let confirmEmail: PersistState = 'failed';
+  try {
+    confirmEmail = await Promise.race([
+      confirmEmailPromise,
+      new Promise<PersistState>((resolve) => setTimeout(() => resolve('failed'), 5_000)),
+    ]);
+  } catch {
+    confirmEmail = 'failed';
+  }
+
   // 6. 100% Persistent Local Backup Guarantee:
   // Write every lead to /tmp/mlmlip_inquiries_backup.jsonl and console log
   const backupPayload = {
     timestamp: new Date().toISOString(),
     event: 'INQUIRY_RECEIVED',
     flags,
-    delivery: { feishu, dingtalk, upstash },
+    delivery: { feishu, dingtalk, upstash, confirmEmail },
     lead: built,
   };
   console.log(`[INQUIRY_LEAD_BACKUP] ${JSON.stringify(backupPayload)}`);
@@ -532,7 +604,7 @@ export async function processInquirySubmission(
       ok: true,
       code: 'accepted',
       requestId: built.requestId,
-      delivery: { feishu, dingtalk, upstash },
+      delivery: { feishu, dingtalk, upstash, confirmEmail },
       flagged: isSpam || isBot || isRateLimited,
       flags,
     },
