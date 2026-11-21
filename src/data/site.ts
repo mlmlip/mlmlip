@@ -47,7 +47,8 @@ export const ui = {
         { label: 'Lip Liner Manufacturer', href: '/lip-liner-manufacturer' },
         { label: 'Lipstick Manufacturer', href: '/lipstick-manufacturer' },
         { label: 'Lip Oil Manufacturer', href: '/lip-oil-manufacturer' },
-        { label: 'Lip Mask Manufacturer', href: '/lip-mask-manufacturer' }
+        { label: 'Lip Mask Manufacturer', href: '/lip-mask-manufacturer' },
+        { label: 'Lip Balm Manufacturer', href: '/lip-balm-manufacturer' }
       ],
       company: [
         { label: 'Packaging', href: '/packaging' },
@@ -76,7 +77,8 @@ export const ui = {
         { label: 'Fabricant Crayon Lèvres', href: '/fr/fabricant-crayon-levres' },
         { label: 'Fabricant Rouge à Lèvres', href: '/fr/fabricant-rouge-levres' },
         { label: 'Fabricant Huile Lèvres', href: '/fr/fabricant-huile-levres' },
-        { label: 'Fabricant Masque Lèvres', href: '/fr/fabricant-masque-levres' }
+        { label: 'Fabricant Masque Lèvres', href: '/fr/fabricant-masque-levres' },
+        { label: 'Fabricant Baume Lèvres', href: '/fr/fabricant-baume-levres' }
       ],
       company: [
         { label: 'Emballage', href: '/packaging' },
@@ -105,7 +107,8 @@ export const ui = {
         { label: 'Fabricante Delineador Labios', href: '/es/fabricante-delineador-labios' },
         { label: 'Fabricante Lápiz Labial', href: '/es/fabricante-lapiz-labial' },
         { label: 'Fabricante Aceite Labios', href: '/es/fabricante-aceite-labios' },
-        { label: 'Fabricante Mascarilla Labios', href: '/es/fabricante-mascarilla-labios' }
+        { label: 'Fabricante Mascarilla Labios', href: '/es/fabricante-mascarilla-labios' },
+        { label: 'Fabricante Bálsamo Labial', href: '/es/fabricante-balsamo-labial' }
       ],
       company: [
         { label: 'Envases', href: '/packaging' },
@@ -132,7 +135,8 @@ export const footerCategories = [
   { label: 'Lip Liner Manufacturer', href: '/lip-liner-manufacturer' },
   { label: 'Lipstick Manufacturer', href: '/lipstick-manufacturer' },
   { label: 'Lip Oil Manufacturer', href: '/lip-oil-manufacturer' },
-  { label: 'Lip Mask Manufacturer', href: '/lip-mask-manufacturer' }
+  { label: 'Lip Mask Manufacturer', href: '/lip-mask-manufacturer' },
+  { label: 'Lip Balm Manufacturer', href: '/lip-balm-manufacturer' }
 ];
 
 export const footerCompany = [

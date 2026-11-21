@@ -1,0 +1,152 @@
+---
+export const prerender = true;
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { productsCatalog } from '../../data/products';
+
+const catSlug = 'lip-mask-manufacturer';
+const catProducts = productsCatalog.filter((p) => p.categorySlug === catSlug);
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [{"@type":"Question","name":"¿Cuál es la cantidad mínima de pedido (MOQ) para un bálsamo labial?","acceptedAnswer":{"@type":"Answer","text":"500 uds por referencia (SKU), el mismo mínimo universal para todas nuestras categorías labiales. Se pueden combinar varios sabores o tonos en un mismo proyecto."}},{"@type":"Question","name":"¿Cuánto tarda el muestreo de un bálsamo personalizado?","acceptedAnswer":{"@type":"Answer","text":"7 días hábiles desde la confirmación del brief, con el 100% del costo de muestreo acreditado a su pedido de producción en serie."}},{"@type":"Question","name":"¿Cuál es el plazo de producción en serie de un bálsamo personalizado?","acceptedAnswer":{"@type":"Answer","text":"15 a 25 días hábiles tras la aprobación del BAT y del artwork, sin incluir el transporte. Los prototipos están listos en 7 días previamente."}},{"@type":"Question","name":"¿Pueden formular un bálsamo tonalizado o con SPF?","acceptedAnswer":{"@type":"Answer","text":"Sí. Formulamos bálsamos tonalizados con igualación Pantone y desarrollamos variantes SPF, con la documentación regulatoria preparada para su mercado destino."}},{"@type":"Question","name":"¿Qué formatos de empaque están disponibles en marca blanca?","acceptedAnswer":{"@type":"Answer","text":"Stick retráctil, potes, tubos flexibles, latas eco y potes de bambú — de nuestra biblioteca interna de empaques, o con molde a medida para una silueta exclusiva."}}]
+};
+---
+
+<BaseLayout title="Fabricante de Bálsamo Labial en Marca Blanca | MOQ 500 uds — MLM Lip" description="Fabricante de bálsamos labiales marca blanca desde 500 uds. Bálsamos de karité y ceramidas, formatos stick/pote/tubo/lata, muestras en 7 días, conformidad GMPC/ISO 22716.">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 50px; padding-bottom: 50px;">
+    <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Inicio', href: '/es/' }, { label: 'Productos', href: '/es/productos' }, { label: 'Bálsamo Labial' }]} />
+      <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.15em;">Bálsamo Labial · Especialista Marca Blanca OEM/ODM</p>
+      <h1 style="font-size: clamp(28px, 3.8vw, 44px); max-width: 860px; margin-bottom: 16px;">Fabricante de Bálsamos Labiales en Marca Blanca</h1>
+      <p class="lead" style="max-width: 720px; font-size: 17px; line-height: 1.5; margin-bottom: 24px;">Bálsamos de cuidado diario y reparación que posicionan su marca en la rutina diaria de sus clientas. Bases ricas en karité y mantecas botánicas, activos de ceramidas y péptidos.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a class="btn" href="/es/quote">Solicitar presupuesto</a>
+        <a class="btn ghost" href="/es/quote#email-inquiry">Pedir un kit de muestras</a>
+      </div>
+      <p class="note" style="margin-top: 16px; font-size: 13px; color: var(--ink-soft);">
+        ✓ MOQ 500 uds &nbsp;·&nbsp; ✓ Muestras 7 días &nbsp;·&nbsp; ✓ Costo reembolsable &nbsp;·&nbsp; ✓ ISO 22716 & FDA
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 48px 0;">
+    <div class="wrap">
+      <div class="grid two" style="align-items: center; gap: 36px;">
+        <div class="case-media" style="border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-sm);">
+          <img src="/products/nas-sync-20.jpg" alt="Fabricante de Bálsamos Labiales en Marca Blanca" width="800" height="600" style="width: 100%; height: auto; display: block;" loading="lazy" />
+        </div>
+        <div>
+          <p class="eyebrow" style="color: var(--burgundy);">Especificaciones & Ventajas</p>
+          <h2 style="font-size: 26px; margin-bottom: 14px;">Formulación y diseño a medida</h2>
+          <ul style="padding-left: 20px; color: var(--ink-soft); line-height: 1.7; font-size: 14px;">
+            <li>Bálsamos nutritivos diarios y tratamientos SOS para labios agrietados</li>
+            <li>Bases ricas en manteca de karité, cacao, murumuru y mantecas botánicas</li>
+            <li>Activos de ceramidas, péptidos y vitaminas para cuidado reparador</li>
+            <li>Formatos stick retráctil, potes, tubos flexibles, latas eco y potes de bambú</li>
+            <li>Desarrollo de sabores y aromas según su brief</li>
+            <li>Fórmulas veganas, clean y eco-posicionadas disponibles</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {catProducts.length > 0 && (
+    <section class="tint" style="padding: 48px 0;">
+      <div class="wrap">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <p class="eyebrow" style="color: var(--gold);">Formulaciones Disponibles</p>
+            <h2 style="font-size: 24px; margin: 0; color: var(--plum);">Catálogo Fórmulas: Bálsamo Labial</h2>
+          </div>
+          <a href="/es/productos" style="color: var(--burgundy); font-weight: 600; font-size: 14px;">Todas las fórmulas →</a>
+        </div>
+
+        <div class="grid three" style="gap: 20px;">
+          {catProducts.map((p) => (
+            <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 8px; padding: 16px; background: white;">
+              <div><div class="case-media" style="margin-bottom: 12px; border-radius: 6px; overflow: hidden;">
+                  <img src={p.heroImage} alt={p.name} width="600" height="450" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" loading="lazy" />
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <span style="font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase;">{p.tag}</span><span style="font-size: 11px; color: var(--ink-soft); font-family: monospace;">MOQ {p.moq} uds</span>
+                </div>
+                <h3 style="font-size: 16px; margin: 0 0 6px; line-height: 1.3;">
+                  <a href="/es/quote" style="color: var(--plum); text-decoration: none;">{p.name}</a>
+                </h3>
+                <p style="font-size: 13px; color: var(--ink-soft); line-height: 1.4; margin-bottom: 12px;">{p.headline}</p>
+              </div>
+              <div style="border-top: 1px solid var(--line); padding-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 12px; color: var(--ink-soft);">{p.shadeCount} tonos</span>
+                <a href="/es/quote" style="font-size: 13px; font-weight: 600; color: var(--burgundy); text-decoration: none;">Solicitar presupuesto →</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section style="padding: 48px 0;">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold);">Ficha Técnica de Fábrica</p>
+      <h2 style="font-size: 26px; margin-bottom: 20px;">Especificaciones de fabricación: Bálsamo Labial</h2>
+      <div class="card gold-line" style="padding: 0; overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Cantidad mínima (MOQ)</td><td style="padding: 14px 20px; color: var(--ink-soft);">500 uds por referencia (SKU)</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Muestreo de laboratorio</td><td style="padding: 14px 20px; color: var(--ink-soft);">7 días hábiles, 100% reembolsable en el pedido</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Personalización</td><td style="padding: 14px 20px; color: var(--ink-soft);">Empaque · Fórmula · Tonos · Sabores · Moldes a medida</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Normas & Conformidad</td><td style="padding: 14px 20px; color: var(--ink-soft);">ISO 22716, GMPC, registro FDA, conformidad CPNP UE</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint" style="padding: 48px 0;">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold);">FAQ</p>
+      <h2 style="font-size: 26px; margin-bottom: 24px;">Preguntas frecuentes sobre Bálsamo Labial</h2>
+      <div class="grid two" style="gap: 16px;">
+          <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+            <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Cuál es la cantidad mínima de pedido (MOQ) para un bálsamo labial?</h3>
+            <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">500 uds por referencia (SKU), el mismo mínimo universal para todas nuestras categorías labiales. Se pueden combinar varios sabores o tonos en un mismo proyecto.</p>
+          </div>
+          <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+            <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Cuánto tarda el muestreo de un bálsamo personalizado?</h3>
+            <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">7 días hábiles desde la confirmación del brief, con el 100% del costo de muestreo acreditado a su pedido de producción en serie.</p>
+          </div>
+          <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+            <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Cuál es el plazo de producción en serie de un bálsamo personalizado?</h3>
+            <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">15 a 25 días hábiles tras la aprobación del BAT y del artwork, sin incluir el transporte. Los prototipos están listos en 7 días previamente.</p>
+          </div>
+          <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+            <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Pueden formular un bálsamo tonalizado o con SPF?</h3>
+            <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Sí. Formulamos bálsamos tonalizados con igualación Pantone y desarrollamos variantes SPF, con la documentación regulatoria preparada para su mercado destino.</p>
+          </div>
+          <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
+            <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Qué formatos de empaque están disponibles en marca blanca?</h3>
+            <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Stick retráctil, potes, tubos flexibles, latas eco y potes de bambú — de nuestra biblioteca interna de empaques, o con molde a medida para una silueta exclusiva.</p>
+          </div>
+      </div>
+      <p style="margin-top: 24px; text-align: center;">
+        <a href="/es/faq" style="color: var(--burgundy); font-weight: 600; font-size: 14px;">Consultar todas las preguntas frecuentes →</a>
+      </p>
+    </div>
+  </section>
+
+  <section style="padding: 50px 0;">
+    <div class="wrap">
+      <div class="card" style="text-align: center; padding: 40px 24px; background: linear-gradient(135deg, var(--plum-dark) 0%, var(--plum) 100%); color: white; border-radius: 12px;">
+        <h2 style="margin-bottom: 10px; color: white;">Lance su colección de Bálsamo Labial</h2>
+        <p class="lead" style="max-width: 580px; margin: 0 auto 20px; color: #f3dde3; font-size: 16px;">
+          Comparta con nosotros su orientación de producto y volúmenes deseados. Presupuesto y análisis técnico en menos de 24h.
+        </p>
+        <a class="btn" href="/es/quote" style="background: var(--gold); color: var(--plum); font-weight: 600;">Solicitar presupuesto</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
