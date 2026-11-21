@@ -9,7 +9,7 @@
 
 | 关键词 / 话题 (Keyword / Topic) | 搜索意图 (Intent) | 目标受众 (Audience) | 必须植入的核心卖点 (Core Pitch) | 状态 (Status) |
 | :--- | :--- | :--- | :--- | :--- |
-| mocra compliant lip gloss manufacturer for us market | 美国合规 | 出口美国品牌 | MoCRA注册文件支持 | `[待撰写]` |
+| mocra compliant lip gloss manufacturer for us market | 美国合规 | 出口美国品牌 | MoCRA注册文件支持 | `[已发布]` |
 | cpnp notification support for private label lip products | CPNP申报 | 欧盟市场新品牌 | CPNP全套申报代办 | `[待撰写]` |
 | pif documentation support for lip cosmetics eu market | PIF文件 | 欧盟进口商 | PIF文档编制支持 | `[待撰写]` |
 | lip cosmetics gmp audit checklist for brand owners | GMP审计 | 验厂采购商 | ISO 22716+GMPC双认证可验厂 | `[待撰写]` |
