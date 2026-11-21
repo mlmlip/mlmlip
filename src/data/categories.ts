@@ -44,15 +44,27 @@ export const categories: Category[] = [
     faqs: [
       {
         q: 'What is the minimum order quantity for private label lip gloss?',
-        a: '500 pcs per SKU, the same minimum across all six lip categories. Different shades or SKUs can be combined in one project.'
+        a: '500 pcs per SKU, the same minimum across every lip category we manufacture. Different shades or SKUs can be combined in one project.'
+      },
+      {
+        q: 'How long does lip gloss sampling take?',
+        a: '7 business days. Once your brief is confirmed, our lab formulates, shade-matches and dispatches your custom samples in 7 days, and 100% of the sampling fee is credited back to your bulk order.'
+      },
+      {
+        q: 'What is the bulk production lead time for custom lip gloss?',
+        a: '15–25 business days after artwork and sample approval, plus shipping. Samples are ready in 7 days before that.'
       },
       {
         q: 'Can you match a reference gloss I already sell?',
         a: 'Yes. Send us a physical reference or photos plus the finish you want. We develop samples against it and refine texture, viscosity and shine until it matches.'
       },
       {
-        q: 'How long does lip gloss production take after approval?',
-        a: 'Samples are ready in 7 days. Bulk production typically runs 15–25 business days after artwork and sample approval, plus shipping.'
+        q: 'What certifications does your lip gloss factory hold?',
+        a: 'GMPC and ISO 22716 certified cleanroom manufacturing, with 6 real Intertek test reports on file, EU CPNP notification support and FDA/MoCRA-ready documentation for the US market.'
+      },
+      {
+        q: 'Which markets do you ship custom lip gloss to?',
+        a: 'North America and Europe are our core markets, including the United States, Canada, the United Kingdom, France, Germany, Spain and Italy.'
       }
     ]
   },
@@ -142,8 +154,16 @@ export const categories: Category[] = [
     specs: commonSpecs,
     faqs: [
       {
-        q: 'What is the MOQ for private label lipstick?',
-        a: '500 pcs per SKU — the same universal minimum across all lip products we produce.'
+        q: 'What is the MOQ for custom lipstick?',
+        a: '500 pcs per SKU — the same universal minimum across all lip products we produce, so you can launch one bullet shade at 500 pcs and scale on reorder.'
+      },
+      {
+        q: 'How long does it take to get custom lipstick samples?',
+        a: '7 business days from brief confirmation. Sampling fees are 100% credited back to your bulk production order.'
+      },
+      {
+        q: 'What is the lead time for bulk lipstick manufacturing?',
+        a: '15–25 business days after sample and artwork approval, plus shipping. Custom mold tooling for exclusive cases adds 4–8 weeks before sampling.'
       },
       {
         q: 'Can you open a custom mold for my lipstick case?',
@@ -151,7 +171,7 @@ export const categories: Category[] = [
       },
       {
         q: 'Do you provide stability and safety documentation?',
-        a: 'Yes — batch documentation, stability data, MSDS and INCI documentation are prepared as part of production, with EU CPNP notification support.'
+        a: 'Yes — batch documentation, stability data, MSDS and INCI documentation are prepared as part of production, with 6 real Intertek test reports on file and EU CPNP notification support.'
       }
     ]
   },
@@ -177,6 +197,14 @@ export const categories: Category[] = [
       {
         q: 'What is the MOQ for custom lip oil?',
         a: '500 pcs per SKU. Launch two or three shades and reorder the winner without holding heavy inventory.'
+      },
+      {
+        q: 'How long do custom lip oil samples take?',
+        a: '7 business days from confirmed brief, with 100% of the sampling fee credited back to your bulk order.'
+      },
+      {
+        q: 'What is the bulk lead time for private label lip oil?',
+        a: '15–25 business days after sample and artwork approval, plus shipping. Filling viscosity for oil bases is handled in-house on the same timeline.'
       },
       {
         q: 'Can you support ingredient-led marketing claims?',
@@ -218,6 +246,48 @@ export const categories: Category[] = [
       {
         q: 'Do you support claims like 24-hour hydration?',
         a: 'We can formulate and document for substantiated hydration claims, and provide the supporting batch and stability documentation for your market.'
+      }
+    ]
+  },
+  {
+    slug: 'lip-balm-manufacturer',
+    name: 'Lip Balm',
+    h1: 'Private Label Lip Balm Manufacturer',
+    metaTitle: 'Private Label Lip Balm Manufacturer | 500 MOQ — MLM Lip',
+    metaDescription:
+      'Private label lip balm manufacturer from 500 pcs MOQ. Shea & ceramide treatment balms, stick/jar/tin formats, 7-day samples, GMPC/ISO 22716 compliant. Request quote.',
+    intro:
+      'Daily-care and treatment lip balms that anchor your brand in the customer\'s routine — nourishing shea and butter bases, ceramide and peptide actives, in stick, jar, squeeze tube or eco tin formats chosen from our packaging library or custom tooled for your brand.',
+    image: '/products/nas-sync-20.jpg',
+    highlights: [
+      'Everyday nourishing balms and SOS chapped-lip treatments',
+      'Shea, cocoa, murumuru and plant-butter rich bases',
+      'Ceramide, peptide and vitamin treatment actives',
+      'Stick, jar, squeeze tube, eco tin and bamboo-wrapped formats',
+      'Flavour and scent development to brief',
+      'Vegan, clean and eco-positioned formulas available'
+    ],
+    specs: commonSpecs,
+    faqs: [
+      {
+        q: 'What is the minimum order quantity for private label lip balm?',
+        a: '500 pcs per SKU, the same universal minimum across all lip categories we manufacture. Multiple flavours or shades can be combined in one project.'
+      },
+      {
+        q: 'How long do custom lip balm samples take?',
+        a: '7 business days from brief confirmation, with 100% of the sampling fee credited back to your bulk order.'
+      },
+      {
+        q: 'What is the bulk production lead time for custom lip balm?',
+        a: '15–25 business days after sample and artwork approval, plus shipping. Samples are ready in 7 days before that.'
+      },
+      {
+        q: 'Can you make SPF or tinted lip balm?',
+        a: 'Yes. We formulate tinted balms with Pantone-matched shades and can develop SPF variants — regulatory documentation for your target market is prepared alongside production.'
+      },
+      {
+        q: 'What packaging formats are available for private label lip balm?',
+        a: 'Stick (twist-up), jars, squeeze tubes, eco tins and bamboo-wrapped pots — from our in-house packaging library, or custom mold tooling for an exclusive silhouette.'
       }
     ]
   }

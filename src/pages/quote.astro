@@ -70,6 +70,7 @@ import { site } from '../data/site';
                 <option value="Lipstick">Bullet Lipstick</option>
                 <option value="Lip Liner">Lip Liner</option>
                 <option value="Lip Mask">Overnight Lip Mask</option>
+                <option value="Lip Balm">Lip Balm & Treatment Balm</option>
                 <option value="Other">Custom Lip Kit / Collection</option>
               </select>
             </div>
@@ -122,23 +123,40 @@ import { site } from '../data/site';
     <div class="wrap">
       <p class="eyebrow" style="color: var(--gold);">Seamless Engineering SLA</p>
       <h2>From Custom Configuration to Production Batch</h2>
-      <div class="grid three" style="margin-top: 28px;">
-        <div class="card" style="border: 1px solid var(--line); border-radius: 12px; padding: 24px;">
-          <p class="eyebrow" style="margin-bottom: 6px; color: var(--rose);">Step 1 · 24-Hr Feasibility Review</p>
-          <h3>Chemist Analysis</h3>
-          <p style="margin:0; font-size:14px; color:var(--ink-soft);">Our chief cosmetic chemists analyze viscosity requirements, active stability, and market regulatory restrictions.</p>
-        </div>
-        <div class="card" style="border: 1px solid var(--line); border-radius: 12px; padding: 24px;">
-          <p class="eyebrow" style="margin-bottom: 6px; color: var(--rose);">Step 2 · 7-Day Lab Prototype</p>
-          <h3>Physical Benchmarking</h3>
-          <p style="margin:0; font-size:14px; color:var(--ink-soft);">Custom lab sample formulated, shade matched (ΔE &lt; 0.8), filled into components, and priority dispatched. 100% credited to bulk order.</p>
-        </div>
-        <div class="card" style="border: 1px solid var(--line); border-radius: 12px; padding: 24px;">
-          <p class="eyebrow" style="margin-bottom: 6px; color: var(--rose);">Step 3 · Cleanroom Production</p>
-          <h3>18–25 Days to Dispatch</h3>
-          <p style="margin:0; font-size:14px; color:var(--ink-soft);">Mass production in our ISO 22716 cleanroom facility with full EU CPNP / FDA safety dossiers and vacuum leakage testing.</p>
-        </div>
+      <p class="lead" style="max-width: 640px; margin-top: 12px;">
+        Every project runs the same audited timeline: 24-hour feasibility review, 7-day lab prototype, and cleanroom bulk production.
+      </p>
+      <div class="card gold-line" style="margin-top: 28px; padding: 0; overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+          <thead>
+            <tr style="background: var(--blush-soft); border-bottom: 2px solid var(--line);">
+              <th style="padding: 14px 24px; text-align: left; color: var(--plum); font-weight: 700;">Stage</th>
+              <th style="padding: 14px 24px; text-align: left; color: var(--plum); font-weight: 700;">Timeline</th>
+              <th style="padding: 14px 24px; text-align: left; color: var(--plum); font-weight: 700;">What happens</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--line);">
+              <td style="padding: 14px 24px; width: 26%; color: var(--plum); font-weight: 600;">1 · Feasibility review</td>
+              <td style="padding: 14px 24px; width: 20%; color: var(--burgundy); font-weight: 700;">24 hours</td>
+              <td style="padding: 14px 24px; color: var(--ink-soft);">Chief cosmetic chemists analyze viscosity requirements, active stability, and market regulatory restrictions.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--line);">
+              <td style="padding: 14px 24px; color: var(--plum); font-weight: 600;">2 · Lab prototype</td>
+              <td style="padding: 14px 24px; color: var(--burgundy); font-weight: 700;">7 days</td>
+              <td style="padding: 14px 24px; color: var(--ink-soft);">Custom lab sample formulated, shade matched (ΔE &lt; 0.8), filled into components, and priority dispatched. 100% credited to bulk order.</td>
+            </tr>
+            <tr>
+              <td style="padding: 14px 24px; color: var(--plum); font-weight: 600;">3 · Cleanroom bulk production</td>
+              <td style="padding: 14px 24px; color: var(--burgundy); font-weight: 700;">18–25 business days</td>
+              <td style="padding: 14px 24px; color: var(--ink-soft);">Mass production in our ISO 22716 cleanroom facility with full EU CPNP / FDA safety dossiers and vacuum leakage testing.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+      <p class="note" style="margin-top: 14px;">
+        Sampling lead time applies from confirmed brief. Bulk lead time counts from artwork and sample approval, excluding shipping. Custom mold tooling adds 4–8 weeks before sampling.
+      </p>
     </div>
   </section>
 </BaseLayout>
