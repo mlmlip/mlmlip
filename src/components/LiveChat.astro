@@ -6,12 +6,34 @@ import { site } from '../data/site';
 interface Props {
   websiteToken?: string;
   baseUrl?: string;
+  lang?: 'en' | 'fr' | 'es';
 }
 
 const {
   websiteToken = import.meta.env.PUBLIC_CHATWOOT_WEBSITE_TOKEN || "",
-  baseUrl = import.meta.env.PUBLIC_CHATWOOT_BASE_URL || "https://app.chatwoot.com"
+  baseUrl = import.meta.env.PUBLIC_CHATWOOT_BASE_URL || "https://app.chatwoot.com",
+  lang = 'en'
 } = Astro.props;
+
+// i18n 欢迎文案 (风格照 LipConfigurator 字典)
+const i18n = {
+  en: {
+    welcome: 'Welcome to the',
+    desk: 'MLM Lip Technical Formulation Desk',
+    intro: 'Select an automated FAQ topic below for instant specifications (MOQ, 7-day lab sampling, leak prevention, regulatory dossiers), or drop your email to receive direct formulation consulting from our engineering team within 4 business hours.'
+  },
+  fr: {
+    welcome: 'Bienvenue au',
+    desk: 'Bureau Technique de Formulation MLM Lip',
+    intro: 'Sélectionnez une question fréquente ci-dessous pour obtenir instantanément les spécifications (MOQ, échantillonnage laboratoire en 7 jours, prévention des fuites, dossiers réglementaires), ou laissez votre e-mail pour recevoir un conseil en formulation de notre équipe d\'ingénieurs sous 4 heures ouvrées.'
+  },
+  es: {
+    welcome: 'Bienvenido al',
+    desk: 'Escritorio Técnico de Formulación MLM Lip',
+    intro: 'Seleccione un tema de preguntas frecuentes a continuación para obtener especificaciones al instante (MOQ, muestreo de laboratorio en 7 días, prevención de fugas, expedientes regulatorios), o deje su correo para recibir asesoría de formulación directa de nuestro equipo de ingenieros dentro de 4 horas laborables.'
+  }
+};
+const L = i18n[lang];
 ---
 
 <div class="mlm-livechat-widget" id="mlm-livechat-root" data-chatwoot-token={websiteToken} data-chatwoot-base={baseUrl}>
@@ -51,10 +73,10 @@ const {
       <!-- Welcome Message -->
       <div class="chat-bubble specialist-bubble">
         <p>
-          Welcome to the <strong>MLM Lip Technical Formulation Desk</strong>.
+          {L.welcome} <strong>{L.desk}</strong>.
         </p>
         <p>
-          Select an automated FAQ topic below for instant specifications (MOQ, 7-day lab sampling, leak prevention, regulatory dossiers), or drop your email to receive direct formulation consulting from our engineering team within 4 business hours.
+          {L.intro}
         </p>
       </div>
 
