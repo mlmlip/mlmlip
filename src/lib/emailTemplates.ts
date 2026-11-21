@@ -11,7 +11,7 @@ export interface InquiryEmailContext {
   quantity: string;
 }
 
-export const INQUIRY_CONFIRM_FROM = 'onboarding@resend.dev'; // Resend 默认发件人; 老板配自有域名后换 noreply@mlmlip.com
+export const INQUIRY_CONFIRM_FROM = 'MLM Lip <noreply@mlmlip.com>'; // mlmlip.com 已在 Resend 验证通过 (2026-11-22)
 export const INQUIRY_REPLY_TO = ''; // 预留: 老板给 nancy 邮箱后填这里
 
 /** B2B 专业风英文确认邮件 (纯文本, 送达率优先, 不依赖 HTML 渲染)。 */
