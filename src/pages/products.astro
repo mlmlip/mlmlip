@@ -21,12 +21,30 @@ const compare = [
   { format: "Lip Mask", finish: "Balm, overnight repair", pack: "Jar, squeeze tube", best: "Night care, barrier repair", href: "/lip-mask-manufacturer" },
   { format: "Lip Balm", finish: "Shea & ceramide treatment", pack: "Stick, jar, eco tin", best: "Daily care, repeat purchase", href: "/lip-balm-manufacturer" }
 ];
+
+// Schema.org ItemList for catalog page
+const catalogItemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Private Label Lip Cosmetics Catalog",
+  description: "Browse 60+ OEM/ODM private label lip formulas: gloss, mud, oil, lipstick, liner & mask. 500 pcs MOQ.",
+  numberOfItems: pageProducts.length,
+  itemListElement: pageProducts.map((p, index) => ({
+    "@type": "ListItem",
+    position: (currentPage - 1) * PAGE_SIZE + index + 1,
+    url: site.domain + "/products/" + p.slug,
+    name: p.name,
+    image: site.domain + p.heroImage
+  }))
+};
 ---
 
 <BaseLayout
   title="OEM Lip Products | 60+ Formulas, 6 Categories, 500 pcs"
   description="Browse 60+ private label lip formulas: gloss, lip mud, lip oil, lipstick, liner & mask. 500 pcs MOQ, 7-day sampling. Configure your line today."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(catalogItemListSchema)} />
+
   <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 48px; padding-bottom: 56px;">
     <div class="wrap">
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Products" }]} />
