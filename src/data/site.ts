@@ -11,7 +11,7 @@ export const site = {
   tagline: 'Private Label Lip Cosmetics Engineered for High-Growth Beauty Brands',
   manufacturer: 'Beautychain Limited',
   operatingCompany: 'Shenzhen Meilianmei Technology Development Co., Ltd.',
-  moq: '500 pcs',
+  moq: '100 pcs',
   contact: {
     whatsapp: '+86 136 5238 0291',
     whatsappLink: 'https://wa.me/8613652380291',
@@ -40,7 +40,7 @@ export const ui = {
     },
     footer: {
       mfg: 'Manufacturing', touch: 'Get in touch',
-      desc: 'Private label lip cosmetics manufacturing — packaging, formulation and logo customization from 500 pcs per SKU.',
+      desc: 'Private label lip cosmetics manufacturing — packaging, formulation and logo customization from 100 pcs per SKU.',
       categories: [
         { label: 'Lip Gloss Manufacturer', href: '/lip-gloss-manufacturer' },
         { label: 'Lip Mud & Velvet Tint', href: '/lip-mud-manufacturer' },
@@ -73,7 +73,7 @@ export const ui = {
     },
     footer: {
       mfg: 'Fabrication', touch: 'Contact',
-      desc: 'Fabrication de cosmétiques pour les lèvres en marque blanche — personnalisation du packaging, de la formule et du logo dès 500 pcs.',
+      desc: 'Fabrication de cosmétiques pour les lèvres en marque blanche — personnalisation du packaging, de la formule et du logo dès 100 pcs.',
       categories: [
         { label: 'Fabricant Gloss Lèvres', href: '/fr/fabricant-gloss-levres' },
         { label: 'Fabricant Lip Mud', href: '/fr/fabricant-lip-mud' },
@@ -106,7 +106,7 @@ export const ui = {
     },
     footer: {
       mfg: 'Fabricación', touch: 'Contacto',
-      desc: 'Fabricación de cosméticos labiales marca blanca — personalización de envases, fórmulas y logotipos desde 500 uds.',
+      desc: 'Fabrication de cosméticos labiales marca blanca — personalización de envases, fórmulas y logotipos desde 100 uds.',
       categories: [
         { label: 'Fabricante Brillo Labial', href: '/es/fabricante-brillo-labios' },
         { label: 'Fabricante Lip Mud', href: '/es/fabricante-lip-mud' },

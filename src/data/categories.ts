@@ -14,7 +14,7 @@ export interface Category {
 }
 
 const commonSpecs = [
-  { label: 'Minimum order', value: '500 pcs per SKU — same across every lip category' },
+  { label: 'Minimum order', value: '100 pcs per SKU (flexible 100-200 pcs) — lowest barrier across every lip category' },
   { label: 'Sampling', value: '7 days, fee 100% credited to your bulk order' },
   { label: 'Customization', value: 'Packaging · formulation · logo · custom mold tooling' },
   { label: 'Compliance', value: 'GMPC, ISO 22716, EU CPNP support, FDA-ready documentation' },
@@ -26,9 +26,9 @@ export const categories: Category[] = [
     slug: 'lip-gloss-manufacturer',
     name: 'Lip Gloss',
     h1: 'Private Label Lip Gloss Manufacturer',
-    metaTitle: 'Private Label Lip Gloss Manufacturer | 500 MOQ — MLM Lip',
+    metaTitle: 'Private Label Lip Gloss Manufacturer | 100 MOQ — MLM Lip',
     metaDescription:
-      'Private label lip gloss manufacturer from 500 pcs MOQ. Non-sticky plumping & tinted formulas, custom tubes, 7-day samples, FDA compliant. Request quote.',
+      'Private label lip gloss manufacturer from 100 pcs MOQ (flexible 100-200 pcs). Non-sticky plumping & tinted formulas, custom tubes, 7-day samples, FDA compliant. Request quote.',
     intro:
       'High-shine, cushion-feel lip gloss built to your shade card — from crystal clear and sheer reactive tints to multi-dimensional shimmer. Tube, cap and applicator chosen from our packaging library, or tooled exclusively for your brand.',
     image: '/products/lipgloss-26-01.jpg',
@@ -44,7 +44,7 @@ export const categories: Category[] = [
     faqs: [
       {
         q: 'What is the minimum order quantity for private label lip gloss?',
-        a: '500 pcs per SKU, the same minimum across every lip category we manufacture. Different shades or SKUs can be combined in one project.'
+        a: '100 pcs per SKU (flexible 100-200 pcs), the same accessible minimum across every lip category we manufacture. Different shades or SKUs can be combined in one project.'
       },
       {
         q: 'How long does lip gloss sampling take?',
@@ -72,9 +72,9 @@ export const categories: Category[] = [
     slug: 'lip-mud-manufacturer',
     name: 'Lip Mud & Velvet Tint',
     h1: 'Private Label Lip Mud & Velvet Tint Manufacturer',
-    metaTitle: 'Private Label Lip Mud & Velvet Tint Manufacturer | 500 MOQ',
+    metaTitle: 'Private Label Lip Mud & Velvet Tint Manufacturer | 100 MOQ',
     metaDescription:
-      'Wholesale lip mud & airy velvet tint contract manufacturer from 500 pcs MOQ. Transfer-proof matte textures, soft-blur pigments, 7-day samples. Get pricing.',
+      'Wholesale lip mud & airy velvet tint contract manufacturer from 100 pcs MOQ (flexible 100-200 pcs). Transfer-proof matte textures, soft-blur pigments, 7-day samples. Get pricing.',
     intro:
       'Weightless, soft-focus matte colour that blurs the lip line and wears comfortably all day. Lip mud and velvet tints are the format driving social-first beauty brands — we build yours from formula to component.',
     highlights: [
@@ -89,7 +89,7 @@ export const categories: Category[] = [
     faqs: [
       {
         q: 'What is the MOQ for custom lip mud?',
-        a: '500 pcs per SKU. You can launch several shades at 500 pcs each and scale the winners on reorder.'
+        a: '100 pcs per SKU (flexible 100-200 pcs). You can launch several shades starting from 100 pcs each and scale the winners on reorder.'
       },
       {
         q: 'Can you make a transfer-proof lip mud?',
@@ -105,9 +105,9 @@ export const categories: Category[] = [
     slug: 'lip-liner-manufacturer',
     name: 'Lip Liner',
     h1: 'Private Label Lip Liner Manufacturer',
-    metaTitle: 'OEM Cosmetic Lip Liner Pencil Manufacturer | 500 pcs MOQ',
+    metaTitle: 'OEM Cosmetic Lip Liner Pencil Manufacturer | 100 pcs MOQ',
     metaDescription:
-      'Custom waterproof lip liner pencil factory from 500 pcs MOQ. Cedarwood & twist mechanical barrels, smudge-proof formulas, 7-day samples. Inquire today.',
+      'Custom waterproof lip liner pencil factory from 100 pcs MOQ (flexible 100-200 pcs). Cedarwood & twist mechanical barrels, smudge-proof formulas, 7-day samples. Inquire today.',
     intro:
       'Precision lip liners that hold the contour and pair with your colour range. Cedarwood or twist-up mechanical barrels, sharpening format to order, shades matched to your lipsticks and tints.',
     highlights: [
@@ -122,7 +122,7 @@ export const categories: Category[] = [
     faqs: [
       {
         q: 'What is the minimum order for custom lip liners?',
-        a: '500 pcs per SKU, the same as every other lip category we manufacture.'
+        a: '100 pcs per SKU (flexible 100-200 pcs), the same as every other lip category we manufacture.'
       },
       {
         q: 'Wooden or plastic lip liner — which should I choose?',
@@ -138,9 +138,9 @@ export const categories: Category[] = [
     slug: 'lipstick-manufacturer',
     name: 'Lipstick',
     h1: 'Private Label Lipstick Manufacturer',
-    metaTitle: 'Custom Lipstick Manufacturer | Bullet & Case OEM, 500 MOQ',
+    metaTitle: 'Custom Lipstick Manufacturer | Bullet & Case OEM, 100 MOQ',
     metaDescription:
-      'Custom bullet lipstick manufacturing with low 500 pcs MOQ. Velvet matte & satin formulas, luxury magnetic zamac cases, 7-day lab samples. Contact factory.',
+      'Custom bullet lipstick manufacturing with low 100 pcs MOQ (flexible 100-200 pcs). Velvet matte & satin formulas, luxury magnetic zamac cases, 7-day lab samples. Contact factory.',
     intro:
       'A bullet lipstick signals a serious brand. We cast velvet matte, satin and high-shine finishes in heavyweight cases — stock components from our library or bespoke tooling for an unmistakable silhouette.',
     highlights: [
@@ -155,7 +155,7 @@ export const categories: Category[] = [
     faqs: [
       {
         q: 'What is the MOQ for custom lipstick?',
-        a: '500 pcs per SKU — the same universal minimum across all lip products we produce, so you can launch one bullet shade at 500 pcs and scale on reorder.'
+        a: '100 pcs per SKU (flexible 100-200 pcs) — the lowest minimum across all lip products we produce, so you can launch one bullet shade from 100 pcs and scale on reorder.'
       },
       {
         q: 'How long does it take to get custom lipstick samples?',
@@ -179,9 +179,9 @@ export const categories: Category[] = [
     slug: 'lip-oil-manufacturer',
     name: 'Lip Oil',
     h1: 'Private Label Lip Oil Manufacturer',
-    metaTitle: 'Plumping Lip Oil Factory & OEM Manufacturer | 500 pcs MOQ',
+    metaTitle: 'Plumping Lip Oil Factory & OEM Manufacturer | 100 pcs MOQ',
     metaDescription:
-      'Direct peptide & plumping lip oil manufacturing from 500 pcs MOQ. Botanical squalane formulas, cooling ceramic tips, 7-day samples. Get an instant quote.',
+      'Direct peptide & plumping lip oil manufacturing from 100 pcs MOQ (flexible 100-200 pcs). Botanical squalane formulas, cooling ceramic tips, 7-day samples. Get an instant quote.',
     intro:
       'Lip care and colour in one: botanical squalane bases, peptide and ceramide actives, finished with a cushioned, glass-like shine. The format that turns a makeup brand into a routine brand.',
     highlights: [
@@ -196,7 +196,7 @@ export const categories: Category[] = [
     faqs: [
       {
         q: 'What is the MOQ for custom lip oil?',
-        a: '500 pcs per SKU. Launch two or three shades and reorder the winner without holding heavy inventory.'
+        a: '100 pcs per SKU (flexible 100-200 pcs). Launch two or three shades starting from 100 pcs and reorder the winner without holding heavy inventory.'
       },
       {
         q: 'How long do custom lip oil samples take?',
@@ -220,9 +220,9 @@ export const categories: Category[] = [
     slug: 'lip-mask-manufacturer',
     name: 'Lip Mask',
     h1: 'Private Label Lip Mask & Treatment Manufacturer',
-    metaTitle: 'Lip Mask & Butter ODM Manufacturer | 500 MOQ — MLM Lip',
+    metaTitle: 'Lip Mask & Butter ODM Manufacturer | 100 MOQ — MLM Lip',
     metaDescription:
-      'Private label lip mask & repair butter ODM from 500 pcs MOQ. Rich ceramide barrier balms, 7-day custom lab sampling, FDA/CPNP compliant. Request a quote.',
+      'Private label lip mask & repair butter ODM from 100 pcs MOQ (flexible 100-200 pcs). Rich ceramide barrier balms, 7-day custom lab sampling, FDA/CPNP compliant. Request a quote.',
     intro:
       'Overnight and daily-care lip treatments that extend your brand into the customer’s routine. Rich butter and ceramide formulas in jars or soft-touch tubes, scented and positioned to your brief.',
     highlights: [
@@ -237,11 +237,11 @@ export const categories: Category[] = [
     faqs: [
       {
         q: 'What is the minimum order for a private label lip mask?',
-        a: '500 pcs per SKU, identical to our other lip categories.'
+        a: '100 pcs per SKU (flexible 100-200 pcs), identical to our other lip categories.'
       },
       {
         q: 'Can I launch a mask as my second product?',
-        a: 'Yes — many brands launch one hero colour product first, then add a mask or treatment to build routine and repeat purchase. Both run at the same 500 pcs minimum.'
+        a: 'Yes — many brands launch one hero colour product first, then add a mask or treatment to build routine and repeat purchase. Both run at the same 100 pcs minimum.'
       },
       {
         q: 'Do you support claims like 24-hour hydration?',
@@ -253,9 +253,9 @@ export const categories: Category[] = [
     slug: 'lip-balm-manufacturer',
     name: 'Lip Balm',
     h1: 'Private Label Lip Balm Manufacturer',
-    metaTitle: 'Private Label Lip Balm Manufacturer | 500 MOQ — MLM Lip',
+    metaTitle: 'Private Label Lip Balm Manufacturer | 100 MOQ — MLM Lip',
     metaDescription:
-      'Private label lip balm manufacturer from 500 pcs MOQ. Shea & ceramide treatment balms, stick/jar/tin formats, 7-day samples, GMPC/ISO 22716 compliant. Request quote.',
+      'Private label lip balm manufacturer from 100 pcs MOQ (flexible 100-200 pcs). Shea & ceramide treatment balms, stick/jar/tin formats, 7-day samples, GMPC/ISO 22716 compliant. Request quote.',
     intro:
       'Daily-care and treatment lip balms that anchor your brand in the customer\'s routine — nourishing shea and butter bases, ceramide and peptide actives, in stick, jar, squeeze tube or eco tin formats chosen from our packaging library or custom tooled for your brand.',
     image: '/products/nas-sync-20.jpg',
@@ -271,7 +271,7 @@ export const categories: Category[] = [
     faqs: [
       {
         q: 'What is the minimum order quantity for private label lip balm?',
-        a: '500 pcs per SKU, the same universal minimum across all lip categories we manufacture. Multiple flavours or shades can be combined in one project.'
+        a: '100 pcs per SKU (flexible 100-200 pcs), the same accessible minimum across all lip categories we manufacture. Multiple flavours or shades can be combined in one project.'
       },
       {
         q: 'How long do custom lip balm samples take?',

@@ -24,7 +24,7 @@ Audience: B2B buyers in North America and Europe sourcing custom lip gloss, lip 
 
 A paragraph with no number or proper noun in it is a failed paragraph.
 
-*Sampling* — 7 working days from approved brief, 3 days off an existing colour card; pilot MOQ 500 pcs per shade, and that is a filling MOQ, not a packaging MOQ (components usually start at 3,000-5,000 units, so a 500-pc pilot runs in stock packs); sample fee refunded against the order.
+*Sampling* — 7 working days from approved brief, 3 days off an existing colour card; pilot MOQ 100 pcs per shade (flexible 100-200 pcs), and that is a filling MOQ, not a packaging MOQ (custom components usually start at 3,000-5,000 units, so a 100-200 pc pilot runs in stock library packs); sample fee refunded against the order.
 
 *Tolerances* — fill weight +/-3% on a 6 ml gloss, with the declared net content holding at the lower bound; shade match Delta E <= 0.5 under D65 at approval, widening to Delta E <= 1.0 between production batches.
 

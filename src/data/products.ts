@@ -46,14 +46,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-gloss-manufacturer",
     "tag": "Ultra-glassy crystal gloss",
     "headline": "High-refraction glassy shine with micro-hyaluronic spheres & menthol",
-    "description": "Custom B2B manufacturing for Crystal Mirror Plumping Lip Gloss. Featuring Cross-linked HA, Menthol, Squalane with non-sticky mirror. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Crystal Mirror Plumping Lip Gloss. Featuring Cross-linked HA, Menthol, Squalane with non-sticky mirror. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/lipgloss-26-01.jpg",
     "galleryImages": [
       "/products/lipgloss-26-01.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 12,
     "formulaSpecs": {
@@ -69,7 +69,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Crystal Mirror Plumping Lip Gloss Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label crystal mirror plumping lip gloss contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label crystal mirror plumping lip gloss contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LG-02",
@@ -79,14 +79,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-gloss-manufacturer",
     "tag": "Prismatic multi-chrome shine",
     "headline": "Multi-dimensional prismatic pearls in a sheer suspension gel",
-    "description": "Custom B2B manufacturing for Holographic Multi-Chrome Lip Topper. Featuring Synthetic fluorphlogopite, Vitamin E with sparkling duochrome. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Holographic Multi-Chrome Lip Topper. Featuring Synthetic fluorphlogopite, Vitamin E with sparkling duochrome. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/lipgloss-collection-01.jpg",
     "galleryImages": [
       "/products/lipgloss-collection-01.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 10,
     "formulaSpecs": {
@@ -102,7 +102,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Holographic Multi-Chrome Lip Topper Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label holographic multi-chrome lip topper contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label holographic multi-chrome lip topper contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LG-03",
@@ -112,14 +112,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-gloss-manufacturer",
     "tag": "Juicy tinted dewy sheen",
     "headline": "Translucent juicy tint with organic jojoba & camellia seed oil",
-    "description": "Custom B2B manufacturing for Sheer Tinted Nourishing Lip Lacquer. Featuring Jojoba oil, Camellia oil, Rosa canina with sheer juicy tint. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Sheer Tinted Nourishing Lip Lacquer. Featuring Jojoba oil, Camellia oil, Rosa canina with sheer juicy tint. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/lipgloss-nude-01.jpg",
     "galleryImages": [
       "/products/lipgloss-nude-01.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 16,
     "formulaSpecs": {
@@ -135,7 +135,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Sheer Tinted Nourishing Lip Lacquer Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label sheer tinted nourishing lip lacquer contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label sheer tinted nourishing lip lacquer contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LG-04",
@@ -145,14 +145,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-gloss-manufacturer",
     "tag": "Weightless cushion glaze",
     "headline": "Polymer barrier matrix delivering zero tackiness and all-day comfort",
-    "description": "Custom B2B manufacturing for Glass-Shine Non-Sticky Lip Glaze. Featuring Hydrogenated polyisobutene, Shea butter with zero-tack glass finish. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Glass-Shine Non-Sticky Lip Glaze. Featuring Hydrogenated polyisobutene, Shea butter with zero-tack glass finish. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/lipgloss-slim-01.jpg",
     "galleryImages": [
       "/products/lipgloss-slim-01.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 14,
     "formulaSpecs": {
@@ -168,7 +168,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Glass-Shine Non-Sticky Lip Glaze Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label glass-shine non-sticky lip glaze contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label glass-shine non-sticky lip glaze contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LG-05",
@@ -178,14 +178,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-gloss-manufacturer",
     "tag": "Color-shifting optical sheen",
     "headline": "Color-shifting optical pigments engineered for editorial impact",
-    "description": "Custom B2B manufacturing for Duochrome Pearl Liquid Lip Gloss. Featuring Interference mica, Meadowfoam seed oil with duochrome pearl. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Duochrome Pearl Liquid Lip Gloss. Featuring Interference mica, Meadowfoam seed oil with duochrome pearl. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/lipgloss-shades.jpg",
     "galleryImages": [
       "/products/lipgloss-shades.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 8,
     "formulaSpecs": {
@@ -201,7 +201,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Duochrome Pearl Liquid Lip Gloss Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label duochrome pearl liquid lip gloss contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label duochrome pearl liquid lip gloss contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LG-06",
@@ -211,14 +211,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-gloss-manufacturer",
     "tag": "Lip-smoothing plumper",
     "headline": "Marine peptide & soluble collagen matrix to smooth vertical lip lines",
-    "description": "Custom B2B manufacturing for Collagen-Infused Volumizing Lip Gloss. Featuring Marine collagen, Palmitoyl tripeptide-38 with plump cushion sheen. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Collagen-Infused Volumizing Lip Gloss. Featuring Marine collagen, Palmitoyl tripeptide-38 with plump cushion sheen. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/lipgloss-39-01.jpg",
     "galleryImages": [
       "/products/lipgloss-39-01.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 12,
     "formulaSpecs": {
@@ -234,7 +234,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Collagen-Infused Volumizing Lip Gloss Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label collagen-infused volumizing lip gloss contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label collagen-infused volumizing lip gloss contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LG-07",
@@ -244,14 +244,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-gloss-manufacturer",
     "tag": "Molten liquid metal gloss",
     "headline": "Molten liquid metal foil suspension for stage & party collections",
-    "description": "Custom B2B manufacturing for Metallic Foil High-Impact Lip Gloss. Featuring Aluminum borosilicate, Argan oil with high-voltage metallic foil. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Metallic Foil High-Impact Lip Gloss. Featuring Aluminum borosilicate, Argan oil with high-voltage metallic foil. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/lipgloss-26-03.jpg",
     "galleryImages": [
       "/products/lipgloss-26-03.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 8,
     "formulaSpecs": {
@@ -267,7 +267,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Metallic Foil High-Impact Lip Gloss Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label metallic foil high-impact lip gloss contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label metallic foil high-impact lip gloss contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LG-08",
@@ -277,14 +277,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-gloss-manufacturer",
     "tag": "Water-break staining gloss",
     "headline": "Water-break technology that deposits an indelible stain beneath gloss",
-    "description": "Custom B2B manufacturing for Jelly Tint Long-Wear Staining Gloss. Featuring Water-dispersed pigment, Hyaluronic acid with dewy stain finish. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Jelly Tint Long-Wear Staining Gloss. Featuring Water-dispersed pigment, Hyaluronic acid with dewy stain finish. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/lipgloss-39-02.jpg",
     "galleryImages": [
       "/products/lipgloss-39-02.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 10,
     "formulaSpecs": {
@@ -300,7 +300,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Jelly Tint Long-Wear Staining Gloss Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label jelly tint long-wear staining gloss contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label jelly tint long-wear staining gloss contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LG-09",
@@ -310,14 +310,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-gloss-manufacturer",
     "tag": "Skin-repair botanical gloss",
     "headline": "Herbal lipid complex with bisabolol & sunflower seed wax",
-    "description": "Custom B2B manufacturing for Botanical Calming Lip Nectar Gloss. Featuring Bisabolol, Sunflower wax, Vitamin C ester with conditioning soft gloss. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Botanical Calming Lip Nectar Gloss. Featuring Bisabolol, Sunflower wax, Vitamin C ester with conditioning soft gloss. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/lipgloss-39-03.jpg",
     "galleryImages": [
       "/products/lipgloss-39-03.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 6,
     "formulaSpecs": {
@@ -333,7 +333,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Botanical Calming Lip Nectar Gloss Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label botanical calming lip nectar gloss contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label botanical calming lip nectar gloss contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LG-10",
@@ -343,14 +343,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-gloss-manufacturer",
     "tag": "Custom personalized pink bloom",
     "headline": "Thermo-reactive dyes adapting to individual lip chemistry within 60s",
-    "description": "Custom B2B manufacturing for pH Color-Changing Glow Lip Gloss. Featuring Red 27 (CI 45410), Squalane, Tocopherol with ph-reactive crystal glow. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for pH Color-Changing Glow Lip Gloss. Featuring Red 27 (CI 45410), Squalane, Tocopherol with ph-reactive crystal glow. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/lipgloss-slim-06.jpg",
     "galleryImages": [
       "/products/lipgloss-slim-06.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 4,
     "formulaSpecs": {
@@ -366,7 +366,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "pH Color-Changing Glow Lip Gloss Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label ph color-changing glow lip gloss contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label ph color-changing glow lip gloss contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LM-01",
@@ -376,14 +376,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mud-manufacturer",
     "tag": "Micro-blur velvet mud",
     "headline": "Whipped micro-silicone powder clay delivering instant blurred soft-focus",
-    "description": "Custom B2B manufacturing for Airy Velvet Matte Lip Mud. Featuring Dimethicone crosspolymer, Silica microspheres with soft-focus powdery matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Airy Velvet Matte Lip Mud. Featuring Dimethicone crosspolymer, Silica microspheres with soft-focus powdery matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-39-1.jpg",
     "galleryImages": [
       "/products/nas-sync-39-1.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 24,
     "formulaSpecs": {
@@ -399,7 +399,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Airy Velvet Matte Lip Mud Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label airy velvet matte lip mud contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label airy velvet matte lip mud contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LM-02",
@@ -409,14 +409,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mud-manufacturer",
     "tag": "Cloud-feel pore-blurring clay",
     "headline": "Ultra-featherweight marshmallow cloud texture that blurs deep lip creases",
-    "description": "Custom B2B manufacturing for Cloud Mousse Blurring Lip Clay. Featuring Polymethylsilsesquioxane, Macadamia oil with diffused cloud matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Cloud Mousse Blurring Lip Clay. Featuring Polymethylsilsesquioxane, Macadamia oil with diffused cloud matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-39-2.jpg",
     "galleryImages": [
       "/products/nas-sync-39-2.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 18,
     "formulaSpecs": {
@@ -432,7 +432,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Cloud Mousse Blurring Lip Clay Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label cloud mousse blurring lip clay contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label cloud mousse blurring lip clay contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LM-03",
@@ -442,14 +442,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mud-manufacturer",
     "tag": "Mask-proof velvet mud",
     "headline": "Quick-setting volatile elastomer matrix ensuring minimal mask transfer",
-    "description": "Custom B2B manufacturing for Silky Marshmallow Transfer-Proof Lip Mud. Featuring Isododecane, Trimethylsiloxysilicate with transfer-resistant matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Silky Marshmallow Transfer-Proof Lip Mud. Featuring Isododecane, Trimethylsiloxysilicate with transfer-resistant matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-39-3.jpg",
     "galleryImages": [
       "/products/nas-sync-39-3.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 16,
     "formulaSpecs": {
@@ -465,7 +465,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Silky Marshmallow Transfer-Proof Lip Mud Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label silky marshmallow transfer-proof lip mud contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label silky marshmallow transfer-proof lip mud contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LM-04",
@@ -475,14 +475,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mud-manufacturer",
     "tag": "Hybrid 2-in-1 lip & cheek clay",
     "headline": "Blendable multi-use paste melting effortlessly into lips and cheekbones",
-    "description": "Custom B2B manufacturing for Dual-Use Lip & Cheek Soft Velvet Clay. Featuring Caprylic/Capric triglyceride, Kaolin clay with natural matte flush. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Dual-Use Lip & Cheek Soft Velvet Clay. Featuring Caprylic/Capric triglyceride, Kaolin clay with natural matte flush. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-39-4.jpg",
     "galleryImages": [
       "/products/nas-sync-39-4.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 14,
     "formulaSpecs": {
@@ -498,7 +498,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Dual-Use Lip & Cheek Soft Velvet Clay Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label dual-use lip & cheek soft velvet clay contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label dual-use lip & cheek soft velvet clay contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LM-05",
@@ -508,14 +508,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mud-manufacturer",
     "tag": "Single-swipe opaque saturation",
     "headline": "High-density mineral lake pigments for single-swipe opaque coverage",
-    "description": "Custom B2B manufacturing for Deep Pigment Vintage Matte Lip Mud. Featuring Cosmetic lake dispersions, Jojoba ester with vintage flat matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Deep Pigment Vintage Matte Lip Mud. Featuring Cosmetic lake dispersions, Jojoba ester with vintage flat matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-39-5.jpg",
     "galleryImages": [
       "/products/nas-sync-39-5.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 20,
     "formulaSpecs": {
@@ -531,7 +531,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Deep Pigment Vintage Matte Lip Mud Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label deep pigment vintage matte lip mud contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label deep pigment vintage matte lip mud contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LM-06",
@@ -541,14 +541,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mud-manufacturer",
     "tag": "Hydrated non-drying matte",
     "headline": "Moisturizing ceramide complex encapsulated inside matte elastomer powder",
-    "description": "Custom B2B manufacturing for Whipped Soufflé Hydration Lip Mud. Featuring Ceramide NP, Sodium hyaluronate, Vitamin E with comfort moisture-matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Whipped Soufflé Hydration Lip Mud. Featuring Ceramide NP, Sodium hyaluronate, Vitamin E with comfort moisture-matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-39-7.jpg",
     "galleryImages": [
       "/products/nas-sync-39-7.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 12,
     "formulaSpecs": {
@@ -564,7 +564,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Whipped Soufflé Hydration Lip Mud Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label whipped soufflé hydration lip mud contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label whipped soufflé hydration lip mud contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LM-07",
@@ -574,14 +574,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mud-manufacturer",
     "tag": "Weightless invisible feel",
     "headline": "Zero-weight sensation that feels like wearing nothing on the lips",
-    "description": "Custom B2B manufacturing for Ultra-Light Featherweight Lip Paste. Featuring Dimethicone/Vinyl crosspolymer with bespoke sheer velvet. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Ultra-Light Featherweight Lip Paste. Featuring Dimethicone/Vinyl crosspolymer with bespoke sheer velvet. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-39.jpg",
     "galleryImages": [
       "/products/nas-sync-39.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 15,
     "formulaSpecs": {
@@ -597,7 +597,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Ultra-Light Featherweight Lip Paste Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label ultra-light featherweight lip paste contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label ultra-light featherweight lip paste contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LM-08",
@@ -607,14 +607,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mud-manufacturer",
     "tag": "Cashmere drape & softness",
     "headline": "Luxury grade sensory emollients creating rich cashmere-smooth glide",
-    "description": "Custom B2B manufacturing for Cashmere-Touch Creamy Lip Mud. Featuring Astrocaryum murumuru butter, Peptides with luxury demi-matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Cashmere-Touch Creamy Lip Mud. Featuring Astrocaryum murumuru butter, Peptides with luxury demi-matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-2.jpg",
     "galleryImages": [
       "/products/nas-sync-2.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 16,
     "formulaSpecs": {
@@ -630,7 +630,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Cashmere-Touch Creamy Lip Mud Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label cashmere-touch creamy lip mud contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label cashmere-touch creamy lip mud contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LM-09",
@@ -640,14 +640,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mud-manufacturer",
     "tag": "Antioxidant skin-care matte",
     "headline": "Infused with Camellia sinensis extract to defend against daily oxidants",
-    "description": "Custom B2B manufacturing for Green Tea Polyphenol Matte Lip Mud. Featuring Green tea EGCG, Squalane, Mica with earthy soft matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Green Tea Polyphenol Matte Lip Mud. Featuring Green tea EGCG, Squalane, Mica with earthy soft matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-1.jpg",
     "galleryImages": [
       "/products/nas-sync-1.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 10,
     "formulaSpecs": {
@@ -663,7 +663,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Green Tea Polyphenol Matte Lip Mud Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label green tea polyphenol matte lip mud contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label green tea polyphenol matte lip mud contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LM-10",
@@ -673,14 +673,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mud-manufacturer",
     "tag": "10-hour flexible wear mud",
     "headline": "Film-former fortified velvet mud tested for 10-hour non-flaking wear",
-    "description": "Custom B2B manufacturing for Long-Wear Smooth Gliding Matte Mud. Featuring Acrylates copolymer, Castor seed oil with flexible non-cracking matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Long-Wear Smooth Gliding Matte Mud. Featuring Acrylates copolymer, Castor seed oil with flexible non-cracking matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-h5957d2fb5d5a4ed4a207672f1f9d904cd.jpg",
     "galleryImages": [
       "/products/nas-sync-h5957d2fb5d5a4ed4a207672f1f9d904cd.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 18,
     "formulaSpecs": {
@@ -696,7 +696,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Long-Wear Smooth Gliding Matte Mud Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label long-wear smooth gliding matte mud contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label long-wear smooth gliding matte mud contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LL-01",
@@ -706,14 +706,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-liner-manufacturer",
     "tag": "Precision waterproof contour",
     "headline": "Retractable 2mm micro-gel core with instant waterproof setting power",
-    "description": "Custom B2B manufacturing for Waterproof Gel Twist Mechanical Lip Liner. Featuring Synthetic wax, Isododecane, Microcrystalline wax with matte waterproof film. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Waterproof Gel Twist Mechanical Lip Liner. Featuring Synthetic wax, Isododecane, Microcrystalline wax with matte waterproof film. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-01-1.jpg",
     "galleryImages": [
       "/products/auto-01-1.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 20,
     "formulaSpecs": {
@@ -729,7 +729,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Waterproof Gel Twist Mechanical Lip Liner Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label waterproof gel twist mechanical lip liner contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label waterproof gel twist mechanical lip liner contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LL-02",
@@ -739,14 +739,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-liner-manufacturer",
     "tag": "Artisan ultra-sharp definition",
     "headline": "Sustainable Californian cedarwood barrel offering ultra-sharp line fidelity",
-    "description": "Custom B2B manufacturing for Traditional Cedarwood Precision Lip Pencil. Featuring Hydrogenated palm kernel glycerides, Carnauba with classic velvet matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Traditional Cedarwood Precision Lip Pencil. Featuring Hydrogenated palm kernel glycerides, Carnauba with classic velvet matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-01-2.jpg",
     "galleryImages": [
       "/products/auto-01-2.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 28,
     "formulaSpecs": {
@@ -762,7 +762,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Traditional Cedarwood Precision Lip Pencil Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label traditional cedarwood precision lip pencil contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label traditional cedarwood precision lip pencil contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LL-03",
@@ -772,14 +772,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-liner-manufacturer",
     "tag": "Micro-contour lip definition",
     "headline": "Ultra-slim lead engineered for micro-filling and realistic lip enhancement",
-    "description": "Custom B2B manufacturing for 1.5mm Micro-Sculpting Lip Contour Liner. Featuring Cyclopentasiloxane, Trimethylsiloxysilicate with transfer-resistant matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for 1.5mm Micro-Sculpting Lip Contour Liner. Featuring Cyclopentasiloxane, Trimethylsiloxysilicate with transfer-resistant matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-01-3.jpg",
     "galleryImages": [
       "/products/auto-01-3.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 14,
     "formulaSpecs": {
@@ -795,7 +795,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "1.5mm Micro-Sculpting Lip Contour Liner Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label 1.5mm micro-sculpting lip contour liner contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label 1.5mm micro-sculpting lip contour liner contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LL-04",
@@ -805,14 +805,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-liner-manufacturer",
     "tag": "3D plumping boundary definer",
     "headline": "Infused with ginger root resin & menthyl lactate for subtle edge contour",
-    "description": "Custom B2B manufacturing for 3D Contouring Plumping Lip Shaper. Featuring Zingiber officinale extract, Menthol with velvety contour matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for 3D Contouring Plumping Lip Shaper. Featuring Zingiber officinale extract, Menthol with velvety contour matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-01-4.jpg",
     "galleryImages": [
       "/products/auto-01-4.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 12,
     "formulaSpecs": {
@@ -828,7 +828,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "3D Contouring Plumping Lip Shaper Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label 3d contouring plumping lip shaper contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label 3d contouring plumping lip shaper contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LL-05",
@@ -838,14 +838,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-liner-manufacturer",
     "tag": "24H high-endurance barrier",
     "headline": "Tested resistant to sweat, sebum, and beverage transfer across 24 hours",
-    "description": "Custom B2B manufacturing for 24H Smudge-Proof Lock Lip Pencil. Featuring Dimethicone, Polyethylene, Ceresin with indelible matte barrier. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for 24H Smudge-Proof Lock Lip Pencil. Featuring Dimethicone, Polyethylene, Ceresin with indelible matte barrier. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-01-5.jpg",
     "galleryImages": [
       "/products/auto-01-5.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 16,
     "formulaSpecs": {
@@ -861,7 +861,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "24H Smudge-Proof Lock Lip Pencil Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label 24h smudge-proof lock lip pencil contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label 24h smudge-proof lock lip pencil contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LL-06",
@@ -871,14 +871,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-liner-manufacturer",
     "tag": "Pro-artist ombre blending",
     "headline": "Precision liner on one end and synthetic micro-blending brush on the other",
-    "description": "Custom B2B manufacturing for Dual-Ended Lip Liner with Kabuki Brush. Featuring Meadowfoam seed oil, Candelilla wax with seamless gradient matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Dual-Ended Lip Liner with Kabuki Brush. Featuring Meadowfoam seed oil, Candelilla wax with seamless gradient matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-02-1.jpg",
     "galleryImages": [
       "/products/auto-02-1.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 18,
     "formulaSpecs": {
@@ -894,7 +894,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Dual-Ended Lip Liner with Kabuki Brush Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label dual-ended lip liner with kabuki brush contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label dual-ended lip liner with kabuki brush contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LL-07",
@@ -904,14 +904,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-liner-manufacturer",
     "tag": "Clean beauty certified contour",
     "headline": "100% beeswax-free clean formula utilizing sunflower and rice bran wax",
-    "description": "Custom B2B manufacturing for Clean Vegan Plant-Wax Nourishing Liner. Featuring Oryza sativa bran wax, Sunflower wax, Shea with comfortable satin matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Clean Vegan Plant-Wax Nourishing Liner. Featuring Oryza sativa bran wax, Sunflower wax, Shea with comfortable satin matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-02-2.jpg",
     "galleryImages": [
       "/products/auto-02-2.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 15,
     "formulaSpecs": {
@@ -927,7 +927,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Clean Vegan Plant-Wax Nourishing Liner Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label clean vegan plant-wax nourishing liner contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label clean vegan plant-wax nourishing liner contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LL-08",
@@ -937,14 +937,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-liner-manufacturer",
     "tag": "Hyperpigmentation lip corrector",
     "headline": "Formulated to neutralize uneven lip hyperpigmentation prior to color application",
-    "description": "Custom B2B manufacturing for Nude Base Correcting & Neutralizing Definer. Featuring Titanium dioxide, Zinc oxide, Squalane with color-neutralizing matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Nude Base Correcting & Neutralizing Definer. Featuring Titanium dioxide, Zinc oxide, Squalane with color-neutralizing matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-02-3.jpg",
     "galleryImages": [
       "/products/auto-02-3.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 8,
     "formulaSpecs": {
@@ -960,7 +960,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Nude Base Correcting & Neutralizing Definer Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label nude base correcting & neutralizing definer contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label nude base correcting & neutralizing definer contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LL-09",
@@ -970,14 +970,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-liner-manufacturer",
     "tag": "Skip-free buttery glide",
     "headline": "Effortless skip-free glide that never tugs or pulls fragile lip skin",
-    "description": "Custom B2B manufacturing for Creamy-Glide High-Pigment Lip Contour. Featuring Cocoa seed butter, Tocopheryl acetate with rich satin-matte finish. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Creamy-Glide High-Pigment Lip Contour. Featuring Cocoa seed butter, Tocopheryl acetate with rich satin-matte finish. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-03-1.jpg",
     "galleryImages": [
       "/products/auto-03-1.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 22,
     "formulaSpecs": {
@@ -993,7 +993,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Creamy-Glide High-Pigment Lip Contour Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label creamy-glide high-pigment lip contour contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label creamy-glide high-pigment lip contour contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LL-10",
@@ -1003,14 +1003,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-liner-manufacturer",
     "tag": "Universal anti-feathering barrier",
     "headline": "Transparent silica-wax core preventing bleeding and feathering of rich glosses",
-    "description": "Custom B2B manufacturing for Invisible Anti-Feathering Lip Barrier Pencil. Featuring Silica, Ozokerite, Dimethicone with invisible lock barrier. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Invisible Anti-Feathering Lip Barrier Pencil. Featuring Silica, Ozokerite, Dimethicone with invisible lock barrier. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-03-2.jpg",
     "galleryImages": [
       "/products/auto-03-2.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 1,
     "formulaSpecs": {
@@ -1026,7 +1026,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Invisible Anti-Feathering Lip Barrier Pencil Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label invisible anti-feathering lip barrier pencil contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label invisible anti-feathering lip barrier pencil contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LS-01",
@@ -1036,14 +1036,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lipstick-manufacturer",
     "tag": "Iconic luxury satin lipstick",
     "headline": "Timeless luxury satin formula offering rich payoff and deep conditioning",
-    "description": "Custom B2B manufacturing for Classic Satin Moisturizing Bullet Lipstick. Featuring Castor seed oil, Candelilla wax, Vitamin E with luminous satin sheen. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Classic Satin Moisturizing Bullet Lipstick. Featuring Castor seed oil, Candelilla wax, Vitamin E with luminous satin sheen. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-04-1.jpg",
     "galleryImages": [
       "/products/auto-04-1.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 36,
     "formulaSpecs": {
@@ -1059,7 +1059,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Classic Satin Moisturizing Bullet Lipstick Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label classic satin moisturizing bullet lipstick contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label classic satin moisturizing bullet lipstick contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LS-02",
@@ -1069,14 +1069,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lipstick-manufacturer",
     "tag": "Powder-cloud modern matte",
     "headline": "Airbrushed powdery matte lipstick delivering intense color with zero drag",
-    "description": "Custom B2B manufacturing for Ultra-Matte Weightless Powder Lipstick. Featuring Polymethylsilsesquioxane, Shea butter with airbrushed soft matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Ultra-Matte Weightless Powder Lipstick. Featuring Polymethylsilsesquioxane, Shea butter with airbrushed soft matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-04-2.jpg",
     "galleryImages": [
       "/products/auto-04-2.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 24,
     "formulaSpecs": {
@@ -1092,7 +1092,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Ultra-Matte Weightless Powder Lipstick Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label ultra-matte weightless powder lipstick contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label ultra-matte weightless powder lipstick contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LS-03",
@@ -1102,14 +1102,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lipstick-manufacturer",
     "tag": "Prestige magnetic click lipstick",
     "headline": "Prestige 350g magnetic snap closure with opulent rich emollient formulation",
-    "description": "Custom B2B manufacturing for Magnetic Luxury Creamy Lip Bullet. Featuring Murumuru butter, Camellia japonica oil with rich luminous cream. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Magnetic Luxury Creamy Lip Bullet. Featuring Murumuru butter, Camellia japonica oil with rich luminous cream. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-04-3.jpg",
     "galleryImages": [
       "/products/auto-04-3.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 20,
     "formulaSpecs": {
@@ -1125,7 +1125,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Magnetic Luxury Creamy Lip Bullet Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label magnetic luxury creamy lip bullet contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label magnetic luxury creamy lip bullet contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LS-04",
@@ -1135,14 +1135,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lipstick-manufacturer",
     "tag": "Melting butter shine lipstick",
     "headline": "Melt-on-contact glossy balm bullet that turns into a reflective oil veil",
-    "description": "Custom B2B manufacturing for Sheer Shine Butter Balm Lipstick. Featuring Mango seed butter, Polybutene, Phytosteryl with high-gloss reflective glaze. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Sheer Shine Butter Balm Lipstick. Featuring Mango seed butter, Polybutene, Phytosteryl with high-gloss reflective glaze. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-05-1.jpg",
     "galleryImages": [
       "/products/auto-05-1.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 16,
     "formulaSpecs": {
@@ -1158,7 +1158,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Sheer Shine Butter Balm Lipstick Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label sheer shine butter balm lipstick contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label sheer shine butter balm lipstick contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LS-05",
@@ -1168,14 +1168,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lipstick-manufacturer",
     "tag": "All-day smudge-free lipstick",
     "headline": "Dual-phase lipstick locking pigment molecules securely against lip tissue",
-    "description": "Custom B2B manufacturing for Long-Lasting Transfer-Resistant Lipstick. Featuring Silicone resin, Carnauba wax, Silica with transfer-resistant semi-matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Long-Lasting Transfer-Resistant Lipstick. Featuring Silicone resin, Carnauba wax, Silica with transfer-resistant semi-matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-05-2.jpg",
     "galleryImages": [
       "/products/auto-05-2.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 18,
     "formulaSpecs": {
@@ -1191,7 +1191,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Long-Lasting Transfer-Resistant Lipstick Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label long-lasting transfer-resistant lipstick contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label long-lasting transfer-resistant lipstick contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LS-06",
@@ -1201,14 +1201,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lipstick-manufacturer",
     "tag": "Anti-wrinkle peptide lipstick",
     "headline": "Encapsulated Matrixyl 3000 & hyaluronic spheres to visibly restore lip density",
-    "description": "Custom B2B manufacturing for Anti-Aging Peptide Firming Lipstick. Featuring Palmitoyl tripeptide-1, Sodium hyaluronate with plumping dewy satin. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Anti-Aging Peptide Firming Lipstick. Featuring Palmitoyl tripeptide-1, Sodium hyaluronate with plumping dewy satin. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-05-3.jpg",
     "galleryImages": [
       "/products/auto-05-3.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 16,
     "formulaSpecs": {
@@ -1224,7 +1224,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Anti-Aging Peptide Firming Lipstick Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label anti-aging peptide firming lipstick contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label anti-aging peptide firming lipstick contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LS-07",
@@ -1234,14 +1234,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lipstick-manufacturer",
     "tag": "All-day comfort velvet",
     "headline": "Balance between hydration and soft-focus texture for comfortable day-to-night wear",
-    "description": "Custom B2B manufacturing for Semi-Matte Velvet Cushion Lipstick. Featuring Jojoba esters, Hydrogenated polycyclopentadiene with velvety demi-matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Semi-Matte Velvet Cushion Lipstick. Featuring Jojoba esters, Hydrogenated polycyclopentadiene with velvety demi-matte. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-06-1.jpg",
     "galleryImages": [
       "/products/auto-06-1.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 22,
     "formulaSpecs": {
@@ -1257,7 +1257,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Semi-Matte Velvet Cushion Lipstick Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label semi-matte velvet cushion lipstick contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label semi-matte velvet cushion lipstick contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LS-08",
@@ -1267,14 +1267,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lipstick-manufacturer",
     "tag": "Jeweled glitter-core lipstick",
     "headline": "Surface coated with micro-fine diamond glitter spray for dazzling retail presentation",
-    "description": "Custom B2B manufacturing for Shimmer Foil Metallic Party Lipstick. Featuring Calcium sodium borosilicate, Squalane with multidimensional diamond sparkle. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Shimmer Foil Metallic Party Lipstick. Featuring Calcium sodium borosilicate, Squalane with multidimensional diamond sparkle. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/auto-06-2.jpg",
     "galleryImages": [
       "/products/auto-06-2.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 12,
     "formulaSpecs": {
@@ -1290,7 +1290,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Shimmer Foil Metallic Party Lipstick Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label shimmer foil metallic party lipstick contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label shimmer foil metallic party lipstick contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LS-09",
@@ -1300,14 +1300,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lipstick-manufacturer",
     "tag": "Clean beauty sensitive lipstick",
     "headline": "EWG-compliant, fragrance-free formula created exclusively with purified mineral oxides",
-    "description": "Custom B2B manufacturing for Clean Mineral Pigment Sensitive Lip Lipstick. Featuring Zinc oxide, Iron oxides, Organic jojoba with healthy nourishing cream. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Clean Mineral Pigment Sensitive Lip Lipstick. Featuring Zinc oxide, Iron oxides, Organic jojoba with healthy nourishing cream. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-img-0266.jpg",
     "galleryImages": [
       "/products/nas-sync-img-0266.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 14,
     "formulaSpecs": {
@@ -1323,7 +1323,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Clean Mineral Pigment Sensitive Lip Lipstick Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label clean mineral pigment sensitive lip lipstick contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label clean mineral pigment sensitive lip lipstick contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LS-10",
@@ -1333,14 +1333,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lipstick-manufacturer",
     "tag": "Sustainable refillable luxury",
     "headline": "Removable inner cartridge system reducing secondary packaging waste by 65%",
-    "description": "Custom B2B manufacturing for Refillable Eco-Luxury Aluminum Lipstick. Featuring Botanical waxes, Tripeptide-38, Vitamin E with prestige satin or matte finish. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Refillable Eco-Luxury Aluminum Lipstick. Featuring Botanical waxes, Tripeptide-38, Vitamin E with prestige satin or matte finish. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-img-0293.jpg",
     "galleryImages": [
       "/products/nas-sync-img-0293.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 24,
     "formulaSpecs": {
@@ -1356,7 +1356,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Refillable Eco-Luxury Aluminum Lipstick Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label refillable eco-luxury aluminum lipstick contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label refillable eco-luxury aluminum lipstick contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LO-01",
@@ -1366,14 +1366,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-oil-manufacturer",
     "tag": "Pure botanical golden elixir",
     "headline": "Golden cold-pressed lipid blend: jojoba, rosehip, avocado, argan, marula, almond, camellia",
-    "description": "Custom B2B manufacturing for 7-Botanical Pure Nourishing Lip Oil. Featuring Rosehip oil, Jojoba oil, Marula oil with mirror-finish nourishing veil. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for 7-Botanical Pure Nourishing Lip Oil. Featuring Rosehip oil, Jojoba oil, Marula oil with mirror-finish nourishing veil. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-3780.jpg",
     "galleryImages": [
       "/products/nas-sync-3780.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 8,
     "formulaSpecs": {
@@ -1389,7 +1389,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "7-Botanical Pure Nourishing Lip Oil Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label 7-botanical pure nourishing lip oil contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label 7-botanical pure nourishing lip oil contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LO-02",
@@ -1399,14 +1399,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-oil-manufacturer",
     "tag": "Intuitive personalized tint oil",
     "headline": "Micro-encapsulated red pigments that react to skin warmth for an organic flush",
-    "description": "Custom B2B manufacturing for pH-Smart Color-Reviving Glow Lip Oil. Featuring CI 45410, Meadowfoam seed oil, Tocopherol with luminous bespoke pink glow. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for pH-Smart Color-Reviving Glow Lip Oil. Featuring CI 45410, Meadowfoam seed oil, Tocopherol with luminous bespoke pink glow. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-3781.jpg",
     "galleryImages": [
       "/products/nas-sync-3781.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 5,
     "formulaSpecs": {
@@ -1422,7 +1422,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "pH-Smart Color-Reviving Glow Lip Oil Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label ph-smart color-reviving glow lip oil contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label ph-smart color-reviving glow lip oil contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LO-03",
@@ -1432,14 +1432,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-oil-manufacturer",
     "tag": "Multi-depth cellular hydration oil",
     "headline": "5 molecular weights of hyaluronic acid delivering multi-depth cellular hydration",
-    "description": "Custom B2B manufacturing for 5D Hyaluronic Acid Plumping Lip Nectar. Featuring 5D Hyaluronic complex, Squalane with ultra-plump water shine. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for 5D Hyaluronic Acid Plumping Lip Nectar. Featuring 5D Hyaluronic complex, Squalane with ultra-plump water shine. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-3782.jpg",
     "galleryImages": [
       "/products/nas-sync-3782.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 10,
     "formulaSpecs": {
@@ -1455,7 +1455,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "5D Hyaluronic Acid Plumping Lip Nectar Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label 5d hyaluronic acid plumping lip nectar contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label 5d hyaluronic acid plumping lip nectar contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LO-04",
@@ -1465,14 +1465,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-oil-manufacturer",
     "tag": "Lipid barrier recovery oil",
     "headline": "Lipid-replenishing formula targeting chronically dry, peeling and chapped lips",
-    "description": "Custom B2B manufacturing for Rosehip & Squalane Barrier Repair Lip Oil. Featuring Organic Rosa canina, Olive squalane with soothing restorative cushion. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Rosehip & Squalane Barrier Repair Lip Oil. Featuring Organic Rosa canina, Olive squalane with soothing restorative cushion. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-3788.jpg",
     "galleryImages": [
       "/products/nas-sync-3788.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 6,
     "formulaSpecs": {
@@ -1488,7 +1488,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Rosehip & Squalane Barrier Repair Lip Oil Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label rosehip & squalane barrier repair lip oil contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label rosehip & squalane barrier repair lip oil contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LO-05",
@@ -1498,14 +1498,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-oil-manufacturer",
     "tag": "Medicinal honey treatment oil",
     "headline": "Pharmaceutical grade Manuka honey MGO 400+ paired with biomimetic copper peptides",
-    "description": "Custom B2B manufacturing for Manuka Honey & Peptide Lip Serum Oil. Featuring Manuka honey extract, Copper tripeptide-1 with glossy restorative barrier. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Manuka Honey & Peptide Lip Serum Oil. Featuring Manuka honey extract, Copper tripeptide-1 with glossy restorative barrier. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-3789.jpg",
     "galleryImages": [
       "/products/nas-sync-3789.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 4,
     "formulaSpecs": {
@@ -1521,7 +1521,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Manuka Honey & Peptide Lip Serum Oil Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label manuka honey & peptide lip serum oil contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label manuka honey & peptide lip serum oil contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LO-06",
@@ -1531,14 +1531,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-oil-manufacturer",
     "tag": "Zero-stick glass glaze oil",
     "headline": "High molecular weight polymer creating wet-look shine with completely dry, non-tacky touch",
-    "description": "Custom B2B manufacturing for Non-Sticky Jelly Glaze Lip Oil. Featuring Polyglyceryl-2 isostearate, Sunflower wax with non-sticky glass finish. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Non-Sticky Jelly Glaze Lip Oil. Featuring Polyglyceryl-2 isostearate, Sunflower wax with non-sticky glass finish. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-img-0045.jpg",
     "galleryImages": [
       "/products/nas-sync-img-0045.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 12,
     "formulaSpecs": {
@@ -1554,7 +1554,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Non-Sticky Jelly Glaze Lip Oil Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label non-sticky jelly glaze lip oil contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label non-sticky jelly glaze lip oil contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LO-07",
@@ -1564,14 +1564,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-oil-manufacturer",
     "tag": "Nocturnal cellular renewal oil",
     "headline": "Rich nighttime lip sleep serum infused with retinol palmitate & squalane",
-    "description": "Custom B2B manufacturing for Overnight Intensive Recovery Lip Oil. Featuring Retinyl palmitate, Phytosterols, Bisabolol with rich protective sleep cushion. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Overnight Intensive Recovery Lip Oil. Featuring Retinyl palmitate, Phytosterols, Bisabolol with rich protective sleep cushion. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-img-0048.jpg",
     "galleryImages": [
       "/products/nas-sync-img-0048.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 1,
     "formulaSpecs": {
@@ -1587,7 +1587,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Overnight Intensive Recovery Lip Oil Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label overnight intensive recovery lip oil contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label overnight intensive recovery lip oil contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LO-08",
@@ -1597,14 +1597,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-oil-manufacturer",
     "tag": "24K luxury gold treatment",
     "headline": "Suspended real 24-karat gold micro-leaf floating in a transparent nourishing squalane base",
-    "description": "Custom B2B manufacturing for 24K Golden Flake Infused Lip Oil. Featuring 24K gold flakes, Plant squalane, Jojoba with radiant dewy gold reflection. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for 24K Golden Flake Infused Lip Oil. Featuring 24K gold flakes, Plant squalane, Jojoba with radiant dewy gold reflection. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-img-0050.jpg",
     "galleryImages": [
       "/products/nas-sync-img-0050.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 3,
     "formulaSpecs": {
@@ -1620,7 +1620,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "24K Golden Flake Infused Lip Oil Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label 24k golden flake infused lip oil contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label 24k golden flake infused lip oil contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LO-09",
@@ -1630,14 +1630,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-oil-manufacturer",
     "tag": "Glacial sensory refresh oil",
     "headline": "Swiss peppermint and spearmint essential oils delivering instant cooling sensations",
-    "description": "Custom B2B manufacturing for Glacial Mint Invigorating Lip Oil. Featuring Mentha piperita oil, Eucalyptus extract with crisp fresh water shine. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Glacial Mint Invigorating Lip Oil. Featuring Mentha piperita oil, Eucalyptus extract with crisp fresh water shine. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-img-0053.jpg",
     "galleryImages": [
       "/products/nas-sync-img-0053.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 4,
     "formulaSpecs": {
@@ -1653,7 +1653,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Glacial Mint Invigorating Lip Oil Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label glacial mint invigorating lip oil contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label glacial mint invigorating lip oil contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LO-10",
@@ -1663,14 +1663,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-oil-manufacturer",
     "tag": "UV defensive sun shield oil",
     "headline": "Clear non-whitening chemical-free mineral sunscreen defense against photo-aging",
-    "description": "Custom B2B manufacturing for Broad Spectrum SPF 15 Daily Lip Oil. Featuring Zinc oxide (nano-free dispersion), Vitamin E with non-greasy sun protection sheen. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Broad Spectrum SPF 15 Daily Lip Oil. Featuring Zinc oxide (nano-free dispersion), Vitamin E with non-greasy sun protection sheen. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-img-0055.jpg",
     "galleryImages": [
       "/products/nas-sync-img-0055.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 6,
     "formulaSpecs": {
@@ -1686,7 +1686,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Broad Spectrum SPF 15 Daily Lip Oil Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label broad spectrum spf 15 daily lip oil contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label broad spectrum spf 15 daily lip oil contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LMK-01",
@@ -1696,14 +1696,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mask-manufacturer",
     "tag": "Overnight keratin repair mask",
     "headline": "Enriched with wild strawberry, raspberry, and goji berry extracts to dissolve dead lip cells",
-    "description": "Custom B2B manufacturing for Berry Complex Overnight Repair Lip Mask. Featuring Berry fruit complex, Ascorbic acid, Shea with velvety protective film. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Berry Complex Overnight Repair Lip Mask. Featuring Berry fruit complex, Ascorbic acid, Shea with velvety protective film. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-01.jpg",
     "galleryImages": [
       "/products/nas-sync-01.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 4,
     "formulaSpecs": {
@@ -1719,7 +1719,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Berry Complex Overnight Repair Lip Mask Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label berry complex overnight repair lip mask contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label berry complex overnight repair lip mask contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LMK-02",
@@ -1729,14 +1729,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mask-manufacturer",
     "tag": "15-minute emergency plump patch",
     "headline": "Transdermal hydrogel patches saturated in marine collagen, niacinamide & rose water",
-    "description": "Custom B2B manufacturing for Hydrogel Collagen Plumping Lip Patches. Featuring Hydrolyzed collagen, Niacinamide, Rose water with intense moisture infusion. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Hydrogel Collagen Plumping Lip Patches. Featuring Hydrolyzed collagen, Niacinamide, Rose water with intense moisture infusion. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-06.jpg",
     "galleryImages": [
       "/products/nas-sync-06.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 12,
     "formulaSpecs": {
@@ -1752,7 +1752,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Hydrogel Collagen Plumping Lip Patches Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label hydrogel collagen plumping lip patches contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label hydrogel collagen plumping lip patches contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LMK-03",
@@ -1762,14 +1762,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mask-manufacturer",
     "tag": "Occlusive nutritive hive balm",
     "headline": "Concentrated hive nutrients creating an occlusive restorative cocoon for dry cracked lips",
-    "description": "Custom B2B manufacturing for Royal Jelly & Propolis Barrier Sleeping Pack. Featuring Propolis extract, Royal jelly, Beeswax with nourishing dew wrap. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Royal Jelly & Propolis Barrier Sleeping Pack. Featuring Propolis extract, Royal jelly, Beeswax with nourishing dew wrap. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-08.jpg",
     "galleryImages": [
       "/products/nas-sync-08.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 12,
     "formulaSpecs": {
@@ -1785,7 +1785,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Royal Jelly & Propolis Barrier Sleeping Pack Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label royal jelly & propolis barrier sleeping pack contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label royal jelly & propolis barrier sleeping pack contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LMK-04",
@@ -1795,14 +1795,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mask-manufacturer",
     "tag": "Gentle resurfacing polish",
     "headline": "Microfine brown sugar crystals suspended in coconut oil and sweet almond butter",
-    "description": "Custom B2B manufacturing for Natural Cane Sugar Gentle Lip Polish Scrub. Featuring Sucrose, Coconut oil, Sweet almond oil with polished velvety soft canvas. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Natural Cane Sugar Gentle Lip Polish Scrub. Featuring Sucrose, Coconut oil, Sweet almond oil with polished velvety soft canvas. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-09.jpg",
     "galleryImages": [
       "/products/nas-sync-09.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 3,
     "formulaSpecs": {
@@ -1818,7 +1818,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Natural Cane Sugar Gentle Lip Polish Scrub Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label natural cane sugar gentle lip polish scrub contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label natural cane sugar gentle lip polish scrub contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LMK-05",
@@ -1828,14 +1828,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mask-manufacturer",
     "tag": "Dermatological lipid recovery salve",
     "headline": "Physiological lipid ratio: Ceramides EOP, NP, AP + cholesterol for cracked lips",
-    "description": "Custom B2B manufacturing for Triple Ceramide SOS Chapped Lip Salve. Featuring Ceramide 1, 3, 6-II, Phytosphingosine with non-sticky occlusive seal. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Triple Ceramide SOS Chapped Lip Salve. Featuring Ceramide 1, 3, 6-II, Phytosphingosine with non-sticky occlusive seal. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-11.jpg",
     "galleryImages": [
       "/products/nas-sync-11.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 12,
     "formulaSpecs": {
@@ -1851,7 +1851,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Triple Ceramide SOS Chapped Lip Salve Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label triple ceramide sos chapped lip salve contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label triple ceramide sos chapped lip salve contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LMK-06",
@@ -1861,14 +1861,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mask-manufacturer",
     "tag": "Antioxidant calming green balm",
     "headline": "Organic ceremonial-grade Japanese green tea butter to calm inflamed lip borders",
-    "description": "Custom B2B manufacturing for Uji Matcha Soothing Antioxidant Lip Balm. Featuring Organic matcha powder, Squalane, Murumuru with soft soothing matte barrier. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Uji Matcha Soothing Antioxidant Lip Balm. Featuring Organic matcha powder, Squalane, Murumuru with soft soothing matte barrier. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-20.jpg",
     "galleryImages": [
       "/products/nas-sync-20.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 12,
     "formulaSpecs": {
@@ -1884,7 +1884,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Uji Matcha Soothing Antioxidant Lip Balm Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label uji matcha soothing antioxidant lip balm contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label uji matcha soothing antioxidant lip balm contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LMK-07",
@@ -1894,14 +1894,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mask-manufacturer",
     "tag": "Ultra-rich comforting nourishment",
     "headline": "Unrefined African shea butter blended with real Madagascar vanilla bean oleoresin",
-    "description": "Custom B2B manufacturing for Raw Shea & Bourbon Vanilla Conditioning Pot. Featuring Butyrospermum parkii, Vanilla planifolia extract with warm supple protective sheen. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Raw Shea & Bourbon Vanilla Conditioning Pot. Featuring Butyrospermum parkii, Vanilla planifolia extract with warm supple protective sheen. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-24.jpg",
     "galleryImages": [
       "/products/nas-sync-24.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 12,
     "formulaSpecs": {
@@ -1917,7 +1917,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Raw Shea & Bourbon Vanilla Conditioning Pot Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label raw shea & bourbon vanilla conditioning pot contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label raw shea & bourbon vanilla conditioning pot contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LMK-08",
@@ -1927,14 +1927,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mask-manufacturer",
     "tag": "Instant water-burst cream",
     "headline": "Emulsion technology that bursts into refreshing micro-droplets upon lip contact",
-    "description": "Custom B2B manufacturing for Melt-In Water Burst Hyaluronic Lip Cream. Featuring Hyaluronic acid, Betaine, Trehalose with weightless dewy moisture veil. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Melt-In Water Burst Hyaluronic Lip Cream. Featuring Hyaluronic acid, Betaine, Trehalose with weightless dewy moisture veil. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-25.jpg",
     "galleryImages": [
       "/products/nas-sync-25.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 12,
     "formulaSpecs": {
@@ -1950,7 +1950,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Melt-In Water Burst Hyaluronic Lip Cream Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label melt-in water burst hyaluronic lip cream contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label melt-in water burst hyaluronic lip cream contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LMK-09",
@@ -1960,14 +1960,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mask-manufacturer",
     "tag": "Perioral wrinkle reduction cream",
     "headline": "Targeted formula reducing smoker lines, perioral wrinkles, and loss of vermilion definition",
-    "description": "Custom B2B manufacturing for Oligopeptide-1 Intensive Anti-Wrinkle Lip Cream. Featuring Palmitoyl tripeptide-5, Oligopeptide-1, Retinol with silky semi-matte firming film. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Oligopeptide-1 Intensive Anti-Wrinkle Lip Cream. Featuring Palmitoyl tripeptide-5, Oligopeptide-1, Retinol with silky semi-matte firming film. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-26.jpg",
     "galleryImages": [
       "/products/nas-sync-26.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 12,
     "formulaSpecs": {
@@ -1983,7 +1983,7 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Oligopeptide-1 Intensive Anti-Wrinkle Lip Cream Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label oligopeptide-1 intensive anti-wrinkle lip cream contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label oligopeptide-1 intensive anti-wrinkle lip cream contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   },
   {
     "id": "LMK-10",
@@ -1993,14 +1993,14 @@ export const productsCatalog: ProductItem[] = [
     "categorySlug": "lip-mask-manufacturer",
     "tag": "Multi-action tinted daily butter",
     "headline": "Multi-tasking day formula providing deep barrier moisture and fresh wash of color",
-    "description": "Custom B2B manufacturing for Dewy Tinted Barrier Day Lip Butter. Featuring Cupuacu butter, Jojoba esters, Mineral tint with fresh dewy petal finish. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 500 pieces MOQ.",
+    "description": "Custom B2B manufacturing for Dewy Tinted Barrier Day Lip Butter. Featuring Cupuacu butter, Jojoba esters, Mineral tint with fresh dewy petal finish. Fully customizable formula viscosity, active concentrations, packaging components, and Pantone shade matching from 100 pieces MOQ (flexible 100-200 pcs).",
     "heroImage": "/products/nas-sync-39-6.jpg",
     "galleryImages": [
       "/products/nas-sync-39-6.jpg",
       "/factory/cleanroom-01.jpg",
       "/factory/production-line-01.jpg"
     ],
-    "moq": "500 pcs per shade",
+    "moq": "100 pcs per shade (flexible 100-200 pcs)",
     "leadTime": "7 days sampling / 15-20 days bulk",
     "shadeCount": 6,
     "formulaSpecs": {
@@ -2016,6 +2016,6 @@ export const productsCatalog: ProductItem[] = [
     },
     "regulatory": "ISO 22716, GMPC, FDA Registered, EU CPNP Ready",
     "seoTitle": "Dewy Tinted Barrier Day Lip Butter Manufacturer | Custom Private Label — MLM Lip",
-    "seoDescription": "Private label dewy tinted barrier day lip butter contract manufacturing. 500 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
+    "seoDescription": "Private label dewy tinted barrier day lip butter contract manufacturing. 100 pcs MOQ, 7-day lab prototypes, ISO 22716 cleanroom filling & full regulatory compliance."
   }
 ];

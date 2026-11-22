@@ -15,7 +15,7 @@ const t = {
   en: {
     badge: 'Interactive Formulation Desk',
     title: 'Design Your Custom Lip Line in 90 Seconds',
-    subtitle: 'Live formula mapping, packaging selection & instant lab sample briefing (500 pcs MOQ)',
+    subtitle: 'Live formula mapping, packaging selection & instant lab sample briefing (100 pcs MOQ)',
     steps: ['Format', 'Texture', 'Regulatory', 'Scale', 'Dispatch'],
     step1h: 'Step 1 · Select Your Product Category',
     step1p: 'Choose the core lip formulation category you intend to manufacture.',
@@ -30,7 +30,7 @@ const t = {
     step3h: 'Step 3 · Target Markets & Regulatory Compliance Dossiers',
     step3p: 'We tailor toxicology assessments, ingredient purity screenings, and safety documentation to your destination.',
     step4h: 'Step 4 · Production Quantity & Packaging Architecture',
-    step4p: 'Take advantage of our 500 pcs universal low MOQ. Select componentry from our prestige inventory or custom tooling.',
+    step4p: 'Take advantage of our 100 pcs flexible low MOQ (100-200 pcs). Select componentry from our prestige inventory or custom tooling.',
     fieldQty: 'Production Quantity Tier (per SKU)',
     fieldPkg: 'Preferred Packaging Component Style',
     step5h: 'Step 5 · Immediate Specification Ticket & Engineering Handoff',
@@ -49,7 +49,7 @@ const t = {
   fr: {
     badge: 'Bureau de Formulation Interactif',
     title: 'Concevez Votre Gamme Labiale Sur Mesure en 90 Secondes',
-    subtitle: 'Formulation en direct, sélection du packaging et brief d\'échantillon labo (MOQ 500 pcs)',
+    subtitle: 'Formulation en direct, sélection du packaging et brief d\'échantillon labo (MOQ 100 pcs)',
     steps: ['Format', 'Texture', 'Réglementaire', 'Volume', 'Envoi'],
     step1h: 'Étape 1 · Sélectionnez Votre Catégorie de Produit',
     step1p: 'Choisissez la catégorie de formulation labiale que vous souhaitez fabriquer.',
@@ -64,7 +64,7 @@ const t = {
     step3h: 'Étape 3 · Marchés Cibles & Dossiers de Conformité',
     step3p: 'Nous adaptons évaluations toxicologiques, screenings et documentation de sécurité à votre destination.',
     step4h: 'Étape 4 · Quantité de Production & Architecture Packaging',
-    step4p: 'Profitez de notre MOQ universel de 500 pcs. Composants de prestige ou moules sur mesure.',
+    step4p: 'Profitez de notre MOQ flexible de 100 pcs (100-200 pcs). Composants de prestige ou moules sur mesure.',
     fieldQty: 'Palier de Quantité (par référence)',
     fieldPkg: 'Style de Composant d\'Emballage Préféré',
     step5h: 'Étape 5 · Fiche de Spécification Immédiate & Transfert Ingénierie',
@@ -83,7 +83,7 @@ const t = {
   es: {
     badge: 'Mesa de Formulación Interactiva',
     title: 'Diseñe su Línea Labial Personalizada en 90 Segundos',
-    subtitle: 'Mapeo de fórmula en vivo, selección de empaques y brief de muestra (MOQ 500 uds)',
+    subtitle: 'Mapeo de fórmula en vivo, selección de empaques y brief de muestra (MOQ 100 uds)',
     steps: ['Formato', 'Textura', 'Regulatorio', 'Volumen', 'Envío'],
     step1h: 'Paso 1 · Seleccione su Categoría de Producto',
     step1p: 'Elija la categoría de formulación labial que desea fabricar.',
@@ -98,7 +98,7 @@ const t = {
     step3h: 'Paso 3 · Mercados Objetivo & Expedientes Regulatorios',
     step3p: 'Adaptamos evaluaciones toxicológicas, análisis de pureza y documentación de seguridad a su destino.',
     step4h: 'Paso 4 · Cantidad de Producción & Arquitectura de Empaque',
-    step4p: 'Aproveche nuestro MOQ universal de 500 uds. Componentes premium o moldes a medida.',
+    step4p: 'Aproveche nuestro MOQ flexible de 100 uds (100-200 uds). Componentes premium o moldes a medida.',
     fieldQty: 'Nivel de Cantidad (por referencia)',
     fieldPkg: 'Estilo de Componente de Empaque Preferido',
     step5h: 'Paso 5 · Ficha de Especificación Inmediata & Traspaso Técnico',
@@ -384,10 +384,10 @@ const L = t[lang];
         <label class="field-label">{L.fieldQty}</label>
         <div class="tier-cards">
           <label class="tier-card">
-            <input type="radio" name="production_volume" value="500 pcs (Agile Launch Pack)" checked />
+            <input type="radio" name="production_volume" value="100-200 pcs (Flexible Low MOQ)" checked />
             <div class="tier-inner">
               <span class="tier-badge">Recommended for Launch</span>
-              <span class="tier-qty">500 pcs</span>
+              <span class="tier-qty">100-200 pcs</span>
               <span class="tier-desc">Zero dead-stock risk. Test 2–3 hero shades with full custom formula & silkscreening.</span>
               <span class="tier-leadtime">⚡ 7-Day Sample · 18-Day Bulk</span>
             </div>
@@ -461,7 +461,7 @@ const L = t[lang];
         <div class="ticket-body">
           <div class="ticket-row"><strong>{L.ticketCat}</strong> <span id="summary-cat">Lip Gloss</span></div>
           <div class="ticket-row"><strong>{L.ticketFinish}</strong> <span id="summary-finish">Mirror Glass Glaze</span></div>
-          <div class="ticket-row"><strong>{L.ticketVol}</strong> <span id="summary-volume">500 pcs (Agile Launch Pack)</span></div>
+          <div class="ticket-row"><strong>{L.ticketVol}</strong> <span id="summary-volume">100-200 pcs (Flexible Low MOQ)</span></div>
           <div class="ticket-row"><strong>{L.ticketPkg}</strong> <span id="summary-pkg">Heavyweight Thick-Wall Acrylic</span></div>
           <div class="ticket-row"><strong>{L.ticketReg}</strong> <span id="summary-reg">FDA / MoCRA, EU CPNP</span></div>
           <div class="ticket-row"><strong>{L.ticketSampling}</strong> <span>{L.ticketSamplingVal}</span></div>
@@ -1257,7 +1257,7 @@ const L = t[lang];
     function updateEstimateSummary() {
       const category = form.querySelector('input[name="category"]:checked')?.value || 'Lip Gloss';
       const finish = form.querySelector('input[name="texture_finish"]:checked')?.value || 'Mirror Glass Glaze';
-      const volume = form.querySelector('input[name="production_volume"]:checked')?.value || '500 pcs';
+      const volume = form.querySelector('input[name="production_volume"]:checked')?.value || '100-200 pcs';
       const packaging = form.querySelector('input[name="packaging_style"]:checked')?.value || 'Heavyweight Acrylic';
       
       const markets = Array.from(form.querySelectorAll('input[name="target_markets"]:checked')).map(el => el.value);
@@ -1272,7 +1272,7 @@ const L = t[lang];
       let minP = 1.85;
       let maxP = 2.65;
 
-      if (volume.includes('500 pcs')) {
+      if ((volume.includes('100') || volume.includes('500'))) {
         minP = 1.95; maxP = 2.95;
       } else if (volume.includes('1,000 pcs')) {
         minP = 1.65; maxP = 2.45;
@@ -1362,7 +1362,7 @@ const L = t[lang];
       const category = form.querySelector('input[name="category"]:checked')?.value || 'Lip Gloss';
       const finish = form.querySelector('input[name="texture_finish"]:checked')?.value || 'Mirror Glaze';
       const actives = Array.from(form.querySelectorAll('input[name="actives"]:checked')).map(el => el.value).join(', ');
-      const volume = form.querySelector('input[name="production_volume"]:checked')?.value || '500 pcs';
+      const volume = form.querySelector('input[name="production_volume"]:checked')?.value || '100-200 pcs';
       const packaging = form.querySelector('input[name="packaging_style"]:checked')?.value || 'Heavyweight Acrylic';
       const markets = Array.from(form.querySelectorAll('input[name="target_markets"]:checked')).map(el => el.value).join('; ');
       const name = root.querySelector('#cfg-name')?.value.trim() || '';

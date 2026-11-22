@@ -31,7 +31,7 @@ export function whatsappLink(label: string, color = '#1e7044'): string {
 
 /**
  * Format structured B2B inquiry brief for WhatsApp direct communication.
- * Aligned with 500 pcs OEM lip cosmetics specification format.
+ * Aligned with 100 pcs OEM lip cosmetics specification format.
  */
 export function formatWhatsAppMessage(raw: Record<string, unknown>): string {
   const name = String(raw.name || raw.full_name || raw.buyer_name || '').trim();
@@ -44,7 +44,7 @@ export function formatWhatsAppMessage(raw: Record<string, unknown>): string {
   const details = String(raw.details || raw.message || raw.notes || raw.project_notes || raw.full_brief_summary || '').trim();
   const sourceUrl = String(raw.sourceUrl || (typeof window !== 'undefined' ? window.location.href : '')).trim();
 
-  const lines: string[] = ['*Custom Lip Inquiry — MLM Lip (500 pcs MOQ)*'];
+  const lines: string[] = ['*Custom Lip Inquiry — MLM Lip (100 pcs MOQ)*'];
   if (name) lines.push(`Name: ${name}`);
   if (company) lines.push(`Brand: ${company}`);
   if (email) lines.push(`Email: ${email}`);

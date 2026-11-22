@@ -10,11 +10,11 @@ const catProducts = productsCatalog.filter((p) => p.categorySlug === catSlug);
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [{"@type":"Question","name":"¿Cuál es la cantidad mínima de pedido (MOQ) para un bálsamo labial?","acceptedAnswer":{"@type":"Answer","text":"500 uds por referencia (SKU), el mismo mínimo universal para todas nuestras categorías labiales. Se pueden combinar varios sabores o tonos en un mismo proyecto."}},{"@type":"Question","name":"¿Cuánto tarda el muestreo de un bálsamo personalizado?","acceptedAnswer":{"@type":"Answer","text":"7 días hábiles desde la confirmación del brief, con el 100% del costo de muestreo acreditado a su pedido de producción en serie."}},{"@type":"Question","name":"¿Cuál es el plazo de producción en serie de un bálsamo personalizado?","acceptedAnswer":{"@type":"Answer","text":"15 a 25 días hábiles tras la aprobación del BAT y del artwork, sin incluir el transporte. Los prototipos están listos en 7 días previamente."}},{"@type":"Question","name":"¿Pueden formular un bálsamo tonalizado o con SPF?","acceptedAnswer":{"@type":"Answer","text":"Sí. Formulamos bálsamos tonalizados con igualación Pantone y desarrollamos variantes SPF, con la documentación regulatoria preparada para su mercado destino."}},{"@type":"Question","name":"¿Qué formatos de empaque están disponibles en marca blanca?","acceptedAnswer":{"@type":"Answer","text":"Stick retráctil, potes, tubos flexibles, latas eco y potes de bambú — de nuestra biblioteca interna de empaques, o con molde a medida para una silueta exclusiva."}}]
+  mainEntity: [{"@type":"Question","name":"¿Cuál es la cantidad mínima de pedido (MOQ) para un bálsamo labial?","acceptedAnswer":{"@type":"Answer","text":"100 uds por referencia (SKU), el mismo mínimo universal para todas nuestras categorías labiales. Se pueden combinar varios sabores o tonos en un mismo proyecto."}},{"@type":"Question","name":"¿Cuánto tarda el muestreo de un bálsamo personalizado?","acceptedAnswer":{"@type":"Answer","text":"7 días hábiles desde la confirmación del brief, con el 100% del costo de muestreo acreditado a su pedido de producción en serie."}},{"@type":"Question","name":"¿Cuál es el plazo de producción en serie de un bálsamo personalizado?","acceptedAnswer":{"@type":"Answer","text":"15 a 25 días hábiles tras la aprobación del BAT y del artwork, sin incluir el transporte. Los prototipos están listos en 7 días previamente."}},{"@type":"Question","name":"¿Pueden formular un bálsamo tonalizado o con SPF?","acceptedAnswer":{"@type":"Answer","text":"Sí. Formulamos bálsamos tonalizados con igualación Pantone y desarrollamos variantes SPF, con la documentación regulatoria preparada para su mercado destino."}},{"@type":"Question","name":"¿Qué formatos de empaque están disponibles en marca blanca?","acceptedAnswer":{"@type":"Answer","text":"Stick retráctil, potes, tubos flexibles, latas eco y potes de bambú — de nuestra biblioteca interna de empaques, o con molde a medida para una silueta exclusiva."}}]
 };
 ---
 
-<BaseLayout title="Fabricante de Bálsamo Labial en Marca Blanca | MOQ 500 uds — MLM Lip" description="Fabricante de bálsamos labiales marca blanca desde 500 uds. Bálsamos de karité y ceramidas, formatos stick/pote/tubo/lata, muestras en 7 días, conformidad GMPC/ISO 22716.">
+<BaseLayout title="Fabricante de Bálsamo Labial en Marca Blanca | MOQ 100 pcs (flexible 100-200 uds) — MLM Lip" description="Fabricante de bálsamos labiales marca blanca desde 100 uds (flexible 100-200 uds). Bálsamos de karité y ceramidas, formatos stick/pote/tubo/lata, muestras en 7 días, conformidad GMPC/ISO 22716.">
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 50px; padding-bottom: 50px;">
@@ -28,7 +28,7 @@ const faqSchema = {
         <a class="btn ghost" href="/es/quote#email-inquiry">Pedir un kit de muestras</a>
       </div>
       <p class="note" style="margin-top: 16px; font-size: 13px; color: var(--ink-soft);">
-        ✓ MOQ 500 uds &nbsp;·&nbsp; ✓ Muestras 7 días &nbsp;·&nbsp; ✓ Costo reembolsable &nbsp;·&nbsp; ✓ ISO 22716 & FDA
+        ✓ MOQ 100 pcs (flexible 100-200 uds) &nbsp;·&nbsp; ✓ Muestras 7 días &nbsp;·&nbsp; ✓ Costo reembolsable &nbsp;·&nbsp; ✓ ISO 22716 & FDA
       </p>
     </div>
   </section>
@@ -97,7 +97,7 @@ const faqSchema = {
       <h2 style="font-size: 26px; margin-bottom: 20px;">Especificaciones de fabricación: Bálsamo Labial</h2>
       <div class="card gold-line" style="padding: 0; overflow: hidden;">
         <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-          <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Cantidad mínima (MOQ)</td><td style="padding: 14px 20px; color: var(--ink-soft);">500 uds por referencia (SKU)</td></tr>
+          <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Cantidad mínima (MOQ)</td><td style="padding: 14px 20px; color: var(--ink-soft);">100 uds por referencia (SKU)</td></tr>
             <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Muestreo de laboratorio</td><td style="padding: 14px 20px; color: var(--ink-soft);">7 días hábiles, 100% reembolsable en el pedido</td></tr>
             <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Personalización</td><td style="padding: 14px 20px; color: var(--ink-soft);">Empaque · Fórmula · Tonos · Sabores · Moldes a medida</td></tr>
             <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 14px 20px; width: 32%; color: var(--plum); font-weight: 600;">Normas & Conformidad</td><td style="padding: 14px 20px; color: var(--ink-soft);">ISO 22716, GMPC, registro FDA, conformidad CPNP UE</td></tr>
@@ -113,7 +113,7 @@ const faqSchema = {
       <div class="grid two" style="gap: 16px;">
           <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
             <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Cuál es la cantidad mínima de pedido (MOQ) para un bálsamo labial?</h3>
-            <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">500 uds por referencia (SKU), el mismo mínimo universal para todas nuestras categorías labiales. Se pueden combinar varios sabores o tonos en un mismo proyecto.</p>
+            <p style="margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5;">100 uds por referencia (SKU), el mismo mínimo universal para todas nuestras categorías labiales. Se pueden combinar varios sabores o tonos en un mismo proyecto.</p>
           </div>
           <div class="card" style="padding: 20px; background: white; border-radius: 8px;">
             <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--plum);">¿Cuánto tarda el muestreo de un bálsamo personalizado?</h3>
