@@ -59,7 +59,10 @@ export const ui = {
         { label: 'Blog', href: '/blog' },
         { label: 'FAQ', href: '/faq' },
         { label: 'About', href: '/about' },
-        { label: 'Contact', href: '/contact' }
+        { label: 'Contact', href: '/contact' },
+        { label: 'Privacy Policy', href: '/privacy' },
+        { label: 'Terms of Service', href: '/terms' },
+        { label: 'Cookie Policy', href: '/cookie-policy' }
       ]
     }
   },
@@ -89,7 +92,10 @@ export const ui = {
         { label: 'Blog', href: '/blog' },
         { label: 'FAQ', href: '/fr/faq' },
         { label: 'À propos', href: '/fr/a-propos' },
-        { label: 'Contact', href: '/contact' }
+        { label: 'Contact', href: '/contact' },
+        { label: 'Politique de confidentialité', href: '/privacy' },
+        { label: "Conditions d'utilisation", href: '/terms' },
+        { label: 'Politique relative aux cookies', href: '/cookie-policy' }
       ]
     }
   },
@@ -119,7 +125,10 @@ export const ui = {
         { label: 'Blog', href: '/blog' },
         { label: 'Preguntas Frecuentes', href: '/es/faq' },
         { label: 'Nosotros', href: '/es/nosotros' },
-        { label: 'Contacto', href: '/contact' }
+        { label: 'Contacto', href: '/contact' },
+        { label: 'Política de Privacidad', href: '/privacy' },
+        { label: 'Términos del Servicio', href: '/terms' },
+        { label: 'Política de Cookies', href: '/cookie-policy' }
       ]
     }
   }
@@ -150,7 +159,10 @@ export const footerCompany = [
   { label: 'Blog', href: '/blog' },
   { label: 'FAQ', href: '/faq' },
   { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' }
+  { label: 'Contact', href: '/contact' },
+  { label: 'Privacy Policy', href: '/privacy' },
+  { label: 'Terms of Service', href: '/terms' },
+  { label: 'Cookie Policy', href: '/cookie-policy' }
 ];
 
 export const pillars = [

@@ -1,0 +1,133 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="Privacy Policy | Beautychain Limited / MLM Lip"
+  description="How MLM Lip (Beautychain Limited) collects, uses, stores and protects B2B inquiry data under GDPR and CCPA frameworks. Data controller contact and buyer rights."
+>
+  <section>
+    <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Privacy Policy' }]} />
+      <p class="eyebrow">Legal</p>
+      <h1>Privacy Policy</h1>
+      <p class="note">Last updated: 22 November 2026 · Legal entity: {site.legalName} (operating the MLM Lip brand)</p>
+      <p class="lead" style="max-width:680px">
+        This policy explains what information we collect when you inquire about private label lip
+        cosmetics manufacturing, how we use it, where it is stored, and the rights you have under the
+        EU General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA).
+        This site serves business customers (B2B) only.
+      </p>
+    </div>
+  </section>
+
+  <section class="tint" style="padding-top:32px">
+    <div class="wrap">
+      <div class="grid two" style="align-items: start">
+
+        <div class="card">
+          <h2>1. Who we are</h2>
+          <p style="margin:0">
+            MLM Lip is the trading brand of <strong>{site.legalName}</strong>, a private label lip
+            cosmetics manufacturer. For the purposes of GDPR, {site.legalName} is the data controller
+            for personal data submitted through this website. Contact:
+            <a href="mailto:privacy@mlmlip.com">privacy@mlmlip.com</a> (monitored mailbox — forwards to
+            <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>).
+          </p>
+          <h2 style="margin-top:28px">2. What we collect</h2>
+          <p style="margin:0">
+            We only collect what you voluntarily submit through our inquiry forms (quote form,
+            sample request, contact page, and the live chat lead box). The fields are:
+          </p>
+          <ul style="padding-left:20px; color:var(--ink-soft); line-height:1.8; margin:12px 0 0;">
+            <li>Your name</li>
+            <li>Brand / company name</li>
+            <li>Work email address</li>
+            <li>WhatsApp / phone number (optional)</li>
+            <li>Product interest, target quantity, target market / country</li>
+            <li>Your project message / product brief</li>
+          </ul>
+          <p style="margin:12px 0 0;">
+            We also log your IP address and the page the inquiry was submitted from, solely for
+            spam and abuse prevention. Analytics data is processed under our
+            <a href="/cookie-policy/">Cookie Policy</a>.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>3. How we use it</h2>
+          <p style="margin:0">
+            Your data is used exclusively to:
+          </p>
+          <ul style="padding-left:20px; color:var(--ink-soft); line-height:1.8; margin:12px 0 0;">
+            <li>Reply to your manufacturing inquiry with a quotation or technical guidance</li>
+            <li>Send you an inquiry confirmation email</li>
+            <li>Continue the B2B conversation you initiated (follow-up on your project)</li>
+          </ul>
+          <p style="margin:12px 0 0;">
+            Legal basis (GDPR Art. 6(1)(b) and (f)): performance of a business relationship you
+            initiated and our legitimate interest in responding to commercial inquiries. We do not
+            sell, rent, or share your personal data with third parties for marketing purposes.
+          </p>
+          <h2 style="margin-top:28px">4. Where it is stored and who can access it</h2>
+          <p style="margin:0">
+            Inquiry records are transmitted to our sales team via internal notification channels
+            (email and enterprise messaging) and persisted in a <strong>Upstash (Redis) managed
+            database</strong> hosted on EU/US cloud infrastructure. The website itself runs on
+            <strong>Vercel</strong> servers. Access is limited to the {site.legalName} sales and
+            technical staff who need it to answer your inquiry.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>5. How long we keep it</h2>
+          <p style="margin:0">
+            Inquiry data is retained for up to <strong>24 months</strong> after our last exchange,
+            so we can pick up ongoing projects where you left off, then deleted. If you become an
+            active customer, relevant records are retained for the duration of the business
+            relationship plus the period required by applicable accounting and tax law.
+          </p>
+          <h2 style="margin-top:28px">6. Your rights (GDPR / CCPA)</h2>
+          <p style="margin:0">
+            You have the right to:
+          </p>
+          <ul style="padding-left:20px; color:var(--ink-soft); line-height:1.8; margin:12px 0 0;">
+            <li>Access the personal data we hold about you</li>
+            <li>Have it corrected if it is inaccurate</li>
+            <li>Have it deleted (right to erasure), subject to legal retention duties</li>
+            <li>Receive a copy of your data in a portable format</li>
+            <li>Object to processing or withdraw consent at any time</li>
+            <li>Complain to your local supervisory authority (in the EU) or the California Attorney General (CCPA)</li>
+          </ul>
+          <p style="margin:12px 0 0;">
+            To exercise any right, email <a href="mailto:privacy@mlmlip.com">privacy@mlmlip.com</a>.
+            We respond within 30 days. We do not knowingly collect data from anyone under 18.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>7. Data processors we rely on</h2>
+          <p style="margin:0">
+            To operate this site we use: <strong>Vercel</strong> (web hosting),
+            <strong>Upstash</strong> (inquiry data persistence), <strong>Google Analytics</strong>
+            (traffic statistics, see our <a href="/cookie-policy/">Cookie Policy</a>), and
+            transactional email providers for inquiry confirmations. Each processes data only on
+            our documented instructions under applicable data-processing agreements.
+          </p>
+          <h2 style="margin-top:28px">8. Security &amp; changes</h2>
+          <p style="margin:0">
+            Inquiries are transmitted over TLS and rate-limited to prevent abuse. We will post any
+            change to this policy on this page with an updated date. Questions:
+            <a href="mailto:privacy@mlmlip.com">privacy@mlmlip.com</a> or
+            <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
+            See also our <a href="/terms/">Terms of Service</a>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

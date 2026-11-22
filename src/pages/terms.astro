@@ -1,0 +1,110 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="Terms of Service | Beautychain Limited / MLM Lip"
+  description="Terms governing B2B inquiries, quotations, sampling and private label manufacturing orders with Beautychain Limited (MLM Lip brand)."
+>
+  <section>
+    <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Terms of Service' }]} />
+      <p class="eyebrow">Legal</p>
+      <h1>Terms of Service</h1>
+      <p class="note">Last updated: 22 November 2026 · Legal entity: {site.legalName} (operating the MLM Lip brand)</p>
+      <p class="lead" style="max-width:680px">
+        These terms govern your use of mlmlip.com and the business relationship between you and
+        <strong>{site.legalName}</strong> (the "Manufacturer", operating the MLM Lip brand), from
+        inquiry through quotation, sampling and order fulfillment. This site serves business
+        customers (B2B) only.
+      </p>
+    </div>
+  </section>
+
+  <section class="tint" style="padding-top:32px">
+    <div class="wrap">
+      <div class="grid two" style="align-items: start">
+
+        <div class="card">
+          <h2>1. Nature of inquiries &amp; quotations</h2>
+          <p style="margin:0">
+            Information on this site — including product specifications, formulations, lead times
+            and pricing references — is provided for business discussion and does not constitute a
+            binding offer. A quotation issued by our sales team is an invitation to negotiate; a
+            manufacturing contract is formed only upon our written order confirmation and receipt
+            of the agreed deposit. Sample photos and shade references are indicative; natural
+            batch variation within agreed colorimetric tolerances (ΔE &lt; 0.8) is normal.
+          </p>
+          <h2 style="margin-top:28px">2. Quotation validity</h2>
+          <p style="margin:0">
+            Quotations are valid for <strong>30 days</strong> from the date of issue unless stated
+            otherwise, reflecting component and ingredient market prices. Minimum order quantity:
+            <strong>500 pcs per SKU</strong> across all lip categories, unless individually agreed.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>3. Sampling &amp; order terms (summary)</h2>
+          <p style="margin:0">
+            Custom lab samples are produced within <strong>7 business days</strong> after brief
+            sign-off; 100% of sampling fees are credited back against your bulk order invoice. Bulk
+            production runs 15–25 business days after artwork and sample approval, plus transit.
+            Specific payment schedule, deposit, tooling (mold) ownership and shipment terms are
+            governed by the proforma invoice and order confirmation for each project — those
+            documents prevail over this summary. Tooling paid by you remains your property and is
+            never used for other clients.
+          </p>
+          <h2 style="margin-top:28px">4. Compliance &amp; regulatory responsibility</h2>
+          <p style="margin:0">
+            We manufacture under GMPC and ISO 22716 standards and provide supporting documentation
+            (batch CoA, US FDA MoCRA-aligned facility registration, EU CPNP dossier assistance).
+            For regulated markets, the importer/distributor or the designated Responsible Person
+            (EU) holds final market-compliance responsibility, except where explicitly assumed by
+            us in the order confirmation.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>5. Intellectual property</h2>
+          <p style="margin:0">
+            Site content, imagery, formulation library data and brand assets are owned by
+            {site.legalName} and may not be reproduced commercially. Your brand assets
+            (logos, artwork, formulations you supply) remain your property; we use them solely to
+            fulfill your order and treat them as confidential. Confidential information exchanged
+            during a project is protected by mutual NDA upon request.
+          </p>
+          <h2 style="margin-top:28px">6. Liability</h2>
+          <p style="margin:0">
+            Nothing in these terms limits liability that cannot be limited by law. Otherwise our
+            aggregate liability under a project is limited to the invoiced value of the affected
+            order. We are not liable for indirect or consequential losses. Claims for visible
+            defects must be raised within 14 days of delivery.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>7. Governing law &amp; disputes</h2>
+          <p style="margin:0">
+            These terms are governed by the laws of the jurisdiction of {site.legalName}'s
+            incorporation and, where a buyer's mandatory consumer/customer protections apply in the
+            buyer's own country of establishment, those mandatory local protections are unaffected.
+            The parties shall first attempt amicable settlement for 30 days before commencing
+            proceedings, which shall be brought before the courts having jurisdiction under
+            applicable conflict-of-law rules.
+          </p>
+          <h2 style="margin-top:28px">8. Contact</h2>
+          <p style="margin:0">
+            Any contractual communication: <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+            or WhatsApp <a href={site.contact.whatsappLink} target="_blank" rel="noopener">{site.contact.whatsapp}</a>.
+            See also our <a href="/privacy/">Privacy Policy</a> and
+            <a href="/cookie-policy/">Cookie Policy</a>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

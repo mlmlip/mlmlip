@@ -1,0 +1,79 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="Cookie Policy | Beautychain Limited / MLM Lip"
+  description="How mlmlip.com uses cookies and Google Analytics for a B2B static site: what cookies exist, why, and how to control them."
+>
+  <section>
+    <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Cookie Policy' }]} />
+      <p class="eyebrow">Legal</p>
+      <h1>Cookie Policy</h1>
+      <p class="note">Last updated: 22 November 2026 · Legal entity: {site.legalName} (operating the MLM Lip brand)</p>
+      <p class="lead" style="max-width:680px">
+        This site is a static B2B catalog: it does not require cookies to display pages. We use
+        only a small set of analytics cookies to understand which product pages buyers find
+        useful. This policy lists every cookie category in use and how to control it.
+      </p>
+    </div>
+  </section>
+
+  <section class="tint" style="padding-top:32px">
+    <div class="wrap">
+      <div class="grid two" style="align-items: start">
+
+        <div class="card">
+          <h2>1. Strictly necessary storage</h2>
+          <p style="margin:0">
+            Our inquiry forms and live-chat widget rely on your browser's standard session storage
+            to submit the form and prevent duplicate submissions. This technical storage carries
+            no personal identifiers and is exempt from consent under applicable ePrivacy rules.
+          </p>
+          <h2 style="margin-top:28px">2. Analytics cookies (Google Analytics 4)</h2>
+          <p style="margin:0">
+            We use <strong>Google Analytics 4</strong> to measure aggregate page traffic, referrers
+            and inquiry funnel performance. Google sets the following first-party identifiers in
+            your browser when Analytics loads:
+          </p>
+          <ul style="padding-left:20px; color:var(--ink-soft); line-height:1.8; margin:12px 0 0;">
+            <li><code>_ga</code> — distinguishes unique visitors (persists up to 2 years)</li>
+            <li><code>_ga_*</code> — session state for the GA4 measurement (persists up to 2 years)</li>
+          </ul>
+          <p style="margin:12px 0 0;">
+            Data is processed by Google LLC under the standard Google Analytics terms. We have
+            enabled IP anonymization-compatible GA4 settings and do not use advertising or
+            cross-site tracking cookies.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>3. Cookies we do NOT use</h2>
+          <p style="margin:0">
+            No advertising cookies, no third-party retargeting pixels, no social-media trackers,
+            and no session-recording tools run on this site.
+          </p>
+          <h2 style="margin-top:28px">4. Managing cookies</h2>
+          <p style="margin:0">
+            You can block or delete cookies at any time in your browser settings (e.g. Chrome
+            "Cookies and site data", Firefox "Enhanced Tracking Protection"). Deleting
+            <code>_ga</code> cookies simply resets your visitor identifier; all pages and the
+            inquiry form keep working without any cookie.
+          </p>
+          <h2 style="margin-top:28px">5. Questions</h2>
+          <p style="margin:0">
+            Email <a href="mailto:privacy@mlmlip.com">privacy@mlmlip.com</a> (monitored mailbox —
+            forwards to <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>).
+            See also our <a href="/privacy/">Privacy Policy</a> and
+            <a href="/terms/">Terms of Service</a>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -455,10 +455,21 @@ const breadcrumbSchema = {
               Email: <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a><br />
               {site.contact.address}
             </p>
-            <p style="color:#e9c9d3; margin:0; line-height:1.9;">
+            <p style="color:#e9c9d3; margin:0 0 14px; line-height:1.9;">
               {(((t.footer as any).company || footerCompany).slice(0, 5)).map((l: any) => (
                 <><a href={l.href}>{l.label}</a> · </>
               ))}
+            </p>
+            <!-- P1-6: 法律页三件套 footer 导航 -->
+            <p style="color:#e9c9d3; margin:0; line-height:1.9; font-size:12px;">
+              {(() => { const legalLinks = [
+                { label: currentLang === 'fr' ? 'Confidentialité' : currentLang === 'es' ? 'Privacidad' : 'Privacy', href: '/privacy' },
+                { label: currentLang === 'fr' ? 'Conditions' : currentLang === 'es' ? 'Términos' : 'Terms', href: '/terms' },
+                { label: currentLang === 'fr' ? 'Cookies' : currentLang === 'es' ? 'Cookies' : 'Cookies', href: '/cookie-policy' }
+              ]; return legalLinks.map((l) => (
+                <><a href={l.href} style="text-decoration:underline;">{l.label}</a> · </>
+              )); })()}
+              privacy@mlmlip.com
             </p>
           </div>
         </div>
