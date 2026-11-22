@@ -16,27 +16,85 @@ const {
 } = Astro.props;
 
 // i18n 欢迎文案 (风格照 LipConfigurator 字典)
+// P0-2: Submit 按钮/placeholder/FAQ 按钮等抽屉 UI 全量接入字典, 消除 FR/ES 英文残留
 const i18n = {
   en: {
     welcome: 'Welcome to the',
     desk: 'MLM Lip Technical Formulation Desk',
-    intro: 'Select an automated FAQ topic below for instant specifications (MOQ, 7-day lab sampling, leak prevention, regulatory dossiers), or drop your email to receive direct formulation consulting from our engineering team within 4 business hours.'
+    intro: 'Select an automated FAQ topic below for instant specifications (MOQ, 7-day lab sampling, leak prevention, regulatory dossiers), or drop your email to receive direct formulation consulting from our engineering team within 4 business hours.',
+    launcherPrimary: 'Technical Formulation Desk',
+    launcherSub: 'Instant FAQ & Message Box',
+    headerTitle: 'Technical Formulation Desk',
+    headerSub: 'Instant FAQ & Message Box · Typical reply within 4 business hours',
+    quickTitle: 'Frequently Consulted Topics:',
+    faqMoq: '📦 What is the MOQ across products?',
+    faqSampling: '⚡ How fast are custom lab samples made?',
+    faqLeaks: '🛡️ How do you prevent lip oil packaging leaks?',
+    faqCompliance: '📜 What EU CPNP & US FDA documents do you provide?',
+    faqQuote: '🎯 How do I get an exact production quote?',
+    formTitle: '⚡ Request Lab Sample & Formula Dossier',
+    emailPlaceholder: 'Enter your work email...',
+    emailAria: 'Work Email',
+    submit: 'Submit',
+    waFallback: '💬 WhatsApp Live Chat',
+    emailFallback: '✉️ Email: nancy@mlmlip.com',
+    statusSending: 'Transmitting to lab chemist...',
+    statusOk: '✓ Received! Lab dossier sent to ',
+    statusFailPrefix: 'Submission delayed. Reach us on '
   },
   fr: {
     welcome: 'Bienvenue au',
     desk: 'Bureau Technique de Formulation MLM Lip',
-    intro: 'Sélectionnez une question fréquente ci-dessous pour obtenir instantanément les spécifications (MOQ, échantillonnage laboratoire en 7 jours, prévention des fuites, dossiers réglementaires), ou laissez votre e-mail pour recevoir un conseil en formulation de notre équipe d\'ingénieurs sous 4 heures ouvrées.'
+    intro: 'Sélectionnez une question fréquente ci-dessous pour obtenir instantanément les spécifications (MOQ, échantillonnage laboratoire en 7 jours, prévention des fuites, dossiers réglementaires), ou laissez votre e-mail pour recevoir un conseil en formulation de notre équipe d\'ingénieurs sous 4 heures ouvrées.',
+    launcherPrimary: 'Bureau Technique de Formulation',
+    launcherSub: 'FAQ instantanée & messagerie',
+    headerTitle: 'Bureau Technique de Formulation',
+    headerSub: 'FAQ instantanée & messagerie · Réponse sous 4 heures ouvrées',
+    quickTitle: 'Sujets fréquemment consultés :',
+    faqMoq: '📦 Qu\'est-ce que la MOQ par produit ?',
+    faqSampling: '⚡ En combien de temps les échantillons labo sont-ils faits ?',
+    faqLeaks: '🛡️ Comment prévenez-vous les fuites d\'emballage des huiles à lèvres ?',
+    faqCompliance: '📜 Quels documents UE CPNP & US FDA fournissez-vous ?',
+    faqQuote: '🎯 Comment obtenir un devis de production exact ?',
+    formTitle: '⚡ Demander un échantillon labo & dossier de formule',
+    emailPlaceholder: 'Saisissez votre e-mail professionnel...',
+    emailAria: 'E-mail professionnel',
+    submit: 'Envoyer',
+    waFallback: '💬 Chat WhatsApp en direct',
+    emailFallback: '✉️ E-mail : nancy@mlmlip.com',
+    statusSending: 'Transmission au chimiste du laboratoire...',
+    statusOk: '✓ Reçu ! Dossier labo envoyé à ',
+    statusFailPrefix: 'Envoi retardé. Contactez-nous sur '
   },
   es: {
     welcome: 'Bienvenido al',
     desk: 'Escritorio Técnico de Formulación MLM Lip',
-    intro: 'Seleccione un tema de preguntas frecuentes a continuación para obtener especificaciones al instante (MOQ, muestreo de laboratorio en 7 días, prevención de fugas, expedientes regulatorios), o deje su correo para recibir asesoría de formulación directa de nuestro equipo de ingenieros dentro de 4 horas laborables.'
+    intro: 'Seleccione un tema de preguntas frecuentes a continuación para obtener especificaciones al instante (MOQ, muestreo de laboratorio en 7 días, prevención de fugas, expedientes regulatorios), o deje su correo para recibir asesoría de formulación directa de nuestro equipo de ingenieros dentro de 4 horas laborables.',
+    launcherPrimary: 'Escritorio Técnico de Formulación',
+    launcherSub: 'FAQ instantánea & buzón de mensajes',
+    headerTitle: 'Escritorio Técnico de Formulación',
+    headerSub: 'FAQ instantánea & buzón de mensajes · Respuesta típica en 4 horas laborables',
+    quickTitle: 'Temas consultados con frecuencia:',
+    faqMoq: '📦 ¿Cuál es la MOQ por producto?',
+    faqSampling: '⚡ ¿Qué tan rápido se elaboran las muestras de laboratorio?',
+    faqLeaks: '🛡️ ¿Cómo previenen las fugas en el empaquetado de aceites labiales?',
+    faqCompliance: '📜 ¿Qué documentos UE CPNP y US FDA proporcionan?',
+    faqQuote: '🎯 ¿Cómo obtengo una cotización de producción exacta?',
+    formTitle: '⚡ Solicitar muestra de laboratorio y dosificar fórmula',
+    emailPlaceholder: 'Ingrese su correo de trabajo...',
+    emailAria: 'Correo de trabajo',
+    submit: 'Enviar',
+    waFallback: '💬 Chat en vivo de WhatsApp',
+    emailFallback: '✉️ Correo: nancy@mlmlip.com',
+    statusSending: 'Transmitiendo al químico del laboratorio...',
+    statusOk: '✓ ¡Recibido! Dosificar enviado a ',
+    statusFailPrefix: 'Envío retrasado. Contáctenos en '
   }
 };
 const L = i18n[lang];
 ---
 
-<div class="mlm-livechat-widget" id="mlm-livechat-root" data-chatwoot-token={websiteToken} data-chatwoot-base={baseUrl}>
+<div class="mlm-livechat-widget" id="mlm-livechat-root" data-chatwoot-token={websiteToken} data-chatwoot-base={baseUrl} data-status-sending={L.statusSending} data-status-ok={L.statusOk} data-status-fail={L.statusFailPrefix}>
   <!-- Chat Launcher Bubble -->
   <button class="chat-launcher-btn" id="chat-launcher" aria-label="Open 24/7 Lip Formulation Support">
     <div class="launcher-avatar">
@@ -45,8 +103,8 @@ const L = i18n[lang];
     </div>
     <div class="launcher-text">
       <span class="status-indicator"></span>
-      <span class="label-primary">Technical Formulation Desk</span>
-      <span class="label-sub">Instant FAQ &amp; Message Box</span>
+      <span class="label-primary">{L.launcherPrimary}</span>
+      <span class="label-sub">{L.launcherSub}</span>
     </div>
     <span class="launcher-close-icon" aria-hidden="true">&times;</span>
   </button>
@@ -61,8 +119,8 @@ const L = i18n[lang];
           <span class="online-dot"></span>
         </div>
         <div>
-          <h4>Technical Formulation Desk</h4>
-          <p>Instant FAQ &amp; Message Box · Typical reply within 4 business hours</p>
+          <h4>{L.headerTitle}</h4>
+          <p>{L.headerSub}</p>
         </div>
       </div>
       <button class="drawer-close-btn" id="drawer-close" aria-label="Close chat drawer">&times;</button>
@@ -82,22 +140,22 @@ const L = i18n[lang];
 
       <!-- Quick Action Pills -->
       <div class="quick-questions-panel" id="quick-questions">
-        <p class="quick-title">Frequently Consulted Topics:</p>
-        <button type="button" class="quick-btn" data-faq="moq">📦 What is the MOQ across products?</button>
-        <button type="button" class="quick-btn" data-faq="sampling">⚡ How fast are custom lab samples made?</button>
-        <button type="button" class="quick-btn" data-faq="leaks">🛡️ How do you prevent lip oil packaging leaks?</button>
-        <button type="button" class="quick-btn" data-faq="compliance">📜 What EU CPNP &amp; US FDA documents do you provide?</button>
-        <button type="button" class="quick-btn" data-faq="quote">🎯 How do I get an exact production quote?</button>
+        <p class="quick-title">{L.quickTitle}</p>
+        <button type="button" class="quick-btn" data-faq="moq">{L.faqMoq}</button>
+        <button type="button" class="quick-btn" data-faq="sampling">{L.faqSampling}</button>
+        <button type="button" class="quick-btn" data-faq="leaks">{L.faqLeaks}</button>
+        <button type="button" class="quick-btn" data-faq="compliance">{L.faqCompliance}</button>
+        <button type="button" class="quick-btn" data-faq="quote">{L.faqQuote}</button>
       </div>
     </div>
 
     <!-- Quick Buyer Lead Capture Form -->
     <div class="drawer-lead-dock">
       <form id="drawer-lead-form" class="drawer-lead-form">
-        <div class="form-title">⚡ Request Lab Sample &amp; Formula Dossier</div>
+        <div class="form-title">{L.formTitle}</div>
         <div class="lead-input-row">
-          <input type="email" id="drawer-email" name="email" required placeholder="Enter your work email..." aria-label="Work Email" />
-          <button type="submit" class="btn-dock-submit">Submit</button>
+          <input type="email" id="drawer-email" name="email" required placeholder={L.emailPlaceholder} aria-label={L.emailAria} />
+          <button type="submit" class="btn-dock-submit">{L.submit}</button>
         </div>
         <div id="drawer-form-status" class="dock-status" style="display: none;"></div>
       </form>
@@ -105,10 +163,10 @@ const L = i18n[lang];
       <!-- Fallback Channels -->
       <div class="drawer-fallback-channels">
         <a href="https://wa.me/8613652380291?text=Hi%20MLM%20Lip,%20I'm%20inquiring%20about%20private%20label%20lip%20cosmetics%20formulation." target="_blank" rel="noopener" class="fallback-wa-link">
-          💬 WhatsApp Live Chat
+          {L.waFallback}
         </a>
         <a href="mailto:nancy@mlmlip.com" class="fallback-email-link">
-          ✉️ Email: nancy@mlmlip.com
+          {L.emailFallback}
         </a>
       </div>
     </div>
@@ -507,6 +565,10 @@ const L = i18n[lang];
 
     const chatwootToken = root.getAttribute('data-chatwoot-token');
     const chatwootBase = root.getAttribute('data-chatwoot-base');
+    // i18n 状态文案 (P0-2: 提交反馈不残留英文)
+    const statusSending = root.getAttribute('data-status-sending') || 'Transmitting to lab chemist...';
+    const statusOk = root.getAttribute('data-status-ok') || '✓ Received! Lab dossier sent to ';
+    const statusFail = root.getAttribute('data-status-fail') || 'Submission delayed. Reach us on ';
 
     // 1. If Chatwoot Token exists, load official SDK asynchronously
     if (chatwootToken && chatwootToken.trim().length > 0) {
@@ -601,7 +663,7 @@ const L = i18n[lang];
       if (dockStatus) {
         dockStatus.style.display = 'block';
         dockStatus.style.color = '#6e1a32';
-        dockStatus.textContent = 'Transmitting to lab chemist...';
+        dockStatus.textContent = statusSending;
       }
 
       const result = await postInquiry({
@@ -614,7 +676,7 @@ const L = i18n[lang];
       if (result.ok) {
         if (dockStatus) {
           dockStatus.style.color = '#1e7044';
-          dockStatus.textContent = '✓ Received! Lab dossier sent to ' + emailInput.value;
+          dockStatus.textContent = statusOk + emailInput.value;
         }
         emailInput.value = '';
         if (typeof (window as any).gtag === 'function') {
@@ -627,7 +689,7 @@ const L = i18n[lang];
       } else {
         if (dockStatus) {
           dockStatus.style.color = '#9b1c1c';
-          dockStatus.innerHTML = 'Submission delayed. Reach us on ' + whatsappLink('WhatsApp') + ' or email <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>';
+          dockStatus.innerHTML = statusFail + whatsappLink('WhatsApp') + ' or email <a href="mailto:nancy@mlmlip.com">nancy@mlmlip.com</a>';
         }
       }
     });
