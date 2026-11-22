@@ -60,11 +60,11 @@ const serviceSchema = {
       <h1 style="font-size: clamp(34px, 4.4vw, 54px); max-width: 880px;">{category.h1}</h1>
       <p class="lead" style="max-width: 720px; font-size: 19px;">{category.intro}</p>
       <p style="margin-top: 28px;">
-        <a class="btn" href={`/quote?product=${encodeURIComponent(category.name)}`}>Configure this product</a>
-        <a class="btn ghost" href="/samples" style="margin-left: 12px;">Order samples</a>
+        <a class="btn" href={`/quote?product=${encodeURIComponent(category.name)}&source=category-hero`}>Get a Custom {category.name} Quote &rarr;</a>
+        <a class="btn ghost" href={`/samples?category=${encodeURIComponent(category.name)}&source=category-hero`} style="margin-left: 12px;">Order 7-Day Samples</a>
       </p>
       <p class="note" style="margin-top: 16px;">
-        ✓ {site.moq} MOQ &nbsp;·&nbsp; ✓ 7-day sampling &nbsp;·&nbsp; ✓ Sampling fee credited to your order &nbsp;·&nbsp; ✓ GMPC / ISO / CPNP
+        ✓ Flexible {site.moq} MOQ &nbsp;·&nbsp; ✓ 7-day sampling &nbsp;·&nbsp; ✓ Fee 100% credited &nbsp;·&nbsp; ✓ GMPC / ISO 22716 / CPNP &nbsp;·&nbsp; <a href="/customization" style="color: var(--burgundy); font-weight: 600; text-decoration: underline;">Customization Guide &rarr;</a>
       </p>
     </div>
   </section>
@@ -173,6 +173,55 @@ const serviceSchema = {
         </p>
         <a class="btn" href={`/quote?product=${encodeURIComponent(category.name)}&source=category-mid`}>Get a {category.name.toLowerCase()} quote</a>
         <a class="btn ghost" href={site.contact.whatsappLink} target="_blank" rel="noopener" style="margin-left: 12px;">Chat on WhatsApp</a>
+      </div>
+
+      <!-- Formulation & Engineering Matrix (GEO Benchmark) -->
+      <div class="card gold-line table-responsive" style="margin-top: 36px; padding: 0; overflow: hidden;">
+        <div style="background: var(--blush); padding: 14px 20px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+          <strong style="color: var(--plum); font-size: 15px;">{category.name} Formulation &amp; Manufacturing Architecture</strong>
+          <span style="font-size: 12px; color: var(--ink-soft); font-weight: 600;">ISO 22716 Cleanroom Standards</span>
+        </div>
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 600px;">
+          <thead>
+            <tr style="background: #faf6f7; border-bottom: 1px solid var(--line);">
+              <th style="padding: 12px 18px; text-align: left; color: var(--plum); width: 26%;">Engineering Layer</th>
+              <th style="padding: 12px 18px; text-align: left; color: var(--ink-soft); width: 44%;">Technical Scope &amp; Custom Options</th>
+              <th style="padding: 12px 18px; text-align: left; color: var(--burgundy); font-weight: 600; width: 30%;">Benchmark Specs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--line);">
+              <td style="padding: 12px 18px; font-weight: 600; color: var(--plum);">Bespoke Formulation</td>
+              <td style="padding: 12px 18px; color: var(--ink-soft);">Custom rheology, active peptide &amp; ceramide loading, non-sticky cushion glide, 100% clean/vegan</td>
+              <td style="padding: 12px 18px; color: var(--burgundy); font-weight: 600;">7-Day bench samples · 100 pcs MOQ</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--line);">
+              <td style="padding: 12px 18px; font-weight: 600; color: var(--plum);">Pantone Color Match</td>
+              <td style="padding: 12px 18px; color: var(--ink-soft);">X-Rite D65 spectrophotometer validation (&Delta;E &lt; 0.8), multi-chrome pearl, sheer or high-coverage</td>
+              <td style="padding: 12px 18px; color: var(--burgundy); font-weight: 600;">Free re-adjustments included</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--line);">
+              <td style="padding: 12px 18px; font-weight: 600; color: var(--plum);">Component Tooling</td>
+              <td style="padding: 12px 18px; color: var(--ink-soft);">Library in-stock vials/cases or bespoke injection mold engineering exclusively for your brand</td>
+              <td style="padding: 12px 18px; color: var(--burgundy); font-weight: 600;">Stock: 100 pcs · Mold: 4–8 wks</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 18px; font-weight: 600; color: var(--plum);">Regulatory Compliance</td>
+              <td style="padding: 12px 18px; color: var(--ink-soft);">US FDA MoCRA facility registration, EU CPNP notification, full CPSR Part A/B toxicological dossiers</td>
+              <td style="padding: 12px 18px; color: var(--burgundy); font-weight: 600;">Turnkey batch dossiers included</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Deep Cross-link to /customization -->
+      <div style="margin-top: 24px; text-align: center; padding: 16px; background: var(--blush-soft); border-radius: 8px;">
+        <p style="margin: 0; font-size: 14px; color: var(--plum);">
+          Looking for custom tooling molds, exclusive rheology, or full turnkey branding?
+          <a href="/customization" style="color: var(--burgundy); font-weight: 700; text-decoration: underline; margin-left: 6px;">
+            Explore our 3-Tier Customization Architecture Guide &rarr;
+          </a>
+        </p>
       </div>
     </div>
   </section>
