@@ -160,6 +160,20 @@ const serviceSchema = {
           ))}
         </table>
       </div>
+
+      <!-- P1-5: 内联 CTA 块 (规格表后转化, 复用现有 card 风格 + 数字锚点信任要素) -->
+      <div class="card" style="margin-top: 32px; text-align: center; padding: 36px 28px;">
+        <h3 style="font-size: 22px; margin-bottom: 10px;">Ready to spec your {category.name.toLowerCase()} line?</h3>
+        <p style="color: var(--ink-soft); max-width: 580px; margin: 0 auto 8px;">
+          Configure format, shade range and packaging in the interactive brief — get an itemized
+          {category.name.toLowerCase()} quotation within 24 hours.
+        </p>
+        <p class="note" style="margin-bottom: 20px;">
+          ✓ {site.moq} MOQ &nbsp;·&nbsp; ✓ 7-day lab sampling (fee credited to order) &nbsp;·&nbsp; ✓ 6 Intertek-verified test reports per batch
+        </p>
+        <a class="btn" href={`/quote?product=${encodeURIComponent(category.name)}&source=category-mid`}>Get a {category.name.toLowerCase()} quote</a>
+        <a class="btn ghost" href={site.contact.whatsappLink} target="_blank" rel="noopener" style="margin-left: 12px;">Chat on WhatsApp</a>
+      </div>
     </div>
   </section>
 
@@ -186,7 +200,7 @@ const serviceSchema = {
         <p class="lead" style="max-width: 560px; margin: 0 auto 24px;">
           Tell us your shade direction, target market and packaging idea. We will come back with the practical route and a quotation.
         </p>
-        <a class="btn" href="/contact">Get a quote</a>
+        <a class="btn" href={`/quote?product=${encodeURIComponent(category.name)}&source=category-footer`}>Get a {category.name.toLowerCase()} quote</a>
         <a class="btn ghost" href="/cases" style="margin-left: 12px;">See projects we made</a>
       </div>
     </div>
