@@ -9,7 +9,8 @@ const { frontmatter } = Astro.props;
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
   <article class="max-w-4xl mx-auto px-4 py-8 prose lg:prose-xl">
     <header class="mb-8 border-b pb-4">
-      <h1 class="text-4xl font-bold mb-2">{frontmatter.title}</h1>
+      <!-- P1-8: H1 稀释修复 — blog/[slug].astro 已渲染视觉 H1, 此处不再输出重复 H1 -->
+      <p class="text-4xl font-bold mb-2" style="font-size:36px; font-weight:800; margin:0 0 8px;">{frontmatter.title}</p>
       <div class="text-gray-500 text-sm">
         Published on {frontmatter.pubDate} | Category: {frontmatter.tags ? frontmatter.tags.join(', ') : 'B2B Guide'}
       </div>
