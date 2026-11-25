@@ -13,7 +13,7 @@
 | cpnp notification support for private label lip products | CPNP申报 | 欧盟市场新品牌 | CPNP全套申报代办 | `[已发布]` |
 | pif documentation support for lip cosmetics eu market | PIF文件 | 欧盟进口商 | PIF文档编制支持 | `[已发布]` |
 | lip cosmetics gmp audit checklist for brand owners | GMP审计 | 验厂采购商 | ISO 22716+GMPC双认证可验厂 | `[已发布]` |
-| lip cosmetics heavy metals testing requirements for exporters | 重金属检测 | 质控经理 | 重金属全套检测报告 | `[待撰写]` |
+| lip cosmetics heavy metals testing requirements for exporters | 重金属检测 | 质控经理 | 重金属全套检测报告 | `[已发布]` |
 | cosmetic product safety report for lip care products | CPSR安全报告 | 合规负责人 | CPSR编制与专家签发 | `[待撰写]` |
 | usp 51 and usp 61 testing for lip cosmetics | 微生物防腐测试 | 质量团队 | 效力测试全套报告 | `[待撰写]` |
 | lip cosmetics shelf life and stability data package | 保质期数据包 | 品牌合规团队 | 加速+实时稳定性数据 | `[待撰写]` |
