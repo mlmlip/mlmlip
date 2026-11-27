@@ -10,7 +10,7 @@ tags: ["compliance", "CPNP", "FDA", "EU regulation", "import"]
 
 The cosmetic compliance landscape is the single most underestimated cost and timeline item in a private label lip launch. Founders who budget for formula and packaging but treat compliance as "the factory handles it" lose weeks at customs — or worse, get stock held at the border because a dossier is incomplete. For a technical formulation breakdown, explore our factory guide on [Private Label Lip Gloss Manufacturer FDA MoCRA 2024 Compliant USA](/blog/private-label-lip-gloss-manufacturer-fda-mocra-2024-compliant-usa/).
 
-This article maps the real compliance path for a lip cosmetic imported into the European Union and the United States in 2026. It is written for brand founders, not regulatory lawyers, so we trade precision for clarity where it helps you plan.
+This article maps the real compliance path for a lip cosmetic imported into the European Union and the United States in 2026. It is written for brand founders, not regulatory lawyers, so we trade precision for clarity where it helps you plan. To align packaging compatibility and batch compliance, consult our [custom lip oil supplier](/lip-oil-manufacturer/) production overview.
 
 ## Two markets, two frameworks
 
@@ -47,7 +47,7 @@ A manufacturer operating under GMPC and ISO 22716 will normally produce the tech
 
 ### The Product Information File (PIF)
 
-Alongside the CPNP entry, every product needs a maintained PIF — a living dossier held at the Responsible Person's EU address and available to authorities on request. It contains the CPSR, the GMP certificate, batch records, and the labelling. Failure to maintain the PIF is a standalone violation even if the CPNP notification is correct.
+Alongside the CPNP entry, every product needs a maintained PIF — a living dossier held at the Responsible Person's EU address and available to authorities on request. It contains the CPSR, the GMP certificate, batch records, and the labelling. Failure to maintain the PIF is a standalone violation even if the CPNP notification is correct. Brands launching new collections frequently pair these testing standards with our [private label lip gloss OEM](/lip-gloss-manufacturer/) rapid 7-day sampling program.
 
 ### Practical EU timeline
 

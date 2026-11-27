@@ -3,6 +3,10 @@
 interface Crumb { label: string; href?: string }
 interface Props { items: Crumb[] }
 const { items } = Astro.props;
+const normalizeHref = (href: string) => {
+  if (!href || href === '/') return '/';
+  return href.endsWith('/') ? href : `${href}/`;
+};
 const ld = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -10,7 +14,7 @@ const ld = {
     '@type': 'ListItem',
     position: i + 1,
     name: c.label,
-    ...(c.href ? { item: new URL(c.href, 'https://mlmlip.com').href } : {})
+    ...(c.href ? { item: new URL(normalizeHref(c.href), 'https://mlmlip.com').href } : {})
   }))
 };
 ---

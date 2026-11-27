@@ -24,7 +24,7 @@ The clean beauty segment is governed by strict global expectations. Modern organ
 Regulatory compliance extends far beyond simple ingredient selection. To successfully launch an organic lip treatment or balm globally, your contract manufacturer must supply a comprehensive technical dossier. At Beautychain Limited, we maintain:
 *   **Facility Registration & Compliance:** US FDA MoCRA (Modernization of Cosmetics Regulation Act) facility registration and product listing.
 *   **European Market Access:** Complete EU CPNP (Cosmetic Products Notification Portal) notification support and full Cosmetic Product Safety Reports (CPSR) authored by certified toxicologists.
-*   **Quality Management Standards:** Dual ISO 22716 and US FDA GMPC certifications, ensuring rigorous traceability from raw material intake to final batch release.
+*   **Quality Management Standards:** Dual ISO 22716 and US FDA GMPC certifications, ensuring rigorous traceability from raw material intake to final batch release. To align packaging compatibility and batch compliance, consult our [custom lip oil supplier](/lip-oil-manufacturer/) production overview.
 
 Clean-label mandates also mean strict avoidance of petroleum-derived synthetic waxes, parabens, phthalates, and synthetic silicones. Meeting these standards while preserving luxury sensory attributes—such as glide, cushion, and long-wear properties—requires sophisticated formulation chemistry.
 

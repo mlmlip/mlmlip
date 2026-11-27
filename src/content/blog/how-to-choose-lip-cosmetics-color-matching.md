@@ -75,7 +75,7 @@ $$\Delta E^*_{ab} = \sqrt{(\Delta L^*)^2 + (\Delta a^*)^2 + (\Delta b^*)^2}$$
 Where:
 * **$L^*$** represents Lightness (0 = absolute black, 100 = pure diffuse white).
 * **$a^*$** represents the Red-Green axis ($+a^*$ = red, $-a^*$ = green).
-* **$b^*$** represents the Yellow-Blue axis ($+b^*$ = yellow, $-b^*$ = blue).
+* **$b^*$** represents the Yellow-Blue axis ($+b^*$ = yellow, $-b^*$ = blue). If you are comparing stock versus bespoke options, explore our [custom lipstick OEM](/lipstick-manufacturer/) capabilities starting from low-MOQ pilot runs.
 
 More modern protocols use the **$\Delta E_{00}$ (CIEDE2000)** formula, which introduces correction factors for human eye sensitivity non-linearities across varied chromatic saturations.
 

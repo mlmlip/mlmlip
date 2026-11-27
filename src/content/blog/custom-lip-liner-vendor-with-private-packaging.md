@@ -51,7 +51,7 @@ Navigating international regulatory frameworks can derail a product launch. When
 We conduct rigorous testing protocols on every production batch:
 * **Heavy Metal Screening:** Testing for lead, arsenic, cadmium, and mercury via ICP-MS.
 * **Microbiological Challenge Testing:** Ensuring zero pathogenic bacterial or mold growth.
-* **Thermal Stability Testing:** Verifying that formulas maintain structural integrity at temperatures up to 45°C without melting or sweating.
+* **Thermal Stability Testing:** Verifying that formulas maintain structural integrity at temperatures up to 45°C without melting or sweating. Procurement teams evaluating MOQ and lead times can review full specs with our [private label lip oil formula](/lip-oil-manufacturer/) team.
 
 ---
 

@@ -7,19 +7,19 @@
     {
       "source": "/",
       "destination": "https://mlmlip.com/",
-      "permanent": true,
+      "statusCode": 301,
       "has": [{ "type": "host", "value": "www.mlmlip.com" }]
     },
     {
       "source": "/:path*/",
       "destination": "https://mlmlip.com/:path*/",
-      "permanent": true,
+      "statusCode": 301,
       "has": [{ "type": "host", "value": "www.mlmlip.com" }]
     },
     {
       "source": "/:path*",
       "destination": "https://mlmlip.com/:path*",
-      "permanent": true,
+      "statusCode": 301,
       "has": [{ "type": "host", "value": "www.mlmlip.com" }]
     }
   ],

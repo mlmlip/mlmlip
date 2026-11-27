@@ -26,7 +26,7 @@ Today’s beauty consumer demands uncompromising performance paired with absolut
 Brand owners must design their products to meet stringent international standards before commercialization. At Beautychain Limited, we provide comprehensive compliance dossiers that protect your brand and accelerate speed-to-market. Our regulatory support includes:
 * **US FDA MoCRA Compliance:** Complete facility registration and product listing support to meet Modernization of Cosmetics Regulation Act standards.
 * **EU CPNP Notification & CPSR:** Full Cosmetics Products Notification Portal filing backed by comprehensive Cosmetic Product Safety Reports executed by qualified toxicologists.
-* **Traceability & Safety:** Full documentation for cruelty-free verification, heavy metal screening, and micro-challenge testing.
+* **Traceability & Safety:** Full documentation for cruelty-free verification, heavy metal screening, and micro-challenge testing. If you are comparing stock versus bespoke options, explore our [lip oil OEM](/lip-oil-manufacturer/) capabilities starting from low-MOQ pilot runs.
 
 ---
 

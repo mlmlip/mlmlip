@@ -98,8 +98,7 @@ const faqSchema = faqItems.length > 0 ? {
   <section>
     <div class="wrap">
       <div class="prose">
-        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: post.data.title }]} />
-        <h1 style="font-size:36px">{post.data.title}</h1>
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog/' }, { label: post.data.title }]} />
         <p class="post-meta">
           {fmt(post.data.pubDate)} · {readingTime} min read
           {post.data.tags.map((t) => <span class="tag">{t}</span>)}

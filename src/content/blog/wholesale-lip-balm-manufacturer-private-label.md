@@ -24,7 +24,7 @@ Modern consumers demand total transparency, driving the explosive growth of clea
 A compliant wholesale lip balm manufacturer private label must offer comprehensive safety dossiers and regulatory support to ensure smooth market entry across international borders. At Beautychain Limited, we provide complete compliance documentation, including:
 * **US FDA MoCRA Compliance:** Facility registration and product listing services to meet modern American regulatory mandates.
 * **EU CPNP Notification & CPSR:** Comprehensive Cosmetic Product Safety Reports executed by qualified toxicologists, satisfying strict European Union standards.
-* **ISO 22716 & GMPC Certification:** Operating under internationally recognized Good Manufacturing Practices to guarantee batch-to-batch consistency and traceability.
+* **ISO 22716 & GMPC Certification:** Operating under internationally recognized Good Manufacturing Practices to guarantee batch-to-batch consistency and traceability. For end-to-end OEM/ODM execution and transparent unit pricing, visit our [lip gloss contract manufacturing](/lip-gloss-manufacturer/) hub.
 
 ---
 

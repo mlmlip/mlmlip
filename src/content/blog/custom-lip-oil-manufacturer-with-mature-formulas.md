@@ -95,7 +95,7 @@ Beautychain Limited maintains a transparent, highly optimized manufacturing work
 [Client Brief] ---> [7-Day Sample Lab] ---> [Formula Approval] ---> [500+ MOQ Production] ---> [ISO QA Inspection] ---> [Global Dispatch]
 ```
 
-Every production run executed by Beautychain Limited undergoes strict microbiological testing for Total Aerobic Plate Count, yeast, mold, and pathogenic organisms prior to release. This uncompromising commitment to safety ensures that emerging indie brands and enterprise clients alike receive export-grade cosmetics that satisfy customs authorities across North America, the European Union, and the United Kingdom.
+Every production run executed by Beautychain Limited undergoes strict microbiological testing for Total Aerobic Plate Count, yeast, mold, and pathogenic organisms prior to release. This uncompromising commitment to safety ensures that emerging indie brands and enterprise clients alike receive export-grade cosmetics that satisfy customs authorities across North America, the European Union, and the United Kingdom. To align packaging compatibility and batch compliance, consult our [overnight lip sleeping mask manufacturer](/lip-mask-manufacturer/) production overview.
 
 ---
 

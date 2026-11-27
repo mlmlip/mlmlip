@@ -176,7 +176,7 @@ Procurement directors understand that cosmetic raw material prices are volatile,
 +-----------------------------------------------------------------------------------+
 ```
 
-To shield brand clients from sudden cost shocks, Beautychain executes strategic forward-purchasing contracts on fundamental structural building blocks (such as carnauba, castor oil derivatives, and cosmetic titanium dioxide) while maintaining alternative pre-approved green replacements in our formulation library.
+To shield brand clients from sudden cost shocks, Beautychain executes strategic forward-purchasing contracts on fundamental structural building blocks (such as carnauba, castor oil derivatives, and cosmetic titanium dioxide) while maintaining alternative pre-approved green replacements in our formulation library. For end-to-end OEM/ODM execution and transparent unit pricing, visit our [lip oil OEM](/lip-oil-manufacturer/) hub.
 
 ---
 

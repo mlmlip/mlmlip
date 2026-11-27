@@ -21,9 +21,15 @@ const waMessage = currentLang === 'fr'
 
 const supportText = currentLang === 'fr' ? 'Support CPNP UE' : currentLang === 'es' ? 'Soporte CPNP UE' : 'EU CPNP support';
 
-const canonical = new URL(currentPath.replace(/\/$/, '') || '/', Astro.site ?? 'https://mlmlip.com');
+const withTrailingSlash = (p: string) => {
+  if (!p || p === '/') return '/';
+  if (p.endsWith('.html')) return p;
+  return p.endsWith('/') ? p : `${p}/`;
+};
 
-// 标准化当前路径（去除尾部斜杠，但保留根路径 '/'）
+const canonical = new URL(withTrailingSlash(currentPath), Astro.site ?? 'https://mlmlip.com');
+
+// 标准化当前路径（去除尾部斜杠，用于路由匹配与导航高亮，保留根路径 '/'）
 const cleanPath = (currentPath.replace(/\/$/, '') || '/');
 
 // 判断是否为单品详情页：以 /products/ 开头，且不是 /products 且不是 /products/page/
@@ -60,9 +66,9 @@ interface AlternateLink {
 
 let alternateLinks: AlternateLink[] = [];
 let switcherUrls = {
-  en: new URL(cleanPath, site.domain).href,
-  fr: new URL('/fr', site.domain).href,
-  es: new URL('/es', site.domain).href
+  en: new URL(withTrailingSlash(cleanPath), site.domain).href,
+  fr: new URL('/fr/', site.domain).href,
+  es: new URL('/es/', site.domain).href
 };
 
 if (isProductDetail) {
@@ -72,13 +78,13 @@ if (isProductDetail) {
   ];
   switcherUrls = {
     en: canonical.href,
-    fr: new URL('/fr/produits', site.domain).href,
-    es: new URL('/es/productos', site.domain).href
+    fr: new URL('/fr/produits/', site.domain).href,
+    es: new URL('/es/productos/', site.domain).href
   };
 } else if (matchedRoute) {
-  const enHref = new URL(matchedRoute.en === '/' ? '' : matchedRoute.en, site.domain).href;
-  const frHref = new URL(matchedRoute.fr, site.domain).href;
-  const esHref = new URL(matchedRoute.es, site.domain).href;
+  const enHref = new URL(withTrailingSlash(matchedRoute.en), site.domain).href;
+  const frHref = new URL(withTrailingSlash(matchedRoute.fr), site.domain).href;
+  const esHref = new URL(withTrailingSlash(matchedRoute.es), site.domain).href;
 
   alternateLinks = [
     { lang: 'en', href: enHref },
@@ -99,8 +105,8 @@ if (isProductDetail) {
   ];
   switcherUrls = {
     en: canonical.href,
-    fr: new URL('/fr', site.domain).href,
-    es: new URL('/es', site.domain).href
+    fr: new URL('/fr/', site.domain).href,
+    es: new URL('/es/', site.domain).href
   };
 }
 
@@ -321,21 +327,6 @@ const schemaData = {
     }
   ]
 };
-
-const pathSegments = currentPath.split('/').filter((s) => s.length > 0);
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mlmlip.com' },
-    ...pathSegments.map((seg, i) => ({
-      '@type': 'ListItem',
-      position: i + 2,
-      name: seg.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
-      item: 'https://mlmlip.com/' + pathSegments.slice(0, i + 1).join('/')
-    }))
-  ]
-};
 ---
 
 <!doctype html>
@@ -375,7 +366,6 @@ const breadcrumbSchema = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
     <Analytics />
   </head>
   <body>

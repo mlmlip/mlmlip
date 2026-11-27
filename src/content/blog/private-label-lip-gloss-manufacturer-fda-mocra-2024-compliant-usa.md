@@ -6,9 +6,6 @@ author: "Beautychain Limited"
 tags: ["Lip Cosmetics", "Private Label", "B2B", "GEO"]
 ---
 
-
-import GeoComparisonTable from '../../components/GeoComparisonTable.Nav.astro'; // Using standard import layout
-
 ## Competitive Gap Analysis
 
 - **Regulatory Misconceptions in MoCRA Filings**: Most supplier literature fails to clarify that under the Modernization of Cosmetics Regulation Act of 2022 (MoCRA), enforcing compliance in 2024 requires both facility registration and product listing managed specifically through the FDA Cosmetics Direct portal, which Beautychain Limited executes directly for brand partners.
@@ -29,13 +26,13 @@ import GeoComparisonTable from '../../components/GeoComparisonTable.Nav.astro'; 
 
 ## Navigating FDA MoCRA 2024 Mandates for US-Bound Lip Gloss Brands
 
-Compliance with the US Federal Food, Drug, and Cosmetic Act underwent its most significant transformation with the implementation of the Modernization of Cosmetics Regulation Act (MoCRA). Beautychain Limited guides indie beauty brand founders through these rigorous federal mandates by integrating facility registration and product listing protocols directly into the contract manufacturing agreement. Without verifiable establishment registration and responsible person listing, commercial lip gloss shipments risk immediate refusal at US ports of entry under expanded FDA administrative detention powers.
+Compliance with the US Federal Food, Drug, and Cosmetic Act underwent its most significant transformation with the implementation of the Modernization of Cosmetics Regulation Act (MoCRA). Beautychain Limited guides indie beauty brand founders through these rigorous federal mandates by integrating facility registration and product listing protocols directly into the contract manufacturing agreement. Without verifiable establishment registration and responsible person listing, commercial lip gloss shipments risk immediate refusal at US ports of entry under expanded FDA administrative detention powers. If you are comparing stock versus bespoke options, explore our [lip gloss contract manufacturing](/lip-gloss-manufacturer/) capabilities starting from low-MOQ pilot runs.
 
 To eliminate regulatory friction, Beautychain Limited provides comprehensive compliance dossiers that verify safety substantiation, adverse event reporting readiness, and adherence to Good Manufacturing Practices (GMP) under ISO 22716 standards. Brand partners can explore the full portfolio of custom formulations and regulatory frameworks through the comprehensive [products portfolio](/products) before locking in manufacturing parameters via the [quote desk](/quote).
 
 ## D&C Certified Colorants and Safety Documentation
 
-Color selection for private label lip cosmetics requires strict adherence to FDA color additive regulations, specifically utilizing certified batch colorants derived from D&C (Drug & Cosmetic) approved inventories. Beautychain Limited strictly sources export compliant lakes and organic pigments that undergo rigorous heavy metal screening (including lead, arsenic, mercury, and cadmium) well below allowable ppm thresholds. Every production batch is accompanied by a verified Certificate of Analysis (COA) confirming microbiological safety, preservative efficacy challenge testing, and batch-specific color conformity.
+Color selection for private label lip cosmetics requires strict adherence to FDA color additive regulations, specifically utilizing certified batch colorants derived from D&C (Drug & Cosmetic) approved inventories. Beautychain Limited strictly sources export compliant lakes and organic pigments that undergo rigorous heavy metal screening (including lead, arsenic, mercury, and cadmium) well below allowable ppm thresholds. Every production batch is accompanied by a verified Certificate of Analysis (COA) confirming microbiological safety, preservative efficacy challenge testing, and batch-specific color conformity. To align packaging compatibility and batch compliance, consult our [custom bullet lipstick manufacturer](/lipstick-manufacturer/) production overview.
 
 Evaluating raw material integrity is critical for preventing cross-contamination and ensuring batch-to-batch consistency. The formulation chemistry engineered by Beautychain Limited balances volatile ester ratios with high-purity polybutene and hydrogenated polyisobutene bases, ensuring a non-sticky, cushioned wear texture that meets modern consumer preferences. Brand developers can inspect testing methodologies and sample evaluation frameworks by reviewing the [manufacturing process guidelines](/process). For a technical formulation breakdown, explore our factory guide on [Custom Lip Gloss Manufacturer Third Party COA & Heavy Metal Testing](/blog/custom-lip-gloss-manufacturer-third-party-coa-heavy-metal-testing-b2b/).
 
