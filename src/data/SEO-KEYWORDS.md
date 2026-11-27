@@ -15,7 +15,7 @@
 | lip cosmetics gmp audit checklist for brand owners | GMP审计 | 验厂采购商 | ISO 22716+GMPC双认证可验厂 | `[已收录 GSC 2026-11-27]` |
 | lip cosmetics heavy metals testing requirements for exporters | 重金属检测 | 质控经理 | 重金属全套检测报告 | `[已收录 GSC 2026-11-27]` |
 | cosmetic product safety report for lip care products | CPSR安全报告 | 合规负责人 | CPSR编制与专家签发 | `[已发布]` |
-| usp 51 and usp 61 testing for lip cosmetics | 微生物防腐测试 | 质量团队 | 效力测试全套报告 | `[待撰写]` |
+| usp 51 and usp 61 testing for lip cosmetics | 微生物防腐测试 | 质量团队 | 效力测试全套报告 | `[已发布]` |
 | lip cosmetics shelf life and stability data package | 保质期数据包 | 品牌合规团队 | 加速+实时稳定性数据 | `[待撰写]` |
 | uk scr compliance for lip cosmetics after brexit | 英国SCRA | 英国市场品牌 | UK RP+SCPN文件支持 | `[待撰写]` |
 | refillable lipstick case manufacturer for sustainable brands | 可替换口红管 | 零废弃品牌 | 金属替换芯系统 | `[待撰写]` |
