@@ -10,16 +10,16 @@
 | 关键词 / 话题 (Keyword / Topic) | 搜索意图 (Intent) | 目标受众 (Audience) | 必须植入的核心卖点 (Core Pitch) | 状态 (Status) |
 | :--- | :--- | :--- | :--- | :--- |
 | mocra compliant lip gloss manufacturer for us market | 美国合规 | 出口美国品牌 | MoCRA注册文件支持 | `[已发布]` |
-| cpnp notification support for private label lip products | CPNP申报 | 欧盟市场新品牌 | CPNP全套申报代办 | `[已发布]` |
-| pif documentation support for lip cosmetics eu market | PIF文件 | 欧盟进口商 | PIF文档编制支持 | `[已发布]` |
-| lip cosmetics gmp audit checklist for brand owners | GMP审计 | 验厂采购商 | ISO 22716+GMPC双认证可验厂 | `[已发布]` |
-| lip cosmetics heavy metals testing requirements for exporters | 重金属检测 | 质控经理 | 重金属全套检测报告 | `[已发布]` |
+| cpnp notification support for private label lip products | CPNP申报 | 欧盟市场新品牌 | CPNP全套申报代办 | `[已收录 GSC 2026-11-27]` |
+| pif documentation support for lip cosmetics eu market | PIF文件 | 欧盟进口商 | PIF文档编制支持 | `[已收录 GSC 2026-11-27]` |
+| lip cosmetics gmp audit checklist for brand owners | GMP审计 | 验厂采购商 | ISO 22716+GMPC双认证可验厂 | `[已收录 GSC 2026-11-27]` |
+| lip cosmetics heavy metals testing requirements for exporters | 重金属检测 | 质控经理 | 重金属全套检测报告 | `[已收录 GSC 2026-11-27]` |
 | cosmetic product safety report for lip care products | CPSR安全报告 | 合规负责人 | CPSR编制与专家签发 | `[已发布]` |
 | usp 51 and usp 61 testing for lip cosmetics | 微生物防腐测试 | 质量团队 | 效力测试全套报告 | `[待撰写]` |
 | lip cosmetics shelf life and stability data package | 保质期数据包 | 品牌合规团队 | 加速+实时稳定性数据 | `[待撰写]` |
 | uk scr compliance for lip cosmetics after brexit | 英国SCRA | 英国市场品牌 | UK RP+SCPN文件支持 | `[待撰写]` |
 | refillable lipstick case manufacturer for sustainable brands | 可替换口红管 | 零废弃品牌 | 金属替换芯系统 | `[待撰写]` |
-| how to start a lip gloss line with low minimums | 商业起步、找代工 | 想要创立品牌的美妆博主/初创者 | **500 pcs MOQ**, 7天免费打样（抵扣） | `[已发布]` |
+| how to start a lip gloss line with low minimums | 商业起步、找代工 | 想要创立品牌的美妆博主/初创者 | **500 pcs MOQ**, 7天免费打样（抵扣） | `[已收录 GSC 2026-11-27]` |
 | private label lip mask manufacturer for Europe | 找特定市场合规厂家 | 欧洲本地品牌、亚马逊欧洲站卖家 | CPNP/ISO 认证, 包材+配方全链定制 | `[已发布]` |
 | custom lip liner vendor with private packaging | 定制化需求、找供应商 | 已有一定规模的电商品牌 | 现有包材库丰富, 支持开模定制 | `[已发布]` |
 | custom lip oil manufacturer with mature formulas | 产品研发、寻源定厂 | 重视品质的品牌方/网红达人 | 我们有独家成熟唇油配方, 质地优越不粘腻, 500 pcs 起订 | `[已发布]` |
@@ -27,7 +27,7 @@
 | best lip oil formulation for winter cosmetic lines | 季节性配方研发 | 计划推出秋冬唇油系列的品牌 | 应季滋润基质配方, 7天打样验证肤感 | `[已发布]` |
 | white label lipstick suppliers no minimum | 零/极低起订贴牌口红 | 试水市场的小微卖家与 KOL | 500 pcs 极低起订, 现成配方即时贴牌 | `[已发布]` |
 | private label lip liner pencil waterproof OEM | 防水唇线笔贴牌代工 | 主打持妆卖点的新锐彩妆品牌 | 防晕染配方, 现成包材库, 500 pcs 起订 | `[已发布]` |
-| best hydrating lip oil vendor for indie brands | 寻找滋润唇油供应商 | 注重肤感的独立小众品牌 | 滋润不粘腻成熟配方, 低起订快速贴牌 | `[已发布]` |
+| best hydrating lip oil vendor for indie brands | 寻找滋润唇油供应商 | 注重肤感的独立小众品牌 | 滋润不粘腻成熟配方, 低起订快速贴牌 | `[已收录 GSC 2026-11-27]` |
 | custom wooden lip liner manufacturer low moq | 细分材质需求 | 走环保或经典路线的美妆品牌 | 现有丰富包材库(含木杆/塑料杆), 极低试错成本(500 pcs) | `[已发布]` |
 | start a lip oil business with private label | 商业起步 | 新手小白、内容创作者变现 | 拿着我们的成熟配方直接贴牌, 免去研发烦恼, 快速上市 | `[已发布]` |
 | private label nourishing lip oil manufacturer with peptide formula | 产品研发、寻源 | 追求功效唇妆的品牌主 | 成熟多肽配方, 不粘腻, 500 pcs 起订 | `[已发布]` |
@@ -66,14 +66,14 @@
 | lip gloss contract manufacturer for indie beauty brands | 独立品牌代工 | 独立美妆创始人 | 500 pcs柔性支持独立品牌成长 | `[已发布]` |
 | custom flavored lip gloss manufacturer for boutique brands | 风味定制 | 精品店自有品牌 | 香精库丰富, 定制风味唇釉 | `[已发布]` |
 | bulk lip gloss manufacturer with private label options | 大货贴牌 | 批发采购商 | 阶梯报价, 500 pcs起 | `[已发布]` |
-| organic lip gloss manufacturer with eco certificates | 有机认证 | 天然美妆品牌 | 有机原料渠道+认证支持 | `[已发布]` |
+| organic lip gloss manufacturer with eco certificates | 有机认证 | 天然美妆品牌 | 有机原料渠道+认证支持 | `[已收录 GSC 2026-11-27]` |
 | lip gloss filling and assembly services for startups | 灌装组装服务 | 无供应链经验的初创 | 灌装到组装一站式, 小批量友好 | `[已发布]` |
 | high shine lip gloss manufacturer for dewy look brands | 水光唇釉 | 主打韩系水光感的品牌 | 高折光指数配方, 不粘腻 | `[已发布]` |
 | lip gloss oem factory with low minimum order quantity | 低起订OEM | 首次下单的创业者 | 500 pcs起, 混色试单 | `[已发布]` |
 | non sticky lip gloss base manufacturer for refillable brands | 不粘基底+可替换装 | 走可持续路线的品牌 | 不粘基底适配替换芯设计 | `[已发布]` |
 | sugar free flavored lip gloss manufacturer for teen brands | 少女线风味唇釉 | 面向Z世代的品牌 | 温和配方符合年轻市场偏好 | `[已发布]` |
-| lip mud manufacturer for soft matte finish brands | 雾面唇泥 | 雾面妆效品牌 | 柔焦粉体技术, 不拔干 | `[已发布]` |
-| private label lip mud with blur effect formula | 柔焦贴牌 | 快时尚美妆品牌 | 即时柔焦效果, 快速贴牌 | `[已发布]` |
+| lip mud manufacturer for soft matte finish brands | 雾面唇泥 | 雾面妆效品牌 | 柔焦粉体技术, 不拔干 | `[已收录 GSC 2026-11-27]` |
+| private label lip mud with blur effect formula | 柔焦贴牌 | 快时尚美妆品牌 | 即时柔焦效果, 快速贴牌 | `[已收录 GSC 2026-11-27]` |
 | lip mud oem supplier for k beauty inspired lines | 韩系灵感线 | K-beauty风格品牌 | 韩系质地配方, 快速上市 | `[待撰写]` |
 | low moq lip mud manufacturer for small cosmetics brands | 低起订 | 小体量品牌 | 500 pcs起, 支持混色 | `[待撰写]` |
 | custom lip mud shades manufacturer with rapid sampling | 定制色号 | 多SKU品牌 | 全色系定制, 7天出样 | `[待撰写]` |
@@ -187,6 +187,46 @@
 | how to read a certificate of analysis for lip cosmetics | COA解读指引 | 质检新手 | COA解读+全套检测报告 | `[待撰写]` |
 | what packaging options exist for small batch lip gloss orders | 包材选型解答 | 包材选型买家 | 现货包材库+私模选项 | `[待撰写]` |
 | how to choose a lip balm manufacturer for sensitive skin formulas | 敏感肌选厂指引 | 温和配方品牌 | 无香精敏感肌选项 | `[待撰写]` |
+| private label lip balm 100 pcs moq | 低起订润唇膏 | 初创美妆与试单品牌 | 现成包材100-200 pcs超低起订, 7天打样费100%抵扣 | `[待撰写]` |
+| custom organic lip butter manufacturer | 有机唇霜定制 | 天然个护与Clean Beauty品牌 | 60-75%天然有机乳木果与木鲁星果脂无水配方 | `[待撰写]` |
+| spf 15 tinted lip balm oem | 防晒有色润唇膏 | 户外及药妆护理品牌 | FDA OTC防晒分散体+Pantone精准调色, 防析出稳定 | `[待撰写]` |
+| anhydrous lip balm manufacturer with 65c melting point | 高熔点无水润唇膏 | 出口热带与电商卖家 | 65-72°C蜡基高熔点配方, 夏季物流不融化不出汗 | `[待撰写]` |
+| private label beeswax lip balm supplier low moq | 蜂蜡润唇膏贴牌 | 天然护理及礼品品牌 | 天然蜂蜡/小烛树蜡双选, 100-200 pcs现成管型起订 | `[待撰写]` |
+| vegan candelilla wax lip balm contract manufacturer | 纯素植物蜡润唇膏 | 纯素零残忍美妆品牌 | 100%纯素小烛树蜡替代蜂蜡, 附带零动物测试文件 | `[待撰写]` |
+| custom squeeze tube peptide lip balm manufacturer | 软管多肽润唇膏 | 功效唇护与DTC品牌 | 陶瓷斜口软管+三肽修护基质, 100-200 pcs柔性起订 | `[待撰写]` |
+| eco tin lip balm private label manufacturer | 铁盒环保润唇膏 | 零塑可持续美妆品牌 | 铝制环保铁盒+无水植物黄油配方, CPNP合规支持 | `[待撰写]` |
+| anti sweating lip balm formula oem factory | 防出汗抗析出润唇膏 | 注重货架期稳定性品牌 | 梯度控温冷却工艺+45°C 12周稳定性测试防油析出 | `[待撰写]` |
+| spf 30 mineral zinc oxide lip balm manufacturer | 物理防晒氧化锌润唇膏 | 敏感肌与户外运动品牌 | 非纳米氧化锌均匀分散无泛白, ISO 22716洁净车间 | `[待撰写]` |
+| shea and murumuru butter lip balm wholesale oem | 乳木果润唇膏批发 | 欧洲与北美个护批发商 | 乳木果与木鲁星果脂深层修护, MSDS与COA齐全 | `[待撰写]` |
+| custom flavored lip balm sticks 200 pcs moq | 定制香型润唇棒 | 文创联名与精品店品牌 | 食品级天然风味库定制, 100-200 pcs快速贴牌上市 | `[待撰写]` |
+| overnight ceramide lip balm stick manufacturer | 神经酰胺修护润唇棒 | 药房与皮肤学护肤品牌 | 神经酰胺屏障修护无水棒, FDA MoCRA注册工厂直供 | `[待撰写]` |
+| bamboo tube organic lip balm private label factory | 竹管有机润唇膏 | 环保生活方式美妆品牌 | 天然竹壳包材+100-200 pcs标准管芯灌装, 支持刻字 | `[待撰写]` |
+| pH reactive color changing lip balm oem supplier | 温变润唇膏代工 | 社交媒体爆款美妆卖家 | pH温变显色科技+润泽蜡基, 7天定制打样 | `[待撰写]` |
+| spf lip balm stability testing and cooling curve oem | 防晒润唇膏稳定性研发 | 品牌研发与品控团队 | 滴点65-72°C测试与防析出工艺白皮书支持 | `[待撰写]` |
+| peptide hydrogel lip mask oem manufacturer | 多肽水凝胶唇膜 | 功效护肤与SPA品牌 | 多肽胶原水凝胶贴片+独立铝箔封装, GMPC无菌车间 | `[待撰写]` |
+| collagen hydrogel lip patch private label low moq | 胶原水凝胶唇贴 | 跨境电商与美容院线 | 高贴合水凝胶膜布, 100-200 pcs标准包装试单支持 | `[待撰写]` |
+| ceramide overnight lip mask jar contract manufacturer | 神经酰胺夜间唇膜罐 | 睡眠修护护肤品牌 | 神经酰胺+角鲨烷厚敷修护, 附带24小时保湿支持文档 | `[待撰写]` |
+| berry peptide lip sleeping mask oem factory | 浆果多肽睡眠唇膜 | 欧美DTC与TikTok品牌 | 植物果萃+三肽复合配方, EU CPNP与CPSR全套备案 | `[待撰写]` |
+| hyaluronic acid hydrogel lip mask supplier usa eu | 玻尿酸水凝胶唇膜 | 北美与欧盟零售渠道商 | FDA MoCRA及EU 1223/2009双合规, Intertek重金属报告 | `[待撰写]` |
+| vegan lip sleeping mask without microplastics oem | 无微塑料纯素唇膜 | 欧盟Clean Beauty品牌 | 符合欧盟微塑料禁令(Reg 2023/2055), 零合成聚合物 | `[待撰写]` |
+| velvety blur matte lipstick manufacturer 100 pcs moq | 柔焦哑光口红贴牌 | 独立彩妆创始人 | 丝绒柔焦粉体技术不拔干, 100-200 pcs现成管材起订 | `[待撰写]` |
+| long wear matte bullet lipstick oem magnetic case | 磁吸管持久哑光口红 | 中高端轻奢彩妆品牌 | 加重锌合金磁吸外壳+8小时持妆哑光膏体, 支持开模500 pcs | `[待撰写]` |
+| soft matte liquid lipstick private label non drying | 不拔干哑光唇釉代工 | 欧美日常彩妆品牌 | 成膜不沾杯不显唇纹, X-Rite ΔE<0.8精准校色 | `[待撰写]` |
+| cream to matte velvet lipstick supplier clean beauty | 奶油转哑光口红 | 清洁美妆零售品牌 | 植物角鲨烷润泽哑光基质, 零滑石粉零防腐剂配方 | `[待撰写]` |
+| custom engraved matte lipstick bullets oem factory | 膏体雕刻哑光口红 | 节日礼盒与设计师品牌 | 膏体定制浮雕Logo+哑光显色, 500 pcs定制模具支持 | `[待撰写]` |
+| transfer proof matte lipstick formula testing lab | 不沾杯哑光口红研发 | 专业彩妆研发经理 | 7天实验室快速打样验证沾杯率与显色度, 样品费可抵扣 | `[待撰写]` |
+| private label lip gloss pricing breakdown per unit | 唇釉贴牌单价成本核算 | 核算毛利的品牌创始人 | 透明阶梯报价(100-200 pcs试单至万件量产), 无隐性费用 | `[待撰写]` |
+| how much does custom lip cosmetics mold tooling cost | 唇妆私模开模费用指南 | 规划独家外观的中型品牌 | 500 pcs开模起订, 4-8周模具周期与3D手板验证 | `[待撰写]` |
+| lip gloss wand and doe foot applicator oem guide | 唇釉刷头选型OEM指南 | 注重涂抹肤感的产品经理 | 植绒大脚丫/硅胶头/冷却陶瓷头/金属按摩头全库选配 | `[待撰写]` |
+| cooling ceramic tip vs metal applicator lip oil oem | 陶瓷头与金属头唇油对比 | 护肤型唇油品牌主 | 医用级陶瓷与锌合金冰感刷头, 配防漏内塞负压测试 | `[待撰写]` |
+| heavy wall acrylic vs pcr lip gloss tube packaging | 厚壁亚克力与PCR管对比 | 包装采购与可持续团队 | 奢侈品级厚壁PMMA与消费后回收PCR管材现货库对比 | `[待撰写]` |
+| custom lip balm stick tube packaging supplier china | 润唇膏管包材定制工厂 | 包装寻源与品牌采购 | 细管/圆管/方管/铝管现货100-200 pcs丝印烫金 | `[待撰写]` |
+| wiper torque and leak proof lip gloss tube engineering | 唇釉内塞刮油与防漏工艺 | 跨境空运痛点电商卖家 | 精密PE刮油内塞+真空负压-0.08MPa测漏不渗油 | `[待撰写]` |
+| private label lip product unit economics and moq tiers | 唇妆代工起订量与阶梯价 | 初创品牌财务规划者 | 100-200 pcs现成包材 vs 500 pcs私模成本与回本测算 | `[待撰写]` |
+| custom silk screen vs hot stamping on lip tubes | 唇管丝印与烫金工艺对比 | 品牌视觉设计师与买手 | 金属烫金/丝印/UV喷涂/磨砂渐变表面工艺打样对照 | `[待撰写]` |
+| lip cosmetics private label packaging compatibility test | 包材配方相容性测试 | 出口欧美质量合规团队 | 45°C/5°C冷热循环相容性测试, 杜绝溶胀开裂变色 | `[待撰写]` |
+| oem lip brush flocked flock tip density customization | 定制唇刷植绒密度与倾角 | 追求差异化体验的新锐品牌 | 贴合唇形斜角刷头定制, 精准控制单次蘸取用量 | `[待撰写]` |
+| turnkey private label lip kit box packaging oem | 唇妆套盒彩盒一站式代工 | 节庆套装与礼品渠道买家 | 吸塑/EVA内托+FSC彩盒+双支/三支口红唇釉组装交付 | `[待撰写]` |
 
 ## AI 创作指令约束 (Prompt Rules for this Site)
 *(n8n 调用 AI 时，必须带上以下规则)*
@@ -204,3 +244,8 @@
 - **去重**: 已对照 26 篇已发布博客 slug 与本表既有词共 58 个已覆盖词逐一排重
 - **品类纯度**: 零 glitter/shimmer/festival 污染词（validate_keyword_pool.py 门禁强制）
 - **低水位告警**: 待撰写 < 21 时由 validate_keyword_pool.py 自动推送钉钉（JEV J-3.3 防复发）
+
+### Batch 2026-11-28 (P2-2 Commercial Expansion)
+- **新增**: 40 词（Lip Balm 16 词 + Peptide/Hydrogel Lip Mask & Matte Lipstick 12 词 + Pricing/Packaging/Wand OEM 12 词）
+- **商业口径对齐**: 现成包材 100-200 pcs MOQ、定制开模 500 pcs、7 天打样、ISO 22716 / GMPC / FDA / MSDS / EU CPNP
+- **门禁**: 全行通过 `scripts/validate_keyword_pool.py` 校验，零禁词/零 `$` 残留

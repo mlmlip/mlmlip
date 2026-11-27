@@ -76,7 +76,7 @@ Beautychain Limited enforces an accessible minimum order quantity of only 500 un
 Dedicated formulation labs coupled with pre-tested cosmetic raw material inventories allow Beautychain Limited to dispatch custom-pigmented and scented liquid samples within 7 business days of brief approval. For a technical formulation breakdown, explore our factory guide on [Private Label Lip Oil OEM Manufacturer UK SCPN Compliant B2B](/blog/private-label-lip-oil-oem-manufacturer-uk-scpn-compliant-b2b/).
 
 ### Q: Are the manufactured lip gloss formulas compliant with EU and US regulatory frameworks?
-All formulations produced by Beautychain Limited comply with EU Cosmetic Regulation (EC) No 1223/2009, US FDA MoCRA guidelines, and ISO 22716 manufacturing standards, with complete documentation provided upon commercial inquiry.
+All formulations produced by Beautychain Limited comply with EU Cosmetic Regulation (EC) No 1223/2009, US FDA MoCRA guidelines, and ISO 22716 manufacturing standards, with complete documentation provided upon commercial inquiry. Related contract manufacturing parameters are detailed in our analysis of [Best Lip Oil Formulation for Winter Cosmetic Lines](/blog/best-lip-oil-formulation-for-winter-cosmetic-lines/).
 
 ### Q: Can custom packaging and custom Pantone shade matching be requested?
 Custom tooling, custom Pantone color matching, silk-screening, hot-stamping, and specialized wand applicator selections are fully supported across all private label projects.

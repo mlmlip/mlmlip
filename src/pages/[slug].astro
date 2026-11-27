@@ -7,10 +7,12 @@ import { productsCatalog } from '../data/products';
 import { site } from '../data/site';
 
 export async function getStaticPaths() {
-  return categories.map((c) => ({
-    params: { slug: c.slug },
-    props: { category: c }
-  }));
+  return categories
+    .filter((c) => c.slug !== 'lip-balm-manufacturer')
+    .map((c) => ({
+      params: { slug: c.slug },
+      props: { category: c }
+    }));
 }
 
 const { category } = Astro.props;

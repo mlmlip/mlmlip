@@ -1,5 +1,5 @@
 ---
-import { site, footerCategories, footerCompany, ui, navKeys, navLinks } from '../data/site';
+import { site, footerCategories, footerCompany, ui, navKeys, navLinks, navProductCategories } from '../data/site';
 import LiveChat from '../components/LiveChat.astro';
 import FadeIn from '../components/FadeIn.astro';
 import Analytics from '../components/Analytics.astro';
@@ -310,6 +310,22 @@ const schemaData = {
             "@type": "Service",
             "name": "Barrier Repair Lip Mask Production"
           }
+        },
+        {
+          "@type": "Offer",
+          "name": "100-200 pcs MOQ Private Label Lip Balm OEM/ODM",
+          "description": "Anhydrous organic butter, tinted, and SPF 15-30 lip balms with 65-72C wax-base stability from 100-200 pcs MOQ in stock sticks, jars, squeeze tubes, or eco tins (500 pcs for custom molds).",
+          "category": "Lip Balm OEM/ODM",
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "minValue": 100,
+            "maxValue": 200,
+            "unitCode": "C62"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Private Label Lip Balm & SPF Balm Manufacturing"
+          }
         }
       ],
       "hasOfferCatalog": {
@@ -321,7 +337,8 @@ const schemaData = {
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Skinified Peptide Lip Oil OEM/ODM" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Precision Lip Liner Production" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Lipstick & Bullet Case Tooling" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Barrier Repair Lip Mask Production" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Barrier Repair Lip Mask Production" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Private Label Lip Balm & SPF Balm Manufacturing" } }
         ]
       }
     }
@@ -377,6 +394,19 @@ const schemaData = {
           {navKeys.map((key) => {
             const targetLink = localizedNavLinks[key];
             const isActive = cleanPath === targetLink.replace(/\/$/, '');
+            if (key === 'products') {
+              const dropdownItems = navProductCategories[currentLang];
+              return (
+                <div class="nav-item">
+                  <a href={targetLink} class={isActive ? 'is-active' : ''} aria-haspopup="true">{t.nav[key]} ▾</a>
+                  <div class="nav-dropdown" role="menu">
+                    {dropdownItems.map((item) => (
+                      <a href={item.href} role="menuitem">{item.label}</a>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
             return (
               <a href={targetLink} class={isActive ? 'is-active' : ''}>{t.nav[key]}</a>
             );
@@ -399,6 +429,19 @@ const schemaData = {
           {navKeys.map((key) => {
             const targetLink = localizedNavLinks[key];
             const isActive = cleanPath === targetLink.replace(/\/$/, '');
+            if (key === 'products') {
+              const dropdownItems = navProductCategories[currentLang];
+              return (
+                <>
+                  <a href={targetLink} class={isActive ? 'is-active' : ''}>{t.nav[key]}</a>
+                  <div style="padding-left: 14px; display: flex; flex-direction: column;">
+                    {dropdownItems.slice(1).map((item) => (
+                      <a href={item.href} style="font-size: 13px; padding: 7px 0;">↳ {item.label}</a>
+                    ))}
+                  </div>
+                </>
+              );
+            }
             return (
               <a href={targetLink} class={isActive ? 'is-active' : ''}>{t.nav[key]}</a>
             );

@@ -137,6 +137,40 @@ export const ui = {
 export const navKeys = ['products', 'packaging', 'customization', 'process', 'cases', 'samples', 'blog', 'about'] as const;
 export const navLinks = { products: '/products', packaging: '/packaging', customization: '/customization', process: '/process', cases: '/cases', samples: '/samples', blog: '/blog', about: '/about' };
 
+// 导航栏 Products 下拉核心品类列表 (含 Lip Balm 落地页)
+export const navProductCategories = {
+  en: [
+    { label: 'All Lip Formulations (60+)', href: '/products' },
+    { label: 'Lip Gloss Manufacturer', href: '/lip-gloss-manufacturer' },
+    { label: 'Lip Balm Manufacturer', href: '/lip-balm-manufacturer' },
+    { label: 'Lip Oil Manufacturer', href: '/lip-oil-manufacturer' },
+    { label: 'Lipstick Manufacturer', href: '/lipstick-manufacturer' },
+    { label: 'Lip Mud & Velvet Tint', href: '/lip-mud-manufacturer' },
+    { label: 'Lip Mask Manufacturer', href: '/lip-mask-manufacturer' },
+    { label: 'Lip Liner Manufacturer', href: '/lip-liner-manufacturer' }
+  ],
+  fr: [
+    { label: 'Tous les Produits (60+)', href: '/fr/produits' },
+    { label: 'Fabricant Gloss Lèvres', href: '/fr/fabricant-gloss-levres' },
+    { label: 'Fabricant Baume Lèvres', href: '/fr/fabricant-baume-levres' },
+    { label: 'Fabricant Huile Lèvres', href: '/fr/fabricant-huile-levres' },
+    { label: 'Fabricant Rouge à Lèvres', href: '/fr/fabricant-rouge-levres' },
+    { label: 'Fabricant Lip Mud', href: '/fr/fabricant-lip-mud' },
+    { label: 'Fabricant Masque Lèvres', href: '/fr/fabricant-masque-levres' },
+    { label: 'Fabricant Crayon Lèvres', href: '/fr/fabricant-crayon-levres' }
+  ],
+  es: [
+    { label: 'Todos los Productos (60+)', href: '/es/productos' },
+    { label: 'Fabricante Brillo Labial', href: '/es/fabricante-brillo-labios' },
+    { label: 'Fabricante Bálsamo Labial', href: '/es/fabricante-balsamo-labial' },
+    { label: 'Fabricante Aceite Labios', href: '/es/fabricante-aceite-labios' },
+    { label: 'Fabricante Lápiz Labial', href: '/es/fabricante-lapiz-labial' },
+    { label: 'Fabricante Lip Mud', href: '/es/fabricante-lip-mud' },
+    { label: 'Fabricante Mascarilla Labios', href: '/es/fabricante-mascarilla-labios' },
+    { label: 'Fabricante Delineador Labios', href: '/es/fabricante-delineador-labios' }
+  ]
+};
+
 // 页脚内链（SEO：品类落地页 + 关键页）
 export const footerCategories = [
   { label: 'Lip Gloss Manufacturer', href: '/lip-gloss-manufacturer' },
@@ -222,9 +256,16 @@ export const products = [
   {
     name: 'Barrier Repair Lip Mask',
     body: 'Intensive overnight treatment balms with ceramide complexes and rich plant butters for 24-hour hydration and restorative care.',
-    detail: '500 pcs MOQ · Jar or Soft-Touch Squeeze Tubes',
+    detail: '100-200 pcs MOQ · Jar or Soft-Touch Squeeze Tubes',
     image: '/products/nas-sync-img-0050.jpg',
     categoryHref: '/lip-mask-manufacturer'
+  },
+  {
+    name: 'Anhydrous & SPF Lip Balm',
+    body: 'Water-free organic shea, murumuru and ceramide lip balms with 65–72°C wax-base thermal stability, tinted and SPF 15–30 anti-sweating options.',
+    detail: '100-200 pcs MOQ · Stick, Jar, Squeeze Tube & Eco Tin',
+    image: '/products/nas-sync-20.jpg',
+    categoryHref: '/lip-balm-manufacturer'
   }
 ];
 

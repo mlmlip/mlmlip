@@ -1,0 +1,517 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { site } from '../data/site';
+
+const faqs = [
+  {
+    q: 'What is the minimum order quantity (MOQ) for private label lip balm?',
+    a: '100-200 pcs MOQ per SKU for all standard in-stock packaging (twist-up sticks, jars, soft-touch squeeze tubes, and eco aluminum tins). Custom mold tooling for exclusive silhouettes starts at 500 pcs MOQ with a 4–8 week tooling schedule.'
+  },
+  {
+    q: 'How fast can you ship custom lip balm lab samples?',
+    a: '7 business days from confirmed brief. Our formulation chemists customize your wax-butter texture, flavor/aroma, tint, or SPF system and ship bench prototypes in 7 days — with 100% of sampling fees credited back to your bulk order.'
+  },
+  {
+    q: 'How do you prevent lip balm melting, oil sweating (syneresis), and wax bloom?',
+    a: 'Our anhydrous stick matrix is engineered to a 65–72°C drop-point melting range using calibrated Candelilla, Carnauba, Beeswax, and microcrystalline stabilizers paired with precision-controlled cooling curves. Every batch undergoes 45°C 12-week accelerated stability validation to eliminate oil sweating and surface wax blooming.'
+  },
+  {
+    q: 'Can you manufacture organic anhydrous lip butter and SPF 15–30 tinted lip balm?',
+    a: 'Yes. We formulate 100% water-free (Aw < 0.2) organic shea, murumuru, and cocoa butter bases at 60–75% emollient loading, as well as FDA OTC and EU-compliant SPF 15–30 mineral (non-nano Zinc Oxide) or organic UV-filter tinted lip balms with uniform dispersion.'
+  },
+  {
+    q: 'What certifications and compliance dossiers are included with bulk orders?',
+    a: 'All lip balm runs are manufactured inside ISO 22716 and GMPC certified Class 100,000 cleanrooms. Every order includes full MSDS, INCI breakdowns, Intertek heavy metal & microbiological COA dossiers, US FDA MoCRA facility registration support, and EU CPNP / CPSR Part A & B safety documentation.'
+  },
+  {
+    q: 'What is the bulk production lead time after sample approval?',
+    a: '15–25 business days after prototype sign-off and packaging artwork approval for standard stock packaging (100-200 pcs MOQ and up). Custom injection-molded components (500 pcs MOQ) add 4–8 weeks for mold fabrication prior to filling.'
+  }
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Private Label Lip Balm Manufacturer',
+  serviceType: 'Custom Lip Balm & SPF Treatment Balm Manufacturing (Private Label / OEM / ODM)',
+  description:
+    'ISO 22716 & GMPC certified private label lip balm manufacturer offering 100-200 pcs MOQ for standard stock packaging, 500 pcs MOQ for custom mold tooling, 7-day rapid sampling, and anhydrous 65-72°C wax-base engineering.',
+  provider: {
+    '@type': 'Organization',
+    name: site.manufacturer,
+    url: site.domain
+  },
+  areaServed: ['United States', 'Canada', 'United Kingdom', 'France', 'Germany', 'Spain', 'Italy', 'Australia'],
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Standard Stock Packaging Lip Balm OEM/ODM',
+      description: '100-200 pcs MOQ per SKU for standard in-stock sticks, jars, squeeze tubes, and eco tins with 7-day rapid sampling (100% credited).',
+      eligibleQuantity: {
+        '@type': 'QuantitativeValue',
+        minValue: 100,
+        maxValue: 200,
+        unitCode: 'C62'
+      }
+    },
+    {
+      '@type': 'Offer',
+      name: 'Custom Mold Tooling Lip Balm OEM/ODM',
+      description: '500 pcs MOQ per SKU for bespoke custom injection-molded lip balm cases and exclusive silhouettes.',
+      eligibleQuantity: {
+        '@type': 'QuantitativeValue',
+        minValue: 500,
+        unitCode: 'C62'
+      }
+    }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a
+    }
+  }))
+};
+
+const technicalSpecs = [
+  {
+    parameter: 'Standard Stock Packaging MOQ',
+    benchmark: '100-200 pcs MOQ per SKU',
+    details: 'Twist-up sticks, lip butter jars, soft-touch squeeze tubes, and eco aluminum tins from our stock library.'
+  },
+  {
+    parameter: 'Custom Mold Tooling MOQ',
+    benchmark: '500 pcs MOQ per SKU',
+    details: 'Bespoke injection-molded caps, embossed barrels, or custom silhouette tooling (4–8 weeks mold lead time).'
+  },
+  {
+    parameter: 'Wax Base Melting Point',
+    benchmark: '65–72°C Drop-Point',
+    details: 'Calibrated Candelilla, Carnauba, Beeswax & botanical wax matrix prevents summer heat-slump and guarantees clean bullet release.'
+  },
+  {
+    parameter: 'Anhydrous Nourishing Matrix',
+    benchmark: '100% Water-Free (Aw < 0.2)',
+    details: 'Zero free water prevents microbial growth without harsh parabens, extending shelf life to 24–36 months cleanly.'
+  },
+  {
+    parameter: 'Natural Organic Oil & Butter Ratio',
+    benchmark: '60–75% Botanical Emollients',
+    details: 'Cold-pressed Shea Butter, Murumuru, Cocoa Butter, Squalane & Jojoba esters balanced for cushion glide without waxy drag.'
+  },
+  {
+    parameter: 'SPF & Anti-Sweating / Anti-Blooming',
+    benchmark: 'SPF 15–30 + 45°C Stability',
+    details: 'Uniform non-nano Zinc Oxide / UV filter suspension with controlled cooling curves to block oil syneresis and wax crystallization.'
+  },
+  {
+    parameter: 'Rapid Prototyping & Credit',
+    benchmark: '7 Business Days Sampling',
+    details: 'Custom flavor, shade & texture samples dispatched in 7 days; 100% of sample fee credited back to bulk production.'
+  },
+  {
+    parameter: 'Factory Compliance & Dossiers',
+    benchmark: 'ISO 22716 · GMPC · FDA · MSDS',
+    details: 'US FDA MoCRA registered cleanrooms, EU CPNP / CPSR Part A & B safety dossiers, Intertek heavy metal & microbial COAs.'
+  }
+];
+
+const formatMatrix = [
+  {
+    format: 'Classic & Slim Twist-Up Stick',
+    meltingPoint: '68–72°C',
+    butterRatio: '60–65% Oils & Butters / 22–28% Structural Waxes',
+    moq: '100-200 pcs MOQ (Stock) · 500 pcs (Custom Mold)',
+    technology: 'Controlled multi-stage cooling tunnel for glossy, pinhole-free bullet surface and zero wax bloom.'
+  },
+  {
+    format: 'Organic Lip Butter Jar & Eco Tin',
+    meltingPoint: '56–64°C',
+    butterRatio: '70–75% Shea, Murumuru & Cocoa Butter Blend',
+    moq: '100-200 pcs MOQ (Stock) · 500 pcs (Custom Mold)',
+    technology: 'Anhydrous whipped or high-butter hot-pour system; zero syneresis under 45°C thermal cycling.'
+  },
+  {
+    format: 'Peptide Squeeze Tube Treatment Balm',
+    meltingPoint: '48–55°C',
+    butterRatio: '65–72% Squalane, Lanolin-Free Esters & Tripeptides',
+    moq: '100-200 pcs MOQ (Stock) · 500 pcs (Custom Mold)',
+    technology: 'Shear-thinning cushion rheology with slanted ceramic or PE applicator tip and leak-tested seal.'
+  },
+  {
+    format: 'SPF 15–30 Tinted Sunscreen Lip Balm',
+    meltingPoint: '65–70°C',
+    butterRatio: '60–68% Emollients + Stabilized UV Filters',
+    moq: '100-200 pcs MOQ (Stock) · 500 pcs (Custom Mold)',
+    technology: 'High-shear three-roll pigment & UV dispersion prevents grittiness, separation, and white cast.'
+  }
+];
+---
+
+<BaseLayout
+  title="Private Label Lip Balm Manufacturer | 100-200 pcs MOQ — MLM Lip"
+  description="Private label lip balm manufacturer with 100-200 pcs MOQ for stock packaging (500 pcs custom mold). Anhydrous 65-72°C wax bases, SPF anti-sweating tech, 7-day samples, ISO 22716/GMPC/FDA/MSDS."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
+  <section style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush-soft) 100%); padding-top: 64px; padding-bottom: 80px;">
+    <div class="wrap">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Categories', href: '/products' }, { label: 'Lip Balm' }]} />
+      <p class="eyebrow" style="color: var(--gold); letter-spacing: 0.2em;">Lip Balm · Private Label · OEM / ODM</p>
+      <h1 style="font-size: clamp(34px, 4.4vw, 54px); max-width: 880px;">Private Label Lip Balm Manufacturer</h1>
+      <p class="lead" style="max-width: 760px; font-size: 19px;">
+        Engineered anhydrous lip balms, organic plant-butter salves, and SPF 15–30 tinted treatments built to anchor daily customer retention. Launch with <strong>100-200 pcs MOQ</strong> on standard stock packaging (500 pcs for custom mold tooling), <strong>7-day rapid sampling</strong>, and turnkey <strong>ISO 22716 / GMPC / FDA / MSDS</strong> compliance.
+      </p>
+      <p style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px;">
+        <a class="btn" href="/quote?product=Lip%20Balm&source=lip-balm-landing">Get a Custom Lip Balm Quote &rarr;</a>
+        <a class="btn ghost" href="/samples?category=Lip%20Balm&source=lip-balm-landing">Order 7-Day Samples</a>
+        <a class="btn ghost" href="#lip-balm-inquiry">Submit Brief Below</a>
+      </p>
+      <p class="note" style="margin-top: 18px;">
+        ✓ 100-200 pcs MOQ (Stock Packaging) &nbsp;·&nbsp; ✓ 500 pcs Custom Mold &nbsp;·&nbsp; ✓ 7-Day Rapid Sampling (Fee 100% Credited) &nbsp;·&nbsp; ✓ ISO 22716 / GMPC / FDA / MSDS
+      </p>
+    </div>
+  </section>
+
+  <!-- Commercial Alignment Pillars -->
+  <section style="padding: 48px 0 24px;">
+    <div class="wrap">
+      <div class="grid three" style="gap: 24px;">
+        <div class="card gold-line" style="padding: 24px;">
+          <p class="eyebrow" style="color: var(--gold); margin-bottom: 6px;">Low-Risk Pilot Scale</p>
+          <h2 style="font-size: 20px; margin: 0 0 8px;">100-200 pcs Standard MOQ</h2>
+          <p style="margin: 0; font-size: 14px; color: var(--ink-soft);">
+            Standard in-stock sticks, jars, squeeze tubes, and eco tins start at <strong>100-200 pcs MOQ</strong> per SKU. Exclusive custom mold tooling starts at 500 pcs.
+          </p>
+        </div>
+        <div class="card gold-line" style="padding: 24px;">
+          <p class="eyebrow" style="color: var(--gold); margin-bottom: 6px;">Speed to Shelf</p>
+          <h2 style="font-size: 20px; margin: 0 0 8px;">7-Day Rapid Lab Sampling</h2>
+          <p style="margin: 0; font-size: 14px; color: var(--ink-soft);">
+            Bespoke wax-butter texture, natural flavor/scent, and Pantone tint prototypes ship in <strong>7 business days</strong> — 100% of sample fees credited to bulk orders.
+          </p>
+        </div>
+        <div class="card gold-line" style="padding: 24px;">
+          <p class="eyebrow" style="color: var(--gold); margin-bottom: 6px;">Audit-Proof Exports</p>
+          <h2 style="font-size: 20px; margin: 0 0 8px;">ISO 22716 · GMPC · FDA · MSDS</h2>
+          <p style="margin: 0; font-size: 14px; color: var(--ink-soft);">
+            Produced in certified Class 100,000 cleanrooms with full <strong>MSDS</strong>, Intertek COA reports, US FDA MoCRA registration, and EU CPNP / CPSR dossiers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Overview & Custom Scope -->
+  <section>
+    <div class="wrap">
+      <div class="grid two" style="align-items: start; gap: 36px;">
+        <div>
+          <div class="case-media">
+            <img
+              height="600"
+              width="800"
+              src="/products/nas-sync-20.jpg"
+              alt="Private label lip balm manufacturer custom tubes and formulas"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow">What you can specify</p>
+          <h2 style="font-size: 28px;">Anhydrous lip care engineered to your brief</h2>
+          <ul style="padding-left: 20px; color: var(--ink-soft); line-height: 1.8;">
+            <li>100% water-free (anhydrous) soothing balms, overnight barrier salves &amp; SOS chapped-lip sticks</li>
+            <li>High-ratio organic plant butters (Shea, Murumuru, Cocoa) paired with squalane, ceramides &amp; peptides</li>
+            <li>65–72°C thermal-stable wax matrix preventing summer melting, pinholing &amp; wax blooming</li>
+            <li>SPF 15–30 mineral &amp; organic UV-filter tinted balms with anti-sweating stabilization</li>
+            <li>Stock twist-up sticks, jars, soft-touch squeeze tubes, bamboo pots &amp; eco tins from <strong>100-200 pcs MOQ</strong></li>
+            <li>Custom mold opening from 500 pcs, with silk-screen, hot-stamping &amp; Pantone spray finishing</li>
+          </ul>
+          <p style="margin-top: 20px;">
+            <a class="btn" href="/quote?product=Lip%20Balm&source=lip-balm-landing">Configure Lip Balm Specs &rarr;</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hardcore Technical Parameter Comparison Table -->
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--gold);">Formulation &amp; Engineering Matrix</p>
+      <h2>Technical Specifications &amp; Commercial Standards</h2>
+      <p class="lead" style="max-width: 720px; margin-bottom: 28px;">
+        Every private label lip balm batch is formulated against measurable thermal, rheological, and microbiological benchmarks for retail longevity across North America and Europe.
+      </p>
+
+      <div class="card gold-line table-responsive" style="padding: 0; overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px;">
+          <thead>
+            <tr style="background: var(--blush); border-bottom: 1px solid var(--line);">
+              <th style="padding: 14px 20px; text-align: left; color: var(--plum); width: 28%;">Technical Parameter</th>
+              <th style="padding: 14px 20px; text-align: left; color: var(--burgundy); width: 26%;">MLM Lip Benchmark</th>
+              <th style="padding: 14px 20px; text-align: left; color: var(--ink-soft); width: 46%;">Engineering Control &amp; Buyer Impact</th>
+            </tr>
+          </thead>
+          <tbody>
+            {technicalSpecs.map((row) => (
+              <tr style="border-bottom: 1px solid var(--line); background: #fff;">
+                <td style="padding: 14px 20px; font-weight: 600; color: var(--plum);">{row.parameter}</td>
+                <td style="padding: 14px 20px; font-weight: 700; color: var(--burgundy);">{row.benchmark}</td>
+                <td style="padding: 14px 20px; color: var(--ink-soft);">{row.details}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Format Comparison Table -->
+      <div class="card gold-line table-responsive" style="margin-top: 32px; padding: 0; overflow-x: auto;">
+        <div style="background: var(--blush); padding: 14px 20px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+          <strong style="color: var(--plum); font-size: 15px;">Lip Balm Format &amp; Rheology Comparison</strong>
+          <span style="font-size: 12px; color: var(--ink-soft); font-weight: 600;">100-200 pcs MOQ Stock · 500 pcs Custom Tooling</span>
+        </div>
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 680px;">
+          <thead>
+            <tr style="background: #faf6f7; border-bottom: 1px solid var(--line);">
+              <th style="padding: 12px 18px; text-align: left; color: var(--plum);">Packaging Format</th>
+              <th style="padding: 12px 18px; text-align: left; color: var(--plum);">Melting Point</th>
+              <th style="padding: 12px 18px; text-align: left; color: var(--plum);">Oil &amp; Butter Ratio</th>
+              <th style="padding: 12px 18px; text-align: left; color: var(--burgundy);">MOQ Tier</th>
+              <th style="padding: 12px 18px; text-align: left; color: var(--ink-soft);">Anti-Sweating &amp; Process Control</th>
+            </tr>
+          </thead>
+          <tbody>
+            {formatMatrix.map((item) => (
+              <tr style="border-bottom: 1px solid var(--line); background: #fff;">
+                <td style="padding: 14px 18px; font-weight: 600; color: var(--plum);">{item.format}</td>
+                <td style="padding: 14px 18px; font-weight: 600; color: var(--burgundy);">{item.meltingPoint}</td>
+                <td style="padding: 14px 18px; color: var(--ink-soft);">{item.butterRatio}</td>
+                <td style="padding: 14px 18px; font-weight: 600; color: var(--plum);">{item.moq}</td>
+                <td style="padding: 14px 18px; color: var(--ink-soft);">{item.technology}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Inline CTA Bar with Attribution -->
+      <div class="card" style="margin-top: 32px; text-align: center; padding: 36px 28px; background: #fff;">
+        <h3 style="font-size: 22px; margin-bottom: 10px;">Ready to test our anhydrous or SPF lip balm bases?</h3>
+        <p style="color: var(--ink-soft); max-width: 620px; margin: 0 auto 10px;">
+          Start with <strong>100-200 pcs MOQ</strong> using our in-stock sticks, jars, squeeze tubes, or eco tins — or open a custom mold from 500 pcs.
+        </p>
+        <p class="note" style="margin-bottom: 20px;">
+          ✓ 100-200 pcs MOQ (Stock) &nbsp;·&nbsp; ✓ 7-Day Lab Sampling (Fee Credited) &nbsp;·&nbsp; ✓ ISO 22716 / GMPC / FDA / MSDS
+        </p>
+        <a class="btn" href="/quote?product=Lip%20Balm&source=lip-balm-landing">Get a Lip Balm Quote &rarr;</a>
+        <a class="btn ghost" href={site.contact.whatsappLink} target="_blank" rel="noopener" style="margin-left: 12px;">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Factory Real Photos & Process Showcase -->
+  <section>
+    <div class="wrap">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <p class="eyebrow" style="color: var(--gold);">Cleanroom &amp; Hot-Pour Manufacturing</p>
+          <h2 style="margin: 0;">Inside Our ISO 22716 &amp; GMPC Lip Balm Facility</h2>
+        </div>
+        <a href="/process" style="color: var(--burgundy); font-weight: 600; font-size: 14px;">View Full 8-Step Process &rarr;</a>
+      </div>
+
+      <div class="grid two" style="gap: 24px;">
+        <div class="card" style="padding: 0; overflow: hidden;">
+          <div class="case-media" style="margin-bottom: 0; border-radius: 0;">
+            <img src="/factory/cleanroom-01.jpg" alt="ISO 22716 GMPC cleanroom compounding facility for lip balm" width="800" height="450" loading="lazy" />
+          </div>
+          <div style="padding: 20px;">
+            <h3 style="font-size: 18px; margin: 0 0 8px;">Class 100,000 Cleanroom Compounding</h3>
+            <p style="margin: 0; font-size: 14px; color: var(--ink-soft);">
+              Vacuum-homogenized stainless kettles blend organic shea, murumuru, and 65–72°C waxes under sterile positive air pressure to prevent oxidation and air entrapment.
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 0; overflow: hidden;">
+          <div class="case-media" style="margin-bottom: 0; border-radius: 0;">
+            <img src="/factory/production-line-01.jpg" alt="Automated lip balm hot-pour filling and cooling tunnel" width="800" height="450" loading="lazy" />
+          </div>
+          <div style="padding: 20px;">
+            <h3 style="font-size: 18px; margin: 0 0 8px;">Precision Hot-Pour &amp; Cooling Tunnel</h3>
+            <p style="margin: 0; font-size: 14px; color: var(--ink-soft);">
+              Multi-stage temperature-stepped cooling tunnels solidify stick bullets uniformly, preventing center sinkholes, oil sweating (syneresis), and surface wax blooming.
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 0; overflow: hidden;">
+          <div class="case-media" style="margin-bottom: 0; border-radius: 0;">
+            <img src="/factory/sampling-packaging-01.jpg" alt="7-day lip balm lab sampling and 45C thermal stability testing" width="800" height="450" loading="lazy" />
+          </div>
+          <div style="padding: 20px;">
+            <h3 style="font-size: 18px; margin: 0 0 8px;">7-Day Prototyping &amp; Thermal Drop-Point QC</h3>
+            <p style="margin: 0; font-size: 14px; color: var(--ink-soft);">
+              Every prototype undergoes drop-point testing (65–72°C), 45°C accelerated oven stability, and X-Rite spectrophotometer shade checks before dispatch in 7 business days.
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 0; overflow: hidden;">
+          <div class="case-media" style="margin-bottom: 0; border-radius: 0;">
+            <img src="/factory/packaging-tubes-01.jpg" alt="In-stock lip balm sticks, jars, squeeze tubes and eco tins 100-200 pcs MOQ" width="800" height="450" loading="lazy" />
+          </div>
+          <div style="padding: 20px;">
+            <h3 style="font-size: 18px; margin: 0 0 8px;">In-Stock Packaging Library (100-200 pcs MOQ)</h3>
+            <p style="margin: 0; font-size: 14px; color: var(--ink-soft);">
+              Immediate access to twist-up tubes, aluminum tins, PCR sticks, and ceramic-tip squeeze tubes at 100-200 pcs MOQ — or custom injection molds from 500 pcs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Direct Inquiry Form with source=lip-balm-landing -->
+  <section id="lip-balm-inquiry" class="tint">
+    <div class="wrap" style="max-width: 780px;">
+      <div style="text-align: center; margin-bottom: 28px;">
+        <p class="eyebrow" style="color: var(--gold);">Direct-to-Lab Inquiry · Source: lip-balm-landing</p>
+        <h2>Request Your Lip Balm Quote &amp; 7-Day Sample Kit</h2>
+        <p class="lead" style="margin: 0 auto; max-width: 640px;">
+          Specify your format (stick, jar, tin, or squeeze tube), target MOQ (100-200 pcs stock or 500 pcs custom mold), and regulatory market (US FDA / EU CPNP).
+        </p>
+      </div>
+
+      <div class="card" style="box-shadow: var(--shadow-md); border: 1px solid var(--line); border-top: 4px solid var(--burgundy); background: #ffffff;">
+        <form id="lip-balm-quote-form" action="/api/inquiry" method="POST">
+          <input type="hidden" name="source" value="lip-balm-landing" />
+          <input type="hidden" name="context" value="lip-balm-landing" />
+          <input type="text" name="botcheck" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none;" />
+
+          <div class="grid two" style="gap: 16px;">
+            <div class="form-row">
+              <label for="lb-name">Full Name <span style="color: var(--burgundy);">*</span></label>
+              <input id="lb-name" name="name" type="text" required placeholder="e.g. Jane Doe" />
+            </div>
+            <div class="form-row">
+              <label for="lb-email">Work Email <span style="color: var(--burgundy);">*</span></label>
+              <input id="lb-email" name="email" type="email" required placeholder="e.g. jane@brand.com" />
+            </div>
+          </div>
+
+          <div class="grid two" style="gap: 16px;">
+            <div class="form-row">
+              <label for="lb-company">Company / Brand Name</label>
+              <input id="lb-company" name="company" type="text" placeholder="e.g. Pure Balm Studio" />
+            </div>
+            <div class="form-row">
+              <label for="lb-whatsapp">WhatsApp / Phone (Optional)</label>
+              <input id="lb-whatsapp" name="whatsapp" type="tel" placeholder="+1 ..." />
+            </div>
+          </div>
+
+          <div class="grid two" style="gap: 16px;">
+            <div class="form-row">
+              <label for="lb-format">Lip Balm Format &amp; Formula <span style="color: var(--burgundy);">*</span></label>
+              <select id="lb-format" name="product_interest" required>
+                <option value="Lip Balm - Anhydrous Stick">Anhydrous Twist-Up Lip Balm Stick</option>
+                <option value="Lip Balm - Organic Lip Butter Jar/Tin">Organic Lip Butter (Jar / Eco Tin)</option>
+                <option value="Lip Balm - Peptide Squeeze Tube">Peptide Treatment Squeeze Tube Balm</option>
+                <option value="Lip Balm - SPF 15-30 Tinted">SPF 15–30 Tinted Sunscreen Lip Balm</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="lb-qty">Estimated Order Quantity</label>
+              <select id="lb-qty" name="quantity">
+                <option value="100-200 pcs (Standard Stock MOQ)">100-200 pcs MOQ (Standard Stock Packaging)</option>
+                <option value="500 pcs (Custom Mold Tooling)">500 pcs MOQ (Custom Mold Tooling)</option>
+                <option value="1000-5000 pcs">1,000–5,000 pcs</option>
+                <option value="5000+ pcs">5,000+ pcs</option>
+                <option value="7-Day Sample Kit Only">7-Day Sample Kit First</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="lb-message">Formulation, Flavor, Shade &amp; Compliance Notes <span style="color: var(--burgundy);">*</span></label>
+            <textarea id="lb-message" name="message" rows="4" required placeholder="Share your target butter/oil profile, SPF level, flavor/scent, packaging preference (stock vs custom mold), and target market (US FDA / EU CPNP)..."></textarea>
+          </div>
+
+          <div style="margin-top: 12px;">
+            <button id="lb-submit-btn" class="btn" type="submit" style="width: 100%; font-size: 15px; padding: 14px 20px;">
+              Send Lip Balm Inquiry &amp; Request 7-Day Samples &rarr;
+            </button>
+          </div>
+          <div id="lb-status" style="display: none; margin-top: 14px; padding: 12px 16px; border-radius: 8px; font-size: 14px; text-align: center;"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dedicated FAQ Module -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Frequently asked</p>
+      <h2>Private Label Lip Balm — Technical &amp; Commercial FAQ</h2>
+      <div class="grid two" style="margin-top: 28px; gap: 20px;">
+        {faqs.map((f) => (
+          <div class="card">
+            <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--plum);">{f.q}</h3>
+            <p style="margin: 0; color: var(--ink-soft); line-height: 1.65;">{f.a}</p>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top: 28px;"><a href="/faq">Explore all manufacturing FAQs &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- Final Footer CTA -->
+  <section class="tint">
+    <div class="wrap">
+      <div class="card" style="text-align: center; padding: 48px 28px; background: #fff;">
+        <h2 style="margin-bottom: 10px;">Launch your private label lip balm line</h2>
+        <p class="lead" style="max-width: 600px; margin: 0 auto 24px;">
+          100-200 pcs MOQ on standard packaging, 500 pcs on custom molds, 7-day rapid sampling, and full ISO 22716 / GMPC / FDA / MSDS dossiers included.
+        </p>
+        <a class="btn" href="/quote?product=Lip%20Balm&source=lip-balm-landing">Get a Lip Balm Quote &rarr;</a>
+        <a class="btn ghost" href="/cases" style="margin-left: 12px;">View Factory Cases</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { submitInquiryDualTrack } from '../lib/inquiryClient';
+
+  const lbForm = document.getElementById('lip-balm-quote-form') as HTMLFormElement | null;
+  const lbStatus = document.getElementById('lb-status');
+  const lbBtn = document.getElementById('lb-submit-btn') as HTMLButtonElement | null;
+
+  lbForm?.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    if (!lbForm) return;
+    const payload = Object.fromEntries(new FormData(lbForm).entries());
+    await submitInquiryDualTrack({
+      payload,
+      formElement: lbForm,
+      submitButton: lbBtn,
+      statusElement: lbStatus,
+      source: 'lip-balm-landing',
+      redirectingText: '✓ Redirecting to WhatsApp...',
+    });
+  });
+</script>

@@ -39,7 +39,7 @@ Achieving a high-shine, non-sticky finish in vegan lip gloss requires precise ba
 Controlled viscosity prevents the lip gloss from migrating outside the lip line while maintaining a lightweight, cushiony skin-feel. Beautychain Limited tests every production lot for thermal stability, subjecting formulas to temperatures between 40°C and 45°C for 12 weeks to guarantee no separation or rancidity occurs. Brand developers seeking customized textural profiles can review the full scope of OEM capabilities available at the [customization center](/customization).
 
 ### Pigment Dispersion and Color Uniformity
-Milled mineral pigments must be uniformly dispersed through high-shear homogenization to prevent agglomeration and color streaking in transparent or tinted gloss bases. Beautychain Limited employs state-of-the-art vacuum mixing equipment that eliminates air pockets during compounding, ensuring crystal-clear high-shine finishes and rich, streak-free color distribution. 
+Milled mineral pigments must be uniformly dispersed through high-shear homogenization to prevent agglomeration and color streaking in transparent or tinted gloss bases. Beautychain Limited employs state-of-the-art vacuum mixing equipment that eliminates air pockets during compounding, ensuring crystal-clear high-shine finishes and rich, streak-free color distribution. For seasonal launches and trend-driven drops, [Custom Lip Gloss Manufacturer Third Party COA & Heavy Metal Testing](/blog/custom-lip-gloss-manufacturer-third-party-coa-heavy-metal-testing-b2b/) covers the lead times and flexibility you will need to plan around.
 
 ## Navigating Cruelty-Free and Vegan Certifications for Global Markets
 
@@ -49,7 +49,7 @@ Securing verifiable cruelty-free certificates is a mandatory legal and commercia
 Exporting lip cosmetics to international markets necessitates comprehensive Product Information Files (PIF) and Cosmetic Product Safety Reports (CPSR). Beautychain Limited assists brand partners by providing complete raw material Safety Data Sheets (SDS), Certificates of Analysis (COA), and heavy metal test reports that satisfy toxicological evaluations. Reviewing the standard testing and quality control workflows can be done directly through the [manufacturing process page](/process).
 
 ### Animal Testing Prohibitions
-Compliance with EU regulation (EC) No 1223/2009 strictly prohibits animal testing for finished cosmetic products and cosmetic ingredients sold within the European market. Beautychain Limited upholds these zero-cruelty protocols across all manufacturing divisions, issuing formal declarations of conformity and cruelty-free audit trails to support brand marketing claims.
+Compliance with EU regulation (EC) No 1223/2009 strictly prohibits animal testing for finished cosmetic products and cosmetic ingredients sold within the European market. Beautychain Limited upholds these zero-cruelty protocols across all manufacturing divisions, issuing formal declarations of conformity and cruelty-free audit trails to support brand marketing claims. For a technical formulation breakdown, explore our factory guide on [Bulk Lip Gloss Manufacturer with Private Label Options](/blog/bulk-lip-gloss-manufacturer-with-private-label-options/).
 
 ## Specification Comparison Table
 

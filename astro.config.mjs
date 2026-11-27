@@ -32,8 +32,8 @@ function sourceCandidatesFor(url) {
       `src/data/products.ts`
     );
   } else if (/^\/[a-z-]+-manufacturer\/?$/.test(path) || ['lip-gloss', 'lip-mud'].some((k) => path === `/${k}`)) {
-    // 分类落地页由 src/pages/[slug].astro 动态生成
-    cands.push(`src/pages/[slug].astro`, `src/data/categories.ts`);
+    // 分类落地页优先独立 .astro 文件，其次由 src/pages/[slug].astro 动态生成
+    cands.push(`src/pages${path}.astro`, `src/pages/[slug].astro`, `src/data/categories.ts`);
   } else {
     const clean = path.replace(/^\/(fr|es)/, '').replace(/^/, '');
     cands.push(
