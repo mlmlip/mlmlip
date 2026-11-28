@@ -100,7 +100,7 @@ Custom lab samples are formulated and dispatched within 7 business days via expr
 
 ---
 
-> 📦 **《500 pcs 极速测款打样申请通道 (Delta E ≤ 0.5 零色差保障)》**
+> 📦 **500 pcs Rapid Pilot Sampling Protocol (Delta E ≤ 0.5 Color Precision Guarantee)**
 > 
 > * **Target Audience**: B2B Indie Beauty Founders, Formulation Chemists, and Cross-Border E-commerce Brand Owners scaling into the UK and European markets.
 > * **Value Proposition**: Secure your custom lip oil pilot batch at a low 500 pcs MOQ with verified UK SCPN documentation support, strict Delta E ≤ 0.5 color precision, and 7-day lab sampling turnaround.

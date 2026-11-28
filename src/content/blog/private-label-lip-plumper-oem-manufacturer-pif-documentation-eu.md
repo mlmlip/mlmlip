@@ -108,8 +108,8 @@ All lip plumping formulations undergo accelerated thermal stability testing (40�
 > **Exclusive Offer for Indie Beauty Founders, Formulation Chemists & Cross-Border E-commerce Buyers:**
 > 
 > Accelerate your brand's global expansion with direct access to our engineering resources:
-> - **《500 pcs 极速测款打样申请通道 (Delta E ≤ 0.5 零色差保障)》** (500-Piece Rapid Pilot Batch Sampling Protocol with Delta E ≤ 0.5 Color Precision Guarantee)
-> - **《2026 EU MoCRA 唇部配方出海避坑白皮书下载》** (2026 EU MoCRA & CPNP Lip Formulation Cross-Border Compliance Whitepaper)
+> - **500-Piece Rapid Pilot Batch Sampling Protocol (Delta E ≤ 0.5 Color Precision Guarantee)**
+> - **2026 EU MoCRA & CPNP Lip Formulation Cross-Border Compliance Whitepaper**
 > 
 > **Claim Your Technical Dossier & Sample Kit Today:**
 > - **Direct WhatsApp Engineering Desk:** [+86 136 5238 0291](https://wa.me/8613652380291)
