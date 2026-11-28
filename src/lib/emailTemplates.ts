@@ -14,38 +14,48 @@ export interface InquiryEmailContext {
 export const INQUIRY_CONFIRM_FROM = 'MLM Lip <noreply@mlmlip.com>'; // mlmlip.com 已在 Resend 验证通过 (2026-11-22)
 export const INQUIRY_REPLY_TO = ''; // 预留: 老板给 nancy 邮箱后填这里
 
+const PLACEHOLDER_VALUES = new Set(['', '未填写', '待确认', 'N/A']);
+
+function isProvided(value: string): boolean {
+  return !PLACEHOLDER_VALUES.has(value.trim());
+}
+
 /** B2B 专业风英文确认邮件 (纯文本, 送达率优先, 不依赖 HTML 渲染)。 */
 export function inquiryConfirmationText(ctx: InquiryEmailContext): string {
   const greeting = ctx.name ? `Dear ${ctx.name},` : 'Hello,';
+  const companyPhrase = isProvided(ctx.company) ? ` on behalf of ${ctx.company}` : '';
 
   const interestLine = [
-    ctx.productType && ctx.productType !== '未填写' ? `Product interest: ${ctx.productType}` : '',
-    ctx.quantity && ctx.quantity !== '待确认' ? `Estimated quantity: ${ctx.quantity}` : '',
+    isProvided(ctx.productType) ? `- Product interest: ${ctx.productType}` : '',
+    isProvided(ctx.quantity) ? `- Estimated quantity: ${ctx.quantity}` : '',
   ]
     .filter(Boolean)
     .join('\n');
 
-  const interestBlock = interestLine
-    ? `\n${interestLine}\n`
-    : '\n';
+  const interestBlock = interestLine ? `\n${interestLine}\n` : '\n';
 
   return `${greeting}
 
-Thank you for reaching out to MLM Lip. This is an automated confirmation that we have received your inquiry${ctx.company ? ` on behalf of ${ctx.company}` : ''}.
+Thank you for contacting MLM Lip (Beautychain Limited). This confirms that we have received your inquiry${companyPhrase}.
 
-Your reference number: ${ctx.requestId}
+Reference number: ${ctx.requestId}
 ${interestBlock}
-Our team replies within 24 hours (business days, China time). For urgent orders, you are also welcome to reply directly to this email.
+A dedicated account manager will follow up with you within 12–24 hours (business days) with tailored pricing, packaging options, and lead times.
 
-What happens next:
-1. Our product specialist reviews your requirements
-2. You receive a tailored quotation with MOQ and lead times
-3. Sampling can be arranged within 7 days of confirmation
+Why beauty brands partner with MLM Lip (Beautychain Limited):
+- Flexible Low MOQ: 100–200 pcs MOQ for standard stock packaging (500 pcs MOQ for custom mold tooling)
+- 7-Day Rapid Sampling: Fast lab bench prototypes so you can validate texture, shade, and finish early
+- Full Compliance: ISO 22716 & GMPC certified cleanrooms with US FDA MoCRA & EU CPNP documentation support
 
-Thank you for considering MLM Lip as your lip cosmetics manufacturing partner.
+Need an immediate quote or faster response?
+Chat with us directly on WhatsApp: +86 136 5238 0291
+https://wa.me/8613652380291
 
 Best regards,
-Nancy — MLM Lip (Beautychain Limited)
+Nancy — Dedicated Account Manager
+MLM Lip (Beautychain Limited)
+WhatsApp: +86 136 5238 0291 | https://wa.me/8613652380291
+https://mlmlip.com
 `;
 }
 

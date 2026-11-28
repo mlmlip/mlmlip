@@ -433,15 +433,29 @@ function isPlausibleEmail(value: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
 }
 
-export async function sendBuyerConfirmationEmail(lead: Inquiry): Promise<PersistState> {
+export async function sendBuyerConfirmationEmail(
+  lead: Inquiry,
+  flags: InquiryFlags = {},
+  timeoutMs = 5_000
+): Promise<PersistState> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+
   try {
-    const apiKey = env('RESEND_API_KEY');
-    if (!apiKey) {
-      console.warn('[inquiry] RESEND_API_KEY not configured — buyer confirmation email skipped (dormant until key provided).');
+    if (flags.isSpam || flags.isBot) {
+      console.warn(
+        `[inquiry] Anti-spam guard skipped buyer confirmation email id=${lead.requestId} isSpam=${Boolean(flags.isSpam)} isBot=${Boolean(flags.isBot)}.`
+      );
       return 'skipped';
     }
     if (!isPlausibleEmail(lead.email)) {
       console.warn(`[inquiry] Buyer email not plausible id=${lead.requestId} — confirmation email skipped.`);
+      return 'skipped';
+    }
+
+    const apiKey = env('RESEND_API_KEY');
+    if (!apiKey) {
+      console.warn('[inquiry] RESEND_API_KEY not configured — buyer confirmation email skipped (dormant until key provided).');
       return 'skipped';
     }
 
@@ -461,7 +475,7 @@ export async function sendBuyerConfirmationEmail(lead: Inquiry): Promise<Persist
         'content-type': 'application/json',
       },
       body: JSON.stringify(payload),
-      signal: AbortSignal.timeout(4_000),
+      signal: controller.signal,
     });
     if (!res.ok) {
       const errBody = await res.text().catch(() => '');
@@ -470,8 +484,14 @@ export async function sendBuyerConfirmationEmail(lead: Inquiry): Promise<Persist
     console.log(`[inquiry] Buyer confirmation email sent id=${lead.requestId} to buyer.`);
     return 'ok';
   } catch (err) {
-    console.error(`[inquiry] Buyer confirmation email FAILED id=${lead.requestId} (non-blocking bypass):`, err);
+    const isAbort = err instanceof Error && err.name === 'AbortError';
+    console.error(
+      `[inquiry] Buyer confirmation email ${isAbort ? 'TIMED OUT' : 'FAILED'} id=${lead.requestId} (non-blocking bypass):`,
+      isAbort ? `>${timeoutMs}ms` : err
+    );
     return 'failed';
+  } finally {
+    clearTimeout(timer);
   }
 }
 
@@ -485,7 +505,7 @@ export interface ProcessInquiryResult {
   body: Record<string, unknown>;
   lead?: Inquiry;
   rateMode?: RateMode;
-  delivery?: { feishu: DeliveryState; dingtalk: DeliveryState; upstash?: PersistState };
+  delivery?: { feishu: DeliveryState; dingtalk: DeliveryState; upstash?: PersistState; confirmEmail?: PersistState };
   flags?: InquiryFlags;
 }
 
@@ -551,7 +571,7 @@ export async function processInquirySubmission(
   //    Upstash persistence + buyer confirmation email start in PARALLEL
   //    (bypass paths, must never delay notifications).
   const persistPromise = persistInquiryToUpstash(built, flags, meta);
-  const confirmEmailPromise = sendBuyerConfirmationEmail(built);
+  const confirmEmailPromise = sendBuyerConfirmationEmail(built, flags);
   const [feishu, dingtalk] = await Promise.all([
     notifyFeishu(built, flags),
     notifyDingTalk(built, flags),
@@ -610,7 +630,7 @@ export async function processInquirySubmission(
     },
     lead: built,
     rateMode,
-    delivery: { feishu, dingtalk },
+    delivery: { feishu, dingtalk, upstash, confirmEmail },
     flags,
   };
 }
