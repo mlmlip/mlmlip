@@ -11,6 +11,7 @@ import {
 } from '../src/pages/api/inquiry';
 import {
   INQUIRY_CONFIRM_FROM,
+  INQUIRY_REPLY_TO,
   inquiryConfirmationSubject,
 } from '../src/lib/emailTemplates';
 
@@ -72,10 +73,17 @@ async function runTests() {
     assert.equal(resendCalls, 1, 'Resend API should be called once');
     assert.ok(capturedPayload, 'Payload should be captured');
     assert.equal(capturedPayload!['from'], INQUIRY_CONFIRM_FROM);
+    assert.equal(capturedPayload!['reply_to'], 'nancy@mlmlip.com');
+    assert.equal(INQUIRY_REPLY_TO, 'nancy@mlmlip.com');
+    assert.ok(!String(capturedPayload!['from']).includes('onboarding@resend.dev'));
+    assert.ok(String(capturedPayload!['from']).includes('@mlmlip.com'));
     assert.deepEqual(capturedPayload!['to'], ['alice@indiebeauty.com']);
     assert.equal(capturedPayload!['subject'], inquiryConfirmationSubject());
+    assert.ok(!/[\u4e00-\u9fff]/.test(String(capturedPayload!['subject'])), 'Subject must contain zero Chinese chars');
 
     const bodyText = String(capturedPayload!['text'] || '');
+    assert.ok(!/[\u4e00-\u9fff]/.test(bodyText), 'Email body must contain zero Chinese chars');
+    assert.ok(bodyText.includes('500 pcs MOQ for custom mold tooling'));
     for (const expected of [
       'Beautychain Limited',
       '12–24 hours',

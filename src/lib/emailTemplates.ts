@@ -12,7 +12,7 @@ export interface InquiryEmailContext {
 }
 
 export const INQUIRY_CONFIRM_FROM = 'MLM Lip <noreply@mlmlip.com>'; // mlmlip.com 已在 Resend 验证通过 (2026-11-22)
-export const INQUIRY_REPLY_TO = ''; // 预留: 老板给 nancy 邮箱后填这里
+export const INQUIRY_REPLY_TO = 'nancy@mlmlip.com';
 
 const PLACEHOLDER_VALUES = new Set(['', '未填写', '待确认', 'N/A']);
 
@@ -66,5 +66,5 @@ export function inquiryConfirmationSubject(): string {
 
 /** 调试/预览用: 打印完整邮件内容 (不发送)。 */
 export function previewInquiryConfirmation(ctx: InquiryEmailContext): string {
-  return `To: (buyer email)\nFrom: ${INQUIRY_CONFIRM_FROM}\nSubject: ${inquiryConfirmationSubject()}\n\n${inquiryConfirmationText(ctx)}`;
+  return `To: (buyer email)\nFrom: ${INQUIRY_CONFIRM_FROM}\nReply-To: ${INQUIRY_REPLY_TO}\nSubject: ${inquiryConfirmationSubject()}\n\n${inquiryConfirmationText(ctx)}`;
 }
