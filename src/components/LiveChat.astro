@@ -176,7 +176,7 @@ const L = i18n[lang];
 <style>
   .mlm-livechat-widget {
     position: fixed;
-    /* 堆叠在 WhatsApp 悬浮按钮 (bottom:20px, 高约44px) 上方, 不得遮挡主询盘入口 */
+    /* Positioned above WhatsApp float button without obscuring primary inquiry entry */
     bottom: 84px;
     right: 20px;
     z-index: 9999;
@@ -273,7 +273,7 @@ const L = i18n[lang];
   .chat-drawer-panel {
     display: none;
     position: fixed;
-    /* 展开时位于 AI 悬浮球 (bottom:84px) 上方, 不遮挡底部 WhatsApp 按钮 */
+    /* When open, positioned above launcher button without obscuring WhatsApp */
     bottom: 148px;
     right: 20px;
     width: 380px;
@@ -565,7 +565,7 @@ const L = i18n[lang];
 
     const chatwootToken = root.getAttribute('data-chatwoot-token');
     const chatwootBase = root.getAttribute('data-chatwoot-base');
-    // i18n 状态文案 (P0-2: 提交反馈不残留英文)
+    // i18n feedback messages
     const statusSending = root.getAttribute('data-status-sending') || 'Transmitting to lab chemist...';
     const statusOk = root.getAttribute('data-status-ok') || '✓ Received! Lab dossier sent to ';
     const statusFail = root.getAttribute('data-status-fail') || 'Submission delayed. Reach us on ';
@@ -682,7 +682,7 @@ const L = i18n[lang];
         if (typeof (window as any).gtag === 'function') {
           (window as any).gtag('event', 'generate_lead', { source: 'livechat_drawer', lead_type: 'livechat_drawer_lead' });
         }
-        // Meta Pixel: Lead（空转保护同上）
+        // Meta Pixel: Lead
         if (typeof (window as any).fbq === 'function') {
           (window as any).fbq('track', 'Lead');
         }

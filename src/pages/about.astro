@@ -718,7 +718,7 @@ const aboutJsonLd = {
                 event_label: 'Compliance Dossier'
               });
             }
-            // Meta Pixel: Lead（空转时 fbq 未定义，不执行）
+            // Meta Pixel: Lead
             if (typeof (window as any).fbq === 'function') {
               (window as any).fbq('track', 'Lead');
             }

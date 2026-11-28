@@ -493,7 +493,7 @@ const schemaData = {
                 <><a href={l.href}>{l.label}</a> · </>
               ))}
             </p>
-            <!-- P1-6: 法律页三件套 footer 导航 -->
+            <!-- Legal links footer navigation -->
             <p style="color:#e9c9d3; margin:0; line-height:1.9; font-size:12px;">
               {(() => { const legalLinks = [
                 { label: currentLang === 'fr' ? 'Confidentialité' : currentLang === 'es' ? 'Privacidad' : 'Privacy', href: '/privacy' },
@@ -540,7 +540,7 @@ const schemaData = {
     </script>
 
     <script is:inline>
-      // 滚动渐入动画 — 轻量 Intersection Observer
+      // Scroll reveal animation - lightweight Intersection Observer
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const io = new IntersectionObserver((entries) => {
           entries.forEach((e) => {

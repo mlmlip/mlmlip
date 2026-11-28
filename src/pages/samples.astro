@@ -520,7 +520,7 @@ const sampleSchema = {
   <script>
     import { submitInquiryDualTrack } from '../lib/inquiryClient';
 
-    // 监听 URL 参数或卡片点击以自动填充套盒选择
+    // Auto-fill kit choice from URL params or card click
     document.addEventListener('DOMContentLoaded', () => {
       const urlParams = new URLSearchParams(window.location.search);
       const prefillProduct = urlParams.get('product');
@@ -535,7 +535,7 @@ const sampleSchema = {
         }
       }
 
-      // 卡片点击联动选择
+      // Link card click to kit selection
       const kitButtons = document.querySelectorAll('.kit-select-btn');
       kitButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -555,7 +555,7 @@ const sampleSchema = {
         });
       });
 
-      // AJAX 表单提交反馈
+      // AJAX form submission feedback
       const form = document.getElementById('sample-request-form');
       const submitBtn = document.getElementById('sample-submit-btn');
       const statusMsg = document.getElementById('sample-status-msg');
